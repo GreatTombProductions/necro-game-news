@@ -72,7 +72,7 @@ games:
     classification:
       dimension_1: "b"
       dimension_2: "character"
-      dimension_3: "implied"
+      dimension_3: "explicit"
     notes: "Extensive minion/summoner builds available, especially for Witch class"
     date_added: "2024-12-02"
     priority: medium
