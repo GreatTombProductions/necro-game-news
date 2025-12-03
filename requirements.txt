@@ -1,0 +1,21 @@
+# Core dependencies
+requests>=2.31.0
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# Image generation for social media
+pillow>=10.1.0
+
+# Database (sqlite3 is built-in)
+# No additional package needed
+
+# Task scheduling (alternative to cron)
+schedule>=1.2.0
+
+# Optional but recommended for development
+pytest>=7.4.3
+black>=23.11.0
+flake8>=6.1.0
+
+# Instagram API (for future Phase 2)
+# facebook-sdk>=3.1.0  # Uncomment when ready for Instagram integration
