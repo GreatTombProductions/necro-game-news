@@ -1,4 +1,4 @@
-#!/Users/rayheberer/Documents/necro-game-news/venv/bin/python3
+#!/Users/rayheberer/Documents/greattomb/necro-game-news/venv/bin/python3.13
 import sys
 from pytest import console_main
 if __name__ == '__main__':

@@ -90,30 +90,19 @@ games:
     notes: "Necromantic weapons, resurrection spells, and rituals available"
     date_added: "2024-12-02"
     priority: medium
-  
-  - name: "Dead Cells"
-    steam_id: 588650
+
+  - name: "Night Swarm"
+    steam_id: 3668370
     classification:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "implied"
-    notes: "Necromancy-themed mutations and weapons scattered throughout"
-    date_added: "2024-12-02"
-    priority: low
+    notes: "Undead-summoning artifacts as part of gameplay mechanics"
+    date_added: "2025-12-04"
   
   # =========================================================================
   # RTS/Strategy Games (Dimension 2b - Unit Control)
   # =========================================================================
-  
-  - name: "Age of Wonders 4"
-    steam_id: 1669000
-    classification:
-      dimension_1: "b"
-      dimension_2: "unit"
-      dimension_3: "explicit"
-    notes: "Necromancy available as magic affinity"
-    date_added: "2024-12-02"
-    priority: medium
   
   - name: "Total War: WARHAMMER III"
     steam_id: 1142710

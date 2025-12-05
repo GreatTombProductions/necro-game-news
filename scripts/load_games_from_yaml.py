@@ -4,11 +4,14 @@ Load games from games_list.yaml into the database.
 
 This script reads the curated games list and adds any new games
 to the database. With --update flag, it also updates classification
-for existing games.
+for existing games. With --sync flag, it deletes games from the
+database that are no longer in the YAML file.
 
 Usage:
     python scripts/load_games_from_yaml.py              # Add new games only
     python scripts/load_games_from_yaml.py --update     # Add new + update existing
+    python scripts/load_games_from_yaml.py --sync       # Also delete removed games
+    python scripts/load_games_from_yaml.py -us          # Full sync (update + delete)
 """
 
 import sys
@@ -22,13 +25,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from backend.database.schema import get_connection
 
 
-def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False):
+def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False, sync_deletes=False):
     """
     Load games from YAML file and add/update in database.
     
     Args:
         yaml_path: Path to games_list.yaml file
         update_existing: If True, update classification for existing games
+        sync_deletes: If True, delete games from DB that aren't in YAML
     """
     yaml_file = Path(yaml_path)
     
@@ -47,10 +51,12 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         return 0
     
     print(f"Found {len(games)} games in {yaml_path}")
+    mode_parts = ["Add new games"]
     if update_existing:
-        print("Mode: Add new games + update existing classifications")
-    else:
-        print("Mode: Add new games only (use --update to sync changes)")
+        mode_parts.append("update existing")
+    if sync_deletes:
+        mode_parts.append("delete removed")
+    print(f"Mode: {' + '.join(mode_parts)}")
     print()
     
     # Connect to database
@@ -60,7 +66,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     added = 0
     updated = 0
     skipped = 0
+    deleted = 0
     errors = 0
+    
+    # Get steam_ids from YAML for sync check
+    yaml_steam_ids = {game['steam_id'] for game in games}
     
     for game in games:
         name = game['name']
@@ -145,6 +155,34 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
             print(f"✗ Error processing {name}: {e}")
             errors += 1
     
+    # Delete games that are in DB but not in YAML (if sync mode)
+    if sync_deletes:
+        print()
+        print("Checking for games to remove...")
+        
+        cursor.execute("SELECT id, steam_id, name FROM games")
+        db_games = cursor.fetchall()
+        
+        for game_id, steam_id, name in db_games:
+            if steam_id not in yaml_steam_ids:
+                try:
+                    # Get update count before deletion
+                    cursor.execute(
+                        "SELECT COUNT(*) FROM updates WHERE game_id = ?",
+                        (game_id,)
+                    )
+                    update_count = cursor.fetchone()[0]
+                    
+                    # Delete game (CASCADE will delete updates automatically)
+                    cursor.execute("DELETE FROM games WHERE id = ?", (game_id,))
+                    
+                    print(f"🗑  Deleted: {name} (steam_id: {steam_id}, {update_count} updates)")
+                    deleted += 1
+                    
+                except Exception as e:
+                    print(f"✗ Error deleting {name}: {e}")
+                    errors += 1
+    
     conn.commit()
     conn.close()
     
@@ -155,11 +193,13 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     print(f"  ✓ Added: {added}")
     if update_existing:
         print(f"  ↻ Updated: {updated}")
+    if sync_deletes:
+        print(f"  🗑  Deleted: {deleted}")
     print(f"  ⊙ Skipped (unchanged): {skipped}")
     print(f"  ✗ Errors: {errors}")
     print("=" * 60)
     
-    return added + updated
+    return added + updated + deleted
 
 
 def main():
@@ -177,15 +217,24 @@ Examples:
   # Add new games AND update existing classifications
   python scripts/load_games_from_yaml.py --update
   
-Use --update when you've changed classifications in games_list.yaml
-and want to sync those changes to the database.
+  # Full sync: add, update, and delete games not in YAML
+  python scripts/load_games_from_yaml.py --update --sync
+  
+  # Or use short form
+  python scripts/load_games_from_yaml.py -us
+
+Use --update when you've changed classifications in games_list.yaml.
+Use --sync to remove games from DB that aren't in the YAML file.
+WARNING: --sync will DELETE games and all their updates!
         """
     )
     
     parser.add_argument('--yaml', default='data/games_list.yaml',
                        help='Path to games YAML file (default: data/games_list.yaml)')
-    parser.add_argument('--update', action='store_true',
+    parser.add_argument('-u', '--update', action='store_true',
                        help='Update existing games (not just add new ones)')
+    parser.add_argument('-s', '--sync', action='store_true',
+                       help='Delete games from DB that are not in YAML (destructive!)')
     
     args = parser.parse_args()
     
@@ -195,7 +244,7 @@ and want to sync those changes to the database.
     print()
     
     try:
-        count = load_games_from_yaml(args.yaml, args.update)
+        count = load_games_from_yaml(args.yaml, args.update, args.sync)
         return 0 if count >= 0 else 1
     except Exception as e:
         print(f"\n✗ Error: {e}")

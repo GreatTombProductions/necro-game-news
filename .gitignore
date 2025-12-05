@@ -100,3 +100,7 @@ backend/config/secrets.yaml
 
 # macOS specific
 *.dmg
+
+# Frontend build
+frontend/dist/
+frontend/.vite/
