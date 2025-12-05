@@ -41,56 +41,48 @@ class ImageCompositor:
         'NEWS': (148, 163, 184),  # Gray
     }
 
-    def __init__(self, output_dir: Optional[Path] = None,
-                 cache_dir: Optional[Path] = None):
+    def __init__(self, output_dir: Optional[Path] = None):
         """
         Initialize image compositor.
 
         Args:
             output_dir: Directory to save generated images (default: content/posts)
-            cache_dir: Directory to cache downloaded images (default: content/cache)
         """
         self.output_dir = output_dir or Path('content/posts')
-        self.cache_dir = cache_dir or Path('content/cache')
-
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
-    def fetch_game_image(self, image_url: str, game_name: str) -> Image.Image:
+    def fetch_game_image(self, image_url: str) -> Image.Image:
         """
-        Fetch game header image from Steam.
+        Fetch game image from URL.
 
         Args:
-            image_url: URL to game's header image
-            game_name: Game name (for cache filename)
+            image_url: URL to game image
 
         Returns:
             PIL Image object
         """
-        # Create cache filename
-        safe_name = "".join(c if c.isalnum() else "_" for c in game_name)
-        cache_file = self.cache_dir / f"{safe_name}.jpg"
-
-        # Check cache first
-        if cache_file.exists():
-            try:
-                return Image.open(cache_file)
-            except Exception:
-                # Cache corrupted, re-download
-                cache_file.unlink()
-
-        # Download image
         try:
             response = requests.get(image_url, timeout=10)
             response.raise_for_status()
             img = Image.open(io.BytesIO(response.content))
-
-            # Cache for future use
-            img.save(cache_file, 'JPEG', quality=95)
-
             return img
         except Exception as e:
             raise ValueError(f"Failed to fetch image from {image_url}: {e}")
+
+    def load_local_image(self, image_path: Path) -> Image.Image:
+        """
+        Load an image from local filesystem.
+
+        Args:
+            image_path: Path to local image file
+
+        Returns:
+            PIL Image object
+        """
+        try:
+            return Image.open(image_path)
+        except Exception as e:
+            raise ValueError(f"Failed to load image from {image_path}: {e}")
 
     def prepare_background(self, game_image: Image.Image) -> Image.Image:
         """
@@ -144,7 +136,8 @@ class ImageCompositor:
 
     def create_text_overlay(self, size: Tuple[int, int],
                            text_lines: List[str],
-                           update_type: str) -> Image.Image:
+                           update_type: str,
+                           tags: Optional[List[str]] = None) -> Image.Image:
         """
         Create text overlay image.
 
@@ -152,6 +145,7 @@ class ImageCompositor:
             size: Image size (width, height)
             text_lines: List of [badge_text, game_name, update_title]
             update_type: Update type for badge color
+            tags: Optional list of Steam tags to display (max 3-4)
 
         Returns:
             PIL Image with transparent background and text
@@ -225,6 +219,22 @@ class ImageCompositor:
             )
             current_y += 80
 
+        # Draw tags if provided (small, subtle)
+        if tags:
+            # Take first 3-4 tags that fit
+            tag_text = " • ".join(tags[:4])
+            # Wrap if too long
+            if len(tag_text) > 50:
+                tag_text = " • ".join(tags[:3])
+
+            draw.text(
+                (margin, current_y),
+                tag_text,
+                fill=self.TEXT_COLOR_SECONDARY,
+                font=font_small
+            )
+            current_y += 45
+
         # Draw update title (medium, wrapped if needed)
         if len(text_lines) > 2:
             update_title = text_lines[2]
@@ -284,31 +294,42 @@ class ImageCompositor:
 
         return lines
 
-    def compose_post_image(self, image_url: str, game_name: str,
+    def compose_post_image(self, image_url: Optional[str], game_name: str,
                           text_lines: List[str], update_type: str,
-                          output_filename: Optional[str] = None) -> Path:
+                          output_filename: Optional[str] = None,
+                          tags: Optional[List[str]] = None,
+                          local_image_path: Optional[Path] = None) -> Path:
         """
         Create complete Instagram post image.
 
         Args:
-            image_url: URL to game header image
+            image_url: URL to game image (can be None if local_image_path provided)
             game_name: Game name
             text_lines: [badge_text, game_name, update_title]
             update_type: Update type for styling
             output_filename: Custom filename (auto-generated if None)
+            tags: Optional Steam tags to display
+            local_image_path: Optional path to local image file (overrides image_url)
 
         Returns:
             Path to saved image file
         """
-        # Fetch and prepare background
-        game_image = self.fetch_game_image(image_url, game_name)
+        # Load image from local path or fetch from URL
+        if local_image_path:
+            game_image = self.load_local_image(local_image_path)
+        elif image_url:
+            game_image = self.fetch_game_image(image_url)
+        else:
+            raise ValueError("Either image_url or local_image_path must be provided")
+
         background = self.prepare_background(game_image)
 
         # Create text overlay
         overlay = self.create_text_overlay(
             self.INSTAGRAM_SIZE,
             text_lines,
-            update_type
+            update_type,
+            tags=tags
         )
 
         # Composite background + overlay
@@ -331,13 +352,17 @@ class ImageCompositor:
         return output_path
 
     def compose_from_template(self, template_data: dict,
-                             output_filename: Optional[str] = None) -> Path:
+                             output_filename: Optional[str] = None,
+                             tags: Optional[List[str]] = None,
+                             local_image_path: Optional[Path] = None) -> Path:
         """
         Create post image from template data.
 
         Args:
             template_data: Dictionary from PostTemplate.to_dict()
             output_filename: Custom filename (auto-generated if None)
+            tags: Optional Steam tags to display in banner
+            local_image_path: Optional path to local image file
 
         Returns:
             Path to saved image file
@@ -349,22 +374,28 @@ class ImageCompositor:
             game_name=template_data['game_name'],
             text_lines=image_specs['overlay_text'],
             update_type=template_data.get('update_type', 'unknown'),
-            output_filename=output_filename
+            output_filename=output_filename,
+            tags=tags,
+            local_image_path=local_image_path
         )
 
 
-def create_post_image(game_image_url: str, game_name: str,
+def create_post_image(game_image_url: Optional[str], game_name: str,
                      update_title: str, update_type: str,
-                     output_dir: Optional[Path] = None) -> Path:
+                     output_dir: Optional[Path] = None,
+                     tags: Optional[List[str]] = None,
+                     local_image_path: Optional[Path] = None) -> Path:
     """
     Convenience function to create a post image.
 
     Args:
-        game_image_url: URL to game header image
+        game_image_url: URL to game image (can be None if local_image_path provided)
         game_name: Game name
         update_title: Update title
         update_type: Update type (patch, announcement, etc.)
         output_dir: Output directory (default: content/posts)
+        tags: Optional Steam tags to display
+        local_image_path: Optional path to local image file
 
     Returns:
         Path to saved image
@@ -385,5 +416,7 @@ def create_post_image(game_image_url: str, game_name: str,
         image_url=game_image_url,
         game_name=game_name,
         text_lines=text_lines,
-        update_type=update_type
+        update_type=update_type,
+        tags=tags,
+        local_image_path=local_image_path
     )

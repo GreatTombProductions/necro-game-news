@@ -55,7 +55,8 @@ class ContentGenerator:
                 g.dimension_3,
                 g.release_date,
                 g.price_usd,
-                g.genres
+                g.genres,
+                g.steam_tags
             FROM updates u
             JOIN games g ON u.game_id = g.id
             WHERE u.processed_for_social = 0
@@ -110,7 +111,8 @@ class ContentGenerator:
                 g.dimension_3,
                 g.release_date,
                 g.price_usd,
-                g.genres
+                g.genres,
+                g.steam_tags
             FROM updates u
             JOIN games g ON u.game_id = g.id
             WHERE u.id = ?

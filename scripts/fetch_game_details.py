@@ -96,8 +96,8 @@ def fetch_and_update_game(game_id: int, steam_api: SteamAPI) -> bool:
             parsed['publisher'],
             parsed['release_date'],
             parsed.get('price_usd'),
-            json.dumps(parsed['categories']),  # Store as JSON
-            json.dumps(parsed['genres']),      # Store as JSON
+            json.dumps(parsed.get('tags', [])),  # User tags from Steamspy
+            json.dumps(parsed['genres']),         # Official genres from Steam
             datetime.now(),
             db_id
         ))

@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 STEAM_API_KEY = os.getenv('STEAM_API_KEY')
 STORE_API_BASE = "https://store.steampowered.com/api"
 STEAM_API_BASE = "https://api.steampowered.com"
+STEAMSPY_API_BASE = "https://steamspy.com/api.php"
 
 # Rate limiting: Steam allows ~200 requests per 5 minutes
 DEFAULT_RATE_LIMIT_DELAY = 1.5  # seconds between requests
@@ -121,12 +122,12 @@ class SteamAPI:
     def get_app_news(self, appid: int, count: int = 10, max_length: int = 300) -> List[Dict]:
         """
         Get news/updates for a Steam app.
-        
+
         Args:
             appid: Steam App ID
             count: Number of news items to retrieve (default: 10)
             max_length: Maximum length of news content (default: 300)
-            
+
         Returns:
             List of news items, each as a dictionary
         """
@@ -136,22 +137,52 @@ class SteamAPI:
             'count': count,
             'maxlength': max_length
         }
-        
+
         try:
             data = self._make_request(url, params)
             news_items = data.get('appnews', {}).get('newsitems', [])
             return news_items
-            
+
         except SteamAPIError as e:
             logger.error(f"Error fetching news for app {appid}: {e}")
             return []
+
+    def get_app_tags(self, appid: int, max_tags: int = 10) -> List[str]:
+        """
+        Get user-generated tags for a Steam app from Steamspy.
+
+        Args:
+            appid: Steam App ID
+            max_tags: Maximum number of tags to return (default: 10)
+
+        Returns:
+            List of tag names, sorted by vote count (most popular first)
+        """
+        url = STEAMSPY_API_BASE
+        params = {
+            'request': 'appdetails',
+            'appid': appid
+        }
+
+        try:
+            data = self._make_request(url, params)
+            tags = data.get('tags', {})
+
+            # Sort tags by vote count (descending) and return top N
+            sorted_tags = sorted(tags.items(), key=lambda x: x[1], reverse=True)
+            return [tag for tag, _ in sorted_tags[:max_tags]]
+
+        except SteamAPIError as e:
+            logger.warning(f"Error fetching tags for app {appid}: {e}")
+            return []
     
-    def parse_app_details(self, app_data: Dict) -> Dict:
+    def parse_app_details(self, app_data: Dict, fetch_tags: bool = True) -> Dict:
         """
         Parse and extract relevant fields from app details response.
 
         Args:
             app_data: Raw app details from Steam API
+            fetch_tags: Whether to fetch tags from Steamspy (default: True)
 
         Returns:
             Dictionary with cleaned/parsed data
@@ -171,6 +202,13 @@ class SteamAPI:
         elif app_data.get('is_free', False):
             price_usd = 0.0
 
+        # Get tags from Steamspy if requested
+        tags = []
+        if fetch_tags:
+            steam_id = app_data.get('steam_appid')
+            if steam_id:
+                tags = self.get_app_tags(steam_id)
+
         return {
             'steam_id': app_data.get('steam_appid'),
             'name': app_data.get('name'),
@@ -183,7 +221,8 @@ class SteamAPI:
             'release_date': app_data.get('release_date', {}).get('date'),
             'price_usd': price_usd,
             'genres': [g.get('description') for g in app_data.get('genres', [])],
-            'categories': [c.get('description') for c in app_data.get('categories', [])]
+            'categories': [c.get('description') for c in app_data.get('categories', [])],
+            'tags': tags  # User-generated tags from Steamspy
         }
     
     def classify_update_type(self, news_item: Dict) -> str:

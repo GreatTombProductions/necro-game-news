@@ -3,15 +3,30 @@
 
 set -e  # Exit on error
 
+# Get project root directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Change to project root to ensure relative paths work
+cd "$PROJECT_ROOT"
+
+# Load environment variables
+if [ -f .env ]; then
+    export $(cat .env | grep -v '^#' | xargs)
+fi
+
 # Use the virtual environment's Python directly
 PYTHON="./venv/bin/python"
 
 # Check if venv exists
 if [ ! -f "$PYTHON" ]; then
     echo "❌ Virtual environment not found at $PYTHON"
-    echo "Please create it with: python3 -m venv venv"
+    echo "Please create it with: python3.9 -m venv venv"
     exit 1
 fi
+
+# Use DATABASE_PATH from .env or default
+DB_PATH="${DATABASE_PATH:-data/necro_games.db}"
 
 echo "🔍 Checking for updates..."
 $PYTHON scripts/check_updates.py
@@ -19,14 +34,8 @@ $PYTHON scripts/check_updates.py
 echo "📤 Exporting data for web..."
 $PYTHON scripts/export_for_web.py
 
-echo "📱 Generating social media posts..."
-$PYTHON scripts/generate_social_posts.py --generate-images
-
-echo "📋 Exporting captions..."
-$PYTHON scripts/preview_social_posts.py --export-caption
-
-echo "🗑️  Clearing social media queue..."
-sqlite3 backend/database/necro_games.db "DELETE FROM social_media_queue;"
+echo "📱 Generating social media content..."
+$PYTHON scripts/generate_social_content.py
 
 echo "📊 Generating report..."
 $PYTHON scripts/generate_report.py --days 7

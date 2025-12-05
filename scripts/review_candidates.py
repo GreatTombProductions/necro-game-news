@@ -338,6 +338,49 @@ def review_candidate(candidate: dict, index: int, total: int, conn) -> str:
             print(f"{Colors.RED}Invalid choice. Please enter y, n, s, o, or q{Colors.END}")
 
 
+def check_and_mark_duplicates(conn) -> int:
+    """
+    Check for candidates that are already in the games table and auto-approve them.
+
+    Returns:
+        Number of duplicates found and marked
+    """
+    cursor = conn.cursor()
+
+    # Find candidates with steam_id matching games in the games table
+    cursor.execute("""
+        SELECT c.id, c.steam_id, c.game_name, g.name as tracked_name
+        FROM candidates c
+        INNER JOIN games g ON c.steam_id = g.steam_id
+        WHERE c.status IN ('pending', 'skipped')
+    """)
+
+    duplicates = cursor.fetchall()
+
+    if not duplicates:
+        return 0
+
+    print(f"\n{Colors.CYAN}Found {len(duplicates)} candidate(s) already in games table:{Colors.END}")
+
+    for dup in duplicates:
+        candidate_id, steam_id, candidate_name, tracked_name = dup
+        print(f"  • {Colors.GREEN}{candidate_name}{Colors.END} (ID: {steam_id}) -> Already tracked as '{tracked_name}'")
+
+        # Mark as approved
+        cursor.execute("""
+            UPDATE candidates
+            SET status = 'approved',
+                review_notes = 'Auto-approved: Already in games table',
+                review_date = ?
+            WHERE id = ?
+        """, (datetime.now(), candidate_id))
+
+    conn.commit()
+    print(f"{Colors.GREEN}✓ Auto-marked {len(duplicates)} duplicate(s) as approved{Colors.END}\n")
+
+    return len(duplicates)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Review game candidates interactively",
@@ -386,11 +429,17 @@ Examples:
     # Get candidates
     conn = get_connection()
     try:
+        # First, check for and mark duplicates
+        duplicates_found = check_and_mark_duplicates(conn)
+
         candidates = get_pending_candidates(conn, include_statuses=include_statuses, limit=args.top)
 
         if not candidates:
-            print(f"\n{Colors.YELLOW}No candidates to review.{Colors.END}")
-            print(f"Run {Colors.CYAN}python scripts/discover_games.py --search --save{Colors.END} to find games")
+            if duplicates_found > 0:
+                print(f"\n{Colors.GREEN}All candidates were duplicates and have been auto-approved!{Colors.END}")
+            else:
+                print(f"\n{Colors.YELLOW}No candidates to review.{Colors.END}")
+                print(f"Run {Colors.CYAN}python scripts/discover_games.py --search --save{Colors.END} to find games")
             return
 
         print(f"\n{Colors.BOLD}{Colors.CYAN}{'='*80}{Colors.END}")
