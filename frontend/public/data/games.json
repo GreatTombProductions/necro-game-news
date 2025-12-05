@@ -38,7 +38,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-04 16:53:28.526612",
+    "last_checked": "2025-12-04 18:39:20.978803",
     "update_count": 20,
     "last_update": "2025-10-22 05:18:11"
   },
@@ -83,7 +83,7 @@
       "Action",
       "RPG"
     ],
-    "last_checked": "2025-12-04 16:53:30.149763",
+    "last_checked": "2025-12-04 18:39:22.460496",
     "update_count": 21,
     "last_update": "2025-12-04 04:12:38"
   },
@@ -121,7 +121,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-04 16:53:31.525676",
+    "last_checked": "2025-12-04 18:39:24.080105",
     "update_count": 20,
     "last_update": "2025-11-24 09:59:20"
   },
@@ -154,7 +154,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-04 16:53:34.031210",
+    "last_checked": "2025-12-04 18:39:25.751204",
     "update_count": 20,
     "last_update": "2025-12-01 09:01:00"
   },
@@ -162,19 +162,35 @@
     "id": 10,
     "steam_id": 3668370,
     "name": "Night Swarm",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Claim your throne as Vampire Lord in this survivors-like. Each run is another step on your journey with new followers, quests and skills to unlock. The night is yours to conquer.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1764880842",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
     "classification_notes": "Undead-summoning artifacts as part of gameplay mechanics",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
-    "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-04 16:53:27.064428",
+    "developer": "Fubu Games",
+    "publisher": "Mad Mushroom, Gamersky Games",
+    "release_date": "4 Dec, 2025",
+    "steam_tags": [
+      "Single-player",
+      "Steam Achievements",
+      "Full controller support",
+      "Custom Volume Controls",
+      "Adjustable Difficulty",
+      "Keyboard Only Option",
+      "Playable without Timed Input",
+      "Save Anytime",
+      "Steam Cloud",
+      "Family Sharing"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Casual",
+      "RPG"
+    ],
+    "last_checked": "2025-12-04 18:39:31.505932",
     "update_count": 8,
     "last_update": "2025-12-04 08:49:55"
   },
@@ -214,7 +230,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-04 16:53:34.655380",
+    "last_checked": "2025-12-04 18:39:27.030352",
     "update_count": 21,
     "last_update": "2025-12-04 11:30:00"
   },
@@ -258,7 +274,7 @@
       "Action",
       "Strategy"
     ],
-    "last_checked": "2025-12-04 16:53:36.017713",
+    "last_checked": "2025-12-04 18:39:28.630190",
     "update_count": 25,
     "last_update": "2025-12-04 09:12:13"
   },
@@ -303,7 +319,7 @@
       "Adventure",
       "Massively Multiplayer"
     ],
-    "last_checked": "2025-12-04 16:53:38.514990",
+    "last_checked": "2025-12-04 18:39:30.157300",
     "update_count": 20,
     "last_update": "2025-11-28 09:00:30"
   }
