@@ -6,7 +6,7 @@ Creates 3 caption variants and multiple image options for each game update,
 with descriptive filenames and Steam tags in the image banners.
 
 Usage:
-    # Generate content for today's updates (default)
+    # Generate content for last 2 days (default)
     python scripts/generate_social_content.py
 
     # Generate for all unprocessed updates
@@ -280,8 +280,11 @@ def main():
                 since_date = args.since
                 print(f"Processing updates since {since_date}...")
             else:
-                since_date = datetime.now().strftime('%Y-%m-%d')
-                print(f"Processing today's updates ({since_date})...")
+                # Default: last 2 days
+                from datetime import timedelta
+                lookback_date = datetime.now() - timedelta(days=2)
+                since_date = lookback_date.strftime('%Y-%m-%d')
+                print(f"Processing updates from last 2 days (since {since_date})...")
 
             if args.image_path:
                 print("Warning: --image-path is ignored when processing multiple updates")

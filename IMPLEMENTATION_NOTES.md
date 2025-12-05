@@ -82,7 +82,7 @@ python scripts/migrations/backfill_tags.py --force
 
 **Usage**:
 ```bash
-# Generate for today's updates (default)
+# Generate for last 2 days (default - catches anything missed)
 python scripts/generate_social_content.py
 
 # Generate for all unprocessed updates

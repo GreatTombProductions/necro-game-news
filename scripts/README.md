@@ -11,9 +11,10 @@ Generate social media content with multiple variants.
 - Improved file naming (YYYYMMDD_GameName)
 - Steam tags displayed in image banners
 - Custom image support
+- Default 2-day lookback window (catches anything missed)
 
 ```bash
-# Generate for today's updates (default)
+# Generate for last 2 days (default)
 python scripts/generate_social_content.py
 
 # Generate for all unprocessed updates
