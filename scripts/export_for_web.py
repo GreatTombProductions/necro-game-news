@@ -27,6 +27,8 @@ def export_games():
     cursor = conn.cursor()
     
     # Get games with update counts and last update info
+    # Update = game changes (patch, release, dlc)
+    # Announcement = news/promotional posts (announcement, event)
     cursor.execute("""
         SELECT
             g.id,
@@ -46,10 +48,12 @@ def export_games():
             g.genres,
             g.last_checked,
             (SELECT COUNT(*) FROM updates WHERE game_id = g.id) as update_count,
-            (SELECT date FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_update,
-            (SELECT url FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_update_url,
-            (SELECT date FROM updates WHERE game_id = g.id AND update_type = 'announcement' ORDER BY date DESC LIMIT 1) as last_announcement,
-            (SELECT url FROM updates WHERE game_id = g.id AND update_type = 'announcement' ORDER BY date DESC LIMIT 1) as last_announcement_url
+            (SELECT date FROM updates WHERE game_id = g.id AND update_type IN ('patch', 'release', 'dlc') ORDER BY date DESC LIMIT 1) as last_update,
+            (SELECT url FROM updates WHERE game_id = g.id AND update_type IN ('patch', 'release', 'dlc') ORDER BY date DESC LIMIT 1) as last_update_url,
+            (SELECT title FROM updates WHERE game_id = g.id AND update_type IN ('patch', 'release', 'dlc') ORDER BY date DESC LIMIT 1) as last_update_title,
+            (SELECT date FROM updates WHERE game_id = g.id AND update_type IN ('announcement', 'event') ORDER BY date DESC LIMIT 1) as last_announcement,
+            (SELECT url FROM updates WHERE game_id = g.id AND update_type IN ('announcement', 'event') ORDER BY date DESC LIMIT 1) as last_announcement_url,
+            (SELECT title FROM updates WHERE game_id = g.id AND update_type IN ('announcement', 'event') ORDER BY date DESC LIMIT 1) as last_announcement_title
         FROM games g
         WHERE g.is_active = 1
         ORDER BY g.name

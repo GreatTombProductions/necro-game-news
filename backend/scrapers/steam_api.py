@@ -225,16 +225,49 @@ class SteamAPI:
             'tags': tags  # User-generated tags from Steamspy
         }
     
+    def is_steam_official(self, news_item: Dict) -> bool:
+        """
+        Check if a news item is from an official Steam source (not external press).
+
+        Args:
+            news_item: News item from Steam API
+
+        Returns:
+            True if from official Steam/developer source, False if from external press
+        """
+        feedlabel = news_item.get('feedlabel', '').lower()
+        url = news_item.get('url', '')
+
+        # Known external press sources to exclude
+        external_sources = [
+            'pc gamer', 'pcgamesn', 'pcgamer', 'ign', 'kotaku', 'polygon',
+            'vg247', 'eurogamer', 'gamingonlinux', 'cgmagazine', 'rock paper shotgun',
+            'gamespot', 'destructoid', 'gamesradar', 'thegamer'
+        ]
+
+        # Check feedlabel for external sources
+        if any(source in feedlabel for source in external_sources):
+            return False
+
+        # Check URL pattern - external posts have the source name in the URL
+        if '/externalpost/' in url:
+            # Only steam_community_announcements are official
+            if 'steam_community_announcement' not in url.lower():
+                return False
+
+        return True
+
     def classify_update_type(self, news_item: Dict) -> str:
         """
         Classify an update as patch/announcement/dlc/event/release based on content.
 
-        Uses Steam's feedlabel and content keywords with priority ordering:
-        1. Release announcements (highest priority)
-        2. Patches/updates
-        3. DLC
-        4. Events (sales, promotions)
-        5. General announcements (default)
+        Classification strategy:
+        1. First check Steam's tags array (most reliable when present)
+        2. Fall back to keyword-based classification
+
+        For our purposes:
+        - UPDATE (game changes): patch, release, dlc
+        - ANNOUNCEMENT (news): announcement, event
 
         Args:
             news_item: News item from Steam API
@@ -242,34 +275,57 @@ class SteamAPI:
         Returns:
             Update type: 'patch', 'announcement', 'dlc', 'event', 'release'
         """
+        tags = news_item.get('tags', [])
         title = news_item.get('title', '').lower()
         contents = news_item.get('contents', '').lower()
         feedlabel = news_item.get('feedlabel', '').lower()
 
-        # Filter out external news sources - only use official Steam posts
-        external_sources = ['pc gamer', 'pcgamesn', 'ign', 'kotaku', 'polygon', 'vg247', 'eurogamer']
-        if any(source in feedlabel for source in external_sources):
-            return 'announcement'  # External news = general announcement
+        # =================================================================
+        # STEP 1: Check Steam's tags (most reliable when present)
+        # =================================================================
+        # Steam tag -> our classification mapping
+        TAG_MAPPING = {
+            # Update types (game changes)
+            'patchnotes': 'patch',
+            # Announcement types (news/promotional)
+            'steam_award_nomination_request': 'announcement',
+            'vo_marketing_message': 'announcement',
+            'workshop': 'announcement',
+        }
 
+        # Tags to ignore (moderation-related)
+        IGNORE_TAGS = {'mod_reviewed', 'mod_require_rereview', 'mod_hide_library_overview', 'hide_store'}
+
+        for tag in tags:
+            # Skip moderation tags and ModAct_* tags
+            if tag in IGNORE_TAGS or tag.startswith('ModAct_'):
+                continue
+            if tag in TAG_MAPPING:
+                return TAG_MAPPING[tag]
+
+        # =================================================================
+        # STEP 2: Fall back to keyword-based classification
+        # =================================================================
         # Combined text for analysis (title weighted more heavily)
         title_text = title * 2  # Title is more important than body
         text = f"{title_text} {contents}"
 
         # PRIORITY 1: Game releases/launches (highest priority)
-        # Check title first for strong indicators
         release_title_keywords = [
             'is now live', 'now available', 'out now', 'has launched',
             'launch day', 'release day', 'officially released'
-        ]
-        release_keywords = [
-            'launch', 'release', 'launches', 'released', 'out now'
         ]
 
         # Strong release indicators in title = definite release
         if any(keyword in title for keyword in release_title_keywords):
             return 'release'
 
+        # "Season X Now Live" type announcements are content updates (releases)
+        if 'season' in title and ('now live' in title or 'is live' in title):
+            return 'release'
+
         # Release keywords with supporting context
+        release_keywords = ['launch', 'release', 'launches', 'released']
         if any(keyword in title for keyword in release_keywords):
             # Make sure it's not about a patch release
             if not any(word in title for word in ['patch', 'hotfix', 'update ', 'version']):
@@ -277,15 +333,15 @@ class SteamAPI:
 
         # PRIORITY 2: Patches/updates
         patch_keywords = [
-            'patch', 'hotfix', 'update', 'bugfix', 'bug fix',
-            'maintenance', 'version', 'changelog', 'fixed',
-            'balance', 'nerf', 'buff', 'patch notes'
+            'patch', 'hotfix', 'bugfix', 'bug fix',
+            'maintenance', 'changelog', 'fixed',
+            'balance change', 'nerf', 'buff', 'patch notes'
         ]
 
         if any(keyword in text for keyword in patch_keywords):
             return 'patch'
 
-        # Use feedlabel for patches
+        # "Update X.X" or "Version X.X" patterns (but not "update on" or "latest update")
         if feedlabel == 'product update':
             return 'patch'
 
@@ -298,21 +354,19 @@ class SteamAPI:
         if any(keyword in text for keyword in dlc_keywords):
             return 'dlc'
 
-        # PRIORITY 4: Events (sales, promotions, in-game events)
-        # These should NOT trigger on launch discounts
+        # PRIORITY 4: Events (sales, promotions)
+        # Note: "event" for us means promotional, not in-game content events
         event_keywords = [
-            'weekend event', 'special event', 'seasonal event',
-            'contest', 'giveaway', 'vote', 'awards', 'tournament',
-            'free weekend', 'double xp', 'bonus rewards'
+            'steam awards', 'vote for', 'nominate',
+            'contest', 'giveaway', 'tournament',
+            'free weekend', 'free to play weekend'
         ]
 
-        # Sale indicators (but not launch discounts)
         if any(keyword in text for keyword in event_keywords):
             return 'event'
 
-        # Check for sales, but exclude launch context
-        if 'sale' in text or 'discount' in text:
-            # If it's a launch context, it's a release, not an event
+        # Sales and discounts
+        if ('sale' in text or 'discount' in text or '% off' in text):
             if 'launch' not in text and 'release' not in text:
                 return 'event'
 

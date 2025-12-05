@@ -7,7 +7,7 @@ import {
   getPaginationRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import type { ColumnDef, FilterFn } from '@tanstack/react-table';
+import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
 import type { Game } from '../types';
 
 interface GamesTableProps {
@@ -44,6 +44,16 @@ const TAXONOMY_INFO = {
   },
 };
 
+// Centrality sort order: Higher = better (Core at top when sorting descending)
+// a (Core) = 3, b (Dedicated Spec) = 2, c (Isolated) = 1, d (Minimal) = 0
+const centralitySortOrder: Record<string, number> = { a: 3, b: 2, c: 1, d: 0 };
+
+const centralitySortFn: SortingFn<Game> = (rowA, rowB, columnId) => {
+  const a = rowA.getValue(columnId) as string;
+  const b = rowB.getValue(columnId) as string;
+  return centralitySortOrder[a] - centralitySortOrder[b];
+};
+
 // Custom filter function that searches only name and developer
 const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
   const search = filterValue.toLowerCase();
@@ -61,7 +71,7 @@ const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
   return false;
 };
 
-// Tooltip wrapper component for cell values
+// Tooltip wrapper component for cell values (only used for Centrality)
 function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
   return (
     <div className="group relative inline-block">
@@ -74,8 +84,23 @@ function CellTooltip({ children, text }: { children: React.ReactNode; text: stri
   );
 }
 
+// Tooltip for genres overflow
+function GenresTooltip({ children, genres }: { children: React.ReactNode; genres: string[] }) {
+  if (genres.length === 0) return <>{children}</>;
+
+  return (
+    <div className="group relative inline-block">
+      {children}
+      <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+        {genres.join(', ')}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+      </div>
+    </div>
+  );
+}
+
 // Help icon with popover showing all values for a column
-function HelpIcon({ info }: { info: typeof TAXONOMY_INFO.centrality }) {
+function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.centrality; alignRight?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -96,7 +121,11 @@ function HelpIcon({ info }: { info: typeof TAXONOMY_INFO.centrality }) {
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3">
+          <div
+            className={`absolute top-full mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 ${
+              alignRight ? 'right-0' : 'left-1/2 -translate-x-1/2'
+            }`}
+          >
             <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
             <div className="text-xs text-gray-400 mb-3">{info.description}</div>
             <div className="space-y-2">
@@ -107,7 +136,9 @@ function HelpIcon({ info }: { info: typeof TAXONOMY_INFO.centrality }) {
                 </div>
               ))}
             </div>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+            {!alignRight && (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+            )}
           </div>
         </>
       )}
@@ -141,6 +172,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         header: 'Genres',
         cell: info => {
           const genres = info.getValue() as string[];
+          const hiddenGenres = genres.slice(2);
           return (
             <div className="flex flex-wrap gap-1">
               {genres.slice(0, 2).map((genre, i) => (
@@ -148,8 +180,10 @@ export default function GamesTable({ games }: GamesTableProps) {
                   {genre}
                 </span>
               ))}
-              {genres.length > 2 && (
-                <span className="text-xs text-gray-500">+{genres.length - 2}</span>
+              {hiddenGenres.length > 0 && (
+                <GenresTooltip genres={hiddenGenres}>
+                  <span className="text-xs text-gray-500 cursor-help">+{hiddenGenres.length}</span>
+                </GenresTooltip>
               )}
             </div>
           );
@@ -161,6 +195,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => {
           const date = info.getValue() as string | undefined;
           const url = info.row.original.last_update_url;
+          const title = info.row.original.last_update_title;
 
           if (!date) return <span className="text-xs text-gray-600">Never</span>;
 
@@ -171,21 +206,24 @@ export default function GamesTable({ games }: GamesTableProps) {
             formatted = date;
           }
 
-          if (url) {
-            return (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {formatted}
-              </a>
-            );
-          }
+          const content = url ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {formatted}
+            </a>
+          ) : (
+            <span className="text-xs text-gray-500">{formatted}</span>
+          );
 
-          return <span className="text-xs text-gray-500">{formatted}</span>;
+          if (title) {
+            return <CellTooltip text={title}>{content}</CellTooltip>;
+          }
+          return content;
         },
       },
       {
@@ -194,6 +232,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => {
           const date = info.getValue() as string | undefined;
           const url = info.row.original.last_announcement_url;
+          const title = info.row.original.last_announcement_title;
 
           if (!date) return <span className="text-xs text-gray-600">None</span>;
 
@@ -204,21 +243,24 @@ export default function GamesTable({ games }: GamesTableProps) {
             formatted = date;
           }
 
-          if (url) {
-            return (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {formatted}
-              </a>
-            );
-          }
+          const content = url ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {formatted}
+            </a>
+          ) : (
+            <span className="text-xs text-gray-500">{formatted}</span>
+          );
 
-          return <span className="text-xs text-gray-500">{formatted}</span>;
+          if (title) {
+            return <CellTooltip text={title}>{content}</CellTooltip>;
+          }
+          return content;
         },
       },
       // Degree of Necromancy column group - moved to far right
@@ -236,6 +278,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                 <HelpIcon info={TAXONOMY_INFO.centrality} />
               </span>
             ),
+            sortingFn: centralitySortFn,
             cell: info => {
               const val = info.getValue() as string;
               const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
@@ -262,11 +305,9 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.pov.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
-                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
-                    {valueInfo.label}
-                  </span>
-                </CellTooltip>
+                <span className={`text-sm ${valueInfo.color} capitalize`}>
+                  {valueInfo.label}
+                </span>
               );
             },
           },
@@ -275,7 +316,7 @@ export default function GamesTable({ games }: GamesTableProps) {
             header: () => (
               <span className="flex items-center">
                 Naming
-                <HelpIcon info={TAXONOMY_INFO.naming} />
+                <HelpIcon info={TAXONOMY_INFO.naming} alignRight />
               </span>
             ),
             cell: info => {
@@ -283,11 +324,9 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.naming.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
-                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
-                    {valueInfo.label}
-                  </span>
-                </CellTooltip>
+                <span className={`text-sm ${valueInfo.color} capitalize`}>
+                  {valueInfo.label}
+                </span>
               );
             },
           },

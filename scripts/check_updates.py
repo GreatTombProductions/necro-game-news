@@ -73,24 +73,30 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 20) ->
         # Check which ones are new
         new_count = 0
         skipped_count = 0
-        
+        external_count = 0
+
         for news_item in news_items:
+            # Filter out external press sources (PC Gamer, PCGamesN, etc.)
+            if not steam_api.is_steam_official(news_item):
+                external_count += 1
+                continue
+
             parsed = steam_api.parse_news_item(news_item, steam_id)
             gid = parsed['gid']
-            
+
             # Check if this update already exists
             cursor.execute(
                 "SELECT id FROM updates WHERE gid = ?",
                 (gid,)
             )
-            
+
             if cursor.fetchone():
                 skipped_count += 1
                 continue
-            
+
             # Add new update
             cursor.execute("""
-                INSERT INTO updates 
+                INSERT INTO updates
                 (game_id, update_type, title, content, url, gid, date)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
@@ -102,7 +108,7 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 20) ->
                 gid,
                 parsed['date']
             ))
-            
+
             new_count += 1
             logger.info(f"  + [{parsed['update_type']}] {parsed['title'][:50]}...")
         
@@ -115,9 +121,9 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 20) ->
         conn.commit()
         
         if new_count > 0:
-            logger.info(f"  ✓ Added {new_count} new updates ({skipped_count} already in database)")
+            logger.info(f"  ✓ Added {new_count} new updates ({skipped_count} existing, {external_count} external filtered)")
         else:
-            logger.info(f"  ⊙ No new updates (all {skipped_count} already in database)")
+            logger.info(f"  ⊙ No new updates ({skipped_count} existing, {external_count} external filtered)")
         
         return new_count
         

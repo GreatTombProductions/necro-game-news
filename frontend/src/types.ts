@@ -18,8 +18,10 @@ export interface Game {
   update_count: number;
   last_update?: string;
   last_update_url?: string;
+  last_update_title?: string;
   last_announcement?: string;
   last_announcement_url?: string;
+  last_announcement_title?: string;
 }
 
 export interface Stats {
