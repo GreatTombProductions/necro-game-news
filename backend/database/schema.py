@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS candidates (
     source TEXT CHECK(source IN ('user_submission', 'auto_discovery', 'manual')),
     submitter_contact TEXT,
     justification TEXT,
-    status TEXT DEFAULT 'pending' CHECK(status IN ('pending', 'approved', 'rejected')),
+    status TEXT DEFAULT 'pending' CHECK(status IN ('pending', 'approved', 'rejected', 'skipped')),
     
     -- Review information
     reviewed_by TEXT,
