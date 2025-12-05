@@ -27,13 +27,15 @@ class ContentGenerator:
         self.conn = get_connection(db_path)
 
     def get_unprocessed_updates(self, limit: Optional[int] = None,
-                               since_date: Optional[str] = None) -> List[Dict]:
+                               since_date: Optional[str] = None,
+                               ignore_processed: bool = False) -> List[Dict]:
         """
         Get updates that haven't been processed for social media yet.
 
         Args:
             limit: Maximum number of updates to return
             since_date: Only return updates from this date onwards (ISO format: YYYY-MM-DD)
+            ignore_processed: If True, include already-processed updates (for dev/testing)
 
         Returns:
             List of update dictionaries with game information joined
@@ -59,9 +61,12 @@ class ContentGenerator:
                 g.steam_tags
             FROM updates u
             JOIN games g ON u.game_id = g.id
-            WHERE u.processed_for_social = 0
-            AND g.is_active = 1
+            WHERE g.is_active = 1
         """
+
+        # Only check processed status if not ignoring it
+        if not ignore_processed:
+            query += " AND u.processed_for_social = 0"
 
         params = []
 

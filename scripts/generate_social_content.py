@@ -15,6 +15,9 @@ Usage:
     # Generate for specific date onwards
     python scripts/generate_social_content.py --since 2025-12-01
 
+    # Reprocess already-processed updates (for dev/testing)
+    python scripts/generate_social_content.py --reprocess
+
     # Generate for specific update
     python scripts/generate_social_content.py --update-id 42
 
@@ -253,6 +256,11 @@ def main():
         type=Path,
         help='Use custom image file (only with --update-id)'
     )
+    parser.add_argument(
+        '--reprocess',
+        action='store_true',
+        help='Reprocess already-processed updates (useful for dev/testing)'
+    )
 
     args = parser.parse_args()
 
@@ -291,7 +299,10 @@ def main():
 
             print()
 
-            updates = gen.get_unprocessed_updates(since_date=since_date)
+            updates = gen.get_unprocessed_updates(
+                since_date=since_date,
+                ignore_processed=args.reprocess
+            )
 
             if not updates:
                 print("No unprocessed updates found")

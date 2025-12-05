@@ -1,5 +1,5 @@
 #!/bin/bash
-# Quick deploy script for Necro Game News
+# Deployment script for Necro Game News with interactive options
 
 set -e  # Exit on error
 
@@ -28,24 +28,167 @@ fi
 # Use DATABASE_PATH from .env or default
 DB_PATH="${DATABASE_PATH:-data/necro_games.db}"
 
-echo "🔍 Checking for updates..."
-$PYTHON scripts/check_updates.py
+# Parse command line arguments
+MODE=""
+REPROCESS=""
 
-echo "📤 Exporting data for web..."
-$PYTHON scripts/export_for_web.py
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --full)
+            MODE="full"
+            shift
+            ;;
+        --updates-only)
+            MODE="updates"
+            shift
+            ;;
+        --content-only)
+            MODE="content"
+            shift
+            ;;
+        --reprocess)
+            REPROCESS="--reprocess"
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Usage: $0 [--full|--updates-only|--content-only] [--reprocess]"
+            exit 1
+            ;;
+    esac
+done
 
-echo "📱 Generating social media content..."
-$PYTHON scripts/generate_social_content.py
+# Interactive menu if no mode specified
+if [ -z "$MODE" ]; then
+    echo "=================================================="
+    echo "Necro Game News - Deployment Options"
+    echo "=================================================="
+    echo ""
+    echo "Choose deployment mode:"
+    echo ""
+    echo "  1) Full Deploy"
+    echo "     - Check for Steam updates"
+    echo "     - Export data for web"
+    echo "     - Generate social media content"
+    echo "     - Create weekly report"
+    echo "     - Commit & deploy to Vercel"
+    echo ""
+    echo "  2) Updates + Deploy (skip social content)"
+    echo "     - Check for Steam updates"
+    echo "     - Export data for web"
+    echo "     - Create weekly report"
+    echo "     - Commit & deploy to Vercel"
+    echo ""
+    echo "  3) Social Content Only"
+    echo "     - Generate social media content"
+    echo "     - (no git commit/deploy)"
+    echo ""
+    echo -n "Enter choice [1-3]: "
+    read -r choice
 
-echo "📊 Generating report..."
-$PYTHON scripts/generate_report.py --days 7
+    case $choice in
+        1)
+            MODE="full"
+            ;;
+        2)
+            MODE="updates"
+            ;;
+        3)
+            MODE="content"
+            ;;
+        *)
+            echo "Invalid choice. Exiting."
+            exit 1
+            ;;
+    esac
 
-echo "📝 Committing changes..."
-git add frontend/public/data/*.json
-git commit -m "Update game data: $(date +%Y-%m-%d)" || echo "No changes to commit"
+    # Ask about reprocessing if generating content
+    if [ "$MODE" = "full" ] || [ "$MODE" = "content" ]; then
+        echo ""
+        echo -n "Reprocess already-processed updates? [y/N]: "
+        read -r reprocess_choice
+        if [ "$reprocess_choice" = "y" ] || [ "$reprocess_choice" = "Y" ]; then
+            REPROCESS="--reprocess"
+        fi
+    fi
 
-echo "🚀 Pushing to GitHub (will trigger Vercel deploy)..."
-git push origin main
+    echo ""
+fi
 
-echo "✅ Deployment complete!"
-echo "🌐 Check status at: https://necrotic-realms.vercel.app/"
+echo "=================================================="
+echo "Starting deployment: $MODE"
+if [ -n "$REPROCESS" ]; then
+    echo "Mode: Reprocessing enabled"
+fi
+echo "=================================================="
+echo ""
+
+# Execute based on mode
+case $MODE in
+    full)
+        echo "🔍 Checking for updates..."
+        $PYTHON scripts/check_updates.py
+
+        echo ""
+        echo "📤 Exporting data for web..."
+        $PYTHON scripts/export_for_web.py
+
+        echo ""
+        echo "📱 Generating social media content..."
+        $PYTHON scripts/generate_social_content.py $REPROCESS
+
+        echo ""
+        echo "📊 Generating report..."
+        $PYTHON scripts/generate_report.py --days 7
+
+        echo ""
+        echo "📝 Committing changes..."
+        git add frontend/public/data/*.json
+        git commit -m "Update game data: $(date +%Y-%m-%d)" || echo "No changes to commit"
+
+        echo ""
+        echo "🚀 Pushing to GitHub (will trigger Vercel deploy)..."
+        git push origin main
+
+        echo ""
+        echo "✅ Full deployment complete!"
+        ;;
+
+    updates)
+        echo "🔍 Checking for updates..."
+        $PYTHON scripts/check_updates.py
+
+        echo ""
+        echo "📤 Exporting data for web..."
+        $PYTHON scripts/export_for_web.py
+
+        echo ""
+        echo "📊 Generating report..."
+        $PYTHON scripts/generate_report.py --days 7
+
+        echo ""
+        echo "📝 Committing changes..."
+        git add frontend/public/data/*.json
+        git commit -m "Update game data: $(date +%Y-%m-%d)" || echo "No changes to commit"
+
+        echo ""
+        echo "🚀 Pushing to GitHub (will trigger Vercel deploy)..."
+        git push origin main
+
+        echo ""
+        echo "✅ Updates deployment complete!"
+        echo "💡 Remember to generate social content separately if needed"
+        ;;
+
+    content)
+        echo "📱 Generating social media content..."
+        $PYTHON scripts/generate_social_content.py $REPROCESS
+
+        echo ""
+        echo "✅ Social content generation complete!"
+        echo "📁 Check content/posts/ and content/captions/ for generated files"
+        ;;
+esac
+
+echo ""
+echo "🌐 Website: https://necrotic-realms.vercel.app/"
