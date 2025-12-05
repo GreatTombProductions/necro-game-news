@@ -19,6 +19,15 @@ $PYTHON scripts/check_updates.py
 echo "📤 Exporting data for web..."
 $PYTHON scripts/export_for_web.py
 
+echo "📱 Generating social media posts..."
+$PYTHON scripts/generate_social_posts.py --generate-images
+
+echo "📋 Exporting captions..."
+$PYTHON scripts/preview_social_posts.py --export-caption
+
+echo "🗑️  Clearing social media queue..."
+sqlite3 backend/database/necro_games.db "DELETE FROM social_media_queue;"
+
 echo "📊 Generating report..."
 $PYTHON scripts/generate_report.py --days 7
 
