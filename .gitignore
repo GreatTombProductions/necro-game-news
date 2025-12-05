@@ -104,3 +104,5 @@ backend/config/secrets.yaml
 # Frontend build
 frontend/dist/
 frontend/.vite/
+
+content/*

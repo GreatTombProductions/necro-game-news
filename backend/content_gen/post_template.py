@@ -77,7 +77,7 @@ class PostTemplate:
         Game Info:
         - Release Date: [date]
         - Genres: [genres]
-        - Price: [price]
+        - Price (US region): [price]
         - Necromancy: [degree description]
 
         #necromancy #gaming #[gamename]
@@ -197,9 +197,9 @@ class PostTemplate:
         # Price
         if self.game_price_usd is not None:
             if self.game_price_usd == 0.0:
-                stats.append("- Price: Free")
+                stats.append("- Price (US region): Free")
             else:
-                stats.append(f"- Price: ${self.game_price_usd:.2f}")
+                stats.append(f"- Price (US region): ${self.game_price_usd:.2f}")
 
         # Necromancy degree
         if self.game_dimension_1:
