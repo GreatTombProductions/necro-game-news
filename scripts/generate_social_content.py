@@ -48,7 +48,7 @@ def sanitize_filename(text: str) -> str:
     return safe[:50]
 
 
-def generate_caption_variants(template: PostTemplate, num_variants: int = 3) -> List[str]:
+def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> List[str]:
     """
     Generate multiple caption variants with different styles.
     """
@@ -58,7 +58,7 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 3) -> 
     captions.append(template.generate_caption())
 
     # Variant 2: Shorter, punchier
-    if template.update_content:
+    if template.update_content and num_variants > 1:
         import os
         from anthropic import Anthropic
 
@@ -98,7 +98,7 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 3) -> 
         captions.append(captions[0])
 
     # Variant 3: Question/engagement focused
-    if template.update_content and 'client' in locals():
+    if template.update_content and 'client' in locals() and num_variants > 2:
         try:
             message = client.messages.create(
                 model="claude-3-5-haiku-20241022",
@@ -149,24 +149,18 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
     gen = ContentGenerator()
     template = gen.generate_post(update_data)
 
-    # Parse tags
+    # Parse genres/tags
     tags = []
-    if update_data.get('steam_tags'):
-        try:
-            tags = json.loads(update_data['steam_tags'])
-        except (json.JSONDecodeError, TypeError):
-            pass
-
-    # Fallback to genres
-    if not tags and update_data.get('genres'):
+    if update_data.get('genres'):
         try:
             tags = json.loads(update_data['genres'])
         except (json.JSONDecodeError, TypeError):
             pass
 
-    # Create base filename
+    # Create base filename with update ID for easy regeneration
     date_str = datetime.now().strftime("%Y%m%d")
     game_safe = sanitize_filename(update_data['game_name'])
+    update_id = update_data['id']
     base_filename = f"{date_str}_{game_safe}"
 
     # Ensure directories exist
@@ -178,7 +172,7 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
     # Generate captions
     captions = generate_caption_variants(template, num_variants=3)
     for i, caption in enumerate(captions, 1):
-        caption_file = captions_dir / f"{base_filename}_caption_{i}.txt"
+        caption_file = captions_dir / f"{base_filename}_caption_{update_id}_{i}.txt"
         with open(caption_file, 'w', encoding='utf-8') as f:
             f.write(caption)
 
@@ -188,7 +182,7 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
 
     if custom_image_path:
         # Use custom image
-        output_file = f"{base_filename}_image_1.jpg"
+        output_file = f"{base_filename}_image_{update_id}_1.jpg"
         try:
             compositor.compose_from_template(
                 template_data,
@@ -211,7 +205,7 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
         image_urls = image_urls[:3]
 
         for i, image_url in enumerate(image_urls, 1):
-            output_file = f"{base_filename}_image_{i}.jpg"
+            output_file = f"{base_filename}_image_{update_id}_{i}.jpg"
             try:
                 compositor.compose_post_image(
                     image_url=image_url,
@@ -319,6 +313,11 @@ def main():
     print(f"✓ Content generated in:")
     print(f"  Images:   content/posts/")
     print(f"  Captions: content/captions/")
+    print()
+    print("💡 To regenerate content for a specific update (optionally with custom image):")
+    print("   python scripts/generate_social_content.py --update-id <ID> --reprocess --image-path ~/image.jpg")
+    print()
+    print("   (Update IDs are in the filename: YYYYMMDD_GameName_type_<ID>_N)")
     print("=" * 80)
 
     return 0
