@@ -1,8 +1,8 @@
 Necro Game News tracks game updates for necromantic games via automated Steam scraping, a searchable website, and social media content generation.
 
-CURRENT STATUS: Phase 2.1 - Social Media Pipeline ✅
+CURRENT STATUS: Phase 2 COMPLETE ✅ → Phase 3 Starting
 Live Website: https://necrotic-realms.vercel.app/
-Instagram Content: Manual posting workflow ready
+Instagram Content: Daily automated generation (manual posting)
 
 NECROMANCY CLASSIFICATION (3 dimensions, highest satisfied per dimension):
 - Dim 1 Centrality: a) Core class > b) Specialization > c) Isolated features > d) Flavor only
@@ -12,8 +12,8 @@ NECROMANCY CLASSIFICATION (3 dimensions, highest satisfied per dimension):
 TECH STACK:
 - Backend: Python 3.11+, Steam Web API, SQLite
 - Frontend: React + Vite, TanStack Table, Tailwind (DEPLOYED on Vercel)
-- Automation: Local scripts (ready for cron)
-- Social: Instagram (Phase 2 - Meta Graph API)
+- Automation: Local scripts (deploy.sh)
+- Social: Instagram (manual posting, API pending)
 
 PHASE 1 COMPLETE:
 ✅ Database schema with 8 games, 196 updates
@@ -22,16 +22,17 @@ PHASE 1 COMPLETE:
 ✅ Vercel deployment with auto-deploy on push
 ✅ Export pipeline (DB → JSON → Frontend)
 
-PHASE 2.1 COMPLETE (Social Media):
-✅ Instagram post template system with content philosophy
-✅ Image compositor (game screenshots + text overlays)
+PHASE 2 COMPLETE (Social Media - Manual Workflow):
+✅ Instagram post template with AI caption generation
+✅ Image compositor (4:5 aspect ratio, 1080×1350 for Instagram feed)
 ✅ High-resolution screenshots (1920×1080, not 460×215 headers)
-✅ Content generator pulling from database
-✅ Queue management system
+✅ Content generator with date filtering (ephemeral, not backlog-focused)
+✅ Ephemeral queue system (clears daily, no accumulation)
+✅ Clean captions (no header, starts with AI summary)
 ✅ Improved classification (5 types: patch, announcement, dlc, event, release)
 ✅ Caption export to text files
-✅ Preview and manual posting workflow
-✅ 155+ updates ready for content generation
+✅ Integrated into daily deploy.sh workflow
+✅ Date filtering: defaults to today, --since for specific dates, --all for backlog
 
 KEY SCRIPTS:
 - scripts/check_updates.py - Check for new game updates
@@ -40,20 +41,32 @@ KEY SCRIPTS:
 - scripts/view_database.py --stats - View database contents
 - scripts/generate_report.py --days 7 - Generate reports
 - scripts/fetch_game_details.py - Fetch high-res screenshots from Steam
-- scripts/generate_social_posts.py - Queue updates for Instagram
+- scripts/generate_social_posts.py - Generate posts (defaults to today, use --since or --all)
 - scripts/preview_social_posts.py - Preview, export captions, manage queue
+- scripts/deploy.sh - Complete daily workflow (updates, social, deploy)
 
-DAILY WORKFLOW (current, all handled by ./scripts/deploy.sh):
+DAILY WORKFLOW (automated via ./scripts/deploy.sh):
 1. python scripts/check_updates.py
 2. python scripts/export_for_web.py
-3. git add/commit/push (triggers Vercel deploy)
+3. python scripts/generate_social_posts.py --generate-images (today's updates only)
+4. python scripts/preview_social_posts.py --export-caption
+5. Clear social media queue (ephemeral, no accumulation)
+6. python scripts/generate_report.py --days 7
+7. git add/commit/push (triggers Vercel deploy)
 
-PHASE 2 NEXT STEPS:
-1. ✅ Instagram content pipeline (DONE!)
-2. Start posting content manually (build audience)
-3. Apply for Instagram API access (requires established account)
-4. Set up cron automation for update checking
-5. Expand to 50+ games
-6. Add user submission form
+Post content is in content/posts/ (images) and content/captions/ (text files)
 
-See PROGRESS.md, TECHNICAL_ROADMAP.md, and PROJECT_INSTRUCTIONS.md for full details.
+PHASE 2.3 - DEFERRED (Instagram API automation):
+- Apply for Instagram API access (requires established account)
+- Automated posting via Meta Graph API
+- NOTE: Manual workflow via deploy.sh is sufficient for now
+
+PHASE 3 PRIORITIES:
+1. Set up cron automation for daily deploy.sh
+2. Start posting Instagram content manually (build audience)
+3. Expand to 20-30 games (then 50+)
+4. Add user submission form
+5. Advanced filtering on website
+6. Email notifications for new updates (optional)
+
+See docs/STATUS_SUMMARY.md, docs/PROGRESS.md, and docs/TECHNICAL_ROADMAP.md for full details.
