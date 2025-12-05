@@ -1,21 +1,26 @@
 [
   {
-    "id": 54,
+    "id": 102,
     "steam_id": 1904480,
     "name": "Absolum",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Fight as the outcast heroes of Talamh in a fierce battle to retake magic from Sun King Azra\u2019s grasp in Absolum, an original roguelite beat \u2018em up by Dotemu.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1904480/65f868078425ea29b87cb85075fcd1b3a8b71400/header.jpg?t=1763489963",
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Dotemu, Guard Crush Games, Supamonks",
+    "publisher": "Dotemu, Gamirror Games",
+    "release_date": "Oct 9, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:54:59.093320",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "RPG"
+    ],
+    "last_checked": "2025-12-05 11:03:17.703254",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -25,22 +30,25 @@
     "last_announcement_title": null
   },
   {
-    "id": 62,
+    "id": 110,
     "steam_id": 2062430,
     "name": "BALL x PIT",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "BALL x PIT is a brick-breaking, ball-fusing, base-building survival roguelite. Batter hordes of enemies with ricocheting balls and gather the riches of the pit to expand your homestead, generate resources and recruit unique heroes.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062430/a157aa8de4bd9070194ddffb27c31636355dca05/header.jpg?t=1764122366",
     "dimension_1": "d",
     "dimension_2": "character",
     "dimension_3": "implied",
     "classification_notes": "Firing ghost balls counts as necromancy by technicality",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Kenny Sun and Friends",
+    "publisher": "Devolver Digital",
+    "release_date": "15 Oct, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:55:02.104891",
+    "genres": [
+      "Action",
+      "Indie"
+    ],
+    "last_checked": "2025-12-05 11:03:29.792485",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -50,7 +58,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 69,
+    "id": 117,
     "steam_id": 1086940,
     "name": "Baldur's Gate 3",
     "app_type": "game",
@@ -80,7 +88,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:37.957694",
+    "last_checked": "2025-12-05 11:03:40.232440",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -90,7 +98,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 82,
+    "id": 130,
     "steam_id": 2499520,
     "name": "Be My Horde",
     "app_type": "game",
@@ -121,7 +129,7 @@
       "Simulation",
       "Early Access"
     ],
-    "last_checked": "2025-12-05 10:55:57.490276",
+    "last_checked": "2025-12-05 11:03:59.827407",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -131,7 +139,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 89,
+    "id": 137,
     "steam_id": 1944570,
     "name": "Boneraiser Minions",
     "app_type": "game",
@@ -162,7 +170,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:07.976311",
+    "last_checked": "2025-12-05 11:04:10.322712",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -172,22 +180,25 @@
     "last_announcement_title": null
   },
   {
-    "id": 61,
+    "id": 109,
     "steam_id": 3332600,
     "name": "Cubic Cosmos",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Cubic Cosmos is a thrilling fast-paced roguelike card game. You have been trapped in a deadly game. One wrong move could see you reduced to a plaything of the goddess. Can you free yourself from the endless cycle and escape your fate?",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3332600/da80a7f6636d905813b2c51a137749cce5de4dcd/header.jpg?t=1764063944",
     "dimension_1": "d",
     "dimension_2": "unit",
     "dimension_3": "explicit",
     "classification_notes": "",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Inkstone Atelier",
+    "publisher": "Lilith Games",
+    "release_date": "16 Sep, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:55:00.573460",
+    "genres": [
+      "Strategy",
+      "Early Access"
+    ],
+    "last_checked": "2025-12-05 11:03:28.207788",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -197,7 +208,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 6,
+    "id": 96,
     "steam_id": 1313140,
     "name": "Cult of the Lamb",
     "app_type": "game",
@@ -228,17 +239,17 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:09.786098",
-    "update_count": 16,
-    "last_update": "2025-02-07 09:28:23",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102659495",
-    "last_update_title": "PC/Mac Hotfix Live",
-    "last_announcement": "2025-10-22 02:08:55",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641404922",
-    "last_announcement_title": "New Cult of the Lamb: Woolhaven Ranching Overview Gameplay Revealed!"
+    "last_checked": "2025-12-05 11:03:08.733193",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 81,
+    "id": 129,
     "steam_id": 388410,
     "name": "Darksiders II Deathinitive Edition",
     "app_type": "game",
@@ -268,7 +279,7 @@
       "Adventure",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:55.949580",
+    "last_checked": "2025-12-05 11:03:58.316867",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -278,7 +289,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 68,
+    "id": 116,
     "steam_id": 814530,
     "name": "Death Crown",
     "app_type": "game",
@@ -307,7 +318,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:36.395271",
+    "last_checked": "2025-12-05 11:03:38.758987",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -317,7 +328,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 83,
+    "id": 131,
     "steam_id": 3179730,
     "name": "Deck of Haunts",
     "app_type": "game",
@@ -347,7 +358,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:59.045907",
+    "last_checked": "2025-12-05 11:04:01.390399",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -357,22 +368,26 @@
     "last_announcement_title": null
   },
   {
-    "id": 67,
+    "id": 115,
     "steam_id": 2159900,
     "name": "Decks of the Damned",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Raise an undead army in Decks of the Damned! Command your vampire minions, scavenge gear from fallen foes and craft powerful items to strenghten your forces. Defend by day, expand your domain by night, and shroud the land in darkness!",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2159900/b555281c3e3312c385aced7ded3efd3f06c5b821/header.jpg?t=1761062256",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Thorian Games",
+    "publisher": "Goblinz Publishing, Maple Whispering Limited",
+    "release_date": "21 Oct, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:55:06.355613",
+    "genres": [
+      "Indie",
+      "Simulation",
+      "Strategy"
+    ],
+    "last_checked": "2025-12-05 11:03:37.312646",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -382,7 +397,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 1,
+    "id": 139,
     "steam_id": 2344520,
     "name": "Diablo\u00ae IV",
     "app_type": "game",
@@ -411,17 +426,17 @@
       "Action",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:10.848599",
-    "update_count": 2,
-    "last_update": "2025-09-23 10:00:25",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915560849",
-    "last_update_title": "Diablo IV | Season of Infernal Chaos | Season 10 Now Live!",
-    "last_announcement": "2025-11-25 11:11:07",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002024547",
-    "last_announcement_title": "Diablo IV - Steam Awards Nomination"
+    "last_checked": "2025-12-05 11:04:13.942004",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 55,
+    "id": 103,
     "steam_id": 1643310,
     "name": "Dungeons 4",
     "app_type": "game",
@@ -450,7 +465,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:24.373624",
+    "last_checked": "2025-12-05 11:03:19.213826",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -460,7 +475,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 51,
+    "id": 99,
     "steam_id": 1282140,
     "name": "Fires At Midnight",
     "app_type": "game",
@@ -490,7 +505,7 @@
       "Casual",
       "Indie"
     ],
-    "last_checked": "2025-12-05 10:55:19.850405",
+    "last_checked": "2025-12-05 11:03:13.257959",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -500,7 +515,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 3,
+    "id": 92,
     "steam_id": 219990,
     "name": "Grim Dawn",
     "app_type": "game",
@@ -531,17 +546,17 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:12.479796",
-    "update_count": 17,
-    "last_update": "2025-06-26 10:05:40",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891514590",
-    "last_update_title": "Grim Dawn Version v1.2.1.6 is now available!",
-    "last_announcement": "2025-11-24 09:59:20",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002020783",
-    "last_announcement_title": "Grim Misadventure #197 - Sounds of Asterkarn"
+    "last_checked": "2025-12-05 11:03:02.685907",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 52,
+    "id": 100,
     "steam_id": 1145350,
     "name": "Hades II",
     "app_type": "game",
@@ -571,7 +586,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:21.377358",
+    "last_checked": "2025-12-05 11:03:14.766607",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -581,7 +596,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 70,
+    "id": 118,
     "steam_id": 1740720,
     "name": "Have a Nice Death",
     "app_type": "game",
@@ -610,7 +625,7 @@
       "Action",
       "Indie"
     ],
-    "last_checked": "2025-12-05 10:55:39.401573",
+    "last_checked": "2025-12-05 11:03:41.797224",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -620,22 +635,26 @@
     "last_announcement_title": null
   },
   {
-    "id": 63,
+    "id": 111,
     "steam_id": 1782460,
     "name": "Hell Clock",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Forge powerful builds with endless loot in this relentless combination of Roguelike and ARPG. Blast through dungeons and unleash inhuman powers in a dark fantasy twist on Brazil\u2019s War of Canudos.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1782460/header.jpg?t=1764867583",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
     "classification_notes": "",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Rogue Snail",
+    "publisher": "Mad Mushroom",
+    "release_date": "22 Jul, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:55:03.581805",
+    "genres": [
+      "Action",
+      "Indie",
+      "RPG"
+    ],
+    "last_checked": "2025-12-05 11:03:31.291302",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -645,7 +664,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 77,
+    "id": 125,
     "steam_id": 269210,
     "name": "Hero Siege",
     "app_type": "game",
@@ -677,7 +696,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:49.996464",
+    "last_checked": "2025-12-05 11:03:52.628020",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -687,7 +706,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 86,
+    "id": 134,
     "steam_id": 1024480,
     "name": "Immortal Realms: Vampire Wars",
     "app_type": "game",
@@ -717,7 +736,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:56:03.471898",
+    "last_checked": "2025-12-05 11:04:05.820236",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -727,7 +746,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 80,
+    "id": 128,
     "steam_id": 666570,
     "name": "Infectonator 3: Apocalypse",
     "app_type": "game",
@@ -757,7 +776,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:54.432988",
+    "last_checked": "2025-12-05 11:03:56.786423",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -767,7 +786,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 58,
+    "id": 106,
     "steam_id": 807120,
     "name": "Iratus: Lord of the Dead",
     "app_type": "game",
@@ -797,7 +816,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:28.871822",
+    "last_checked": "2025-12-05 11:03:23.776467",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -807,7 +826,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 88,
+    "id": 136,
     "steam_id": 697550,
     "name": "It Lurks Below",
     "app_type": "game",
@@ -837,7 +856,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:06.512258",
+    "last_checked": "2025-12-05 11:04:08.896621",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -847,7 +866,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 75,
+    "id": 123,
     "steam_id": 1367550,
     "name": "Kingdom Rush Vengeance - Tower Defense",
     "app_type": "game",
@@ -875,7 +894,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:47.025405",
+    "last_checked": "2025-12-05 11:03:49.262138",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -885,7 +904,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 4,
+    "id": 93,
     "steam_id": 899770,
     "name": "Last Epoch",
     "app_type": "game",
@@ -916,17 +935,17 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:13.835706",
-    "update_count": 14,
-    "last_update": "2025-10-16 09:02:48",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388942146",
-    "last_update_title": "Last Epoch Patch 1.3.6 Notes",
-    "last_announcement": "2025-12-01 09:01:00",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045978",
-    "last_announcement_title": "Eterra Monthly: Nov. Edition 2025"
+    "last_checked": "2025-12-05 11:03:04.195780",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 53,
+    "id": 101,
     "steam_id": 1599340,
     "name": "Lost Ark",
     "app_type": "game",
@@ -958,7 +977,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-05 10:55:22.934544",
+    "last_checked": "2025-12-05 11:03:16.352440",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -968,7 +987,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 71,
+    "id": 119,
     "steam_id": 2742830,
     "name": "Monster Train 2",
     "app_type": "game",
@@ -997,7 +1016,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:41.024471",
+    "last_checked": "2025-12-05 11:03:43.274958",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1007,7 +1026,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 76,
+    "id": 124,
     "steam_id": 1144970,
     "name": "Necronator: Dead Wrong",
     "app_type": "game",
@@ -1038,7 +1057,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:48.423280",
+    "last_checked": "2025-12-05 11:03:50.809371",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1048,12 +1067,12 @@
     "last_announcement_title": null
   },
   {
-    "id": 10,
+    "id": 97,
     "steam_id": 3668370,
     "name": "Night Swarm",
     "app_type": "game",
     "short_description": "Claim your throne as Vampire Lord in this survivors-like. Each run is another step on your journey with new followers, quests and skills to unlock. The night is yours to conquer.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1764880842",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1764953953",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -1061,35 +1080,24 @@
     "developer": "Fubu Games",
     "publisher": "Mad Mushroom, Gamersky Games",
     "release_date": "4 Dec, 2025",
-    "steam_tags": [
-      "Single-player",
-      "Steam Achievements",
-      "Full controller support",
-      "Custom Volume Controls",
-      "Adjustable Difficulty",
-      "Keyboard Only Option",
-      "Playable without Timed Input",
-      "Save Anytime",
-      "Steam Cloud",
-      "Family Sharing"
-    ],
+    "steam_tags": [],
     "genres": [
       "Action",
       "Adventure",
       "Casual",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:07.920523",
-    "update_count": 8,
-    "last_update": "2025-12-04 08:37:50",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173436",
-    "last_update_title": "Night Swarm is Now Live!",
-    "last_announcement": "2025-12-04 08:49:55",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173473",
-    "last_announcement_title": "Check Out Our Launch Bundles"
+    "last_checked": "2025-12-05 11:03:10.229783",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 56,
+    "id": 104,
     "steam_id": 1432050,
     "name": "Nobody Saves the World",
     "app_type": "game",
@@ -1120,7 +1128,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:25.969613",
+    "last_checked": "2025-12-05 11:03:20.730298",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1130,7 +1138,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 66,
+    "id": 113,
     "steam_id": 306670,
     "name": "Overlord: Fellowship of Evil",
     "app_type": "game",
@@ -1159,7 +1167,7 @@
       "Action",
       "Adventure"
     ],
-    "last_checked": "2025-12-05 10:55:34.897767",
+    "last_checked": "2025-12-05 11:03:34.347310",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1169,7 +1177,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 5,
+    "id": 95,
     "steam_id": 238960,
     "name": "Path of Exile",
     "app_type": "game",
@@ -1202,17 +1210,17 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-05 10:55:15.359489",
-    "update_count": 17,
-    "last_update": "2025-11-03 15:42:27",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034433015723",
-    "last_update_title": "Dawn of the Hunt Mystery Box Microtransactions Now Available in Store",
-    "last_announcement": "2025-11-24 12:21:04",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002021664",
-    "last_announcement_title": "Concept Art - Keepers of the Flame League and Kirac\u2019s Vault Pass"
+    "last_checked": "2025-12-05 11:03:07.290942",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 72,
+    "id": 120,
     "steam_id": 1069690,
     "name": "Rogue Lords",
     "app_type": "game",
@@ -1241,7 +1249,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:42.439928",
+    "last_checked": "2025-12-05 11:03:44.807228",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1251,7 +1259,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 59,
+    "id": 107,
     "steam_id": 1763250,
     "name": "SWORN",
     "app_type": "game",
@@ -1281,7 +1289,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:30.450626",
+    "last_checked": "2025-12-05 11:03:25.431901",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1291,7 +1299,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 73,
+    "id": 121,
     "steam_id": 1545560,
     "name": "Shadow Gambit: The Cursed Crew",
     "app_type": "game",
@@ -1320,7 +1328,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:44.064635",
+    "last_checked": "2025-12-05 11:03:46.270073",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1330,22 +1338,25 @@
     "last_announcement_title": null
   },
   {
-    "id": 65,
+    "id": 114,
     "steam_id": 2373990,
     "name": "Solo Leveling: ARISE OVERDRIVE",
-    "app_type": null,
-    "short_description": null,
-    "header_image_url": null,
+    "app_type": "game",
+    "short_description": "Solo Leveling, the webtoon with 14.3 billion views worldwide, is now an action RPG game! Help our hero grow from his humble E-Rank beginnings.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2373990/018068a74847b3953278efacca07cfbe537a46c7/header.jpg?t=1764021513",
     "dimension_1": "d",
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "",
-    "developer": null,
-    "publisher": null,
-    "release_date": null,
+    "developer": "Netmarble Neo",
+    "publisher": "Netmarble",
+    "release_date": "24 Nov, 2025",
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-05 10:55:05.088765",
+    "genres": [
+      "Action",
+      "RPG"
+    ],
+    "last_checked": "2025-12-05 11:03:35.934907",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1355,7 +1366,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 87,
+    "id": 135,
     "steam_id": 2066020,
     "name": "Soulstone Survivors",
     "app_type": "game",
@@ -1385,7 +1396,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:04.954421",
+    "last_checked": "2025-12-05 11:04:07.363021",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1395,7 +1406,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 85,
+    "id": 133,
     "steam_id": 1199030,
     "name": "Tainted Grail: Conquest",
     "app_type": "game",
@@ -1425,7 +1436,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:01.955660",
+    "last_checked": "2025-12-05 11:04:04.320877",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1435,7 +1446,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 74,
+    "id": 122,
     "steam_id": 986040,
     "name": "The Unliving",
     "app_type": "game",
@@ -1466,7 +1477,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:55:45.438350",
+    "last_checked": "2025-12-05 11:03:47.781659",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1476,7 +1487,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 60,
+    "id": 108,
     "steam_id": 1866630,
     "name": "Throne of Bone",
     "app_type": "game",
@@ -1504,7 +1515,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:31.879569",
+    "last_checked": "2025-12-05 11:03:26.789817",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1514,11 +1525,11 @@
     "last_announcement_title": null
   },
   {
-    "id": 57,
+    "id": 105,
     "steam_id": 364360,
     "name": "Total War: WARHAMMER",
     "app_type": "game",
-    "short_description": "Addictive turn-based empire-building with colossal, real-time battles, all set in a world of legendary heroes, giant monsters, flying creatures and storms of magical power.",
+    "short_description": "Le Vieux Monde retentit du bruit d'\u00e9ternelles batailles. Une seule constante : la GUERRE!",
     "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/364360/header.jpg?t=1764867527",
     "dimension_1": "a",
     "dimension_2": "character",
@@ -1526,7 +1537,7 @@
     "classification_notes": "",
     "developer": "CREATIVE ASSEMBLY, Feral Interactive (Linux), Feral Interactive (Mac)",
     "publisher": "SEGA, Feral Interactive (Linux), Feral Interactive (Mac)",
-    "release_date": "May 24, 2016",
+    "release_date": "24 mai 2016",
     "steam_tags": [
       "Strategy",
       "Fantasy",
@@ -1541,9 +1552,9 @@
     ],
     "genres": [
       "Action",
-      "Strategy"
+      "Strat\u00e9gie"
     ],
-    "last_checked": "2025-12-05 10:55:27.434733",
+    "last_checked": "2025-12-05 11:03:22.241498",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1553,11 +1564,11 @@
     "last_announcement_title": null
   },
   {
-    "id": 64,
+    "id": 112,
     "steam_id": 594570,
     "name": "Total War: WARHAMMER II",
     "app_type": "game",
-    "short_description": "\u0418\u0433\u0440\u0430 Total War: WARHAMMER II, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0435\u043d\u0438\u0435\u043c \u043a\u0443\u043b\u044c\u0442\u043e\u0432\u043e\u0439 Total War: WARHAMMER, \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442 \u0432 \u0441\u0435\u0431\u044f \u043d\u043e\u0432\u0443\u044e \u0437\u0430\u0445\u0432\u0430\u0442\u044b\u0432\u0430\u044e\u0449\u0443\u044e \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044e, \u043f\u043e\u0441\u0432\u044f\u0449\u0435\u043d\u043d\u0430\u044f \u043e\u0441\u0432\u043e\u0435\u043d\u0438\u044e \u0438 \u043f\u043e\u043a\u043e\u0440\u0435\u043d\u0438\u044e \u041d\u043e\u0432\u043e\u0433\u043e \u0421\u0432\u0435\u0442\u0430.",
+    "short_description": "Oce\u0148ovan\u00e1 hra Total War: WARHAMMER p\u0159ich\u00e1z\u00ed s pokra\u010dov\u00e1n\u00edm Total War: WARHAMMER II, ve kter\u00e9m v\u00e1s \u010dek\u00e1 strhuj\u00edc\u00ed kampa\u0148 pln\u00e1 objevov\u00e1n\u00ed, expanz\u00ed a dob\u00fdv\u00e1n\u00ed nap\u0159\u00ed\u010d Nov\u00fdm sv\u011btem.",
     "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594570/header.jpg?t=1764867559",
     "dimension_1": "a",
     "dimension_2": "character",
@@ -1565,7 +1576,7 @@
     "classification_notes": "",
     "developer": "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)",
     "publisher": "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)",
-    "release_date": "28 \u0441\u0435\u043d. 2017 \u0433.",
+    "release_date": "28. z\u00e1\u0159. 2017",
     "steam_tags": [
       "Strategy",
       "Fantasy",
@@ -1579,10 +1590,10 @@
       "Turn-Based"
     ],
     "genres": [
-      "\u042d\u043a\u0448\u0435\u043d\u044b",
-      "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438"
+      "Ak\u010dn\u00ed",
+      "Strategick\u00e9"
     ],
-    "last_checked": "2025-12-05 10:55:33.403906",
+    "last_checked": "2025-12-05 11:03:32.779872",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1592,19 +1603,19 @@
     "last_announcement_title": null
   },
   {
-    "id": 9,
+    "id": 98,
     "steam_id": 1142710,
     "name": "Total War: WARHAMMER III",
     "app_type": "game",
-    "short_description": "The cataclysmic conclusion to the Total War: WARHAMMER trilogy is here. Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided. Will you conquer your Daemons\u2026 or command them?",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/header.jpg?t=1763646159",
+    "short_description": "Nadszed\u0142 apokaliptyczny fina\u0142 trylogii Total War: WARHAMMER. Zbierz swe si\u0142y i wkrocz do Kr\u00f3lestwa Chaosu, wymiaru pe\u0142nego surrealistycznej grozy, w kt\u00f3rym rozstrzygn\u0105 si\u0119 losy ca\u0142ego \u015bwiata. Czy zdo\u0142asz pokona\u0107 swe demony\u2026 czy mo\u017ce nimi zaw\u0142adniesz?",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/header.jpg?t=1764870033",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "Vampire Counts faction with necromancers and undead armies",
     "developer": "CREATIVE ASSEMBLY, Feral Interactive",
     "publisher": "SEGA, Feral Interactive",
-    "release_date": "16 Feb, 2022",
+    "release_date": "16 lutego 2022",
     "steam_tags": [
       "Strategy",
       "Turn-Based Strategy",
@@ -1618,20 +1629,20 @@
       "Dwarf"
     ],
     "genres": [
-      "Action",
-      "Strategy"
+      "Akcja",
+      "Strategie"
     ],
-    "last_checked": "2025-12-05 10:55:16.923160",
-    "update_count": 16,
-    "last_update": "2025-12-04 09:12:13",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173595",
-    "last_update_title": "Patch 7.0 and Tides of Torment OUT NOW!",
-    "last_announcement": "2025-12-04 09:12:13",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173595",
-    "last_announcement_title": "Patch 7.0 and Tides of Torment OUT NOW!"
+    "last_checked": "2025-12-05 11:03:11.686020",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 90,
+    "id": 138,
     "steam_id": 790850,
     "name": "Undead Horde",
     "app_type": "game",
@@ -1662,7 +1673,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:09.462147",
+    "last_checked": "2025-12-05 11:04:11.816182",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1672,7 +1683,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 79,
+    "id": 127,
     "steam_id": 2065810,
     "name": "Undead Horde 2: Necropolis",
     "app_type": "game",
@@ -1703,7 +1714,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-05 10:55:52.954621",
+    "last_checked": "2025-12-05 11:03:55.273333",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1713,7 +1724,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 78,
+    "id": 126,
     "steam_id": 1271750,
     "name": "Unferat",
     "app_type": "game",
@@ -1742,7 +1753,7 @@
       "RPG",
       "Simulation"
     ],
-    "last_checked": "2025-12-05 10:55:51.474515",
+    "last_checked": "2025-12-05 11:03:53.924045",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1752,7 +1763,7 @@
     "last_announcement_title": null
   },
   {
-    "id": 2,
+    "id": 94,
     "steam_id": 1604030,
     "name": "V Rising",
     "app_type": "game",
@@ -1782,17 +1793,17 @@
       "Adventure",
       "Massively Multiplayer"
     ],
-    "last_checked": "2025-12-05 10:55:18.693854",
-    "update_count": 16,
-    "last_update": "2025-10-15 01:01:41",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388897625",
-    "last_update_title": "V Rising October Patch Notes",
-    "last_announcement": "2025-11-28 09:00:30",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039917",
-    "last_announcement_title": "Jade the Vampire Hunter Plushie!"
+    "last_checked": "2025-12-05 11:03:05.727501",
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
-    "id": 84,
+    "id": 132,
     "steam_id": 424370,
     "name": "Wolcen: Lords of Mayhem",
     "app_type": "game",
@@ -1823,7 +1834,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-05 10:56:00.474218",
+    "last_checked": "2025-12-05 11:04:02.874944",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
