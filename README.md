@@ -94,7 +94,7 @@ Games are evaluated across three dimensions:
 
 ```bash
 # Check for game updates
-python scrapers/check_updates.py
+python scripts/check_updates.py
 
 # Add a new game
 python scripts/add_game.py --steam-id 2344520 --dim1 a --dim2 character --dim3 explicit
@@ -104,6 +104,21 @@ python scripts/export_for_web.py
 
 # Review candidate games
 python scripts/review_candidates.py
+```
+
+### Social Media Content Generation
+
+```bash
+# Generate Instagram posts from latest updates
+python scripts/generate_social_posts.py --types patch --limit 5 --generate-images
+
+# Preview pending posts
+python scripts/preview_social_posts.py
+
+# Mark post as published
+python scripts/preview_social_posts.py --id 1 --mark-posted
+
+# See full workflow: SOCIAL_MEDIA_QUICKSTART.md
 ```
 
 ### Frontend

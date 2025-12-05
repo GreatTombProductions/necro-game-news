@@ -77,9 +77,11 @@ def fetch_and_update_game(game_id: int, steam_api: SteamAPI) -> bool:
                 app_type = ?,
                 short_description = ?,
                 header_image_url = ?,
+                screenshot_url = ?,
                 developer = ?,
                 publisher = ?,
                 release_date = ?,
+                price_usd = ?,
                 steam_tags = ?,
                 genres = ?,
                 last_checked = ?
@@ -89,9 +91,11 @@ def fetch_and_update_game(game_id: int, steam_api: SteamAPI) -> bool:
             parsed['app_type'],
             parsed['short_description'],
             parsed['header_image'],
+            parsed.get('screenshot_url'),
             parsed['developer'],
             parsed['publisher'],
             parsed['release_date'],
+            parsed.get('price_usd'),
             json.dumps(parsed['categories']),  # Store as JSON
             json.dumps(parsed['genres']),      # Store as JSON
             datetime.now(),

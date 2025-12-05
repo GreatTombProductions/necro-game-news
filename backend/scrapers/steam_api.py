@@ -149,75 +149,136 @@ class SteamAPI:
     def parse_app_details(self, app_data: Dict) -> Dict:
         """
         Parse and extract relevant fields from app details response.
-        
+
         Args:
             app_data: Raw app details from Steam API
-            
+
         Returns:
             Dictionary with cleaned/parsed data
         """
+        # Get first screenshot (highest quality for social media)
+        screenshots = app_data.get('screenshots', [])
+        screenshot_url = screenshots[0].get('path_full') if screenshots else None
+
+        # Parse price (in USD cents, convert to dollars)
+        price_usd = None
+        price_overview = app_data.get('price_overview')
+        if price_overview:
+            # Price is in cents (e.g., 1999 = $19.99)
+            final_price = price_overview.get('final')
+            if final_price is not None:
+                price_usd = final_price / 100.0
+        elif app_data.get('is_free', False):
+            price_usd = 0.0
+
         return {
             'steam_id': app_data.get('steam_appid'),
             'name': app_data.get('name'),
             'app_type': app_data.get('type'),  # 'game', 'dlc', etc.
             'short_description': app_data.get('short_description'),
             'header_image': app_data.get('header_image'),
+            'screenshot_url': screenshot_url,  # High-res 1920x1080 for Instagram
             'developer': ', '.join(app_data.get('developers', [])),
             'publisher': ', '.join(app_data.get('publishers', [])),
             'release_date': app_data.get('release_date', {}).get('date'),
+            'price_usd': price_usd,
             'genres': [g.get('description') for g in app_data.get('genres', [])],
             'categories': [c.get('description') for c in app_data.get('categories', [])]
         }
     
     def classify_update_type(self, news_item: Dict) -> str:
         """
-        Classify an update as patch/announcement/dlc/event based on content.
-        
-        This is a heuristic classification. Improve over time with better rules.
-        
+        Classify an update as patch/announcement/dlc/event/release based on content.
+
+        Uses Steam's feedlabel and content keywords with priority ordering:
+        1. Release announcements (highest priority)
+        2. Patches/updates
+        3. DLC
+        4. Events (sales, promotions)
+        5. General announcements (default)
+
         Args:
             news_item: News item from Steam API
-            
+
         Returns:
-            Update type: 'patch', 'announcement', 'dlc', 'event', or 'unknown'
+            Update type: 'patch', 'announcement', 'dlc', 'event', 'release'
         """
         title = news_item.get('title', '').lower()
         contents = news_item.get('contents', '').lower()
         feedlabel = news_item.get('feedlabel', '').lower()
-        
-        # Combined text for analysis
-        text = f"{title} {contents} {feedlabel}"
-        
-        # Patch/update indicators
+
+        # Filter out external news sources - only use official Steam posts
+        external_sources = ['pc gamer', 'pcgamesn', 'ign', 'kotaku', 'polygon', 'vg247', 'eurogamer']
+        if any(source in feedlabel for source in external_sources):
+            return 'announcement'  # External news = general announcement
+
+        # Combined text for analysis (title weighted more heavily)
+        title_text = title * 2  # Title is more important than body
+        text = f"{title_text} {contents}"
+
+        # PRIORITY 1: Game releases/launches (highest priority)
+        # Check title first for strong indicators
+        release_title_keywords = [
+            'is now live', 'now available', 'out now', 'has launched',
+            'launch day', 'release day', 'officially released'
+        ]
+        release_keywords = [
+            'launch', 'release', 'launches', 'released', 'out now'
+        ]
+
+        # Strong release indicators in title = definite release
+        if any(keyword in title for keyword in release_title_keywords):
+            return 'release'
+
+        # Release keywords with supporting context
+        if any(keyword in title for keyword in release_keywords):
+            # Make sure it's not about a patch release
+            if not any(word in title for word in ['patch', 'hotfix', 'update ', 'version']):
+                return 'release'
+
+        # PRIORITY 2: Patches/updates
         patch_keywords = [
             'patch', 'hotfix', 'update', 'bugfix', 'bug fix',
             'maintenance', 'version', 'changelog', 'fixed',
-            'balance', 'nerf', 'buff'
+            'balance', 'nerf', 'buff', 'patch notes'
         ]
-        
-        # DLC indicators
-        dlc_keywords = [
-            'dlc', 'expansion', 'new content', 'content pack',
-            'season pass', 'now available'
-        ]
-        
-        # Event indicators  
-        event_keywords = [
-            'event', 'sale', 'discount', 'weekend', 'promotion',
-            'contest', 'giveaway', 'vote', 'awards', 'tournament'
-        ]
-        
-        # Count keyword matches
+
         if any(keyword in text for keyword in patch_keywords):
             return 'patch'
-        elif any(keyword in text for keyword in dlc_keywords):
-            return 'dlc'
-        elif any(keyword in text for keyword in event_keywords):
-            return 'event'
-        elif feedlabel == 'product update':
+
+        # Use feedlabel for patches
+        if feedlabel == 'product update':
             return 'patch'
-        else:
-            return 'announcement'
+
+        # PRIORITY 3: DLC/Expansions
+        dlc_keywords = [
+            'dlc', 'expansion', 'content pack', 'season pass',
+            'new expansion', 'expansion pack'
+        ]
+
+        if any(keyword in text for keyword in dlc_keywords):
+            return 'dlc'
+
+        # PRIORITY 4: Events (sales, promotions, in-game events)
+        # These should NOT trigger on launch discounts
+        event_keywords = [
+            'weekend event', 'special event', 'seasonal event',
+            'contest', 'giveaway', 'vote', 'awards', 'tournament',
+            'free weekend', 'double xp', 'bonus rewards'
+        ]
+
+        # Sale indicators (but not launch discounts)
+        if any(keyword in text for keyword in event_keywords):
+            return 'event'
+
+        # Check for sales, but exclude launch context
+        if 'sale' in text or 'discount' in text:
+            # If it's a launch context, it's a release, not an event
+            if 'launch' not in text and 'release' not in text:
+                return 'event'
+
+        # PRIORITY 5: Default to announcement
+        return 'announcement'
     
     def parse_news_item(self, news_item: Dict, appid: int) -> Dict:
         """

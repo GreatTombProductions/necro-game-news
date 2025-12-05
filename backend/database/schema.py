@@ -25,15 +25,21 @@ CREATE TABLE IF NOT EXISTS games (
     header_image_url TEXT,
     
     -- Necromancy classification (highest satisfied per dimension)
+    -- dimension_1: degree of necromancy integration
+    --   a: central to character/unit identity and gameplay
+    --   b: dedicated specialization available
+    --   c: some necromancy skills or items present
+    --   d: some necromancy technically present, minimal impact on identity/gameplay
     dimension_1 TEXT CHECK(dimension_1 IN ('a', 'b', 'c', 'd')),
     dimension_2 TEXT CHECK(dimension_2 IN ('character', 'unit')),
     dimension_3 TEXT CHECK(dimension_3 IN ('explicit', 'implied')),
     classification_notes TEXT,
-    
+
     -- Metadata from Steam
     steam_tags TEXT,  -- JSON array as string
     genres TEXT,      -- JSON array as string
     release_date TEXT,
+    price_usd REAL,   -- Price in USD (NULL for free games)
     developer TEXT,
     publisher TEXT,
     
@@ -51,17 +57,17 @@ CREATE TABLE IF NOT EXISTS games (
 CREATE TABLE IF NOT EXISTS updates (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_id INTEGER NOT NULL,
-    update_type TEXT CHECK(update_type IN ('patch', 'announcement', 'dlc', 'event', 'unknown')),
+    update_type TEXT CHECK(update_type IN ('patch', 'announcement', 'dlc', 'event', 'release', 'unknown')),
     title TEXT NOT NULL,
     content TEXT,
     url TEXT,
     gid TEXT,  -- Steam's unique identifier for the update
     date TIMESTAMP NOT NULL,
-    
+
     -- Social media processing
     processed_for_social BOOLEAN DEFAULT 0,
     date_posted TIMESTAMP,
-    
+
     FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE,
     UNIQUE(gid)
 );
