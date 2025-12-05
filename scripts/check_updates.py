@@ -31,7 +31,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 20) -> int:
+def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 5) -> int:
     """
     Check for new updates for a specific game.
     
@@ -136,12 +136,13 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 20) ->
         conn.close()
 
 
-def check_all_games(limit: int = None):
+def check_all_games(limit: int = None, max_news: int = 5):
     """
     Check for updates for all active games.
-    
+
     Args:
         limit: Maximum number of games to check (None for all)
+        max_news: Maximum number of news items to fetch per game
     """
     conn = get_connection()
     cursor = conn.cursor()
@@ -180,13 +181,13 @@ def check_all_games(limit: int = None):
     
     for db_id, name, steam_id, last_checked in games:
         try:
-            new_updates = check_game_updates(db_id, steam_api)
+            new_updates = check_game_updates(db_id, steam_api, max_news)
             total_new += new_updates
             success_count += 1
         except Exception as e:
             logger.error(f"Unexpected error with {name}: {e}")
             fail_count += 1
-        
+
         print()  # Blank line between games
     
     # Summary
@@ -210,8 +211,8 @@ def main():
                        help='Check specific game by database ID')
     parser.add_argument('--limit', type=int,
                        help='Maximum number of games to check')
-    parser.add_argument('--max-news', type=int, default=20,
-                       help='Maximum news items to fetch per game (default: 20)')
+    parser.add_argument('--max-news', type=int, default=5,
+                       help='Maximum news items to fetch per game (default: 5)')
     
     args = parser.parse_args()
     
@@ -229,7 +230,7 @@ def main():
         return 0
     else:
         # Check all games (or limited set)
-        check_all_games(args.limit)
+        check_all_games(args.limit, args.max_news)
         return 0
 
 

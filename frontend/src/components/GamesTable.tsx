@@ -23,7 +23,7 @@ const TAXONOMY_INFO = {
       { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character or unit\'s identity and gameplay' },
       { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills or equipment available to specialize into' },
       { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category' },
-      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'Necromancy is technically available to the character or unit, but with minimal impact to their identity and gameplay' },
+      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity and gameplay' },
     ],
   },
   pov: {
@@ -99,6 +99,50 @@ function GenresTooltip({ children, genres }: { children: React.ReactNode; genres
   );
 }
 
+// Simple help icon with just a description (no value list)
+function SimpleHelpIcon({ title, description }: { title: string; description: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative inline-block ml-1">
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          setIsOpen(!isOpen);
+        }}
+        className="inline-flex items-center justify-center w-4 h-4 text-xs text-purple-400 hover:text-purple-200 border border-purple-500/50 rounded-full hover:border-purple-400 transition-colors"
+        aria-label={`Help for ${title}`}
+      >
+        ?
+      </button>
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              setIsOpen(false);
+            }}
+          />
+          <div
+            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+            }}
+          >
+            <div className="text-sm font-semibold text-purple-300 mb-1">{title}</div>
+            <div className="text-xs text-gray-400">{description}</div>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 // Help icon with popover showing all values for a column
 function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.centrality; alignRight?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,6 +152,7 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
       <button
         onClick={(e) => {
           e.stopPropagation();
+          e.preventDefault();
           setIsOpen(!isOpen);
         }}
         className="inline-flex items-center justify-center w-4 h-4 text-xs text-purple-400 hover:text-purple-200 border border-purple-500/50 rounded-full hover:border-purple-400 transition-colors"
@@ -119,12 +164,20 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
         <>
           <div
             className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              setIsOpen(false);
+            }}
           />
           <div
             className={`absolute top-full mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 ${
               alignRight ? 'right-0' : 'left-1/2 -translate-x-1/2'
             }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+            }}
           >
             <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
             <div className="text-xs text-gray-400 mb-3">{info.description}</div>
@@ -195,14 +248,14 @@ export default function GamesTable({ games }: GamesTableProps) {
         },
       },
       {
-        accessorKey: 'last_update',
-        header: 'Last Update',
+        accessorKey: 'last_announcement',
+        header: 'Latest Announcement',
         cell: info => {
           const date = info.getValue() as string | undefined;
-          const url = info.row.original.last_update_url;
-          const title = info.row.original.last_update_title;
+          const url = info.row.original.last_announcement_url;
+          const title = info.row.original.last_announcement_title;
 
-          if (!date) return <span className="text-xs text-gray-600">Never</span>;
+          if (!date) return <span className="text-xs text-gray-600">None</span>;
 
           let formatted: string;
           try {
@@ -232,14 +285,22 @@ export default function GamesTable({ games }: GamesTableProps) {
         },
       },
       {
-        accessorKey: 'last_announcement',
-        header: 'Last Announcement',
+        accessorKey: 'last_update',
+        header: () => (
+          <span className="flex items-center">
+            Last Updated
+            <SimpleHelpIcon
+              title="Last Updated"
+              description="Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
+            />
+          </span>
+        ),
         cell: info => {
           const date = info.getValue() as string | undefined;
-          const url = info.row.original.last_announcement_url;
-          const title = info.row.original.last_announcement_title;
+          const url = info.row.original.last_update_url;
+          const title = info.row.original.last_update_title;
 
-          if (!date) return <span className="text-xs text-gray-600">None</span>;
+          if (!date) return <span className="text-xs text-gray-600">Never</span>;
 
           let formatted: string;
           try {

@@ -168,6 +168,10 @@ class SteamAPI:
             data = self._make_request(url, params)
             tags = data.get('tags', {})
 
+            # Steamspy sometimes returns an empty list instead of a dict
+            if not isinstance(tags, dict):
+                return []
+
             # Sort tags by vote count (descending) and return top N
             sorted_tags = sorted(tags.items(), key=lambda x: x[1], reverse=True)
             return [tag for tag, _ in sorted_tags[:max_tags]]
@@ -263,11 +267,14 @@ class SteamAPI:
 
         Classification strategy:
         1. First check Steam's tags array (most reliable when present)
-        2. Fall back to keyword-based classification
+        2. Fall back to keyword-based classification (conservative - err toward announcement)
 
         For our purposes:
-        - UPDATE (game changes): patch, release, dlc
-        - ANNOUNCEMENT (news): announcement, event
+        - UPDATE (actual game changes): patch, release, dlc
+        - ANNOUNCEMENT (news/promos): announcement, event
+
+        We err on the side of "announcement" since it's easier to manually
+        reclassify missed updates than fix false positives.
 
         Args:
             news_item: News item from Steam API
@@ -277,100 +284,94 @@ class SteamAPI:
         """
         tags = news_item.get('tags', [])
         title = news_item.get('title', '').lower()
-        contents = news_item.get('contents', '').lower()
         feedlabel = news_item.get('feedlabel', '').lower()
 
         # =================================================================
         # STEP 1: Check Steam's tags (most reliable when present)
         # =================================================================
-        # Steam tag -> our classification mapping
         TAG_MAPPING = {
-            # Update types (game changes)
             'patchnotes': 'patch',
-            # Announcement types (news/promotional)
             'steam_award_nomination_request': 'announcement',
             'vo_marketing_message': 'announcement',
             'workshop': 'announcement',
         }
 
-        # Tags to ignore (moderation-related)
         IGNORE_TAGS = {'mod_reviewed', 'mod_require_rereview', 'mod_hide_library_overview', 'hide_store'}
 
         for tag in tags:
-            # Skip moderation tags and ModAct_* tags
             if tag in IGNORE_TAGS or tag.startswith('ModAct_'):
                 continue
             if tag in TAG_MAPPING:
                 return TAG_MAPPING[tag]
 
         # =================================================================
-        # STEP 2: Fall back to keyword-based classification
+        # STEP 2: Check for announcement indicators (push toward announcement)
         # =================================================================
-        # Combined text for analysis (title weighted more heavily)
-        title_text = title * 2  # Title is more important than body
-        text = f"{title_text} {contents}"
+        # If these keywords appear, it's likely an announcement about future content
+        announcement_indicators = [
+            'coming soon', 'announced', 'announcing', 'teaser', 'reveal',
+            'upcoming', 'sneak peek', 'preview', 'first look', 'trailer',
+            'wishlist', 'coming in', 'coming to', 'will be', 'will feature',
+            'roadmap', 'dev diary', 'developer update', 'dev update',
+            'behind the scenes', 'interview', 'ama', 'q&a'
+        ]
 
-        # PRIORITY 1: Game releases/launches (highest priority)
-        release_title_keywords = [
+        if any(indicator in title for indicator in announcement_indicators):
+            return 'announcement'
+
+        # =================================================================
+        # STEP 3: Strong update indicators (require high confidence)
+        # =================================================================
+        # Release indicators - must be in title to count
+        release_indicators = [
             'is now live', 'now available', 'out now', 'has launched',
             'launch day', 'release day', 'officially released'
         ]
 
-        # Strong release indicators in title = definite release
-        if any(keyword in title for keyword in release_title_keywords):
+        if any(indicator in title for indicator in release_indicators):
+            # Could be a release or DLC release
+            dlc_keywords = ['dlc', 'expansion', 'content pack', 'season pass']
+            if any(kw in title for kw in dlc_keywords):
+                return 'dlc'
             return 'release'
 
-        # "Season X Now Live" type announcements are content updates (releases)
+        # "Season X Now Live" = content release
         if 'season' in title and ('now live' in title or 'is live' in title):
             return 'release'
 
-        # Release keywords with supporting context
-        release_keywords = ['launch', 'release', 'launches', 'released']
-        if any(keyword in title for keyword in release_keywords):
-            # Make sure it's not about a patch release
-            if not any(word in title for word in ['patch', 'hotfix', 'update ', 'version']):
-                return 'release'
-
-        # PRIORITY 2: Patches/updates
-        patch_keywords = [
-            'patch', 'hotfix', 'bugfix', 'bug fix',
-            'maintenance', 'changelog', 'fixed',
-            'balance change', 'nerf', 'buff', 'patch notes'
+        # Patch indicators - require strong signals IN TITLE (not just body)
+        patch_title_keywords = [
+            'patch', 'hotfix', 'bugfix', 'bug fix', 'patch notes',
+            'changelog', 'maintenance'
         ]
 
-        if any(keyword in text for keyword in patch_keywords):
+        if any(keyword in title for keyword in patch_title_keywords):
             return 'patch'
 
-        # "Update X.X" or "Version X.X" patterns (but not "update on" or "latest update")
+        # Steam's feedlabel is reliable for actual product updates
         if feedlabel == 'product update':
             return 'patch'
 
-        # PRIORITY 3: DLC/Expansions
-        dlc_keywords = [
-            'dlc', 'expansion', 'content pack', 'season pass',
-            'new expansion', 'expansion pack'
-        ]
-
-        if any(keyword in text for keyword in dlc_keywords):
-            return 'dlc'
-
-        # PRIORITY 4: Events (sales, promotions)
-        # Note: "event" for us means promotional, not in-game content events
+        # =================================================================
+        # STEP 4: Events (promotional)
+        # =================================================================
         event_keywords = [
             'steam awards', 'vote for', 'nominate',
             'contest', 'giveaway', 'tournament',
             'free weekend', 'free to play weekend'
         ]
 
-        if any(keyword in text for keyword in event_keywords):
+        if any(keyword in title for keyword in event_keywords):
             return 'event'
 
-        # Sales and discounts
-        if ('sale' in text or 'discount' in text or '% off' in text):
-            if 'launch' not in text and 'release' not in text:
+        # Sales/discounts (not launches)
+        if ('sale' in title or 'discount' in title or '% off' in title):
+            if 'launch' not in title and 'release' not in title:
                 return 'event'
 
-        # PRIORITY 5: Default to announcement
+        # =================================================================
+        # STEP 5: Default to announcement (conservative)
+        # =================================================================
         return 'announcement'
     
     def parse_news_item(self, news_item: Dict, appid: int) -> Dict:

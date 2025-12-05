@@ -189,7 +189,7 @@ class PostTemplate:
                 'a': 'Central to character/unit identity and gameplay',
                 'b': 'Dedicated specialization available',
                 'c': 'Some necromancy skills or items present',
-                'd': 'Minimal necromancy elements'
+                'd': 'Necromantic by technicality or lore (minimal impact on identity/gameplay)'
             }.get(self.game_dimension_1, 'Unknown')
             stats.append(f"- Necromancy: {necro_desc}")
 

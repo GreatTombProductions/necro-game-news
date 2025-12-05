@@ -15,7 +15,9 @@ Usage:
 """
 
 import sys
+import json
 import yaml
+import logging
 from pathlib import Path
 from datetime import datetime
 
@@ -23,6 +25,147 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from backend.database.schema import get_connection
+from backend.scrapers.steam_api import SteamAPI
+
+# Number of news items to fetch for newly added games (higher than daily checks
+# to capture "Last Updated" date even for games not recently updated)
+INITIAL_NEWS_COUNT = 50
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+def fetch_steam_details(game_id: int, steam_id: int, name: str, steam_api: SteamAPI, cursor) -> bool:
+    """
+    Fetch details from Steam API and update the database.
+
+    Args:
+        game_id: Database ID of the game
+        steam_id: Steam App ID
+        name: Game name for logging
+        steam_api: SteamAPI instance
+        cursor: Database cursor
+
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        logger.info(f"  Fetching Steam details for: {name}")
+
+        details = steam_api.get_app_details(steam_id)
+        if not details:
+            logger.warning(f"  Could not fetch details for {name}")
+            return False
+
+        parsed = steam_api.parse_app_details(details)
+
+        cursor.execute("""
+            UPDATE games SET
+                name = ?,
+                app_type = ?,
+                short_description = ?,
+                header_image_url = ?,
+                screenshot_url = ?,
+                developer = ?,
+                publisher = ?,
+                release_date = ?,
+                price_usd = ?,
+                steam_tags = ?,
+                genres = ?,
+                last_checked = ?
+            WHERE id = ?
+        """, (
+            parsed['name'],
+            parsed['app_type'],
+            parsed['short_description'],
+            parsed['header_image'],
+            parsed.get('screenshot_url'),
+            parsed['developer'],
+            parsed['publisher'],
+            parsed['release_date'],
+            parsed.get('price_usd'),
+            json.dumps(parsed.get('tags', [])),
+            json.dumps(parsed['genres']),
+            datetime.now(),
+            game_id
+        ))
+
+        logger.info(f"  ✓ Fetched details: {parsed['developer']} | {', '.join(parsed['genres'][:3])}")
+        return True
+
+    except Exception as e:
+        logger.error(f"  Error fetching details for {name}: {e}")
+        return False
+
+
+def fetch_initial_updates(game_id: int, steam_id: int, name: str, steam_api: SteamAPI, cursor) -> int:
+    """
+    Fetch initial updates/news for a newly added game.
+
+    Uses a higher count than daily checks to capture "Last Updated" date
+    even for games that haven't been updated recently.
+
+    Args:
+        game_id: Database ID of the game
+        steam_id: Steam App ID
+        name: Game name for logging
+        steam_api: SteamAPI instance
+        cursor: Database cursor
+
+    Returns:
+        Number of updates added
+    """
+    try:
+        logger.info(f"  Fetching initial updates for: {name}")
+
+        news_items = steam_api.get_app_news(steam_id, count=INITIAL_NEWS_COUNT)
+        if not news_items:
+            logger.info(f"    No news items found")
+            return 0
+
+        new_count = 0
+        external_count = 0
+
+        for news_item in news_items:
+            # Filter out external press sources
+            if not steam_api.is_steam_official(news_item):
+                external_count += 1
+                continue
+
+            parsed = steam_api.parse_news_item(news_item, steam_id)
+            gid = parsed['gid']
+
+            # Check if this update already exists (shouldn't for new games, but be safe)
+            cursor.execute("SELECT id FROM updates WHERE gid = ?", (gid,))
+            if cursor.fetchone():
+                continue
+
+            # Add update
+            cursor.execute("""
+                INSERT INTO updates
+                (game_id, update_type, title, content, url, gid, date)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (
+                game_id,
+                parsed['update_type'],
+                parsed['title'],
+                parsed['contents'],
+                parsed['url'],
+                gid,
+                parsed['date']
+            ))
+            new_count += 1
+
+        logger.info(f"    ✓ Added {new_count} updates ({external_count} external filtered)")
+        return new_count
+
+    except Exception as e:
+        logger.error(f"  Error fetching updates for {name}: {e}")
+        return 0
 
 
 def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False, sync_deletes=False):
@@ -68,7 +211,13 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     skipped = 0
     deleted = 0
     errors = 0
-    
+    details_fetched = 0
+    details_failed = 0
+    updates_fetched = 0
+
+    # Track newly added games for Steam API fetch
+    newly_added_games = []
+
     # Get steam_ids from YAML for sync check
     yaml_steam_ids = {game['steam_id'] for game in games}
     
@@ -147,10 +296,14 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 datetime.now()
             ))
             
+            # Get the newly inserted game's ID
+            game_id = cursor.lastrowid
+            newly_added_games.append((game_id, steam_id, name))
+
             print(f"✓ Added: {name} ({classification['dimension_1']}, "
                   f"{classification['dimension_2']}, {classification['dimension_3']})")
             added += 1
-            
+
         except Exception as e:
             print(f"✗ Error processing {name}: {e}")
             errors += 1
@@ -182,10 +335,26 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 except Exception as e:
                     print(f"✗ Error deleting {name}: {e}")
                     errors += 1
-    
+
+    # Fetch Steam details and initial updates for newly added games
+    if newly_added_games:
+        print()
+        print(f"Fetching Steam data for {len(newly_added_games)} new games...")
+        steam_api = SteamAPI()
+
+        for game_id, steam_id, name in newly_added_games:
+            # Fetch game details (description, images, etc.)
+            if fetch_steam_details(game_id, steam_id, name, steam_api, cursor):
+                details_fetched += 1
+            else:
+                details_failed += 1
+
+            # Fetch initial updates (uses higher count to capture Last Updated date)
+            updates_fetched += fetch_initial_updates(game_id, steam_id, name, steam_api, cursor)
+
     conn.commit()
     conn.close()
-    
+
     # Summary
     print()
     print("=" * 60)
@@ -196,6 +365,10 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     if sync_deletes:
         print(f"  🗑  Deleted: {deleted}")
     print(f"  ⊙ Skipped (unchanged): {skipped}")
+    if details_fetched or details_failed or updates_fetched:
+        print(f"  Steam API: {details_fetched} details fetched, {details_failed} failed")
+        if updates_fetched:
+            print(f"  Initial updates: {updates_fetched}")
     print(f"  ✗ Errors: {errors}")
     print("=" * 60)
     
