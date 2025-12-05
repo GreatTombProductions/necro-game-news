@@ -24,7 +24,7 @@ const TAXONOMY_INFO = {
       { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character or unit\'s identity and gameplay' },
       { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills or equipment available to specialize into' },
       { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category' },
-      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity and gameplay' },
+      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity or gameplay' },
     ],
   },
   pov: {
