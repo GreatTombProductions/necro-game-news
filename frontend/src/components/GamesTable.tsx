@@ -15,24 +15,36 @@ interface GamesTableProps {
 }
 
 // Tooltip descriptions for taxonomy columns
-const TAXONOMY_TOOLTIPS = {
-  dimension_1: {
-    a: 'Necromancy is central to the character or unit\'s identity and gameplay',
-    b: 'Cohesive set of necromantic skills or equipment available to specialize into',
-    c: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category',
-    d: 'Necromancy is technically available to the character or unit, but with minimal impact to their identity and gameplay',
+const TAXONOMY_INFO = {
+  centrality: {
+    title: 'Centrality',
+    description: 'How central necromancy is to the gameplay experience',
+    values: [
+      { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character or unit\'s identity and gameplay' },
+      { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills or equipment available to specialize into' },
+      { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category' },
+      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'Necromancy is technically available to the character or unit, but with minimal impact to their identity and gameplay' },
+    ],
   },
-  dimension_2: {
-    character: 'Play AS the necromancer (who may control other necromancers)',
-    unit: 'Play as some entity controlling one or more necromancers, but not as any of them',
+  pov: {
+    title: 'POV',
+    description: 'The player\'s relationship to the necromancer',
+    values: [
+      { key: 'character', label: 'Character', color: 'text-purple-300', description: 'Play AS the necromancer (who may control other necromancers)' },
+      { key: 'unit', label: 'Unit', color: 'text-purple-300', description: 'Play as some entity controlling one or more necromancers, but not as any of them' },
+    ],
   },
-  dimension_3: {
-    explicit: 'An exact or minor variant of "necromancer" or "necromancy" used in game',
-    implied: 'Necromancy not mentioned by name in game',
+  naming: {
+    title: 'Naming',
+    description: 'Whether necromancy is explicitly named in the game',
+    values: [
+      { key: 'explicit', label: 'Explicit', color: 'text-green-300', description: 'An exact or minor variant of "necromancer" or "necromancy" used in game' },
+      { key: 'implied', label: 'Implied', color: 'text-blue-300', description: 'Necromancy not mentioned by name in game' },
+    ],
   },
 };
 
-// Custom filter function that searches name, developer, and genres
+// Custom filter function that searches only name and developer
 const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
   const search = filterValue.toLowerCase();
   const game = row.original;
@@ -46,17 +58,11 @@ const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
   // Search in developer
   if (game.developer && normalize(game.developer).includes(search)) return true;
 
-  // Search in genres
-  if (game.genres?.some(genre => normalize(genre).includes(search))) return true;
-
-  // Search in steam tags
-  if (game.steam_tags?.some(tag => normalize(tag).includes(search))) return true;
-
   return false;
 };
 
-// Tooltip wrapper component
-function Tooltip({ children, text }: { children: React.ReactNode; text: string }) {
+// Tooltip wrapper component for cell values
+function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
   return (
     <div className="group relative inline-block">
       {children}
@@ -64,6 +70,47 @@ function Tooltip({ children, text }: { children: React.ReactNode; text: string }
         {text}
         <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
       </div>
+    </div>
+  );
+}
+
+// Help icon with popover showing all values for a column
+function HelpIcon({ info }: { info: typeof TAXONOMY_INFO.centrality }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative inline-block ml-1">
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
+        className="inline-flex items-center justify-center w-4 h-4 text-xs text-purple-400 hover:text-purple-200 border border-purple-500/50 rounded-full hover:border-purple-400 transition-colors"
+        aria-label={`Help for ${info.title}`}
+      >
+        ?
+      </button>
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3">
+            <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
+            <div className="text-xs text-gray-400 mb-3">{info.description}</div>
+            <div className="space-y-2">
+              {info.values.map((v) => (
+                <div key={v.key} className="flex gap-2">
+                  <span className={`font-mono ${v.color} w-24 flex-shrink-0`}>{v.label}</span>
+                  <span className="text-xs text-gray-400">{v.description}</span>
+                </div>
+              ))}
+            </div>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -88,62 +135,6 @@ export default function GamesTable({ games }: GamesTableProps) {
             <div className="text-xs text-gray-500">{info.row.original.developer || 'Unknown'}</div>
           </div>
         ),
-      },
-      // Taxonomy column group
-      {
-        id: 'taxonomy',
-        header: () => (
-          <span className="text-purple-400 font-semibold">Necromancy Taxonomy</span>
-        ),
-        columns: [
-          {
-            accessorKey: 'dimension_1',
-            header: 'Centrality',
-            cell: info => {
-              const val = info.getValue() as string;
-              const labels: Record<string, string> = { a: 'Core', b: 'Dedicated Spec', c: 'Isolated', d: 'Minimal' };
-              const colors: Record<string, string> = {
-                a: 'text-green-400',
-                b: 'text-blue-400',
-                c: 'text-yellow-400',
-                d: 'text-gray-400'
-              };
-              return (
-                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_1[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_1]}>
-                  <span className={`font-mono ${colors[val]} cursor-help`}>
-                    {labels[val]}
-                  </span>
-                </Tooltip>
-              );
-            },
-          },
-          {
-            accessorKey: 'dimension_2',
-            header: 'POV',
-            cell: info => {
-              const val = info.getValue() as string;
-              return (
-                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_2[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_2]}>
-                  <span className="text-sm text-purple-300 capitalize cursor-help">{val}</span>
-                </Tooltip>
-              );
-            },
-          },
-          {
-            accessorKey: 'dimension_3',
-            header: 'Naming',
-            cell: info => {
-              const val = info.getValue() as string;
-              return (
-                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_3[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_3]}>
-                  <span className={`text-sm ${val === 'explicit' ? 'text-green-300' : 'text-blue-300'} capitalize cursor-help`}>
-                    {val}
-                  </span>
-                </Tooltip>
-              );
-            },
-          },
-        ],
       },
       {
         accessorKey: 'genres',
@@ -230,6 +221,78 @@ export default function GamesTable({ games }: GamesTableProps) {
           return <span className="text-xs text-gray-500">{formatted}</span>;
         },
       },
+      // Degree of Necromancy column group - moved to far right
+      {
+        id: 'degree_of_necromancy',
+        header: () => (
+          <span className="text-purple-400 font-semibold">Degree of Necromancy</span>
+        ),
+        columns: [
+          {
+            accessorKey: 'dimension_1',
+            header: () => (
+              <span className="flex items-center">
+                Centrality
+                <HelpIcon info={TAXONOMY_INFO.centrality} />
+              </span>
+            ),
+            cell: info => {
+              const val = info.getValue() as string;
+              const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <CellTooltip text={valueInfo.description}>
+                  <span className={`font-mono ${valueInfo.color} cursor-help`}>
+                    {valueInfo.label}
+                  </span>
+                </CellTooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'dimension_2',
+            header: () => (
+              <span className="flex items-center">
+                POV
+                <HelpIcon info={TAXONOMY_INFO.pov} />
+              </span>
+            ),
+            cell: info => {
+              const val = info.getValue() as string;
+              const valueInfo = TAXONOMY_INFO.pov.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <CellTooltip text={valueInfo.description}>
+                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                    {valueInfo.label}
+                  </span>
+                </CellTooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'dimension_3',
+            header: () => (
+              <span className="flex items-center">
+                Naming
+                <HelpIcon info={TAXONOMY_INFO.naming} />
+              </span>
+            ),
+            cell: info => {
+              const val = info.getValue() as string;
+              const valueInfo = TAXONOMY_INFO.naming.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <CellTooltip text={valueInfo.description}>
+                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                    {valueInfo.label}
+                  </span>
+                </CellTooltip>
+              );
+            },
+          },
+        ],
+      },
     ],
     []
   );
@@ -261,7 +324,7 @@ export default function GamesTable({ games }: GamesTableProps) {
           type="text"
           value={globalFilter ?? ''}
           onChange={e => setGlobalFilter(e.target.value)}
-          placeholder="Search games, developers, genres..."
+          placeholder="Search by game or developer..."
           className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
         />
       </div>
@@ -271,31 +334,44 @@ export default function GamesTable({ games }: GamesTableProps) {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              {table.getHeaderGroups().map(headerGroup => (
+              {table.getHeaderGroups().map((headerGroup, groupIndex) => (
                 <tr key={headerGroup.id} className="border-b border-purple-700/30">
-                  {headerGroup.headers.map(header => (
-                    <th
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      className="px-4 py-4 text-left text-sm font-semibold text-purple-300 bg-gray-900/50"
-                    >
-                      {header.isPlaceholder ? null : (
-                        <div
-                          className={header.column.getCanSort() ? 'cursor-pointer select-none hover:text-purple-200' : ''}
-                          onClick={header.column.getToggleSortingHandler()}
-                        >
-                          {flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                          {{
-                            asc: ' ↑',
-                            desc: ' ↓',
-                          }[header.column.getIsSorted() as string] ?? null}
-                        </div>
-                      )}
-                    </th>
-                  ))}
+                  {headerGroup.headers.map(header => {
+                    // Check if this is the group header row (first row with group headers)
+                    const isGroupHeader = groupIndex === 0 && header.colSpan > 1;
+                    // Check if this is a sub-column of the taxonomy group
+                    const isTaxonomyColumn = header.column.parent?.id === 'degree_of_necromancy';
+
+                    return (
+                      <th
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        className={`px-4 py-3 text-left text-sm font-semibold bg-gray-900/50 ${
+                          isGroupHeader
+                            ? 'text-purple-400 border-b border-purple-600/30 text-center'
+                            : 'text-purple-300'
+                        } ${
+                          isTaxonomyColumn ? 'bg-purple-900/20' : ''
+                        }`}
+                      >
+                        {header.isPlaceholder ? null : (
+                          <div
+                            className={header.column.getCanSort() ? 'cursor-pointer select-none hover:text-purple-200' : ''}
+                            onClick={header.column.getToggleSortingHandler()}
+                          >
+                            {flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                            {{
+                              asc: ' ↑',
+                              desc: ' ↓',
+                            }[header.column.getIsSorted() as string] ?? null}
+                          </div>
+                        )}
+                      </th>
+                    );
+                  })}
                 </tr>
               ))}
             </thead>
@@ -305,14 +381,22 @@ export default function GamesTable({ games }: GamesTableProps) {
                   key={row.id}
                   className="border-b border-gray-700/30 hover:bg-purple-900/20 transition-colors"
                 >
-                  {row.getVisibleCells().map(cell => (
-                    <td key={cell.id} className="px-4 py-4 text-sm text-gray-300">
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </td>
-                  ))}
+                  {row.getVisibleCells().map(cell => {
+                    const isTaxonomyColumn = cell.column.parent?.id === 'degree_of_necromancy';
+                    return (
+                      <td
+                        key={cell.id}
+                        className={`px-4 py-4 text-sm text-gray-300 ${
+                          isTaxonomyColumn ? 'bg-purple-900/10' : ''
+                        }`}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
