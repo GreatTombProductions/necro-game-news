@@ -19,7 +19,7 @@ class PostTemplate:
     """Base template for Instagram posts"""
 
     # Instagram specifications
-    INSTAGRAM_SIZE = (1080, 1080)  # Square post format
+    INSTAGRAM_SIZE = (1080, 1350)  # 4:5 aspect ratio (recommended for feed)
     INSTAGRAM_STORY_SIZE = (1080, 1920)  # Story format (future)
 
     def __init__(self, game_name: str, game_image_url: str,
@@ -69,9 +69,6 @@ class PostTemplate:
         Generate Instagram caption text.
 
         New format:
-        [GAME NAME] - [Update Type]
-        [Update Title]
-
         [AI-generated 1-2 sentence summary]
 
         Game Info:
@@ -82,23 +79,8 @@ class PostTemplate:
 
         #necromancy #gaming #[gamename]
         """
-        # Format update type for display
-        type_display = {
-            'patch': 'Update',
-            'announcement': 'Announcement',
-            'dlc': 'DLC',
-            'event': 'Event',
-            'release': 'Release',
-            'unknown': 'News'
-        }.get(self.update_type, 'News')
-
         # Build caption parts
         parts = []
-
-        # Header
-        parts.append(f"{self.game_name} - {type_display}")
-        parts.append(self.update_title)
-        parts.append("")  # Blank line
 
         # AI-generated summary (1-2 sentences)
         if self.update_content:

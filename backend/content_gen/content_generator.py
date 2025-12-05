@@ -26,12 +26,14 @@ class ContentGenerator:
         self.db_path = db_path
         self.conn = get_connection(db_path)
 
-    def get_unprocessed_updates(self, limit: Optional[int] = None) -> List[Dict]:
+    def get_unprocessed_updates(self, limit: Optional[int] = None,
+                               since_date: Optional[str] = None) -> List[Dict]:
         """
         Get updates that haven't been processed for social media yet.
 
         Args:
             limit: Maximum number of updates to return
+            since_date: Only return updates from this date onwards (ISO format: YYYY-MM-DD)
 
         Returns:
             List of update dictionaries with game information joined
@@ -58,14 +60,21 @@ class ContentGenerator:
             JOIN games g ON u.game_id = g.id
             WHERE u.processed_for_social = 0
             AND g.is_active = 1
-            ORDER BY u.date DESC
         """
+
+        params = []
+
+        if since_date:
+            query += " AND date(u.date) >= date(?)"
+            params.append(since_date)
+
+        query += " ORDER BY u.date DESC"
 
         if limit:
             query += f" LIMIT {limit}"
 
         cursor = self.conn.cursor()
-        cursor.execute(query)
+        cursor.execute(query, params)
 
         columns = [desc[0] for desc in cursor.description]
         results = []
@@ -193,7 +202,8 @@ class ContentGenerator:
 
     def bulk_queue_unprocessed(self, platform: str = 'instagram',
                                limit: Optional[int] = None,
-                               update_types: Optional[List[str]] = None) -> List[int]:
+                               update_types: Optional[List[str]] = None,
+                               since_date: Optional[str] = None) -> List[int]:
         """
         Queue multiple unprocessed updates for social media.
 
@@ -201,11 +211,12 @@ class ContentGenerator:
             platform: Social media platform
             limit: Maximum number to queue
             update_types: Filter by update types (e.g., ['patch', 'dlc'])
+            since_date: Only queue updates from this date onwards (ISO format: YYYY-MM-DD)
 
         Returns:
             List of queue entry IDs
         """
-        updates = self.get_unprocessed_updates(limit=limit)
+        updates = self.get_unprocessed_updates(limit=limit, since_date=since_date)
 
         # Filter by type if specified
         if update_types:

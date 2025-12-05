@@ -26,7 +26,7 @@ class ImageCompositor:
     """Compose Instagram post images with game header + text overlay"""
 
     # Instagram specifications
-    INSTAGRAM_SIZE = (1080, 1080)
+    INSTAGRAM_SIZE = (1080, 1350)  # 4:5 aspect ratio (recommended for feed)
 
     # Design constants
     OVERLAY_BACKGROUND = (0, 0, 0, 200)  # Semi-transparent black
@@ -97,41 +97,44 @@ class ImageCompositor:
         Prepare game image as background for Instagram post.
 
         Strategy:
-        - Steam headers are typically 460x215
-        - Need to create 1080x1080 square
-        - Crop to square, zoom/blur edges, or use creative framing
+        - Steam screenshots are typically 1920x1080 (16:9 landscape)
+        - Need to create 1080x1350 (4:5 portrait) for Instagram feed
+        - Center crop to target aspect ratio, then scale
 
         Args:
-            game_image: Original game header image
+            game_image: Original game image
 
         Returns:
-            1080x1080 PIL Image
+            1080x1350 PIL Image (4:5 aspect ratio)
         """
-        target_size = self.INSTAGRAM_SIZE
+        target_width, target_height = self.INSTAGRAM_SIZE
+        target_aspect = target_width / target_height  # 0.8 for 4:5
 
-        # Strategy: Center crop to square, then scale up
         width, height = game_image.size
+        source_aspect = width / height
 
-        # Calculate crop to square (center)
-        if width > height:
-            # Landscape: crop width
-            crop_size = height
-            left = (width - crop_size) // 2
+        # Determine crop dimensions to match target aspect ratio
+        if source_aspect > target_aspect:
+            # Source is wider than target - crop width
+            new_width = int(height * target_aspect)
+            new_height = height
+            left = (width - new_width) // 2
             top = 0
-            right = left + crop_size
-            bottom = crop_size
+            right = left + new_width
+            bottom = new_height
         else:
-            # Portrait or square: crop height
-            crop_size = width
+            # Source is taller than target - crop height
+            new_width = width
+            new_height = int(width / target_aspect)
             left = 0
-            top = (height - crop_size) // 2
-            right = crop_size
-            bottom = top + crop_size
+            top = (height - new_height) // 2
+            right = new_width
+            bottom = top + new_height
 
         cropped = game_image.crop((left, top, right, bottom))
 
         # Scale to Instagram size
-        scaled = cropped.resize(target_size, Image.Resampling.LANCZOS)
+        scaled = cropped.resize(self.INSTAGRAM_SIZE, Image.Resampling.LANCZOS)
 
         # Slight darkening to make text more readable
         enhancer = ImageEnhance.Brightness(scaled)

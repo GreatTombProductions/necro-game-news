@@ -3,8 +3,14 @@
 Generate and queue social media posts from unprocessed updates
 
 Usage:
-    # Queue all unprocessed updates
+    # Queue all unprocessed updates from today
     python scripts/generate_social_posts.py
+
+    # Queue updates from a specific date onwards
+    python scripts/generate_social_posts.py --since 2025-12-01
+
+    # Queue all unprocessed updates (including old ones)
+    python scripts/generate_social_posts.py --all
 
     # Queue only patches
     python scripts/generate_social_posts.py --types patch
@@ -22,6 +28,7 @@ Usage:
 import sys
 import argparse
 from pathlib import Path
+from datetime import datetime
 
 # Add backend to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -66,16 +73,39 @@ def main():
         action='store_true',
         help='Show statistics only, do not queue'
     )
+    parser.add_argument(
+        '--since',
+        type=str,
+        help='Only queue updates from this date onwards (YYYY-MM-DD format). Defaults to today.'
+    )
+    parser.add_argument(
+        '--all',
+        action='store_true',
+        help='Queue all unprocessed updates, ignoring date filter'
+    )
 
     args = parser.parse_args()
+
+    # Determine date filter
+    since_date = None
+    if not args.all and args.update_id is None:
+        if args.since:
+            since_date = args.since
+        else:
+            # Default to today
+            since_date = datetime.now().strftime('%Y-%m-%d')
 
     with ContentGenerator() as gen:
         # Stats mode
         if args.stats:
-            unprocessed = gen.get_unprocessed_updates()
+            unprocessed = gen.get_unprocessed_updates(since_date=since_date)
             print(f"\n{'='*60}")
             print("Unprocessed Updates Statistics")
             print(f"{'='*60}")
+            if since_date:
+                print(f"Date filter: {since_date} onwards")
+            else:
+                print(f"Date filter: None (all updates)")
             print(f"Total unprocessed: {len(unprocessed)}")
 
             # Group by type
@@ -118,6 +148,10 @@ def main():
         print("Queueing Unprocessed Updates")
         print(f"{'='*60}")
 
+        if since_date:
+            print(f"Date filter: {since_date} onwards")
+        else:
+            print(f"Date filter: None (all updates)")
         if args.types:
             print(f"Types: {', '.join(args.types)}")
         if args.limit:
@@ -128,7 +162,8 @@ def main():
         queue_ids = gen.bulk_queue_unprocessed(
             platform=args.platform,
             limit=args.limit,
-            update_types=args.types
+            update_types=args.types,
+            since_date=since_date
         )
 
         print(f"\n✓ Queued {len(queue_ids)} updates")
