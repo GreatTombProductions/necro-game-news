@@ -156,13 +156,18 @@ export default function GamesTable({ games }: GamesTableProps) {
         header: 'Game',
         cell: info => (
           <div
-            className="cursor-pointer hover:text-purple-300 transition-colors"
+            className="group/game cursor-pointer hover:text-purple-300 transition-colors"
             onClick={(e) => {
               e.stopPropagation();
               window.open(`https://store.steampowered.com/app/${info.row.original.steam_id}`, '_blank');
             }}
           >
-            <div className="font-semibold text-purple-200">{info.getValue() as string}</div>
+            <div className="font-semibold text-purple-200 group-hover/game:text-purple-300 group-hover/game:underline inline-flex items-center gap-1.5">
+              {info.getValue() as string}
+              <svg className="w-3.5 h-3.5 opacity-0 group-hover/game:opacity-70 transition-opacity flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
             <div className="text-xs text-gray-500">{info.row.original.developer || 'Unknown'}</div>
           </div>
         ),
