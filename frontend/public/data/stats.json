@@ -3,17 +3,16 @@
   "total_updates": 196,
   "recent_updates_30d": 63,
   "dimension_1": {
-    "a": 4,
-    "b": 2,
+    "a": 5,
+    "b": 1,
     "c": 2
   },
   "dimension_2": {
-    "character": 7,
-    "unit": 1
+    "character": 8
   },
   "dimension_3": {
     "explicit": 6,
     "implied": 2
   },
-  "last_updated": "2025-12-05T01:33:51.323678"
+  "last_updated": "2025-12-05T02:37:14.471132"
 }

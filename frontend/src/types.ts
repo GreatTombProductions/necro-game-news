@@ -17,6 +17,9 @@ export interface Game {
   last_checked?: string;
   update_count: number;
   last_update?: string;
+  last_update_url?: string;
+  last_announcement?: string;
+  last_announcement_url?: string;
 }
 
 export interface Stats {

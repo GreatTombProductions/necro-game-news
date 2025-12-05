@@ -7,11 +7,65 @@ import {
   getPaginationRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import type { ColumnDef } from '@tanstack/react-table';
+import type { ColumnDef, FilterFn } from '@tanstack/react-table';
 import type { Game } from '../types';
 
 interface GamesTableProps {
   games: Game[];
+}
+
+// Tooltip descriptions for taxonomy columns
+const TAXONOMY_TOOLTIPS = {
+  dimension_1: {
+    a: 'Necromancy is central to the character or unit\'s identity and gameplay',
+    b: 'Cohesive set of necromantic skills or equipment available to specialize into',
+    c: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category',
+    d: 'Necromancy is technically available to the character or unit, but with minimal impact to their identity and gameplay',
+  },
+  dimension_2: {
+    character: 'Play AS the necromancer (who may control other necromancers)',
+    unit: 'Play as some entity controlling one or more necromancers, but not as any of them',
+  },
+  dimension_3: {
+    explicit: 'An exact or minor variant of "necromancer" or "necromancy" used in game',
+    implied: 'Necromancy not mentioned by name in game',
+  },
+};
+
+// Custom filter function that searches name, developer, and genres
+const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
+  const search = filterValue.toLowerCase();
+  const game = row.original;
+
+  // Strip special characters for matching
+  const normalize = (str: string) => str.toLowerCase().replace(/[®©™]/g, '');
+
+  // Search in name
+  if (normalize(game.name).includes(search)) return true;
+
+  // Search in developer
+  if (game.developer && normalize(game.developer).includes(search)) return true;
+
+  // Search in genres
+  if (game.genres?.some(genre => normalize(genre).includes(search))) return true;
+
+  // Search in steam tags
+  if (game.steam_tags?.some(tag => normalize(tag).includes(search))) return true;
+
+  return false;
+};
+
+// Tooltip wrapper component
+function Tooltip({ children, text }: { children: React.ReactNode; text: string }) {
+  return (
+    <div className="group relative inline-block">
+      {children}
+      <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+        {text}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+      </div>
+    </div>
+  );
 }
 
 export default function GamesTable({ games }: GamesTableProps) {
@@ -23,49 +77,73 @@ export default function GamesTable({ games }: GamesTableProps) {
         accessorKey: 'name',
         header: 'Game',
         cell: info => (
-          <div>
+          <div
+            className="cursor-pointer hover:text-purple-300 transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(`https://store.steampowered.com/app/${info.row.original.steam_id}`, '_blank');
+            }}
+          >
             <div className="font-semibold text-purple-200">{info.getValue() as string}</div>
             <div className="text-xs text-gray-500">{info.row.original.developer || 'Unknown'}</div>
           </div>
         ),
       },
+      // Taxonomy column group
       {
-        accessorKey: 'dimension_1',
-        header: 'Centrality',
-        cell: info => {
-          const val = info.getValue() as string;
-          const labels: Record<string, string> = { a: 'Core', b: 'Spec', c: 'Isolated', d: 'Flavor' };
-          const colors: Record<string, string> = { 
-            a: 'text-green-400', 
-            b: 'text-blue-400', 
-            c: 'text-yellow-400', 
-            d: 'text-gray-400' 
-          };
-          return (
-            <span className={`font-mono ${colors[val]}`}>
-              {labels[val]}
-            </span>
-          );
-        },
-      },
-      {
-        accessorKey: 'dimension_2',
-        header: 'POV',
-        cell: info => (
-          <span className="text-sm text-purple-300 capitalize">{info.getValue() as string}</span>
+        id: 'taxonomy',
+        header: () => (
+          <span className="text-purple-400 font-semibold">Necromancy Taxonomy</span>
         ),
-      },
-      {
-        accessorKey: 'dimension_3',
-        header: 'Naming',
-        cell: info => {
-          const val = info.getValue() as string;
-          return (
-            <span className={`text-sm ${val === 'explicit' ? 'text-green-300' : 'text-blue-300'} capitalize`}>
-              {val}
-            </span>
-          );
-        },
+        columns: [
+          {
+            accessorKey: 'dimension_1',
+            header: 'Centrality',
+            cell: info => {
+              const val = info.getValue() as string;
+              const labels: Record<string, string> = { a: 'Core', b: 'Dedicated Spec', c: 'Isolated', d: 'Minimal' };
+              const colors: Record<string, string> = {
+                a: 'text-green-400',
+                b: 'text-blue-400',
+                c: 'text-yellow-400',
+                d: 'text-gray-400'
+              };
+              return (
+                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_1[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_1]}>
+                  <span className={`font-mono ${colors[val]} cursor-help`}>
+                    {labels[val]}
+                  </span>
+                </Tooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'dimension_2',
+            header: 'POV',
+            cell: info => {
+              const val = info.getValue() as string;
+              return (
+                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_2[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_2]}>
+                  <span className="text-sm text-purple-300 capitalize cursor-help">{val}</span>
+                </Tooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'dimension_3',
+            header: 'Naming',
+            cell: info => {
+              const val = info.getValue() as string;
+              return (
+                <Tooltip text={TAXONOMY_TOOLTIPS.dimension_3[val as keyof typeof TAXONOMY_TOOLTIPS.dimension_3]}>
+                  <span className={`text-sm ${val === 'explicit' ? 'text-green-300' : 'text-blue-300'} capitalize cursor-help`}>
+                    {val}
+                  </span>
+                </Tooltip>
+              );
+            },
+          },
+        ],
       },
       {
         accessorKey: 'genres',
@@ -87,24 +165,69 @@ export default function GamesTable({ games }: GamesTableProps) {
         },
       },
       {
-        accessorKey: 'update_count',
-        header: 'Updates',
-        cell: info => (
-          <span className="text-gray-400">{info.getValue() as number}</span>
-        ),
-      },
-      {
         accessorKey: 'last_update',
         header: 'Last Update',
         cell: info => {
           const date = info.getValue() as string | undefined;
+          const url = info.row.original.last_update_url;
+
           if (!date) return <span className="text-xs text-gray-600">Never</span>;
+
+          let formatted: string;
           try {
-            const formatted = new Date(date).toLocaleDateString();
-            return <span className="text-xs text-gray-500">{formatted}</span>;
+            formatted = new Date(date).toLocaleDateString();
           } catch {
-            return <span className="text-xs text-gray-500">{date}</span>;
+            formatted = date;
           }
+
+          if (url) {
+            return (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {formatted}
+              </a>
+            );
+          }
+
+          return <span className="text-xs text-gray-500">{formatted}</span>;
+        },
+      },
+      {
+        accessorKey: 'last_announcement',
+        header: 'Last Announcement',
+        cell: info => {
+          const date = info.getValue() as string | undefined;
+          const url = info.row.original.last_announcement_url;
+
+          if (!date) return <span className="text-xs text-gray-600">None</span>;
+
+          let formatted: string;
+          try {
+            formatted = new Date(date).toLocaleDateString();
+          } catch {
+            formatted = date;
+          }
+
+          if (url) {
+            return (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-purple-300 hover:underline transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {formatted}
+              </a>
+            );
+          }
+
+          return <span className="text-xs text-gray-500">{formatted}</span>;
         },
       },
     ],
@@ -118,6 +241,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       globalFilter,
     },
     onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: gameFilterFn,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -152,6 +276,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                   {headerGroup.headers.map(header => (
                     <th
                       key={header.id}
+                      colSpan={header.colSpan}
                       className="px-4 py-4 text-left text-sm font-semibold text-purple-300 bg-gray-900/50"
                     >
                       {header.isPlaceholder ? null : (
@@ -178,8 +303,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               {table.getRowModel().rows.map(row => (
                 <tr
                   key={row.id}
-                  className="border-b border-gray-700/30 hover:bg-purple-900/20 transition-colors cursor-pointer"
-                  onClick={() => window.open(`https://store.steampowered.com/app/${row.original.steam_id}`, '_blank')}
+                  className="border-b border-gray-700/30 hover:bg-purple-900/20 transition-colors"
                 >
                   {row.getVisibleCells().map(cell => (
                     <td key={cell.id} className="px-4 py-4 text-sm text-gray-300">

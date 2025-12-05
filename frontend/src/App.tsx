@@ -65,24 +65,6 @@ function App() {
         {/* Main Table */}
         <GamesTable games={games} />
 
-        {/* Stats Footer */}
-        {stats && (
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-700/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-green-400">{stats.dimension_1.a || 0}</div>
-              <div className="text-sm text-gray-400">Core Identity</div>
-            </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-700/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-blue-400">{stats.dimension_1.b || 0}</div>
-              <div className="text-sm text-gray-400">Specialization</div>
-            </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-700/30 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-purple-400">{stats.total_updates}</div>
-              <div className="text-sm text-gray-400">Total Updates Tracked</div>
-            </div>
-          </div>
-        )}
-
         {/* Footer */}
         <div className="mt-8 text-center text-gray-500 text-sm">
           Last updated: {stats?.last_updated ? new Date(stats.last_updated).toLocaleString() : 'Unknown'}

@@ -33,7 +33,10 @@
     ],
     "last_checked": "2025-12-05 01:33:42.218120",
     "update_count": 20,
-    "last_update": "2025-10-22 05:18:11"
+    "last_update": "2025-10-22 05:18:11",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1814309641409517",
+    "last_announcement": "2025-08-05 05:41:43",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490843947"
   },
   {
     "id": 1,
@@ -67,7 +70,10 @@
     ],
     "last_checked": "2025-12-05 01:33:43.790194",
     "update_count": 21,
-    "last_update": "2025-12-04 04:12:38"
+    "last_update": "2025-12-04 04:12:38",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1818118366172922",
+    "last_announcement": "2025-11-05 03:49:44",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/1815580768226995"
   },
   {
     "id": 3,
@@ -103,7 +109,10 @@
     ],
     "last_checked": "2025-12-05 01:33:45.237872",
     "update_count": 20,
-    "last_update": "2025-11-24 09:59:20"
+    "last_update": "2025-11-24 09:59:20",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002020783",
+    "last_announcement": "2025-04-21 09:28:25",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861770797"
   },
   {
     "id": 4,
@@ -139,7 +148,10 @@
     ],
     "last_checked": "2025-12-05 01:33:46.742099",
     "update_count": 20,
-    "last_update": "2025-12-01 09:01:00"
+    "last_update": "2025-12-01 09:01:00",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045978",
+    "last_announcement": "2025-12-01 09:01:00",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045978"
   },
   {
     "id": 10,
@@ -175,7 +187,10 @@
     ],
     "last_checked": "2025-12-05 01:33:40.716319",
     "update_count": 8,
-    "last_update": "2025-12-04 08:49:55"
+    "last_update": "2025-12-04 08:49:55",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173473",
+    "last_announcement": "2025-05-25 13:38:38",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164513545"
   },
   {
     "id": 5,
@@ -184,10 +199,10 @@
     "app_type": "game",
     "short_description": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you. Path of Exile is an online Action RPG set in a dark fantasy world. The game is completely free and will never be pay-to-win.",
     "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/ca612c5e33f8705754dcb89ddb465a6b364d0cb1/header.jpg?t=1761681686",
-    "dimension_1": "b",
+    "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
-    "classification_notes": "Extensive minion/summoner builds available, especially for Witch class",
+    "classification_notes": "Necromancer specialization for the Witch class",
     "developer": "Grinding Gear Games",
     "publisher": "Grinding Gear Games",
     "release_date": "23 Oct, 2013",
@@ -213,7 +228,10 @@
     ],
     "last_checked": "2025-12-05 01:33:48.237319",
     "update_count": 21,
-    "last_update": "2025-12-04 11:30:00"
+    "last_update": "2025-12-04 11:30:00",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1818118366174252",
+    "last_announcement": "2025-12-04 11:30:00",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/PC Gamer/1818118366174252"
   },
   {
     "id": 9,
@@ -223,7 +241,7 @@
     "short_description": "The cataclysmic conclusion to the Total War: WARHAMMER trilogy is here. Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided. Will you conquer your Daemons\u2026 or command them?",
     "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/header.jpg?t=1763646159",
     "dimension_1": "a",
-    "dimension_2": "unit",
+    "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "Vampire Counts faction with necromancers and undead armies",
     "developer": "CREATIVE ASSEMBLY, Feral Interactive",
@@ -247,7 +265,10 @@
     ],
     "last_checked": "2025-12-05 01:33:49.791487",
     "update_count": 25,
-    "last_update": "2025-12-04 09:12:13"
+    "last_update": "2025-12-04 09:12:13",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173595",
+    "last_announcement": "2025-12-04 09:05:46",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173541"
   },
   {
     "id": 2,
@@ -282,6 +303,9 @@
     ],
     "last_checked": "2025-12-05 01:33:51.243339",
     "update_count": 20,
-    "last_update": "2025-11-28 09:00:30"
+    "last_update": "2025-11-28 09:00:30",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039917",
+    "last_announcement": "2025-11-28 09:00:30",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039917"
   }
 ]

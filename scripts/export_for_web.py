@@ -26,8 +26,9 @@ def export_games():
     conn.row_factory = lambda cursor, row: dict(zip([col[0] for col in cursor.description], row))
     cursor = conn.cursor()
     
+    # Get games with update counts and last update info
     cursor.execute("""
-        SELECT 
+        SELECT
             g.id,
             g.steam_id,
             g.name,
@@ -44,12 +45,13 @@ def export_games():
             g.steam_tags,
             g.genres,
             g.last_checked,
-            COUNT(u.id) as update_count,
-            MAX(u.date) as last_update
+            (SELECT COUNT(*) FROM updates WHERE game_id = g.id) as update_count,
+            (SELECT date FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_update,
+            (SELECT url FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_update_url,
+            (SELECT date FROM updates WHERE game_id = g.id AND update_type = 'announcement' ORDER BY date DESC LIMIT 1) as last_announcement,
+            (SELECT url FROM updates WHERE game_id = g.id AND update_type = 'announcement' ORDER BY date DESC LIMIT 1) as last_announcement_url
         FROM games g
-        LEFT JOIN updates u ON g.id = u.game_id
         WHERE g.is_active = 1
-        GROUP BY g.id
         ORDER BY g.name
     """)
     
