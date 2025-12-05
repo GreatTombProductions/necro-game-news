@@ -436,8 +436,8 @@ export default function GamesTable({ games }: GamesTableProps) {
             className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
           />
         </div>
-        <div className="flex-shrink-0 text-right sm:text-left">
-          <span className="text-gray-500 text-sm">Know something we don't? </span>
+        <div className="flex-shrink-0 text-right sm:text-left flex flex-col justify-center py-1">
+          <span className="text-gray-500 text-sm">Know something we don't?</span>
           <button
             onClick={() => setIsSubmissionFormOpen(true)}
             className="text-purple-400 hover:text-purple-300 text-sm underline underline-offset-2 transition-colors"

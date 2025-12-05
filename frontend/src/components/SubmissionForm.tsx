@@ -53,9 +53,10 @@ export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps)
     contact: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -65,10 +66,26 @@ export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps)
       return;
     }
 
-    // For now, just log the data and show success
-    // In future, this would POST to an API endpoint
-    console.log('Submission:', formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to submit');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -327,9 +344,10 @@ export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps)
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 bg-purple-700 hover:bg-purple-600 text-white font-medium rounded-lg transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full py-3 bg-purple-700 hover:bg-purple-600 disabled:bg-purple-700/50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors"
                 >
-                  Submit for Review
+                  {isSubmitting ? 'Submitting...' : 'Submit for Review'}
                 </button>
               </div>
             </form>
