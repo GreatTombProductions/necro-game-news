@@ -9,6 +9,7 @@ import {
 } from '@tanstack/react-table';
 import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
 import type { Game } from '../types';
+import SubmissionForm from './SubmissionForm';
 
 interface GamesTableProps {
   games: Game[];
@@ -201,6 +202,7 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
 
 export default function GamesTable({ games }: GamesTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
+  const [isSubmissionFormOpen, setIsSubmissionFormOpen] = useState(false);
 
   const columns = useMemo<ColumnDef<Game>[]>(
     () => [
@@ -423,16 +425,33 @@ export default function GamesTable({ games }: GamesTableProps) {
 
   return (
     <div>
-      {/* Search Bar */}
-      <div className="mb-6">
-        <input
-          type="text"
-          value={globalFilter ?? ''}
-          onChange={e => setGlobalFilter(e.target.value)}
-          placeholder="Search by game or developer..."
-          className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-        />
+      {/* Search Bar and Submission Link */}
+      <div className="mb-6 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
+        <div className="flex-1">
+          <input
+            type="text"
+            value={globalFilter ?? ''}
+            onChange={e => setGlobalFilter(e.target.value)}
+            placeholder="Search by game or developer..."
+            className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+          />
+        </div>
+        <div className="flex-shrink-0 text-right sm:text-left">
+          <span className="text-gray-500 text-sm">Know something we don't? </span>
+          <button
+            onClick={() => setIsSubmissionFormOpen(true)}
+            className="text-purple-400 hover:text-purple-300 text-sm underline underline-offset-2 transition-colors"
+          >
+            Submit a game
+          </button>
+        </div>
       </div>
+
+      {/* Submission Form Modal */}
+      <SubmissionForm
+        isOpen={isSubmissionFormOpen}
+        onClose={() => setIsSubmissionFormOpen(false)}
+      />
 
       {/* Table */}
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg border border-purple-700/30 overflow-hidden shadow-2xl">

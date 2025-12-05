@@ -127,7 +127,7 @@ echo ""
 case $MODE in
     full)
         echo "🔍 Checking for updates..."
-        $PYTHON scripts/load_games_from_yaml.py --update
+        $PYTHON scripts/load_games_from_yaml.py --update --sync
         $PYTHON scripts/check_updates.py
 
         echo ""
@@ -157,7 +157,7 @@ case $MODE in
 
     updates)
         echo "🔍 Checking for updates..."
-        $PYTHON scripts/load_games_from_yaml.py --update
+        $PYTHON scripts/load_games_from_yaml.py --update --sync
         $PYTHON scripts/check_updates.py
 
         echo ""

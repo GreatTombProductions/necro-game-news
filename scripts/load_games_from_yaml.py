@@ -273,7 +273,6 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         print(f"↻ Updated: {name} ({', '.join(changes)})")
                         updated += 1
                     else:
-                        print(f"⊙ Unchanged: {name}")
                         skipped += 1
                 else:
                     print(f"⊙ Skipped (already exists): {name}")

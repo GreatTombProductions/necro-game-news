@@ -28,7 +28,7 @@ games:
     notes: "Necromancer is a fully playable class with extensive skill trees"
     date_added: "2024-12-02"
     priority: high
-    
+
   - name: "Grim Dawn"
     steam_id: 219990
     classification:
@@ -100,7 +100,7 @@ games:
 
 
   - name: "Skul: The Hero Slayer"
-    steam_id: 1282140
+    steam_id: 1147560
     classification:
       dimension_1: "c"
       dimension_2: "character"
