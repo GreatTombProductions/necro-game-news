@@ -1,51 +1,5 @@
 [
   {
-    "id": 8,
-    "steam_id": 1669000,
-    "name": "Age of Wonders 4",
-    "app_type": "game",
-    "short_description": "Rule a fantasy realm of your own design! Explore new magical realms in Age of Wonders\u2019 signature blend of 4X strategy and turn-based tactical combat. Control a faction that grows and changes as you expand your empire with each turn!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1669000/f136099cdcf70a3b0804a5c9d1184b13a231ccbd/header_alt_assets_10.jpg?t=1763454184",
-    "dimension_1": "b",
-    "dimension_2": "unit",
-    "dimension_3": "explicit",
-    "classification_notes": "Necromancy available as magic affinity",
-    "developer": "Triumph Studios",
-    "publisher": "Paradox Interactive",
-    "release_date": "2 May, 2023",
-    "steam_tags": [
-      "Single-player",
-      "Multi-player",
-      "PvP",
-      "Online PvP",
-      "Co-op",
-      "Online Co-op",
-      "Cross-Platform Multiplayer",
-      "Steam Achievements",
-      "Steam Workshop",
-      "Camera Comfort",
-      "Chat Speech-to-text",
-      "Chat Text-to-speech",
-      "Custom Volume Controls",
-      "Adjustable Difficulty",
-      "Playable without Timed Input",
-      "Save Anytime",
-      "Stereo Sound",
-      "Surround Sound",
-      "Partial Controller Support",
-      "Steam Cloud",
-      "Remote Play Together",
-      "Family Sharing"
-    ],
-    "genres": [
-      "RPG",
-      "Strategy"
-    ],
-    "last_checked": "2025-12-04 15:48:55.194126",
-    "update_count": 21,
-    "last_update": "2025-12-03 01:43:44"
-  },
-  {
     "id": 6,
     "steam_id": 1313140,
     "name": "Cult of the Lamb",
@@ -84,44 +38,9 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-04 15:48:56.755341",
+    "last_checked": "2025-12-04 16:53:28.526612",
     "update_count": 20,
     "last_update": "2025-10-22 05:18:11"
-  },
-  {
-    "id": 7,
-    "steam_id": 588650,
-    "name": "Dead Cells",
-    "app_type": "game",
-    "short_description": "Dead Cells is a roguelite, metroidvania inspired, action-platformer. You'll explore a sprawling, ever-changing castle... assuming you\u2019re able to fight your way past its keepers in 2D souls-lite combat. No checkpoints. Kill, die, learn, repeat.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/header.jpg?t=1761123066",
-    "dimension_1": "c",
-    "dimension_2": "character",
-    "dimension_3": "implied",
-    "classification_notes": "Necromancy-themed mutations and weapons scattered throughout",
-    "developer": "Motion Twin",
-    "publisher": "Motion Twin",
-    "release_date": "Aug 6, 2018",
-    "steam_tags": [
-      "Single-player",
-      "Steam Achievements",
-      "Full controller support",
-      "Steam Trading Cards",
-      "Steam Workshop",
-      "Steam Cloud",
-      "Remote Play on Phone",
-      "Remote Play on Tablet",
-      "Remote Play on TV",
-      "Family Sharing"
-    ],
-    "genres": [
-      "Action",
-      "Adventure",
-      "Indie"
-    ],
-    "last_checked": "2025-12-04 15:48:58.219678",
-    "update_count": 20,
-    "last_update": "2025-10-27 07:39:21"
   },
   {
     "id": 1,
@@ -164,7 +83,7 @@
       "Action",
       "RPG"
     ],
-    "last_checked": "2025-12-04 15:49:00.208137",
+    "last_checked": "2025-12-04 16:53:30.149763",
     "update_count": 21,
     "last_update": "2025-12-04 04:12:38"
   },
@@ -202,7 +121,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-04 15:49:01.174788",
+    "last_checked": "2025-12-04 16:53:31.525676",
     "update_count": 20,
     "last_update": "2025-11-24 09:59:20"
   },
@@ -235,9 +154,29 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-04 15:49:02.971023",
+    "last_checked": "2025-12-04 16:53:34.031210",
     "update_count": 20,
     "last_update": "2025-12-01 09:01:00"
+  },
+  {
+    "id": 10,
+    "steam_id": 3668370,
+    "name": "Night Swarm",
+    "app_type": null,
+    "short_description": null,
+    "header_image_url": null,
+    "dimension_1": "c",
+    "dimension_2": "character",
+    "dimension_3": "implied",
+    "classification_notes": "Undead-summoning artifacts as part of gameplay mechanics",
+    "developer": null,
+    "publisher": null,
+    "release_date": null,
+    "steam_tags": [],
+    "genres": [],
+    "last_checked": "2025-12-04 16:53:27.064428",
+    "update_count": 8,
+    "last_update": "2025-12-04 08:49:55"
   },
   {
     "id": 5,
@@ -275,7 +214,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-04 15:49:04.246786",
+    "last_checked": "2025-12-04 16:53:34.655380",
     "update_count": 21,
     "last_update": "2025-12-04 11:30:00"
   },
@@ -319,7 +258,7 @@
       "Action",
       "Strategy"
     ],
-    "last_checked": "2025-12-04 15:49:05.793144",
+    "last_checked": "2025-12-04 16:53:36.017713",
     "update_count": 25,
     "last_update": "2025-12-04 09:12:13"
   },
@@ -364,7 +303,7 @@
       "Adventure",
       "Massively Multiplayer"
     ],
-    "last_checked": "2025-12-04 15:49:07.274164",
+    "last_checked": "2025-12-04 16:53:38.514990",
     "update_count": 20,
     "last_update": "2025-11-28 09:00:30"
   }
