@@ -38,6 +38,11 @@ class SteamAPIError(Exception):
     pass
 
 
+class RateLimitError(SteamAPIError):
+    """Raised when Steam API returns 429 Too Many Requests"""
+    pass
+
+
 class SteamAPI:
     """Steam API client with rate limiting"""
     
@@ -63,33 +68,62 @@ class SteamAPI:
             time.sleep(self.rate_limit_delay - elapsed)
         self.last_request_time = time.time()
     
-    def _make_request(self, url: str, params: Optional[Dict] = None, timeout: int = 10) -> Dict:
+    def _make_request(self, url: str, params: Optional[Dict] = None, timeout: int = 10, retries: int = 3) -> Dict:
         """
-        Make a request to Steam API with error handling.
-        
+        Make a request to Steam API with error handling and retry logic.
+
         Args:
             url: Full URL to request
             params: Query parameters
             timeout: Request timeout in seconds
-            
+            retries: Number of retries for rate limit errors
+
         Returns:
             JSON response as dict
-            
+
         Raises:
-            SteamAPIError: If request fails
+            RateLimitError: If rate limited after all retries
+            SteamAPIError: If request fails for other reasons
         """
         self._rate_limit()
-        
-        try:
-            response = requests.get(url, params=params, timeout=timeout)
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.Timeout:
-            raise SteamAPIError(f"Request timed out: {url}")
-        except requests.exceptions.RequestException as e:
-            raise SteamAPIError(f"Request failed: {e}")
-        except ValueError as e:
-            raise SteamAPIError(f"Invalid JSON response: {e}")
+
+        last_error = None
+        for attempt in range(retries):
+            try:
+                response = requests.get(url, params=params, timeout=timeout)
+
+                # Handle rate limiting with retry
+                if response.status_code == 429:
+                    backoff = min(60, 5 * (2 ** attempt))  # 5s, 10s, 20s...
+                    logger.warning(f"Rate limited (429), backing off {backoff}s (attempt {attempt + 1}/{retries})")
+                    time.sleep(backoff)
+                    last_error = RateLimitError(f"Rate limited: {url}")
+                    continue
+
+                response.raise_for_status()
+                return response.json()
+
+            except requests.exceptions.Timeout:
+                last_error = SteamAPIError(f"Request timed out: {url}")
+                if attempt < retries - 1:
+                    time.sleep(2)
+                    continue
+                raise last_error
+            except requests.exceptions.RequestException as e:
+                if '429' in str(e):
+                    backoff = min(60, 5 * (2 ** attempt))
+                    logger.warning(f"Rate limited, backing off {backoff}s (attempt {attempt + 1}/{retries})")
+                    time.sleep(backoff)
+                    last_error = RateLimitError(f"Rate limited: {e}")
+                    continue
+                raise SteamAPIError(f"Request failed: {e}")
+            except ValueError as e:
+                raise SteamAPIError(f"Invalid JSON response: {e}")
+
+        # All retries exhausted
+        if last_error:
+            raise last_error
+        raise SteamAPIError(f"Request failed after {retries} attempts")
     
     def get_app_details(self, appid: int) -> Optional[Dict]:
         """
@@ -100,21 +134,27 @@ class SteamAPI:
 
         Returns:
             Dictionary with app details, or None if not found/failed
+
+        Raises:
+            RateLimitError: If rate limited after all retries (caller should not mark as processed)
         """
         url = f"{STORE_API_BASE}/appdetails"
         params = {'appids': appid, 'l': 'english'}
-        
+
         try:
             data = self._make_request(url, params)
-            
+
             # Check if request was successful
             app_data = data.get(str(appid), {})
             if not app_data.get('success', False):
                 logger.warning(f"App {appid} not found or request failed")
                 return None
-            
+
             return app_data.get('data', {})
-            
+
+        except RateLimitError:
+            # Re-raise rate limit errors so caller can handle them specially
+            raise
         except SteamAPIError as e:
             logger.error(f"Error fetching details for app {appid}: {e}")
             return None
@@ -130,6 +170,9 @@ class SteamAPI:
 
         Returns:
             List of news items, each as a dictionary
+
+        Raises:
+            RateLimitError: If rate limited after all retries
         """
         url = f"{STEAM_API_BASE}/ISteamNews/GetNewsForApp/v2/"
         params = {
@@ -143,6 +186,9 @@ class SteamAPI:
             news_items = data.get('appnews', {}).get('newsitems', [])
             return news_items
 
+        except RateLimitError:
+            # Re-raise rate limit errors so caller can handle them
+            raise
         except SteamAPIError as e:
             logger.error(f"Error fetching news for app {appid}: {e}")
             return []

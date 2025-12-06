@@ -20,7 +20,7 @@ from datetime import datetime
 # Add backend to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from backend.scrapers.steam_api import SteamAPI, SteamAPIError
+from backend.scrapers.steam_api import SteamAPI, SteamAPIError, RateLimitError
 from backend.database.schema import get_connection
 
 # Set up logging

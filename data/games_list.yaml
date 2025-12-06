@@ -462,6 +462,105 @@ games:
     date_added: "2024-12-05"
     priority: medium
 
+  - name: "Path of Exile 2"
+    steam_id: 2694490
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2024-12-05"
+    priority: high
+
+  - name: "Frosthaven"
+    steam_id: 2347080
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2024-12-05"
+    priority: high
+
+  - name: "Songs of Conquest"
+    steam_id: 867210
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: high
+
+  - name: "Mind Over Magic"
+    steam_id: 1270580
+    classification:
+      dimension_1: "c"
+      dimension_2: "unit"
+      dimension_3: "implied"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "The Necromancer's Tale"
+    steam_id: 1315320
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Necro Story"
+    steam_id: 968800
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Necromantic"
+    steam_id: 2615010
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Necrosmith 2"
+    steam_id: 2277320
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Necrosmith"
+    steam_id: 1949190
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Super Grave Snatchers"
+    steam_id: 1649570
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
+  - name: "Loop Hero"
+    steam_id: 1282730
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2024-12-05"
+    priority: medium
+
 # Notes:
 # - Games can be temporarily disabled by setting active: false
 # - Steam ID 0 means game not on Steam (for multi-platform expansion)

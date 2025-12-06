@@ -34,7 +34,7 @@ from typing import Set
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from backend.database.schema import get_connection
-from backend.scrapers.steam_api import SteamAPI
+from backend.scrapers.steam_api import SteamAPI, RateLimitError
 from scripts.discover_games import calculate_necromancy_score
 
 # Set up logging
@@ -294,6 +294,7 @@ def evaluate_and_save(apps: list[dict], min_score: int = 5, batch_size: int = 10
         'candidates_found': 0,
         'candidates_saved': 0,
         'errors': 0,
+        'rate_limited': 0,
         'start_time': datetime.now()
     }
 
@@ -314,6 +315,7 @@ def evaluate_and_save(apps: list[dict], min_score: int = 5, batch_size: int = 10
                 logger.info(
                     f"Progress: {i:,}/{stats['total']:,} ({i/stats['total']*100:.1f}%) | "
                     f"Candidates: {stats['candidates_found']} | "
+                    f"Rate limited: {stats['rate_limited']} | "
                     f"Rate: {rate:.1f}/s | "
                     f"ETA: {eta_hours:.1f}h"
                 )
@@ -365,7 +367,20 @@ def evaluate_and_save(apps: list[dict], min_score: int = 5, batch_size: int = 10
 
             except KeyboardInterrupt:
                 logger.info("\n\nInterrupted by user")
+                # Save pending candidates before exiting
+                if candidates_batch:
+                    logger.info(f"Saving {len(candidates_batch)} pending candidates...")
+                    saved = save_candidates_batch(candidates_batch, conn)
+                    stats['candidates_saved'] += saved
+                    candidates_batch = []
                 raise
+
+            except RateLimitError as e:
+                # Don't mark as processed - will retry on next run
+                logger.warning(f"  Rate limited for {appid} ({name}): {e}")
+                stats['rate_limited'] += 1
+                # Don't save_processed_id - leave for retry
+                continue
 
             except Exception as e:
                 logger.error(f"  Error evaluating {appid} ({name}): {e}")
@@ -379,6 +394,14 @@ def evaluate_and_save(apps: list[dict], min_score: int = 5, batch_size: int = 10
             stats['candidates_saved'] += saved
 
     finally:
+        # Save any remaining candidates (in case of unexpected exit)
+        if candidates_batch:
+            logger.info(f"Saving {len(candidates_batch)} pending candidates in finally block...")
+            try:
+                saved = save_candidates_batch(candidates_batch, conn)
+                stats['candidates_saved'] += saved
+            except Exception as e:
+                logger.error(f"Failed to save candidates in finally: {e}")
         conn.close()
 
     stats['end_time'] = datetime.now()
