@@ -593,7 +593,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'last_announcement',
-        header: 'Latest News',
+        header: 'Latest Announcement',
         cell: info => {
           const date = info.getValue() as string | undefined;
           if (!date) return <span className="text-xs text-gray-600">None</span>;
@@ -611,10 +611,10 @@ export default function GamesTable({ games }: GamesTableProps) {
         accessorKey: 'last_update',
         header: () => (
           <span className="flex items-center">
-            Last Updated
+            Game Last Updated
             <SimpleHelpIcon
-              title="Last Updated"
-              description="Date of announcement/news corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
+              title="Game Last Updated"
+              description="Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
             />
           </span>
         ),

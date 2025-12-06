@@ -512,7 +512,7 @@ export default function FilterPanel({
 
         {/* Date Ranges */}
         <DateRangeInput
-          label="Latest News"
+          label="Latest Announcement"
           fromValue={filters.announcementDateFrom}
           toValue={filters.announcementDateTo}
           onFromChange={(v) => updateFilter('announcementDateFrom', v)}
@@ -520,7 +520,7 @@ export default function FilterPanel({
         />
 
         <DateRangeInput
-          label="Last Updated"
+          label="Game Last Updated"
           fromValue={filters.lastUpdatedFrom}
           toValue={filters.lastUpdatedTo}
           onFromChange={(v) => updateFilter('lastUpdatedFrom', v)}
