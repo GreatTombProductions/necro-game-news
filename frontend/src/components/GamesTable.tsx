@@ -533,13 +533,11 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'name',
         header: 'Game',
-        size: 200,
         cell: info => <GameCell game={info.row.original} flipToBottom={info.row.index === 0} />,
       },
       {
         accessorKey: 'price_usd',
         header: 'Price',
-        size: 70,
         cell: info => {
           const price = info.getValue() as number | null | undefined;
           if (price === null || price === undefined) {
@@ -554,7 +552,6 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'genres',
         header: 'Genres',
-        size: 150,
         cell: info => {
           const genres = info.getValue() as string[];
           const hiddenGenres = genres.slice(2);
@@ -578,7 +575,6 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'last_announcement',
         header: 'Latest News',
-        size: 100,
         cell: info => {
           const date = info.getValue() as string | undefined;
           if (!date) return <span className="text-xs text-gray-600">None</span>;
@@ -594,7 +590,6 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'last_update',
-        size: 120,
         header: () => (
           <span className="flex items-center">
             Last Updated
@@ -626,7 +621,6 @@ export default function GamesTable({ games }: GamesTableProps) {
         columns: [
           {
             accessorKey: 'dimension_1',
-            size: 110,
             header: () => (
               <span className="flex items-center">
                 Centrality
@@ -649,7 +643,6 @@ export default function GamesTable({ games }: GamesTableProps) {
           },
           {
             accessorKey: 'dimension_2',
-            size: 90,
             header: () => (
               <span className="flex items-center">
                 POV
@@ -669,7 +662,6 @@ export default function GamesTable({ games }: GamesTableProps) {
           },
           {
             accessorKey: 'dimension_3',
-            size: 90,
             header: () => (
               <span className="flex items-center">
                 Naming
@@ -790,7 +782,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {/* Table */}
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg border border-purple-700/30 overflow-hidden shadow-2xl">
         <div className="overflow-x-auto">
-          <table className="w-full table-fixed">
+          <table className="w-full">
             <thead>
               {table.getHeaderGroups().map((headerGroup, groupIndex) => (
                 <tr key={headerGroup.id} className="border-b border-purple-700/30">
@@ -804,13 +796,14 @@ export default function GamesTable({ games }: GamesTableProps) {
                       <th
                         key={header.id}
                         colSpan={header.colSpan}
-                        style={{ width: header.colSpan === 1 ? header.getSize() : undefined }}
                         className={`px-4 py-3 text-left text-sm font-semibold bg-gray-900/50 ${
                           isGroupHeader
                             ? 'text-purple-400 border-b border-purple-600/30 text-center'
                             : 'text-purple-300'
                         } ${
                           isTaxonomyColumn ? 'bg-purple-900/20' : ''
+                        } ${
+                          header.column.id === 'name' ? 'w-56 min-w-56 max-w-72' : ''
                         }`}
                       >
                         {header.isPlaceholder ? null : (
@@ -847,6 +840,8 @@ export default function GamesTable({ games }: GamesTableProps) {
                         key={cell.id}
                         className={`px-4 py-4 text-sm text-gray-300 ${
                           isTaxonomyColumn ? 'bg-purple-900/10' : ''
+                        } ${
+                          cell.column.id === 'name' ? 'w-56 min-w-56 max-w-72' : ''
                         }`}
                       >
                         {flexRender(
