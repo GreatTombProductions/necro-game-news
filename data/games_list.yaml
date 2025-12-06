@@ -44,6 +44,19 @@ games:
     date_added: "2024-12-02"
     priority: high
 
+  - name: "Diablo III"
+    battlenet_id: "d3"
+    platforms:
+      - battlenet
+    primary_platform: battlenet  # Battle.net only, not on Steam
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    notes: "Necromancer class added via Rise of the Necromancer DLC"
+    date_added: "2024-12-06"
+    priority: high
+
   - name: "Grim Dawn"
     steam_id: 219990
     classification:

@@ -11,46 +11,102 @@ import {
 import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
 import type { Game, Platform } from '../types';
 import { PLATFORM_INFO, getStoreUrl } from '../types';
-
-// Platform icon component - shows clickable icons for each platform a game is on
-function PlatformIcons({ game }: { game: Game }) {
-  return (
-    <div className="flex gap-1">
-      {game.platforms.map((platform) => {
-        const info = PLATFORM_INFO[platform as Platform];
-        const url = getStoreUrl(game, platform as Platform);
-        if (!info) return null;
-
-        if (url) {
-          return (
-            <a
-              key={platform}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm hover:scale-110 transition-transform cursor-pointer"
-              title={`View on ${info.name}`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {info.icon}
-            </a>
-          );
-        }
-        return (
-          <span key={platform} className="text-sm opacity-50" title={info.name}>
-            {info.icon}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
 import SubmissionForm from './SubmissionForm';
 import FilterPanel, {
   type FilterState,
   initialFilterState,
   countActiveFilters,
 } from './FilterPanel';
+
+// SVG icon components for each platform
+function SteamIcon({ className }: { className?: string }) {
+  return <img src="/icons/steam.svg" alt="Steam" className={className} />;
+}
+
+function BattlenetIcon({ className }: { className?: string }) {
+  return <img src="/icons/battlenet.svg" alt="Battle.net" className={`${className} invert`} />;
+}
+
+// Generic platform icon with tooltip (matches CellTooltip style)
+function PlatformIconWithTooltip({
+  platform,
+  url,
+  flipToBottom = false
+}: {
+  platform: Platform;
+  url: string | null;
+  flipToBottom?: boolean;
+}) {
+  const info = PLATFORM_INFO[platform];
+  if (!info) return null;
+
+  const iconClass = "w-5 h-5";
+
+  const renderIcon = () => {
+    switch (platform) {
+      case 'steam':
+        return <SteamIcon className={iconClass} />;
+      case 'battlenet':
+        return <BattlenetIcon className={iconClass} />;
+      default:
+        return <span className="text-base">{info.icon}</span>;
+    }
+  };
+
+  const tooltipText = url ? `View on ${info.name}` : info.name;
+
+  const tooltipContent = flipToBottom ? (
+    <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+      {tooltipText}
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+    </div>
+  ) : (
+    <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+      {tooltipText}
+      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+    </div>
+  );
+
+  if (url) {
+    return (
+      <div className="group relative inline-block">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:scale-110 transition-transform cursor-pointer block"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {renderIcon()}
+        </a>
+        {tooltipContent}
+      </div>
+    );
+  }
+
+  return (
+    <div className="group relative inline-block">
+      <span className="opacity-50 block">{renderIcon()}</span>
+      {tooltipContent}
+    </div>
+  );
+}
+
+// Platform icons component - shows clickable icons for each platform a game is on
+function PlatformIcons({ game, flipToBottom = false }: { game: Game; flipToBottom?: boolean }) {
+  return (
+    <div className="flex gap-1.5 items-center">
+      {game.platforms.map((platform) => (
+        <PlatformIconWithTooltip
+          key={platform}
+          platform={platform as Platform}
+          url={getStoreUrl(game, platform as Platform)}
+          flipToBottom={flipToBottom}
+        />
+      ))}
+    </div>
+  );
+}
 
 interface GamesTableProps {
   games: Game[];
@@ -123,6 +179,12 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
   if (filters.genres.length > 0) {
     const hasMatchingGenre = filters.genres.some((g) => game.genres.includes(g));
     if (!hasMatchingGenre) return false;
+  }
+
+  // Platforms filter (OR logic - match any selected platform)
+  if (filters.platforms.length > 0) {
+    const hasMatchingPlatform = filters.platforms.some((p) => game.platforms.includes(p));
+    if (!hasMatchingPlatform) return false;
   }
 
   // Announcement date range filter
@@ -406,7 +468,7 @@ function GameCell({ game }: { game: Game }) {
   return (
     <div ref={triggerRef} className="relative">
       <div
-        className="cursor-pointer hover:text-purple-300 transition-colors"
+        className="group cursor-pointer hover:text-purple-300 transition-colors"
         onClick={handleDesktopClick}
         onTouchStart={handleTouch}
         onMouseEnter={handleMouseEnter}
@@ -414,7 +476,7 @@ function GameCell({ game }: { game: Game }) {
       >
         <div className="font-semibold text-purple-200 hover:text-purple-300 hover:underline flex items-start gap-1.5">
           <span className="break-words">{game.name}</span>
-          <svg className="w-3.5 h-3.5 opacity-0 hover:opacity-70 sm:transition-opacity flex-shrink-0 hidden sm:block mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5 opacity-0 group-hover:opacity-70 sm:transition-opacity flex-shrink-0 hidden sm:block mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
           {/* Mobile link indicator - always visible */}
@@ -705,8 +767,8 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         id: 'platforms',
-        header: 'Platform',
-        cell: info => <PlatformIcons game={info.row.original} />,
+        header: 'Platforms',
+        cell: info => <PlatformIcons game={info.row.original} flipToBottom={info.row.index === 0} />,
       },
       {
         accessorKey: 'price_usd',

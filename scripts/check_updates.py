@@ -7,7 +7,7 @@ for new updates/news and stores them in the database.
 
 Supports:
 - Steam (via SteamAPI)
-- Battle.net (placeholder for future implementation)
+- Battle.net (via BattlenetScraper using Blizzard news API)
 - Other platforms as they are added
 
 Usage:
@@ -26,6 +26,7 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from backend.scrapers.steam_api import SteamAPI, SteamAPIError, RateLimitError
+from backend.scrapers.battlenet_api import BattlenetScraper, BattlenetAPIError
 from backend.database.schema import get_connection
 
 # Set up logging
@@ -36,7 +37,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Platforms that have update checking implemented
-SUPPORTED_UPDATE_PLATFORMS = {'steam'}  # Add 'battlenet' when implemented
+SUPPORTED_UPDATE_PLATFORMS = {'steam', 'battlenet'}
 
 
 def check_steam_updates(cursor, db_id: int, name: str, steam_id: int, steam_api: SteamAPI, max_news: int = 5) -> tuple:
@@ -99,7 +100,61 @@ def check_steam_updates(cursor, db_id: int, name: str, steam_id: int, steam_api:
     return new_count, skipped_count, external_count
 
 
-def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 5) -> int:
+def check_battlenet_updates(cursor, db_id: int, name: str, battlenet_id: str, bnet_scraper: BattlenetScraper, max_news: int = 5) -> tuple:
+    """
+    Check for new updates for a game on Battle.net.
+
+    Returns:
+        Tuple of (new_count, skipped_count, external_count)
+    """
+    # Fetch news from Battle.net
+    news_items = bnet_scraper.get_game_news(battlenet_id, count=max_news)
+
+    if not news_items:
+        logger.info(f"  No news items found for {name} on Battle.net")
+        return 0, 0, 0
+
+    logger.info(f"  Found {len(news_items)} news items on Battle.net")
+
+    new_count = 0
+    skipped_count = 0
+
+    for news_item in news_items:
+        parsed = bnet_scraper.parse_news_item(news_item, battlenet_id)
+        gid = parsed['gid']
+
+        # Check if this update already exists
+        cursor.execute(
+            "SELECT id FROM updates WHERE gid = ?",
+            (gid,)
+        )
+
+        if cursor.fetchone():
+            skipped_count += 1
+            continue
+
+        # Add new update with source_platform
+        cursor.execute("""
+            INSERT INTO updates
+            (game_id, update_type, title, content, url, gid, date, source_platform)
+            VALUES (?, ?, ?, ?, ?, ?, ?, 'battlenet')
+        """, (
+            db_id,
+            parsed['update_type'],
+            parsed['title'],
+            parsed['contents'],
+            parsed['url'],
+            gid,
+            parsed['date']
+        ))
+
+        new_count += 1
+        logger.info(f"  + [{parsed['update_type']}] {parsed['title'][:50]}...")
+
+    return new_count, skipped_count, 0
+
+
+def check_game_updates(game_id: int, steam_api: SteamAPI, bnet_scraper: BattlenetScraper = None, max_news: int = 5) -> int:
     """
     Check for new updates for a specific game.
 
@@ -141,8 +196,11 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 5) -> 
                 cursor, db_id, name, steam_id, steam_api, max_news
             )
         elif primary_platform == 'battlenet' and battlenet_id:
-            # TODO: Implement Battle.net update checking
-            logger.info(f"  ⏳ Battle.net update checking not yet implemented for {name}")
+            if bnet_scraper is None:
+                bnet_scraper = BattlenetScraper()
+            new_count, skipped_count, external_count = check_battlenet_updates(
+                cursor, db_id, name, battlenet_id, bnet_scraper, max_news
+            )
         elif primary_platform == 'manual':
             logger.info(f"  ⊙ Manual platform - no automated updates for {name}")
         else:
@@ -151,6 +209,13 @@ def check_game_updates(game_id: int, steam_api: SteamAPI, max_news: int = 5) -> 
                 logger.info(f"  Falling back to Steam for {name}")
                 new_count, skipped_count, external_count = check_steam_updates(
                     cursor, db_id, name, steam_id, steam_api, max_news
+                )
+            elif battlenet_id:
+                logger.info(f"  Falling back to Battle.net for {name}")
+                if bnet_scraper is None:
+                    bnet_scraper = BattlenetScraper()
+                new_count, skipped_count, external_count = check_battlenet_updates(
+                    cursor, db_id, name, battlenet_id, bnet_scraper, max_news
                 )
             else:
                 logger.warning(f"  ⚠ No supported platform for {name} (primary: {primary_platform})")
@@ -225,21 +290,30 @@ def check_all_games(limit: int = None, max_news: int = 5):
     print()
 
     steam_api = SteamAPI()
+    bnet_scraper = BattlenetScraper()
 
     total_new = 0
     success_count = 0
     fail_count = 0
     skipped_count = 0
 
+    # Get battlenet_id for all games to check for fallbacks
+    conn2 = get_connection()
+    cursor2 = conn2.cursor()
+    cursor2.execute("SELECT id, battlenet_id FROM games WHERE is_active = 1")
+    battlenet_ids = {row[0]: row[1] for row in cursor2.fetchall()}
+    conn2.close()
+
     for db_id, name, steam_id, primary_platform, last_checked in games:
+        battlenet_id = battlenet_ids.get(db_id)
         try:
-            # Skip games without a supported update platform
-            if primary_platform not in SUPPORTED_UPDATE_PLATFORMS and not steam_id:
-                logger.info(f"Skipping {name} (platform: {primary_platform}, no Steam fallback)")
+            # Skip games without any supported update platform
+            if primary_platform not in SUPPORTED_UPDATE_PLATFORMS and not steam_id and not battlenet_id:
+                logger.info(f"Skipping {name} (platform: {primary_platform}, no fallback)")
                 skipped_count += 1
                 continue
 
-            new_updates = check_game_updates(db_id, steam_api, max_news)
+            new_updates = check_game_updates(db_id, steam_api, bnet_scraper, max_news)
             total_new += new_updates
             success_count += 1
         except Exception as e:
@@ -284,7 +358,8 @@ def main():
     if args.game_id:
         # Check single game
         steam_api = SteamAPI()
-        new_count = check_game_updates(args.game_id, steam_api, args.max_news)
+        bnet_scraper = BattlenetScraper()
+        new_count = check_game_updates(args.game_id, steam_api, bnet_scraper, args.max_news)
         print()
         print(f"✓ Found {new_count} new update(s)")
         return 0

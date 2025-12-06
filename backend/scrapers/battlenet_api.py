@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 """
-Battle.net API scraper for game updates.
+Battle.net news API client for game updates.
 
-Battle.net has official Game Data APIs that can be used to fetch news and updates
-for Blizzard games. API documentation: https://develop.battle.net/documentation
+Uses the internal Blizzard news API at news.blizzard.com to fetch
+game news and updates. This API is used by Blizzard's web components
+and returns JSON data.
 
 Supported games (relevant to necromancy):
-- Diablo IV (product: diablo4)
-- Diablo III (product: d3)
-- World of Warcraft (Death Knight content)
+- Diablo IV (product: diablo-4)
+- Diablo III (product: diablo-3)
 
-Rate limits: 36,000 requests per hour, 100 requests per second
-
-TODO:
-- Register for Battle.net API credentials at https://develop.battle.net/
-- Implement OAuth2 authentication flow
-- Fetch news from game-specific endpoints
+API endpoint: https://news.blizzard.com/en-us/api/news/{product}
 """
 
 import os
@@ -38,41 +33,33 @@ class BattlenetRateLimitError(BattlenetAPIError):
     pass
 
 
-class BattlenetAPI:
+class BattlenetScraper:
     """
-    Battle.net API client for fetching game news and updates.
+    Battle.net news client using Blizzard's internal news API.
 
-    Requires BATTLENET_CLIENT_ID and BATTLENET_CLIENT_SECRET environment variables.
+    Fetches news from https://news.blizzard.com/en-us/api/news/{product}
     """
 
-    BASE_URL = "https://us.api.blizzard.com"
-    OAUTH_URL = "https://oauth.battle.net/token"
+    BASE_API_URL = "https://news.blizzard.com/en-us/api/news"
 
-    # Product IDs for relevant games
+    # Product to API slug mapping (uses hyphens in API)
     PRODUCTS = {
-        'diablo4': 'diablo4',
-        'd3': 'd3',
-        'wow': 'wow',
+        'diablo4': 'diablo-4',
+        'd3': 'diablo-3',
     }
 
-    # News feed URLs (these may need adjustment based on actual API)
-    NEWS_URLS = {
-        'diablo4': 'https://news.blizzard.com/en-us/diablo4',
-        'd3': 'https://news.blizzard.com/en-us/diablo3',
-        'wow': 'https://news.blizzard.com/en-us/world-of-warcraft',
-    }
+    # User agent for API requests
+    USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
 
     def __init__(self):
-        self.client_id = os.getenv('BATTLENET_CLIENT_ID')
-        self.client_secret = os.getenv('BATTLENET_CLIENT_SECRET')
-        self.access_token = None
-        self.token_expires_at = 0
+        self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': self.USER_AGENT,
+            'Accept': 'application/json',
+            'Accept-Language': 'en-US,en;q=0.5',
+        })
         self.last_request_time = 0
-        self.min_request_interval = 0.01  # 100 requests per second = 10ms between requests
-
-        if not self.client_id or not self.client_secret:
-            logger.warning("Battle.net API credentials not configured")
-            logger.warning("Set BATTLENET_CLIENT_ID and BATTLENET_CLIENT_SECRET environment variables")
+        self.min_request_interval = 1.0  # Be respectful: 1 request per second
 
     def _rate_limit(self):
         """Enforce rate limiting between requests"""
@@ -81,93 +68,122 @@ class BattlenetAPI:
             time.sleep(self.min_request_interval - elapsed)
         self.last_request_time = time.time()
 
-    def _get_access_token(self) -> str:
-        """
-        Get OAuth2 access token using client credentials flow.
-
-        Returns cached token if still valid, otherwise fetches new one.
-        """
-        if self.access_token and time.time() < self.token_expires_at - 60:
-            return self.access_token
-
-        if not self.client_id or not self.client_secret:
-            raise BattlenetAPIError("Battle.net API credentials not configured")
-
-        try:
-            response = requests.post(
-                self.OAUTH_URL,
-                auth=(self.client_id, self.client_secret),
-                data={'grant_type': 'client_credentials'},
-                timeout=10
-            )
-
-            if response.status_code == 429:
-                raise BattlenetRateLimitError("Rate limited by Battle.net OAuth")
-
-            response.raise_for_status()
-            data = response.json()
-
-            self.access_token = data['access_token']
-            self.token_expires_at = time.time() + data.get('expires_in', 3600)
-
-            logger.debug("Obtained new Battle.net access token")
-            return self.access_token
-
-        except requests.RequestException as e:
-            raise BattlenetAPIError(f"Failed to get access token: {e}")
-
     def get_game_news(self, product: str, count: int = 10) -> List[Dict]:
         """
-        Fetch news/updates for a Battle.net game.
+        Fetch news/updates for a Battle.net game using Blizzard's news API.
 
         Args:
             product: Battle.net product ID (e.g., 'diablo4', 'd3')
             count: Maximum number of news items to fetch
 
         Returns:
-            List of news items with title, content, date, url, gid
+            List of news items with title, url, date, id, category
         """
         if product not in self.PRODUCTS:
             logger.warning(f"Unknown Battle.net product: {product}")
             return []
 
-        # TODO: Implement actual news fetching
-        # The Battle.net API structure varies by game
-        # Diablo IV may have a dedicated news endpoint
-        # Alternatively, scrape from https://news.blizzard.com/
+        slug = self.PRODUCTS[product]
+        url = f"{self.BASE_API_URL}/{slug}"
+        logger.info(f"Fetching Blizzard news from {url}")
 
-        logger.info(f"Battle.net news fetching not yet implemented for {product}")
-        return []
+        self._rate_limit()
+        try:
+            response = self.session.get(url, timeout=15)
+            if response.status_code == 429:
+                raise BattlenetRateLimitError(f"Rate limited fetching {url}")
+            response.raise_for_status()
+            data = response.json()
+        except requests.RequestException as e:
+            logger.error(f"Failed to fetch {url}: {e}")
+            return []
+
+        # Extract content items from the feed
+        content_items = data.get('feed', {}).get('contentItems', [])
+        if not content_items:
+            logger.warning(f"No content items found in response for {product}")
+            return []
+
+        news_items = []
+        for item in content_items[:count]:
+            props = item.get('properties', {})
+
+            # Skip items that aren't from this specific product
+            item_product = props.get('cxpProduct', {}).get('segment', '')
+            if item_product and item_product != slug:
+                continue
+
+            news_item = {
+                'id': props.get('newsId', ''),
+                'title': props.get('title', ''),
+                'summary': props.get('summary', ''),
+                'url': props.get('newsUrl', ''),
+                'date': props.get('lastUpdated', ''),
+                'category': props.get('category', 'News'),
+                'product': product,
+            }
+
+            if news_item['id'] and news_item['title']:
+                news_items.append(news_item)
+
+        logger.info(f"Found {len(news_items)} news items for {product}")
+        return news_items
 
     def parse_news_item(self, news_item: Dict, product: str) -> Dict:
         """
-        Parse a Battle.net news item into standardized format.
+        Parse a Battle.net news item into standardized format for database.
 
         Returns:
             Dict with keys: gid, title, contents, url, date, update_type
         """
-        # TODO: Implement parsing based on actual API response structure
+        # Generate unique ID
+        gid = f"bnet_{product}_{news_item.get('id', '')}"
+
+        # Parse date - API returns ISO format like "2025-12-03T17:55:00Z"
+        date_str = news_item.get('date', '')
+        if date_str:
+            try:
+                date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                date_str = date.isoformat()
+            except (ValueError, AttributeError):
+                date_str = datetime.now().isoformat()
+        else:
+            date_str = datetime.now().isoformat()
+
         return {
-            'gid': f"bnet_{product}_{news_item.get('id', '')}",
+            'gid': gid,
             'title': news_item.get('title', ''),
-            'contents': news_item.get('body', ''),
+            'contents': news_item.get('summary', ''),  # Use summary as content
             'url': news_item.get('url', ''),
-            'date': news_item.get('date', datetime.now().isoformat()),
-            'update_type': 'announcement',
+            'date': date_str,
+            'update_type': self.classify_update_type(news_item),
         }
 
     def classify_update_type(self, news_item: Dict) -> str:
         """
-        Classify the type of update based on content.
+        Classify the type of update based on category and content.
 
         Returns:
             One of: 'patch', 'announcement', 'dlc', 'event', 'release'
         """
+        # Use category from API if available
+        category = news_item.get('category', '').lower()
         title = news_item.get('title', '').lower()
 
-        if any(word in title for word in ['patch', 'hotfix', 'update', 'notes']):
+        # Map API categories to our types
+        if 'patch' in category:
             return 'patch'
-        if any(word in title for word in ['season', 'event', 'week']):
+        if 'season' in category:
+            return 'event'
+        if 'developer' in category:
+            return 'announcement'
+        if 'event' in category or 'limited' in category:
+            return 'event'
+
+        # Fall back to title-based classification
+        if any(word in title for word in ['patch', 'hotfix', 'update notes', 'patch notes']):
+            return 'patch'
+        if any(word in title for word in ['season', 'event', 'week', 'limited time']):
             return 'event'
         if any(word in title for word in ['expansion', 'dlc']):
             return 'dlc'
@@ -177,23 +193,68 @@ class BattlenetAPI:
         return 'announcement'
 
 
-def test_api():
-    """Test Battle.net API connectivity"""
-    api = BattlenetAPI()
+def test_scraper():
+    """Test Battle.net news scraper"""
+    logging.basicConfig(level=logging.DEBUG)
 
-    if not api.client_id:
-        print("Battle.net API credentials not configured")
-        print("Set BATTLENET_CLIENT_ID and BATTLENET_CLIENT_SECRET in .env")
-        return False
+    scraper = BattlenetScraper()
 
-    try:
-        token = api._get_access_token()
-        print(f"Successfully obtained access token: {token[:20]}...")
-        return True
-    except BattlenetAPIError as e:
-        print(f"API Error: {e}")
-        return False
+    print("Testing Blizzard news scraper...")
+    print("=" * 60)
+
+    for product in ['diablo4', 'd3']:
+        print(f"\nFetching news for: {product}")
+        print("-" * 40)
+
+        news_items = scraper.get_game_news(product, count=5)
+
+        if not news_items:
+            print(f"  No news found for {product}")
+            continue
+
+        for i, item in enumerate(news_items, 1):
+            parsed = scraper.parse_news_item(item, product)
+            print(f"\n  {i}. [{parsed['update_type']}] {parsed['title'][:60]}...")
+            print(f"     URL: {parsed['url']}")
+            print(f"     GID: {parsed['gid']}")
+
+    print("\n" + "=" * 60)
+    print("Scraper test complete!")
+    return True
+
+
+# Keep the old API class for OAuth if needed in the future
+class BattlenetAPI:
+    """Legacy OAuth client - kept for potential future API use."""
+    OAUTH_URL = "https://oauth.battle.net/token"
+
+    def __init__(self):
+        self.client_id = os.getenv('BLIZZARD_CLIENT_ID') or os.getenv('BATTLENET_CLIENT_ID')
+        self.client_secret = os.getenv('BLIZZARD_CLIENT_SECRET') or os.getenv('BATTLENET_CLIENT_SECRET')
+        self.access_token = None
+        self.token_expires_at = 0
+
+    def get_access_token(self) -> str:
+        """Get OAuth2 access token using client credentials flow."""
+        if self.access_token and time.time() < self.token_expires_at - 60:
+            return self.access_token
+
+        if not self.client_id or not self.client_secret:
+            raise BattlenetAPIError("Battle.net API credentials not configured")
+
+        response = requests.post(
+            self.OAUTH_URL,
+            auth=(self.client_id, self.client_secret),
+            data={'grant_type': 'client_credentials'},
+            timeout=10
+        )
+        response.raise_for_status()
+        data = response.json()
+
+        self.access_token = data['access_token']
+        self.token_expires_at = time.time() + data.get('expires_in', 3600)
+        return self.access_token
 
 
 if __name__ == "__main__":
-    test_api()
+    test_scraper()

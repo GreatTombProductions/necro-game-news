@@ -1,4 +1,6 @@
 import { Fragment, useState } from 'react';
+import type { Platform } from '../types';
+import { PLATFORM_INFO } from '../types';
 
 // Types
 export interface NecromancyFilter {
@@ -9,6 +11,7 @@ export interface NecromancyFilter {
 
 export interface FilterState {
   genres: string[];
+  platforms: Platform[];
   announcementDateFrom: string;
   announcementDateTo: string;
   lastUpdatedFrom: string;
@@ -40,6 +43,7 @@ export function getAllNecromancyCombinations(): NecromancyFilter[] {
 // Initial state with all necromancy checkboxes checked
 export const initialFilterState: FilterState = {
   genres: [],
+  platforms: [],
   announcementDateFrom: '',
   announcementDateTo: '',
   lastUpdatedFrom: '',
@@ -288,6 +292,92 @@ function NecromancyGrid({
   );
 }
 
+// Available platforms for filtering
+const AVAILABLE_PLATFORMS: Platform[] = ['steam', 'battlenet', 'gog', 'epic', 'itchio', 'manual'];
+
+// Multi-select Platforms Component
+function PlatformSelect({
+  value,
+  onChange,
+}: {
+  value: Platform[];
+  onChange: (platforms: Platform[]) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePlatform = (platform: Platform) => {
+    if (value.includes(platform)) {
+      onChange(value.filter((p) => p !== platform));
+    } else {
+      onChange([...value, platform]);
+    }
+  };
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-3 py-2 bg-gray-700 border border-purple-700/50 rounded-lg text-left text-sm text-gray-300 hover:border-purple-600 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 flex items-center justify-between"
+      >
+        <span className={value.length === 0 ? 'text-gray-500' : ''}>
+          {value.length === 0 ? 'All platforms' : `${value.length} selected`}
+        </span>
+        <svg
+          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+          <div className="absolute top-full left-0 right-0 mt-1 bg-gray-800 border border-purple-700/50 rounded-lg shadow-xl z-50 max-h-48 overflow-y-auto">
+            {AVAILABLE_PLATFORMS.map((platform) => (
+              <label
+                key={platform}
+                className="flex items-center px-3 py-2 hover:bg-purple-900/30 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  checked={value.includes(platform)}
+                  onChange={() => togglePlatform(platform)}
+                  className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 mr-2"
+                />
+                <span className="text-sm text-gray-300">{PLATFORM_INFO[platform].name}</span>
+              </label>
+            ))}
+          </div>
+        </>
+      )}
+
+      {value.length > 0 && (
+        <div className="flex flex-wrap gap-1 mt-2">
+          {value.map((platform) => (
+            <span
+              key={platform}
+              className="inline-flex items-center gap-1 px-2 py-0.5 bg-purple-900/50 border border-purple-700/50 rounded text-xs text-purple-300"
+            >
+              {PLATFORM_INFO[platform].name}
+              <button
+                type="button"
+                onClick={() => togglePlatform(platform)}
+                className="hover:text-purple-100"
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Multi-select Genres Component
 function GenreSelect({
   value,
@@ -470,6 +560,7 @@ export default function FilterPanel({
 
   const hasActiveFilters =
     filters.genres.length > 0 ||
+    filters.platforms.length > 0 ||
     filters.announcementDateFrom ||
     filters.announcementDateTo ||
     filters.lastUpdatedFrom ||
@@ -535,6 +626,15 @@ export default function FilterPanel({
           onMaxChange={(v) => updateFilter('priceMax', v)}
         />
 
+        {/* Platforms */}
+        <div>
+          <label className="block text-sm text-gray-400 mb-1">Platforms</label>
+          <PlatformSelect
+            value={filters.platforms}
+            onChange={(platforms) => updateFilter('platforms', platforms)}
+          />
+        </div>
+
         {/* Early Access Toggle */}
         <div>
           <label className="block text-sm text-gray-400 mb-1">Early Access</label>
@@ -580,6 +680,7 @@ export default function FilterPanel({
 export function countActiveFilters(filters: FilterState): number {
   let count = 0;
   if (filters.genres.length > 0) count++;
+  if (filters.platforms.length > 0) count++;
   if (filters.announcementDateFrom || filters.announcementDateTo) count++;
   if (filters.lastUpdatedFrom || filters.lastUpdatedTo) count++;
   if (filters.priceMin || filters.priceMax) count++;
