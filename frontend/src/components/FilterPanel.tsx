@@ -13,6 +13,9 @@ export interface FilterState {
   announcementDateTo: string;
   lastUpdatedFrom: string;
   lastUpdatedTo: string;
+  priceMin: string;
+  priceMax: string;
+  includeEarlyAccess: boolean;
   necromancyGrid: NecromancyFilter[];
 }
 
@@ -41,6 +44,9 @@ export const initialFilterState: FilterState = {
   announcementDateTo: '',
   lastUpdatedFrom: '',
   lastUpdatedTo: '',
+  priceMin: '',
+  priceMax: '',
+  includeEarlyAccess: true,
   necromancyGrid: getAllNecromancyCombinations(),
 };
 
@@ -403,6 +409,52 @@ function DateRangeInput({
   );
 }
 
+// Price Range Input Component
+function PriceRangeInput({
+  minValue,
+  maxValue,
+  onMinChange,
+  onMaxChange,
+}: {
+  minValue: string;
+  maxValue: string;
+  onMinChange: (value: string) => void;
+  onMaxChange: (value: string) => void;
+}) {
+  return (
+    <div>
+      <label className="block text-sm text-gray-400 mb-1">Price (USD)</label>
+      <div className="flex gap-2 items-center">
+        <div className="flex-1 relative">
+          <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="Min"
+            value={minValue}
+            onChange={(e) => onMinChange(e.target.value)}
+            className="w-full pl-5 pr-2 py-1.5 bg-gray-700 border border-purple-700/50 rounded text-sm text-gray-300 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+          />
+        </div>
+        <span className="text-gray-500 text-sm">to</span>
+        <div className="flex-1 relative">
+          <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="Max"
+            value={maxValue}
+            onChange={(e) => onMaxChange(e.target.value)}
+            className="w-full pl-5 pr-2 py-1.5 bg-gray-700 border border-purple-700/50 rounded text-sm text-gray-300 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Main FilterPanel Component
 export default function FilterPanel({
   filters,
@@ -422,6 +474,9 @@ export default function FilterPanel({
     filters.announcementDateTo ||
     filters.lastUpdatedFrom ||
     filters.lastUpdatedTo ||
+    filters.priceMin ||
+    filters.priceMax ||
+    !filters.includeEarlyAccess ||
     filters.necromancyGrid.length < 16; // Less than all = filter active
 
   return (
@@ -471,6 +526,37 @@ export default function FilterPanel({
           onFromChange={(v) => updateFilter('lastUpdatedFrom', v)}
           onToChange={(v) => updateFilter('lastUpdatedTo', v)}
         />
+
+        {/* Price Range */}
+        <PriceRangeInput
+          minValue={filters.priceMin}
+          maxValue={filters.priceMax}
+          onMinChange={(v) => updateFilter('priceMin', v)}
+          onMaxChange={(v) => updateFilter('priceMax', v)}
+        />
+
+        {/* Early Access Toggle */}
+        <div>
+          <label className="block text-sm text-gray-400 mb-1">Early Access</label>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => updateFilter('includeEarlyAccess', !filters.includeEarlyAccess)}
+              className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
+                filters.includeEarlyAccess ? 'bg-purple-600' : 'bg-gray-600'
+              }`}
+            >
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
+                  filters.includeEarlyAccess ? 'translate-x-7' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <span className="text-sm text-gray-400">
+              {filters.includeEarlyAccess ? 'Included' : 'Excluded'}
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Necromancy Grid */}
@@ -496,6 +582,8 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.genres.length > 0) count++;
   if (filters.announcementDateFrom || filters.announcementDateTo) count++;
   if (filters.lastUpdatedFrom || filters.lastUpdatedTo) count++;
+  if (filters.priceMin || filters.priceMax) count++;
+  if (!filters.includeEarlyAccess) count++;
   if (filters.necromancyGrid.length < 16) count++; // Only count if some are deselected
   return count;
 }

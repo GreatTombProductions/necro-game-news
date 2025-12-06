@@ -115,6 +115,25 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     if (updateDate > toDate) return false;
   }
 
+  // Price range filter
+  if (filters.priceMin) {
+    const minPrice = parseFloat(filters.priceMin);
+    const gamePrice = game.price_usd ?? 0;
+    if (gamePrice < minPrice) return false;
+  }
+  if (filters.priceMax) {
+    const maxPrice = parseFloat(filters.priceMax);
+    const gamePrice = game.price_usd ?? 0;
+    if (gamePrice > maxPrice) return false;
+  }
+
+  // Early Access filter (exclude if not checked, unless game has no genres/tags)
+  if (!filters.includeEarlyAccess) {
+    const hasEarlyAccess = game.genres.includes('Early Access') || game.steam_tags?.includes('Early Access');
+    // Only exclude if the game actually has tags/genres and includes Early Access
+    if (hasEarlyAccess && game.genres.length > 0) return false;
+  }
+
   // Necromancy grid filter (only applies if not all 16 are selected)
   if (filters.necromancyGrid.length > 0 && filters.necromancyGrid.length < 16) {
     const matchesNecromancy = filters.necromancyGrid.some(
@@ -551,7 +570,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'genres',
-        header: 'Genres',
+        header: 'Genres/Tags',
         cell: info => {
           const genres = info.getValue() as string[];
           const hiddenGenres = genres.slice(2);
@@ -803,7 +822,9 @@ export default function GamesTable({ games }: GamesTableProps) {
                         } ${
                           isTaxonomyColumn ? 'bg-purple-900/20' : ''
                         } ${
-                          header.column.id === 'name' ? 'w-56 min-w-56 max-w-72' : ''
+                          header.column.id === 'name' ? 'w-72 min-w-64' : ''
+                        } ${
+                          header.column.id === 'genres' ? 'w-32 max-w-40' : ''
                         }`}
                       >
                         {header.isPlaceholder ? null : (
@@ -841,7 +862,9 @@ export default function GamesTable({ games }: GamesTableProps) {
                         className={`px-4 py-4 text-sm text-gray-300 ${
                           isTaxonomyColumn ? 'bg-purple-900/10' : ''
                         } ${
-                          cell.column.id === 'name' ? 'w-56 min-w-56 max-w-72' : ''
+                          cell.column.id === 'name' ? 'w-72 min-w-64' : ''
+                        } ${
+                          cell.column.id === 'genres' ? 'w-32 max-w-40' : ''
                         }`}
                       >
                         {flexRender(
