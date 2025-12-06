@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS games (
 
     -- Platform identifiers (at least one should be set)
     steam_id INTEGER,  -- Nullable for non-Steam games
-    battlenet_id TEXT,
+    battlenet_id TEXT,  -- Battle.net API slug (for fetching updates)
+    battlenet_store_id TEXT,  -- Battle.net store slug (for product page URL, if different from battlenet_id)
     gog_id TEXT,
     epic_id TEXT,
     itchio_id TEXT,

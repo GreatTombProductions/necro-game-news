@@ -4,6 +4,7 @@ export interface Game {
   id: number;
   steam_id?: number;
   battlenet_id?: string;
+  battlenet_store_id?: string;  // Store page slug if different from battlenet_id
   gog_id?: string;
   epic_id?: string;
   itchio_id?: string;
@@ -50,8 +51,11 @@ export function getStoreUrl(game: Game, platform: Platform): string | null {
   switch (platform) {
     case 'steam':
       return game.steam_id ? `https://store.steampowered.com/app/${game.steam_id}` : null;
-    case 'battlenet':
-      return game.battlenet_id ? `https://shop.battle.net/product/${game.battlenet_id}` : null;
+    case 'battlenet': {
+      // Use battlenet_store_id if available (for cases like WoW where API slug differs from store slug)
+      const storeSlug = game.battlenet_store_id || game.battlenet_id;
+      return storeSlug ? `https://shop.battle.net/product/${storeSlug}` : null;
+    }
     case 'gog':
       return game.gog_id ? `https://www.gog.com/game/${game.gog_id}` : null;
     case 'epic':

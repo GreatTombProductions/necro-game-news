@@ -34,6 +34,7 @@ def export_games():
             g.id,
             g.steam_id,
             g.battlenet_id,
+            g.battlenet_store_id,
             g.gog_id,
             g.epic_id,
             g.itchio_id,

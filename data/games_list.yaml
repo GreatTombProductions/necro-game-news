@@ -23,6 +23,7 @@
 #   primary_platform: Where to fetch updates from (defaults to steam if steam_id present)
 #   steam_id: Steam app ID (optional if using another platform)
 #   battlenet_id: Battle.net API slug (e.g., "diablo-4", "diablo-3")
+#   battlenet_store_id: Battle.net store slug if different from battlenet_id (e.g., "wow" for WoW)
 #   gog_id: GOG product ID
 #   epic_id: Epic Games Store ID
 #   itchio_id: itch.io game ID
@@ -32,6 +33,7 @@ games:
   - name: "Diablo IV"
     steam_id: 2344520
     battlenet_id: "diablo-4"
+    battlenet_store_id: "diablo-iv"
     platforms:
       - steam
       - battlenet
@@ -46,6 +48,7 @@ games:
 
   - name: "Diablo III"
     battlenet_id: "diablo-3"
+    battlenet_store_id: "diablo-iii"
     platforms:
       - battlenet
     primary_platform: battlenet  # Battle.net only, not on Steam
@@ -81,6 +84,7 @@ games:
 
   - name: "Diablo II: Resurrected"
     battlenet_id: "diablo-2-resurrected"
+    battlenet_store_id: "diablo-ii-resurrected"
     platforms:
       - battlenet
     primary_platform: battlenet
@@ -98,6 +102,7 @@ games:
 
   - name: "World of Warcraft"
     battlenet_id: "world-of-warcraft-beta"  # API uses legacy slug name
+    battlenet_store_id: "world-of-warcraft-midnight"  # Store page uses different slug
     platforms:
       - battlenet
     primary_platform: battlenet
@@ -131,6 +136,7 @@ games:
 
   - name: "Warcraft III: Reforged"
     battlenet_id: "warcraft-3"
+    battlenet_store_id: "warcraft-3-reforged"
     platforms:
       - battlenet
     primary_platform: battlenet

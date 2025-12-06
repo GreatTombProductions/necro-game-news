@@ -28,6 +28,7 @@ function BattlenetIcon({ className }: { className?: string }) {
 }
 
 // Generic platform icon with tooltip (matches CellTooltip style)
+// Mobile-friendly: first tap shows tooltip, link inside tooltip opens store page
 function PlatformIconWithTooltip({
   platform,
   url,
@@ -37,6 +38,7 @@ function PlatformIconWithTooltip({
   url: string | null;
   flipToBottom?: boolean;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
   const info = PLATFORM_INFO[platform];
   if (!info) return null;
 
@@ -55,31 +57,89 @@ function PlatformIconWithTooltip({
 
   const tooltipText = url ? `View on ${info.name}` : info.name;
 
-  const tooltipContent = flipToBottom ? (
-    <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+  const handleTouch = (e: React.TouchEvent) => {
+    if (url) {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsOpen(true);
+    }
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    // On touch devices, prevent default navigation and show tooltip
+    if ('ontouchstart' in window && url) {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsOpen(true);
+    }
+    // On desktop, let the link work normally
+  };
+
+  // Desktop hover tooltip
+  const desktopTooltipContent = flipToBottom ? (
+    <div className="hidden sm:block pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
       {tooltipText}
       <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
     </div>
   ) : (
-    <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+    <div className="hidden sm:block pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
       {tooltipText}
       <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
     </div>
   );
 
+  // Mobile tap tooltip with clickable link
+  const mobileTooltipContent = isOpen && (
+    <>
+      <div
+        className="fixed inset-0 z-40"
+        onClick={() => setIsOpen(false)}
+        onTouchStart={() => setIsOpen(false)}
+      />
+      <div className={`absolute left-1/2 -translate-x-1/2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
+        {url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span>View on {info.name}</span>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ) : (
+          <span>{info.name}</span>
+        )}
+        <div className={`absolute left-1/2 -translate-x-1/2 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
+      </div>
+    </>
+  );
+
   if (url) {
     return (
       <div className="group relative inline-block">
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:scale-110 transition-transform cursor-pointer block"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {renderIcon()}
-        </a>
-        {tooltipContent}
+        {/* Desktop: direct link, Mobile: touch handler */}
+        <div onTouchStart={handleTouch} onClick={handleClick}>
+          {/* Desktop link - hidden on mobile */}
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:block hover:scale-110 transition-transform cursor-pointer"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {renderIcon()}
+          </a>
+          {/* Mobile icon with indicator */}
+          <span className="sm:hidden block cursor-pointer">
+            {renderIcon()}
+          </span>
+        </div>
+        {desktopTooltipContent}
+        {mobileTooltipContent}
       </div>
     );
   }
@@ -87,7 +147,7 @@ function PlatformIconWithTooltip({
   return (
     <div className="group relative inline-block">
       <span className="opacity-50 block">{renderIcon()}</span>
-      {tooltipContent}
+      {desktopTooltipContent}
     </div>
   );
 }

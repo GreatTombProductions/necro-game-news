@@ -75,7 +75,7 @@ def find_existing_game(cursor, game: dict):
     if game.get('steam_id'):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
-               platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                FROM games WHERE steam_id = ?""",
             (game['steam_id'],)
         )
@@ -93,7 +93,7 @@ def find_existing_game(cursor, game: dict):
         if game.get(platform_id):
             cursor.execute(
                 f"""SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
-                   platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+                   platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                    FROM games WHERE {field} = ?""",
                 (game[platform_id],)
             )
@@ -105,7 +105,7 @@ def find_existing_game(cursor, game: dict):
     if not any(game.get(k) for k in ['steam_id', 'battlenet_id', 'gog_id', 'epic_id', 'itchio_id']):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
-               platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                FROM games WHERE name = ? AND primary_platform = 'manual'""",
             (game['name'],)
         )
@@ -306,6 +306,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         platforms = game.get('platforms', ['steam'] if steam_id else ['manual'])
         primary_platform = game.get('primary_platform', 'steam' if steam_id else 'manual')
         battlenet_id = game.get('battlenet_id')
+        battlenet_store_id = game.get('battlenet_store_id')  # Store page slug if different from API slug
         gog_id = game.get('gog_id')
         epic_id = game.get('epic_id')
         itchio_id = game.get('itchio_id')
@@ -330,9 +331,10 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 old_platforms = existing[5]
                 old_primary = existing[6]
                 old_battlenet = existing[7]
-                old_gog = existing[8]
-                old_epic = existing[9]
-                old_itchio = existing[10]
+                old_battlenet_store = existing[8]
+                old_gog = existing[9]
+                old_epic = existing[10]
+                old_itchio = existing[11]
 
                 if update_existing:
                     # Check if classification or platform info changed
@@ -352,6 +354,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         old_platforms != new_platforms_json or
                         old_primary != primary_platform or
                         old_battlenet != battlenet_id or
+                        old_battlenet_store != battlenet_store_id or
                         old_gog != gog_id or
                         old_epic != epic_id or
                         old_itchio != itchio_id
@@ -368,6 +371,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 platforms = ?,
                                 primary_platform = ?,
                                 battlenet_id = ?,
+                                battlenet_store_id = ?,
                                 gog_id = ?,
                                 epic_id = ?,
                                 itchio_id = ?,
@@ -376,7 +380,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         """, (
                             new_dim1, new_dim2, new_dim3, notes,
                             new_platforms_json, primary_platform,
-                            battlenet_id, gog_id, epic_id, itchio_id,
+                            battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
                             external_url, db_id
                         ))
 
@@ -404,14 +408,15 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
             # Add new game with full platform support
             cursor.execute("""
                 INSERT INTO games
-                (steam_id, battlenet_id, gog_id, epic_id, itchio_id,
+                (steam_id, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
                  platforms, primary_platform, external_url,
                  name, dimension_1, dimension_2, dimension_3,
                  classification_notes, short_description, genres, date_added)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
+                battlenet_store_id,
                 gog_id,
                 epic_id,
                 itchio_id,
