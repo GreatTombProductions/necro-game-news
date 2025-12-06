@@ -31,6 +31,7 @@ DB_PATH="${DATABASE_PATH:-data/necro_games.db}"
 # Parse command line arguments
 MODE=""
 REPROCESS=""
+REFRESH_DATA=""
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -50,9 +51,13 @@ while [[ $# -gt 0 ]]; do
             REPROCESS="--reprocess"
             shift
             ;;
+        --refresh-data)
+            REFRESH_DATA="yes"
+            shift
+            ;;
         *)
             echo "Unknown option: $1"
-            echo "Usage: $0 [--full|--updates-only|--content-only] [--reprocess]"
+            echo "Usage: $0 [--full|--updates-only|--content-only] [--reprocess] [--refresh-data]"
             exit 1
             ;;
     esac
@@ -112,6 +117,16 @@ if [ -z "$MODE" ]; then
         fi
     fi
 
+    # Ask about refreshing game data
+    if [ "$MODE" = "full" ] || [ "$MODE" = "updates" ]; then
+        echo ""
+        echo -n "Refresh all game data from Steam (genres, descriptions, etc.)? [y/N]: "
+        read -r refresh_choice
+        if [ "$refresh_choice" = "y" ] || [ "$refresh_choice" = "Y" ]; then
+            REFRESH_DATA="yes"
+        fi
+    fi
+
     echo ""
 fi
 
@@ -120,8 +135,18 @@ echo "Starting deployment: $MODE"
 if [ -n "$REPROCESS" ]; then
     echo "Mode: Reprocessing enabled"
 fi
+if [ -n "$REFRESH_DATA" ]; then
+    echo "Mode: Refresh game data enabled"
+fi
 echo "=================================================="
 echo ""
+
+# Refresh all game data if requested (runs before main flow)
+if [ -n "$REFRESH_DATA" ]; then
+    echo "🔄 Refreshing all game data from Steam..."
+    $PYTHON scripts/fetch_game_details.py
+    echo ""
+fi
 
 # Execute based on mode
 case $MODE in

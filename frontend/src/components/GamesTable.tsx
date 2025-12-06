@@ -134,10 +134,12 @@ function LinkedCellWithTooltip({
   date,
   url,
   title,
+  flipToBottom = false,
 }: {
   date: string;
   url?: string;
   title?: string;
+  flipToBottom?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -216,10 +218,17 @@ function LinkedCellWithTooltip({
 
       {/* Desktop hover tooltip (only if there's a title) */}
       {title && (
-        <div className="hidden sm:block pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
-          {title}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-        </div>
+        flipToBottom ? (
+          <div className="hidden sm:block pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+            {title}
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+          </div>
+        ) : (
+          <div className="hidden sm:block pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+            {title}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+          </div>
+        )
       )}
 
       {/* Mobile tap tooltip */}
@@ -230,7 +239,7 @@ function LinkedCellWithTooltip({
             onClick={() => setIsOpen(false)}
             onTouchStart={() => setIsOpen(false)}
           />
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64">
+          <div className={`absolute left-1/2 -translate-x-1/2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64 ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
             {title && <div className="text-center whitespace-normal mb-2">{title}</div>}
             {url && (
               <a
@@ -246,7 +255,7 @@ function LinkedCellWithTooltip({
                 </svg>
               </a>
             )}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+            <div className={`absolute left-1/2 -translate-x-1/2 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
           </div>
         </>
       )}
@@ -255,7 +264,7 @@ function LinkedCellWithTooltip({
 }
 
 // Game cell with mobile-friendly tooltip
-function GameCell({ game }: { game: Game }) {
+function GameCell({ game, flipToBottom = false }: { game: Game; flipToBottom?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const steamUrl = `https://store.steampowered.com/app/${game.steam_id}`;
 
@@ -306,7 +315,7 @@ function GameCell({ game }: { game: Game }) {
             onClick={() => setIsOpen(false)}
             onTouchStart={() => setIsOpen(false)}
           />
-          <div className="absolute bottom-full left-0 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64">
+          <div className={`absolute left-0 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64 ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
             <div className="font-semibold text-purple-200 mb-1">{game.name}</div>
             {game.developer && <div className="text-gray-400 mb-2">{game.developer}</div>}
             {game.short_description && (
@@ -324,7 +333,7 @@ function GameCell({ game }: { game: Game }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-            <div className="absolute top-full left-4 border-4 border-transparent border-t-gray-900"></div>
+            <div className={`absolute left-4 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
           </div>
         </>
       )}
@@ -333,29 +342,43 @@ function GameCell({ game }: { game: Game }) {
 }
 
 // Tooltip wrapper component for cell values (only used for Centrality) - desktop only
-function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
+function CellTooltip({ children, text, flipToBottom = false }: { children: React.ReactNode; text: string; flipToBottom?: boolean }) {
   return (
     <div className="group relative inline-block">
       {children}
-      <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
-        {text}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-      </div>
+      {flipToBottom ? (
+        <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+          {text}
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+        </div>
+      ) : (
+        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+          {text}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+        </div>
+      )}
     </div>
   );
 }
 
 // Tooltip for genres overflow
-function GenresTooltip({ children, genres }: { children: React.ReactNode; genres: string[] }) {
+function GenresTooltip({ children, genres, flipToBottom = false }: { children: React.ReactNode; genres: string[]; flipToBottom?: boolean }) {
   if (genres.length === 0) return <>{children}</>;
 
   return (
     <div className="group relative inline-block">
       {children}
-      <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-        {genres.join(', ')}
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-      </div>
+      {flipToBottom ? (
+        <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+          {genres.join(', ')}
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+        </div>
+      ) : (
+        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+          {genres.join(', ')}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+        </div>
+      )}
     </div>
   );
 }
@@ -490,7 +513,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'name',
         header: 'Game',
-        cell: info => <GameCell game={info.row.original} />,
+        cell: info => <GameCell game={info.row.original} flipToBottom={info.row.index === 0} />,
       },
       {
         accessorKey: 'genres',
@@ -498,6 +521,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => {
           const genres = info.getValue() as string[];
           const hiddenGenres = genres.slice(2);
+          const isFirstRow = info.row.index === 0;
           return (
             <div className="flex flex-wrap gap-1">
               {genres.slice(0, 2).map((genre, i) => (
@@ -506,7 +530,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                 </span>
               ))}
               {hiddenGenres.length > 0 && (
-                <GenresTooltip genres={hiddenGenres}>
+                <GenresTooltip genres={hiddenGenres} flipToBottom={isFirstRow}>
                   <span className="text-xs text-gray-500 cursor-help">+{hiddenGenres.length}</span>
                 </GenresTooltip>
               )}
@@ -525,6 +549,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               date={date}
               url={info.row.original.last_announcement_url}
               title={info.row.original.last_announcement_title}
+              flipToBottom={info.row.index === 0}
             />
           );
         },
@@ -548,6 +573,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               date={date}
               url={info.row.original.last_update_url}
               title={info.row.original.last_update_title}
+              flipToBottom={info.row.index === 0}
             />
           );
         },
@@ -573,7 +599,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
+                <CellTooltip text={valueInfo.description} flipToBottom={info.row.index === 0}>
                   <span className={`font-mono ${valueInfo.color} cursor-help`}>
                     {valueInfo.label}
                   </span>

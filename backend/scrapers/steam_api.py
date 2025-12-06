@@ -94,15 +94,15 @@ class SteamAPI:
     def get_app_details(self, appid: int) -> Optional[Dict]:
         """
         Get detailed information about a Steam app.
-        
+
         Args:
             appid: Steam App ID
-            
+
         Returns:
             Dictionary with app details, or None if not found/failed
         """
         url = f"{STORE_API_BASE}/appdetails"
-        params = {'appids': appid}
+        params = {'appids': appid, 'l': 'english'}
         
         try:
             data = self._make_request(url, params)
