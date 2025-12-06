@@ -102,21 +102,114 @@ function NecromancyGrid({
     }
   };
 
+  // Helper to get all combinations for a row (centrality level)
+  const getRowCombinations = (centrality: string): NecromancyFilter[] => {
+    const combinations: NecromancyFilter[] = [];
+    for (const pov of POV_KEYS) {
+      for (const naming of NAMING_KEYS) {
+        combinations.push({
+          centrality: centrality as NecromancyFilter['centrality'],
+          pov,
+          naming,
+        });
+      }
+    }
+    return combinations;
+  };
+
+  // Helper to get all combinations for a column (naming type across all)
+  const getColumnCombinations = (pov: typeof POV_KEYS[number], naming: typeof NAMING_KEYS[number]): NecromancyFilter[] => {
+    return CENTRALITY_KEYS.map((centrality) => ({
+      centrality,
+      pov,
+      naming,
+    }));
+  };
+
+  // Helper to get all combinations for a POV group (character or unit)
+  const getPovCombinations = (pov: typeof POV_KEYS[number]): NecromancyFilter[] => {
+    const combinations: NecromancyFilter[] = [];
+    for (const centrality of CENTRALITY_KEYS) {
+      for (const naming of NAMING_KEYS) {
+        combinations.push({
+          centrality,
+          pov,
+          naming,
+        });
+      }
+    }
+    return combinations;
+  };
+
+  // Check if all combinations in a group are selected
+  const areAllSelected = (combinations: NecromancyFilter[]): boolean => {
+    return combinations.every((c) =>
+      value.some(
+        (v) => v.centrality === c.centrality && v.pov === c.pov && v.naming === c.naming
+      )
+    );
+  };
+
+  // Toggle all combinations in a group (select all if any unselected, deselect all if all selected)
+  const toggleGroup = (combinations: NecromancyFilter[]) => {
+    const allSelected = areAllSelected(combinations);
+    if (allSelected) {
+      // Deselect all in group
+      onChange(
+        value.filter(
+          (v) =>
+            !combinations.some(
+              (c) => c.centrality === v.centrality && c.pov === v.pov && c.naming === v.naming
+            )
+        )
+      );
+    } else {
+      // Select all in group (add missing ones)
+      const missing = combinations.filter(
+        (c) =>
+          !value.some(
+            (v) => v.centrality === c.centrality && v.pov === c.pov && v.naming === c.naming
+          )
+      );
+      onChange([...value, ...missing]);
+    }
+  };
+
+  const selectAllCheckboxClass = "w-4 h-4 rounded border-purple-500 bg-gray-600 text-purple-400 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer";
+
   return (
     <div className="overflow-x-auto">
       <table className="text-xs">
         <thead>
           <tr>
             <th className="px-2 py-1"></th>
-            <th colSpan={2} className="px-2 py-1 text-center text-purple-300 border-b border-purple-700/30">
-              Character
+            <th className="px-2 py-1"></th>
+            <th colSpan={2} className="px-2 py-1 text-center border-b border-purple-700/30">
+              <label className="flex items-center justify-center gap-1.5 cursor-pointer text-purple-300">
+                <input
+                  type="checkbox"
+                  checked={areAllSelected(getPovCombinations('character'))}
+                  onChange={() => toggleGroup(getPovCombinations('character'))}
+                  className={selectAllCheckboxClass}
+                />
+                Character
+              </label>
             </th>
             <th className="px-1 text-gray-600">|</th>
-            <th colSpan={2} className="px-2 py-1 text-center text-purple-300 border-b border-purple-700/30">
-              Unit
+            <th colSpan={2} className="px-2 py-1 text-center border-b border-purple-700/30">
+              <label className="flex items-center justify-center gap-1.5 cursor-pointer text-purple-300">
+                <input
+                  type="checkbox"
+                  checked={areAllSelected(getPovCombinations('unit'))}
+                  onChange={() => toggleGroup(getPovCombinations('unit'))}
+                  className={selectAllCheckboxClass}
+                />
+                Unit
+              </label>
             </th>
           </tr>
           <tr>
+            <th className="px-2 py-1"></th>
             <th className="px-2 py-1"></th>
             <th className="px-2 py-1 text-center text-gray-400 font-normal">Explicit</th>
             <th className="px-2 py-1 text-center text-gray-400 font-normal">Implied</th>
@@ -130,6 +223,16 @@ function NecromancyGrid({
             <tr key={centrality}>
               <td className="px-2 py-1 text-gray-300 font-medium whitespace-nowrap">
                 {CENTRALITY_LABELS[centrality]}
+              </td>
+              {/* Row select-all checkbox */}
+              <td className="px-2 py-1 text-center">
+                <input
+                  type="checkbox"
+                  checked={areAllSelected(getRowCombinations(centrality))}
+                  onChange={() => toggleGroup(getRowCombinations(centrality))}
+                  className={selectAllCheckboxClass}
+                  title={`Select all ${CENTRALITY_LABELS[centrality]}`}
+                />
               </td>
               {POV_KEYS.map((pov, povIndex) => (
                 <Fragment key={pov}>
@@ -150,6 +253,29 @@ function NecromancyGrid({
               ))}
             </tr>
           ))}
+          {/* Column select-all row */}
+          <tr className="border-t border-purple-700/30">
+            <td className="px-2 py-1"></td>
+            <td className="px-2 py-1"></td>
+            {POV_KEYS.map((pov, povIndex) => (
+              <Fragment key={pov}>
+                {povIndex === 1 && (
+                  <td className="px-1 text-gray-600">|</td>
+                )}
+                {NAMING_KEYS.map((naming) => (
+                  <td key={`col-${pov}-${naming}`} className="px-2 py-1 text-center">
+                    <input
+                      type="checkbox"
+                      checked={areAllSelected(getColumnCombinations(pov, naming))}
+                      onChange={() => toggleGroup(getColumnCombinations(pov, naming))}
+                      className={selectAllCheckboxClass}
+                      title={`Select all ${pov} ${naming}`}
+                    />
+                  </td>
+                ))}
+              </Fragment>
+            ))}
+          </tr>
         </tbody>
       </table>
     </div>
@@ -319,9 +445,9 @@ export default function FilterPanel({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Genres */}
+        {/* Genres/Tags */}
         <div>
-          <label className="block text-sm text-gray-400 mb-1">Genres</label>
+          <label className="block text-sm text-gray-400 mb-1">Genres/Tags</label>
           <GenreSelect
             value={filters.genres}
             onChange={(genres) => updateFilter('genres', genres)}
