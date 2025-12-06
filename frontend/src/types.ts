@@ -22,6 +22,7 @@ export interface Game {
   publisher?: string;
   release_date?: string;
   price_usd?: number;
+  subscription?: 'monthly' | 'annual' | null;
   steam_tags: string[];
   genres: string[];
   last_checked?: string;

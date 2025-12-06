@@ -784,6 +784,8 @@ export default function GamesTable({ games }: GamesTableProps) {
           const price = info.getValue() as number | null | undefined;
           const game = info.row.original;
           const isSteamGame = game.primary_platform === 'steam';
+          const subscription = game.subscription;
+          const isFirstRow = info.row.index === 0;
 
           // Only show "Free" for Steam games with price=0
           // Non-Steam games without price data show "N/A"
@@ -794,7 +796,51 @@ export default function GamesTable({ games }: GamesTableProps) {
             return <span className="text-xs text-gray-500">N/A</span>;
           }
           if (price === 0) {
+            // Subscription games with $0 price (free base game + subscription)
+            if (subscription) {
+              const tooltipText = subscription === 'monthly' ? 'Monthly subscription' : 'Annual subscription';
+              return (
+                <div className="group relative inline-block">
+                  <span className="text-xs text-cyan-400 cursor-help border-b border-dashed border-cyan-400/50">
+                    Free*
+                  </span>
+                  {isFirstRow ? (
+                    <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+                      {tooltipText}
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+                    </div>
+                  ) : (
+                    <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+                      {tooltipText}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
             return <span className="text-xs text-green-400">Free</span>;
+          }
+          // Paid subscription games
+          if (subscription) {
+            const tooltipText = subscription === 'monthly' ? 'Monthly subscription' : 'Annual subscription';
+            return (
+              <div className="group relative inline-block">
+                <span className="text-xs text-cyan-400 cursor-help border-b border-dashed border-cyan-400/50">
+                  ${price.toFixed(2)}
+                </span>
+                {isFirstRow ? (
+                  <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+                    {tooltipText}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
+                  </div>
+                ) : (
+                  <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+                    {tooltipText}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                  </div>
+                )}
+              </div>
+            );
           }
           return <span className="text-xs text-gray-300">${price.toFixed(2)}</span>;
         },

@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS games (
     genres TEXT,      -- JSON array as string
     release_date TEXT,
     price_usd REAL,   -- Price in USD (NULL for free games)
+    subscription TEXT CHECK(subscription IN ('monthly', 'annual')),  -- Subscription type if applicable
     developer TEXT,
     publisher TEXT,
 

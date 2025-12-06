@@ -23,6 +23,7 @@
     "publisher": "Dotemu, Gamirror Games",
     "release_date": "9 Oct, 2025",
     "price_usd": 32.5,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action",
@@ -63,6 +64,7 @@
     "publisher": "Devolver Digital",
     "release_date": "15 Oct, 2025",
     "price_usd": 19.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action",
@@ -101,6 +103,7 @@
     "publisher": "Larian Studios",
     "release_date": "3 Aug, 2023",
     "price_usd": 79.99,
+    "subscription": null,
     "steam_tags": [
       "RPG",
       "Character Customization",
@@ -151,6 +154,7 @@
     "publisher": "Polished Games",
     "release_date": "18 Jun, 2024",
     "price_usd": 5.39,
+    "subscription": null,
     "steam_tags": [
       "Action Roguelike",
       "Rogue-lite",
@@ -202,6 +206,7 @@
     "publisher": "caiysware",
     "release_date": "9 Mar, 2023",
     "price_usd": 4.21,
+    "subscription": null,
     "steam_tags": [
       "Action Roguelike",
       "Bullet Hell",
@@ -253,6 +258,7 @@
     "publisher": "Lilith Games",
     "release_date": "16 Sep, 2025",
     "price_usd": 16.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Strategy",
@@ -291,6 +297,7 @@
     "publisher": "Devolver Digital",
     "release_date": "11 Aug, 2022",
     "price_usd": 11.49,
+    "subscription": null,
     "steam_tags": [
       "Base-Building",
       "Cute",
@@ -342,6 +349,7 @@
     "publisher": "THQ Nordic",
     "release_date": "5 Nov, 2015",
     "price_usd": 32.99,
+    "subscription": null,
     "steam_tags": [
       "Action",
       "Hack and Slash",
@@ -392,6 +400,7 @@
     "publisher": "5WORD Team",
     "release_date": "23 Aug, 2019",
     "price_usd": 16.99,
+    "subscription": null,
     "steam_tags": [
       "Wargame",
       "Pixel Graphics",
@@ -441,6 +450,7 @@
     "publisher": "DANGEN Entertainment, Game Source Entertainment",
     "release_date": "7 May, 2025",
     "price_usd": 25.99,
+    "subscription": null,
     "steam_tags": [
       "Rogue-lite",
       "Deckbuilding",
@@ -491,6 +501,7 @@
     "publisher": "Goblinz Publishing, Maple Whispering Limited",
     "release_date": "21 Oct, 2025",
     "price_usd": 12.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Indie",
@@ -505,6 +516,45 @@
     "last_announcement": "2025-11-28 03:22:40",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
     "last_announcement_title": "Patch Note - 1.1.1"
+  },
+  {
+    "id": 204,
+    "steam_id": null,
+    "battlenet_id": "diablo-2-resurrected",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "Diablo II: Resurrected",
+    "app_type": null,
+    "short_description": "Remastered version of the classic action RPG. The Necromancer class is one of the original iconic character choices.",
+    "header_image_url": null,
+    "dimension_1": "a",
+    "dimension_2": "character",
+    "dimension_3": "explicit",
+    "classification_notes": "Necromancer is a core class since the original game",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 39.99,
+    "subscription": null,
+    "steam_tags": [],
+    "genres": [
+      "Action RPG",
+      "Hack and Slash"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
     "id": 202,
@@ -526,10 +576,11 @@
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "Necromancer class added via Rise of the Necromancer DLC",
-    "developer": null,
+    "developer": "Blizzard Entertainment, Inc.",
     "publisher": null,
     "release_date": null,
     "price_usd": 39.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action RPG",
@@ -543,6 +594,45 @@
     "last_announcement": "2025-11-21T18:00:00+00:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24243442/season-37-the-forbidden-archives-preview",
     "last_announcement_title": "Season 37: The Forbidden Archives - Preview"
+  },
+  {
+    "id": 203,
+    "steam_id": null,
+    "battlenet_id": "diablo-immortal",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "Diablo Immortal",
+    "app_type": null,
+    "short_description": "Free-to-play mobile and PC action RPG set between Diablo II and III. Features the Necromancer class with corpse explosion and skeletal minions.",
+    "header_image_url": null,
+    "dimension_1": "a",
+    "dimension_2": "character",
+    "dimension_3": "explicit",
+    "classification_notes": "Necromancer is a fully playable class",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 0.0,
+    "subscription": null,
+    "steam_tags": [],
+    "genres": [
+      "Action RPG",
+      "Mobile"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   },
   {
     "id": 140,
@@ -569,6 +659,7 @@
     "publisher": "Blizzard Entertainment, Inc.",
     "release_date": "17 Oct, 2023",
     "price_usd": 66.99,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Hack and Slash",
@@ -618,6 +709,7 @@
     "publisher": "Kalypso Media",
     "release_date": "9 Nov, 2023",
     "price_usd": 200.75,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Simulation",
@@ -667,6 +759,7 @@
     "publisher": "Arc Games",
     "release_date": "31 Jul, 2025",
     "price_usd": 51.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "RPG",
@@ -706,6 +799,7 @@
     "publisher": "Crate Entertainment",
     "release_date": "25 Feb, 2016",
     "price_usd": 32.5,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Hack and Slash",
@@ -757,6 +851,7 @@
     "publisher": "Supergiant Games",
     "release_date": "25 Sep, 2025",
     "price_usd": 38.99,
+    "subscription": null,
     "steam_tags": [
       "Action",
       "Rogue-like",
@@ -807,6 +902,7 @@
     "publisher": "Arc Games",
     "release_date": "22 Mar, 2023",
     "price_usd": 67.6,
+    "subscription": null,
     "steam_tags": [
       "Action Roguelike",
       "Hack and Slash",
@@ -833,6 +929,45 @@
     "last_announcement_title": "Have a Nice Death is 60% off now!"
   },
   {
+    "id": 208,
+    "steam_id": null,
+    "battlenet_id": "hearthstone",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "Hearthstone",
+    "app_type": null,
+    "short_description": "Digital card game featuring Warcraft characters. Death Knight class uses necromantic abilities and undead minions.",
+    "header_image_url": null,
+    "dimension_1": "a",
+    "dimension_2": "character",
+    "dimension_3": "implied",
+    "classification_notes": "Death Knight class with undead/corpse mechanics",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 0.0,
+    "subscription": null,
+    "steam_tags": [],
+    "genres": [
+      "Card Game",
+      "Strategy"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
+  },
+  {
     "id": 160,
     "steam_id": 1782460,
     "battlenet_id": null,
@@ -856,6 +991,7 @@
     "publisher": "Mad Mushroom",
     "release_date": "22 Jul, 2025",
     "price_usd": 25.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action",
@@ -895,6 +1031,7 @@
     "publisher": "Panic Art Studios Ltd",
     "release_date": "29 Jan, 2014",
     "price_usd": 10.49,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Pixel Graphics",
@@ -947,6 +1084,7 @@
     "publisher": "Kalypso Media",
     "release_date": "28 Aug, 2020",
     "price_usd": 33.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Vampire",
@@ -997,6 +1135,7 @@
     "publisher": "Armor Games Studios",
     "release_date": "10 May, 2018",
     "price_usd": 16.99,
+    "subscription": null,
     "steam_tags": [
       "Outbreak Sim",
       "Indie",
@@ -1047,6 +1186,7 @@
     "publisher": "Daedalic Entertainment",
     "release_date": "23 Apr, 2020",
     "price_usd": 3.99,
+    "subscription": null,
     "steam_tags": [
       "RPG",
       "Strategy",
@@ -1097,6 +1237,7 @@
     "publisher": "Skystone Games",
     "release_date": "29 May, 2019",
     "price_usd": 22.79,
+    "subscription": null,
     "steam_tags": [
       "RPG",
       "Indie",
@@ -1147,6 +1288,7 @@
     "publisher": "Ironhide Game Studio",
     "release_date": "15 Oct, 2020",
     "price_usd": 22.79,
+    "subscription": null,
     "steam_tags": [
       "Tower Defense",
       "Strategy",
@@ -1195,6 +1337,7 @@
     "publisher": "Eleventh Hour Games",
     "release_date": "21 Feb, 2024",
     "price_usd": 44.99,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Loot",
@@ -1246,6 +1389,7 @@
     "publisher": "Devolver Digital",
     "release_date": "4 Mar, 2021",
     "price_usd": 19.49,
+    "subscription": null,
     "steam_tags": [
       "Tactical",
       "Rogue-like",
@@ -1296,6 +1440,7 @@
     "publisher": "Amazon Game Studios",
     "release_date": "11 Feb, 2022",
     "price_usd": 0.0,
+    "subscription": null,
     "steam_tags": [
       "MMORPG",
       "Free to Play",
@@ -1348,6 +1493,7 @@
     "publisher": "Klei Publishing",
     "release_date": "12 Feb, 2025",
     "price_usd": 27.99,
+    "subscription": null,
     "steam_tags": [
       "Survival",
       "Colony Sim",
@@ -1396,6 +1542,7 @@
     "publisher": "Big Fan Games",
     "release_date": "21 May, 2025",
     "price_usd": 36.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Card Game",
@@ -1445,6 +1592,7 @@
     "publisher": "Rablo Games, Gamersky Games",
     "release_date": "7 Oct, 2024",
     "price_usd": 7.79,
+    "subscription": null,
     "steam_tags": [
       "Creature Collector",
       "Party-Based RPG",
@@ -1495,6 +1643,7 @@
     "publisher": "Blinkmoon Games",
     "release_date": "22 May, 2024",
     "price_usd": 8.99,
+    "subscription": null,
     "steam_tags": [
       "Early Access",
       "Bullet Hell",
@@ -1547,6 +1696,7 @@
     "publisher": "Modern Wolf",
     "release_date": "30 Jul, 2020",
     "price_usd": 16.99,
+    "subscription": null,
     "steam_tags": [
       "Real Time Tactics",
       "Tower Defense",
@@ -1598,6 +1748,7 @@
     "publisher": "Alawar",
     "release_date": "13 Jul, 2022",
     "price_usd": 3.89,
+    "subscription": null,
     "steam_tags": [
       "Zombies",
       "Action Roguelike",
@@ -1649,6 +1800,7 @@
     "publisher": "Alawar",
     "release_date": "27 Mar, 2024",
     "price_usd": 10.49,
+    "subscription": null,
     "steam_tags": [
       "Tower Defense",
       "Strategy",
@@ -1700,6 +1852,7 @@
     "publisher": "Mad Mushroom, Gamersky Games",
     "release_date": "4 Dec, 2025",
     "price_usd": 11.04,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action",
@@ -1740,6 +1893,7 @@
     "publisher": "Drinkbox Studios",
     "release_date": "18 Jan, 2022",
     "price_usd": 9.75,
+    "subscription": null,
     "steam_tags": [
       "Singleplayer",
       "Indie",
@@ -1791,6 +1945,7 @@
     "publisher": "Codemasters, Electronic Arts",
     "release_date": "19 Oct, 2015",
     "price_usd": 11.49,
+    "subscription": null,
     "steam_tags": [
       "Action",
       "Villain Protagonist",
@@ -1840,6 +1995,7 @@
     "publisher": "Grinding Gear Games",
     "release_date": "23 Oct, 2013",
     "price_usd": 0.0,
+    "subscription": null,
     "steam_tags": [
       "Free to Play",
       "Dark Fantasy",
@@ -1893,6 +2049,7 @@
     "publisher": "Grinding Gear Games",
     "release_date": "6 Dec, 2024",
     "price_usd": 41.92,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Hack and Slash",
@@ -1945,6 +2102,7 @@
     "publisher": "Nacon",
     "release_date": "30 Sep, 2021",
     "price_usd": 28.99,
+    "subscription": null,
     "steam_tags": [
       "RPG",
       "Rogue-like",
@@ -1994,6 +2152,7 @@
     "publisher": "Team17",
     "release_date": "23 Sep, 2025",
     "price_usd": 16.25,
+    "subscription": null,
     "steam_tags": [
       "Early Access",
       "Rogue-lite",
@@ -2044,6 +2203,7 @@
     "publisher": "Hooded Horse, Mimimi Games",
     "release_date": "17 Aug, 2023",
     "price_usd": 49.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "RPG",
@@ -2093,6 +2253,7 @@
     "publisher": "NEOWIZ",
     "release_date": "20 Jan, 2021",
     "price_usd": 22.79,
+    "subscription": null,
     "steam_tags": [
       "Indie",
       "Action",
@@ -2142,6 +2303,7 @@
     "publisher": "Netmarble",
     "release_date": "24 Nov, 2025",
     "price_usd": 54.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Action",
@@ -2180,6 +2342,7 @@
     "publisher": "Coffee Stain Publishing",
     "release_date": "20 May, 2024",
     "price_usd": 39.99,
+    "subscription": null,
     "steam_tags": [
       "Local Multiplayer",
       "Turn-Based Tactics",
@@ -2230,6 +2393,7 @@
     "publisher": "Game Smithing Limited",
     "release_date": "17 Jun, 2025",
     "price_usd": 61.75,
+    "subscription": null,
     "steam_tags": [
       "Action Roguelike",
       "Bullet Hell",
@@ -2280,6 +2444,7 @@
     "publisher": "Night Job Games",
     "release_date": "30 Sep, 2021",
     "price_usd": 1.29,
+    "subscription": null,
     "steam_tags": [
       "Villain Protagonist",
       "Retro",
@@ -2330,6 +2495,7 @@
     "publisher": "Awaken Realms",
     "release_date": "27 May, 2021",
     "price_usd": 22.79,
+    "subscription": null,
     "steam_tags": [
       "Deckbuilding",
       "Card Game",
@@ -2380,6 +2546,7 @@
     "publisher": "Psychic Software",
     "release_date": "17 Jul, 2025",
     "price_usd": 32.99,
+    "subscription": null,
     "steam_tags": [],
     "genres": [
       "Adventure",
@@ -2419,6 +2586,7 @@
     "publisher": "Team17 Digital",
     "release_date": "26 Oct, 2023",
     "price_usd": 19.99,
+    "subscription": null,
     "steam_tags": [
       "RPG",
       "Action",
@@ -2470,6 +2638,7 @@
     "publisher": "Windmill Slam",
     "release_date": "22 Apr, 2025",
     "price_usd": 21.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Rogue-like",
@@ -2518,6 +2687,7 @@
     "publisher": "SEGA, Feral Interactive (Linux), Feral Interactive (Mac)",
     "release_date": "24 May, 2016",
     "price_usd": 17.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Fantasy",
@@ -2567,6 +2737,7 @@
     "publisher": "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)",
     "release_date": "28 Sep, 2017",
     "price_usd": 17.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Fantasy",
@@ -2616,6 +2787,7 @@
     "publisher": "SEGA, Feral Interactive",
     "release_date": "16 Feb, 2022",
     "price_usd": 19.99,
+    "subscription": null,
     "steam_tags": [
       "Strategy",
       "Turn-Based Strategy",
@@ -2665,6 +2837,7 @@
     "publisher": "10tons Ltd",
     "release_date": "15 May, 2019",
     "price_usd": 21.99,
+    "subscription": null,
     "steam_tags": [
       "Villain Protagonist",
       "RPG",
@@ -2716,6 +2889,7 @@
     "publisher": "10tons Ltd",
     "release_date": "30 Mar, 2023",
     "price_usd": 21.99,
+    "subscription": null,
     "steam_tags": [
       "Action",
       "Adventure",
@@ -2767,6 +2941,7 @@
     "publisher": "Reb_Orn",
     "release_date": "31 May, 2020",
     "price_usd": 7.79,
+    "subscription": null,
     "steam_tags": [
       "Simulation",
       "RPG",
@@ -2816,6 +2991,7 @@
     "publisher": "Stunlock Studios",
     "release_date": "8 May, 2024",
     "price_usd": 22.49,
+    "subscription": null,
     "steam_tags": [
       "Survival",
       "Open World",
@@ -2843,6 +3019,84 @@
     "last_announcement_title": "Jade the Vampire Hunter Plushie!"
   },
   {
+    "id": 207,
+    "steam_id": null,
+    "battlenet_id": "warcraft-3",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "Warcraft III: Reforged",
+    "app_type": null,
+    "short_description": "Remastered classic RTS with the Undead faction featuring necromancers who raise skeleton warriors.",
+    "header_image_url": null,
+    "dimension_1": "a",
+    "dimension_2": "unit",
+    "dimension_3": "explicit",
+    "classification_notes": "Undead faction with playable necromancer units",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 29.99,
+    "subscription": null,
+    "steam_tags": [],
+    "genres": [
+      "RTS",
+      "Strategy"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
+  },
+  {
+    "id": 206,
+    "steam_id": null,
+    "battlenet_id": "warcraft-rumble",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "Warcraft Rumble",
+    "app_type": null,
+    "short_description": "Mobile action strategy game featuring collectible Warcraft minis. Undead faction with necromancer units.",
+    "header_image_url": null,
+    "dimension_1": "b",
+    "dimension_2": "unit",
+    "dimension_3": "explicit",
+    "classification_notes": "Undead faction includes necromancer minions",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 0.0,
+    "subscription": null,
+    "steam_tags": [],
+    "genres": [
+      "Mobile",
+      "Strategy"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
+  },
+  {
     "id": 181,
     "steam_id": 424370,
     "battlenet_id": null,
@@ -2866,6 +3120,7 @@
     "publisher": "WOLCEN Studio",
     "release_date": "13 Feb, 2020",
     "price_usd": 38.99,
+    "subscription": null,
     "steam_tags": [
       "Action RPG",
       "Hack and Slash",
@@ -2892,5 +3147,43 @@
     "last_announcement": "2024-09-17 06:10:59",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009531366323",
     "last_announcement_title": "Server Shutdown and Online Character Conversion"
+  },
+  {
+    "id": 205,
+    "steam_id": null,
+    "battlenet_id": "world-of-warcraft-beta",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "battlenet"
+    ],
+    "primary_platform": "battlenet",
+    "external_url": null,
+    "name": "World of Warcraft",
+    "app_type": null,
+    "short_description": "Iconic MMORPG where players can play as Death Knights and Warlocks with necromantic abilities, raising undead minions.",
+    "header_image_url": null,
+    "dimension_1": "a",
+    "dimension_2": "character",
+    "dimension_3": "implied",
+    "classification_notes": "Death Knight class with undead army abilities; Warlock demons",
+    "developer": "Blizzard Entertainment, Inc.",
+    "publisher": null,
+    "release_date": null,
+    "price_usd": 0.0,
+    "subscription": "monthly",
+    "steam_tags": [],
+    "genres": [
+      "MMORPG"
+    ],
+    "last_checked": null,
+    "update_count": 0,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": null,
+    "last_announcement_url": null,
+    "last_announcement_title": null
   }
 ]
