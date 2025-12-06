@@ -127,8 +127,11 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> 
     return captions[:num_variants]
 
 
-def fetch_multiple_screenshots(steam_id: int, max_screenshots: int = 3) -> List[str]:
-    """Fetch multiple screenshot URLs from Steam"""
+def fetch_steam_screenshots(steam_id: int, max_screenshots: int = 3) -> List[str]:
+    """Fetch multiple screenshot URLs from Steam API dynamically."""
+    if not steam_id:
+        return []
+
     api = SteamAPI()
     details = api.get_app_details(steam_id)
 
@@ -138,6 +141,64 @@ def fetch_multiple_screenshots(steam_id: int, max_screenshots: int = 3) -> List[
     screenshots = details.get('screenshots', [])
     urls = [s.get('path_full') for s in screenshots if s.get('path_full')]
     return urls[:max_screenshots]
+
+
+def get_steam_header_image(steam_id: int) -> Optional[str]:
+    """Fetch header image URL from Steam API dynamically."""
+    if not steam_id:
+        return None
+
+    api = SteamAPI()
+    details = api.get_app_details(steam_id)
+
+    if not details:
+        return None
+
+    return details.get('header_image')
+
+
+def get_image_urls_for_update(update_data: dict) -> List[str]:
+    """
+    Get image URLs for an update based on platform.
+
+    For Steam games: Fetches screenshots dynamically from Steam API.
+    For Battle.net games: Uses the update's image_url from the news API.
+    Falls back to header_image_url if available.
+
+    Returns:
+        List of image URLs (may be empty if no images available)
+    """
+    image_urls = []
+    steam_id = update_data.get('steam_id')
+    source_platform = update_data.get('source_platform', 'steam')
+    primary_platform = update_data.get('primary_platform', 'steam')
+
+    # Determine which platform to use for images
+    platform = source_platform or primary_platform
+
+    if platform == 'steam' and steam_id:
+        # Fetch screenshots dynamically from Steam API
+        screenshots = fetch_steam_screenshots(steam_id)
+        if screenshots:
+            image_urls.extend(screenshots)
+
+        # Also try to get header image as fallback
+        if not image_urls:
+            header = get_steam_header_image(steam_id)
+            if header:
+                image_urls.append(header)
+
+    elif platform == 'battlenet':
+        # Use the update's image_url from the Battle.net news API
+        update_image = update_data.get('update_image_url')
+        if update_image:
+            image_urls.append(update_image)
+
+    # Fallback to stored header_image_url if we still have nothing
+    if not image_urls and update_data.get('header_image_url'):
+        image_urls.append(update_data['header_image_url'])
+
+    return image_urls[:3]  # Limit to 3 images
 
 
 def generate_content_for_update(update_data: dict, custom_image_path: Optional[Path] = None):
@@ -193,30 +254,27 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
         except Exception as e:
             print(f"    ✗ Error with custom image: {e}")
     else:
-        # Fetch multiple screenshots
-        screenshots = fetch_multiple_screenshots(update_data['game_id'])
-        primary_url = update_data.get('screenshot_url') or update_data['header_image_url']
-        image_urls = [primary_url]
+        # Get image URLs based on platform
+        image_urls = get_image_urls_for_update(update_data)
 
-        for url in screenshots:
-            if url not in image_urls:
-                image_urls.append(url)
-
-        image_urls = image_urls[:3]
-
-        for i, image_url in enumerate(image_urls, 1):
-            output_file = f"{base_filename}_image_{update_id}_{i}.jpg"
-            try:
-                compositor.compose_post_image(
-                    image_url=image_url,
-                    game_name=update_data['game_name'],
-                    text_lines=template_data['image_specs']['overlay_text'],
-                    update_type=update_data['update_type'],
-                    output_filename=output_file,
-                    tags=tags[:4]
-                )
-            except Exception as e:
-                print(f"    ✗ Error generating image {i}: {e}")
+        if not image_urls:
+            print(f"    ⚠ No images available for {update_data['game_name']} - skipping image generation")
+            print(f"      (Platform: {update_data.get('source_platform', 'unknown')}, "
+                  f"Steam ID: {update_data.get('steam_id', 'none')})")
+        else:
+            for i, image_url in enumerate(image_urls, 1):
+                output_file = f"{base_filename}_image_{update_id}_{i}.jpg"
+                try:
+                    compositor.compose_post_image(
+                        image_url=image_url,
+                        game_name=update_data['game_name'],
+                        text_lines=template_data['image_specs']['overlay_text'],
+                        update_type=update_data['update_type'],
+                        output_filename=output_file,
+                        tags=tags[:4]
+                    )
+                except Exception as e:
+                    print(f"    ✗ Error generating image {i}: {e}")
 
     # Mark as processed
     gen.conn.execute(

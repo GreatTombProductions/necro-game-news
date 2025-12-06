@@ -104,6 +104,13 @@ class BattlenetScraper:
             if item_product and item_product != product:
                 continue
 
+            # Extract image URL from staticAsset
+            static_asset = props.get('staticAsset', {})
+            image_url = static_asset.get('imageUrl', '')
+            # Ensure URL has protocol (API returns protocol-relative URLs like //bnetcmsus-a.akamaihd.net/...)
+            if image_url and image_url.startswith('//'):
+                image_url = 'https:' + image_url
+
             news_item = {
                 'id': props.get('newsId', ''),
                 'title': props.get('title', ''),
@@ -112,6 +119,7 @@ class BattlenetScraper:
                 'date': props.get('lastUpdated', ''),
                 'category': props.get('category', 'News'),
                 'product': product,
+                'image_url': image_url,
             }
 
             if news_item['id'] and news_item['title']:
@@ -148,6 +156,7 @@ class BattlenetScraper:
             'url': news_item.get('url', ''),
             'date': date_str,
             'update_type': self.classify_update_type(news_item),
+            'image_url': news_item.get('image_url', ''),
         }
 
     def classify_update_type(self, news_item: Dict) -> str:

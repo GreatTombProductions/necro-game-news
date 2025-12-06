@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS updates (
     gid TEXT,  -- Platform's unique identifier for the update
     date TIMESTAMP NOT NULL,
     source_platform TEXT DEFAULT 'steam',  -- Which platform this update came from
+    image_url TEXT,  -- Thumbnail/header image for the update (from news API)
 
     -- Social media processing
     processed_for_social BOOLEAN DEFAULT 0,

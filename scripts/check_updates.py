@@ -133,11 +133,11 @@ def check_battlenet_updates(cursor, db_id: int, name: str, battlenet_id: str, bn
             skipped_count += 1
             continue
 
-        # Add new update with source_platform
+        # Add new update with source_platform and image_url
         cursor.execute("""
             INSERT INTO updates
-            (game_id, update_type, title, content, url, gid, date, source_platform)
-            VALUES (?, ?, ?, ?, ?, ?, ?, 'battlenet')
+            (game_id, update_type, title, content, url, gid, date, source_platform, image_url)
+            VALUES (?, ?, ?, ?, ?, ?, ?, 'battlenet', ?)
         """, (
             db_id,
             parsed['update_type'],
@@ -145,7 +145,8 @@ def check_battlenet_updates(cursor, db_id: int, name: str, battlenet_id: str, bn
             parsed['contents'],
             parsed['url'],
             gid,
-            parsed['date']
+            parsed['date'],
+            parsed.get('image_url', '')
         ))
 
         new_count += 1
