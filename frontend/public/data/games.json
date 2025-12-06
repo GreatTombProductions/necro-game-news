@@ -2,6 +2,15 @@
   {
     "id": 151,
     "steam_id": 1904480,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Absolum",
     "app_type": "game",
     "short_description": "Fight as the outcast heroes of Talamh in a fierce battle to retake magic from Sun King Azra\u2019s grasp in Absolum, an original roguelite beat \u2018em up by Dotemu.",
@@ -21,7 +30,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-06 10:54:31.248721",
+    "last_checked": "2025-12-06 11:56:55.231213",
     "update_count": 22,
     "last_update": "2025-10-23 06:00:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641440446",
@@ -33,6 +42,15 @@
   {
     "id": 159,
     "steam_id": 2062430,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "BALL x PIT",
     "app_type": "game",
     "short_description": "BALL x PIT is a brick-breaking, ball-fusing, base-building survival roguelite. Batter hordes of enemies with ricocheting balls and gather the riches of the pit to expand your homestead, generate resources and recruit unique heroes.",
@@ -50,7 +68,7 @@
       "Action",
       "Indie"
     ],
-    "last_checked": "2025-12-06 10:54:32.697445",
+    "last_checked": "2025-12-06 11:56:56.677534",
     "update_count": 18,
     "last_update": "2025-11-05 08:51:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768233693",
@@ -62,6 +80,15 @@
   {
     "id": 166,
     "steam_id": 1086940,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Baldur's Gate 3",
     "app_type": "game",
     "short_description": "Baldur\u2019s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons &amp; Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
@@ -91,7 +118,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-06 10:54:34.014582",
+    "last_checked": "2025-12-06 11:56:58.303808",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010720",
@@ -103,6 +130,15 @@
   {
     "id": 179,
     "steam_id": 2499520,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Be My Horde",
     "app_type": "game",
     "short_description": "Be My Horde is a roguelite survivor where your minions fight for you. Become a formidable necromancer and turn your enemies into a resource! Raise fallen foes, build massive undead hordes, enhance your skills with devoured souls, and conquer the world \u2013 you\u2019re the villain in this story.",
@@ -145,6 +181,15 @@
   {
     "id": 186,
     "steam_id": 1944570,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Boneraiser Minions",
     "app_type": "game",
     "short_description": "Amass an army of undead to fight endless waves of heroes intent to end your boneraising ways! In this gothic auto-battler rogue-lite Survivor-like, use the bones of slain heroes to raise your minions, collect relics and spells, and unlock meta upgrades, all to survive King Gigald's crusade!",
@@ -187,6 +232,15 @@
   {
     "id": 158,
     "steam_id": 3332600,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Cubic Cosmos",
     "app_type": "game",
     "short_description": "Cubic Cosmos is a thrilling fast-paced roguelike card game. You have been trapped in a deadly game. One wrong move could see you reduced to a plaything of the goddess. Can you free yourself from the endless cycle and escape your fate?",
@@ -216,6 +270,15 @@
   {
     "id": 145,
     "steam_id": 1313140,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Cult of the Lamb",
     "app_type": "game",
     "short_description": "Start your own cult in a land of false prophets, venturing out into diverse and mysterious regions to build a loyal community of woodland Followers and spread your Word to become the one true cult.",
@@ -258,6 +321,15 @@
   {
     "id": 178,
     "steam_id": 388410,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Darksiders II Deathinitive Edition",
     "app_type": "game",
     "short_description": "The ultimate DARKSIDERS II experience! 1080p native resolution. Reworked and tuned game balancing and loot distribution. Improved Graphic Render Engine for even higher visual quality, lighting and shadows. Improved and reworked level, character and environment graphics.",
@@ -299,6 +371,15 @@
   {
     "id": 165,
     "steam_id": 814530,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Death Crown",
     "app_type": "game",
     "short_description": "Death Crown is a minimalist real time strategy game in a 1bit style, where you will be play Death herself, commanding her legions of death, and punishing humanity's Kingdom for its overconfidence.",
@@ -339,6 +420,15 @@
   {
     "id": 180,
     "steam_id": 3179730,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Deck of Haunts",
     "app_type": "game",
     "short_description": "Deck of Haunts invites you to become a malevolent Haunted House. Lure humans into your cursed halls, manipulate their fears, and drain their essence to grow your power. Use strategy to build your mansion and expand your dark influence, turning your home into a terrifying, inescapable nightmare.",
@@ -380,6 +470,15 @@
   {
     "id": 164,
     "steam_id": 2159900,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Decks of the Damned",
     "app_type": "game",
     "short_description": "Raise an undead army in Decks of the Damned! Command your vampire minions, scavenge gear from fallen foes and craft powerful items to strenghten your forces. Defend by day, expand your domain by night, and shroud the land in darkness!",
@@ -410,6 +509,16 @@
   {
     "id": 140,
     "steam_id": 2344520,
+    "battlenet_id": "diablo4",
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam",
+      "battlenet"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Diablo\u00ae IV",
     "app_type": "game",
     "short_description": "Join the fight for Sanctuary in Diablo\u00ae IV, the ultimate action RPG adventure. Experience the critically acclaimed campaign and new seasonal content.",
@@ -450,6 +559,15 @@
   {
     "id": 152,
     "steam_id": 1643310,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Dungeons 4",
     "app_type": "game",
     "short_description": "The Absolute Evil and its trusted *cough* servant, the Dark Elf Thalya, return in Dungeons 4 after the events of its fabulous predecessor to bring about their triumph over the forces of good once more.",
@@ -490,6 +608,15 @@
   {
     "id": 190,
     "steam_id": 2347080,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Frosthaven",
     "app_type": "game",
     "short_description": "From the creative mind of Isaac Childres, the highly acclaimed board game moves to the digital realm in the video game adaptation of FROSTHAVEN! The dark fantasy tactical RPG features deep mechanics and challenging yet satisfying gameplay both in Single Player and Co-Op Online Multiplayer.",
@@ -520,6 +647,15 @@
   {
     "id": 141,
     "steam_id": 219990,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Grim Dawn",
     "app_type": "game",
     "short_description": "Enter an apocalyptic fantasy world where humanity is on the brink of extinction, iron is valued above gold and trust is hard earned. This ARPG features complex character development, hundreds of unique items, crafting and quests with choice &amp; consequence.",
@@ -562,6 +698,15 @@
   {
     "id": 149,
     "steam_id": 1145350,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Hades II",
     "app_type": "game",
     "short_description": "Battle beyond the Underworld using dark sorcery to take on the Titan of Time in this bewitching sequel to the award-winning rogue-like dungeon crawler.",
@@ -603,6 +748,15 @@
   {
     "id": 167,
     "steam_id": 1740720,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Have a Nice Death",
     "app_type": "game",
     "short_description": "Have a Nice Death is a 2D action roguelike where you play as an overworked Death, whose employees have run rampant, completely throwing off the balance of souls - and his vacation plans. In order to restore order, you'll have to grab your trusty scythe and show your employees who's boss.",
@@ -643,6 +797,15 @@
   {
     "id": 160,
     "steam_id": 1782460,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Hell Clock",
     "app_type": "game",
     "short_description": "Forge powerful builds with endless loot in this relentless combination of Roguelike and ARPG. Blast through dungeons and unleash inhuman powers in a dark fantasy twist on Brazil\u2019s War of Canudos.",
@@ -673,6 +836,15 @@
   {
     "id": 174,
     "steam_id": 269210,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Hero Siege",
     "app_type": "game",
     "short_description": "Hero Siege is a fast paced Pixel Art ARPG featuring an expansive roster of unique classes, deep build experimentation, and a player driven economy.",
@@ -716,6 +888,15 @@
   {
     "id": 183,
     "steam_id": 1024480,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Immortal Realms: Vampire Wars",
     "app_type": "game",
     "short_description": "Immortal Realms: Vampire Wars is an engaging strategy game set in a dark vampire world in turmoil, that combines empire management and turn-based combat with unique card-game elements.",
@@ -757,6 +938,15 @@
   {
     "id": 177,
     "steam_id": 666570,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Infectonator 3: Apocalypse",
     "app_type": "game",
     "short_description": "A campy, crazy pixelart zombie apocalypse arcade sim where you're the bad guy. Drop your virus and spread it across the globe while you unlock a whole horde of bizarre undead to do your bidding.",
@@ -798,6 +988,15 @@
   {
     "id": 155,
     "steam_id": 807120,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Iratus: Lord of the Dead",
     "app_type": "game",
     "short_description": "Iratus: Lord of the Dead is a turn-based tactical roguelike RPG set in a dark fantasy universe. Lead an army of undead to help an angry necromancer in his quest to reach the surface world and bring death to the mortal realms!",
@@ -839,6 +1038,15 @@
   {
     "id": 185,
     "steam_id": 697550,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "It Lurks Below",
     "app_type": "game",
     "short_description": "It Lurks Below is an action-oriented, survival RPG in a randomly generated world. Fight through the massive underground dungeon, customize your character with random items and find out what evil lurks below.",
@@ -880,6 +1088,15 @@
   {
     "id": 172,
     "steam_id": 1367550,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Kingdom Rush Vengeance - Tower Defense",
     "app_type": "game",
     "short_description": "It's payback time! Lead your mighty dark army and make the Kingdom tremble with every step. Build powerful towers, choose your arsenal for destruction, and find the deadliest combination - train legendary heroes and lead them to victory!",
@@ -919,6 +1136,15 @@
   {
     "id": 142,
     "steam_id": 899770,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Last Epoch",
     "app_type": "game",
     "short_description": "Uncover the Past, Reforge the Future. Ascend into one of 15 mastery classes and explore dangerous dungeons, hunt epic loot, craft legendary weapons, and wield the power of over a hundred transformative skill trees. Last Epoch is being developed by a team of passionate Action RPG enthusiasts.",
@@ -961,6 +1187,15 @@
   {
     "id": 199,
     "steam_id": 1282730,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Loop Hero",
     "app_type": "game",
     "short_description": "The Lich has thrown the world into a timeless loop and plunged its inhabitants into never ending chaos. Wield an expanding deck of mystical cards to place enemies, buildings, and terrain along each unique expedition loop for the brave hero.",
@@ -1002,6 +1237,15 @@
   {
     "id": 150,
     "steam_id": 1599340,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Lost Ark",
     "app_type": "game",
     "short_description": "Embark on an odyssey for the Lost Ark in a vast, vibrant world: explore new lands, seek out lost treasures, and test yourself in thrilling action combat in this action-packed free-to-play RPG.",
@@ -1045,6 +1289,15 @@
   {
     "id": 192,
     "steam_id": 1270580,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Mind Over Magic",
     "app_type": "game",
     "short_description": "Mind Over Magic is a colony sim set at the site of a cursed magic school. Build and optimize your own magical academy, train powerful Mages, and master mighty relics in order to battle through the Underschool, a mysterious underground dungeon that holds the key to liberation from a deadly curse.",
@@ -1084,6 +1337,15 @@
   {
     "id": 168,
     "steam_id": 2742830,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Monster Train 2",
     "app_type": "game",
     "short_description": "Monster Train returns with all new clans, new enemy factions, new challenges, new modes and more! Defend your Pyre in the classic three-tiered, vertical gameplay that made the original roguelike deckbuilder a hit.",
@@ -1124,6 +1386,15 @@
   {
     "id": 194,
     "steam_id": 968800,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Necro Story",
     "app_type": "game",
     "short_description": "Necro Story is a creature-collection RPG where you play as a (kind of) evil necromancer more into undead shenanigans than saving the world! Command quirky minions, outsmart foes, and snag their souls to power up your team. Expect strategic combat, laughs, and plenty of mischief.",
@@ -1165,6 +1436,15 @@
   {
     "id": 195,
     "steam_id": 2615010,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Necromantic",
     "app_type": "game",
     "short_description": "Start out as a lowly freshman at Valorborn Academy and prove yourself to the school and other students \u2013 or don\u2019t, and repeatedly fall to the legions of horrors that await in Necromantic. Study up to survive in this dark and dangerous fantasy Bullet Heaven ... solo or by online co-op.",
@@ -1208,6 +1488,15 @@
   {
     "id": 173,
     "steam_id": 1144970,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Necronator: Dead Wrong",
     "app_type": "game",
     "short_description": "Necronator: Dead Wrong is a deck-building roguelike with an RTS twist. Build a powerful deck. Collect and deploy undead units and raise a unique army. Master each commander\u2019s playstyle and conquer the world. Change the game with rule-bending relics. Unlock new decks and do it all again.",
@@ -1250,6 +1539,15 @@
   {
     "id": 197,
     "steam_id": 1949190,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Necrosmith",
     "app_type": "game",
     "short_description": "A necromancer simulator. Assemble the dead using different body parts while upgrading your tower, combine the abilities of the different fantastic races to fight your way through the hordes of enemies and overrun the \u2019chosen ones\u2019. To tell the truth, the dead are pretty, uhm, dumb.",
@@ -1292,6 +1590,15 @@
   {
     "id": 196,
     "steam_id": 2277320,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Necrosmith 2",
     "app_type": "game",
     "short_description": "Like a dead man reanimated by dark sorcery, the necromancer simulator is back! Give the undead the ability to fly over mountains and swim across rivers, explore a fully generated world at night and fend off enemy hordes during the day. Start a new, uhm, life.",
@@ -1334,6 +1641,15 @@
   {
     "id": 146,
     "steam_id": 3668370,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Night Swarm",
     "app_type": "game",
     "short_description": "Claim your throne as Vampire Lord in this survivors-like. Each run is another step on your journey with new followers, quests and skills to unlock. The night is yours to conquer.",
@@ -1365,6 +1681,15 @@
   {
     "id": 153,
     "steam_id": 1432050,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Nobody Saves the World",
     "app_type": "game",
     "short_description": "Transform from a featureless nobody into a SLUG, a GHOST and a DRAGON in this new take on Action RPGs from the creators of Guacamelee! Discover 15+ distinct Forms, mix-and-match their abilities, clear evolving dungeons and... SAVE THE WORLD!?",
@@ -1407,6 +1732,15 @@
   {
     "id": 162,
     "steam_id": 306670,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Overlord: Fellowship of Evil",
     "app_type": "game",
     "short_description": "Overlord: Fellowship of Evil is an Action RPG filled with the series\u2019 black humour and penned by award-winning scriptwriter Rhianna Pratchett. Players embark on an epic new quest in single-player or with up to three friends in co-op, assisted by the mighty, maniacal and occasionally moronic minions.",
@@ -1447,6 +1781,15 @@
   {
     "id": 144,
     "steam_id": 238960,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Path of Exile",
     "app_type": "game",
     "short_description": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you. Path of Exile is an online Action RPG set in a dark fantasy world. The game is completely free and will never be pay-to-win.",
@@ -1491,6 +1834,15 @@
   {
     "id": 189,
     "steam_id": 2694490,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Path of Exile 2",
     "app_type": "game",
     "short_description": "Path of Exile 2 is a next generation Action RPG from Grinding Gear Games, featuring co-op for up to six players. Set years after the original Path of Exile, you will return to the dark world of Wraeclast and seek to end the corruption that is spreading.",
@@ -1534,6 +1886,15 @@
   {
     "id": 169,
     "steam_id": 1069690,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Rogue Lords",
     "app_type": "game",
     "short_description": "A dark fantasy roguelike where you play as the Devil! Lead famous evil geniuses through events and turn-based fights to spread terror and corruption. Create synergies between your disciples, use your evil powers and take revenge on those miserable Demon Hunters.",
@@ -1574,6 +1935,15 @@
   {
     "id": 156,
     "steam_id": 1763250,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "SWORN",
     "app_type": "game",
     "short_description": "SWORN is a 1-4 player co-op action rogue-like. Explore and reclaim a fallen Camelot from the reign of a corrupted Arthur and his Knights of the Round Table.",
@@ -1615,6 +1985,15 @@
   {
     "id": 170,
     "steam_id": 1545560,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Shadow Gambit: The Cursed Crew",
     "app_type": "game",
     "short_description": "Assemble your crew and set sail on an infamous ghost ship to sneak, stab, and spellcast your way through the Inquisition in this non-linear stealth strategy game. Chart a course, develop uncanny abilities, and use unconventional tactics to find a powerful pirate artifact!",
@@ -1655,6 +2034,15 @@
   {
     "id": 188,
     "steam_id": 1147560,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Skul: The Hero Slayer",
     "app_type": "game",
     "short_description": "Guide 'Skul' on his quest to single-handedly take on the Imperial Army and rescue his King from captivity, in an action-packed rogue-lite 2D platformer for the ages.",
@@ -1695,6 +2083,15 @@
   {
     "id": 163,
     "steam_id": 2373990,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Solo Leveling: ARISE OVERDRIVE",
     "app_type": "game",
     "short_description": "Solo Leveling, the webtoon with 14.3 billion views worldwide, is now an action RPG game! Help our hero grow from his humble E-Rank beginnings.",
@@ -1724,6 +2121,15 @@
   {
     "id": 191,
     "steam_id": 867210,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Songs of Conquest",
     "app_type": "game",
     "short_description": "Raise mighty armies, wield ancient magic and forge an empire. This turn-based strategy adventure game fuses strategic decision making, tactical combat and kingdom management.",
@@ -1765,6 +2171,15 @@
   {
     "id": 184,
     "steam_id": 2066020,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Soulstone Survivors",
     "app_type": "game",
     "short_description": "Face the Lords of the Void and their endless minions, collect their Soulstones and become a god! In this Action Roguelite, unveil secret spells, craft mighty weapons, unlock multiple characters, discover game-breaking synergies and conquer the power of the void.",
@@ -1806,6 +2221,15 @@
   {
     "id": 198,
     "steam_id": 1649570,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Super Grave Snatchers",
     "app_type": "game",
     "short_description": "Use necromancy to smash villages, scare townsfolk, and generally cause a ruckus.",
@@ -1847,6 +2271,15 @@
   {
     "id": 182,
     "steam_id": 1199030,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Tainted Grail: Conquest",
     "app_type": "game",
     "short_description": "A unique, infinitely replayable, story-driven hybrid between a deck-building Roguelike and an RPG game. Explore the ever-changing maps, fight with deadly enemies, and learn what happened to the cursed island of Avalon.",
@@ -1888,6 +2321,15 @@
   {
     "id": 193,
     "steam_id": 1315320,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "The Necromancer's Tale",
     "app_type": "game",
     "short_description": "A story-rich gothic RPG. Master the rituals of an ancient spellbook. Raise an undead army to march against your enemies. Commune with the realm of the dead &amp; struggle with your descent into madness. Progress through secrecy, diplomacy, blackmail, coercion &amp; seduction until ready to reveal yourself.",
@@ -1918,6 +2360,15 @@
   {
     "id": 171,
     "steam_id": 986040,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "The Unliving",
     "app_type": "game",
     "short_description": "Raise the dead as a fearsome Necromancer in the dark world of The Unliving! Lead your undead armies into the endless fight in this rogue-lite action RPG game. Burn cities to ash with devastating magic spells, slay epic bosses and turn your enemies into morbid servants.",
@@ -1960,6 +2411,15 @@
   {
     "id": 157,
     "steam_id": 1866630,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Throne of Bone",
     "app_type": "game",
     "short_description": "Draft minions to defeat all who oppose the noble art of necromancy. Wield spells, discover dark relics, and reclaim your castle to unite the land through undeath in this unholy amalgam of roguelike, deckbuilder, and autobattler.",
@@ -1999,6 +2459,15 @@
   {
     "id": 154,
     "steam_id": 364360,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Total War: WARHAMMER",
     "app_type": "game",
     "short_description": "Addictive turn-based empire-building with colossal, real-time battles, all set in a world of legendary heroes, giant monsters, flying creatures and storms of magical power.",
@@ -2039,6 +2508,15 @@
   {
     "id": 161,
     "steam_id": 594570,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Total War: WARHAMMER II",
     "app_type": "game",
     "short_description": "Strategy gaming perfected. A breath-taking campaign of exploration, expansion and conquest across a fantasy world. Turn-based civilisation management and real-time epic strategy battles with thousands of troops and monsters at your command.",
@@ -2079,6 +2557,15 @@
   {
     "id": 147,
     "steam_id": 1142710,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Total War: WARHAMMER III",
     "app_type": "game",
     "short_description": "The cataclysmic conclusion to the Total War: WARHAMMER trilogy is here. Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided. Will you conquer your Daemons\u2026 or command them?",
@@ -2119,6 +2606,15 @@
   {
     "id": 187,
     "steam_id": 790850,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Undead Horde",
     "app_type": "game",
     "short_description": "Become a necromancer and raise the dead - Undead Horde is a necromantic action game with elements from RPG, strategy and hack'n'slash. Maraud through the lands of the living, raze their villages and steal their treasures. Ultimately you'll take over the whole kingdom of the living!",
@@ -2161,6 +2657,15 @@
   {
     "id": 176,
     "steam_id": 2065810,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Undead Horde 2: Necropolis",
     "app_type": "game",
     "short_description": "As a powerful necromancer you have the ability to raise the dead and command them in battle. With each victory, your army will grow stronger and your city will become more powerful. Undead Horde 2 is an action game with elements from RPG, strategy and hack'n'slash. Rise from the crypt and rebuild!",
@@ -2203,6 +2708,15 @@
   {
     "id": 175,
     "steam_id": 1271750,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Unferat",
     "app_type": "game",
     "short_description": "Unferat is a warlock simulator, giving the player the opportunity to go from a village boy to a powerful dark sorcerer.",
@@ -2243,6 +2757,15 @@
   {
     "id": 143,
     "steam_id": 1604030,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "V Rising",
     "app_type": "game",
     "short_description": "Awaken as a Vampire. Hunt for blood in nearby settlements to regain your strength and evade the scorching sun to survive. Raise your castle and thrive in an ever-changing, open world full of mystery. Gain allies online and conquer the land of the living.",
@@ -2284,6 +2807,15 @@
   {
     "id": 181,
     "steam_id": 424370,
+    "battlenet_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
     "name": "Wolcen: Lords of Mayhem",
     "app_type": "game",
     "short_description": "Carve your path in this Hack\u2019n\u2019Slash free from class boundaries. Purify a world shattered by corruption, and uncover the grim secrets and forgotten horrors lurking in the shadows of this forsaken land as you rise in Power. Your Inner aspect beckons\u2014will you answer?",

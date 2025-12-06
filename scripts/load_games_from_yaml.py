@@ -7,6 +7,11 @@ to the database. With --update flag, it also updates classification
 for existing games. With --sync flag, it deletes games from the
 database that are no longer in the YAML file.
 
+Supports multi-platform games with:
+- steam_id, battlenet_id, gog_id, epic_id, itchio_id
+- platforms: list of platforms the game is on
+- primary_platform: where to fetch updates from
+
 Usage:
     python scripts/load_games_from_yaml.py              # Add new games only
     python scripts/load_games_from_yaml.py --update     # Add new + update existing
@@ -31,12 +36,82 @@ from backend.scrapers.steam_api import SteamAPI
 # to capture "Last Updated" date even for games not recently updated)
 INITIAL_NEWS_COUNT = 50
 
+# Platform identifiers
+VALID_PLATFORMS = {'steam', 'battlenet', 'gog', 'epic', 'itchio', 'manual'}
+
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+def get_game_identifier(game: dict) -> str:
+    """
+    Get a unique identifier for a game from YAML.
+    Uses steam_id if available, otherwise uses name + primary_platform.
+    """
+    if game.get('steam_id'):
+        return f"steam:{game['steam_id']}"
+    if game.get('battlenet_id'):
+        return f"battlenet:{game['battlenet_id']}"
+    if game.get('gog_id'):
+        return f"gog:{game['gog_id']}"
+    if game.get('epic_id'):
+        return f"epic:{game['epic_id']}"
+    if game.get('itchio_id'):
+        return f"itchio:{game['itchio_id']}"
+    # Fall back to name for manual entries
+    return f"name:{game['name']}"
+
+
+def find_existing_game(cursor, game: dict):
+    """
+    Find an existing game in the database by various identifiers.
+    Returns (id, ...) tuple if found, None otherwise.
+    """
+    # Try steam_id first (most common)
+    if game.get('steam_id'):
+        cursor.execute(
+            """SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
+               platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+               FROM games WHERE steam_id = ?""",
+            (game['steam_id'],)
+        )
+        result = cursor.fetchone()
+        if result:
+            return result
+
+    # Try other platform IDs
+    for platform_id, field in [
+        ('battlenet_id', 'battlenet_id'),
+        ('gog_id', 'gog_id'),
+        ('epic_id', 'epic_id'),
+        ('itchio_id', 'itchio_id'),
+    ]:
+        if game.get(platform_id):
+            cursor.execute(
+                f"""SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
+                   platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+                   FROM games WHERE {field} = ?""",
+                (game[platform_id],)
+            )
+            result = cursor.fetchone()
+            if result:
+                return result
+
+    # Fall back to name for manual entries
+    if not any(game.get(k) for k in ['steam_id', 'battlenet_id', 'gog_id', 'epic_id', 'itchio_id']):
+        cursor.execute(
+            """SELECT id, dimension_1, dimension_2, dimension_3, classification_notes,
+               platforms, primary_platform, battlenet_id, gog_id, epic_id, itchio_id
+               FROM games WHERE name = ? AND primary_platform = 'manual'""",
+            (game['name'],)
+        )
+        return cursor.fetchone()
+
+    return None
 
 
 def fetch_steam_details(game_id: int, steam_id: int, name: str, steam_api: SteamAPI, cursor) -> bool:
@@ -171,28 +246,30 @@ def fetch_initial_updates(game_id: int, steam_id: int, name: str, steam_api: Ste
 def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False, sync_deletes=False):
     """
     Load games from YAML file and add/update in database.
-    
+
+    Supports multi-platform games with steam_id, battlenet_id, gog_id, etc.
+
     Args:
         yaml_path: Path to games_list.yaml file
         update_existing: If True, update classification for existing games
         sync_deletes: If True, delete games from DB that aren't in YAML
     """
     yaml_file = Path(yaml_path)
-    
+
     if not yaml_file.exists():
         print(f"✗ Games list not found: {yaml_path}")
         return 0
-    
+
     # Read YAML
     with open(yaml_file, 'r') as f:
         data = yaml.safe_load(f)
-    
+
     games = data.get('games', [])
-    
+
     if not games:
         print("✗ No games found in YAML file")
         return 0
-    
+
     print(f"Found {len(games)} games in {yaml_path}")
     mode_parts = ["Add new games"]
     if update_existing:
@@ -201,11 +278,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         mode_parts.append("delete removed")
     print(f"Mode: {' + '.join(mode_parts)}")
     print()
-    
+
     # Connect to database
     conn = get_connection()
     cursor = conn.cursor()
-    
+
     added = 0
     updated = 0
     skipped = 0
@@ -215,50 +292,92 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     details_failed = 0
     updates_fetched = 0
 
-    # Track newly added games for Steam API fetch
+    # Track newly added games for API fetch (platform, game_id, platform_id, name)
     newly_added_games = []
 
-    # Get steam_ids from YAML for sync check
-    yaml_steam_ids = {game['steam_id'] for game in games}
-    
+    # Track game identifiers from YAML for sync check
+    yaml_game_ids = {get_game_identifier(game) for game in games}
+
     for game in games:
         name = game['name']
-        steam_id = game['steam_id']
+        steam_id = game.get('steam_id')
         classification = game['classification']
         notes = game.get('notes', '')
-        
+
+        # Extract platform information
+        platforms = game.get('platforms', ['steam'] if steam_id else ['manual'])
+        primary_platform = game.get('primary_platform', 'steam' if steam_id else 'manual')
+        battlenet_id = game.get('battlenet_id')
+        gog_id = game.get('gog_id')
+        epic_id = game.get('epic_id')
+        itchio_id = game.get('itchio_id')
+        external_url = game.get('external_url')
+
+        # Validate primary_platform
+        if primary_platform not in VALID_PLATFORMS:
+            print(f"⚠ Invalid primary_platform '{primary_platform}' for {name}, defaulting to steam")
+            primary_platform = 'steam' if steam_id else 'manual'
+
         try:
-            # Check if game already exists
-            cursor.execute(
-                "SELECT id, dimension_1, dimension_2, dimension_3, classification_notes FROM games WHERE steam_id = ?",
-                (steam_id,)
-            )
-            
-            existing = cursor.fetchone()
-            
+            # Check if game already exists using multi-platform lookup
+            existing = find_existing_game(cursor, game)
+
             if existing:
+                db_id = existing[0]
+                old_dim1, old_dim2, old_dim3, old_notes = existing[1:5]
+                old_platforms = existing[5]
+                old_primary = existing[6]
+                old_battlenet = existing[7]
+                old_gog = existing[8]
+                old_epic = existing[9]
+                old_itchio = existing[10]
+
                 if update_existing:
-                    # Check if classification changed
-                    db_id, old_dim1, old_dim2, old_dim3, old_notes = existing
+                    # Check if classification or platform info changed
                     new_dim1 = classification['dimension_1']
                     new_dim2 = classification['dimension_2']
                     new_dim3 = classification['dimension_3']
-                    
-                    if (old_dim1 != new_dim1 or 
-                        old_dim2 != new_dim2 or 
+                    new_platforms_json = json.dumps(platforms)
+
+                    classification_changed = (
+                        old_dim1 != new_dim1 or
+                        old_dim2 != new_dim2 or
                         old_dim3 != new_dim3 or
-                        old_notes != notes):
-                        
-                        # Update classification
+                        old_notes != notes
+                    )
+
+                    platform_changed = (
+                        old_platforms != new_platforms_json or
+                        old_primary != primary_platform or
+                        old_battlenet != battlenet_id or
+                        old_gog != gog_id or
+                        old_epic != epic_id or
+                        old_itchio != itchio_id
+                    )
+
+                    if classification_changed or platform_changed:
+                        # Update classification and platform info
                         cursor.execute("""
                             UPDATE games SET
                                 dimension_1 = ?,
                                 dimension_2 = ?,
                                 dimension_3 = ?,
-                                classification_notes = ?
+                                classification_notes = ?,
+                                platforms = ?,
+                                primary_platform = ?,
+                                battlenet_id = ?,
+                                gog_id = ?,
+                                epic_id = ?,
+                                itchio_id = ?,
+                                external_url = ?
                             WHERE id = ?
-                        """, (new_dim1, new_dim2, new_dim3, notes, db_id))
-                        
+                        """, (
+                            new_dim1, new_dim2, new_dim3, notes,
+                            new_platforms_json, primary_platform,
+                            battlenet_id, gog_id, epic_id, itchio_id,
+                            external_url, db_id
+                        ))
+
                         # Show what changed
                         changes = []
                         if old_dim1 != new_dim1:
@@ -268,25 +387,35 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         if old_dim3 != new_dim3:
                             changes.append(f"dim3: {old_dim3}→{new_dim3}")
                         if old_notes != notes:
-                            changes.append("notes updated")
-                        
+                            changes.append("notes")
+                        if platform_changed:
+                            changes.append("platforms")
+
                         print(f"↻ Updated: {name} ({', '.join(changes)})")
                         updated += 1
                     else:
                         skipped += 1
                 else:
-                    print(f"⊙ Skipped (already exists): {name}")
                     skipped += 1
                 continue
-            
-            # Add new game
+
+            # Add new game with full platform support
             cursor.execute("""
-                INSERT INTO games 
-                (steam_id, name, dimension_1, dimension_2, dimension_3, 
+                INSERT INTO games
+                (steam_id, battlenet_id, gog_id, epic_id, itchio_id,
+                 platforms, primary_platform, external_url,
+                 name, dimension_1, dimension_2, dimension_3,
                  classification_notes, date_added)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
+                battlenet_id,
+                gog_id,
+                epic_id,
+                itchio_id,
+                json.dumps(platforms),
+                primary_platform,
+                external_url,
                 name,
                 classification['dimension_1'],
                 classification['dimension_2'],
@@ -294,62 +423,101 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 notes,
                 datetime.now()
             ))
-            
+
             # Get the newly inserted game's ID
             game_id = cursor.lastrowid
-            newly_added_games.append((game_id, steam_id, name))
 
+            # Track for API fetch based on primary platform
+            if primary_platform == 'steam' and steam_id:
+                newly_added_games.append(('steam', game_id, steam_id, name))
+            elif primary_platform == 'battlenet' and battlenet_id:
+                newly_added_games.append(('battlenet', game_id, battlenet_id, name))
+            # Other platforms would be added here as we implement their APIs
+
+            platform_str = f"[{', '.join(platforms)}]" if len(platforms) > 1 else platforms[0]
             print(f"✓ Added: {name} ({classification['dimension_1']}, "
-                  f"{classification['dimension_2']}, {classification['dimension_3']})")
+                  f"{classification['dimension_2']}, {classification['dimension_3']}) - {platform_str}")
             added += 1
 
         except Exception as e:
             print(f"✗ Error processing {name}: {e}")
+            import traceback
+            traceback.print_exc()
             errors += 1
-    
+
     # Delete games that are in DB but not in YAML (if sync mode)
     if sync_deletes:
         print()
         print("Checking for games to remove...")
-        
-        cursor.execute("SELECT id, steam_id, name FROM games")
+
+        cursor.execute("""
+            SELECT id, steam_id, battlenet_id, gog_id, epic_id, itchio_id,
+                   name, primary_platform
+            FROM games
+        """)
         db_games = cursor.fetchall()
-        
-        for game_id, steam_id, name in db_games:
-            if steam_id not in yaml_steam_ids:
+
+        for row in db_games:
+            db_id, steam_id, battlenet_id, gog_id, epic_id, itchio_id, name, primary_platform = row
+
+            # Build identifier for this DB game
+            if steam_id:
+                db_identifier = f"steam:{steam_id}"
+            elif battlenet_id:
+                db_identifier = f"battlenet:{battlenet_id}"
+            elif gog_id:
+                db_identifier = f"gog:{gog_id}"
+            elif epic_id:
+                db_identifier = f"epic:{epic_id}"
+            elif itchio_id:
+                db_identifier = f"itchio:{itchio_id}"
+            else:
+                db_identifier = f"name:{name}"
+
+            if db_identifier not in yaml_game_ids:
                 try:
                     # Get update count before deletion
                     cursor.execute(
                         "SELECT COUNT(*) FROM updates WHERE game_id = ?",
-                        (game_id,)
+                        (db_id,)
                     )
                     update_count = cursor.fetchone()[0]
-                    
+
                     # Delete game (CASCADE will delete updates automatically)
-                    cursor.execute("DELETE FROM games WHERE id = ?", (game_id,))
-                    
-                    print(f"🗑  Deleted: {name} (steam_id: {steam_id}, {update_count} updates)")
+                    cursor.execute("DELETE FROM games WHERE id = ?", (db_id,))
+
+                    print(f"🗑  Deleted: {name} ({db_identifier}, {update_count} updates)")
                     deleted += 1
-                    
+
                 except Exception as e:
                     print(f"✗ Error deleting {name}: {e}")
                     errors += 1
 
-    # Fetch Steam details and initial updates for newly added games
+    # Fetch details and initial updates for newly added games
     if newly_added_games:
         print()
-        print(f"Fetching Steam data for {len(newly_added_games)} new games...")
-        steam_api = SteamAPI()
 
-        for game_id, steam_id, name in newly_added_games:
-            # Fetch game details (description, images, etc.)
-            if fetch_steam_details(game_id, steam_id, name, steam_api, cursor):
-                details_fetched += 1
-            else:
-                details_failed += 1
+        # Group by platform
+        steam_games = [(g[1], g[2], g[3]) for g in newly_added_games if g[0] == 'steam']
+        battlenet_games = [(g[1], g[2], g[3]) for g in newly_added_games if g[0] == 'battlenet']
 
-            # Fetch initial updates (uses higher count to capture Last Updated date)
-            updates_fetched += fetch_initial_updates(game_id, steam_id, name, steam_api, cursor)
+        if steam_games:
+            print(f"Fetching Steam data for {len(steam_games)} new games...")
+            steam_api = SteamAPI()
+
+            for game_id, steam_id, name in steam_games:
+                # Fetch game details (description, images, etc.)
+                if fetch_steam_details(game_id, steam_id, name, steam_api, cursor):
+                    details_fetched += 1
+                else:
+                    details_failed += 1
+
+                # Fetch initial updates (uses higher count to capture Last Updated date)
+                updates_fetched += fetch_initial_updates(game_id, steam_id, name, steam_api, cursor)
+
+        if battlenet_games:
+            print(f"Battle.net games ({len(battlenet_games)}) - API integration pending")
+            # TODO: Implement Battle.net API fetching when available
 
     conn.commit()
     conn.close()
@@ -370,7 +538,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
             print(f"  Initial updates: {updates_fetched}")
     print(f"  ✗ Errors: {errors}")
     print("=" * 60)
-    
+
     return added + updated + deleted
 
 

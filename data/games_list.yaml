@@ -17,10 +17,25 @@
 #   Dimension 3 (Naming):
 #     explicit: Referred to as "necromancer/necromancy"
 #     implied: Death magic without explicit terminology
+#
+# Platform Support:
+#   platforms: List of platforms the game is on (steam, battlenet, gog, epic, itchio)
+#   primary_platform: Where to fetch updates from (defaults to steam if steam_id present)
+#   steam_id: Steam app ID (optional if using another platform)
+#   battlenet_id: Battle.net product ID (e.g., "diablo4")
+#   gog_id: GOG product ID
+#   epic_id: Epic Games Store ID
+#   itchio_id: itch.io game ID
+#   external_url: Manual store URL (for platforms without API support)
 
 games:
   - name: "Diablo IV"
     steam_id: 2344520
+    battlenet_id: "diablo4"
+    platforms:
+      - steam
+      - battlenet
+    primary_platform: steam  # Get updates from Steam (has robust news API)
     classification:
       dimension_1: "a"
       dimension_2: "character"
@@ -202,9 +217,9 @@ games:
   - name: "BALL x PIT"
     steam_id: 2062430
     classification:
-      dimension_1: "d"
+      dimension_1: "c"
       dimension_2: "character"
-      dimension_3: "implied"
+      dimension_3: "explicit"
     date_added: "2024-12-05"
     priority: low
     notes: "Firing ghost balls counts as necromancy by technicality"

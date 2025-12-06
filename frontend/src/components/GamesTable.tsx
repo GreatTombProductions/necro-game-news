@@ -9,7 +9,42 @@ import {
   flexRender,
 } from '@tanstack/react-table';
 import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
-import type { Game } from '../types';
+import type { Game, Platform } from '../types';
+import { PLATFORM_INFO, getStoreUrl } from '../types';
+
+// Platform icon component - shows clickable icons for each platform a game is on
+function PlatformIcons({ game }: { game: Game }) {
+  return (
+    <div className="flex gap-1">
+      {game.platforms.map((platform) => {
+        const info = PLATFORM_INFO[platform as Platform];
+        const url = getStoreUrl(game, platform as Platform);
+        if (!info) return null;
+
+        if (url) {
+          return (
+            <a
+              key={platform}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm hover:scale-110 transition-transform cursor-pointer"
+              title={`View on ${info.name}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {info.icon}
+            </a>
+          );
+        }
+        return (
+          <span key={platform} className="text-sm opacity-50" title={info.name}>
+            {info.icon}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
 import SubmissionForm from './SubmissionForm';
 import FilterPanel, {
   type FilterState,
@@ -289,7 +324,11 @@ function GameCell({ game }: { game: Game }) {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
-  const steamUrl = `https://store.steampowered.com/app/${game.steam_id}`;
+
+  // Get the primary store URL (Steam preferred, then primary_platform, then first available)
+  const primaryPlatform = game.steam_id ? 'steam' : game.primary_platform;
+  const storeUrl = getStoreUrl(game, primaryPlatform);
+  const platformInfo = PLATFORM_INFO[primaryPlatform];
 
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
@@ -324,10 +363,12 @@ function GameCell({ game }: { game: Game }) {
   };
 
   const handleDesktopClick = (e: React.MouseEvent) => {
-    // On desktop, open link directly
+    // On desktop, open link directly if we have a store URL
     if (!('ontouchstart' in window)) {
       e.stopPropagation();
-      window.open(steamUrl, '_blank');
+      if (storeUrl) {
+        window.open(storeUrl, '_blank');
+      }
     } else {
       // On touch, show tooltip
       e.preventDefault();
@@ -337,22 +378,22 @@ function GameCell({ game }: { game: Game }) {
     }
   };
 
-  const tooltipContent = (showSteamLink: boolean, placeBelow: boolean) => (
+  const tooltipContent = (showStoreLink: boolean, placeBelow: boolean) => (
     <>
       <div className="font-semibold text-purple-200 mb-1">{game.name}</div>
       {game.developer && <div className="text-gray-400 mb-2">{game.developer}</div>}
       {game.short_description && (
-        <div className={`text-gray-400 text-xs line-clamp-3 ${showSteamLink ? 'mb-2' : ''}`}>{game.short_description}</div>
+        <div className={`text-gray-400 text-xs line-clamp-3 ${showStoreLink && storeUrl ? 'mb-2' : ''}`}>{game.short_description}</div>
       )}
-      {showSteamLink && (
+      {showStoreLink && storeUrl && (
         <a
-          href={steamUrl}
+          href={storeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors mt-2 pt-2 border-t border-purple-700/30"
           onClick={(e) => e.stopPropagation()}
         >
-          <span>View on Steam</span>
+          <span>View on {platformInfo.name}</span>
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
@@ -661,6 +702,11 @@ export default function GamesTable({ games }: GamesTableProps) {
         accessorKey: 'name',
         header: 'Game',
         cell: info => <GameCell game={info.row.original} />,
+      },
+      {
+        id: 'platforms',
+        header: 'Platform',
+        cell: info => <PlatformIcons game={info.row.original} />,
       },
       {
         accessorKey: 'price_usd',

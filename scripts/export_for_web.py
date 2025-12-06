@@ -33,6 +33,13 @@ def export_games():
         SELECT
             g.id,
             g.steam_id,
+            g.battlenet_id,
+            g.gog_id,
+            g.epic_id,
+            g.itchio_id,
+            g.platforms,
+            g.primary_platform,
+            g.external_url,
             g.name,
             g.app_type,
             g.short_description,
@@ -72,7 +79,7 @@ def export_games():
                 game['steam_tags'] = []
         else:
             game['steam_tags'] = []
-        
+
         if game['genres']:
             try:
                 game['genres'] = json.loads(game['genres'])
@@ -80,7 +87,15 @@ def export_games():
                 game['genres'] = []
         else:
             game['genres'] = []
-    
+
+        if game['platforms']:
+            try:
+                game['platforms'] = json.loads(game['platforms'])
+            except:
+                game['platforms'] = ['steam']
+        else:
+            game['platforms'] = ['steam']
+
     return games
 
 

@@ -18,12 +18,25 @@ SCHEMA = """
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS games (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    steam_id INTEGER UNIQUE NOT NULL,
+
+    -- Platform identifiers (at least one should be set)
+    steam_id INTEGER,  -- Nullable for non-Steam games
+    battlenet_id TEXT,
+    gog_id TEXT,
+    epic_id TEXT,
+    itchio_id TEXT,
+
+    -- Multi-platform metadata
+    platforms TEXT DEFAULT '["steam"]',  -- JSON array of platforms
+    primary_platform TEXT DEFAULT 'steam' CHECK(primary_platform IN ('steam', 'battlenet', 'gog', 'epic', 'itchio', 'manual')),
+    external_url TEXT,  -- Manual store link if needed
+
+    -- Game info
     name TEXT NOT NULL,
     app_type TEXT,  -- 'game', 'dlc', etc.
     short_description TEXT,
     header_image_url TEXT,
-    
+
     -- Necromancy classification (highest satisfied per dimension)
     -- dimension_1: degree of necromancy integration
     --   a: central to character/unit identity and gameplay
@@ -35,20 +48,18 @@ CREATE TABLE IF NOT EXISTS games (
     dimension_3 TEXT CHECK(dimension_3 IN ('explicit', 'implied')),
     classification_notes TEXT,
 
-    -- Metadata from Steam
+    -- Metadata (may come from various platforms)
     steam_tags TEXT,  -- JSON array as string
     genres TEXT,      -- JSON array as string
     release_date TEXT,
     price_usd REAL,   -- Price in USD (NULL for free games)
     developer TEXT,
     publisher TEXT,
-    
+
     -- Tracking metadata
     date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_checked TIMESTAMP,
-    is_active BOOLEAN DEFAULT 1,
-    
-    UNIQUE(steam_id)
+    is_active BOOLEAN DEFAULT 1
 );
 
 -- ============================================================================
@@ -61,8 +72,9 @@ CREATE TABLE IF NOT EXISTS updates (
     title TEXT NOT NULL,
     content TEXT,
     url TEXT,
-    gid TEXT,  -- Steam's unique identifier for the update
+    gid TEXT,  -- Platform's unique identifier for the update
     date TIMESTAMP NOT NULL,
+    source_platform TEXT DEFAULT 'steam',  -- Which platform this update came from
 
     -- Social media processing
     processed_for_social BOOLEAN DEFAULT 0,
