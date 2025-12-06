@@ -10,6 +10,11 @@ import {
 import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
 import type { Game } from '../types';
 import SubmissionForm from './SubmissionForm';
+import FilterPanel, {
+  type FilterState,
+  initialFilterState,
+  countActiveFilters,
+} from './FilterPanel';
 
 interface GamesTableProps {
   games: Game[];
@@ -55,21 +60,73 @@ const centralitySortFn: SortingFn<Game> = (rowA, rowB, columnId) => {
   return centralitySortOrder[a] - centralitySortOrder[b];
 };
 
-// Custom filter function that searches only name and developer
-const gameFilterFn: FilterFn<Game> = (row, _columnId, filterValue) => {
-  const search = filterValue.toLowerCase();
+// Helper to normalize strings for matching
+const normalize = (str: string) => str.toLowerCase().replace(/[®©™]/g, '');
+
+// Combined filter value type (search + filters encoded together)
+interface CombinedFilterValue {
+  search: string;
+  filters: FilterState;
+}
+
+// Filter function that handles both search and advanced filters
+const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedFilterValue) => {
   const game = row.original;
+  const { search, filters } = filterValue;
 
-  // Strip special characters for matching
-  const normalize = (str: string) => str.toLowerCase().replace(/[®©™]/g, '');
+  // Global search filter (from search bar)
+  if (search) {
+    const searchLower = search.toLowerCase();
+    const matchesSearch =
+      normalize(game.name).includes(searchLower) ||
+      (game.developer && normalize(game.developer).includes(searchLower));
+    if (!matchesSearch) return false;
+  }
 
-  // Search in name
-  if (normalize(game.name).includes(search)) return true;
+  // Genres filter (OR logic - match any selected genre)
+  if (filters.genres.length > 0) {
+    const hasMatchingGenre = filters.genres.some((g) => game.genres.includes(g));
+    if (!hasMatchingGenre) return false;
+  }
 
-  // Search in developer
-  if (game.developer && normalize(game.developer).includes(search)) return true;
+  // Announcement date range filter
+  if (filters.announcementDateFrom && game.last_announcement) {
+    const announcementDate = new Date(game.last_announcement);
+    const fromDate = new Date(filters.announcementDateFrom);
+    if (announcementDate < fromDate) return false;
+  }
+  if (filters.announcementDateTo && game.last_announcement) {
+    const announcementDate = new Date(game.last_announcement);
+    const toDate = new Date(filters.announcementDateTo);
+    toDate.setHours(23, 59, 59, 999); // Include the entire day
+    if (announcementDate > toDate) return false;
+  }
 
-  return false;
+  // Last updated date range filter
+  if (filters.lastUpdatedFrom && game.last_update) {
+    const updateDate = new Date(game.last_update);
+    const fromDate = new Date(filters.lastUpdatedFrom);
+    if (updateDate < fromDate) return false;
+  }
+  if (filters.lastUpdatedTo && game.last_update) {
+    const updateDate = new Date(game.last_update);
+    const toDate = new Date(filters.lastUpdatedTo);
+    toDate.setHours(23, 59, 59, 999); // Include the entire day
+    if (updateDate > toDate) return false;
+  }
+
+  // Necromancy grid filter (only applies if not all 16 are selected)
+  if (filters.necromancyGrid.length > 0 && filters.necromancyGrid.length < 16) {
+    const matchesNecromancy = filters.necromancyGrid.some(
+      (f) =>
+        game.dimension_1 === f.centrality &&
+        game.dimension_2 === f.pov &&
+        game.dimension_3 === f.naming
+    );
+    if (!matchesNecromancy) return false;
+  }
+
+  return true;
 };
 
 // Tooltip wrapper component for cell values (only used for Centrality)
@@ -203,6 +260,27 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
 export default function GamesTable({ games }: GamesTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
   const [isSubmissionFormOpen, setIsSubmissionFormOpen] = useState(false);
+  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+  const [filters, setFilters] = useState<FilterState>(initialFilterState);
+
+  // Extract unique genres from games data
+  const availableGenres = useMemo(() => {
+    const genreSet = new Set<string>();
+    games.forEach((game) => game.genres.forEach((g) => genreSet.add(g)));
+    return Array.from(genreSet).sort();
+  }, [games]);
+
+  // Count active filters for badge
+  const activeFilterCount = countActiveFilters(filters);
+
+  // Clear all filters
+  const clearFilters = () => setFilters(initialFilterState);
+
+  // Combined filter value that triggers re-filtering when either search or filters change
+  const combinedFilterValue = useMemo(
+    () => ({ search: globalFilter, filters }),
+    [globalFilter, filters]
+  );
 
   const columns = useMemo<ColumnDef<Game>[]>(
     () => [
@@ -408,10 +486,9 @@ export default function GamesTable({ games }: GamesTableProps) {
     data: games,
     columns,
     state: {
-      globalFilter,
+      globalFilter: combinedFilterValue,
     },
-    onGlobalFilterChange: setGlobalFilter,
-    globalFilterFn: gameFilterFn,
+    globalFilterFn: combinedFilterFn,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -425,26 +502,63 @@ export default function GamesTable({ games }: GamesTableProps) {
 
   return (
     <div>
-      {/* Search Bar and Submission Link */}
-      <div className="mb-6 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
-        <div className="flex-1">
-          <input
-            type="text"
-            value={globalFilter ?? ''}
-            onChange={e => setGlobalFilter(e.target.value)}
-            placeholder="Search by game or developer..."
-            className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-          />
-        </div>
-        <div className="flex-shrink-0 text-right sm:text-left flex flex-col justify-center py-1">
-          <span className="text-gray-500 text-sm">Know something we don't?</span>
+      {/* Search Bar, Filters, and Submission Link */}
+      <div className="mb-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
+          {/* Filters Button */}
           <button
-            onClick={() => setIsSubmissionFormOpen(true)}
-            className="text-purple-400 hover:text-purple-300 text-sm underline underline-offset-2 transition-colors"
+            onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
+            className={`flex-shrink-0 px-4 py-3 rounded-lg border transition-colors flex items-center gap-2 text-sm font-medium ${
+              isFilterPanelOpen || activeFilterCount > 0
+                ? 'bg-purple-900/50 border-purple-500 text-purple-200'
+                : 'bg-gray-800 border-purple-700 text-gray-300 hover:border-purple-600 hover:text-purple-200'
+            }`}
           >
-            Submit a game
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            Filters
+            {activeFilterCount > 0 && (
+              <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-semibold bg-purple-500 text-white rounded-full">
+                {activeFilterCount}
+              </span>
+            )}
           </button>
+
+          {/* Search Bar */}
+          <div className="flex-1">
+            <input
+              type="text"
+              value={globalFilter ?? ''}
+              onChange={e => setGlobalFilter(e.target.value)}
+              placeholder="Search by game or developer..."
+              className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+            />
+          </div>
+
+          {/* Submit Link */}
+          <div className="flex-shrink-0 text-right sm:text-left flex flex-col justify-center py-1">
+            <span className="text-gray-500 text-sm">Know something we don't?</span>
+            <button
+              onClick={() => setIsSubmissionFormOpen(true)}
+              className="text-purple-400 hover:text-purple-300 text-sm underline underline-offset-2 transition-colors"
+            >
+              Submit a game
+            </button>
+          </div>
         </div>
+
+        {/* Filter Panel */}
+        {isFilterPanelOpen && (
+          <FilterPanel
+            filters={filters}
+            onChange={setFilters}
+            availableGenres={availableGenres}
+            onClear={clearFilters}
+            matchingCount={table.getFilteredRowModel().rows.length}
+            totalCount={games.length}
+          />
+        )}
       </div>
 
       {/* Submission Form Modal */}

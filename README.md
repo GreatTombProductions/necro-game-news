@@ -2,52 +2,106 @@
 
 Automated tracking and content platform for games featuring necromancy.
 
+**Live Site:** https://necrotic-realms.vercel.app/
+
 ## Features
 
-- 🎮 **Automated Game Tracking**: Daily Steam update monitoring
-- 🔍 **Searchable Database**: Filterable, sortable web interface
-- 📱 **Social Media Pipeline**: Instagram content generation and posting
-- 🏷️ **Necromancy Classification**: Multi-dimensional game taxonomy
+- Automated Steam update tracking
+- Searchable, filterable web interface
+- Instagram content generation
+- Game discovery across Steam's catalog
 
 ## Quick Start
 
 ### Prerequisites
 
-- Python 3.11+ (3.9+ will work)
+- Python 3.9+
 - Node.js 18+ (for frontend)
-- Steam API Key (get from https://steamcommunity.com/dev/apikey)
+- Steam API Key (from https://steamcommunity.com/dev/apikey)
 
 ### Setup
 
-1. **Clone and enter the repository**
-   ```bash
-   git clone <repository-url>
-   cd necro-game-news
-   ```
+```bash
+# Clone and enter the repository
+git clone <repository-url>
+cd necro-game-news
 
-2. **Set up Python environment**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+# Set up Python environment
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 
-3. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your Steam API key
-   ```
+# Configure environment
+cp .env.example .env
+# Edit .env and add your Steam API key
 
-4. **Initialize database**
-   ```bash
-   python scripts/init_database.py
-   ```
+# Initialize database
+python scripts/init_database.py
 
-5. **Set up frontend** (after Phase 1.2)
-   ```bash
-   cd frontend
-   npm install
-   ```
+# Set up frontend
+cd frontend
+npm install
+```
+
+## Daily Workflow
+
+The main deploy script handles everything:
+
+```bash
+./scripts/deploy.sh
+```
+
+This runs interactively, offering options for:
+1. **Full Deploy** - Updates, content generation, and deploy
+2. **Updates + Deploy** - Skip social content
+3. **Social Content Only** - Just generate Instagram posts
+
+Or use flags to skip the menu:
+```bash
+./scripts/deploy.sh --full           # Everything
+./scripts/deploy.sh --updates-only   # Skip content generation
+./scripts/deploy.sh --content-only   # Only social content
+```
+
+## Game Discovery
+
+Find new necromancy games across Steam's catalog:
+
+```bash
+# Download Steam app list
+python scripts/batch_discover.py --download
+
+# Run discovery (can take many hours for full catalog)
+python scripts/batch_discover.py --discover --yes
+
+# Check progress
+python scripts/batch_discover.py --stats
+
+# Review discovered candidates interactively
+python scripts/review_candidates.py
+```
+
+Review controls: `y` approve, `n` reject, `s` skip, `o` open in browser, `q` quit
+
+## Necromancy Classification
+
+Games are classified across three dimensions:
+
+**Dimension 1: Centrality**
+- a) Core Identity - Necromancer class/protagonist
+- b) Specialization - Necromantic skill tree available
+- c) Isolated Features - Necromantic items/skills exist
+- d) Flavor Only - Necromancy in lore, minimal gameplay
+
+**Dimension 2: Point of View**
+- a) Play AS the necromancer
+- b) Control necromancer units
+
+**Dimension 3: Naming**
+- a) Explicitly called "necromancer/necromancy"
+- b) Implied/thematic death magic
+
+Example: Diablo IV = 1a, 2a, 3a (core necromancer class, you play as them, explicitly named)
 
 ## Project Structure
 
@@ -55,140 +109,69 @@ Automated tracking and content platform for games featuring necromancy.
 necro-game-news/
 ├── backend/
 │   ├── scrapers/          # Steam API interactions
-│   ├── database/          # Database models and operations
-│   ├── content_gen/       # Social media content generation
-│   └── config/            # Configuration files
-├── frontend/              # React + Vite web application
+│   ├── database/          # Database models
+│   └── content_gen/       # Social media generation
+├── frontend/              # React + Vite web app
 ├── data/
-│   ├── games_list.yaml    # Curated games to track
-│   ├── candidates.yaml    # Games under review
+│   ├── games_list.yaml    # Tracked games
 │   └── necro_games.db     # SQLite database
-├── scripts/               # Automation and utility scripts
-├── logs/                  # Application logs
-└── content/               # Generated social media content
+├── scripts/               # Automation scripts
+└── content/               # Generated social posts
 ```
 
-## Necromancy Classification System
-
-Games are evaluated across three dimensions:
-
-### Dimension 1: Centrality (a > b > c > d)
-- **a)** Core Identity - Necromancer class/protagonist
-- **b)** Specialization - Necromantic skill tree available
-- **c)** Isolated Features - Necromantic items/skills exist
-- **d)** Flavor Only - Necromancy in lore, minimal gameplay
-
-### Dimension 2: Point of View
-- **a)** Character Control - Play AS necromancer
-- **b)** Unit Control - Control necromancer units
-
-### Dimension 3: Naming
-- **a)** Explicit - Called "necromancer/necromancy"
-- **b)** Implied - Death magic without explicit terminology
-
-**Example:** V Rising = 1b, 2a, 3b
-
-## Common Commands
-
-### Backend
+## Other Useful Scripts
 
 ```bash
-# Check for game updates
+# Database
+python scripts/view_database.py --stats
+python scripts/load_games_from_yaml.py --update
+
+# Data collection
 python scripts/check_updates.py
+python scripts/fetch_game_details.py
 
-# Add a new game
-python scripts/add_game.py --steam-id 2344520 --dim1 a --dim2 character --dim3 explicit
+# Social media
+python scripts/generate_social_content.py
+python scripts/generate_social_content.py --reprocess
 
-# Export data for website
-python scripts/export_for_web.py
-
-# Review candidate games
-python scripts/review_candidates.py
-```
-
-### Social Media Content Generation
-
-```bash
-# Generate Instagram posts from latest updates
-python scripts/generate_social_posts.py --types patch --limit 5 --generate-images
-
-# Preview pending posts
-python scripts/preview_social_posts.py
-
-# Mark post as published
-python scripts/preview_social_posts.py --id 1 --mark-posted
-
-# See full workflow: SOCIAL_MEDIA_QUICKSTART.md
-```
-
-### Frontend
-
-```bash
-cd frontend
-
-# Development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-### Daily Workflow
-
-```bash
-# Automated daily update and deploy
-./scripts/update_and_deploy.sh
+# Backfill Steam tags for existing games
+python scripts/migrations/backfill_tags.py
 ```
 
 ## Development
 
-### Branch Strategy
-
-- `main` - Production-ready code
-- `develop` - Integration branch
-- `feature/*` - Individual features
-
-### Testing
+Always use the virtual environment:
 
 ```bash
-# Backend tests
-pytest
+source venv/bin/activate
+python scripts/whatever.py
 
-# Frontend tests
+# Or use venv Python directly
+./venv/bin/python scripts/whatever.py
+```
+
+Frontend development:
+```bash
 cd frontend
-npm test
+npm run dev      # Dev server
+npm run build    # Production build
 ```
 
 ## Tech Stack
 
-- **Backend**: Python 3.11+, SQLite, Steam Web API
-- **Frontend**: React 18, Vite, TanStack Table, Tailwind CSS
-- **Hosting**: Vercel (frontend), Local (automation)
-- **Social Media**: Meta Graph API (Instagram)
+- **Backend:** Python 3.9+, SQLite, Steam Web API, Steamspy API
+- **Frontend:** React + Vite, TanStack Table, Tailwind CSS
+- **Hosting:** Vercel (auto-deploy on push)
+- **Social:** Instagram (manual posting)
 
-## Documentation
+## Generated Content
 
-- [Project Vision](PROJECT_VISION.md) - Detailed goals and taxonomy
-- [Technical Roadmap](TECHNICAL_ROADMAP.md) - Phased implementation plan
-- [Tech Stack & Deployment](TECH_STACK_DEPLOYMENT.md) - Implementation details
-- [Quick Start Guide](QUICK_START_GUIDE.md) - Week 1 action plan
+After running content generation:
 
-## Contributing
+```
+content/
+├── posts/           # Images (YYYYMMDD_GameName_image_N.jpg)
+└── captions/        # Captions (YYYYMMDD_GameName_caption_N.txt)
+```
 
-1. Create a feature branch
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
-
-## License
-
-TBD
-
-## Current Status
-
-**Phase**: Foundation (MVP)
-**Progress**: Setting up infrastructure
-**Next**: Database schema and Steam scraper implementation
+Pick your favorite caption/image combo and post manually to Instagram.
