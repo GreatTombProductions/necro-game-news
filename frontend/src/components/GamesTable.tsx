@@ -294,13 +294,13 @@ function GameCell({ game, flipToBottom = false }: { game: Game; flipToBottom?: b
         onClick={handleDesktopClick}
         onTouchStart={handleTouch}
       >
-        <div className="font-semibold text-purple-200 group-hover/game:text-purple-300 group-hover/game:underline inline-flex items-center gap-1.5">
-          {game.name}
-          <svg className="w-3.5 h-3.5 opacity-0 group-hover/game:opacity-70 sm:transition-opacity flex-shrink-0 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="font-semibold text-purple-200 group-hover/game:text-purple-300 group-hover/game:underline flex items-start gap-1.5">
+          <span className="break-words">{game.name}</span>
+          <svg className="w-3.5 h-3.5 opacity-0 group-hover/game:opacity-70 sm:transition-opacity flex-shrink-0 hidden sm:block mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
           {/* Mobile link indicator - always visible */}
-          <svg className="w-3.5 h-3.5 opacity-50 flex-shrink-0 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5 opacity-50 flex-shrink-0 sm:hidden mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </div>
@@ -533,11 +533,13 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'name',
         header: 'Game',
+        size: 200,
         cell: info => <GameCell game={info.row.original} flipToBottom={info.row.index === 0} />,
       },
       {
         accessorKey: 'price_usd',
         header: 'Price',
+        size: 70,
         cell: info => {
           const price = info.getValue() as number | null | undefined;
           if (price === null || price === undefined) {
@@ -552,6 +554,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'genres',
         header: 'Genres',
+        size: 150,
         cell: info => {
           const genres = info.getValue() as string[];
           const hiddenGenres = genres.slice(2);
@@ -575,6 +578,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         accessorKey: 'last_announcement',
         header: 'Latest News',
+        size: 100,
         cell: info => {
           const date = info.getValue() as string | undefined;
           if (!date) return <span className="text-xs text-gray-600">None</span>;
@@ -590,6 +594,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'last_update',
+        size: 120,
         header: () => (
           <span className="flex items-center">
             Last Updated
@@ -621,6 +626,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         columns: [
           {
             accessorKey: 'dimension_1',
+            size: 110,
             header: () => (
               <span className="flex items-center">
                 Centrality
@@ -643,6 +649,7 @@ export default function GamesTable({ games }: GamesTableProps) {
           },
           {
             accessorKey: 'dimension_2',
+            size: 90,
             header: () => (
               <span className="flex items-center">
                 POV
@@ -662,6 +669,7 @@ export default function GamesTable({ games }: GamesTableProps) {
           },
           {
             accessorKey: 'dimension_3',
+            size: 90,
             header: () => (
               <span className="flex items-center">
                 Naming
@@ -782,7 +790,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {/* Table */}
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg border border-purple-700/30 overflow-hidden shadow-2xl">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full table-fixed">
             <thead>
               {table.getHeaderGroups().map((headerGroup, groupIndex) => (
                 <tr key={headerGroup.id} className="border-b border-purple-700/30">
@@ -796,6 +804,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                       <th
                         key={header.id}
                         colSpan={header.colSpan}
+                        style={{ width: header.colSpan === 1 ? header.getSize() : undefined }}
                         className={`px-4 py-3 text-left text-sm font-semibold bg-gray-900/50 ${
                           isGroupHeader
                             ? 'text-purple-400 border-b border-purple-600/30 text-center'
