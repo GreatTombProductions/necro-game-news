@@ -6,8 +6,8 @@ Automated tracking and content platform for games featuring necromancy.
 
 ## Features
 
-- Automated Steam update tracking
-- Searchable, filterable web interface
+- Multi-platform update tracking (Steam, Battle.net)
+- Searchable, filterable web interface with platform indicators
 - Instagram content generation
 - Game discovery across Steam's catalog
 
@@ -108,12 +108,12 @@ Example: Diablo IV = 1a, 2a, 3a (core necromancer class, you play as them, expli
 ```
 necro-game-news/
 ├── backend/
-│   ├── scrapers/          # Steam API interactions
+│   ├── scrapers/          # Platform APIs (Steam, Battle.net)
 │   ├── database/          # Database models
 │   └── content_gen/       # Social media generation
 ├── frontend/              # React + Vite web app
 ├── data/
-│   ├── games_list.yaml    # Tracked games
+│   ├── games_list.yaml    # Tracked games (multi-platform)
 │   └── necro_games.db     # SQLite database
 ├── scripts/               # Automation scripts
 └── content/               # Generated social posts
@@ -159,7 +159,8 @@ npm run build    # Production build
 
 ## Tech Stack
 
-- **Backend:** Python 3.9+, SQLite, Steam Web API, Steamspy API
+- **Backend:** Python 3.9+, SQLite
+- **Data Sources:** Steam Web API, Steamspy API, Blizzard News API
 - **Frontend:** React + Vite, TanStack Table, Tailwind CSS
 - **Hosting:** Vercel (auto-deploy on push)
 - **Social:** Instagram (manual posting)

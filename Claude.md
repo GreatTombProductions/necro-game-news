@@ -1,4 +1,4 @@
-Necro Game News tracks game updates for necromantic games via automated Steam scraping, a searchable website, and social media content generation.
+Necro Game News tracks game updates for necromantic games via multi-platform scraping (Steam, Battle.net), a searchable website, and social media content generation.
 
 Live Website: https://necrotic-realms.vercel.app/
 
@@ -8,7 +8,8 @@ NECROMANCY CLASSIFICATION (3 dimensions, highest satisfied per dimension):
 - Dim 3 Naming: a) Explicit "necromancer" > b) Implied/thematic
 
 TECH STACK:
-- Backend: Python 3.9+, Steam Web API, SQLite
+- Backend: Python 3.9+, SQLite
+- Data Sources: Steam Web API, Steamspy API, Blizzard News API
 - Frontend: React + Vite, TanStack Table, Tailwind (Vercel deployment)
 - Automation: Bash scripts (deploy.sh)
 - Social: Instagram (manual)
@@ -31,8 +32,8 @@ Database:
 - scripts/view_database.py --stats - View statistics
 
 Data Collection:
-- scripts/check_updates.py - Check for new updates
-- scripts/fetch_game_details.py - Fetch screenshots/details
+- scripts/check_updates.py - Check for new updates (all platforms)
+- scripts/fetch_game_details.py - Fetch screenshots/details (Steam)
 
 Social Media:
 - scripts/generate_social_content.py - Generate posts
