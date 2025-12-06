@@ -44,6 +44,7 @@ def export_games():
             g.developer,
             g.publisher,
             g.release_date,
+            g.price_usd,
             g.steam_tags,
             g.genres,
             g.last_checked,

@@ -516,6 +516,20 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => <GameCell game={info.row.original} flipToBottom={info.row.index === 0} />,
       },
       {
+        accessorKey: 'price_usd',
+        header: 'Price',
+        cell: info => {
+          const price = info.getValue() as number | null | undefined;
+          if (price === null || price === undefined) {
+            return <span className="text-xs text-green-400">Free</span>;
+          }
+          if (price === 0) {
+            return <span className="text-xs text-green-400">Free</span>;
+          }
+          return <span className="text-xs text-gray-300">${price.toFixed(2)}</span>;
+        },
+      },
+      {
         accessorKey: 'genres',
         header: 'Genres',
         cell: info => {
@@ -540,7 +554,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'last_announcement',
-        header: 'Latest Announcement',
+        header: 'Latest News',
         cell: info => {
           const date = info.getValue() as string | undefined;
           if (!date) return <span className="text-xs text-gray-600">None</span>;
@@ -561,7 +575,7 @@ export default function GamesTable({ games }: GamesTableProps) {
             Last Updated
             <SimpleHelpIcon
               title="Last Updated"
-              description="Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
+              description="Date of announcement/news corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
             />
           </span>
         ),
@@ -666,6 +680,12 @@ export default function GamesTable({ games }: GamesTableProps) {
       pagination: {
         pageSize: 20,
       },
+      sorting: [
+        {
+          id: 'last_announcement',
+          desc: true,
+        },
+      ],
     },
   });
 
@@ -763,7 +783,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                       >
                         {header.isPlaceholder ? null : (
                           <div
-                            className={header.column.getCanSort() ? 'cursor-pointer select-none hover:text-purple-200' : ''}
+                            className={`whitespace-nowrap inline-flex items-center gap-1 ${header.column.getCanSort() ? 'cursor-pointer select-none hover:text-purple-200' : ''}`}
                             onClick={header.column.getToggleSortingHandler()}
                           >
                             {flexRender(
@@ -771,8 +791,8 @@ export default function GamesTable({ games }: GamesTableProps) {
                               header.getContext()
                             )}
                             {{
-                              asc: ' ↑',
-                              desc: ' ↓',
+                              asc: <span className="flex-shrink-0">↑</span>,
+                              desc: <span className="flex-shrink-0">↓</span>,
                             }[header.column.getIsSorted() as string] ?? null}
                           </div>
                         )}
