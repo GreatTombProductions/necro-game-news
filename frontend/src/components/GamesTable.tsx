@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import {
   useReactTable,
   getCoreRowModel,
@@ -411,7 +411,7 @@ function SimpleHelpIcon({ title, description }: { title: string; description: st
             }}
           />
           <div
-            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3"
+            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal"
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
@@ -455,7 +455,7 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
             }}
           />
           <div
-            className={`absolute top-full mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 ${
+            className={`absolute top-full mt-2 w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal ${
               alignRight ? 'right-0' : 'left-1/2 -translate-x-1/2'
             }`}
             onClick={(e) => {
@@ -488,6 +488,26 @@ export default function GamesTable({ games }: GamesTableProps) {
   const [isSubmissionFormOpen, setIsSubmissionFormOpen] = useState(false);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
   const [filters, setFilters] = useState<FilterState>(initialFilterState);
+  const filterButtonRef = useRef<HTMLButtonElement>(null);
+  const filterPanelRef = useRef<HTMLDivElement>(null);
+
+  // Close filter panel when clicking outside
+  useEffect(() => {
+    if (!isFilterPanelOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      const clickedButton = filterButtonRef.current?.contains(target);
+      const clickedPanel = filterPanelRef.current?.contains(target);
+
+      if (!clickedButton && !clickedPanel) {
+        setIsFilterPanelOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isFilterPanelOpen]);
 
   // Extract unique genres from games data
   const availableGenres = useMemo(() => {
@@ -696,6 +716,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center">
           {/* Filters Button */}
           <button
+            ref={filterButtonRef}
             onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
             className={`flex-shrink-0 px-4 py-3 rounded-lg border transition-colors flex items-center gap-2 text-sm font-medium ${
               isFilterPanelOpen || activeFilterCount > 0
@@ -739,14 +760,16 @@ export default function GamesTable({ games }: GamesTableProps) {
 
         {/* Filter Panel */}
         {isFilterPanelOpen && (
-          <FilterPanel
-            filters={filters}
-            onChange={setFilters}
-            availableGenres={availableGenres}
-            onClear={clearFilters}
-            matchingCount={table.getFilteredRowModel().rows.length}
-            totalCount={games.length}
-          />
+          <div ref={filterPanelRef}>
+            <FilterPanel
+              filters={filters}
+              onChange={setFilters}
+              availableGenres={availableGenres}
+              onClear={clearFilters}
+              matchingCount={table.getFilteredRowModel().rows.length}
+              totalCount={games.length}
+            />
+          </div>
         )}
       </div>
 
