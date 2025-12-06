@@ -38,15 +38,11 @@ class BattlenetScraper:
     Battle.net news client using Blizzard's internal news API.
 
     Fetches news from https://news.blizzard.com/en-us/api/news/{product}
+    The product slug (e.g., "diablo-4", "diablo-3") is passed directly
+    from the battlenet_id field in games_list.yaml.
     """
 
     BASE_API_URL = "https://news.blizzard.com/en-us/api/news"
-
-    # Product to API slug mapping (uses hyphens in API)
-    PRODUCTS = {
-        'diablo4': 'diablo-4',
-        'd3': 'diablo-3',
-    }
 
     # User agent for API requests
     USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -73,18 +69,13 @@ class BattlenetScraper:
         Fetch news/updates for a Battle.net game using Blizzard's news API.
 
         Args:
-            product: Battle.net product ID (e.g., 'diablo4', 'd3')
+            product: Battle.net API slug (e.g., 'diablo-4', 'diablo-3')
             count: Maximum number of news items to fetch
 
         Returns:
             List of news items with title, url, date, id, category
         """
-        if product not in self.PRODUCTS:
-            logger.warning(f"Unknown Battle.net product: {product}")
-            return []
-
-        slug = self.PRODUCTS[product]
-        url = f"{self.BASE_API_URL}/{slug}"
+        url = f"{self.BASE_API_URL}/{product}"
         logger.info(f"Fetching Blizzard news from {url}")
 
         self._rate_limit()
@@ -110,7 +101,7 @@ class BattlenetScraper:
 
             # Skip items that aren't from this specific product
             item_product = props.get('cxpProduct', {}).get('segment', '')
-            if item_product and item_product != slug:
+            if item_product and item_product != product:
                 continue
 
             news_item = {
@@ -202,7 +193,7 @@ def test_scraper():
     print("Testing Blizzard news scraper...")
     print("=" * 60)
 
-    for product in ['diablo4', 'd3']:
+    for product in ['diablo-4', 'diablo-3']:
         print(f"\nFetching news for: {product}")
         print("-" * 40)
 

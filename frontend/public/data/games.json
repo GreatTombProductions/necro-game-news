@@ -507,9 +507,9 @@
     "last_announcement_title": "Patch Note - 1.1.1"
   },
   {
-    "id": 200,
+    "id": 202,
     "steam_id": null,
-    "battlenet_id": "d3",
+    "battlenet_id": "diablo-3",
     "gog_id": null,
     "epic_id": null,
     "itchio_id": null,
@@ -520,7 +520,7 @@
     "external_url": null,
     "name": "Diablo III",
     "app_type": null,
-    "short_description": null,
+    "short_description": "Action RPG where players battle the forces of evil in Sanctuary. Necromancer class available via Rise of the Necromancer DLC.",
     "header_image_url": null,
     "dimension_1": "a",
     "dimension_2": "character",
@@ -531,8 +531,11 @@
     "release_date": null,
     "price_usd": null,
     "steam_tags": [],
-    "genres": [],
-    "last_checked": "2025-12-06 12:28:27.725405",
+    "genres": [
+      "Action RPG",
+      "Hack and Slash"
+    ],
+    "last_checked": "2025-12-06 12:44:52.594593",
     "update_count": 4,
     "last_update": null,
     "last_update_url": null,
@@ -544,7 +547,7 @@
   {
     "id": 140,
     "steam_id": 2344520,
-    "battlenet_id": "diablo4",
+    "battlenet_id": "diablo-4",
     "gog_id": null,
     "epic_id": null,
     "itchio_id": null,

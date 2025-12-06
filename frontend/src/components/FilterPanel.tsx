@@ -58,6 +58,7 @@ interface FilterPanelProps {
   filters: FilterState;
   onChange: (filters: FilterState) => void;
   availableGenres: string[];
+  availablePlatforms: Platform[];
   onClear: () => void;
   matchingCount: number;
   totalCount: number;
@@ -292,16 +293,15 @@ function NecromancyGrid({
   );
 }
 
-// Available platforms for filtering
-const AVAILABLE_PLATFORMS: Platform[] = ['steam', 'battlenet', 'gog', 'epic', 'itchio', 'manual'];
-
 // Multi-select Platforms Component
 function PlatformSelect({
   value,
   onChange,
+  availablePlatforms,
 }: {
   value: Platform[];
   onChange: (platforms: Platform[]) => void;
+  availablePlatforms: Platform[];
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -318,7 +318,7 @@ function PlatformSelect({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-3 py-2 bg-gray-700 border border-purple-700/50 rounded-lg text-left text-sm text-gray-300 hover:border-purple-600 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 flex items-center justify-between"
+        className="w-full px-2 py-1.5 bg-gray-700 border border-purple-700/50 rounded text-left text-sm text-gray-300 hover:border-purple-600 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 flex items-center justify-between"
       >
         <span className={value.length === 0 ? 'text-gray-500' : ''}>
           {value.length === 0 ? 'All platforms' : `${value.length} selected`}
@@ -337,7 +337,7 @@ function PlatformSelect({
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
           <div className="absolute top-full left-0 right-0 mt-1 bg-gray-800 border border-purple-700/50 rounded-lg shadow-xl z-50 max-h-48 overflow-y-auto">
-            {AVAILABLE_PLATFORMS.map((platform) => (
+            {availablePlatforms.map((platform) => (
               <label
                 key={platform}
                 className="flex items-center px-3 py-2 hover:bg-purple-900/30 cursor-pointer"
@@ -550,6 +550,7 @@ export default function FilterPanel({
   filters,
   onChange,
   availableGenres,
+  availablePlatforms,
   onClear,
   matchingCount,
   totalCount,
@@ -632,6 +633,7 @@ export default function FilterPanel({
           <PlatformSelect
             value={filters.platforms}
             onChange={(platforms) => updateFilter('platforms', platforms)}
+            availablePlatforms={availablePlatforms}
           />
         </div>
 

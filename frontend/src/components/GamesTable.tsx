@@ -746,6 +746,13 @@ export default function GamesTable({ games }: GamesTableProps) {
     return Array.from(genreSet).sort();
   }, [games]);
 
+  // Extract unique platforms from games data
+  const availablePlatforms = useMemo(() => {
+    const platformSet = new Set<Platform>();
+    games.forEach((game) => game.platforms.forEach((p) => platformSet.add(p)));
+    return Array.from(platformSet);
+  }, [games]);
+
   // Count active filters for badge
   const activeFilterCount = countActiveFilters(filters);
 
@@ -775,8 +782,16 @@ export default function GamesTable({ games }: GamesTableProps) {
         header: 'Price',
         cell: info => {
           const price = info.getValue() as number | null | undefined;
+          const game = info.row.original;
+          const isSteamGame = game.primary_platform === 'steam';
+
+          // Only show "Free" for Steam games with price=0
+          // Non-Steam games without price data show "N/A"
           if (price === null || price === undefined) {
-            return <span className="text-xs text-green-400">Free</span>;
+            if (isSteamGame) {
+              return <span className="text-xs text-green-400">Free</span>;
+            }
+            return <span className="text-xs text-gray-500">N/A</span>;
           }
           if (price === 0) {
             return <span className="text-xs text-green-400">Free</span>;
@@ -1000,6 +1015,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               filters={filters}
               onChange={setFilters}
               availableGenres={availableGenres}
+              availablePlatforms={availablePlatforms}
               onClear={clearFilters}
               matchingCount={table.getFilteredRowModel().rows.length}
               totalCount={games.length}

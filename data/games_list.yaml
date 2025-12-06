@@ -22,7 +22,7 @@
 #   platforms: List of platforms the game is on (steam, battlenet, gog, epic, itchio)
 #   primary_platform: Where to fetch updates from (defaults to steam if steam_id present)
 #   steam_id: Steam app ID (optional if using another platform)
-#   battlenet_id: Battle.net product ID (e.g., "diablo4")
+#   battlenet_id: Battle.net API slug (e.g., "diablo-4", "diablo-3")
 #   gog_id: GOG product ID
 #   epic_id: Epic Games Store ID
 #   itchio_id: itch.io game ID
@@ -31,7 +31,7 @@
 games:
   - name: "Diablo IV"
     steam_id: 2344520
-    battlenet_id: "diablo4"
+    battlenet_id: "diablo-4"
     platforms:
       - steam
       - battlenet
@@ -45,10 +45,15 @@ games:
     priority: high
 
   - name: "Diablo III"
-    battlenet_id: "d3"
+    battlenet_id: "diablo-3"
     platforms:
       - battlenet
     primary_platform: battlenet  # Battle.net only, not on Steam
+    # Manual metadata for non-Steam games
+    short_description: "Action RPG where players battle the forces of evil in Sanctuary. Necromancer class available via Rise of the Necromancer DLC."
+    genres:
+      - "Action RPG"
+      - "Hack and Slash"
     classification:
       dimension_1: "a"
       dimension_2: "character"
@@ -176,7 +181,7 @@ games:
   - name: "Nobody Saves the World"
     steam_id: 1432050
     classification:
-      dimension_1: "d"
+      dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
     date_added: "2024-12-05"

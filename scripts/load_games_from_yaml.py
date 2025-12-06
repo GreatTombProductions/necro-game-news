@@ -313,6 +313,10 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         itchio_id = game.get('itchio_id')
         external_url = game.get('external_url')
 
+        # Manual metadata for non-Steam games
+        short_description = game.get('short_description')
+        genres = game.get('genres', [])
+
         # Validate primary_platform
         if primary_platform not in VALID_PLATFORMS:
             print(f"⚠ Invalid primary_platform '{primary_platform}' for {name}, defaulting to steam")
@@ -405,8 +409,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 (steam_id, battlenet_id, gog_id, epic_id, itchio_id,
                  platforms, primary_platform, external_url,
                  name, dimension_1, dimension_2, dimension_3,
-                 classification_notes, date_added)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 classification_notes, short_description, genres, date_added)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -421,6 +425,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 classification['dimension_2'],
                 classification['dimension_3'],
                 notes,
+                short_description,
+                json.dumps(genres) if genres else None,
                 datetime.now()
             ))
 
