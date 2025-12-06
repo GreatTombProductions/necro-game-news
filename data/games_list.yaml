@@ -62,6 +62,107 @@ games:
     date_added: "2024-12-06"
     priority: high
 
+  - name: "Diablo Immortal"
+    battlenet_id: "diablo-immortal"
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Free-to-play mobile and PC action RPG set between Diablo II and III. Features the Necromancer class with corpse explosion and skeletal minions."
+    genres:
+      - "Action RPG"
+      - "Mobile"
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    notes: "Necromancer is a fully playable class"
+    date_added: "2025-12-06"
+    priority: high
+
+  - name: "Diablo II: Resurrected"
+    battlenet_id: "diablo-2-resurrected"
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Remastered version of the classic action RPG. The Necromancer class is one of the original iconic character choices."
+    genres:
+      - "Action RPG"
+      - "Hack and Slash"
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    notes: "Necromancer is a core class since the original game"
+    date_added: "2025-12-06"
+    priority: high
+
+  - name: "World of Warcraft"
+    battlenet_id: "world-of-warcraft-beta"  # API uses legacy slug name
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Iconic MMORPG where players can play as Death Knights and Warlocks with necromantic abilities, raising undead minions."
+    genres:
+      - "MMORPG"
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "implied"
+    notes: "Death Knight class with undead army abilities; Warlock demons"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Warcraft Rumble"
+    battlenet_id: "warcraft-rumble"
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Mobile action strategy game featuring collectible Warcraft minis. Undead faction with necromancer units."
+    genres:
+      - "Mobile"
+      - "Strategy"
+    classification:
+      dimension_1: "b"
+      dimension_2: "unit"
+      dimension_3: "explicit"
+    notes: "Undead faction includes necromancer minions"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Warcraft III: Reforged"
+    battlenet_id: "warcraft-3"
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Remastered classic RTS with the Undead faction featuring necromancers who raise skeleton warriors."
+    genres:
+      - "RTS"
+      - "Strategy"
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "explicit"
+    notes: "Undead faction with playable necromancer units"
+    date_added: "2025-12-06"
+    priority: high
+
+  - name: "Hearthstone"
+    battlenet_id: "hearthstone"
+    platforms:
+      - battlenet
+    primary_platform: battlenet
+    short_description: "Digital card game featuring Warcraft characters. Death Knight class uses necromantic abilities and undead minions."
+    genres:
+      - "Card Game"
+      - "Strategy"
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "implied"
+    notes: "Death Knight class with undead/corpse mechanics"
+    date_added: "2025-12-06"
+    priority: medium
+
   - name: "Grim Dawn"
     steam_id: 219990
     classification:
