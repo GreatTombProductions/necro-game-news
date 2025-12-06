@@ -307,9 +307,9 @@ function GameCell({ game, flipToBottom = false }: { game: Game; flipToBottom?: b
   };
 
   return (
-    <div className="relative">
+    <div className="group/game relative">
       <div
-        className="group/game cursor-pointer hover:text-purple-300 transition-colors"
+        className="cursor-pointer hover:text-purple-300 transition-colors"
         onClick={handleDesktopClick}
         onTouchStart={handleTouch}
       >
@@ -325,6 +325,16 @@ function GameCell({ game, flipToBottom = false }: { game: Game; flipToBottom?: b
         </div>
         <div className="text-xs text-gray-500">{game.developer || 'Unknown'}</div>
       </div>
+
+      {/* Desktop hover tooltip */}
+      {game.short_description && (
+        <div className={`hidden sm:block pointer-events-none absolute left-0 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover/game:opacity-100 transition-opacity z-50 shadow-xl w-64 ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
+          <div className="font-semibold text-purple-200 mb-1">{game.name}</div>
+          {game.developer && <div className="text-gray-400 mb-2">{game.developer}</div>}
+          <div className="text-gray-400 text-xs line-clamp-3">{game.short_description}</div>
+          <div className={`absolute left-4 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
+        </div>
+      )}
 
       {/* Mobile tap tooltip */}
       {isOpen && (
