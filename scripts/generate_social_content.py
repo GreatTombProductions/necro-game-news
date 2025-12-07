@@ -201,7 +201,8 @@ def get_image_urls_for_update(update_data: dict) -> List[str]:
     return image_urls[:3]  # Limit to 3 images
 
 
-def generate_content_for_update(update_data: dict, custom_image_path: Optional[Path] = None):
+def generate_content_for_update(update_data: dict, custom_image_path: Optional[Path] = None,
+                                num_captions: int = 1):
     """Generate content variants for a single update"""
 
     print(f"  {update_data['game_name']} - {update_data['title'][:60]}...")
@@ -231,7 +232,7 @@ def generate_content_for_update(update_data: dict, custom_image_path: Optional[P
     captions_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate captions
-    captions = generate_caption_variants(template, num_variants=3)
+    captions = generate_caption_variants(template, num_variants=num_captions)
     for i, caption in enumerate(captions, 1):
         caption_file = captions_dir / f"{base_filename}_caption_{update_id}_{i}.txt"
         with open(caption_file, 'w', encoding='utf-8') as f:
@@ -313,6 +314,13 @@ def main():
         action='store_true',
         help='Reprocess already-processed updates (useful for dev/testing)'
     )
+    parser.add_argument(
+        '--num-captions',
+        type=int,
+        default=1,
+        choices=[1, 2, 3],
+        help='Number of caption variants to generate (default: 1, max: 3)'
+    )
 
     args = parser.parse_args()
 
@@ -329,7 +337,8 @@ def main():
                 print(f"✗ Update ID {args.update_id} not found")
                 return 1
 
-            generate_content_for_update(update_data, custom_image_path=args.image_path)
+            generate_content_for_update(update_data, custom_image_path=args.image_path,
+                                        num_captions=args.num_captions)
 
         else:
             # Multiple updates
@@ -364,7 +373,7 @@ def main():
             print()
 
             for update_data in updates:
-                generate_content_for_update(update_data)
+                generate_content_for_update(update_data, num_captions=args.num_captions)
 
     print()
     print("=" * 80)

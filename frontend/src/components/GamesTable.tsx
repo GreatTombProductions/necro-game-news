@@ -189,15 +189,15 @@ const TAXONOMY_INFO = {
     description: 'The player\'s relationship to the necromancer',
     values: [
       { key: 'character', label: 'Character', color: 'text-purple-300', description: 'Play AS the necromancer (who may control other necromancers)' },
-      { key: 'unit', label: 'Unit', color: 'text-purple-300', description: 'Play as some entity controlling one or more necromancers, but not as any of them' },
+      { key: 'unit', label: 'Unit', color: 'text-purple-300', description: 'Play as some entity controlling or some faction containing one or more necromancers, but not as any of them' },
     ],
   },
   naming: {
     title: 'Naming',
-    description: 'Whether necromancy is explicitly named in the game',
+    description: 'Whether necromancy is explicitly named in the game in relation to the mechanics determining the game\'s Centrality',
     values: [
-      { key: 'explicit', label: 'Explicit', color: 'text-green-300', description: 'An exact or minor variant of "necromancer" or "necromancy" used in game' },
-      { key: 'implied', label: 'Implied', color: 'text-blue-300', description: 'Necromancy not mentioned by name in game' },
+      { key: 'explicit', label: 'Explicit', color: 'text-green-300', description: 'An exact or minor variant of "necromancer" or "necromancy" used' },
+      { key: 'implied', label: 'Implied', color: 'text-blue-300', description: 'Necromancy not mentioned by name' },
     ],
   },
 };
