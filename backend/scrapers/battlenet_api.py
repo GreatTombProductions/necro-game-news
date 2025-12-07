@@ -139,15 +139,16 @@ class BattlenetScraper:
         gid = f"bnet_{product}_{news_item.get('id', '')}"
 
         # Parse date - API returns ISO format like "2025-12-03T17:55:00Z"
+        # Convert to consistent format: YYYY-MM-DD HH:MM:SS (matches Steam format)
         date_str = news_item.get('date', '')
         if date_str:
             try:
                 date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-                date_str = date.isoformat()
+                date_str = date.strftime('%Y-%m-%d %H:%M:%S')
             except (ValueError, AttributeError):
-                date_str = datetime.now().isoformat()
+                date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         else:
-            date_str = datetime.now().isoformat()
+            date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         return {
             'gid': gid,
