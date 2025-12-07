@@ -127,7 +127,7 @@ games:
       - "Mobile"
       - "Strategy"
     classification:
-      dimension_1: "b"
+      dimension_1: "a"
       dimension_2: "unit"
       dimension_3: "explicit"
     notes: "Undead faction includes necromancer minions"
@@ -461,7 +461,7 @@ games:
   - name: "Kingdom Rush Vengeance - Tower Defense"
     steam_id: 1367550
     classification:
-      dimension_1: "a"
+      dimension_1: "b"
       dimension_2: "unit"
       dimension_3: "explicit"
     date_added: "2024-12-05"

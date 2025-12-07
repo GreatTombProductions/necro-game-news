@@ -178,10 +178,10 @@ const TAXONOMY_INFO = {
     title: 'Centrality',
     description: 'How central necromancy is to the gameplay experience',
     values: [
-      { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character or unit\'s identity and gameplay' },
-      { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills or equipment available to specialize into' },
-      { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'One or more necromantic skills or equipment exist, but are not grouped into a cohesive category' },
-      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity or gameplay' },
+      { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character/unit or faction\'s identity and gameplay' },
+      { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills/equipment or units available to specialize into' },
+      { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'Necromantic skills/equipment or units exist, but are not grouped into a cohesive category' },
+      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit or faction may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity or gameplay' },
     ],
   },
   pov: {
@@ -189,7 +189,7 @@ const TAXONOMY_INFO = {
     description: 'The player\'s relationship to the necromancer',
     values: [
       { key: 'character', label: 'Character', color: 'text-purple-300', description: 'Play AS the necromancer (who may control other necromancers)' },
-      { key: 'unit', label: 'Unit', color: 'text-purple-300', description: 'Play as some entity controlling or some faction containing one or more necromancers, but not as any of them' },
+      { key: 'unit', label: 'Unit/Faction', color: 'text-purple-300', description: 'Play as some entity controlling or some faction containing one or more necromancers, but not as any of them' },
     ],
   },
   naming: {
