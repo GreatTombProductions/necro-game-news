@@ -68,14 +68,16 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> 
                 client = Anthropic(api_key=api_key)
                 import re
                 clean_content = re.sub(r'<[^>]+>', '', template.update_content)
-                clean_content = re.sub(r'\s+', ' ', clean_content).strip()[:1000]
+                clean_content = re.sub(r'\s+', ' ', clean_content).strip()[:2000]
+
+                prompt = f"Game: {template.game_name}\nUpdate Title: {template.update_title}\n\nContent:\n{clean_content}\n\nWrite a single punchy sentence about this game update. Be enthusiastic and direct. If the content is unclear, base your sentence on the game name and update title."
 
                 message = client.messages.create(
                     model="claude-3-5-haiku-20241022",
                     max_tokens=100,
                     messages=[{
                         "role": "user",
-                        "content": f"Write a single punchy sentence about this game update. Be enthusiastic and direct:\n\n{clean_content}"
+                        "content": prompt
                     }]
                 )
 
@@ -100,12 +102,14 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> 
     # Variant 3: Question/engagement focused
     if template.update_content and 'client' in locals() and num_variants > 2:
         try:
+            question_prompt = f"Game: {template.game_name}\nUpdate Title: {template.update_title}\n\nContent:\n{clean_content}\n\nWrite a question to engage players about this update. If the content is unclear, base your question on the game name and update title."
+
             message = client.messages.create(
                 model="claude-3-5-haiku-20241022",
                 max_tokens=100,
                 messages=[{
                     "role": "user",
-                    "content": f"Write a question to engage players about this update:\n\n{clean_content}"
+                    "content": question_prompt
                 }]
             )
 

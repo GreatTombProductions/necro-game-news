@@ -118,9 +118,10 @@ class PostTemplate:
         clean_content = re.sub(r'<[^>]+>', '', content)
         clean_content = re.sub(r'\s+', ' ', clean_content).strip()
 
-        # Truncate if too long for prompt (keep first ~1000 chars)
-        if len(clean_content) > 1000:
-            clean_content = clean_content[:1000] + "..."
+        # Truncate if too long for prompt (keep first ~2000 chars)
+        content_truncated = len(clean_content) > 2000
+        if content_truncated:
+            clean_content = clean_content[:2000] + "..."
 
         try:
             # Initialize Anthropic client
@@ -131,13 +132,34 @@ class PostTemplate:
 
             client = Anthropic(api_key=api_key)
 
+            # Build prompt with URL fallback if available
+            prompt_parts = [
+                f"Game: {self.game_name}",
+                f"Update Title: {self.update_title}",
+                "",
+                "Update Content:",
+                clean_content,
+            ]
+
+            # Include URL for context if content might be insufficient
+            if self.steam_url and (content_truncated or len(clean_content) < 100):
+                prompt_parts.extend([
+                    "",
+                    f"Source URL (visit if content above is insufficient): {self.steam_url}"
+                ])
+
+            prompt_parts.extend([
+                "",
+                "Summarize this game update announcement in 1-2 concise sentences. Focus on what's new or changed. Do not use quotes or say 'the announcement says' - just state the facts directly. If the content is too short or unclear, use the game name and update title to write a brief, factual summary."
+            ])
+
             # Generate summary
             message = client.messages.create(
                 model="claude-3-5-haiku-20241022",
                 max_tokens=150,
                 messages=[{
                     "role": "user",
-                    "content": f"Summarize this game update announcement in 1-2 concise sentences. Focus on what's new or changed. Do not use quotes or say 'the announcement says' - just state the facts directly:\n\n{clean_content}"
+                    "content": "\n".join(prompt_parts)
                 }]
             )
 

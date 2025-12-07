@@ -32,14 +32,40 @@ function BattlenetIcon({ className }: { className?: string }) {
 function PlatformIconWithTooltip({
   platform,
   url,
-  flipToBottom = false
 }: {
   platform: Platform;
   url: string | null;
-  flipToBottom?: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   const info = PLATFORM_INFO[platform];
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  // Close on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
+
   if (!info) return null;
 
   const iconClass = "w-5 h-5";
@@ -57,10 +83,19 @@ function PlatformIconWithTooltip({
 
   const tooltipText = url ? `View on ${info.name}` : info.name;
 
+  const updateTooltipPosition = () => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const tooltipWidth = 150; // Approximate width for platform tooltip
+    const tooltipHeight = 40; // Approximate tooltip height
+    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
+  };
+
   const handleTouch = (e: React.TouchEvent) => {
     if (url) {
       e.preventDefault();
       e.stopPropagation();
+      updateTooltipPosition();
       setIsOpen(true);
     }
   };
@@ -70,59 +105,76 @@ function PlatformIconWithTooltip({
     if ('ontouchstart' in window && url) {
       e.preventDefault();
       e.stopPropagation();
+      updateTooltipPosition();
       setIsOpen(true);
     }
     // On desktop, let the link work normally
   };
 
-  // Desktop hover tooltip
-  const desktopTooltipContent = flipToBottom ? (
-    <div className="hidden sm:block pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    updateTooltipPosition();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  // Desktop hover tooltip - rendered via portal
+  const desktopTooltipContent = isHovered && tooltipPos && createPortal(
+    <div
+      className="hidden sm:block pointer-events-none fixed px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap"
+      style={{
+        top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+        bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+        left: tooltipPos.left,
+      }}
+    >
       {tooltipText}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-    </div>
-  ) : (
-    <div className="hidden sm:block pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-      {tooltipText}
-      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-    </div>
+    </div>,
+    document.body
   );
 
-  // Mobile tap tooltip with clickable link
-  const mobileTooltipContent = isOpen && (
-    <>
-      <div
-        className="fixed inset-0 z-40"
-        onClick={() => setIsOpen(false)}
-        onTouchStart={() => setIsOpen(false)}
-      />
-      <div className={`absolute left-1/2 -translate-x-1/2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
-        {url ? (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span>View on {info.name}</span>
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        ) : (
-          <span>{info.name}</span>
-        )}
-        <div className={`absolute left-1/2 -translate-x-1/2 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
-      </div>
-    </>
+  // Mobile tap tooltip with clickable link - rendered via portal
+  const mobileTooltipContent = isOpen && tooltipPos && createPortal(
+    <div
+      className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap"
+      style={{
+        top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+        bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+        left: tooltipPos.left,
+      }}
+    >
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
+        >
+          <span>View on {info.name}</span>
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      ) : (
+        <span>{info.name}</span>
+      )}
+    </div>,
+    document.body
   );
 
   if (url) {
     return (
-      <div className="group relative inline-block">
+      <div ref={triggerRef} className="relative inline-block">
         {/* Desktop: direct link, Mobile: touch handler */}
-        <div onTouchStart={handleTouch} onClick={handleClick}>
+        <div
+          onTouchStart={handleTouch}
+          onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* Desktop link - hidden on mobile */}
           <a
             href={url}
@@ -145,7 +197,12 @@ function PlatformIconWithTooltip({
   }
 
   return (
-    <div className="group relative inline-block">
+    <div
+      ref={triggerRef}
+      className="relative inline-block"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <span className="opacity-50 block">{renderIcon()}</span>
       {desktopTooltipContent}
     </div>
@@ -153,7 +210,7 @@ function PlatformIconWithTooltip({
 }
 
 // Platform icons component - shows clickable icons for each platform a game is on
-function PlatformIcons({ game, flipToBottom = false }: { game: Game; flipToBottom?: boolean }) {
+function PlatformIcons({ game }: { game: Game }) {
   return (
     <div className="flex gap-1.5 items-center">
       {game.platforms.map((platform) => (
@@ -161,7 +218,6 @@ function PlatformIcons({ game, flipToBottom = false }: { game: Game; flipToBotto
           key={platform}
           platform={platform as Platform}
           url={getStoreUrl(game, platform as Platform)}
-          flipToBottom={flipToBottom}
         />
       ))}
     </div>
@@ -311,19 +367,53 @@ function LinkedCellWithTooltip({
   date,
   url,
   title,
-  flipToBottom = false,
 }: {
   date: string;
   url?: string;
   title?: string;
-  flipToBottom?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  // Close on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const tooltipWidth = 256; // w-64 = 16rem = 256px
+    const tooltipHeight = 80; // Approximate tooltip height
+    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
+  }, []);
 
   const handleTouch = (e: React.TouchEvent) => {
     if (title || url) {
       e.preventDefault();
       e.stopPropagation();
+      updateTooltipPosition();
       setIsOpen(true);
     }
   };
@@ -333,9 +423,22 @@ function LinkedCellWithTooltip({
     if ('ontouchstart' in window && (title || url)) {
       e.preventDefault();
       e.stopPropagation();
+      updateTooltipPosition();
       setIsOpen(true);
     }
     // On desktop, let the link work normally
+  };
+
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    if (title) {
+      updateTooltipPosition();
+      setIsHovered(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   // Format the date
@@ -365,9 +468,14 @@ function LinkedCellWithTooltip({
   }
 
   return (
-    <div className="group relative inline-block">
+    <div ref={triggerRef} className="relative inline-block">
       {/* Touch/click handler */}
-      <div onTouchStart={handleTouch} onClick={handleClick}>
+      <div
+        onTouchStart={handleTouch}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* Desktop: regular link behavior */}
         {url ? (
           <a
@@ -393,51 +501,84 @@ function LinkedCellWithTooltip({
         </span>
       </div>
 
-      {/* Desktop hover tooltip (only if there's a title) */}
-      {title && (
-        flipToBottom ? (
-          <div className="hidden sm:block pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
-            {title}
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-          </div>
-        ) : (
-          <div className="hidden sm:block pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
-            {title}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-          </div>
-        )
+      {/* Desktop hover tooltip (only if there's a title) - rendered via portal */}
+      {isHovered && title && tooltipPos && createPortal(
+        <div
+          className="hidden sm:block pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-normal w-64 text-center"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
+          {title}
+        </div>,
+        document.body
       )}
 
-      {/* Mobile tap tooltip */}
-      {isOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-            onTouchStart={() => setIsOpen(false)}
-          />
-          <div className={`absolute left-1/2 -translate-x-1/2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64 ${flipToBottom ? 'top-full mt-2' : 'bottom-full mb-2'}`}>
-            {title && <div className="text-center whitespace-normal mb-2">{title}</div>}
-            {url && (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span>Open announcement</span>
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            )}
-            <div className={`absolute left-1/2 -translate-x-1/2 border-4 border-transparent ${flipToBottom ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
-          </div>
-        </>
+      {/* Mobile tap tooltip - rendered via portal */}
+      {isOpen && tooltipPos && createPortal(
+        <div
+          className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
+          {title && <div className="text-center whitespace-normal mb-2">{title}</div>}
+          {url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
+            >
+              <span>Open announcement</span>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+        </div>,
+        document.body
       )}
     </div>
   );
+}
+
+// Utility to calculate viewport-aware tooltip position
+function calculateTooltipPosition(
+  rect: DOMRect,
+  tooltipWidth: number,
+  tooltipHeight: number,
+  options: { preferBelow?: boolean; alignRight?: boolean; centerHorizontally?: boolean } = {}
+): { top: number; left: number; placeBelow: boolean } {
+  const { preferBelow = false, alignRight = false, centerHorizontally = false } = options;
+  const padding = 8; // Minimum distance from viewport edge
+
+  // Vertical positioning
+  const spaceAbove = rect.top;
+  const spaceBelow = window.innerHeight - rect.bottom;
+  const placeBelow = preferBelow || (spaceAbove < tooltipHeight && spaceBelow > spaceAbove);
+  const top = placeBelow ? rect.bottom + 8 : rect.top - 8;
+
+  // Horizontal positioning with viewport constraints
+  let left: number;
+  if (alignRight) {
+    left = rect.right - tooltipWidth;
+  } else if (centerHorizontally) {
+    left = rect.left + rect.width / 2 - tooltipWidth / 2;
+  } else {
+    left = rect.left;
+  }
+
+  // Constrain to viewport
+  const maxLeft = window.innerWidth - tooltipWidth - padding;
+  const minLeft = padding;
+  left = Math.max(minLeft, Math.min(maxLeft, left));
+
+  return { top, left, placeBelow };
 }
 
 // Game cell with mobile-friendly tooltip
@@ -452,19 +593,41 @@ function GameCell({ game }: { game: Game }) {
   const storeUrl = getStoreUrl(game, primaryPlatform);
   const platformInfo = PLATFORM_INFO[primaryPlatform];
 
+  // Close tooltip on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
+
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
     const rect = triggerRef.current.getBoundingClientRect();
+    const tooltipWidth = 256; // w-64 = 16rem = 256px
     const tooltipHeight = 120; // Approximate tooltip height
-    const spaceAbove = rect.top;
-    const spaceBelow = window.innerHeight - rect.bottom;
-    const placeBelow = spaceAbove < tooltipHeight && spaceBelow > spaceAbove;
 
-    setTooltipPos({
-      top: placeBelow ? rect.bottom + 8 : rect.top - 8,
-      left: rect.left,
-      placeBelow,
-    });
+    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
   }, []);
 
   const handleMouseEnter = () => {
@@ -500,7 +663,7 @@ function GameCell({ game }: { game: Game }) {
     }
   };
 
-  const tooltipContent = (showStoreLink: boolean, placeBelow: boolean) => (
+  const tooltipContent = (showStoreLink: boolean) => (
     <>
       <div className="font-semibold text-purple-200 mb-1">{game.name}</div>
       {game.developer && <div className="text-gray-400 mb-2">{game.developer}</div>}
@@ -521,7 +684,6 @@ function GameCell({ game }: { game: Game }) {
           </svg>
         </a>
       )}
-      <div className={`absolute left-4 border-4 border-transparent ${placeBelow ? 'bottom-full border-b-gray-900' : 'top-full border-t-gray-900'}`}></div>
     </>
   );
 
@@ -547,83 +709,135 @@ function GameCell({ game }: { game: Game }) {
         <div className="text-xs text-gray-500">{game.developer || 'Unknown'}</div>
       </div>
 
-      {/* Desktop hover tooltip - rendered via portal */}
+      {/* Hover tooltip - rendered via portal */}
       {isHovered && game.short_description && tooltipPos && createPortal(
         <div
-          className="hidden sm:block pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
+          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
           style={{
             top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
             bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
             left: tooltipPos.left,
           }}
         >
-          {tooltipContent(false, tooltipPos.placeBelow)}
+          {tooltipContent(false)}
         </div>,
         document.body
       )}
 
       {/* Mobile tap tooltip - rendered via portal */}
       {isOpen && tooltipPos && createPortal(
-        <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-            onTouchStart={() => setIsOpen(false)}
-          />
-          <div
-            className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
-            style={{
-              top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
-              bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
-              left: tooltipPos.left,
-            }}
-          >
-            {tooltipContent(true, tooltipPos.placeBelow)}
-          </div>
-        </>,
+        <div
+          className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
+          {tooltipContent(true)}
+        </div>,
         document.body
       )}
     </div>
   );
 }
 
-// Tooltip wrapper component for cell values (only used for Centrality) - desktop only
-function CellTooltip({ children, text, flipToBottom = false }: { children: React.ReactNode; text: string; flipToBottom?: boolean }) {
+// Tooltip wrapper component for cell values (only used for Centrality)
+function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const tooltipWidth = 256; // w-64 = 16rem = 256px
+    const tooltipHeight = 60; // Approximate tooltip height
+    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
+  }, []);
+
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    updateTooltipPosition();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className="group relative inline-block">
+    <div
+      ref={triggerRef}
+      className="relative inline-block"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {children}
-      {flipToBottom ? (
-        <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
+      {isHovered && tooltipPos && createPortal(
+        <div
+          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-normal w-64 text-center"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
           {text}
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-        </div>
-      ) : (
-        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center z-50 shadow-xl">
-          {text}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
 }
 
 // Tooltip for genres overflow
-function GenresTooltip({ children, genres, flipToBottom = false }: { children: React.ReactNode; genres: string[]; flipToBottom?: boolean }) {
+function GenresTooltip({ children, genres }: { children: React.ReactNode; genres: string[] }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    // Estimate width based on content (genres joined), but cap at reasonable max
+    const estimatedWidth = Math.min(genres.join(', ').length * 7 + 24, 400);
+    const tooltipHeight = 40; // Approximate tooltip height
+    setTooltipPos(calculateTooltipPosition(rect, estimatedWidth, tooltipHeight, { centerHorizontally: true }));
+  }, [genres]);
+
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    updateTooltipPosition();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   if (genres.length === 0) return <>{children}</>;
 
   return (
-    <div className="group relative inline-block">
+    <div
+      ref={triggerRef}
+      className="relative inline-block"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {children}
-      {flipToBottom ? (
-        <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
+      {isHovered && tooltipPos && createPortal(
+        <div
+          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
           {genres.join(', ')}
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-        </div>
-      ) : (
-        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-          {genres.join(', ')}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
@@ -635,13 +849,38 @@ function SimpleHelpIcon({ title, description }: { title: string; description: st
   const [popoverPos, setPopoverPos] = useState<{ top: number; left: number } | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  // Close popover on scroll or click outside
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
+
   const updatePosition = useCallback(() => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
-    setPopoverPos({
-      top: rect.bottom + 8,
-      left: rect.left + rect.width / 2,
-    });
+    const popoverWidth = 288; // w-72 = 18rem = 288px
+    const popoverHeight = 80; // Approximate
+    const pos = calculateTooltipPosition(rect, popoverWidth, popoverHeight, { preferBelow: true, centerHorizontally: true });
+    setPopoverPos({ top: pos.top, left: pos.left });
   }, []);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -664,31 +903,16 @@ function SimpleHelpIcon({ title, description }: { title: string; description: st
         ?
       </button>
       {isOpen && popoverPos && createPortal(
-        <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              setIsOpen(false);
-            }}
-          />
-          <div
-            className="fixed w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal -translate-x-1/2"
-            style={{
-              top: popoverPos.top,
-              left: popoverPos.left,
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-            }}
-          >
-            <div className="text-sm font-semibold text-purple-300 mb-1">{title}</div>
-            <div className="text-xs text-gray-400">{description}</div>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-          </div>
-        </>,
+        <div
+          className="fixed w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal"
+          style={{
+            top: popoverPos.top,
+            left: popoverPos.left,
+          }}
+        >
+          <div className="text-sm font-semibold text-purple-300 mb-1">{title}</div>
+          <div className="text-xs text-gray-400">{description}</div>
+        </div>,
         document.body
       )}
     </div>
@@ -701,13 +925,42 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
   const [popoverPos, setPopoverPos] = useState<{ top: number; left: number } | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  // Close popover on scroll or click outside
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
+
   const updatePosition = useCallback(() => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
-    setPopoverPos({
-      top: rect.bottom + 8,
-      left: alignRight ? rect.right : rect.left + rect.width / 2,
+    const popoverWidth = 352; // w-88 = 22rem = 352px
+    const popoverHeight = 180; // Approximate for taxonomy info
+    const pos = calculateTooltipPosition(rect, popoverWidth, popoverHeight, {
+      preferBelow: true,
+      alignRight,
+      centerHorizontally: !alignRight
     });
+    setPopoverPos({ top: pos.top, left: pos.left });
   }, [alignRight]);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -730,43 +983,24 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
         ?
       </button>
       {isOpen && popoverPos && createPortal(
-        <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              setIsOpen(false);
-            }}
-          />
-          <div
-            className={`fixed w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal ${
-              alignRight ? '-translate-x-full' : '-translate-x-1/2'
-            }`}
-            style={{
-              top: popoverPos.top,
-              left: popoverPos.left,
-            }}
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-            }}
-          >
-            <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
-            <div className="text-xs text-gray-400 mb-3">{info.description}</div>
-            <div className="space-y-2">
-              {info.values.map((v) => (
-                <div key={v.key} className="flex gap-2">
-                  <span className={`font-mono ${v.color} w-24 flex-shrink-0`}>{v.label}</span>
-                  <span className="text-xs text-gray-400">{v.description}</span>
-                </div>
-              ))}
-            </div>
-            {!alignRight && (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-            )}
+        <div
+          className="fixed w-[22rem] bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal"
+          style={{
+            top: popoverPos.top,
+            left: popoverPos.left,
+          }}
+        >
+          <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
+          <div className="text-xs text-gray-400 mb-3">{info.description}</div>
+          <div className="space-y-2">
+            {info.values.map((v) => (
+              <div key={v.key} className="flex gap-2">
+                <span className={`font-mono ${v.color} w-28 flex-shrink-0`}>{v.label}</span>
+                <span className="text-xs text-gray-400">{v.description}</span>
+              </div>
+            ))}
           </div>
-        </>,
+        </div>,
         document.body
       )}
     </div>
@@ -835,7 +1069,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       {
         id: 'platforms',
         header: 'Platforms',
-        cell: info => <PlatformIcons game={info.row.original} flipToBottom={info.row.index === 0} />,
+        cell: info => <PlatformIcons game={info.row.original} />,
       },
       {
         accessorKey: 'price_usd',
@@ -909,7 +1143,6 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => {
           const genres = info.getValue() as string[];
           const hiddenGenres = genres.slice(2);
-          const isFirstRow = info.row.index === 0;
           return (
             <div className="flex flex-wrap gap-1">
               {genres.slice(0, 2).map((genre, i) => (
@@ -918,7 +1151,7 @@ export default function GamesTable({ games }: GamesTableProps) {
                 </span>
               ))}
               {hiddenGenres.length > 0 && (
-                <GenresTooltip genres={hiddenGenres} flipToBottom={isFirstRow}>
+                <GenresTooltip genres={hiddenGenres}>
                   <span className="text-xs text-gray-500 cursor-help">+{hiddenGenres.length}</span>
                 </GenresTooltip>
               )}
@@ -937,7 +1170,6 @@ export default function GamesTable({ games }: GamesTableProps) {
               date={date}
               url={info.row.original.last_announcement_url}
               title={info.row.original.last_announcement_title}
-              flipToBottom={info.row.index === 0}
             />
           );
         },
@@ -961,7 +1193,6 @@ export default function GamesTable({ games }: GamesTableProps) {
               date={date}
               url={info.row.original.last_update_url}
               title={info.row.original.last_update_title}
-              flipToBottom={info.row.index === 0}
             />
           );
         },
@@ -987,7 +1218,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description} flipToBottom={info.row.index === 0}>
+                <CellTooltip text={valueInfo.description}>
                   <span className={`font-mono ${valueInfo.color} cursor-help`}>
                     {valueInfo.label}
                   </span>

@@ -346,10 +346,10 @@ games:
     classification:
       dimension_1: "c"
       dimension_2: "character"
-      dimension_3: "implied"
+      dimension_3: "explicit"
     date_added: "2025-12-05"
     priority: low
-    notes: "Firing ghost balls counts as necromancy by technicality"
+    notes: "Firing ghost balls counts as necromancy by technicality, there is also a necromancer structure and a zombie summoning passive."
 
   - name: "Hell Clock"
     steam_id: 1782460
@@ -843,6 +843,15 @@ games:
     classification:
       dimension_1: "b"
       dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Heroes® of Might & Magic® III - HD Edition"
+    steam_id: 297000
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
       dimension_3: "explicit"
     date_added: "2025-12-06"
     priority: medium
