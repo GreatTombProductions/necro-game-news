@@ -287,7 +287,8 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     const searchLower = search.toLowerCase();
     const matchesSearch =
       normalize(game.name).includes(searchLower) ||
-      (game.developer && normalize(game.developer).includes(searchLower));
+      (game.developer && normalize(game.developer).includes(searchLower)) ||
+      (game.publisher && normalize(game.publisher).includes(searchLower));
     if (!matchesSearch) return false;
   }
 
@@ -663,10 +664,12 @@ function GameCell({ game }: { game: Game }) {
     }
   };
 
-  const tooltipContent = (showStoreLink: boolean) => (
+  const tooltipContent = (showStoreLink: boolean) => {
+    const combined = getCombinedDevPublisher(game);
+    return (
     <>
       <div className="font-semibold text-purple-200 mb-1">{game.name}</div>
-      {game.developer && <div className="text-gray-400 mb-2">{game.developer}</div>}
+      {combined.length > 0 && <div className="text-gray-400 mb-2">{combined.join(', ')}</div>}
       {game.short_description && (
         <div className={`text-gray-400 text-xs line-clamp-3 ${showStoreLink && storeUrl ? 'mb-2' : ''}`}>{game.short_description}</div>
       )}
@@ -685,7 +688,8 @@ function GameCell({ game }: { game: Game }) {
         </a>
       )}
     </>
-  );
+    );
+  };
 
   return (
     <div ref={triggerRef} className="relative">
@@ -706,7 +710,21 @@ function GameCell({ game }: { game: Game }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </div>
-        <div className="text-xs text-gray-500">{game.developer || 'Unknown'}</div>
+        {(() => {
+          const combined = getCombinedDevPublisher(game);
+          const visible = combined.slice(0, 2);
+          const hidden = combined.slice(2);
+          return (
+            <div className="text-xs text-gray-500">
+              {visible.length > 0 ? visible.join(', ') : 'Unknown'}
+              {hidden.length > 0 && (
+                <DevPublisherTooltip items={hidden}>
+                  <span className="text-gray-600 cursor-help ml-1">+{hidden.length}</span>
+                </DevPublisherTooltip>
+              )}
+            </div>
+          );
+        })()}
       </div>
 
       {/* Hover tooltip - rendered via portal */}
@@ -784,6 +802,87 @@ function CellTooltip({ children, text }: { children: React.ReactNode; text: stri
           }}
         >
           {text}
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
+
+// Helper to combine and deduplicate developers and publishers
+function getCombinedDevPublisher(game: Game): string[] {
+  const combined: string[] = [];
+  if (game.developer) {
+    // Split by comma and trim each entry
+    game.developer.split(',').forEach(d => {
+      const trimmed = d.trim();
+      if (trimmed && !combined.includes(trimmed)) {
+        combined.push(trimmed);
+      }
+    });
+  }
+  if (game.publisher) {
+    game.publisher.split(',').forEach(p => {
+      const trimmed = p.trim();
+      if (trimmed && !combined.includes(trimmed)) {
+        combined.push(trimmed);
+      }
+    });
+  }
+  return combined;
+}
+
+// Tooltip for developer/publisher overflow
+function DevPublisherTooltip({ children, items }: { children: React.ReactNode; items: string[] }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const estimatedWidth = Math.min(items.join(', ').length * 7 + 24, 400);
+    const tooltipHeight = 40;
+    setTooltipPos(calculateTooltipPosition(rect, estimatedWidth, tooltipHeight, { centerHorizontally: true }));
+  }, [items]);
+
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    updateTooltipPosition();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  useEffect(() => {
+    if (!isHovered) return;
+    const handleScroll = () => setIsHovered(false);
+    window.addEventListener('scroll', handleScroll, true);
+    return () => window.removeEventListener('scroll', handleScroll, true);
+  }, [isHovered]);
+
+  if (items.length === 0) return <>{children}</>;
+
+  return (
+    <div
+      ref={triggerRef}
+      className="relative inline"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+      {isHovered && tooltipPos && createPortal(
+        <div
+          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
+          {items.join(', ')}
         </div>,
         document.body
       )}
@@ -1326,7 +1425,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               type="text"
               value={globalFilter ?? ''}
               onChange={e => setGlobalFilter(e.target.value)}
-              placeholder="Search by game or developer..."
+              placeholder="Search by game, developer, or publisher..."
               className="w-full px-4 py-3 bg-gray-800 border border-purple-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
             />
           </div>
