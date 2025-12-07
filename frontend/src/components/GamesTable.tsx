@@ -212,7 +212,7 @@ function PlatformIconWithTooltip({
 // Platform icons component - shows clickable icons for each platform a game is on
 function PlatformIcons({ game }: { game: Game }) {
   return (
-    <div className="flex gap-1.5 items-center">
+    <div className="flex gap-1.5 items-center justify-center">
       {game.platforms.map((platform) => (
         <PlatformIconWithTooltip
           key={platform}
