@@ -24,8 +24,8 @@ interface FormData {
 }
 
 const CENTRALITY_OPTIONS = [
-  { value: 'a', label: 'Core', description: 'Necromancy is central to gameplay' },
-  { value: 'b', label: 'Dedicated Spec', description: 'Cohesive necromantic specialization available' },
+  { value: 'a', label: 'Core', description: 'Necromancy is central to gameplay and identity' },
+  { value: 'b', label: 'Dedicated Branch', description: 'Cohesive group of necromantic features available' },
   { value: 'c', label: 'Isolated', description: 'Some necromantic features exist, but scattered' },
   { value: 'd', label: 'Minimal', description: 'Necromancy by technicality or lore only' },
 ];

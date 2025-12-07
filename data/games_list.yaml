@@ -856,6 +856,142 @@ games:
     date_added: "2025-12-06"
     priority: medium
 
+  - name: "Warframe"
+    steam_id: 230410
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Warlock - Master of the Arcane"
+    steam_id: 203630
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dungeon Souls"
+    steam_id: 383230
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "KeeperRL"
+    steam_id: 329970
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Pathfinder: Kingmaker — Enhanced Plus Edition"
+    steam_id: 640820
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Pathfinder: Wrath of the Righteous - Enhanced Edition"
+    steam_id: 1184370
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Age of Wonders III - Eternal Lords Expansion"
+    steam_id: 329530
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    price_notes: "Requires base Age of Wonders III game"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Tales of Maj'Eyal"
+    steam_id: 259680
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dragon Age: Origins - Ultimate Edition"
+    steam_id: 47810
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dungeonmans"
+    steam_id: 288120
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "ADOM (Ancient Domains Of Mystery)"
+    steam_id: 333300
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Eador. Masters of the Broken World"
+    steam_id: 232050
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Age of Conan: Unchained"
+    steam_id: 217750
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Sacrifice"
+    steam_id: 38440
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Disciples II: Gallean's Return"
+    steam_id: 1640
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
 # Notes:
 # - Games can be temporarily disabled by setting active: false
 # - Steam ID 0 means game not on Steam (for multi-platform expansion)

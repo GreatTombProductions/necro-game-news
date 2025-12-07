@@ -234,8 +234,8 @@ const TAXONOMY_INFO = {
     title: 'Centrality',
     description: 'How central necromancy is to the gameplay experience',
     values: [
-      { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character/unit or faction\'s identity and gameplay' },
-      { key: 'b', label: 'Dedicated Spec', color: 'text-blue-400', description: 'Cohesive set of necromantic skills/equipment or units available to specialize into' },
+      { key: 'a', label: 'Core', color: 'text-green-400', description: 'Necromancy is central to the character/unit or faction\'s gameplay and identity' },
+      { key: 'b', label: 'Dedicated Branch', color: 'text-blue-400', description: 'Cohesive set of necromantic skills/equipment or units available' },
       { key: 'c', label: 'Isolated', color: 'text-yellow-400', description: 'Necromantic skills/equipment or units exist, but are not grouped into a cohesive category' },
       { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'The character/unit or faction may possess necromantic capabilities by technicality or in lore, but with minimal impact to their identity or gameplay' },
     ],
@@ -259,7 +259,7 @@ const TAXONOMY_INFO = {
 };
 
 // Centrality sort order: Higher = better (Core at top when sorting descending)
-// a (Core) = 3, b (Dedicated Spec) = 2, c (Isolated) = 1, d (Minimal) = 0
+// a (Core) = 3, b (Dedicated Branch) = 2, c (Isolated) = 1, d (Minimal) = 0
 const centralitySortOrder: Record<string, number> = { a: 3, b: 2, c: 1, d: 0 };
 
 const centralitySortFn: SortingFn<Game> = (rowA, rowB, columnId) => {
