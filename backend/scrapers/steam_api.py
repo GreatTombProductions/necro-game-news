@@ -139,7 +139,7 @@ class SteamAPI:
             RateLimitError: If rate limited after all retries (caller should not mark as processed)
         """
         url = f"{STORE_API_BASE}/appdetails"
-        params = {'appids': appid, 'l': 'english'}
+        params = {'appids': appid, 'l': 'english', 'cc': 'us'}
 
         try:
             data = self._make_request(url, params)

@@ -93,6 +93,7 @@ content/posts/*.jpg
 
 # Data files (optional - remove this line if you want to commit the database)
 data/necro_games.db
+data/discovery_cache/processed_appids.txt
 
 # API keys and secrets
 config/secrets.yaml

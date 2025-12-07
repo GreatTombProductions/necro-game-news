@@ -1172,7 +1172,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'price_usd',
-        header: 'Price',
+        header: 'Price (US)',
         cell: info => {
           const price = info.getValue() as number | null | undefined;
           const game = info.row.original;
