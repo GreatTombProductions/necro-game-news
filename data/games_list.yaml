@@ -43,7 +43,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Necromancer is a fully playable class with extensive skill trees"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: high
 
   - name: "Diablo III"
@@ -62,7 +62,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Necromancer class added via Rise of the Necromancer DLC"
-    date_added: "2024-12-06"
+    date_added: "2025-12-06"
     priority: high
 
   - name: "Diablo Immortal"
@@ -176,7 +176,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Necromancer mastery class available"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: high
   
   - name: "Last Epoch"
@@ -186,7 +186,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Acolyte base class with Necromancer specialization"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: high
 
   - name: "V Rising"
@@ -196,7 +196,7 @@ games:
       dimension_2: "character"
       dimension_3: "implied"
     notes: "Unholy spell school with necromantic abilities, graveyard mechanics"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: high
   
   - name: "Path of Exile"
@@ -206,7 +206,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Necromancer specialization for the Witch class"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: high
 
   - name: "Cult of the Lamb"
@@ -216,7 +216,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Necromantic weapons, resurrection spells, and rituals available"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: medium
 
   - name: "Night Swarm"
@@ -235,7 +235,7 @@ games:
       dimension_2: "character"
       dimension_3: "explicit"
     notes: "Vampire Counts faction with necromancers and undead armies"
-    date_added: "2024-12-02"
+    date_added: "2025-12-02"
     priority: medium
 
 
@@ -245,7 +245,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Hades II"
@@ -254,7 +254,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Lost Ark"
@@ -263,7 +263,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Absolum"
@@ -272,16 +272,16 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Dungeons 4"
     steam_id: 1643310
     classification:
-      dimension_1: "c"
+      dimension_1: "b"
       dimension_2: "character"
-      dimension_3: "implied"
-    date_added: "2024-12-05"
+      dimension_3: "explicit"
+    date_added: "2025-12-05"
     priority: high
     notes: "Playing as the absolute evil, some necromancy involved in raising undead units"
 
@@ -291,7 +291,7 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Total War: WARHAMMER"
@@ -300,7 +300,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Iratus: Lord of the Dead"
@@ -309,7 +309,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "SWORN"
@@ -318,7 +318,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Throne of Bone"
@@ -327,7 +327,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Cubic Cosmos"
@@ -336,7 +336,7 @@ games:
       dimension_1: "d"
       dimension_2: "unit"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "BALL x PIT"
@@ -345,7 +345,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
     notes: "Firing ghost balls counts as necromancy by technicality"
 
@@ -355,7 +355,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Total War: WARHAMMER II"
@@ -364,7 +364,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Overlord: Fellowship of Evil"
@@ -373,7 +373,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Solo Leveling: ARISE OVERDRIVE"
@@ -382,7 +382,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Decks of the Damned"
@@ -391,7 +391,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Death Crown"
@@ -400,7 +400,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Baldur's Gate 3"
@@ -409,7 +409,7 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Have a Nice Death"
@@ -418,7 +418,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Monster Train 2"
@@ -427,7 +427,7 @@ games:
       dimension_1: "d"
       dimension_2: "unit"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "Rogue Lords"
@@ -436,7 +436,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
     notes: "Playing as the Devil, with some necromantic abilities imparted to disciples and demonstrated in events/lore"
 
@@ -446,7 +446,7 @@ games:
       dimension_1: "d"
       dimension_2: "unit"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: low
 
   - name: "The Unliving"
@@ -455,7 +455,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Kingdom Rush Vengeance - Tower Defense"
@@ -464,7 +464,7 @@ games:
       dimension_1: "b"
       dimension_2: "unit"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Necronator: Dead Wrong"
@@ -473,7 +473,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Hero Siege"
@@ -482,7 +482,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Unferat"
@@ -491,7 +491,7 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Undead Horde 2: Necropolis"
@@ -500,7 +500,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Infectonator 3: Apocalypse"
@@ -509,7 +509,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Darksiders II Deathinitive Edition"
@@ -518,7 +518,7 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Be My Horde"
@@ -527,7 +527,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Deck of Haunts"
@@ -536,7 +536,7 @@ games:
       dimension_1: "d"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Wolcen: Lords of Mayhem"
@@ -545,7 +545,7 @@ games:
       dimension_1: "b"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Tainted Grail: Conquest"
@@ -554,7 +554,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Immortal Realms: Vampire Wars"
@@ -563,7 +563,7 @@ games:
       dimension_1: "c"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Soulstone Survivors"
@@ -572,7 +572,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "It Lurks Below"
@@ -581,7 +581,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Boneraiser Minions"
@@ -590,7 +590,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Undead Horde"
@@ -599,7 +599,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Path of Exile 2"
@@ -608,7 +608,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Frosthaven"
@@ -617,7 +617,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Songs of Conquest"
@@ -626,7 +626,7 @@ games:
       dimension_1: "a"
       dimension_2: "unit"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: high
 
   - name: "Mind Over Magic"
@@ -635,7 +635,7 @@ games:
       dimension_1: "c"
       dimension_2: "unit"
       dimension_3: "implied"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "The Necromancer's Tale"
@@ -644,7 +644,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Necro Story"
@@ -653,7 +653,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Necromantic"
@@ -662,7 +662,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Necrosmith 2"
@@ -671,7 +671,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Necrosmith"
@@ -680,7 +680,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Super Grave Snatchers"
@@ -689,7 +689,7 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
     priority: medium
 
   - name: "Loop Hero"
@@ -698,7 +698,142 @@ games:
       dimension_1: "a"
       dimension_2: "character"
       dimension_3: "explicit"
-    date_added: "2024-12-05"
+    date_added: "2025-12-05"
+    priority: medium
+
+  - name: "Heroes of Annihilated Empires"
+    steam_id: 4800
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dominions 4: Thrones of Ascension"
+    steam_id: 259060
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dominions 5 - Warriors of the Faith"
+    steam_id: 722060
+    classification:
+      dimension_1: "a"
+      dimension_2: "unit"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Conquest of Elysium 3"
+    steam_id: 211900
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Conquest of Elysium 4"
+    steam_id: 403950
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Age of Fear: The Undead King"
+    steam_id: 351480
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Din's Curse"
+    steam_id: 217290
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "SpellForce 3 Soul Harvest"
+    steam_id: 817540
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "SpellForce: Conquest of Eo"
+    steam_id: 1581770
+    classification:
+      dimension_1: "b"
+      dimension_2: "unit"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Divinity: Original Sin 2 - Definitive Edition"
+    steam_id: 435150
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Neverwinter"
+    steam_id: 109600
+    classification:
+      dimension_1: "c"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Neverwinter Nights: Enhanced Edition"
+    steam_id: 704450
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Dungeons & Dragons Neverwinter Nights 2: Enhanced Edition"
+    steam_id: 2738630
+    classification:
+      dimension_1: "b"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "The Elder Scrolls® Online"
+    steam_id: 306130
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Guild Wars 2"
+    steam_id: 1284210
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
     priority: medium
 
 # Notes:

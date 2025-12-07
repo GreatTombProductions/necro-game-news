@@ -188,7 +188,7 @@ const TAXONOMY_INFO = {
     title: 'POV',
     description: 'The player\'s relationship to the necromancer',
     values: [
-      { key: 'character', label: 'Character', color: 'text-purple-300', description: 'Play AS the necromancer (who may control other necromancers)' },
+      { key: 'character', label: 'Character', color: 'text-purple-300', description: 'Play AS the necromancer (who may themselves control or lead a faction containing other necromancers)' },
       { key: 'unit', label: 'Unit/Faction', color: 'text-purple-300', description: 'Play as some entity controlling or some faction containing one or more necromancers, but not as any of them' },
     ],
   },
