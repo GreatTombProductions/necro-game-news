@@ -31,12 +31,12 @@ const CENTRALITY_OPTIONS = [
 ];
 
 const POV_OPTIONS = [
-  { value: 'character', label: 'Character', description: 'Play AS the necromancer' },
-  { value: 'unit', label: 'Unit', description: 'Control necromancers, but don\'t play as one' },
+  { value: 'character', label: 'Character', description: 'Play AS the necromancer (who may control others / a faction)' },
+  { value: 'unit', label: 'Unit', description: 'Control necromancers / necromancy faction' },
 ];
 
 const NAMING_OPTIONS = [
-  { value: 'explicit', label: 'Explicit', description: '"Necromancer" or variant used in game' },
+  { value: 'explicit', label: 'Explicit', description: '"Necromancer" or variant used' },
   { value: 'implied', label: 'Implied', description: 'Necromancy not named explicitly' },
 ];
 

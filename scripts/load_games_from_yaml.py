@@ -315,6 +315,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         # Manual metadata for non-Steam games
         short_description = game.get('short_description')
         genres = game.get('genres', [])
+        price_notes = game.get('price_notes')
 
         # Validate primary_platform
         if primary_platform not in VALID_PLATFORMS:
@@ -411,8 +412,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 (steam_id, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
                  platforms, primary_platform, external_url,
                  name, dimension_1, dimension_2, dimension_3,
-                 classification_notes, short_description, genres, date_added)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 classification_notes, short_description, genres, price_notes, date_added)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -430,6 +431,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 notes,
                 short_description,
                 json.dumps(genres) if genres else None,
+                price_notes,
                 datetime.now()
             ))
 
