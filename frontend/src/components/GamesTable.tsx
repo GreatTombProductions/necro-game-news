@@ -763,8 +763,33 @@ function GameCell({ game }: { game: Game }) {
 // Tooltip wrapper component for cell values (only used for Centrality)
 function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+
+  // Close on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
 
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
@@ -784,15 +809,25 @@ function CellTooltip({ children, text }: { children: React.ReactNode; text: stri
     setIsHovered(false);
   };
 
+  const handleTouch = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateTooltipPosition();
+    setIsOpen(true);
+  };
+
+  const showTooltip = isHovered || isOpen;
+
   return (
     <div
       ref={triggerRef}
       className="relative inline-block"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouch}
     >
       {children}
-      {isHovered && tooltipPos && createPortal(
+      {showTooltip && tooltipPos && createPortal(
         <div
           className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-normal w-64 text-center"
           style={{
@@ -835,8 +870,33 @@ function getCombinedDevPublisher(game: Game): string[] {
 // Tooltip for developer/publisher overflow
 function DevPublisherTooltip({ children, items }: { children: React.ReactNode; items: string[] }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+
+  // Close on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
 
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
@@ -856,14 +916,16 @@ function DevPublisherTooltip({ children, items }: { children: React.ReactNode; i
     setIsHovered(false);
   };
 
-  useEffect(() => {
-    if (!isHovered) return;
-    const handleScroll = () => setIsHovered(false);
-    window.addEventListener('scroll', handleScroll, true);
-    return () => window.removeEventListener('scroll', handleScroll, true);
-  }, [isHovered]);
+  const handleTouch = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateTooltipPosition();
+    setIsOpen(true);
+  };
 
   if (items.length === 0) return <>{children}</>;
+
+  const showTooltip = isHovered || isOpen;
 
   return (
     <div
@@ -871,9 +933,10 @@ function DevPublisherTooltip({ children, items }: { children: React.ReactNode; i
       className="relative inline"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouch}
     >
       {children}
-      {isHovered && tooltipPos && createPortal(
+      {showTooltip && tooltipPos && createPortal(
         <div
           className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
           style={{
@@ -893,8 +956,33 @@ function DevPublisherTooltip({ children, items }: { children: React.ReactNode; i
 // Tooltip for genres overflow
 function GenresTooltip({ children, genres }: { children: React.ReactNode; genres: string[] }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+
+  // Close on scroll or click outside
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
 
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
@@ -915,7 +1003,16 @@ function GenresTooltip({ children, genres }: { children: React.ReactNode; genres
     setIsHovered(false);
   };
 
+  const handleTouch = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateTooltipPosition();
+    setIsOpen(true);
+  };
+
   if (genres.length === 0) return <>{children}</>;
+
+  const showTooltip = isHovered || isOpen;
 
   return (
     <div
@@ -923,9 +1020,10 @@ function GenresTooltip({ children, genres }: { children: React.ReactNode; genres
       className="relative inline-block"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouch}
     >
       {children}
-      {isHovered && tooltipPos && createPortal(
+      {showTooltip && tooltipPos && createPortal(
         <div
           className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
           style={{
@@ -942,84 +1040,14 @@ function GenresTooltip({ children, genres }: { children: React.ReactNode; genres
   );
 }
 
-// Simple help icon with just a description (no value list)
-function SimpleHelpIcon({ title, description }: { title: string; description: string }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [popoverPos, setPopoverPos] = useState<{ top: number; left: number } | null>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // Close popover on scroll or click outside
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleScroll = () => {
-      setIsOpen(false);
-    };
-
-    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, true);
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll, true);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [isOpen]);
-
-  const updatePosition = useCallback(() => {
-    if (!buttonRef.current) return;
-    const rect = buttonRef.current.getBoundingClientRect();
-    const popoverWidth = 288; // w-72 = 18rem = 288px
-    const popoverHeight = 80; // Approximate
-    const pos = calculateTooltipPosition(rect, popoverWidth, popoverHeight, { preferBelow: true, centerHorizontally: true });
-    setPopoverPos({ top: pos.top, left: pos.left });
-  }, []);
-
-  const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (!isOpen) {
-      updatePosition();
-    }
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <div className="relative inline-block ml-1">
-      <button
-        ref={buttonRef}
-        onClick={handleClick}
-        className="inline-flex items-center justify-center w-4 h-4 text-xs text-purple-400 hover:text-purple-200 border border-purple-500/50 rounded-full hover:border-purple-400 transition-colors"
-        aria-label={`Help for ${title}`}
-      >
-        ?
-      </button>
-      {isOpen && popoverPos && createPortal(
-        <div
-          className="fixed w-72 bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal"
-          style={{
-            top: popoverPos.top,
-            left: popoverPos.left,
-          }}
-        >
-          <div className="text-sm font-semibold text-purple-300 mb-1">{title}</div>
-          <div className="text-xs text-gray-400">{description}</div>
-        </div>,
-        document.body
-      )}
-    </div>
-  );
+// Help icon with popover - supports both simple descriptions and value lists
+interface HelpIconInfo {
+  title: string;
+  description: string;
+  values?: Array<{ key: string; label: string; color: string; description: string }>;
 }
 
-// Help icon with popover showing all values for a column
-function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.centrality; alignRight?: boolean }) {
+function HelpIcon({ info, alignRight = false }: { info: HelpIconInfo; alignRight?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [popoverPos, setPopoverPos] = useState<{ top: number; left: number } | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -1052,15 +1080,15 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
   const updatePosition = useCallback(() => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
-    const popoverWidth = 352; // w-88 = 22rem = 352px
-    const popoverHeight = 180; // Approximate for taxonomy info
+    const popoverWidth = info.values ? 352 : 288; // w-[22rem] or w-72
+    const popoverHeight = info.values ? 180 : 80; // Taller for value lists
     const pos = calculateTooltipPosition(rect, popoverWidth, popoverHeight, {
       preferBelow: true,
       alignRight,
       centerHorizontally: !alignRight
     });
     setPopoverPos({ top: pos.top, left: pos.left });
-  }, [alignRight]);
+  }, [alignRight, info.values]);
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -1083,22 +1111,24 @@ function HelpIcon({ info, alignRight = false }: { info: typeof TAXONOMY_INFO.cen
       </button>
       {isOpen && popoverPos && createPortal(
         <div
-          className="fixed w-[22rem] bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal"
+          className={`fixed bg-gray-900 border border-purple-700/50 rounded-lg shadow-xl z-50 p-3 whitespace-normal ${info.values ? 'w-[22rem]' : 'w-72'}`}
           style={{
             top: popoverPos.top,
             left: popoverPos.left,
           }}
         >
           <div className="text-sm font-semibold text-purple-300 mb-1">{info.title}</div>
-          <div className="text-xs text-gray-400 mb-3">{info.description}</div>
-          <div className="space-y-2">
-            {info.values.map((v) => (
-              <div key={v.key} className="flex gap-2">
-                <span className={`font-mono ${v.color} w-28 flex-shrink-0`}>{v.label}</span>
-                <span className="text-xs text-gray-400">{v.description}</span>
-              </div>
-            ))}
-          </div>
+          <div className={`text-xs text-gray-400 ${info.values ? 'mb-3' : ''}`}>{info.description}</div>
+          {info.values && (
+            <div className="space-y-2">
+              {info.values.map((v) => (
+                <div key={v.key} className="flex gap-2">
+                  <span className={`font-mono ${v.color} w-28 flex-shrink-0`}>{v.label}</span>
+                  <span className="text-xs text-gray-400">{v.description}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>,
         document.body
       )}
@@ -1278,9 +1308,11 @@ export default function GamesTable({ games }: GamesTableProps) {
         header: () => (
           <span className="flex items-center">
             Game Last Updated
-            <SimpleHelpIcon
-              title="Game Last Updated"
-              description="Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
+            <HelpIcon
+              info={{
+                title: "Game Last Updated",
+                description: "Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
+              }}
             />
           </span>
         ),
@@ -1338,9 +1370,11 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.pov.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <span className={`text-sm ${valueInfo.color} capitalize`}>
-                  {valueInfo.label}
-                </span>
+                <CellTooltip text={valueInfo.description}>
+                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                    {valueInfo.label}
+                  </span>
+                </CellTooltip>
               );
             },
           },
@@ -1357,9 +1391,11 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.naming.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <span className={`text-sm ${valueInfo.color} capitalize`}>
-                  {valueInfo.label}
-                </span>
+                <CellTooltip text={valueInfo.description}>
+                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                    {valueInfo.label}
+                  </span>
+                </CellTooltip>
               );
             },
           },
