@@ -1056,6 +1056,15 @@ games:
     date_added: "2025-12-06"
     priority: medium
 
+  - name: "Dead by Daylight"
+    steam_id: 381210
+    classification:
+      dimension_1: "d"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
 # Notes:
 # - Games can be temporarily disabled by setting active: false
 # - Steam ID 0 means game not on Steam (for multi-platform expansion)

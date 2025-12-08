@@ -41,6 +41,7 @@ function PlatformIconWithTooltip({
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Close on scroll or click outside
   useEffect(() => {
@@ -50,7 +51,10 @@ function PlatformIconWithTooltip({
       setIsHovered(false);
     };
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const clickedTrigger = triggerRef.current?.contains(target);
+      const clickedTooltip = tooltipRef.current?.contains(target);
+      if (!clickedTrigger && !clickedTooltip) {
         setIsOpen(false);
       }
     };
@@ -139,6 +143,7 @@ function PlatformIconWithTooltip({
   // Mobile tap tooltip with clickable link - rendered via portal
   const mobileTooltipContent = isOpen && tooltipPos && createPortal(
     <div
+      ref={tooltipRef}
       className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap"
       style={{
         top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
@@ -377,6 +382,7 @@ function LinkedCellWithTooltip({
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Close on scroll or click outside
   useEffect(() => {
@@ -386,7 +392,10 @@ function LinkedCellWithTooltip({
       setIsHovered(false);
     };
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const clickedTrigger = triggerRef.current?.contains(target);
+      const clickedTooltip = tooltipRef.current?.contains(target);
+      if (!clickedTrigger && !clickedTooltip) {
         setIsOpen(false);
       }
     };
@@ -520,6 +529,7 @@ function LinkedCellWithTooltip({
       {/* Mobile tap tooltip - rendered via portal */}
       {isOpen && tooltipPos && createPortal(
         <div
+          ref={tooltipRef}
           className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
           style={{
             top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
@@ -588,6 +598,7 @@ function GameCell({ game }: { game: Game }) {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Get the primary store URL (Steam preferred, then primary_platform, then first available)
   const primaryPlatform = game.steam_id ? 'steam' : game.primary_platform;
@@ -604,7 +615,10 @@ function GameCell({ game }: { game: Game }) {
     };
 
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const clickedTrigger = triggerRef.current?.contains(target);
+      const clickedTooltip = tooltipRef.current?.contains(target);
+      if (!clickedTrigger && !clickedTooltip) {
         setIsOpen(false);
       }
     };
@@ -745,6 +759,7 @@ function GameCell({ game }: { game: Game }) {
       {/* Mobile tap tooltip - rendered via portal */}
       {isOpen && tooltipPos && createPortal(
         <div
+          ref={tooltipRef}
           className="fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-64"
           style={{
             top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
