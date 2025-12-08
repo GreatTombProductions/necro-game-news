@@ -22,8 +22,8 @@
     "classification_notes": "",
     "developer": "Thomas Biskup, Jochen Terstiege, Zeno Rogue, Krzysztof Dycha, Lucas Dieguez",
     "publisher": "Assemble Entertainment",
-    "release_date": "16 Nov, 2015",
-    "price_usd": 16.99,
+    "release_date": "Nov 16, 2015",
+    "price_usd": 14.99,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -43,7 +43,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:35:01.352360",
+    "last_checked": "2025-12-08 09:54:16.973134",
     "update_count": 47,
     "last_update": "2019-01-29 15:25:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583401802187",
@@ -75,8 +75,8 @@
     "classification_notes": "",
     "developer": "Dotemu, Guard Crush Games, Supamonks",
     "publisher": "Dotemu, Gamirror Games",
-    "release_date": "9 Oct, 2025",
-    "price_usd": 32.5,
+    "release_date": "Oct 9, 2025",
+    "price_usd": 24.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -85,7 +85,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:32:47.142697",
+    "last_checked": "2025-12-08 09:54:18.307501",
     "update_count": 22,
     "last_update": "2025-10-23 06:00:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641440446",
@@ -117,7 +117,7 @@
     "classification_notes": "",
     "developer": "Funcom",
     "publisher": "Funcom",
-    "release_date": "22 Feb, 2013",
+    "release_date": "Feb 22, 2013",
     "price_usd": 0.0,
     "price_notes": null,
     "steam_tags": [
@@ -139,7 +139,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:35:04.348715",
+    "last_checked": "2025-12-08 09:54:19.912129",
     "update_count": 50,
     "last_update": "2022-03-01 05:06:56",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832526320356",
@@ -171,8 +171,8 @@
     "classification_notes": "",
     "developer": "Leslaw Sliwko",
     "publisher": "Age of Fear",
-    "release_date": "26 Jun, 2015",
-    "price_usd": 29.99,
+    "release_date": "Jun 26, 2015",
+    "price_usd": 24.99,
     "price_notes": null,
     "steam_tags": [
       "Tactical RPG",
@@ -191,7 +191,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:28.285878",
+    "last_checked": "2025-12-08 09:54:21.419843",
     "update_count": 50,
     "last_update": "2022-07-15 16:21:04",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144690448979",
@@ -223,8 +223,8 @@
     "classification_notes": "",
     "developer": "Triumph Studios",
     "publisher": "Paradox Interactive",
-    "release_date": "2 May, 2023",
-    "price_usd": 66.99,
+    "release_date": "May 2, 2023",
+    "price_usd": 49.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -242,7 +242,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:43.296060",
+    "last_checked": "2025-12-08 09:54:23.013786",
     "update_count": 46,
     "last_update": "2025-12-03 01:43:44",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366169584",
@@ -252,8 +252,8 @@
     "last_announcement_title": "Vampire Lord Dire Penguin Limited Edition Plushie is now available!"
   },
   {
-    "id": 232,
-    "steam_id": 329530,
+    "id": 244,
+    "steam_id": 226840,
     "battlenet_id": null,
     "battlenet_store_id": null,
     "gog_id": null,
@@ -264,37 +264,43 @@
     ],
     "primary_platform": "steam",
     "external_url": null,
-    "name": "Age of Wonders III - Eternal Lords Expansion",
-    "app_type": "dlc",
-    "short_description": "Eternal Lords is the major, second expansion for the acclaimed strategy game Age of Wonders III, marking one year of continuous development since its release. With the introduction of the Tigran and Frostling races and the new Necromancer class, players must adapt to a world on the brink of cataclysmic change.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/329530/header.jpg?t=1726497710",
+    "name": "Age of Wonders III",
+    "app_type": "game",
+    "short_description": "Age of Wonders III is the long anticipated sequel to the award-winning strategy series. Delivering a unique mix of Empire Building, Role Playing and Warfare, Age of Wonders III offers the ultimate in turn-based fantasy strategy for veterans of the series and new players alike!",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/226840/header.jpg?t=1726491137",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
     "classification_notes": "",
     "developer": "Triumph Studios",
-    "publisher": "Triumph Studios",
-    "release_date": "14 Apr, 2015",
-    "price_usd": 26.99,
-    "price_notes": "Requires base Age of Wonders III game",
+    "publisher": "Paradox Interactive",
+    "release_date": "Mar 31, 2014",
+    "price_usd": 29.99,
+    "price_notes": "Also requires Age of Wonders III - Eternal Lords Expansion ($26.99)",
     "steam_tags": [
       "Strategy",
-      "RPG",
       "Turn-Based Strategy",
-      "4X"
+      "Fantasy",
+      "RPG",
+      "4X",
+      "Turn-Based",
+      "Multiplayer",
+      "Singleplayer",
+      "Tactical",
+      "Dwarf"
     ],
     "genres": [
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:55.328077",
-    "update_count": 0,
-    "last_update": null,
-    "last_update_url": null,
-    "last_update_title": null,
-    "last_announcement": null,
-    "last_announcement_url": null,
-    "last_announcement_title": null
+    "last_checked": "2025-12-08 09:54:27.443152",
+    "update_count": 48,
+    "last_update": "2017-05-02 08:41:07",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1858142318046008250",
+    "last_update_title": "The V1.8 \u201cPOSEIDON\u201d Patch out Now!",
+    "last_announcement": "2019-07-11 11:00:31",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436927798949153985",
+    "last_announcement_title": "Age of Wonders 3 giveaway!"
   },
   {
     "id": 159,
@@ -327,7 +333,7 @@
       "Action",
       "Indie"
     ],
-    "last_checked": "2025-12-07 11:32:48.814521",
+    "last_checked": "2025-12-08 09:53:57.228236",
     "update_count": 18,
     "last_update": "2025-11-05 08:51:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768233693",
@@ -379,7 +385,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:32:50.097704",
+    "last_checked": "2025-12-08 09:53:58.722836",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010720",
@@ -432,7 +438,7 @@
       "Simulation",
       "Early Access"
     ],
-    "last_checked": "2025-12-07 11:32:51.599204",
+    "last_checked": "2025-12-08 09:54:00.297873",
     "update_count": 50,
     "last_update": "2025-12-05 07:48:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366176813",
@@ -485,7 +491,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:32:53.092659",
+    "last_checked": "2025-12-08 09:54:01.728559",
     "update_count": 50,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
@@ -535,7 +541,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:25.228324",
+    "last_checked": "2025-12-08 09:53:19.753857",
     "update_count": 18,
     "last_update": "2024-04-17 07:46:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032387456863",
@@ -586,7 +592,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:26.723073",
+    "last_checked": "2025-12-08 09:53:21.291630",
     "update_count": 50,
     "last_update": "2019-03-16 11:43:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3140604542249418681",
@@ -626,7 +632,7 @@
       "Strategy",
       "Early Access"
     ],
-    "last_checked": "2025-12-07 11:32:54.609110",
+    "last_checked": "2025-12-08 09:54:03.303970",
     "update_count": 46,
     "last_update": "2025-12-05 01:36:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366175646",
@@ -679,7 +685,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:32:56.281197",
+    "last_checked": "2025-12-08 09:54:04.840888",
     "update_count": 38,
     "last_update": "2025-02-07 09:28:23",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102659495",
@@ -731,7 +737,7 @@
       "Adventure",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:32:57.695627",
+    "last_checked": "2025-12-08 09:54:06.222957",
     "update_count": 11,
     "last_update": "2018-11-27 10:04:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774187448841",
@@ -782,7 +788,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:32:59.201608",
+    "last_checked": "2025-12-08 09:54:07.774565",
     "update_count": 40,
     "last_update": "2024-07-17 11:11:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959961902351",
@@ -834,7 +840,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:00.608812",
+    "last_checked": "2025-12-08 09:54:09.272404",
     "update_count": 49,
     "last_update": "2025-11-03 09:01:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034433006512",
@@ -875,7 +881,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:02.167868",
+    "last_checked": "2025-12-08 09:54:10.792546",
     "update_count": 12,
     "last_update": "2025-11-28 03:22:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
@@ -915,7 +921,7 @@
       "Action RPG",
       "Hack and Slash"
     ],
-    "last_checked": "2025-12-07 11:34:16.764195",
+    "last_checked": "2025-12-08 09:53:10.828700",
     "update_count": 19,
     "last_update": "2022-06-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/23814050/diablo-ii-resurrected-patch-2-4-3-now-live",
@@ -955,7 +961,7 @@
       "Action RPG",
       "Hack and Slash"
     ],
-    "last_checked": "2025-12-07 11:34:14.989052",
+    "last_checked": "2025-12-08 09:53:09.341680",
     "update_count": 20,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -995,7 +1001,7 @@
       "Action RPG",
       "Mobile"
     ],
-    "last_checked": "2025-12-07 11:34:15.589369",
+    "last_checked": "2025-12-08 09:53:10.002037",
     "update_count": 22,
     "last_update": "2025-11-18 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24166781/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
@@ -1047,7 +1053,7 @@
       "Action",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:14.231516",
+    "last_checked": "2025-12-08 09:53:08.483571",
     "update_count": 3,
     "last_update": "2025-09-23 10:00:25",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915560849",
@@ -1099,7 +1105,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:29.781111",
+    "last_checked": "2025-12-08 09:53:22.796695",
     "update_count": 6,
     "last_update": "2012-08-22 12:28:00",
     "last_update_url": "http://store.steampowered.com/news/8703/",
@@ -1149,7 +1155,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:35:07.365725",
+    "last_checked": "2025-12-08 09:53:54.387668",
     "update_count": 2,
     "last_update": null,
     "last_update_url": null,
@@ -1201,7 +1207,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:34.333765",
+    "last_checked": "2025-12-08 09:53:27.291808",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -1252,7 +1258,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:22.244200",
+    "last_checked": "2025-12-08 09:53:16.807583",
     "update_count": 48,
     "last_update": "2019-08-16 06:26:44",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3556075649722956345",
@@ -1303,7 +1309,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:23.736288",
+    "last_checked": "2025-12-08 09:53:18.402083",
     "update_count": 48,
     "last_update": "2020-12-13 09:12:06",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3879252510642674769",
@@ -1353,7 +1359,7 @@
     "genres": [
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:58.322488",
+    "last_checked": "2025-12-08 09:53:48.403613",
     "update_count": 3,
     "last_update": null,
     "last_update_url": null,
@@ -1406,7 +1412,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:49.280017",
+    "last_checked": "2025-12-08 09:53:40.863570",
     "update_count": 50,
     "last_update": "2018-02-26 14:35:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2361446846782055248",
@@ -1459,7 +1465,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:59.804366",
+    "last_checked": "2025-12-08 09:53:49.913055",
     "update_count": 50,
     "last_update": "2025-10-07 20:18:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031161320",
@@ -1500,7 +1506,7 @@
       "Adventure",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:38.900542",
+    "last_checked": "2025-12-08 09:53:31.857233",
     "update_count": 6,
     "last_update": "2025-09-25 08:04:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772247220",
@@ -1551,14 +1557,14 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:59.258227",
-    "update_count": 50,
+    "last_checked": "2025-12-08 09:52:53.396929",
+    "update_count": 51,
     "last_update": "2025-07-17 05:15:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065335572",
     "last_update_title": "Dungeons 4 Hotfix Update 1.9.1",
-    "last_announcement": "2025-11-24 10:01:53",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002021180",
-    "last_announcement_title": "STEAM AWARDS: Dungeons 4 \u2013 \u201cLabor of Love\u201d ... the Evil Kind ..."
+    "last_announcement": "2025-12-08 07:26:46",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366182834",
+    "last_announcement_title": "Dungeons 4 Double Trouble DLC Release Stream"
   },
   {
     "id": 237,
@@ -1603,7 +1609,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:35:02.865727",
+    "last_checked": "2025-12-08 09:53:51.494158",
     "update_count": 50,
     "last_update": "2018-01-31 01:27:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130250382",
@@ -1644,7 +1650,7 @@
       "Strategy",
       "Early Access"
     ],
-    "last_checked": "2025-12-07 11:33:03.664035",
+    "last_checked": "2025-12-08 09:54:12.878101",
     "update_count": 48,
     "last_update": "2025-12-01 06:33:54",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045515",
@@ -1697,7 +1703,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:05.117013",
+    "last_checked": "2025-12-08 09:54:13.824166",
     "update_count": 42,
     "last_update": "2025-06-26 10:05:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891514590",
@@ -1750,7 +1756,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-07 11:34:41.795052",
+    "last_checked": "2025-12-08 09:53:35.010812",
     "update_count": 46,
     "last_update": "2025-10-07 09:00:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772642186",
@@ -1802,7 +1808,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:06.617165",
+    "last_checked": "2025-12-08 09:54:15.504237",
     "update_count": 26,
     "last_update": "2025-11-12 11:40:07",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816215235360707",
@@ -1853,7 +1859,7 @@
       "Action",
       "Indie"
     ],
-    "last_checked": "2025-12-07 11:33:08.125192",
+    "last_checked": "2025-12-08 09:54:24.271351",
     "update_count": 47,
     "last_update": "2024-03-20 10:56:20",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301715038955",
@@ -1893,7 +1899,7 @@
       "Card Game",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:20.607286",
+    "last_checked": "2025-12-08 09:53:15.021085",
     "update_count": 24,
     "last_update": "2025-12-01 17:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244424/34-2-patch-notes-events-and-features",
@@ -1934,7 +1940,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:09.656564",
+    "last_checked": "2025-12-08 09:52:03.815466",
     "update_count": 49,
     "last_update": "2025-11-27 08:57:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467037237",
@@ -1988,7 +1994,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:11.125947",
+    "last_checked": "2025-12-08 09:52:05.319104",
     "update_count": 50,
     "last_update": "2025-04-03 07:11:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897326701",
@@ -2035,7 +2041,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:20.719734",
+    "last_checked": "2025-12-08 09:53:15.431394",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -2086,7 +2092,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:44.843839",
+    "last_checked": "2025-12-08 09:53:36.364894",
     "update_count": 15,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -2138,7 +2144,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:12.717655",
+    "last_checked": "2025-12-08 09:52:07.374737",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -2190,7 +2196,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:14.160497",
+    "last_checked": "2025-12-08 09:52:08.422935",
     "update_count": 32,
     "last_update": "2018-11-19 07:40:25",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687633667",
@@ -2242,7 +2248,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:15.648194",
+    "last_checked": "2025-12-08 09:52:09.838162",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -2294,7 +2300,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:17.214509",
+    "last_checked": "2025-12-08 09:52:11.385690",
     "update_count": 47,
     "last_update": "2024-11-06 12:32:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801572967",
@@ -2346,7 +2352,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:50.797106",
+    "last_checked": "2025-12-08 09:53:42.445916",
     "update_count": 48,
     "last_update": "2025-08-28 03:25:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871582784",
@@ -2396,7 +2402,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:18.829105",
+    "last_checked": "2025-12-08 09:52:12.968769",
     "update_count": 50,
     "last_update": "2025-09-25 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772249766",
@@ -2449,7 +2455,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:20.552772",
+    "last_checked": "2025-12-08 09:52:14.376391",
     "update_count": 35,
     "last_update": "2025-10-16 09:02:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388942146",
@@ -2501,7 +2507,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:21.767549",
+    "last_checked": "2025-12-08 09:52:15.841416",
     "update_count": 14,
     "last_update": "2024-05-02 12:13:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999944520341",
@@ -2555,7 +2561,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-07 11:33:23.148573",
+    "last_checked": "2025-12-08 09:52:17.383655",
     "update_count": 42,
     "last_update": "2025-11-18 09:37:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816307528974338",
@@ -2605,7 +2611,7 @@
     "genres": [
       "Simulation"
     ],
-    "last_checked": "2025-12-07 11:33:24.681245",
+    "last_checked": "2025-12-08 09:52:18.853972",
     "update_count": 49,
     "last_update": "2025-05-12 09:32:39",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287962931",
@@ -2656,7 +2662,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:26.165267",
+    "last_checked": "2025-12-08 09:52:20.337734",
     "update_count": 42,
     "last_update": "2025-11-11 15:36:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816215235333086",
@@ -2708,7 +2714,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:27.676009",
+    "last_checked": "2025-12-08 09:52:21.978802",
     "update_count": 8,
     "last_update": "2024-10-18 07:14:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583179679946",
@@ -2762,7 +2768,7 @@
       "Indie",
       "Early Access"
     ],
-    "last_checked": "2025-12-07 11:33:29.177471",
+    "last_checked": "2025-12-08 09:52:23.364544",
     "update_count": 15,
     "last_update": "2024-07-05 10:49:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267339412357",
@@ -2815,7 +2821,7 @@
       "Indie",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:30.690080",
+    "last_checked": "2025-12-08 09:52:24.855872",
     "update_count": 50,
     "last_update": "2021-03-05 02:41:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4057152305715870665",
@@ -2868,7 +2874,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:32.145008",
+    "last_checked": "2025-12-08 09:52:26.356756",
     "update_count": 44,
     "last_update": "2025-11-11 05:03:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424639",
@@ -2921,7 +2927,7 @@
       "Simulation",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:33.696368",
+    "last_checked": "2025-12-08 09:52:27.949234",
     "update_count": 26,
     "last_update": "2025-11-11 05:04:50",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424640",
@@ -2975,7 +2981,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-07 11:34:35.784669",
+    "last_checked": "2025-12-08 09:53:28.779163",
     "update_count": 38,
     "last_update": "2023-03-28 10:48:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753747564637",
@@ -3025,7 +3031,7 @@
     "genres": [
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:37.297719",
+    "last_checked": "2025-12-08 09:53:30.415617",
     "update_count": 38,
     "last_update": "2025-10-08 08:03:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031177586",
@@ -3067,7 +3073,7 @@
       "Casual",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:35.337676",
+    "last_checked": "2025-12-08 09:52:29.475628",
     "update_count": 9,
     "last_update": "2025-12-06 07:55:50",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366179274",
@@ -3120,7 +3126,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:36.728443",
+    "last_checked": "2025-12-08 09:52:31.095103",
     "update_count": 32,
     "last_update": "2023-01-18 10:29:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474408136594",
@@ -3171,7 +3177,7 @@
       "Action",
       "Adventure"
     ],
-    "last_checked": "2025-12-07 11:33:38.158339",
+    "last_checked": "2025-12-08 09:52:32.400209",
     "update_count": 8,
     "last_update": "2015-10-19 16:03:00",
     "last_update_url": "http://store.steampowered.com/news/18907/",
@@ -3226,7 +3232,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-07 11:33:39.990355",
+    "last_checked": "2025-12-08 09:52:33.924884",
     "update_count": 35,
     "last_update": "2025-11-11 13:43:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768436752",
@@ -3280,7 +3286,7 @@
       "RPG",
       "Early Access"
     ],
-    "last_checked": "2025-12-07 11:33:41.222681",
+    "last_checked": "2025-12-08 09:52:35.409261",
     "update_count": 47,
     "last_update": "2025-09-25 13:21:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772254360",
@@ -3331,7 +3337,7 @@
       "Adventure",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:52.350290",
+    "last_checked": "2025-12-08 09:53:43.948700",
     "update_count": 45,
     "last_update": "2021-05-27 07:53:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815356533175",
@@ -3385,7 +3391,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:53.870464",
+    "last_checked": "2025-12-08 09:53:45.367715",
     "update_count": 48,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -3436,7 +3442,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:42.921978",
+    "last_checked": "2025-12-08 09:52:36.906446",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -3488,7 +3494,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:44.265958",
+    "last_checked": "2025-12-08 09:52:38.569382",
     "update_count": 39,
     "last_update": "2025-11-13 08:34:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816307528918418",
@@ -3536,7 +3542,7 @@
       "Singleplayer"
     ],
     "genres": [],
-    "last_checked": "2025-12-07 11:35:05.823178",
+    "last_checked": "2025-12-08 09:53:52.855810",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -3587,7 +3593,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:45.801136",
+    "last_checked": "2025-12-08 09:52:39.944889",
     "update_count": 39,
     "last_update": "2024-09-02 11:00:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642469644892",
@@ -3638,7 +3644,7 @@
       "Action",
       "Indie"
     ],
-    "last_checked": "2025-12-07 11:33:47.215624",
+    "last_checked": "2025-12-08 09:52:41.405073",
     "update_count": 45,
     "last_update": "2024-06-26 18:58:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267307838601",
@@ -3678,7 +3684,7 @@
       "Action",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:48.693810",
+    "last_checked": "2025-12-08 09:52:43.013465",
     "update_count": 27,
     "last_update": "2025-11-27 23:26:37",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467038465",
@@ -3730,7 +3736,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:50.472720",
+    "last_checked": "2025-12-08 09:52:44.472538",
     "update_count": 50,
     "last_update": "2025-12-07 09:55:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366180828",
@@ -3782,7 +3788,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:51.806278",
+    "last_checked": "2025-12-08 09:52:45.964057",
     "update_count": 49,
     "last_update": "2025-10-04 02:26:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772537196",
@@ -3833,7 +3839,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:31.301210",
+    "last_checked": "2025-12-08 09:53:24.290592",
     "update_count": 15,
     "last_update": "2020-11-03 10:22:36",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3884878205233340138",
@@ -3884,7 +3890,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:32.918693",
+    "last_checked": "2025-12-08 09:53:25.813419",
     "update_count": 36,
     "last_update": "2025-06-18 02:20:26",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906690978",
@@ -3936,7 +3942,7 @@
       "Adventure",
       "Indie"
     ],
-    "last_checked": "2025-12-07 11:33:53.268682",
+    "last_checked": "2025-12-08 09:52:47.483881",
     "update_count": 4,
     "last_update": "2022-07-10 05:03:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035569866792",
@@ -3988,7 +3994,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:54.709450",
+    "last_checked": "2025-12-08 09:52:48.965563",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -4040,7 +4046,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:56.989843",
+    "last_checked": "2025-12-08 09:53:46.901542",
     "update_count": 49,
     "last_update": "2020-11-06 16:56:21",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3887130640398210621",
@@ -4093,7 +4099,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:40.313533",
+    "last_checked": "2025-12-08 09:53:33.558098",
     "update_count": 28,
     "last_update": "2025-10-28 06:49:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641608211",
@@ -4134,7 +4140,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:33:56.345411",
+    "last_checked": "2025-12-08 09:52:50.606917",
     "update_count": 47,
     "last_update": "2025-12-01 04:16:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045187",
@@ -4187,7 +4193,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:33:57.751397",
+    "last_checked": "2025-12-08 09:52:52.081946",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -4237,7 +4243,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:00.743489",
+    "last_checked": "2025-12-08 09:52:54.955802",
     "update_count": 50,
     "last_update": "2025-05-02 09:48:07",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487642163",
@@ -4288,7 +4294,7 @@
       "Action",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:02.312944",
+    "last_checked": "2025-12-08 09:52:56.433371",
     "update_count": 20,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -4339,7 +4345,7 @@
       "Action",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:04.023721",
+    "last_checked": "2025-12-08 09:52:57.938872",
     "update_count": 23,
     "last_update": "2021-09-22 07:02:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406866364677",
@@ -4390,14 +4396,14 @@
       "Action",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:05.493143",
-    "update_count": 36,
+    "last_checked": "2025-12-08 09:52:59.665510",
+    "update_count": 37,
     "last_update": "2025-12-07 04:12:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366180294",
     "last_update_title": "Hotfix 7.0.1",
-    "last_announcement": "2025-12-07 04:12:35",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366180294",
-    "last_announcement_title": "Hotfix 7.0.1"
+    "last_announcement": "2025-12-08 07:00:14",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366182784",
+    "last_announcement_title": "Total War 25th Anniversary: WARHAMMER Retrospective"
   },
   {
     "id": 187,
@@ -4443,7 +4449,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:06.770503",
+    "last_checked": "2025-12-08 09:53:01.008794",
     "update_count": 49,
     "last_update": "2023-10-18 08:11:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608362",
@@ -4496,7 +4502,7 @@
       "RPG",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:08.253277",
+    "last_checked": "2025-12-08 09:53:02.552558",
     "update_count": 34,
     "last_update": "2023-10-18 08:11:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608354",
@@ -4547,7 +4553,7 @@
       "RPG",
       "Simulation"
     ],
-    "last_checked": "2025-12-07 11:34:09.761400",
+    "last_checked": "2025-12-08 09:53:03.911663",
     "update_count": 20,
     "last_update": "2022-10-08 14:34:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405948739381",
@@ -4599,7 +4605,7 @@
       "Adventure",
       "Massively Multiplayer"
     ],
-    "last_checked": "2025-12-07 11:34:11.252950",
+    "last_checked": "2025-12-08 09:53:05.447266",
     "update_count": 34,
     "last_update": "2025-10-15 01:01:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388897625",
@@ -4639,7 +4645,7 @@
       "RTS",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:19.819516",
+    "last_checked": "2025-12-08 09:53:13.769032",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -4679,7 +4685,7 @@
       "Mobile",
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:18.761720",
+    "last_checked": "2025-12-08 09:53:12.999290",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -4731,7 +4737,7 @@
       "RPG",
       "Free To Play"
     ],
-    "last_checked": "2025-12-07 11:34:46.300982",
+    "last_checked": "2025-12-08 09:53:37.857444",
     "update_count": 42,
     "last_update": "2025-10-30 09:34:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432875936",
@@ -4739,6 +4745,58 @@
     "last_announcement": "2025-12-02 08:11:03",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467048775",
     "last_announcement_title": "Devstream 191 Overview"
+  },
+  {
+    "id": 243,
+    "steam_id": 552500,
+    "battlenet_id": null,
+    "battlenet_store_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
+    "name": "Warhammer: Vermintide 2",
+    "app_type": "game",
+    "short_description": "The critically acclaimed Vermintide 2 is a visually stunning and groundbreaking melee action game pushing the boundaries of the first person co-op genre. Join the fight now!",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/552500/75e8930fb500a2be96d5ca82509fdfe2dbfddc82/header_alt_assets_25.jpg?t=1764008361",
+    "dimension_1": "a",
+    "dimension_2": "character",
+    "dimension_3": "explicit",
+    "classification_notes": "",
+    "developer": "Fatshark",
+    "publisher": "Fatshark",
+    "release_date": "Mar 8, 2018",
+    "price_usd": 1.49,
+    "price_notes": "Also requires Warhammer: Vermintide 2 - Necromancer Career DLC ($4.99)",
+    "steam_tags": [
+      "Co-op",
+      "Dark Fantasy",
+      "Games Workshop",
+      "Online Co-Op",
+      "Hack and Slash",
+      "Multiplayer",
+      "Dwarf",
+      "PvE",
+      "Gore",
+      "Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Indie",
+      "RPG"
+    ],
+    "last_checked": "2025-12-08 09:54:25.915716",
+    "update_count": 33,
+    "last_update": "2025-11-27 03:27:48",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467036317",
+    "last_update_title": "Hotfix 6.9.2 patch notes",
+    "last_announcement": "2025-11-27 11:43:18",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467037717",
+    "last_announcement_title": "25 million players + Labor of Love"
   },
   {
     "id": 227,
@@ -4781,7 +4839,7 @@
     "genres": [
       "Strategy"
     ],
-    "last_checked": "2025-12-07 11:34:47.805642",
+    "last_checked": "2025-12-08 09:53:39.328809",
     "update_count": 19,
     "last_update": "2014-04-10 10:16:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/920166227241397473",
@@ -4834,7 +4892,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:34:12.759740",
+    "last_checked": "2025-12-08 09:53:06.987444",
     "update_count": 47,
     "last_update": "2023-07-20 06:19:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051969813693",
@@ -4873,7 +4931,7 @@
     "genres": [
       "MMORPG"
     ],
-    "last_checked": "2025-12-07 11:34:17.796485",
+    "last_checked": "2025-12-08 09:53:12.093390",
     "update_count": 24,
     "last_update": "2025-12-06 01:28:42",
     "last_update_url": "https://news.blizzard.com/en-us/article/24245107/hotfixes-december-5-2025",
@@ -4924,7 +4982,7 @@
       "Indie",
       "RPG"
     ],
-    "last_checked": "2025-12-07 11:35:09.077644",
+    "last_checked": "2025-12-08 09:53:55.921426",
     "update_count": 50,
     "last_update": "2025-08-02 08:14:55",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490750934",
