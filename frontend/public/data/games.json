@@ -747,6 +747,56 @@
     "last_announcement_title": "New gameplay trailer for Darksiders Genesis shows off customizable demon slaying"
   },
   {
+    "id": 250,
+    "steam_id": 381210,
+    "battlenet_id": null,
+    "battlenet_store_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
+    "name": "Dead by Daylight",
+    "app_type": "game",
+    "short_description": "Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits. Pick a side and step into a world of tension and terror with horror gaming's best asymmetrical multiplayer.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1760636583",
+    "dimension_1": "d",
+    "dimension_2": "character",
+    "dimension_3": "implied",
+    "classification_notes": "",
+    "developer": "Behaviour Interactive Inc.",
+    "publisher": "Behaviour Interactive Inc.",
+    "release_date": "Jun 14, 2016",
+    "price_usd": 19.99,
+    "price_notes": null,
+    "steam_tags": [
+      "Horror",
+      "Multiplayer",
+      "Survival Horror",
+      "Online Co-Op",
+      "Co-op",
+      "Survival",
+      "Gore",
+      "Team-Based",
+      "Blood",
+      "Stealth"
+    ],
+    "genres": [
+      "Action"
+    ],
+    "last_checked": "2025-12-08 14:23:15.610363",
+    "update_count": 24,
+    "last_update": "2025-11-04 07:30:18",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034433037239",
+    "last_update_title": "9.3.0 | PTB Patch Notes",
+    "last_announcement": "2025-11-25 07:31:03",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002023860",
+    "last_announcement_title": "9.3.0 | Mid-Chapter"
+  },
+  {
     "id": 165,
     "steam_id": 814530,
     "battlenet_id": null,
