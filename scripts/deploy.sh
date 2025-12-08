@@ -43,6 +43,10 @@ while [[ $# -gt 0 ]]; do
             MODE="updates"
             shift
             ;;
+        --new-only)
+            MODE="new"
+            shift
+            ;;
         --content-only)
             MODE="content"
             shift
@@ -57,7 +61,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         *)
             echo "Unknown option: $1"
-            echo "Usage: $0 [--full|--updates-only|--content-only] [--reprocess] [--refresh-data]"
+            echo "Usage: $0 [--full|--updates-only|--new-only|--content-only] [--reprocess] [--refresh-data]"
             exit 1
             ;;
     esac
@@ -84,11 +88,18 @@ if [ -z "$MODE" ]; then
     echo "     - Create weekly report"
     echo "     - Commit & deploy to Vercel"
     echo ""
-    echo "  3) Social Content Only"
+    echo "  3) New Games Only + Deploy"
+    echo "     - Load newly added games from YAML"
+    echo "     - Skip update checking for existing games"
+    echo "     - Export data for web"
+    echo "     - Create weekly report"
+    echo "     - Commit & deploy to Vercel"
+    echo ""
+    echo "  4) Social Content Only"
     echo "     - Generate social media content"
     echo "     - (no git commit/deploy)"
     echo ""
-    echo -n "Enter choice [1-3]: "
+    echo -n "Enter choice [1-4]: "
     read -r choice
 
     case $choice in
@@ -99,6 +110,9 @@ if [ -z "$MODE" ]; then
             MODE="updates"
             ;;
         3)
+            MODE="new"
+            ;;
+        4)
             MODE="content"
             ;;
         *)
@@ -205,6 +219,33 @@ case $MODE in
         echo ""
         echo "✅ Updates deployment complete!"
         echo "💡 Remember to generate social content separately if needed"
+        ;;
+
+    new)
+        echo "🆕 Loading new games from YAML..."
+        $PYTHON scripts/load_games_from_yaml.py --update --sync
+        echo "   (Skipping update check for existing games)"
+
+        echo ""
+        echo "📤 Exporting data for web..."
+        $PYTHON scripts/export_for_web.py
+
+        echo ""
+        echo "📊 Generating report..."
+        $PYTHON scripts/generate_report.py --days 7
+
+        echo ""
+        echo "📝 Committing changes..."
+        git add frontend/public/data/*.json
+        git commit -m "Update game data: $(date +%Y-%m-%d)" || echo "No changes to commit"
+
+        echo ""
+        echo "🚀 Pushing to GitHub (will trigger Vercel deploy)..."
+        git push origin main
+
+        echo ""
+        echo "✅ New games deployment complete!"
+        echo "💡 Run --full or --updates-only later to check for updates on all games"
         ;;
 
     content)

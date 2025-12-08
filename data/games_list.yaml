@@ -910,16 +910,6 @@ games:
     date_added: "2025-12-06"
     priority: medium
 
-  - name: "Age of Wonders III - Eternal Lords Expansion"
-    steam_id: 329530
-    classification:
-      dimension_1: "a"
-      dimension_2: "character"
-      dimension_3: "explicit"
-    price_notes: "Requires base Age of Wonders III game"
-    date_added: "2025-12-06"
-    priority: medium
-
   - name: "Tales of Maj'Eyal"
     steam_id: 259680
     classification:
@@ -988,6 +978,80 @@ games:
     classification:
       dimension_1: "a"
       dimension_2: "unit"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Zorbus"
+    steam_id: 2125420
+    classification:
+      dimension_1: "c"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Warhammer: Vermintide 2"
+    steam_id: 552500
+    price_notes: "Also requires Warhammer: Vermintide 2 - Necromancer Career DLC (~$4.99)"
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-08"
+    priority: medium
+
+  - name: "Age of Wonders III"
+    steam_id: 226840
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    price_notes: "Also requires Age of Wonders III - Eternal Lords Expansion (~$26.99)"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "ELDEN RING NIGHTREIGN"
+    steam_id: 2622380
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Tainted Grail: The Fall of Avalon"
+    steam_id: 1466060
+    classification:
+      dimension_1: "c"
+      dimension_2: "character"
+      dimension_3: "implied"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Necromancer For A Week"
+    steam_id: 2987110
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Kingdom of Night"
+    steam_id: 1094600
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
+      dimension_3: "explicit"
+    date_added: "2025-12-06"
+    priority: medium
+
+  - name: "Ziggurat 2"
+    steam_id: 1159560
+    classification:
+      dimension_1: "a"
+      dimension_2: "character"
       dimension_3: "explicit"
     date_added: "2025-12-06"
     priority: medium
