@@ -360,6 +360,21 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 pending_overwrites: dict[int, GameEntry] = {}
 
 
+def check_channel(interaction: discord.Interaction) -> bool:
+    """Check if command is being run in the allowed channel."""
+    if not DISCORD_CHANNEL_ID:
+        return True  # No restriction if not configured
+    return str(interaction.channel_id) == DISCORD_CHANNEL_ID
+
+
+async def channel_check_failed(interaction: discord.Interaction):
+    """Send error message when command is run in wrong channel."""
+    await interaction.response.send_message(
+        f"This command can only be used in <#{DISCORD_CHANNEL_ID}>",
+        ephemeral=True,
+    )
+
+
 @bot.event
 async def on_ready():
     """Called when bot is ready."""
@@ -498,10 +513,14 @@ async def add_command(
     Approve a submission with optional fields.
 
     Usage:
-        /approve 552500
-        /approve 552500 centrality:a pov:character naming:explicit
-        /approve battlenet:diablo-4 centrality:a
+        /add 552500
+        /add 552500 centrality:a pov:character naming:explicit
+        /add battlenet:diablo-4 centrality:a
     """
+    if not check_channel(interaction):
+        await channel_check_failed(interaction)
+        return
+
     await interaction.response.defer()
 
     # Parse identifier
@@ -611,6 +630,10 @@ async def edit_command(
         /edit battlenet:diablo-4 notes:New notes here
         /edit "Game Name" priority:medium
     """
+    if not check_channel(interaction):
+        await channel_check_failed(interaction)
+        return
+
     await interaction.response.defer()
 
     # Parse identifier
@@ -668,6 +691,10 @@ async def edit_command(
 @app_commands.describe(identifier="Steam ID, battlenet:slug, or game name")
 async def check_command(interaction: discord.Interaction, identifier: str):
     """Check if a game exists and show its current data."""
+    if not check_channel(interaction):
+        await channel_check_failed(interaction)
+        return
+
     # Parse identifier
     steam_id = None
     battlenet_id = None
