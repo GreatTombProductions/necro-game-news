@@ -945,4 +945,14 @@ games:
     dimension_2: character
     dimension_3: implied
   date_added: '2025-12-08'
+  priority: medium
+- name: Castle Crashers
+  steam_id: 204360
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  date_added: '2025-12-09'
   priority: high
