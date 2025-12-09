@@ -298,6 +298,15 @@ const TAXONOMY_INFO = {
       { key: 'implied', label: 'Implied', color: 'text-blue-300', description: 'Necromancy not mentioned by name' },
     ],
   },
+  availability: {
+    title: 'Availability',
+    description: 'When the necromancer or necromancy becomes available to the player',
+    values: [
+      { key: 'instant', label: 'Instant', color: 'text-green-400', description: 'Necromancer/necromancy available immediately from the start' },
+      { key: 'gated', label: 'Gated', color: 'text-yellow-400', description: 'Necromancer/necromancy takes time or progression to unlock' },
+      { key: 'unknown', label: 'Unknown', color: 'text-gray-500', description: 'Availability not yet determined' },
+    ],
+  },
 };
 
 // Centrality sort order: Higher = better (Core at top when sorting descending)
@@ -389,6 +398,11 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     const hasEarlyAccess = game.genres.includes('Early Access') || game.steam_tags?.includes('Early Access');
     // Only exclude if the game actually has tags/genres and includes Early Access
     if (hasEarlyAccess && game.genres.length > 0) return false;
+  }
+
+  // Availability filter (only applies if not all 3 are selected)
+  if (filters.availability.length > 0 && filters.availability.length < 3) {
+    if (!filters.availability.includes(game.dimension_4)) return false;
   }
 
   // Necromancy grid filter (only applies if not all 16 are selected)
@@ -1157,7 +1171,7 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       {
         accessorKey: 'last_announcement',
-        header: 'Latest Announcement',
+        header: 'News',
         cell: info => {
           const date = info.getValue() as string | undefined;
           if (!date) return <span className="text-xs text-gray-600">None</span>;
@@ -1174,10 +1188,10 @@ export default function GamesTable({ games }: GamesTableProps) {
         accessorKey: 'last_update',
         header: () => (
           <span className="flex items-center">
-            Game Last Updated
+            Updates/Patches
             <HelpIcon
               info={{
-                title: "Game Last Updated",
+                title: "Updates/Patches",
                 description: "Date of announcement corresponding to a patch, release, hotfix, or other update to the game itself. This is an automatically detected property and may miss updates."
               }}
             />
@@ -1192,6 +1206,38 @@ export default function GamesTable({ games }: GamesTableProps) {
               url={info.row.original.last_update_url}
               title={info.row.original.last_update_title}
             />
+          );
+        },
+      },
+      // Availability column - separate from Degree of Necromancy
+      {
+        accessorKey: 'dimension_4',
+        header: () => (
+          <span className="flex items-center">
+            Availability
+            <HelpIcon info={TAXONOMY_INFO.availability} />
+          </span>
+        ),
+        cell: info => {
+          const val = (info.getValue() as string) || 'unknown';
+          const game = info.row.original;
+          const valueInfo = TAXONOMY_INFO.availability.values.find(v => v.key === val);
+          if (!valueInfo) return null;
+          return (
+            <Tooltip
+              text={
+                <DimensionTooltipContent
+                  description={valueInfo.description}
+                  notes={game.dimension_4_notes}
+                  dateUpdated={game.date_updated}
+                />
+              }
+              width="fixed"
+            >
+              <span className={`text-sm ${valueInfo.color} capitalize`}>
+                {valueInfo.label}
+              </span>
+            </Tooltip>
           );
         },
       },

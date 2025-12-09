@@ -74,8 +74,8 @@ def find_existing_game(cursor, game: dict):
     # Try steam_id first (most common)
     if game.get('steam_id'):
         cursor.execute(
-            """SELECT id, dimension_1, dimension_2, dimension_3,
-               dimension_1_notes, dimension_2_notes, dimension_3_notes,
+            """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
+               dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                FROM games WHERE steam_id = ?""",
             (game['steam_id'],)
@@ -93,8 +93,8 @@ def find_existing_game(cursor, game: dict):
     ]:
         if game.get(platform_id):
             cursor.execute(
-                f"""SELECT id, dimension_1, dimension_2, dimension_3,
-                   dimension_1_notes, dimension_2_notes, dimension_3_notes,
+                f"""SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
+                   dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                    platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                    FROM games WHERE {field} = ?""",
                 (game[platform_id],)
@@ -106,8 +106,8 @@ def find_existing_game(cursor, game: dict):
     # Fall back to name for manual entries
     if not any(game.get(k) for k in ['steam_id', 'battlenet_id', 'gog_id', 'epic_id', 'itchio_id']):
         cursor.execute(
-            """SELECT id, dimension_1, dimension_2, dimension_3,
-               dimension_1_notes, dimension_2_notes, dimension_3_notes,
+            """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
+               dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
                FROM games WHERE name = ? AND primary_platform = 'manual'""",
             (game['name'],)
@@ -308,6 +308,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         dimension_1_notes = game.get('dimension_1_notes', '')
         dimension_2_notes = game.get('dimension_2_notes', '')
         dimension_3_notes = game.get('dimension_3_notes', '')
+        dimension_4 = game.get('dimension_4', 'unknown')  # Availability: instant, gated, unknown
+        dimension_4_notes = game.get('dimension_4_notes', '')
 
         # Extract platform information
         platforms = game.get('platforms', ['steam'] if steam_id else ['manual'])
@@ -335,15 +337,15 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
 
             if existing:
                 db_id = existing[0]
-                old_dim1, old_dim2, old_dim3 = existing[1:4]
-                old_dim1_notes, old_dim2_notes, old_dim3_notes = existing[4:7]
-                old_platforms = existing[7]
-                old_primary = existing[8]
-                old_battlenet = existing[9]
-                old_battlenet_store = existing[10]
-                old_gog = existing[11]
-                old_epic = existing[12]
-                old_itchio = existing[13]
+                old_dim1, old_dim2, old_dim3, old_dim4 = existing[1:5]
+                old_dim1_notes, old_dim2_notes, old_dim3_notes, old_dim4_notes = existing[5:9]
+                old_platforms = existing[9]
+                old_primary = existing[10]
+                old_battlenet = existing[11]
+                old_battlenet_store = existing[12]
+                old_gog = existing[13]
+                old_epic = existing[14]
+                old_itchio = existing[15]
 
                 if update_existing:
                     # Check if classification or platform info changed
@@ -356,9 +358,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         old_dim1 != new_dim1 or
                         old_dim2 != new_dim2 or
                         old_dim3 != new_dim3 or
+                        old_dim4 != dimension_4 or
                         old_dim1_notes != dimension_1_notes or
                         old_dim2_notes != dimension_2_notes or
-                        old_dim3_notes != dimension_3_notes
+                        old_dim3_notes != dimension_3_notes or
+                        old_dim4_notes != dimension_4_notes
                     )
 
                     platform_changed = (
@@ -378,9 +382,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 dimension_1 = ?,
                                 dimension_2 = ?,
                                 dimension_3 = ?,
+                                dimension_4 = ?,
                                 dimension_1_notes = ?,
                                 dimension_2_notes = ?,
                                 dimension_3_notes = ?,
+                                dimension_4_notes = ?,
                                 platforms = ?,
                                 primary_platform = ?,
                                 battlenet_id = ?,
@@ -391,8 +397,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 external_url = ?
                             WHERE id = ?
                         """, (
-                            new_dim1, new_dim2, new_dim3,
-                            dimension_1_notes, dimension_2_notes, dimension_3_notes,
+                            new_dim1, new_dim2, new_dim3, dimension_4,
+                            dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                             new_platforms_json, primary_platform,
                             battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
                             external_url, db_id
@@ -406,12 +412,16 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                             changes.append(f"dim2: {old_dim2}→{new_dim2}")
                         if old_dim3 != new_dim3:
                             changes.append(f"dim3: {old_dim3}→{new_dim3}")
+                        if old_dim4 != dimension_4:
+                            changes.append(f"dim4: {old_dim4}→{dimension_4}")
                         if old_dim1_notes != dimension_1_notes:
                             changes.append("dim1_notes")
                         if old_dim2_notes != dimension_2_notes:
                             changes.append("dim2_notes")
                         if old_dim3_notes != dimension_3_notes:
                             changes.append("dim3_notes")
+                        if old_dim4_notes != dimension_4_notes:
+                            changes.append("dim4_notes")
                         if platform_changed:
                             changes.append("platforms")
 
@@ -428,10 +438,10 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 INSERT INTO games
                 (steam_id, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
                  platforms, primary_platform, external_url,
-                 name, dimension_1, dimension_2, dimension_3,
-                 dimension_1_notes, dimension_2_notes, dimension_3_notes,
+                 name, dimension_1, dimension_2, dimension_3, dimension_4,
+                 dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                  short_description, genres, price_notes, date_updated)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -446,9 +456,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 classification['dimension_1'],
                 classification['dimension_2'],
                 classification['dimension_3'],
+                dimension_4,
                 dimension_1_notes,
                 dimension_2_notes,
                 dimension_3_notes,
+                dimension_4_notes,
                 short_description,
                 json.dumps(genres) if genres else None,
                 price_notes,

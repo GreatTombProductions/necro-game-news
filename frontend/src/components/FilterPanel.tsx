@@ -9,6 +9,8 @@ export interface NecromancyFilter {
   naming: 'explicit' | 'implied';
 }
 
+export type Availability = 'instant' | 'gated' | 'unknown';
+
 export interface FilterState {
   genres: string[];
   platforms: Platform[];
@@ -19,6 +21,7 @@ export interface FilterState {
   priceMin: string;
   priceMax: string;
   includeEarlyAccess: boolean;
+  availability: Availability[];
   necromancyGrid: NecromancyFilter[];
 }
 
@@ -26,6 +29,7 @@ export interface FilterState {
 const CENTRALITY_KEYS = ['a', 'b', 'c', 'd'] as const;
 const POV_KEYS = ['character', 'unit'] as const;
 const NAMING_KEYS = ['explicit', 'implied'] as const;
+const AVAILABILITY_KEYS: Availability[] = ['instant', 'gated', 'unknown'];
 
 // Generate all 16 necromancy combinations
 export function getAllNecromancyCombinations(): NecromancyFilter[] {
@@ -51,6 +55,7 @@ export const initialFilterState: FilterState = {
   priceMin: '',
   priceMax: '',
   includeEarlyAccess: true,
+  availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
 };
 
@@ -72,6 +77,13 @@ const CENTRALITY_LABELS: Record<string, string> = {
   d: 'Minimal',
 };
 
+// Availability labels
+const AVAILABILITY_LABELS: Record<Availability, string> = {
+  instant: 'Instant',
+  gated: 'Gated',
+  unknown: 'Unknown',
+};
+
 // Helper to check if a combination is selected
 function isSelected(
   grid: NecromancyFilter[],
@@ -81,6 +93,55 @@ function isSelected(
 ): boolean {
   return grid.some(
     (f) => f.centrality === centrality && f.pov === pov && f.naming === naming
+  );
+}
+
+// Availability Checkboxes Component
+function AvailabilityCheckboxes({
+  value,
+  onChange,
+}: {
+  value: Availability[];
+  onChange: (availability: Availability[]) => void;
+}) {
+  const toggleAvailability = (avail: Availability) => {
+    if (value.includes(avail)) {
+      onChange(value.filter((a) => a !== avail));
+    } else {
+      onChange([...value, avail]);
+    }
+  };
+
+  const selectAll = () => onChange([...AVAILABILITY_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === AVAILABILITY_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {AVAILABILITY_KEYS.map((avail) => (
+          <label
+            key={avail}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(avail)}
+              onChange={() => toggleAvailability(avail)}
+              className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{AVAILABILITY_LABELS[avail]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
   );
 }
 
@@ -569,6 +630,7 @@ export default function FilterPanel({
     filters.priceMin ||
     filters.priceMax ||
     !filters.includeEarlyAccess ||
+    filters.availability.length < 3 || // Less than all 3 = filter active
     filters.necromancyGrid.length < 16; // Less than all = filter active
 
   return (
@@ -604,7 +666,7 @@ export default function FilterPanel({
 
         {/* Date Ranges */}
         <DateRangeInput
-          label="Latest Announcement"
+          label="News"
           fromValue={filters.announcementDateFrom}
           toValue={filters.announcementDateTo}
           onFromChange={(v) => updateFilter('announcementDateFrom', v)}
@@ -612,7 +674,7 @@ export default function FilterPanel({
         />
 
         <DateRangeInput
-          label="Game Last Updated"
+          label="Updates/Patches"
           fromValue={filters.lastUpdatedFrom}
           toValue={filters.lastUpdatedTo}
           onFromChange={(v) => updateFilter('lastUpdatedFrom', v)}
@@ -661,18 +723,35 @@ export default function FilterPanel({
         </div>
       </div>
 
-      {/* Necromancy Grid */}
-      <div className="mt-4 pt-4 border-t border-purple-700/30">
-        <label className="block text-sm text-gray-400 mb-2">Degree of Necromancy</label>
-        <NecromancyGrid
-          value={filters.necromancyGrid}
-          onChange={(grid) => updateFilter('necromancyGrid', grid)}
-        />
-        {filters.necromancyGrid.length < 16 && (
-          <p className="text-xs text-gray-500 mt-2">
-            {filters.necromancyGrid.length} of 16 combinations selected
-          </p>
-        )}
+      {/* Availability & Necromancy Grid Row */}
+      <div className="mt-4 pt-4 border-t border-purple-700/30 flex flex-col md:flex-row gap-6">
+        {/* Availability */}
+        <div className="flex-shrink-0">
+          <label className="block text-sm text-gray-400 mb-2">Availability</label>
+          <AvailabilityCheckboxes
+            value={filters.availability}
+            onChange={(availability) => updateFilter('availability', availability)}
+          />
+          {filters.availability.length < 3 && (
+            <p className="text-xs text-gray-500 mt-2">
+              {filters.availability.length} of 3 selected
+            </p>
+          )}
+        </div>
+
+        {/* Necromancy Grid */}
+        <div className="flex-grow">
+          <label className="block text-sm text-gray-400 mb-2">Degree of Necromancy</label>
+          <NecromancyGrid
+            value={filters.necromancyGrid}
+            onChange={(grid) => updateFilter('necromancyGrid', grid)}
+          />
+          {filters.necromancyGrid.length < 16 && (
+            <p className="text-xs text-gray-500 mt-2">
+              {filters.necromancyGrid.length} of 16 combinations selected
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -687,6 +766,7 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.lastUpdatedFrom || filters.lastUpdatedTo) count++;
   if (filters.priceMin || filters.priceMax) count++;
   if (!filters.includeEarlyAccess) count++;
+  if (filters.availability.length < 3) count++; // Only count if some are deselected
   if (filters.necromancyGrid.length < 16) count++; // Only count if some are deselected
   return count;
 }

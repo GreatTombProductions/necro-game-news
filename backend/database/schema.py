@@ -47,9 +47,11 @@ CREATE TABLE IF NOT EXISTS games (
     dimension_1 TEXT CHECK(dimension_1 IN ('a', 'b', 'c', 'd')),
     dimension_2 TEXT CHECK(dimension_2 IN ('character', 'unit')),
     dimension_3 TEXT CHECK(dimension_3 IN ('explicit', 'implied')),
+    dimension_4 TEXT DEFAULT 'unknown' CHECK(dimension_4 IN ('instant', 'gated', 'unknown')),  -- Availability
     dimension_1_notes TEXT,  -- Editorial notes for dimension_1 (centrality)
     dimension_2_notes TEXT,  -- Editorial notes for dimension_2 (POV)
     dimension_3_notes TEXT,  -- Editorial notes for dimension_3 (naming)
+    dimension_4_notes TEXT,  -- Editorial notes for dimension_4 (availability)
 
     -- Metadata (may come from various platforms)
     steam_tags TEXT,  -- JSON array as string

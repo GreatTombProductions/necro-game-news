@@ -5,6 +5,7 @@ interface SubmissionData {
   steamId: string;
   submissionType: 'addition' | 'revision';
   submitterType: 'player' | 'developer';
+  availability: string;
   centrality: string;
   pov: string;
   naming: string;
@@ -27,6 +28,11 @@ const POV_LABELS: Record<string, string> = {
 const NAMING_LABELS: Record<string, string> = {
   explicit: 'Explicit',
   implied: 'Implied',
+};
+
+const AVAILABILITY_LABELS: Record<string, string> = {
+  instant: 'Instant',
+  gated: 'Gated',
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -102,6 +108,15 @@ function buildDiscordEmbed(data: SubmissionData) {
     value: isDeveloper ? 'Developer' : 'Player',
     inline: true,
   });
+
+  // Availability (if provided)
+  if (data.availability) {
+    fields.push({
+      name: 'Availability',
+      value: AVAILABILITY_LABELS[data.availability] || data.availability,
+      inline: true,
+    });
+  }
 
   // Taxonomy (if provided)
   const taxonomy: string[] = [];

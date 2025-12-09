@@ -67,6 +67,12 @@ NAMING_MAP = {
     "implied": "implied",
 }
 
+AVAILABILITY_MAP = {
+    "instant": "instant",
+    "gated": "gated",
+    "unknown": "unknown",
+}
+
 
 class GameEntry:
     """Represents a game entry for the YAML file."""
@@ -82,7 +88,8 @@ class GameEntry:
         dimension_1: Optional[str] = None,
         dimension_2: Optional[str] = None,
         dimension_3: Optional[str] = None,
-        notes: Optional[str] = None,
+        dimension_4: Optional[str] = None,
+        dimension_1_notes: Optional[str] = None,
         priority: str = "high",
     ):
         self.name = name
@@ -94,9 +101,10 @@ class GameEntry:
         self.dimension_1 = dimension_1
         self.dimension_2 = dimension_2
         self.dimension_3 = dimension_3
-        self.notes = notes
+        self.dimension_4 = dimension_4
+        self.dimension_1_notes = dimension_1_notes
         self.priority = priority
-        self.date_added = date.today().isoformat()
+        self.date_updated = date.today().isoformat()
 
     def validate(self) -> list[str]:
         """Validate the entry and return list of missing/invalid fields."""
@@ -166,17 +174,20 @@ class GameEntry:
             entry["platforms"] = platforms
 
         # Add classification
-        entry["classification"] = {
+        classification = {
             "dimension_1": self.dimension_1,
             "dimension_2": self.dimension_2,
             "dimension_3": self.dimension_3,
         }
+        if self.dimension_4:
+            classification["dimension_4"] = self.dimension_4
+        entry["classification"] = classification
 
         # Add optional fields
-        if self.notes:
-            entry["notes"] = self.notes
+        if self.dimension_1_notes:
+            entry["dimension_1_notes"] = self.dimension_1_notes
 
-        entry["date_added"] = self.date_added
+        entry["date_updated"] = self.date_updated
         entry["priority"] = self.priority
 
         return entry
@@ -233,6 +244,7 @@ def parse_embed_submission(embed: discord.Embed) -> GameEntry:
     centrality = None
     pov = None
     naming = None
+    availability = None
     notes = None
 
     for field in embed.fields:
@@ -250,6 +262,13 @@ def parse_embed_submission(embed: discord.Embed) -> GameEntry:
 
         elif "battlenet" in field_name or "battle.net" in field_name:
             battlenet_id = field_value
+
+        elif "availability" in field_name:
+            # Parse availability field
+            for key in AVAILABILITY_MAP:
+                if key in field_value.lower():
+                    availability = AVAILABILITY_MAP[key]
+                    break
 
         elif "classification" in field_name or "suggested" in field_name:
             # Parse classification from format like:
@@ -272,6 +291,11 @@ def parse_embed_submission(embed: discord.Embed) -> GameEntry:
                         if key in line_lower:
                             naming = NAMING_MAP[key]
                             break
+                elif "availability" in line_lower:
+                    for key in AVAILABILITY_MAP:
+                        if key in line_lower:
+                            availability = AVAILABILITY_MAP[key]
+                            break
 
         elif "notes" in field_name or "justification" in field_name:
             notes = field_value
@@ -283,7 +307,8 @@ def parse_embed_submission(embed: discord.Embed) -> GameEntry:
         dimension_1=centrality,
         dimension_2=pov,
         dimension_3=naming,
-        notes=notes,
+        dimension_4=availability,
+        dimension_1_notes=notes,
     )
 
 
@@ -315,6 +340,9 @@ def parse_overrides(args: str) -> dict:
         elif field == "naming":
             value = NAMING_MAP.get(value.lower(), value)
             fields["dimension_3"] = value
+        elif field == "availability":
+            value = AVAILABILITY_MAP.get(value.lower(), value)
+            fields["dimension_4"] = value
         elif field == "steam_id":
             fields["steam_id"] = int(value)
         elif field == "battlenet_id":
@@ -322,7 +350,7 @@ def parse_overrides(args: str) -> dict:
         elif field == "name":
             fields["name"] = value
         elif field == "notes":
-            fields["notes"] = value
+            fields["dimension_1_notes"] = value
         elif field == "priority":
             fields["priority"] = value
 
@@ -665,7 +693,7 @@ async def edit_command(
     change_dict = parse_overrides(changes)
 
     for key, value in change_dict.items():
-        if key in ["dimension_1", "dimension_2", "dimension_3"]:
+        if key in ["dimension_1", "dimension_2", "dimension_3", "dimension_4"]:
             if "classification" not in existing:
                 existing["classification"] = {}
             existing["classification"][key] = value
@@ -726,8 +754,9 @@ async def check_command(interaction: discord.Interaction, identifier: str):
             f"  centrality: {classification.get('dimension_1', 'N/A')}\n"
             f"  pov: {classification.get('dimension_2', 'N/A')}\n"
             f"  naming: {classification.get('dimension_3', 'N/A')}\n"
-            f"notes: {existing.get('notes', 'N/A')}\n"
-            f"date_added: {existing.get('date_added', 'N/A')}\n"
+            f"  availability: {classification.get('dimension_4', 'N/A')}\n"
+            f"notes: {existing.get('dimension_1_notes', existing.get('notes', 'N/A'))}\n"
+            f"date_updated: {existing.get('date_updated', existing.get('date_added', 'N/A'))}\n"
             f"```"
         )
     else:

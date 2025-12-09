@@ -10,12 +10,14 @@ type SubmitterType = 'player' | 'developer';
 type Centrality = '' | 'a' | 'b' | 'c' | 'd';
 type POV = '' | 'character' | 'unit';
 type Naming = '' | 'explicit' | 'implied';
+type Availability = '' | 'instant' | 'gated';
 
 interface FormData {
   gameName: string;
   steamId: string;
   submissionType: SubmissionType;
   submitterType: SubmitterType;
+  availability: Availability;
   centrality: Centrality;
   pov: POV;
   naming: Naming;
@@ -40,12 +42,18 @@ const NAMING_OPTIONS = [
   { value: 'implied', label: 'Implied', description: 'Necromancy not named explicitly' },
 ];
 
+const AVAILABILITY_OPTIONS = [
+  { value: 'instant', label: 'Instant', description: 'Available immediately from the start' },
+  { value: 'gated', label: 'Gated', description: 'Takes time or progression to unlock' },
+];
+
 export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps) {
   const [formData, setFormData] = useState<FormData>({
     gameName: '',
     steamId: '',
     submissionType: 'addition',
     submitterType: 'player',
+    availability: '',
     centrality: '',
     pov: '',
     naming: '',
@@ -94,6 +102,7 @@ export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps)
       steamId: '',
       submissionType: 'addition',
       submitterType: 'player',
+      availability: '',
       centrality: '',
       pov: '',
       naming: '',
@@ -245,6 +254,25 @@ export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps)
                     Developer
                   </button>
                 </div>
+              </div>
+
+              {/* Availability section */}
+              <div className="border-t border-purple-700/30 pt-4">
+                <label className="block text-sm font-medium text-purple-300 mb-2">
+                  When is necromancy available? <span className="text-gray-500 font-normal">(optional)</span>
+                </label>
+                <select
+                  value={formData.availability}
+                  onChange={(e) => setFormData({ ...formData, availability: e.target.value as Availability })}
+                  className="w-full px-3 py-2 bg-gray-800 border border-purple-700/50 rounded-lg text-gray-200 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 text-sm"
+                >
+                  <option value="">Not sure / Skip</option>
+                  {AVAILABILITY_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label} — {opt.description}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Taxonomy section */}
