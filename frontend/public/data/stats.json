@@ -4,17 +4,17 @@
   "recent_updates_30d": 240,
   "dimension_1": {
     "a": 64,
-    "b": 19,
-    "c": 14,
+    "b": 20,
+    "c": 13,
     "d": 11
   },
   "dimension_2": {
-    "character": 94,
-    "unit": 14
+    "character": 93,
+    "unit": 15
   },
   "dimension_3": {
     "explicit": 79,
     "implied": 29
   },
-  "last_updated": "2025-12-08T18:22:39.985063"
+  "last_updated": "2025-12-08T18:23:49.135821"
 }
