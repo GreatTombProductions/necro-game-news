@@ -18,6 +18,43 @@ import FilterPanel, {
   countActiveFilters,
 } from './FilterPanel';
 
+// Format date_updated string (e.g., "2025-12-05 11:17:24.515204") to just date
+function formatDateUpdated(dateStr: string | undefined): string | null {
+  if (!dateStr) return null;
+  // Extract just the date part (YYYY-MM-DD)
+  const datePart = dateStr.split(' ')[0];
+  return datePart || null;
+}
+
+// Component for dimension tooltip content with notes
+function DimensionTooltipContent({
+  description,
+  notes,
+  dateUpdated,
+}: {
+  description: string;
+  notes: string | undefined;
+  dateUpdated: string | undefined;
+}) {
+  const formattedDate = formatDateUpdated(dateUpdated);
+  const hasNote = notes && notes.trim().length > 0;
+
+  return (
+    <div className="space-y-2">
+      <div>{description}</div>
+      {hasNote && (
+        <div className="border-t border-purple-700/50 pt-2">
+          <span className="text-purple-300">Mortimer's note:</span>{' '}
+          <span className="italic">"{notes}"</span>
+          {formattedDate && (
+            <div className="text-[10px] text-gray-500 mt-1">{formattedDate}</div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // SVG icon components for each platform
 function SteamIcon({ className }: { className?: string }) {
   return <img src="/icons/steam.svg" alt="Steam" className={className} />;
@@ -635,8 +672,9 @@ function Tooltip({
   const updateTooltipPosition = useCallback(() => {
     if (!triggerRef.current) return;
     const rect = triggerRef.current.getBoundingClientRect();
+    // For fixed width (dimension tooltips), use larger height to account for notes
     const tooltipWidth = width === 'fixed' ? 256 : Math.min(String(text).length * 7 + 24, 400);
-    const tooltipHeight = 40;
+    const tooltipHeight = width === 'fixed' ? 120 : 40;
     setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
   }, [text, width]);
 
@@ -658,7 +696,7 @@ function Tooltip({
   };
 
   const showTooltip = isHovered || isOpen;
-  const widthClass = width === 'fixed' ? 'w-64 text-center' : 'whitespace-nowrap max-w-[400px]';
+  const widthClass = width === 'fixed' ? 'w-64 text-left whitespace-normal' : 'whitespace-nowrap max-w-[400px]';
 
   return (
     <span
@@ -1175,10 +1213,20 @@ export default function GamesTable({ games }: GamesTableProps) {
             sortingFn: centralitySortFn,
             cell: info => {
               const val = info.getValue() as string;
+              const game = info.row.original;
               const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <Tooltip text={valueInfo.description} width="fixed">
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.dimension_1_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
                   <span className={`font-mono ${valueInfo.color}`}>
                     {valueInfo.label}
                   </span>
@@ -1196,10 +1244,20 @@ export default function GamesTable({ games }: GamesTableProps) {
             ),
             cell: info => {
               const val = info.getValue() as string;
+              const game = info.row.original;
               const valueInfo = TAXONOMY_INFO.pov.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <Tooltip text={valueInfo.description} width="fixed">
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.dimension_2_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
                   <span className={`text-sm ${valueInfo.color} capitalize`}>
                     {valueInfo.label}
                   </span>
@@ -1217,10 +1275,20 @@ export default function GamesTable({ games }: GamesTableProps) {
             ),
             cell: info => {
               const val = info.getValue() as string;
+              const game = info.row.original;
               const valueInfo = TAXONOMY_INFO.naming.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <Tooltip text={valueInfo.description} width="fixed">
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.dimension_3_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
                   <span className={`text-sm ${valueInfo.color} capitalize`}>
                     {valueInfo.label}
                   </span>

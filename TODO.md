@@ -1,5 +1,6 @@
 # Necro Game News
 - integrate editor's notes into degree of necromancy tooltips (frontend first, then make CLI (with options of what to pull up based on date of last edited))
+- confirm cross posting is working
 - display reviews in the table
 - expand to more platforms
 - weekly roundup content

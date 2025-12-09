@@ -18,7 +18,10 @@ export interface Game {
   dimension_1: 'a' | 'b' | 'c' | 'd';
   dimension_2: 'character' | 'unit';
   dimension_3: 'explicit' | 'implied';
-  classification_notes?: string;
+  dimension_1_notes?: string;
+  dimension_2_notes?: string;
+  dimension_3_notes?: string;
+  date_updated?: string;
   developer?: string;
   publisher?: string;
   release_date?: string;

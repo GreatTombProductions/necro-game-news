@@ -11,9 +11,9 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer is a fully playable class with extensive skill trees
-  date_added: '2025-12-02'
   priority: high
+  dimension_1_notes: Necromancer is a fully playable class with extensive skill trees
+  date_updated: '2025-12-02'
 - name: Diablo III
   battlenet_id: diablo-3
   battlenet_store_id: diablo-iii
@@ -30,9 +30,9 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer class added via Rise of the Necromancer DLC
-  date_added: '2025-12-06'
   priority: high
+  dimension_1_notes: Necromancer class added via Rise of the Necromancer DLC
+  date_updated: '2025-12-06'
 - name: Diablo Immortal
   battlenet_id: diablo-immortal
   platforms:
@@ -47,9 +47,9 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer is a fully playable class
-  date_added: '2025-12-06'
   priority: high
+  dimension_1_notes: Necromancer is a fully playable class
+  date_updated: '2025-12-06'
 - name: 'Diablo II: Resurrected'
   battlenet_id: diablo-2-resurrected
   battlenet_store_id: diablo-ii-resurrected
@@ -65,9 +65,9 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer is a core class since the original game
-  date_added: '2025-12-06'
   priority: high
+  dimension_1_notes: Necromancer is a core class since the original game
+  date_updated: '2025-12-06'
 - name: World of Warcraft
   battlenet_id: world-of-warcraft-beta
   battlenet_store_id: world-of-warcraft-midnight
@@ -83,9 +83,9 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  notes: Death Knight class with undead army abilities; Warlock demons
-  date_added: '2025-12-06'
   priority: medium
+  dimension_1_notes: Death Knight class with undead army abilities; Warlock demons
+  date_updated: '2025-12-06'
 - name: Warcraft Rumble
   battlenet_id: warcraft-rumble
   platforms:
@@ -100,9 +100,9 @@ games:
     dimension_1: a
     dimension_2: unit
     dimension_3: explicit
-  notes: Undead faction includes necromancer minions
-  date_added: '2025-12-06'
   priority: medium
+  dimension_1_notes: Undead faction includes necromancer minions
+  date_updated: '2025-12-06'
 - name: 'Warcraft III: Reforged'
   battlenet_id: warcraft-3
   battlenet_store_id: warcraft-3-reforged
@@ -118,9 +118,9 @@ games:
     dimension_1: a
     dimension_2: unit
     dimension_3: explicit
-  notes: Undead faction with playable necromancer units
-  date_added: '2025-12-06'
   priority: high
+  dimension_1_notes: Undead faction with playable necromancer units
+  date_updated: '2025-12-06'
 - name: Hearthstone
   battlenet_id: hearthstone
   platforms:
@@ -135,741 +135,741 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  notes: Death Knight class with undead/corpse mechanics
-  date_added: '2025-12-06'
   priority: medium
+  dimension_1_notes: Death Knight class with undead/corpse mechanics
+  date_updated: '2025-12-06'
 - name: Grim Dawn
   steam_id: 219990
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer mastery class available
-  date_added: '2025-12-02'
   priority: high
+  dimension_1_notes: Necromancer mastery class available
+  date_updated: '2025-12-02'
 - name: Last Epoch
   steam_id: 899770
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Acolyte base class with Necromancer specialization
-  date_added: '2025-12-02'
   priority: high
+  dimension_1_notes: Acolyte base class with Necromancer specialization
+  date_updated: '2025-12-02'
 - name: V Rising
   steam_id: 1604030
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: implied
-  notes: Unholy spell school with necromantic abilities, graveyard mechanics
-  date_added: '2025-12-02'
   priority: high
+  dimension_1_notes: Unholy spell school with necromantic abilities, graveyard mechanics
+  date_updated: '2025-12-02'
 - name: Path of Exile
   steam_id: 238960
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Necromancer specialization for the Witch class
-  date_added: '2025-12-02'
   priority: high
+  dimension_1_notes: Necromancer specialization for the Witch class
+  date_updated: '2025-12-02'
 - name: Cult of the Lamb
   steam_id: 1313140
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: explicit
-  notes: Necromantic weapons, resurrection spells, and rituals available
-  date_added: '2025-12-02'
   priority: medium
+  dimension_1_notes: Necromantic weapons, resurrection spells, and rituals available
+  date_updated: '2025-12-02'
 - name: Night Swarm
   steam_id: 3668370
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  notes: Undead-summoning artifacts as part of gameplay mechanics
-  date_added: '2025-12-04'
+  dimension_1_notes: Undead-summoning artifacts as part of gameplay mechanics
+  date_updated: '2025-12-04'
 - name: 'Total War: WARHAMMER III'
   steam_id: 1142710
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  notes: Vampire Counts faction with necromancers and undead armies
-  date_added: '2025-12-02'
   priority: medium
+  dimension_1_notes: Vampire Counts faction with necromancers and undead armies
+  date_updated: '2025-12-02'
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: Hades II
   steam_id: 1145350
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: Lost Ark
   steam_id: 1599340
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: Absolum
   steam_id: 1904480
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Dungeons 4
   steam_id: 1643310
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
-  notes: Playing as the absolute evil, some necromancy involved in raising undead
-    units
+  dimension_1_notes: Playing as the absolute evil, some necromancy involved in raising
+    undead units
+  date_updated: '2025-12-05'
 - name: Nobody Saves the World
   steam_id: 1432050
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Total War: WARHAMMER'
   steam_id: 364360
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Iratus: Lord of the Dead'
   steam_id: 807120
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: SWORN
   steam_id: 1763250
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Throne of Bone
   steam_id: 1866630
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Cubic Cosmos
   steam_id: 3332600
   classification:
     dimension_1: d
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: BALL x PIT
   steam_id: 2062430
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: low
-  notes: Firing ghost balls counts as necromancy by technicality, there is also a
-    necromancer structure and a zombie summoning passive.
+  dimension_1_notes: Firing ghost balls counts as necromancy by technicality, there
+    is also a necromancer structure and a zombie summoning passive.
+  date_updated: '2025-12-05'
 - name: Hell Clock
   steam_id: 1782460
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: 'Total War: WARHAMMER II'
   steam_id: 594570
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Overlord: Fellowship of Evil'
   steam_id: 306670
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: 'Solo Leveling: ARISE OVERDRIVE'
   steam_id: 2373990
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Decks of the Damned
   steam_id: 2159900
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Death Crown
   steam_id: 814530
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Baldur's Gate 3
   steam_id: 1086940
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Have a Nice Death
   steam_id: 1740720
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Monster Train 2
   steam_id: 2742830
   classification:
     dimension_1: d
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: Rogue Lords
   steam_id: 1069690
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: low
-  notes: Playing as the Devil, with some necromantic abilities imparted to disciples
-    and demonstrated in events/lore
+  dimension_1_notes: Playing as the Devil, with some necromantic abilities imparted
+    to disciples and demonstrated in events/lore
+  date_updated: '2025-12-05'
 - name: 'Shadow Gambit: The Cursed Crew'
   steam_id: 1545560
   classification:
     dimension_1: d
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: low
+  date_updated: '2025-12-05'
 - name: The Unliving
   steam_id: 986040
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Kingdom Rush Vengeance - Tower Defense
   steam_id: 1367550
   classification:
     dimension_1: b
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: 'Necronator: Dead Wrong'
   steam_id: 1144970
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Hero Siege
   steam_id: 269210
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Unferat
   steam_id: 1271750
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Undead Horde 2: Necropolis'
   steam_id: 2065810
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: 'Infectonator 3: Apocalypse'
   steam_id: 666570
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Darksiders II Deathinitive Edition
   steam_id: 388410
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Be My Horde
   steam_id: 2499520
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Deck of Haunts
   steam_id: 3179730
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Wolcen: Lords of Mayhem'
   steam_id: 424370
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Tainted Grail: Conquest'
   steam_id: 1199030
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: 'Immortal Realms: Vampire Wars'
   steam_id: 1024480
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Soulstone Survivors
   steam_id: 2066020
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: It Lurks Below
   steam_id: 697550
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Boneraiser Minions
   steam_id: 1944570
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Undead Horde
   steam_id: 790850
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Path of Exile 2
   steam_id: 2694490
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Frosthaven
   steam_id: 2347080
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Songs of Conquest
   steam_id: 867210
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: high
+  date_updated: '2025-12-05'
 - name: Mind Over Magic
   steam_id: 1270580
   classification:
     dimension_1: c
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: The Necromancer's Tale
   steam_id: 1315320
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Necro Story
   steam_id: 968800
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Necromantic
   steam_id: 2615010
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Necrosmith 2
   steam_id: 2277320
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Necrosmith
   steam_id: 1949190
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Super Grave Snatchers
   steam_id: 1649570
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Loop Hero
   steam_id: 1282730
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-05'
   priority: medium
+  date_updated: '2025-12-05'
 - name: Heroes of Annihilated Empires
   steam_id: 4800
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Dominions 4: Thrones of Ascension'
   steam_id: 259060
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Dominions 5 - Warriors of the Faith
   steam_id: 722060
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Conquest of Elysium 3
   steam_id: 211900
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Conquest of Elysium 4
   steam_id: 403950
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Age of Fear: The Undead King'
   steam_id: 351480
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Din's Curse
   steam_id: 217290
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: SpellForce 3 Soul Harvest
   steam_id: 817540
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'SpellForce: Conquest of Eo'
   steam_id: 1581770
   classification:
     dimension_1: b
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Divinity: Original Sin 2 - Definitive Edition'
   steam_id: 435150
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Neverwinter
   steam_id: 109600
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Neverwinter Nights: Enhanced Edition'
   steam_id: 704450
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Dungeons & Dragons Neverwinter Nights 2: Enhanced Edition'
   steam_id: 2738630
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: The Elder Scrolls® Online
   steam_id: 306130
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Guild Wars 2
   steam_id: 1284210
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Age of Wonders 4
   steam_id: 1669000
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Heroes® of Might & Magic® III - HD Edition
   steam_id: 297000
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Warframe
   steam_id: 230410
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Warlock - Master of the Arcane
   steam_id: 203630
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Dungeon Souls
   steam_id: 383230
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: KeeperRL
   steam_id: 329970
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Pathfinder: Kingmaker — Enhanced Plus Edition'
   steam_id: 640820
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Pathfinder: Wrath of the Righteous - Enhanced Edition'
   steam_id: 1184370
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Tales of Maj'Eyal
   steam_id: 259680
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Dragon Age: Origins - Ultimate Edition'
   steam_id: 47810
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Dungeonmans
   steam_id: 288120
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: ADOM (Ancient Domains Of Mystery)
   steam_id: 333300
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Eador. Masters of the Broken World
   steam_id: 232050
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Age of Conan: Unchained'
   steam_id: 217750
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Sacrifice
   steam_id: 38440
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Disciples II: Gallean''s Return'
   steam_id: 1640
   classification:
     dimension_1: a
     dimension_2: unit
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Zorbus
   steam_id: 2125420
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Warhammer: Vermintide 2'
   steam_id: 552500
   price_notes: 'Also requires Warhammer: Vermintide 2 - Necromancer Career DLC (~$4.99)'
@@ -877,8 +877,8 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-08'
   priority: medium
+  date_updated: '2025-12-08'
 - name: Age of Wonders III
   steam_id: 226840
   classification:
@@ -886,56 +886,56 @@ games:
     dimension_2: character
     dimension_3: explicit
   price_notes: Also requires Age of Wonders III - Eternal Lords Expansion (~$26.99)
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: ELDEN RING NIGHTREIGN
   steam_id: 2622380
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: 'Tainted Grail: The Fall of Avalon'
   steam_id: 1466060
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Necromancer For A Week
   steam_id: 2987110
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Kingdom of Night
   steam_id: 1094600
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Ziggurat 2
   steam_id: 1159560
   classification:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Dead by Daylight
   steam_id: 381210
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-06'
   priority: medium
+  date_updated: '2025-12-06'
 - name: Necesse
   steam_id: 1169040
   platforms:
@@ -944,8 +944,8 @@ games:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
-  date_added: '2025-12-08'
   priority: medium
+  date_updated: '2025-12-08'
 - name: Castle Crashers
   steam_id: 204360
   platforms:
@@ -954,5 +954,7 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: explicit
-  date_added: '2025-12-09'
   priority: high
+  dimension_1_notes: Necromancer character with kamikaze skeleton summon and 2 other
+    skeletal spells
+  date_updated: '2025-12-09'

@@ -47,7 +47,9 @@ CREATE TABLE IF NOT EXISTS games (
     dimension_1 TEXT CHECK(dimension_1 IN ('a', 'b', 'c', 'd')),
     dimension_2 TEXT CHECK(dimension_2 IN ('character', 'unit')),
     dimension_3 TEXT CHECK(dimension_3 IN ('explicit', 'implied')),
-    classification_notes TEXT,
+    dimension_1_notes TEXT,  -- Editorial notes for dimension_1 (centrality)
+    dimension_2_notes TEXT,  -- Editorial notes for dimension_2 (POV)
+    dimension_3_notes TEXT,  -- Editorial notes for dimension_3 (naming)
 
     -- Metadata (may come from various platforms)
     steam_tags TEXT,  -- JSON array as string
@@ -59,7 +61,7 @@ CREATE TABLE IF NOT EXISTS games (
     publisher TEXT,
 
     -- Tracking metadata
-    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    date_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Date entry was last updated
     last_checked TIMESTAMP,
     is_active BOOLEAN DEFAULT 1
 );
