@@ -3890,6 +3890,52 @@
     "last_announcement_title": "Release 1.9.1 Patch Notes"
   },
   {
+    "id": 252,
+    "steam_id": 329480,
+    "battlenet_id": null,
+    "battlenet_store_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
+    "name": "Snow Light",
+    "app_type": "game",
+    "short_description": "In a close futuristic world, follow Snow Light a professional of espionage missions, and travel all over the globe to places such as Turkmenistan, Russia and England.",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/329480/header.jpg?t=1447364348",
+    "dimension_1": "c",
+    "dimension_2": "character",
+    "dimension_3": "implied",
+    "classification_notes": "",
+    "developer": "West Dragon Productions DR",
+    "publisher": "OG-ZONE Digital Entertainment",
+    "release_date": "Oct 24, 2014",
+    "price_usd": 9.99,
+    "price_notes": null,
+    "steam_tags": [
+      "Indie",
+      "Adventure",
+      "Action",
+      "Visual Novel"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Indie"
+    ],
+    "last_checked": "2025-12-08 18:22:39.476794",
+    "update_count": 3,
+    "last_update": null,
+    "last_update_url": null,
+    "last_update_title": null,
+    "last_announcement": "2019-04-03 19:41:00",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2508976515641746002",
+    "last_announcement_title": "April 2019 - Steam Community News"
+  },
+  {
     "id": 163,
     "steam_id": 2373990,
     "battlenet_id": null,
