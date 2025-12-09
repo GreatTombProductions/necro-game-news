@@ -592,6 +592,100 @@ function calculateTooltipPosition(
   return { top, left, placeBelow };
 }
 
+// Unified tooltip component with portal rendering
+function Tooltip({
+  children,
+  text,
+  width = 'auto',
+  className = '',
+}: {
+  children: React.ReactNode;
+  text: React.ReactNode;
+  width?: 'auto' | 'fixed';
+  className?: string;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
+  const triggerRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!isOpen && !isHovered) return;
+    const handleScroll = () => {
+      setIsOpen(false);
+      setIsHovered(false);
+    };
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen, isHovered]);
+
+  const updateTooltipPosition = useCallback(() => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    const tooltipWidth = width === 'fixed' ? 256 : Math.min(String(text).length * 7 + 24, 400);
+    const tooltipHeight = 40;
+    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
+  }, [text, width]);
+
+  const handleMouseEnter = () => {
+    if ('ontouchstart' in window) return;
+    updateTooltipPosition();
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleTouch = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    updateTooltipPosition();
+    setIsOpen(true);
+  };
+
+  const showTooltip = isHovered || isOpen;
+  const widthClass = width === 'fixed' ? 'w-64 text-center' : 'whitespace-nowrap max-w-[400px]';
+
+  return (
+    <span
+      ref={triggerRef}
+      className={`inline ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouch}
+    >
+      {children}
+      {showTooltip && tooltipPos && createPortal(
+        <div
+          className={`pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl ${widthClass}`}
+          style={{
+            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
+            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
+            left: tooltipPos.left,
+          }}
+        >
+          {text}
+        </div>,
+        document.body
+      )}
+    </span>
+  );
+}
+
 // Game cell with mobile-friendly tooltip
 function GameCell({ game }: { game: Game }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -732,9 +826,9 @@ function GameCell({ game }: { game: Game }) {
             <div className="text-xs text-gray-500">
               {visible.length > 0 ? visible.join(', ') : 'Unknown'}
               {hidden.length > 0 && (
-                <DevPublisherTooltip items={hidden}>
-                  <span className="text-gray-600 cursor-help ml-1">+{hidden.length}</span>
-                </DevPublisherTooltip>
+                <Tooltip text={hidden.join(', ')}>
+                  <span className="text-gray-600 ml-1">+{hidden.length}</span>
+                </Tooltip>
               )}
             </div>
           );
@@ -775,90 +869,6 @@ function GameCell({ game }: { game: Game }) {
   );
 }
 
-// Tooltip wrapper component for cell values (only used for Centrality)
-function CellTooltip({ children, text }: { children: React.ReactNode; text: string }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-
-  // Close on scroll or click outside
-  useEffect(() => {
-    if (!isOpen && !isHovered) return;
-    const handleScroll = () => {
-      setIsOpen(false);
-      setIsHovered(false);
-    };
-    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, true);
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    }
-    return () => {
-      window.removeEventListener('scroll', handleScroll, true);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [isOpen, isHovered]);
-
-  const updateTooltipPosition = useCallback(() => {
-    if (!triggerRef.current) return;
-    const rect = triggerRef.current.getBoundingClientRect();
-    const tooltipWidth = 256; // w-64 = 16rem = 256px
-    const tooltipHeight = 60; // Approximate tooltip height
-    setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
-  }, []);
-
-  const handleMouseEnter = () => {
-    if ('ontouchstart' in window) return;
-    updateTooltipPosition();
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleTouch = (e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    updateTooltipPosition();
-    setIsOpen(true);
-  };
-
-  const showTooltip = isHovered || isOpen;
-
-  return (
-    <div
-      ref={triggerRef}
-      className="relative inline-block"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouch}
-    >
-      {children}
-      {showTooltip && tooltipPos && createPortal(
-        <div
-          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-normal w-64 text-center"
-          style={{
-            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
-            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
-            left: tooltipPos.left,
-          }}
-        >
-          {text}
-        </div>,
-        document.body
-      )}
-    </div>
-  );
-}
-
 // Helper to combine and deduplicate developers and publishers
 function getCombinedDevPublisher(game: Game): string[] {
   const combined: string[] = [];
@@ -880,179 +890,6 @@ function getCombinedDevPublisher(game: Game): string[] {
     });
   }
   return combined;
-}
-
-// Tooltip for developer/publisher overflow
-function DevPublisherTooltip({ children, items }: { children: React.ReactNode; items: string[] }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-
-  // Close on scroll or click outside
-  useEffect(() => {
-    if (!isOpen && !isHovered) return;
-    const handleScroll = () => {
-      setIsOpen(false);
-      setIsHovered(false);
-    };
-    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, true);
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    }
-    return () => {
-      window.removeEventListener('scroll', handleScroll, true);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [isOpen, isHovered]);
-
-  const updateTooltipPosition = useCallback(() => {
-    if (!triggerRef.current) return;
-    const rect = triggerRef.current.getBoundingClientRect();
-    const estimatedWidth = Math.min(items.join(', ').length * 7 + 24, 400);
-    const tooltipHeight = 40;
-    setTooltipPos(calculateTooltipPosition(rect, estimatedWidth, tooltipHeight, { centerHorizontally: true }));
-  }, [items]);
-
-  const handleMouseEnter = () => {
-    if ('ontouchstart' in window) return;
-    updateTooltipPosition();
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleTouch = (e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    updateTooltipPosition();
-    setIsOpen(true);
-  };
-
-  if (items.length === 0) return <>{children}</>;
-
-  const showTooltip = isHovered || isOpen;
-
-  return (
-    <div
-      ref={triggerRef}
-      className="relative inline"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouch}
-    >
-      {children}
-      {showTooltip && tooltipPos && createPortal(
-        <div
-          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
-          style={{
-            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
-            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
-            left: tooltipPos.left,
-          }}
-        >
-          {items.join(', ')}
-        </div>,
-        document.body
-      )}
-    </div>
-  );
-}
-
-// Tooltip for genres overflow
-function GenresTooltip({ children, genres }: { children: React.ReactNode; genres: string[] }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number; placeBelow: boolean } | null>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-
-  // Close on scroll or click outside
-  useEffect(() => {
-    if (!isOpen && !isHovered) return;
-    const handleScroll = () => {
-      setIsOpen(false);
-      setIsHovered(false);
-    };
-    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, true);
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    }
-    return () => {
-      window.removeEventListener('scroll', handleScroll, true);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [isOpen, isHovered]);
-
-  const updateTooltipPosition = useCallback(() => {
-    if (!triggerRef.current) return;
-    const rect = triggerRef.current.getBoundingClientRect();
-    // Estimate width based on content (genres joined), but cap at reasonable max
-    const estimatedWidth = Math.min(genres.join(', ').length * 7 + 24, 400);
-    const tooltipHeight = 40; // Approximate tooltip height
-    setTooltipPos(calculateTooltipPosition(rect, estimatedWidth, tooltipHeight, { centerHorizontally: true }));
-  }, [genres]);
-
-  const handleMouseEnter = () => {
-    if ('ontouchstart' in window) return;
-    updateTooltipPosition();
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleTouch = (e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    updateTooltipPosition();
-    setIsOpen(true);
-  };
-
-  if (genres.length === 0) return <>{children}</>;
-
-  const showTooltip = isHovered || isOpen;
-
-  return (
-    <div
-      ref={triggerRef}
-      className="relative inline-block"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouch}
-    >
-      {children}
-      {showTooltip && tooltipPos && createPortal(
-        <div
-          className="pointer-events-none fixed px-3 py-2 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl whitespace-nowrap max-w-[400px]"
-          style={{
-            top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
-            bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
-            left: tooltipPos.left,
-          }}
-        >
-          {genres.join(', ')}
-        </div>,
-        document.body
-      )}
-    </div>
-  );
 }
 
 // Help icon with popover - supports both simple descriptions and value lists
@@ -1223,7 +1060,6 @@ export default function GamesTable({ games }: GamesTableProps) {
           const game = info.row.original;
           const isSteamGame = game.primary_platform === 'steam';
           const priceNotes = game.price_notes;
-          const isFirstRow = info.row.index === 0;
 
           // Only show "Free" for Steam games with price=0
           // Non-Steam games without price data show "N/A"
@@ -1237,22 +1073,11 @@ export default function GamesTable({ games }: GamesTableProps) {
             // Games with $0 price that have price notes (e.g., free base game + subscription)
             if (priceNotes) {
               return (
-                <div className="group relative inline-block">
-                  <span className="text-xs text-cyan-400 cursor-help border-b border-dashed border-cyan-400/50">
+                <Tooltip text={priceNotes}>
+                  <span className="text-xs text-cyan-400 border-b border-dashed border-cyan-400/50">
                     Free*
                   </span>
-                  {isFirstRow ? (
-                    <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-                      {priceNotes}
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-                    </div>
-                  ) : (
-                    <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-                      {priceNotes}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-                    </div>
-                  )}
-                </div>
+                </Tooltip>
               );
             }
             return <span className="text-xs text-green-400">Free</span>;
@@ -1260,22 +1085,11 @@ export default function GamesTable({ games }: GamesTableProps) {
           // Paid games with price notes
           if (priceNotes) {
             return (
-              <div className="group relative inline-block">
-                <span className="text-xs text-cyan-400 cursor-help border-b border-dashed border-cyan-400/50">
+              <Tooltip text={priceNotes}>
+                <span className="text-xs text-cyan-400 border-b border-dashed border-cyan-400/50">
                   ${price.toFixed(2)}
                 </span>
-                {isFirstRow ? (
-                  <div className="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-                    {priceNotes}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900"></div>
-                  </div>
-                ) : (
-                  <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-xl">
-                    {priceNotes}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
-                  </div>
-                )}
-              </div>
+              </Tooltip>
             );
           }
           return <span className="text-xs text-gray-300">${price.toFixed(2)}</span>;
@@ -1295,9 +1109,9 @@ export default function GamesTable({ games }: GamesTableProps) {
                 </span>
               ))}
               {hiddenGenres.length > 0 && (
-                <GenresTooltip genres={hiddenGenres}>
-                  <span className="text-xs text-gray-500 cursor-help">+{hiddenGenres.length}</span>
-                </GenresTooltip>
+                <Tooltip text={hiddenGenres.join(', ')}>
+                  <span className="text-xs text-gray-500">+{hiddenGenres.length}</span>
+                </Tooltip>
               )}
             </div>
           );
@@ -1364,11 +1178,11 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.centrality.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
-                  <span className={`font-mono ${valueInfo.color} cursor-help`}>
+                <Tooltip text={valueInfo.description} width="fixed">
+                  <span className={`font-mono ${valueInfo.color}`}>
                     {valueInfo.label}
                   </span>
-                </CellTooltip>
+                </Tooltip>
               );
             },
           },
@@ -1385,11 +1199,11 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.pov.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
-                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                <Tooltip text={valueInfo.description} width="fixed">
+                  <span className={`text-sm ${valueInfo.color} capitalize`}>
                     {valueInfo.label}
                   </span>
-                </CellTooltip>
+                </Tooltip>
               );
             },
           },
@@ -1406,11 +1220,11 @@ export default function GamesTable({ games }: GamesTableProps) {
               const valueInfo = TAXONOMY_INFO.naming.values.find(v => v.key === val);
               if (!valueInfo) return null;
               return (
-                <CellTooltip text={valueInfo.description}>
-                  <span className={`text-sm ${valueInfo.color} capitalize cursor-help`}>
+                <Tooltip text={valueInfo.description} width="fixed">
+                  <span className={`text-sm ${valueInfo.color} capitalize`}>
                     {valueInfo.label}
                   </span>
-                </CellTooltip>
+                </Tooltip>
               );
             },
           },
