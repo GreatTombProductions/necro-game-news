@@ -174,14 +174,6 @@ case $MODE in
         $PYTHON scripts/export_for_web.py
 
         echo ""
-        echo "📱 Generating social media content..."
-        $PYTHON scripts/generate_social_content.py $REPROCESS
-
-        echo ""
-        echo "📊 Generating report..."
-        $PYTHON scripts/generate_report.py --days 7
-
-        echo ""
         echo "📝 Committing changes..."
         git add frontend/public/data/*.json
         git commit -m "Update game data: $(date +%Y-%m-%d)" || echo "No changes to commit"
@@ -189,6 +181,14 @@ case $MODE in
         echo ""
         echo "🚀 Pushing to GitHub (will trigger Vercel deploy)..."
         git push origin main
+
+        echo ""
+        echo "📱 Generating social media content..."
+        $PYTHON scripts/generate_social_content.py $REPROCESS
+
+        echo ""
+        echo "📊 Generating report..."
+        $PYTHON scripts/generate_report.py --days 7
 
         echo ""
         echo "✅ Full deployment complete!"
