@@ -40,4 +40,16 @@ Social Media:
 - scripts/generate_social_content.py --reprocess - Regenerate
 - scripts/migrations/backfill_tags.py - Backfill Steam tags
 
+Discord Bot (Admin Approvals):
+- scripts/discord_bot.py - Run bot to approve submissions
+  Env vars: DISCORD_BOT_TOKEN, DISCORD_CHANNEL_ID (optional)
+  Commands:
+    - React ✅ on submission embed to approve (if all fields valid)
+    - React 🔄 to confirm overwrite of existing game
+    - /add <id> [overrides] - Add game with optional field overrides
+    - /edit <id> <changes> - Edit existing game entry
+    - /check <id> - Check if game exists and show current data
+  Override syntax: centrality:a pov:character naming:explicit notes:text
+  Identifier formats: 552500 (steam), battlenet:diablo-4, "Game Name"
+
 Output: content/posts/ (images), content/captions/ (text)

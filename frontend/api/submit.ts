@@ -58,7 +58,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        username: 'Necro Game News',
+        username: 'Website Submission',
         avatar_url: 'https://necrotic-realms.vercel.app/favicon.ico',
         embeds: [embed],
       }),

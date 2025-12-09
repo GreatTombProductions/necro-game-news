@@ -6,3 +6,4 @@
 - separate out early access tag into its own column?
 - logic for update checking frequency
 - don't update price if price notes exist
+- integrate editor's notes into degree of necromancy tooltips
