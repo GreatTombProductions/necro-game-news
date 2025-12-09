@@ -297,7 +297,7 @@ def parse_overrides(args: str) -> dict:
         steam_id:12345 centrality:b
         name:Some Game Name  (spaces in value OK if it's the last arg)
     """
-    overrides = {}
+    fields = {}
     # Match field:value pairs, handling potential spaces in values
     pattern = r"(\w+):([^\s:]+(?:\s+[^\s:]+)*?)(?=\s+\w+:|$)"
     matches = re.findall(pattern, args.strip())
@@ -308,25 +308,25 @@ def parse_overrides(args: str) -> dict:
 
         if field == "centrality":
             value = CENTRALITY_MAP.get(value.lower(), value)
-            overrides["dimension_1"] = value
+            fields["dimension_1"] = value
         elif field == "pov":
             value = POV_MAP.get(value.lower(), value)
-            overrides["dimension_2"] = value
+            fields["dimension_2"] = value
         elif field == "naming":
             value = NAMING_MAP.get(value.lower(), value)
-            overrides["dimension_3"] = value
+            fields["dimension_3"] = value
         elif field == "steam_id":
-            overrides["steam_id"] = int(value)
+            fields["steam_id"] = int(value)
         elif field == "battlenet_id":
-            overrides["battlenet_id"] = value
+            fields["battlenet_id"] = value
         elif field == "name":
-            overrides["name"] = value
+            fields["name"] = value
         elif field == "notes":
-            overrides["notes"] = value
+            fields["notes"] = value
         elif field == "priority":
-            overrides["priority"] = value
+            fields["priority"] = value
 
-    return overrides
+    return fields
 
 
 def run_deploy() -> tuple[bool, str]:
@@ -484,18 +484,18 @@ async def handle_overwrite_confirmation(message: discord.Message, user_id: int):
             await status_msg.edit(content=f"⚠️ **Overwrote but deploy failed:**\n```{output[:1500]}```")
 
 
-@bot.tree.command(name="add", description="Add a game with optional overrides")
+@bot.tree.command(name="add", description="Add a game with optional fields")
 @app_commands.describe(
     identifier="Steam ID, battlenet:slug, or game name",
-    overrides="Optional field overrides (e.g., centrality:a pov:unit naming:explicit)",
+    fields="Optional fields (e.g., centrality:a pov:unit naming:explicit)",
 )
 async def add_command(
     interaction: discord.Interaction,
     identifier: str,
-    overrides: Optional[str] = None,
+    fields: Optional[str] = None,
 ):
     """
-    Approve a submission with optional field overrides.
+    Approve a submission with optional fields.
 
     Usage:
         /approve 552500
@@ -545,9 +545,9 @@ async def add_command(
             battlenet_id=battlenet_id,
         )
 
-    # Apply overrides
-    if overrides:
-        override_dict = parse_overrides(overrides)
+    # Apply fields
+    if fields:
+        override_dict = parse_overrides(fields)
         for key, value in override_dict.items():
             setattr(entry, key, value)
 
@@ -557,7 +557,7 @@ async def add_command(
         await interaction.followup.send(
             f"**Cannot approve - missing required fields:**\n"
             f"- {chr(10).join(errors)}\n\n"
-            f"Add the missing fields as overrides."
+            f"Add the missing fields as fields."
         )
         return
 
