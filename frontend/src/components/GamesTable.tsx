@@ -302,8 +302,8 @@ const TAXONOMY_INFO = {
     title: 'Availability',
     description: 'When the necromancer or necromancy becomes available to the player',
     values: [
-      { key: 'instant', label: 'Instant', color: 'text-green-400', description: 'Necromancer/necromancy available immediately from the start' },
-      { key: 'gated', label: 'Gated', color: 'text-yellow-400', description: 'Necromancer/necromancy takes time or progression to unlock' },
+      { key: 'instant', label: 'Instant', color: 'text-green-400', description: 'Necromancer/necromancy always available immediately from the start' },
+      { key: 'gated', label: 'Gated', color: 'text-yellow-400', description: 'Necromancer/necromancy takes time or progression to unlock, or is not deterministically available' },
       { key: 'unknown', label: 'Unknown', color: 'text-gray-500', description: 'Availability not yet determined' },
     ],
   },

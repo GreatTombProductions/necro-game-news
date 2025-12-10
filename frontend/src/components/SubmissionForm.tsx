@@ -43,8 +43,8 @@ const NAMING_OPTIONS = [
 ];
 
 const AVAILABILITY_OPTIONS = [
-  { value: 'instant', label: 'Instant', description: 'Available immediately from the start' },
-  { value: 'gated', label: 'Gated', description: 'Takes time or progression to unlock' },
+  { value: 'instant', label: 'Instant', description: 'Always available immediately from the start' },
+  { value: 'gated', label: 'Gated', description: 'Takes time or progression to unlock, or not deterministically available' },
 ];
 
 export default function SubmissionForm({ isOpen, onClose }: SubmissionFormProps) {

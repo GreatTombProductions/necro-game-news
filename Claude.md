@@ -26,6 +26,12 @@ Game Discovery:
 - scripts/batch_discover.py --stats - Show progress
 - scripts/review_candidates.py - Interactive review (y/n/s/o/q)
 
+Game Editing:
+- scripts/browse_games.py - Browse/edit games needing dimension_4 or notes
+  Flags: --all (all games), --no-deploy, --search TERM
+  Controls: e=edit, s/n=next, p=prev, o=open browser, g=goto, q=quit
+  Auto-deploys on exit (option 3: new games only)
+
 Database:
 - scripts/init_database.py - Initialize database
 - scripts/load_games_from_yaml.py --update - Sync YAML to DB

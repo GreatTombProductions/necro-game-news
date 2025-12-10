@@ -1,221 +1,25 @@
 games:
-- name: Diablo IV
-  steam_id: 2344520
-  battlenet_id: diablo-4
-  battlenet_store_id: diablo-iv
-  platforms:
-  - steam
-  - battlenet
-  primary_platform: steam
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer is a fully playable class with extensive skill trees
-  date_updated: '2025-12-02'
-- name: Diablo III
-  battlenet_id: diablo-3
-  battlenet_store_id: diablo-iii
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Action RPG where players battle the forces of evil in Sanctuary.
-    Necromancer class available via Rise of the Necromancer DLC.
-  genres:
-  - Action RPG
-  - Hack and Slash
-  price_notes: Base game + DLC
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer class added via Rise of the Necromancer DLC
-  date_updated: '2025-12-06'
-- name: Diablo Immortal
-  battlenet_id: diablo-immortal
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Free-to-play mobile and PC action RPG set between Diablo II and
-    III. Features the Necromancer class with corpse explosion and skeletal minions.
-  genres:
-  - Action RPG
-  - Mobile
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer is a fully playable class
-  date_updated: '2025-12-06'
-- name: 'Diablo II: Resurrected'
-  battlenet_id: diablo-2-resurrected
-  battlenet_store_id: diablo-ii-resurrected
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Remastered version of the classic action RPG. The Necromancer
-    class is one of the original iconic character choices.
-  genres:
-  - Action RPG
-  - Hack and Slash
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer is a core class since the original game
-  date_updated: '2025-12-06'
-- name: World of Warcraft
-  battlenet_id: world-of-warcraft-beta
-  battlenet_store_id: world-of-warcraft-midnight
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Iconic MMORPG where players can play as Death Knights and Warlocks
-    with necromantic abilities, raising undead minions.
-  genres:
-  - MMORPG
-  price_notes: Monthly subscription.
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: implied
-  priority: medium
-  dimension_1_notes: Death Knight class with undead army abilities; Warlock demons
-  date_updated: '2025-12-06'
-- name: Warcraft Rumble
-  battlenet_id: warcraft-rumble
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Mobile action strategy game featuring collectible Warcraft minis.
-    Undead faction with necromancer units.
-  genres:
-  - Mobile
-  - Strategy
-  classification:
-    dimension_1: a
-    dimension_2: unit
-    dimension_3: explicit
-  priority: medium
-  dimension_1_notes: Undead faction includes necromancer minions
-  date_updated: '2025-12-06'
-- name: 'Warcraft III: Reforged'
-  battlenet_id: warcraft-3
-  battlenet_store_id: warcraft-3-reforged
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Remastered classic RTS with the Undead faction featuring necromancers
-    who raise skeleton warriors.
-  genres:
-  - RTS
-  - Strategy
-  classification:
-    dimension_1: a
-    dimension_2: unit
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Undead faction with playable necromancer units
-  date_updated: '2025-12-06'
-- name: Hearthstone
-  battlenet_id: hearthstone
-  platforms:
-  - battlenet
-  primary_platform: battlenet
-  short_description: Digital card game featuring Warcraft characters. Death Knight
-    class uses necromantic abilities and undead minions.
-  genres:
-  - Card Game
-  - Strategy
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: implied
-  priority: medium
-  dimension_1_notes: Death Knight class with undead/corpse mechanics
-  date_updated: '2025-12-06'
-- name: Grim Dawn
-  steam_id: 219990
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer mastery class available
-  date_updated: '2025-12-02'
-- name: Last Epoch
-  steam_id: 899770
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Acolyte base class with Necromancer specialization
-  date_updated: '2025-12-02'
-- name: V Rising
-  steam_id: 1604030
-  classification:
-    dimension_1: b
-    dimension_2: character
-    dimension_3: implied
-  priority: high
-  dimension_1_notes: Unholy spell school with necromantic abilities, graveyard mechanics
-  date_updated: '2025-12-02'
-- name: Path of Exile
-  steam_id: 238960
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Necromancer specialization for the Witch class
-  date_updated: '2025-12-02'
-- name: Cult of the Lamb
-  steam_id: 1313140
-  classification:
-    dimension_1: c
-    dimension_2: character
-    dimension_3: explicit
-  priority: medium
-  dimension_1_notes: Necromantic weapons, resurrection spells, and rituals available
-  date_updated: '2025-12-02'
-- name: Night Swarm
-  steam_id: 3668370
-  classification:
-    dimension_1: c
-    dimension_2: character
-    dimension_3: implied
-  dimension_1_notes: Undead-summoning artifacts as part of gameplay mechanics
-  date_updated: '2025-12-04'
-- name: 'Total War: WARHAMMER III'
-  steam_id: 1142710
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: medium
-  dimension_1_notes: Vampire Counts faction with necromancers and undead armies
-  date_updated: '2025-12-02'
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
+    dimension_4: gated
   priority: low
-  date_updated: '2025-12-05'
+  date_updated: '2025-12-09'
+  dimension_1_notes: Grave Digger skull
 - name: Hades II
   steam_id: 1145350
   classification:
     dimension_1: d
     dimension_2: character
     dimension_3: explicit
+    dimension_4: instant
   priority: low
-  date_updated: '2025-12-05'
+  date_updated: '2025-12-09'
+  dimension_1_notes: Melinoe canonically has necromancy abilities (dialogue with Medea),
+    but they are not used in game, apart from the "Necromantic Influence" incantation
 - name: Lost Ark
   steam_id: 1599340
   classification:
@@ -231,16 +35,6 @@ games:
     dimension_2: character
     dimension_3: explicit
   priority: high
-  date_updated: '2025-12-05'
-- name: Dungeons 4
-  steam_id: 1643310
-  classification:
-    dimension_1: b
-    dimension_2: character
-    dimension_3: explicit
-  priority: high
-  dimension_1_notes: Playing as the absolute evil, some necromancy involved in raising
-    undead units
   date_updated: '2025-12-05'
 - name: Nobody Saves the World
   steam_id: 1432050
@@ -289,16 +83,6 @@ games:
     dimension_2: unit
     dimension_3: explicit
   priority: low
-  date_updated: '2025-12-05'
-- name: BALL x PIT
-  steam_id: 2062430
-  classification:
-    dimension_1: c
-    dimension_2: character
-    dimension_3: explicit
-  priority: low
-  dimension_1_notes: Firing ghost balls counts as necromancy by technicality, there
-    is also a necromancer structure and a zombie summoning passive.
   date_updated: '2025-12-05'
 - name: Hell Clock
   steam_id: 1782460
@@ -371,16 +155,6 @@ games:
     dimension_2: unit
     dimension_3: implied
   priority: low
-  date_updated: '2025-12-05'
-- name: Rogue Lords
-  steam_id: 1069690
-  classification:
-    dimension_1: d
-    dimension_2: character
-    dimension_3: implied
-  priority: low
-  dimension_1_notes: Playing as the Devil, with some necromantic abilities imparted
-    to disciples and demonstrated in events/lore
   date_updated: '2025-12-05'
 - name: 'Shadow Gambit: The Cursed Crew'
   steam_id: 1545560
@@ -870,15 +644,6 @@ games:
     dimension_3: explicit
   priority: medium
   date_updated: '2025-12-06'
-- name: 'Warhammer: Vermintide 2'
-  steam_id: 552500
-  price_notes: 'Also requires Warhammer: Vermintide 2 - Necromancer Career DLC (~$4.99)'
-  classification:
-    dimension_1: a
-    dimension_2: character
-    dimension_3: explicit
-  priority: medium
-  date_updated: '2025-12-08'
 - name: Age of Wonders III
   steam_id: 226840
   classification:
@@ -936,6 +701,15 @@ games:
     dimension_3: implied
   priority: medium
   date_updated: '2025-12-06'
+- name: 'Warhammer: Vermintide 2'
+  steam_id: 552500
+  price_notes: 'Also requires Warhammer: Vermintide 2 - Necromancer Career DLC (~$4.99)'
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: medium
+  date_updated: '2025-12-08'
 - name: Necesse
   steam_id: 1169040
   platforms:
@@ -946,6 +720,222 @@ games:
     dimension_3: implied
   priority: medium
   date_updated: '2025-12-08'
+- name: Grim Dawn
+  steam_id: 219990
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Necromancer mastery class available
+  date_updated: '2025-12-02'
+- name: Last Epoch
+  steam_id: 899770
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Acolyte base class with Necromancer specialization
+  date_updated: '2025-12-02'
+- name: V Rising
+  steam_id: 1604030
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+  priority: high
+  dimension_1_notes: Unholy spell school with necromantic abilities, graveyard mechanics
+  date_updated: '2025-12-02'
+- name: Path of Exile
+  steam_id: 238960
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Necromancer specialization for the Witch class
+  date_updated: '2025-12-02'
+- name: Cult of the Lamb
+  steam_id: 1313140
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: explicit
+  priority: medium
+  dimension_1_notes: Necromantic weapons, resurrection spells, and rituals available
+  date_updated: '2025-12-02'
+- name: 'Total War: WARHAMMER III'
+  steam_id: 1142710
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: medium
+  dimension_1_notes: Vampire Counts faction with necromancers and undead armies
+  date_updated: '2025-12-02'
+- name: Night Swarm
+  steam_id: 3668370
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+  dimension_1_notes: Undead-summoning artifacts as part of gameplay mechanics
+  date_updated: '2025-12-04'
+- name: Dungeons 4
+  steam_id: 1643310
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Playing as the absolute evil, some necromancy involved in raising
+    undead units
+  date_updated: '2025-12-05'
+- name: BALL x PIT
+  steam_id: 2062430
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: explicit
+  priority: low
+  dimension_1_notes: Firing ghost balls counts as necromancy by technicality, there
+    is also a necromancer structure and a zombie summoning passive.
+  date_updated: '2025-12-05'
+- name: Rogue Lords
+  steam_id: 1069690
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: implied
+  priority: low
+  dimension_1_notes: Playing as the Devil, with some necromantic abilities imparted
+    to disciples and demonstrated in events/lore
+  date_updated: '2025-12-05'
+- name: Diablo III
+  battlenet_id: diablo-3
+  battlenet_store_id: diablo-iii
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Action RPG where players battle the forces of evil in Sanctuary.
+    Necromancer class available via Rise of the Necromancer DLC.
+  genres:
+  - Action RPG
+  - Hack and Slash
+  price_notes: Base game + DLC
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Necromancer class added via Rise of the Necromancer DLC
+  date_updated: '2025-12-06'
+- name: Diablo Immortal
+  battlenet_id: diablo-immortal
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Free-to-play mobile and PC action RPG set between Diablo II and
+    III. Features the Necromancer class with corpse explosion and skeletal minions.
+  genres:
+  - Action RPG
+  - Mobile
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Necromancer is a fully playable class
+  date_updated: '2025-12-06'
+- name: 'Diablo II: Resurrected'
+  battlenet_id: diablo-2-resurrected
+  battlenet_store_id: diablo-ii-resurrected
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Remastered version of the classic action RPG. The Necromancer
+    class is one of the original iconic character choices.
+  genres:
+  - Action RPG
+  - Hack and Slash
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Necromancer is a core class since the original game
+  date_updated: '2025-12-06'
+- name: World of Warcraft
+  battlenet_id: world-of-warcraft-beta
+  battlenet_store_id: world-of-warcraft-midnight
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Iconic MMORPG where players can play as Death Knights and Warlocks
+    with necromantic abilities, raising undead minions.
+  genres:
+  - MMORPG
+  price_notes: Monthly subscription.
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+  priority: medium
+  dimension_1_notes: Death Knight class with undead army abilities; Warlock demons
+  date_updated: '2025-12-06'
+- name: Warcraft Rumble
+  battlenet_id: warcraft-rumble
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Mobile action strategy game featuring collectible Warcraft minis.
+    Undead faction with necromancer units.
+  genres:
+  - Mobile
+  - Strategy
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: explicit
+  priority: medium
+  dimension_1_notes: Undead faction includes necromancer minions
+  date_updated: '2025-12-06'
+- name: 'Warcraft III: Reforged'
+  battlenet_id: warcraft-3
+  battlenet_store_id: warcraft-3-reforged
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Remastered classic RTS with the Undead faction featuring necromancers
+    who raise skeleton warriors.
+  genres:
+  - RTS
+  - Strategy
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: explicit
+  priority: high
+  dimension_1_notes: Undead faction with playable necromancer units
+  date_updated: '2025-12-06'
+- name: Hearthstone
+  battlenet_id: hearthstone
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Digital card game featuring Warcraft characters. Death Knight
+    class uses necromantic abilities and undead minions.
+  genres:
+  - Card Game
+  - Strategy
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+  priority: medium
+  dimension_1_notes: Death Knight class with undead/corpse mechanics
+  date_updated: '2025-12-06'
 - name: Castle Crashers
   steam_id: 204360
   platforms:
@@ -958,3 +948,19 @@ games:
   dimension_1_notes: Necromancer character with kamikaze skeleton summon and 2 other
     skeletal spells
   date_updated: '2025-12-09'
+- name: Diablo IV
+  steam_id: 2344520
+  battlenet_id: diablo-4
+  battlenet_store_id: diablo-iv
+  platforms:
+  - steam
+  - battlenet
+  primary_platform: steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: high
+  dimension_1_notes: Necromancer is a fully playable class with extensive skill trees
+  date_updated: '2025-12-02'
