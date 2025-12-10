@@ -308,7 +308,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         dimension_1_notes = game.get('dimension_1_notes', '')
         dimension_2_notes = game.get('dimension_2_notes', '')
         dimension_3_notes = game.get('dimension_3_notes', '')
-        dimension_4 = game.get('dimension_4', 'unknown')  # Availability: instant, gated, unknown
+        dimension_4 = classification.get('dimension_4', 'unknown')  # Availability: instant, gated, unknown
         dimension_4_notes = game.get('dimension_4_notes', '')
 
         # Extract platform information
