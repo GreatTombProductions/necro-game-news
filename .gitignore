@@ -107,4 +107,4 @@ frontend/dist/
 frontend/.vite/
 
 content/*
-data/discovery_cache/processed_appids.txt
+data/discovery_cache/*.txt

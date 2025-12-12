@@ -227,9 +227,9 @@ class PostTemplate:
         if self.game_dimension_4:
             availability_desc = {
                 'instant': 'Available from the start',
-                'gated': 'Requires unlocking/progression'
+                'gated': 'Requires unlocking/luck/progression'
             }.get(self.game_dimension_4, 'Unknown')
-            stats.append(f"- Availability: {availability_desc}")
+            stats.append(f"- Necromancy Availability: {availability_desc}")
 
         return stats
 
