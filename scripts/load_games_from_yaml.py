@@ -76,7 +76,7 @@ def find_existing_game(cursor, game: dict):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
                FROM games WHERE steam_id = ?""",
             (game['steam_id'],)
         )
@@ -95,7 +95,7 @@ def find_existing_game(cursor, game: dict):
             cursor.execute(
                 f"""SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                    dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-                   platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
+                   platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
                    FROM games WHERE {field} = ?""",
                 (game[platform_id],)
             )
@@ -108,7 +108,7 @@ def find_existing_game(cursor, game: dict):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
                FROM games WHERE name = ? AND primary_platform = 'manual'""",
             (game['name'],)
         )
@@ -325,6 +325,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         short_description = game.get('short_description')
         genres = game.get('genres', [])
         price_notes = game.get('price_notes')
+        aliases = game.get('aliases', [])
 
         # Validate primary_platform
         if primary_platform not in VALID_PLATFORMS:
@@ -346,6 +347,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 old_gog = existing[13]
                 old_epic = existing[14]
                 old_itchio = existing[15]
+                old_aliases = existing[16]
 
                 if update_existing:
                     # Check if classification or platform info changed
@@ -353,6 +355,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                     new_dim2 = classification['dimension_2']
                     new_dim3 = classification['dimension_3']
                     new_platforms_json = json.dumps(platforms)
+                    new_aliases_json = json.dumps(aliases) if aliases else None
 
                     classification_changed = (
                         old_dim1 != new_dim1 or
@@ -375,8 +378,10 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         old_itchio != itchio_id
                     )
 
-                    if classification_changed or platform_changed:
-                        # Update classification and platform info
+                    aliases_changed = old_aliases != new_aliases_json
+
+                    if classification_changed or platform_changed or aliases_changed:
+                        # Update classification, platform info, and aliases
                         cursor.execute("""
                             UPDATE games SET
                                 dimension_1 = ?,
@@ -394,14 +399,15 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 gog_id = ?,
                                 epic_id = ?,
                                 itchio_id = ?,
-                                external_url = ?
+                                external_url = ?,
+                                aliases = ?
                             WHERE id = ?
                         """, (
                             new_dim1, new_dim2, new_dim3, dimension_4,
                             dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                             new_platforms_json, primary_platform,
                             battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
-                            external_url, db_id
+                            external_url, new_aliases_json, db_id
                         ))
 
                         # Show what changed
@@ -424,6 +430,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                             changes.append("dim4_notes")
                         if platform_changed:
                             changes.append("platforms")
+                        if aliases_changed:
+                            changes.append("aliases")
 
                         print(f"↻ Updated: {name} ({', '.join(changes)})")
                         updated += 1
@@ -440,8 +448,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                  platforms, primary_platform, external_url,
                  name, dimension_1, dimension_2, dimension_3, dimension_4,
                  dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-                 short_description, genres, price_notes, date_updated)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 short_description, genres, price_notes, aliases, date_updated)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -464,6 +472,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 short_description,
                 json.dumps(genres) if genres else None,
                 price_notes,
+                json.dumps(aliases) if aliases else None,
                 datetime.now()
             ))
 

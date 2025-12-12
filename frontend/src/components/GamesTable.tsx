@@ -339,7 +339,8 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     const matchesSearch =
       normalize(game.name).includes(searchLower) ||
       (game.developer && normalize(game.developer).includes(searchLower)) ||
-      (game.publisher && normalize(game.publisher).includes(searchLower));
+      (game.publisher && normalize(game.publisher).includes(searchLower)) ||
+      (game.aliases && game.aliases.some(alias => normalize(alias).includes(searchLower)));
     if (!matchesSearch) return false;
   }
 

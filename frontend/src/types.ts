@@ -31,6 +31,7 @@ export interface Game {
   price_notes?: string | null;
   steam_tags: string[];
   genres: string[];
+  aliases: string[];
   last_checked?: string;
   update_count: number;
   last_update?: string;

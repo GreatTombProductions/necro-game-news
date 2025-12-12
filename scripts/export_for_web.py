@@ -61,6 +61,7 @@ def export_games():
             g.price_notes,
             g.steam_tags,
             g.genres,
+            g.aliases,
             g.last_checked,
             (SELECT COUNT(*) FROM updates WHERE game_id = g.id) as update_count,
             (SELECT date FROM updates WHERE game_id = g.id AND update_type IN ('patch', 'release', 'dlc') ORDER BY date DESC LIMIT 1) as last_update,
@@ -102,6 +103,14 @@ def export_games():
                 game['platforms'] = ['steam']
         else:
             game['platforms'] = ['steam']
+
+        if game['aliases']:
+            try:
+                game['aliases'] = json.loads(game['aliases'])
+            except:
+                game['aliases'] = []
+        else:
+            game['aliases'] = []
 
     return games
 

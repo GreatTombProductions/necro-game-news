@@ -635,6 +635,11 @@ games:
   date_updated: '2025-12-09'
   dimension_1_notes: Tome of Necromancy
 - name: Heroes® of Might & Magic® III - HD Edition
+  aliases:
+  - Heroes of Might and Magic 3 HD Edition
+  - Heroes of Might and Magic III HD Edition
+  - Heroes of Might & Magic 3 HD Edition
+  - Heroes of Might & Magic III HD Edition
   steam_id: 297000
   classification:
     dimension_1: a
@@ -992,6 +997,12 @@ games:
     to disciples and demonstrated in events/lore
   date_updated: '2025-12-09'
 - name: Diablo III
+  aliases:
+  - 'Diablo 3'
+  - 'Diablo III: Reaper of Souls'
+  - 'Diablo 3: Reaper of Souls'
+  - 'Diablo 3: Rise of the Necromancer'
+  - 'Diablo III: Rise of the Necromancer'
   battlenet_id: diablo-3
   battlenet_store_id: diablo-iii
   platforms:
@@ -1103,6 +1114,11 @@ games:
   dimension_1_notes: Undead faction includes necromancer minions
   date_updated: '2025-12-09'
 - name: 'Warcraft III: Reforged'
+  aliases:
+  - 'Warcraft 3'
+  - 'Warcraft 3: Reforged'
+  - 'Warcraft 3 Reforged'
+  - 'Warcraft III Reforged'
   battlenet_id: warcraft-3
   battlenet_store_id: warcraft-3-reforged
   platforms:
@@ -1160,6 +1176,9 @@ games:
   - steam
   - battlenet
   primary_platform: steam
+  aliases:
+  - Diablo 4
+  - D4
   classification:
     dimension_1: a
     dimension_2: character

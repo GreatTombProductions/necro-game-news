@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS games (
     price_notes TEXT,  -- Additional notes about pricing (e.g., subscription, DLC required)
     developer TEXT,
     publisher TEXT,
+    aliases TEXT,    -- JSON array of alternative names for search (e.g., "Diablo 4" for "Diablo IV")
 
     -- Tracking metadata
     date_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Date entry was last updated
