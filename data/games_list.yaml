@@ -74,7 +74,7 @@ games:
 - name: SWORN
   steam_id: 1763250
   classification:
-    dimension_1: b
+    dimension_1: c
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
@@ -1067,6 +1067,23 @@ games:
   priority: medium
   dimension_1_notes: Death Knight class
   date_updated: '2025-12-09'
+- name: Heroes of the Storm
+  battlenet_id: heroes-of-the-storm
+  battlenet_store_id: heroes-of-the-storm
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena) game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft, and Overwatch battle in 5v5 matches
+  genres:
+  - MOBA
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Heroes like Xul, the Cryptic Necromancer and Arthas, the Lich King
+  date_updated: '2025-12-11'
 - name: Warcraft Rumble
   battlenet_id: warcraft-rumble
   platforms:
@@ -1118,7 +1135,7 @@ games:
     dimension_1: a
     dimension_2: character
     dimension_3: implied
-    dimension_4: instant
+    dimension_4: gated
   priority: medium
   dimension_1_notes: Death Knight class with undead/corpse mechanics
   date_updated: '2025-12-09'

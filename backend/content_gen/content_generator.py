@@ -58,6 +58,7 @@ class ContentGenerator:
                 g.dimension_1,
                 g.dimension_2,
                 g.dimension_3,
+                g.dimension_4,
                 g.release_date,
                 g.price_usd,
                 g.genres,
@@ -120,6 +121,7 @@ class ContentGenerator:
                 g.dimension_1,
                 g.dimension_2,
                 g.dimension_3,
+                g.dimension_4,
                 g.release_date,
                 g.price_usd,
                 g.genres,
@@ -168,7 +170,8 @@ class ContentGenerator:
             game_genres=update_data.get('genres'),
             game_dimension_1=update_data.get('dimension_1'),
             game_dimension_2=update_data.get('dimension_2'),
-            game_dimension_3=update_data.get('dimension_3')
+            game_dimension_3=update_data.get('dimension_3'),
+            game_dimension_4=update_data.get('dimension_4')
         )
 
         return template

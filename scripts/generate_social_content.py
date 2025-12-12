@@ -88,6 +88,9 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> 
                     parts.append("Game Info:")
                     parts.extend(game_stats)
                     parts.append("")
+                if template.steam_url:
+                    parts.append(f"Link: {template.steam_url}")
+                    parts.append("")
                 parts.append(template._generate_hashtags())
                 captions.append("\n".join(parts))
 
@@ -119,6 +122,9 @@ def generate_caption_variants(template: PostTemplate, num_variants: int = 1) -> 
             if game_stats:
                 parts.append("Game Info:")
                 parts.extend(game_stats)
+                parts.append("")
+            if template.steam_url:
+                parts.append(f"Link: {template.steam_url}")
                 parts.append("")
             parts.append(template._generate_hashtags())
             captions.append("\n".join(parts))

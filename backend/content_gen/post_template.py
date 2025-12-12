@@ -31,7 +31,8 @@ class PostTemplate:
                  game_genres: Optional[str] = None,
                  game_dimension_1: Optional[str] = None,
                  game_dimension_2: Optional[str] = None,
-                 game_dimension_3: Optional[str] = None):
+                 game_dimension_3: Optional[str] = None,
+                 game_dimension_4: Optional[str] = None):
         """
         Initialize post template with update information
 
@@ -49,6 +50,7 @@ class PostTemplate:
             game_dimension_1: Necromancy integration dimension
             game_dimension_2: POV dimension (character/unit)
             game_dimension_3: Naming dimension (explicit/implied)
+            game_dimension_4: Availability dimension (instant/gated)
         """
         self.game_name = game_name
         self.game_image_url = game_image_url
@@ -63,6 +65,7 @@ class PostTemplate:
         self.game_dimension_1 = game_dimension_1
         self.game_dimension_2 = game_dimension_2
         self.game_dimension_3 = game_dimension_3
+        self.game_dimension_4 = game_dimension_4
 
     def generate_caption(self) -> str:
         """
@@ -94,6 +97,11 @@ class PostTemplate:
         if game_stats:
             parts.append("Game Info:")
             parts.extend(game_stats)
+            parts.append("")
+
+        # Update link
+        if self.steam_url:
+            parts.append(f"Link: {self.steam_url}")
             parts.append("")
 
         # Hashtags
@@ -214,6 +222,14 @@ class PostTemplate:
                 'd': 'Necromantic by technicality or lore (minimal impact on identity/gameplay)'
             }.get(self.game_dimension_1, 'Unknown')
             stats.append(f"- Necromancy: {necro_desc}")
+
+        # Availability
+        if self.game_dimension_4:
+            availability_desc = {
+                'instant': 'Available from the start',
+                'gated': 'Requires unlocking/progression'
+            }.get(self.game_dimension_4, 'Unknown')
+            stats.append(f"- Availability: {availability_desc}")
 
         return stats
 
@@ -401,7 +417,8 @@ def create_template(game_name: str, game_image_url: str,
                    game_genres: Optional[str] = None,
                    game_dimension_1: Optional[str] = None,
                    game_dimension_2: Optional[str] = None,
-                   game_dimension_3: Optional[str] = None) -> PostTemplate:
+                   game_dimension_3: Optional[str] = None,
+                   game_dimension_4: Optional[str] = None) -> PostTemplate:
     """
     Factory function to create appropriate template based on update type.
 
@@ -419,6 +436,7 @@ def create_template(game_name: str, game_image_url: str,
         game_dimension_1: Necromancy integration dimension
         game_dimension_2: POV dimension (character/unit)
         game_dimension_3: Naming dimension (explicit/implied)
+        game_dimension_4: Availability dimension (instant/gated)
 
     Returns:
         Appropriate PostTemplate subclass instance
@@ -445,5 +463,6 @@ def create_template(game_name: str, game_image_url: str,
         game_genres=game_genres,
         game_dimension_1=game_dimension_1,
         game_dimension_2=game_dimension_2,
-        game_dimension_3=game_dimension_3
+        game_dimension_3=game_dimension_3,
+        game_dimension_4=game_dimension_4
     )
