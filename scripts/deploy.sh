@@ -79,20 +79,17 @@ if [ -z "$MODE" ]; then
     echo "     - Check for Steam updates"
     echo "     - Export data for web"
     echo "     - Generate social media content"
-    echo "     - Create weekly report"
     echo "     - Commit & deploy to Vercel"
     echo ""
     echo "  2) Updates + Deploy (skip social content)"
     echo "     - Check for Steam updates"
     echo "     - Export data for web"
-    echo "     - Create weekly report"
     echo "     - Commit & deploy to Vercel"
     echo ""
     echo "  3) New Games Only + Deploy"
     echo "     - Load newly added games from YAML"
     echo "     - Skip update checking for existing games"
     echo "     - Export data for web"
-    echo "     - Create weekly report"
     echo "     - Commit & deploy to Vercel"
     echo ""
     echo "  4) Social Content Only"
@@ -187,10 +184,6 @@ case $MODE in
         $PYTHON scripts/generate_social_content.py $REPROCESS
 
         echo ""
-        echo "📊 Generating report..."
-        $PYTHON scripts/generate_report.py --days 7
-
-        echo ""
         echo "✅ Full deployment complete!"
         ;;
 
@@ -202,10 +195,6 @@ case $MODE in
         echo ""
         echo "📤 Exporting data for web..."
         $PYTHON scripts/export_for_web.py
-
-        echo ""
-        echo "📊 Generating report..."
-        $PYTHON scripts/generate_report.py --days 7
 
         echo ""
         echo "📝 Committing changes..."
@@ -229,10 +218,6 @@ case $MODE in
         echo ""
         echo "📤 Exporting data for web..."
         $PYTHON scripts/export_for_web.py
-
-        echo ""
-        echo "📊 Generating report..."
-        $PYTHON scripts/generate_report.py --days 7
 
         echo ""
         echo "📝 Committing changes..."
