@@ -48,6 +48,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:19.291083",
     "update_count": 47,
     "last_update": "2019-01-29 15:25:22",
@@ -95,6 +96,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:20.823287",
     "update_count": 22,
     "last_update": "2025-10-23 06:00:22",
@@ -154,6 +156,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:22.355186",
     "update_count": 50,
     "last_update": "2022-03-01 05:06:56",
@@ -211,6 +214,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:23.941978",
     "update_count": 50,
     "last_update": "2022-07-15 16:21:04",
@@ -267,6 +271,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:25.477702",
     "update_count": 47,
     "last_update": "2025-12-09 06:12:53",
@@ -323,6 +328,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:29.984863",
     "update_count": 48,
     "last_update": "2017-05-02 08:41:07",
@@ -368,6 +374,7 @@
       "Action",
       "Indie"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:59.747913",
     "update_count": 18,
     "last_update": "2025-11-05 08:51:16",
@@ -425,6 +432,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:01.316982",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
@@ -483,6 +491,7 @@
       "Simulation",
       "Early Access"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:02.842536",
     "update_count": 54,
     "last_update": "2025-12-11 08:21:57",
@@ -541,6 +550,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:04.391797",
     "update_count": 50,
     "last_update": "2025-11-07 05:00:00",
@@ -600,6 +610,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:41.963936",
     "update_count": 47,
     "last_update": "2025-08-18 12:16:38",
@@ -655,6 +666,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:22.272303",
     "update_count": 18,
     "last_update": "2024-04-17 07:46:42",
@@ -711,6 +723,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:23.868205",
     "update_count": 50,
     "last_update": "2019-03-16 11:43:46",
@@ -756,6 +769,7 @@
       "Strategy",
       "Early Access"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:05.926673",
     "update_count": 46,
     "last_update": "2025-12-05 01:36:18",
@@ -814,6 +828,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:07.334406",
     "update_count": 39,
     "last_update": "2025-02-07 09:28:23",
@@ -871,6 +886,7 @@
       "Adventure",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:08.787859",
     "update_count": 11,
     "last_update": "2018-11-27 10:04:35",
@@ -926,6 +942,7 @@
     "genres": [
       "Action"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:39.019871",
     "update_count": 25,
     "last_update": "2025-12-09 07:30:19",
@@ -982,6 +999,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:10.429076",
     "update_count": 40,
     "last_update": "2024-07-17 11:11:32",
@@ -1039,6 +1057,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:11.965517",
     "update_count": 50,
     "last_update": "2025-11-03 09:01:28",
@@ -1085,6 +1104,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:13.398572",
     "update_count": 12,
     "last_update": "2025-11-28 03:22:40",
@@ -1130,6 +1150,7 @@
       "Action RPG",
       "Hack and Slash"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:13.422230",
     "update_count": 20,
     "last_update": "2022-06-27 18:00:00",
@@ -1175,6 +1196,7 @@
       "Action RPG",
       "Hack and Slash"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:11.409561",
     "update_count": 20,
     "last_update": "2024-09-13 17:00:00",
@@ -1220,6 +1242,7 @@
       "Action RPG",
       "Mobile"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:12.398137",
     "update_count": 23,
     "last_update": "2025-11-18 18:00:00",
@@ -1276,6 +1299,10 @@
     "genres": [
       "Action",
       "RPG"
+    ],
+    "aliases": [
+      "Diablo 4",
+      "D4"
     ],
     "last_checked": "2025-12-11 19:52:11.068119",
     "update_count": 3,
@@ -1334,6 +1361,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:25.400713",
     "update_count": 6,
     "last_update": "2012-08-22 12:28:00",
@@ -1389,6 +1417,7 @@
     "genres": [
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:56.813639",
     "update_count": 2,
     "last_update": null,
@@ -1446,6 +1475,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:29.715507",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
@@ -1502,6 +1532,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:19.308999",
     "update_count": 48,
     "last_update": "2019-08-16 06:26:44",
@@ -1558,6 +1589,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:20.747173",
     "update_count": 48,
     "last_update": "2020-12-13 09:12:06",
@@ -1613,6 +1645,7 @@
     "genres": [
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:50.759886",
     "update_count": 3,
     "last_update": null,
@@ -1671,6 +1704,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:43.267575",
     "update_count": 50,
     "last_update": "2018-02-26 14:35:12",
@@ -1729,6 +1763,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:52.366854",
     "update_count": 50,
     "last_update": "2025-10-07 20:18:48",
@@ -1775,6 +1810,7 @@
       "Adventure",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:34.414935",
     "update_count": 6,
     "last_update": "2025-09-25 08:04:29",
@@ -1831,6 +1867,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:56.146528",
     "update_count": 53,
     "last_update": "2025-12-09 06:01:09",
@@ -1887,6 +1924,7 @@
       "Action",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:31.359748",
     "update_count": 22,
     "last_update": "2025-12-03 03:02:02",
@@ -1944,6 +1982,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:53.957554",
     "update_count": 50,
     "last_update": "2018-01-31 01:27:57",
@@ -1990,6 +2029,7 @@
       "Strategy",
       "Early Access"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:14.840303",
     "update_count": 48,
     "last_update": "2025-12-01 06:33:54",
@@ -2048,6 +2088,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:16.344573",
     "update_count": 42,
     "last_update": "2025-06-26 10:05:40",
@@ -2106,6 +2147,7 @@
       "RPG",
       "Free To Play"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:37.384788",
     "update_count": 48,
     "last_update": "2025-10-07 09:00:42",
@@ -2163,6 +2205,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:18.004072",
     "update_count": 26,
     "last_update": "2025-11-12 11:40:07",
@@ -2219,6 +2262,7 @@
       "Action",
       "Indie"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:26.920434",
     "update_count": 47,
     "last_update": "2024-03-20 10:56:20",
@@ -2264,6 +2308,7 @@
       "Card Game",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:17.424569",
     "update_count": 25,
     "last_update": "2025-12-01 17:55:00",
@@ -2310,6 +2355,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:06.398097",
     "update_count": 49,
     "last_update": "2025-11-27 08:57:28",
@@ -2369,6 +2415,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:07.887570",
     "update_count": 50,
     "last_update": "2025-04-03 07:11:05",
@@ -2421,6 +2468,7 @@
     "genres": [
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:17.632160",
     "update_count": 1,
     "last_update": null,
@@ -2465,6 +2513,7 @@
     "genres": [
       "MOBA"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:05.957334",
     "update_count": 5,
     "last_update": "2025-12-01 18:00:00",
@@ -2521,6 +2570,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:38.844808",
     "update_count": 15,
     "last_update": "2015-04-09 10:13:18",
@@ -2578,6 +2628,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:09.236770",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
@@ -2635,6 +2686,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:10.805827",
     "update_count": 32,
     "last_update": "2018-11-19 07:40:25",
@@ -2692,6 +2744,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:12.353654",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
@@ -2749,6 +2802,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:13.754121",
     "update_count": 47,
     "last_update": "2024-11-06 12:32:28",
@@ -2806,6 +2860,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:44.740201",
     "update_count": 48,
     "last_update": "2025-08-28 03:25:48",
@@ -2861,6 +2916,7 @@
     "genres": [
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:15.465868",
     "update_count": 50,
     "last_update": "2025-09-25 10:00:12",
@@ -2908,6 +2964,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:35.897394",
     "update_count": 15,
     "last_update": "2025-12-07 13:08:36",
@@ -2966,6 +3023,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:16.764349",
     "update_count": 36,
     "last_update": "2025-10-16 09:02:48",
@@ -3023,6 +3081,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:18.771011",
     "update_count": 14,
     "last_update": "2024-05-02 12:13:16",
@@ -3082,6 +3141,7 @@
       "RPG",
       "Free To Play"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:20.869702",
     "update_count": 43,
     "last_update": "2025-11-18 09:37:49",
@@ -3137,6 +3197,7 @@
     "genres": [
       "Simulation"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:21.406571",
     "update_count": 49,
     "last_update": "2025-05-12 09:32:39",
@@ -3193,6 +3254,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:22.984923",
     "update_count": 43,
     "last_update": "2025-12-10 09:07:04",
@@ -3251,6 +3313,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:40.527683",
     "update_count": 41,
     "last_update": "2025-11-20 06:15:04",
@@ -3308,6 +3371,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:24.250945",
     "update_count": 8,
     "last_update": "2024-10-18 07:14:46",
@@ -3353,6 +3417,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:34.382473",
     "update_count": 30,
     "last_update": "2025-09-20 20:50:29",
@@ -3412,6 +3477,7 @@
       "Indie",
       "Early Access"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:26.120908",
     "update_count": 15,
     "last_update": "2024-07-05 10:49:32",
@@ -3470,6 +3536,7 @@
       "Indie",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:27.453308",
     "update_count": 50,
     "last_update": "2021-03-05 02:41:41",
@@ -3528,6 +3595,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:28.798293",
     "update_count": 44,
     "last_update": "2025-11-11 05:03:57",
@@ -3586,6 +3654,7 @@
       "Simulation",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:30.356412",
     "update_count": 26,
     "last_update": "2025-11-11 05:04:50",
@@ -3645,6 +3714,7 @@
       "RPG",
       "Free To Play"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:31.343189",
     "update_count": 38,
     "last_update": "2023-03-28 10:48:52",
@@ -3700,6 +3770,7 @@
     "genres": [
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:32.784820",
     "update_count": 38,
     "last_update": "2025-10-08 08:03:02",
@@ -3747,6 +3818,7 @@
       "Casual",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:31.810840",
     "update_count": 12,
     "last_update": "2025-12-11 07:56:50",
@@ -3805,6 +3877,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:33.797845",
     "update_count": 32,
     "last_update": "2023-01-18 10:29:41",
@@ -3861,6 +3934,7 @@
       "Action",
       "Adventure"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:34.815495",
     "update_count": 8,
     "last_update": "2015-10-19 16:03:00",
@@ -3921,6 +3995,7 @@
       "RPG",
       "Free To Play"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:36.352758",
     "update_count": 35,
     "last_update": "2025-11-11 13:43:32",
@@ -3980,6 +4055,7 @@
       "RPG",
       "Early Access"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:38.301840",
     "update_count": 52,
     "last_update": "2025-09-25 13:21:28",
@@ -4036,6 +4112,7 @@
       "Adventure",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:46.299594",
     "update_count": 45,
     "last_update": "2021-05-27 07:53:09",
@@ -4095,6 +4172,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:47.824282",
     "update_count": 48,
     "last_update": "2025-05-15 04:59:29",
@@ -4151,6 +4229,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:39.348665",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
@@ -4208,6 +4287,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:40.785159",
     "update_count": 40,
     "last_update": "2025-11-13 08:34:15",
@@ -4261,6 +4341,7 @@
       "Singleplayer"
     ],
     "genres": [],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:55.230074",
     "update_count": 1,
     "last_update": null,
@@ -4317,6 +4398,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:42.394118",
     "update_count": 39,
     "last_update": "2024-09-02 11:00:02",
@@ -4373,6 +4455,7 @@
       "Action",
       "Indie"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:43.930714",
     "update_count": 45,
     "last_update": "2024-06-26 18:58:29",
@@ -4418,6 +4501,7 @@
       "Action",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:45.468157",
     "update_count": 29,
     "last_update": "2025-12-10 00:26:42",
@@ -4475,6 +4559,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:46.833116",
     "update_count": 51,
     "last_update": "2025-12-08 13:18:16",
@@ -4532,6 +4617,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:48.279675",
     "update_count": 49,
     "last_update": "2025-10-04 02:26:46",
@@ -4588,6 +4674,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:26.832605",
     "update_count": 15,
     "last_update": "2020-11-03 10:22:36",
@@ -4644,6 +4731,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:28.205264",
     "update_count": 36,
     "last_update": "2025-06-18 02:20:26",
@@ -4701,6 +4789,7 @@
       "Adventure",
       "Indie"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:49.978338",
     "update_count": 4,
     "last_update": "2022-07-10 05:03:19",
@@ -4758,6 +4847,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:51.388465",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
@@ -4816,6 +4906,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:32.925905",
     "update_count": 45,
     "last_update": "2025-12-09 09:14:07",
@@ -4873,6 +4964,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:49.284846",
     "update_count": 49,
     "last_update": "2020-11-06 16:56:21",
@@ -4931,6 +5023,7 @@
       "Massively Multiplayer",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:35.866848",
     "update_count": 28,
     "last_update": "2025-10-28 06:49:31",
@@ -4977,6 +5070,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:52.876535",
     "update_count": 48,
     "last_update": "2025-12-01 04:16:12",
@@ -5035,6 +5129,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:54.433511",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
@@ -5090,6 +5185,7 @@
     "genres": [
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:57.563603",
     "update_count": 50,
     "last_update": "2025-05-02 09:48:07",
@@ -5146,6 +5242,7 @@
       "Action",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:51:59.189682",
     "update_count": 20,
     "last_update": "2025-11-20 04:06:27",
@@ -5202,6 +5299,7 @@
       "Action",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:00.521868",
     "update_count": 23,
     "last_update": "2021-09-22 07:02:45",
@@ -5258,6 +5356,7 @@
       "Action",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:02.427674",
     "update_count": 39,
     "last_update": "2025-12-10 04:58:32",
@@ -5316,6 +5415,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:03.436657",
     "update_count": 49,
     "last_update": "2023-10-18 08:11:19",
@@ -5374,6 +5474,7 @@
       "RPG",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:05.009520",
     "update_count": 34,
     "last_update": "2023-10-18 08:11:19",
@@ -5430,6 +5531,7 @@
       "RPG",
       "Simulation"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:06.386076",
     "update_count": 20,
     "last_update": "2022-10-08 14:34:48",
@@ -5487,6 +5589,7 @@
       "Adventure",
       "Massively Multiplayer"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:08.201450",
     "update_count": 34,
     "last_update": "2025-10-15 01:01:41",
@@ -5532,6 +5635,7 @@
       "RTS",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:16.625655",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
@@ -5577,6 +5681,7 @@
       "Mobile",
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:15.470480",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
@@ -5634,6 +5739,7 @@
       "RPG",
       "Free To Play"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:40.248795",
     "update_count": 45,
     "last_update": "2025-10-30 09:34:16",
@@ -5691,6 +5797,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:28.548826",
     "update_count": 34,
     "last_update": "2025-11-27 03:27:48",
@@ -5746,6 +5853,7 @@
     "genres": [
       "Strategy"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:41.744459",
     "update_count": 19,
     "last_update": "2014-04-10 10:16:18",
@@ -5804,6 +5912,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:09.351816",
     "update_count": 47,
     "last_update": "2023-07-20 06:19:45",
@@ -5848,6 +5957,7 @@
     "genres": [
       "MMORPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:14.741069",
     "update_count": 26,
     "last_update": "2025-12-06 01:28:42",
@@ -5904,6 +6014,7 @@
       "Action",
       "Indie"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:53:37.359090",
     "update_count": 49,
     "last_update": "2025-03-24 07:29:46",
@@ -5960,6 +6071,7 @@
       "Indie",
       "RPG"
     ],
+    "aliases": [],
     "last_checked": "2025-12-11 19:52:58.266280",
     "update_count": 50,
     "last_update": "2025-08-02 08:14:55",
