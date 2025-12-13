@@ -2474,7 +2474,7 @@
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
-    "dimension_4": "unknown",
+    "dimension_4": "gated",
     "dimension_1_notes": "2 permanent-minion ghost summoning skills, temporary ghost summon",
     "dimension_2_notes": "",
     "dimension_3_notes": "",
@@ -2491,7 +2491,9 @@
       "Indie",
       "RPG"
     ],
-    "aliases": [],
+    "aliases": [
+      "Hellclock"
+    ],
     "last_checked": "2025-12-13 09:01:43.082354",
     "update_count": 49,
     "last_update": "2025-11-27 08:57:28",
@@ -3089,7 +3091,7 @@
     "dimension_1": "b",
     "dimension_2": "unit",
     "dimension_3": "explicit",
-    "dimension_4": "unknown",
+    "dimension_4": "gated",
     "dimension_1_notes": "Towers such as \"Necromancer\" available",
     "dimension_2_notes": "",
     "dimension_3_notes": "",
@@ -4691,7 +4693,7 @@
     "dimension_1": "d",
     "dimension_2": "unit",
     "dimension_3": "implied",
-    "dimension_4": "unknown",
+    "dimension_4": "instant",
     "dimension_1_notes": "Red Marley (which you have control of via the memory capture mechanic) shown to be able to reanimate skeletons with soul energy",
     "dimension_2_notes": "",
     "dimension_3_notes": "",
@@ -6158,9 +6160,9 @@
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "explicit",
-    "dimension_4": "unknown",
-    "dimension_1_notes": "Caster lords like Supreme Vampire exist with necromantic abilities",
-    "dimension_2_notes": "",
+    "dimension_4": "instant",
+    "dimension_1_notes": "Undead race, necromancy spells and perks exist",
+    "dimension_2_notes": "Assuming you play \"as\" the Great Mage",
     "dimension_3_notes": "\"School of Necromancy\" caster perk",
     "dimension_4_notes": "",
     "date_updated": "2025-12-07 00:12:42.038319",
@@ -6184,7 +6186,9 @@
     "genres": [
       "Strategy"
     ],
-    "aliases": [],
+    "aliases": [
+      "Warlock Master of the Arcane"
+    ],
     "last_checked": "2025-12-13 09:03:22.715061",
     "update_count": 19,
     "last_update": "2014-04-10 10:16:18",
