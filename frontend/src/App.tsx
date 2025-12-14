@@ -57,7 +57,7 @@ function App() {
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400 mb-2 pb-1">
-            Necromancy Game News
+            Necromancy Game Registry
           </h1>
           <p className="text-gray-400 mb-3">Where necromancy games rise from obscurity</p>
           <div className="flex items-center justify-center gap-4">

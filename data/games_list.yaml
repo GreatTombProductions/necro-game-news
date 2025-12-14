@@ -11,6 +11,8 @@ games:
   dimension_1_notes: Grave Digger skull
 - name: Hades II
   steam_id: 1145350
+  aliases:
+  - Hades 2
   classification:
     dimension_1: d
     dimension_2: character
@@ -18,7 +20,7 @@ games:
     dimension_4: instant
   priority: low
   date_updated: '2025-12-09'
-  dimension_1_notes: Melinoe canonically has necromancy abilities (dialogue with Medea),
+  dimension_1_notes: Melinoe canonically has necromancy abilities as revealed in dialogue,
     but they are not used in game, apart from the "Necromantic Influence" incantation
 - name: Lost Ark
   steam_id: 1599340
@@ -103,15 +105,22 @@ games:
   dimension_1_notes: Necromancer card exists, summons shadow bats when placed
 - name: Hell Clock
   steam_id: 1782460
+  aliases: 
+  - Hellclock
   classification:
     dimension_1: c
     dimension_2: character
     dimension_3: implied
+    dimension_4: gated
   priority: low
   date_updated: '2025-12-09'
   dimension_1_notes: 2 permanent-minion ghost summoning skills, temporary ghost summon
 - name: 'Total War: WARHAMMER II'
   steam_id: 594570
+  aliases:
+  - Total War Warhammer II
+  - Total War: Warhammer 2
+  - Total War Warhammer 2
   classification:
     dimension_1: a
     dimension_2: character
@@ -193,13 +202,14 @@ games:
   priority: low
   date_updated: '2025-12-09'
   dimension_1_notes: Orechi from the Lazarus league is shown in dialogue to be able
-    to put souls into new bodies. Lazarus league has the "reanimate" mechanic.
+    to put souls into new bodies. Lazarus league has the "reanimate" mechanic
 - name: 'Shadow Gambit: The Cursed Crew'
   steam_id: 1545560
   classification:
     dimension_1: d
     dimension_2: unit
     dimension_3: implied
+    dimension_4: instant
   priority: low
   date_updated: '2025-12-09'
   dimension_1_notes: Red Marley (which you have control of via the memory capture
@@ -219,6 +229,7 @@ games:
     dimension_1: b
     dimension_2: unit
     dimension_3: explicit
+    dimension_4: gated
   priority: high
   date_updated: '2025-12-09'
   dimension_1_notes: Towers such as "Necromancer" available
@@ -273,6 +284,8 @@ games:
   dimension_1_notes: If you consider more science-themed undead raising necromancy
 - name: Darksiders II Deathinitive Edition
   steam_id: 388410
+  aliases:
+  - Darksiders 2 Deathinitive Edition
   classification:
     dimension_1: b
     dimension_2: character
@@ -661,13 +674,17 @@ games:
   dimension_1_notes: Nekros warframe
 - name: Warlock - Master of the Arcane
   steam_id: 203630
+  aliases:
+  - Warlock Master of the Arcane
   classification:
     dimension_1: b
     dimension_2: character
     dimension_3: explicit
+    dimension_4: instant
   priority: medium
-  date_updated: '2025-12-09'
-  dimension_1_notes: Caster lords like Supreme Vampire exist with necromantic abilities
+  date_updated: '2025-12-13'
+  dimension_1_notes: Undead race, necromancy spells and perks exist
+  dimension_2_notes: Assuming you play "as" the Great Mage
   dimension_3_notes: '"School of Necromancy" caster perk'
 - name: Dungeon Souls
   steam_id: 383230
@@ -781,6 +798,11 @@ games:
   dimension_1_notes: Charnel's wizards are called necromancers
 - name: 'Disciples II: Gallean''s Return'
   steam_id: 1640
+  aliases:
+  - Disciples 2 Gallean's Return
+  - Disciples II Gallean's Return
+  - Disciples 2: Gallean's Return
+  - Disciples II: Gallean's Return
   classification:
     dimension_1: a
     dimension_2: unit
@@ -983,7 +1005,7 @@ games:
     dimension_4: instant
   priority: low
   dimension_1_notes: Firing ghost balls counts as necromancy by technicality, there
-    is also a necromancer structure and a zombie summoning passive.
+    is also a necromancer structure and a zombie summoning passive
   date_updated: '2025-12-09'
 - name: Rogue Lords
   steam_id: 1069690
@@ -1041,6 +1063,10 @@ games:
   dimension_1_notes: Necromancer class
   date_updated: '2025-12-09'
 - name: 'Diablo II: Resurrected'
+  aliases:
+  - 'Diablo 2 Resurrected'
+  - 'Diablo II Resurrected'
+  - 'Diablo 2: Resurrected'
   battlenet_id: diablo-2-resurrected
   battlenet_store_id: diablo-ii-resurrected
   platforms:
@@ -1187,3 +1213,71 @@ games:
   priority: high
   dimension_1_notes: Necromancer class
   date_updated: '2025-12-09'
+- name: "Jotunnslayer: Hordes of Hel"
+  steam_id: 2820820
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Some necromantic abilities for classes such as Seeress and Revenant, and from gods such as Nidhogg (e.g. Raise Dead)
+  date_updated: '2025-12-12'
+- name: "Arx Fatalis"
+  steam_id: 1700
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Spells such as Raise Dead (Level 6 spell) available
+  date_updated: '2025-12-13'
+- name: "Gothic 1"
+  steam_id: 65540
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Necromancer guild, learn spells such as Summon Skeleton and Summon Army of Darkness
+  date_updated: '2025-12-13'
+- name: "Middle-earth™: Shadow of War™"
+  steam_id: 356190
+  aliases:
+  - "Middle-earth: Shadow of War"
+  - "Middle-earth Shadow of War"
+  - "Middle Earth: Shadow of War"
+  - "Middle Earth Shadow of War"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Necromancy skills present, which can be specialized into with the Ringwraith gear set. Can also make orcs under your command the Necromancer title
+  date_updated: '2025-12-13'
+- name: "RuneScape ®"
+  steam_id: 1343400
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Necromancy available as one of the 4 combat styles
+  price_notes: Some content behind membership subscription
+  date_updated: '2025-12-13'
+
+# deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b

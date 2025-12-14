@@ -689,7 +689,10 @@ function Tooltip({
     const rect = triggerRef.current.getBoundingClientRect();
     // For fixed width (dimension tooltips), use larger height to account for notes
     const tooltipWidth = width === 'fixed' ? 256 : Math.min(String(text).length * 7 + 24, 400);
-    const tooltipHeight = width === 'fixed' ? 120 : 40;
+    // Estimate height based on text length and wrapping (roughly 20px per line, ~55 chars per line at 400px)
+    const textLength = String(text).length;
+    const estimatedLines = width === 'fixed' ? 5 : Math.max(1, Math.ceil(textLength / 55));
+    const tooltipHeight = width === 'fixed' ? 120 : Math.max(40, estimatedLines * 20 + 16);
     setTooltipPos(calculateTooltipPosition(rect, tooltipWidth, tooltipHeight, { centerHorizontally: true }));
   }, [text, width]);
 
@@ -711,7 +714,7 @@ function Tooltip({
   };
 
   const showTooltip = isHovered || isOpen;
-  const widthClass = width === 'fixed' ? 'w-64 text-left whitespace-normal' : 'whitespace-nowrap max-w-[400px]';
+  const widthClass = width === 'fixed' ? 'w-64 text-left whitespace-normal' : 'max-w-[400px] whitespace-normal';
 
   return (
     <span
