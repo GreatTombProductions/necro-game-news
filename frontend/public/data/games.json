@@ -4809,9 +4809,9 @@
     "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1147560/header.jpg?t=1762483568",
     "dimension_1": "c",
     "dimension_2": "character",
-    "dimension_3": "implied",
+    "dimension_3": "explicit",
     "dimension_4": "gated",
-    "dimension_1_notes": "Grave Digger skull",
+    "dimension_1_notes": "Grave Digger skull, necromancy inscription",
     "dimension_2_notes": "",
     "dimension_3_notes": "",
     "dimension_4_notes": "",
@@ -4837,7 +4837,9 @@
       "Action",
       "Indie"
     ],
-    "aliases": [],
+    "aliases": [
+      "Skul The Hero Slayer"
+    ],
     "last_checked": "2025-12-14 09:55:26.525746",
     "update_count": 45,
     "last_update": "2024-06-26 18:58:29",
