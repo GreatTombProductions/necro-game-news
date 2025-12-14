@@ -1,14 +1,16 @@
 games:
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
+  aliases:
+  - Skul The Hero Slayer
   classification:
     dimension_1: c
     dimension_2: character
-    dimension_3: implied
+    dimension_3: explicit
     dimension_4: gated
   priority: low
   date_updated: '2025-12-09'
-  dimension_1_notes: Grave Digger skull
+  dimension_1_notes: Grave Digger skull, necromancy inscription
 - name: Hades II
   steam_id: 1145350
   aliases:
@@ -119,7 +121,7 @@ games:
   steam_id: 594570
   aliases:
   - Total War Warhammer II
-  - Total War: Warhammer 2
+  - 'Total War: Warhammer 2'
   - Total War Warhammer 2
   classification:
     dimension_1: a
@@ -801,8 +803,8 @@ games:
   aliases:
   - Disciples 2 Gallean's Return
   - Disciples II Gallean's Return
-  - Disciples 2: Gallean's Return
-  - Disciples II: Gallean's Return
+  - "Disciples 2: Gallean's Return"
+  - "Disciples II: Gallean's Return"
   classification:
     dimension_1: a
     dimension_2: unit
@@ -1279,5 +1281,17 @@ games:
   dimension_1_notes: Necromancy available as one of the 4 combat styles
   price_notes: Some content behind membership subscription
   date_updated: '2025-12-13'
+- name: "Bone's Cafe"
+  steam_id: 1739070
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: 'From Steam page: "Follow the journey of Bones the necromancer as you grow and expand your cafe."'
+  date_updated: '2025-12-14'
 
 # deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b
