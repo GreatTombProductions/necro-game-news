@@ -1548,12 +1548,8 @@
     "aliases": [
       "Disciples 2 Gallean's Return",
       "Disciples II Gallean's Return",
-      {
-        "Disciples 2": "Gallean's Return"
-      },
-      {
-        "Disciples II": "Gallean's Return"
-      }
+      "Disciples 2: Gallean's Return",
+      "Disciples II: Gallean's Return"
     ],
     "last_checked": "2025-12-14 09:54:02.178249",
     "update_count": 2,
@@ -5685,9 +5681,7 @@
     ],
     "aliases": [
       "Total War Warhammer II",
-      {
-        "Total War": "Warhammer 2"
-      },
+      "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
     "last_checked": "2025-12-14 09:55:42.879205",
