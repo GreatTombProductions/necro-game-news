@@ -72,7 +72,7 @@ interface FilterPanelProps {
 // Necromancy dimension labels
 const CENTRALITY_LABELS: Record<string, string> = {
   a: 'Core',
-  b: 'Dedicated Spec',
+  b: 'Dedicated Branch',
   c: 'Isolated',
   d: 'Minimal',
 };

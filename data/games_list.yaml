@@ -768,8 +768,11 @@ games:
   priority: medium
   date_updated: '2025-12-09'
   dimension_1_notes: Necromancer class
-- name: Eador. Masters of the Broken World
+- name: "Eador. Masters of the Broken World"
   steam_id: 232050
+  aliases:
+  - Eador Masters of the Broken World
+  - "Eador: Masters of the Broken World"
   classification:
     dimension_1: b
     dimension_2: character
@@ -825,6 +828,8 @@ games:
   dimension_1_notes: Spell talents such as Animate Dead available
 - name: Age of Wonders III
   steam_id: 226840
+  aliases:
+  - "Age of Wonders 3"
   classification:
     dimension_1: a
     dimension_2: character
@@ -1293,5 +1298,554 @@ games:
   priority: medium
   dimension_1_notes: 'From Steam page: "Follow the journey of Bones the necromancer as you grow and expand your cafe."'
   date_updated: '2025-12-14'
-
+- name: "Ruinarch"
+  steam_id: 909320
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: 'The Lich archetype ("Use dark necromantic powers to terrify the world of the living")'
+  date_updated: '2025-12-15'
+- name: Soulash
+  steam_id: 1623210
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: high
+  dimension_1_notes: Lich role can raise permanent undead army, decay aura destroys villages
+  date_updated: '2025-12-15'
+- name: "Hero's Hour"
+  steam_id: 1656780
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: instant
+  priority: high
+  dimension_1_notes: Decay faction (necropolis equivalent), Earthen faction also has necromancy focus. HOMM-style with real-time battle simulation.
+  date_updated: '2025-12-15'
+- name: Sword of the Necromancer
+  steam_id: 1243890
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: high
+  dimension_1_notes: Core mechanic is using the Necromancer's sword to raise defeated enemies as minions (4 slots)
+  date_updated: '2025-12-15'
+- name: Graveyard Keeper
+  steam_id: 599140
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Can raise corpses as automated workers, unlocked through progression
+  date_updated: '2025-12-15'
+- name: Reverse Crawl
+  steam_id: 400660
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Play as the Revenant King resurrected by necromancer daughter, recruit undead minion groups
+  date_updated: '2025-12-15'
+- name: Creature Lab
+  steam_id: 1309990
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Frankenstein-style reanimation - create monsters from corpses using mutagens
+  date_updated: '2025-12-15'
+- name: Corpse Keeper
+  steam_id: 1601740
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: high
+  dimension_1_notes: Control corpses of flesh and bones stuck together with black magic. Create new corpses from defeated enemies as warriors decay.
+  date_updated: '2025-12-17'
+- name: Dredgers
+  steam_id: 1112930
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Necromancer class, can become lich with phylactery. Resurrect as zombie (once) or skeleton (unlimited).
+  date_updated: '2025-12-15'
+- name: "Rogue Empire: Dungeon Crawler RPG"
+  steam_id: 650940
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Necromancer class with 4+ minion types, can become high level undead
+  date_updated: '2025-12-15'
+- name: Fort Triumph
+  steam_id: 612570
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Grateful Dead faction playable in skirmish/multiplayer, features necromancer Re-Zaph
+  date_updated: '2025-12-15'
+- name: Lords of Solgrund
+  steam_id: 1550650
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Necromancy is one of 4 magic schools - raise zombies, skeletons, disease clouds
+  date_updated: '2025-12-15'
+- name: Spellwake
+  steam_id: 921070
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Up to 20 permanent undead minions, class mixing available
+  date_updated: '2025-12-15'
+- name: My Lovely Daughter
+  steam_id: 580170
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Core loop is creating homunculi from elements, harvesting soul fragments to resurrect daughter
+  date_updated: '2025-12-15'
+- name: My Lovely Empress
+  steam_id: 2052990
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Soul manipulation in story, main gameplay is Yaoguai summoning. Can interact with Empress' ghost immediately.
+  date_updated: '2025-12-17'
+- name: My Lovely Wife
+  steam_id: 1251930
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Soul manipulation adjacent, goal is reviving wife. Less directly necromantic than My Lovely Daughter.
+  date_updated: '2025-12-17'
+- name: "Tree of Savior (English Ver.)"
+  steam_id: 372000
+  aliases:
+  - "Tree of Savior"
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Necromancer class (5 skeletons + big undead), Bokor class (8 zombies), can combine classes
+  date_updated: '2025-12-15'
+- name: "Godking: Master of Rituals"
+  steam_id: 1229310
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: 3 factions with undead (classic undead army, bone rats, barbarian spirits). 3D Dominions-like.
+  date_updated: '2025-12-15'
+- name: Odd Realm
+  steam_id: 688060
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Ancients faction - undead mages and summoners
+  date_updated: '2025-12-15'
+- name: Sea Salt
+  steam_id: 983350
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: The Lich minion raises fallen enemies as Specters. "Necromancy" mentioned in Book of Dagon.
+  dimension_2_notes: Play as Dagon commanding apostles and minions rather than as the apostle directly
+  date_updated: '2025-12-15'
+- name: "Zombidle : REMONSTERED"
+  steam_id: 612020
+  aliases:
+  - Zombidle
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Play as Bob the local necromancer
+  date_updated: '2025-12-17'
+- name: Pox Nora
+  steam_id: 201210
+  aliases:
+  - PoxNora
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: unit
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Forsaken Wastes faction
+  date_updated: '2025-12-17'
+- name: "The Elder Scrolls V: Skyrim Special Edition"
+  steam_id: 489830
+  aliases:
+  - Skyrim
+  - Skyrim Special Edition
+  - "The Elder Scrolls V: Skyrim"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Conjuration skill (one of 6 Mage skills) contains substantial necromantic spells. Deep roleplaying/customization potential.
+  date_updated: '2025-12-17'
+- name: "The Elder Scrolls IV: Oblivion Remastered"
+  steam_id: 2623190
+  aliases:
+  - Oblivion
+  - "The Elder Scrolls IV: Oblivion"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Conjuration governs summoning Daedric and undead servants. One of 21 skills, custom class creation available.
+  date_updated: '2025-12-17'
+- name: "The Elder Scrolls III: Morrowind® Game of the Year Edition"
+  steam_id: 22320
+  aliases:
+  - Morrowind
+  - "The Elder Scrolls III: Morrowind"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Conjuration skill with necromantic spells. Can start with Summon Ancestral Ghost spell. Custom class creation available.
+  date_updated: '2025-12-17'
+- name: "Baldur's Gate II: Enhanced Edition"
+  steam_id: 257350
+  aliases:
+  - "Baldur's Gate 2"
+  - BG2
+  - BGII
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization doesn't fully define character
+  date_updated: '2025-12-17'
+- name: "Baldur's Gate: Enhanced Edition"
+  steam_id: 228280
+  aliases:
+  - "Baldur's Gate 1"
+  - BG1
+  - BGI
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization doesn't fully define character
+  date_updated: '2025-12-17'
+- name: "Bro, where's My head???"
+  steam_id: 1564760
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Character is necromancer Re-Zaph in lore but this does not meaningfully impact puzzle gameplay
+  date_updated: '2025-12-17'
+- name: 9th Dawn III
+  steam_id: 1154850
+  aliases:
+  - "9th Dawn 3"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Summoner character with substantial undead summon options among the available pets
+  date_updated: '2025-12-17'
+- name: "Icewind Dale: Enhanced Edition"
+  steam_id: 321800
+  aliases:
+  - "Icewind Dale"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Necromancy is one of 8 Schools of Magic, Specialist Mage "Necromancer" available
+  date_updated: '2025-12-17'
+- name: Titan Quest Anniversary Edition
+  steam_id: 475150
+  aliases:
+  - "Titan Quest"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Spirit Mastery (Theurgist) features necromantic abilities including Summon Liche King
+  date_updated: '2025-12-17'
+- name: Dungeon Siege II
+  steam_id: 39200
+  aliases:
+  - "Dungeon Siege 2"
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: Grim Necromancy combat magic skill grants increased death magic damage
+  date_updated: '2025-12-17'
+- name: Dungeon Siege
+  steam_id: 39190
+  aliases:
+  - "Dungeon Siege 1"
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: Spells like Summon Skeleton available
+  date_updated: '2025-12-17'
+- name: Barony
+  steam_id: 371970
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Conjurer class (Myths & Outcasts DLC) has unique Conjure Skeleton spell with persistent companion that grows in power
+  price_notes: Conjurer requires Myths & Outcasts DLC ($4.99)
+  date_updated: '2025-12-17'
+- name: Tangledeep
+  steam_id: 628770
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Soulkeeper starting job collects Echoes of fallen enemies, Reverberate Monster skill revives fallen monsters to fight for you (80 turns, retain abilities)
+  date_updated: '2025-12-17'
+- name: Master of Magic
+  steam_id: 1623070
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Death school of magic
+  date_updated: '2025-12-17'
+- name: Low Magic Age
+  steam_id: 576770
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: Party-based play, Clerics and Wizards can summon undead from level 5 onward
+  date_updated: '2025-12-17'
+- name: "Warlock 2: The Exiled"
+  steam_id: 205990
+  aliases:
+  - "Warlock 2"
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Great Mage can cast spells such as Summon Skeletons
+  date_updated: '2025-12-17'
+- name: "Guild Wars® Reforged"
+  steam_id: 29720
+  aliases:
+  - "Guild Wars"
+  - "Guild Wars 1"
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: Necromancer profession
+  date_updated: '2025-12-17'
+- name: "Eador. Imperium"
+  steam_id: 477730
+  aliases:
+  - "Eador Imperium"
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: medium
+  dimension_1_notes: Play as Wizard, build necromantic structures after developing negative karma, spells like Raise Zombie available
+  date_updated: '2025-12-17'
+- name: "Fear & Hunger"
+  steam_id: 1002300
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  dimension_1_notes: Enki (playable character) has Necromancy skill from start - re-animates ghoul or skeleton as permanent party member
+  date_updated: '2025-12-17'
+- name: "DARK SOULS™ III"
+  steam_id: 374320
+  aliases:
+  - "Dark Souls 3"
+  - "Dark Souls III"
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: Necromantic spells like Dead Again (corpse explosion) available
+  date_updated: '2025-12-17'
 # deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b

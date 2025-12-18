@@ -1203,7 +1203,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         ),
         cell: info => {
           const date = info.getValue() as string | undefined;
-          if (!date) return <span className="text-xs text-gray-600">Never</span>;
+          if (!date) return <span className="text-xs text-gray-600">Unknown</span>;
           return (
             <LinkedCellWithTooltip
               date={date}
