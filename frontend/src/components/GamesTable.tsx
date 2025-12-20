@@ -1447,6 +1447,35 @@ export default function GamesTable({ games }: GamesTableProps) {
         onClose={() => setIsSubmissionFormOpen(false)}
       />
 
+      {/* Sort Indicator */}
+      {table.getState().sorting.length > 0 && (
+        <div className="mb-3 text-sm text-gray-400">
+          Sorting by:{' '}
+          <span className="text-purple-300">
+            {(() => {
+              const columnNames: Record<string, string> = {
+                name: 'Game',
+                last_announcement: 'News',
+                last_update: 'Updates/Patches',
+                price_usd: 'Price',
+                dimension_1: 'Centrality',
+                dimension_2: 'POV',
+                dimension_3: 'Naming',
+                dimension_4: 'Availability',
+              };
+              const dateColumns = ['last_announcement', 'last_update'];
+              return table.getState().sorting.map(sort => {
+                const name = columnNames[sort.id] || sort.id;
+                const directionText = dateColumns.includes(sort.id)
+                  ? sort.desc ? '(newest first)' : '(oldest first)'
+                  : sort.desc ? '(descending)' : '(ascending)';
+                return `${name} ${directionText}`;
+              }).join(', ');
+            })()}
+          </span>
+        </div>
+      )}
+
       {/* Table */}
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg border border-purple-700/30 overflow-hidden shadow-2xl">
         <div className="overflow-x-auto">
