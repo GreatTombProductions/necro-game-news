@@ -8,6 +8,19 @@ interface NewsItem {
   date: Date;
   title: string;
   url?: string;
+  content?: string;
+}
+
+// Truncate text to a max length, adding ellipsis if needed
+function truncateText(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  // Try to break at a word boundary
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  if (lastSpace > maxLength * 0.7) {
+    return truncated.slice(0, lastSpace) + '...';
+  }
+  return truncated + '...';
 }
 
 interface NewsFeedProps {
@@ -158,12 +171,19 @@ function NewsItemRow({ item }: { item: NewsItem }) {
   const tooltipContent = (showLinks: boolean) => (
     <>
       {/* Full title */}
-      <div className="text-sm text-gray-200 mb-2">{item.title}</div>
+      <div className="text-sm font-medium text-gray-200 mb-1">{item.title}</div>
 
       {/* Game info */}
-      <div className="text-xs text-gray-400 mb-2">
+      <div className="text-xs text-gray-500 mb-2">
         {item.game.name} • {formatRelativeTime(item.date)}
       </div>
+
+      {/* Content preview */}
+      {item.content && (
+        <div className="text-xs text-gray-400 mb-2 leading-relaxed">
+          {truncateText(item.content, 200)}
+        </div>
+      )}
 
       {/* Links for mobile */}
       {showLinks && (
@@ -322,6 +342,7 @@ export default function NewsFeed({ games }: NewsFeedProps) {
             date,
             title: game.last_announcement_title || 'New announcement',
             url: game.last_announcement_url,
+            content: game.last_announcement_content,
           });
         }
       }

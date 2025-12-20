@@ -58,7 +58,8 @@
     "last_update_title": "Unity Security Issue Fix",
     "last_announcement": "2025-10-03 08:42:34",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772512941",
-    "last_announcement_title": "Unity Security Issue Fix"
+    "last_announcement_title": "Unity Security Issue Fix",
+    "last_announcement_content": "Today, Unity notified developers about a security issue with all Unity apps, advising developers to update their apps for PC and Android. This game has now successfully been updated with the new security patch fixed! :) I am in the process of updating all affected Valorware apps - Thank you!"
   },
   {
     "id": 236,
@@ -117,7 +118,8 @@
     "last_update_title": "ADOM 3.3.3 released",
     "last_announcement": "2021-11-24 10:00:57",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490632805481",
-    "last_announcement_title": "ADOM (Ancient Domains of Mystery) is featured in Steam's Autumn Sale!"
+    "last_announcement_title": "ADOM (Ancient Domains of Mystery) is featured in Steam's Autumn Sale!",
+    "last_announcement_content": "Steam's Autumn Sale is upon us! Giving you the unique opportunity of getting great games for discounts that go haywire with up to 90% off! Get our classic roguelike dungeon crawler ADOM, for 35% off! Now is the time for a nice Treat! Grab them before it's too late: https://store.steampowered.com/app..."
   },
   {
     "id": 151,
@@ -165,7 +167,8 @@
     "last_update_title": "Rebels to Arms! Our next hot-fix is ready for the resistance.",
     "last_announcement": "2025-12-18 06:01:01",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365089890",
-    "last_announcement_title": "The fight continues as new features head to Talamh!"
+    "last_announcement_title": "The fight continues as new features head to Talamh!",
+    "last_announcement_content": "Hail, once again, dearest rebellion fighters! Since we first lit the fires of resistance in Talamh, we\u2019ve been overwhelmed by the huge number of Rebels from all over the world who have come to join our cause. You have been instrumental in pushing back the hordes of the Crimson Order and weakening Az..."
   },
   {
     "id": 238,
@@ -225,7 +228,8 @@
     "last_update_title": "Conan Chop Chop is now available!",
     "last_announcement": "2024-04-01 11:47:17",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331452386346",
-    "last_announcement_title": "The Funcom Publisher Sale is Here!"
+    "last_announcement_title": "The Funcom Publisher Sale is Here!",
+    "last_announcement_content": "New worlds are at your fingertips. We are excited to launch our Publisher Sale, where you can discover the full Funcom games catalogue at up to 70% off! Explore The Full Library And for those of you who want to get further immersed, a wide range of DLC and expansions are also discounted, including f..."
   },
   {
     "id": 214,
@@ -283,7 +287,8 @@
     "last_update_title": "BUG FIXES AND HOLY PROTECTION!!",
     "last_announcement": "2025-11-02 13:57:23",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432981039",
-    "last_announcement_title": "COMPATIBILITY PACK!!"
+    "last_announcement_title": "COMPATIBILITY PACK!!",
+    "last_announcement_content": "Hi all!As some of you know, our series has a great modding workshop, and many aspects of the games can be edited. Over the years, we\u2019ve tried to maintain backward compatibility \u2014 and I\u2019m proud to say we\u2019ve mostly achieved that goal!However, as with any software development, we didn\u2019t get everything ..."
   },
   {
     "id": 224,
@@ -340,7 +345,8 @@
     "last_update_title": "Gargoyle 1.2.2 Update - 09/12/2025",
     "last_announcement": "2025-12-09 06:12:53",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185498",
-    "last_announcement_title": "Gargoyle 1.2.2 Update - 09/12/2025"
+    "last_announcement_title": "Gargoyle 1.2.2 Update - 09/12/2025",
+    "last_announcement_content": "Vampire lords and prey alike, the tide is changing, the age of torment in upon us, and the team has been kind enough that you can now whip your enemies twice as often!The Gargoyle 1.2.2 Update brings a number of fixes to our fashion designer, faction customisation screen, and Julia got her staff bac..."
   },
   {
     "id": 244,
@@ -399,7 +405,8 @@
     "last_update_title": "The V1.8 \u201cPOSEIDON\u201d Patch out Now!",
     "last_announcement": "2019-07-11 11:00:31",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436927798949153985",
-    "last_announcement_title": "Age of Wonders 3 giveaway!"
+    "last_announcement_title": "Age of Wonders 3 giveaway!",
+    "last_announcement_content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/4276066/4488f6d64d4eec897e1cc0c8df995db6b757e3be.jpg To celebrate the upcoming release of Planetfall, we're giving Age of Wonders 3 away for free on Steam! As an added bonus, anyone who downloads Age of Wonders 3 for free during this..."
   },
   {
     "id": 258,
@@ -455,7 +462,8 @@
     "last_update_title": "Arx Fatalis Patch Notes - May 28, 2020",
     "last_announcement": "2020-05-28 14:00:19",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212089952946",
-    "last_announcement_title": "Arx Fatalis Patch Notes - May 28, 2020"
+    "last_announcement_title": "Arx Fatalis Patch Notes - May 28, 2020",
+    "last_announcement_content": "Updated to run on Windows 10 Stability improvements Various bug fixes "
   },
   {
     "id": 159,
@@ -501,7 +509,8 @@
     "last_update_title": "November Bug Fix Patch",
     "last_announcement": "2025-12-19 04:31:33",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365095057",
-    "last_announcement_title": "We\u2019re finalists for Best Game on Steam Deck - vote now and help us win!"
+    "last_announcement_title": "We\u2019re finalists for Best Game on Steam Deck - vote now and help us win!",
+    "last_announcement_content": "You did it, ball enthusiasts! BALL x PIT is a finalist in this year\u2019s Steam Awards, nominated for Best Game on Steam Deck!You helped us get here, and now you can help us cross the final stretch by casting your vote before the awards wrap up on January 3, 2026! You just have to click the box above! E..."
   },
   {
     "id": 166,
@@ -559,7 +568,8 @@
     "last_update_title": "Hotfix #35 Now Live!",
     "last_announcement": "2025-12-01 08:12:32",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045820",
-    "last_announcement_title": "Community Update #36 A Very Moddy Christmas"
+    "last_announcement_title": "Community Update #36 A Very Moddy Christmas",
+    "last_announcement_content": "Hello friends,\u00a0The days are getting colder, the holiday decorations are creeping out early, and honestly? We\u2019re leaning into it. It\u2019s been a long year, one that saw Baldur\u2019s Gate 3 receive twelve new subclasses, full cross-play support, and the arrival of photo mode - the last final, final last patc..."
   },
   {
     "id": 288,
@@ -620,7 +630,8 @@
     "last_update_title": "Reflections Of Myth & Valor / Free Community Portraits by Mike Sass Out Now",
     "last_announcement": "2025-11-08 07:39:30",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768330341",
-    "last_announcement_title": "Baldur\u2019s Gate II Turns 25: A Legendary Retrospective"
+    "last_announcement_title": "Baldur\u2019s Gate II Turns 25: A Legendary Retrospective",
+    "last_announcement_content": "It\u2019s been 25 years since Baldur\u2019s Gate II reshaped the world of Western RPGs!To mark the occasion, Ed Greenwood (Creator of the Forgotten Realms), David Gaider (Senior Designer & Writer), and Trent Oster (Director of Technology during BG2:SoA production, and Beamdog CEO) come together for a deep-div..."
   },
   {
     "id": 289,
@@ -681,7 +692,8 @@
     "last_update_title": "D&D Neverwinter Nights 2: Enhanced Edition NOW AVAILABLE | Cross Promotion",
     "last_announcement": "2025-09-30 07:51:24",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772411559",
-    "last_announcement_title": "Baldur's Gate & all Beamdog titles up to 70% off"
+    "last_announcement_title": "Baldur's Gate & all Beamdog titles up to 70% off",
+    "last_announcement_content": "\ud83c\udf42Cozy autumn + Baldur's Gate = perfection.Snag all Beamdog titles up to 70% off!\ud83d\udc51MythForce now just $6.79 (66% off its new base price).\ud83d\uddfa\ufe0fAxis & Allies 1942 Online hits an all-time low\u2014just $5.99 (70% off)!Your fall gaming lineup awaits.\ud83c\udfaehttps://store.steampowered.com/publisher/Beamdog"
   },
   {
     "id": 296,
@@ -740,7 +752,8 @@
     "last_update_title": "The 4.3.1 Assist Shrine Update is now live!",
     "last_announcement": "2025-12-19 14:00:34",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096960",
-    "last_announcement_title": "DLC Sneak Peek: The Salamander Paladin"
+    "last_announcement_title": "DLC Sneak Peek: The Salamander Paladin",
+    "last_announcement_content": "We're back again with a hot new character reveal for Barony's Deserters and Disciples DLC. It's time to introduce the Salamander Paladin!Barold Jenkins provides all of the incredible details about the fiery nature of Salamanders and the powerful holy magic that Paladins wield. Take a look at the vid..."
   },
   {
     "id": 179,
@@ -799,7 +812,8 @@
     "last_update_title": "Hotfix Patch: 0.12.7",
     "last_announcement": "2025-12-18 10:07:00",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091461",
-    "last_announcement_title": "AND THE HORDE HAS RISEN\u2026 but that\u2019s NOT the END!"
+    "last_announcement_title": "AND THE HORDE HAS RISEN\u2026 but that\u2019s NOT the END!",
+    "last_announcement_content": "Hello, Horde!We looked at the calendar this morning, shocked that it\u2019s already TWO WEEKS since our latest major update, HORDE REBORN. Things are moving fast, and it\u2019s hard to get bored - all thanks to you!The holidays are just around the corner, and in a matter of days, the whole Polished Games team..."
   },
   {
     "id": 262,
@@ -859,7 +873,8 @@
     "last_update_title": "1.0.13 Tiny fix: Japanese text messed up in the tutorial",
     "last_announcement": "2024-01-27 10:00:13",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046256323213",
-    "last_announcement_title": "Announcing New Game: Grimshire + 1.0.14 Bug fix"
+    "last_announcement_title": "Announcing New Game: Grimshire + 1.0.14 Bug fix",
+    "last_announcement_content": "Hello necromancers, Exciting news! We've been hard at work on our next game, Grimshire, a cozy farmsim with a dark undertone. Tim and I grew up playing the old Harvest Moon games on SNES, Nintendo 64, Playstation 1 and Gamecube and really enjoyed them. It's always been a dream of mine to make a farm..."
   },
   {
     "id": 186,
@@ -918,7 +933,8 @@
     "last_update_title": "Patch v37.9",
     "last_announcement": "2025-11-07 05:00:00",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
-    "last_announcement_title": "Patch v37.9"
+    "last_announcement_title": "Patch v37.9",
+    "last_announcement_content": "//bug fixes - Boneworld Challenges - Daily: On the Game Over screen pressing the Menu Back button would make the menu inactive. - Castle Conquest game mode - Choose Path screen: Having a Divine Coiler/Tangler minion would cause a crash. - Castle Conquest game mode - Choose Path screen: When using fu..."
   },
   {
     "id": 290,
@@ -978,7 +994,8 @@
     "last_update_title": "The Liminal Dimension is now available on Steam \ud83c\udf81",
     "last_announcement": "2025-12-19 14:08:27",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096971",
-    "last_announcement_title": "Steam Winter Sale 2025 \u2013 Little Part Two \ud83c\udf81"
+    "last_announcement_title": "Steam Winter Sale 2025 \u2013 Little Part Two \ud83c\udf81",
+    "last_announcement_content": "Hello, https://clan.fastly.steamstatic.com/images/35149563/816fbcfd4e4b1398ca76e9bfd12ec04049c27942.png My post isn't showing up in the group. I don't know why. I'm attaching a few keys I have left and from my previous post, as many keys still haven't been activated. Previous post As the holidays co..."
   },
   {
     "id": 255,
@@ -1038,7 +1055,8 @@
     "last_update_title": "Painter Boss Paradise Hotfix 3",
     "last_announcement": "2025-11-24 10:00:49",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002020791",
-    "last_announcement_title": "Nominate Castle Crashers for Steam\u2019s Labor of Love Award!"
+    "last_announcement_title": "Nominate Castle Crashers for Steam\u2019s Labor of Love Award!",
+    "last_announcement_content": "This year, the big chicken asks you to consider nominating Castle Crashers for the honor of Steam's Labor of Love Award! Interested in learning some quick history about all the love we've poured into our second-ever game baby? Read on! Where it all began: the Castle Crashers demo at Comic Con 2005!W..."
   },
   {
     "id": 212,
@@ -1094,7 +1112,8 @@
     "last_update_title": "Conquest of Elysium 3.29b",
     "last_announcement": "2024-04-17 07:46:42",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032387456863",
-    "last_announcement_title": "Conquest of Elysium 3.29b"
+    "last_announcement_title": "Conquest of Elysium 3.29b",
+    "last_announcement_content": "This minor update fixes a problem with starting the game on new ARM (M1+) Macs."
   },
   {
     "id": 213,
@@ -1151,7 +1170,8 @@
     "last_update_title": "Conquest of Elysium 4.28",
     "last_announcement": "2024-04-19 07:57:40",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032394776444",
-    "last_announcement_title": "Conquest of Elysium 4.32"
+    "last_announcement_title": "Conquest of Elysium 4.32",
+    "last_announcement_content": "About two years since the last update, so it's time for a new one. This update turns CoE4 into a 64-bit game and makes sure the game works nice on modern systems. There are also some bug fixes and performance improvements in this new version. On Mac you now need a new ARM Mac (M1+) to play the lates..."
   },
   {
     "id": 270,
@@ -1211,7 +1231,8 @@
     "last_update_title": "2025_5_30_Fixed various bugs",
     "last_announcement": "2025-05-30 03:10:33",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756340220",
-    "last_announcement_title": "2025_5_30_Fixed various bugs"
+    "last_announcement_title": "2025_5_30_Fixed various bugs",
+    "last_announcement_content": "Fixed various bugs"
   },
   {
     "id": 269,
@@ -1269,7 +1290,8 @@
     "last_update_title": "Patch 6 for Creature Lab - saving system improvements",
     "last_announcement": "2024-08-30 06:00:11",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642457950664",
-    "last_announcement_title": "Creature Lab premiere at Xbox TODAY!"
+    "last_announcement_title": "Creature Lab premiere at Xbox TODAY!",
+    "last_announcement_content": "It's time to bring mad science to consoles! Today marks a monumental step in the journey of Creature Lab as it's finally launching on the Xbox Store! You can check it out using the link below: \ud83d\udc49 Creature Lab Xbox store page Creature Lab is coming to consoles as a result of our successful Kickstarter..."
   },
   {
     "id": 158,
@@ -1315,7 +1337,8 @@
     "last_update_title": "Cubic Cosmos Patch Notes v0.14.4",
     "last_announcement": "2025-12-18 19:21:15",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365093446",
-    "last_announcement_title": "Steam Winter Sale | Cubic Cosmos is now on sale! 25% off, don't miss out!"
+    "last_announcement_title": "Steam Winter Sale | Cubic Cosmos is now on sale! 25% off, don't miss out!",
+    "last_announcement_content": "Hail, Cosmonauts!Cubic Cosmos is part of the Steam Winter Sale. Enjoy an amazing 25% discount for the next 2 weeks!"
   },
   {
     "id": 145,
@@ -1374,7 +1397,8 @@
     "last_update_title": "PC/Mac Hotfix Live",
     "last_announcement": "2025-12-15 09:02:06",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592133492",
-    "last_announcement_title": "Cult of the Lamb: Woolhaven, arrives January 22, 2026!"
+    "last_announcement_title": "Cult of the Lamb: Woolhaven, arrives January 22, 2026!",
+    "last_announcement_content": "WOOLHAVEN: Midwinter Showcase In this showcase, we delved into what exactly you can expect from Cult of the Lamb: Woolhaven!From an exclusive look at gameplay, to new mechanics, this video answers many of your questions around the latest Cult of the Lamb story expansion, arriving January 22nd! Survi..."
   },
   {
     "id": 304,
@@ -1433,7 +1457,8 @@
     "last_update_title": "Patch 1.15.2 Patch Notes",
     "last_announcement": "2025-02-13 01:42:07",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580425958667",
-    "last_announcement_title": "ELDEN RING NIGHTREIGN - Official Pre-Order Trailer"
+    "last_announcement_title": "ELDEN RING NIGHTREIGN - Official Pre-Order Trailer",
+    "last_announcement_content": "Remain steadfast against the encroaching rain, Nightfarers. The Nightlord awaits your arrival. Make your landfall in Limveld on May 30th, 2025. https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/"
   },
   {
     "id": 178,
@@ -1493,7 +1518,8 @@
     "last_update_title": "Darksiders III now available! The Wait is Finally OVER\u2026But The Apocalypse is Just Getting Started!",
     "last_announcement": "2019-11-19 06:42:06",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3657415303184813597",
-    "last_announcement_title": "New gameplay trailer for Darksiders Genesis shows off customizable demon slaying"
+    "last_announcement_title": "New gameplay trailer for Darksiders Genesis shows off customizable demon slaying",
+    "last_announcement_content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/7564110/901c1a52dbcd7d1403083db71dc1d6db70af1640.png Vienna, Austria and Austin, Texas, November 19, 2019 \u2013 In a new gameplay trailer, developer Airship Syndicate and THQ Nordic present the so-called \"Creature Core\"-system which allo..."
   },
   {
     "id": 250,
@@ -1549,7 +1575,8 @@
     "last_update_title": "9.3.2 | Bugfix Patch",
     "last_announcement": "2025-12-18 07:00:34",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090073",
-    "last_announcement_title": "Stats | 2025 Year in Review"
+    "last_announcement_title": "Stats | 2025 Year in Review",
+    "last_announcement_content": "With one year coming to a close and another approaching, we wanted to look back at the last year and marvel at some of your accomplishments in The Fog. From brutality to boldness, Killer and Survivor, thanks for making this a year to remember!Starting with Killers, your passion for destruction this ..."
   },
   {
     "id": 165,
@@ -1606,7 +1633,8 @@
     "last_update_title": "Small update",
     "last_announcement": "2025-08-23 06:03:54",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382510955",
-    "last_announcement_title": "VI"
+    "last_announcement_title": "VI",
+    "last_announcement_content": "Hear me, Death Warriors.The sixth circle of time has passed, and once again the memory of Death Crown rises.On this day, we, the keepers of the crown, bring you a new gift. Not an illusion, not a jest, but a true transformation: the black-and-white world has been stained with color.Since ancient tim..."
   },
   {
     "id": 180,
@@ -1664,7 +1692,8 @@
     "last_update_title": "V1.21c: Fixing the \"no human spawn\"-crash.",
     "last_announcement": "2025-12-19 02:32:42",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365094695",
-    "last_announcement_title": "V1.21d: Crashfixes & more."
+    "last_announcement_title": "V1.21d: Crashfixes & more.",
+    "last_announcement_content": "Almost time for the weekend again, and we're happy to say we've fixed most crashes that some people were encountering this week!We've also added in a \"New gamemode unlocked: Nightmare\" to the win-endscreen, so more players can see that there is another gamemode besides the default starting one.If yo..."
   },
   {
     "id": 164,
@@ -1711,7 +1740,8 @@
     "last_update_title": "Patch Note - 1.1.1",
     "last_announcement": "2025-11-28 03:22:40",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
-    "last_announcement_title": "Patch Note - 1.1.1"
+    "last_announcement_title": "Patch Note - 1.1.1",
+    "last_announcement_content": "Balancing Spawn chance improved for Ettin, Centaur, Genderuwo (from 18% to 23%) Ents spawn every 3-4 minutes instead of every 4-5 minutes Wild status effect chance for monsters lowered from 66% to 45% (When curse level 3 is active) Fixes Localization fix for quests "
   },
   {
     "id": 204,
@@ -1761,7 +1791,8 @@
     "last_update_title": "Diablo II: Resurrected Patch 2.4.3. | Now Live",
     "last_announcement": "2025-12-09 18:00:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24250349/22-nights-of-terror-holiday-event",
-    "last_announcement_title": "22 Nights of Terror Holiday Event"
+    "last_announcement_title": "22 Nights of Terror Holiday Event",
+    "last_announcement_content": "Sleigh your way through Diablo II: Resurrected this holiday season across 22 Nights of Terror, with frightfully festive gameplay modifiers."
   },
   {
     "id": 202,
@@ -1813,7 +1844,8 @@
     "last_update_title": "Diablo III PTR 2.7.8 - Has Concluded",
     "last_announcement": "2025-11-21 18:00:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24243442/season-37-the-forbidden-archives-preview",
-    "last_announcement_title": "Season 37: The Forbidden Archives - Preview"
+    "last_announcement_title": "Season 37: The Forbidden Archives - Preview",
+    "last_announcement_content": "Diablo III Season 37 begins on December 5. Prepare to raze the Burning Hell\u2019s Legions. "
   },
   {
     "id": 203,
@@ -1859,7 +1891,8 @@
     "last_update_title": "Diablo Immortal Bug Fixes and Patch Notes for All Platforms",
     "last_announcement": "2025-12-15 14:00:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24244451/deliver-sanctuary-from-madness",
-    "last_announcement_title": "Deliver Sanctuary from Madness"
+    "last_announcement_title": "Deliver Sanctuary from Madness",
+    "last_announcement_content": "Prepare for the end of The Epoch of Madness. Earn powerful Ancient Legendary Items, hunt down new Legendary Gems, and slay through new Difficulties. "
   },
   {
     "id": 140,
@@ -1920,7 +1953,8 @@
     "last_update_title": "Diablo IV | Season of Divine Intervention | Season 11 Now Live!",
     "last_announcement": "2025-12-17 15:25:50",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365088166",
-    "last_announcement_title": "Stand Against Mephisto: Pre-Purchase Lord of Hatred"
+    "last_announcement_title": "Stand Against Mephisto: Pre-Purchase Lord of Hatred",
+    "last_announcement_content": "The Reckoning Arrives April 28, 2026Prepare to embark on your next epic demon-slaying journey in the new Diablo IV expansion, Lord of Hatred. Make your final stand against the Prime Evil Mephisto in a rich new campaign, master two new classes, and discover the ancient region of Skovos. With tons of ..."
   },
   {
     "id": 215,
@@ -1978,7 +2012,8 @@
     "last_update_title": "Now Available - Din's Curse, 10% off!",
     "last_announcement": "2014-04-24 12:37:58",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/919042306820047839",
-    "last_announcement_title": "Linux Din's Curse on Steam"
+    "last_announcement_title": "Linux Din's Curse on Steam",
+    "last_announcement_content": "The Linux version of Din's Curse is now available on Steam!"
   },
   {
     "id": 240,
@@ -2039,7 +2074,8 @@
     "last_update_title": null,
     "last_announcement": "2013-10-14 10:37:00",
     "last_announcement_url": "http://store.steampowered.com/news/11587/",
-    "last_announcement_title": "Weeklong Deals, October 14"
+    "last_announcement_title": "Weeklong Deals, October 14",
+    "last_announcement_content": "Save up to 75% on new Weeklong Deals on Steam, available until October 21st at 10AM PST. <a href=\"http://store.steampowered.com/app/91900/\"> </a> <a href=\"http://store.steampowered.com/app/246600/\"> </a> <a href=\"http://store.steampowered.com/app/235820/\"> </a> <a href=\"http://store.steampowered.com/app/1620/\"> </a> <a href=\"http://store.steampowered.com/app/1640/\"> </a> <a href=\"http://store.steampowered.com/app/238710/\"> </a> <a href=\"http://store.steampowered.com/app/46370/\"> </a> <a href=\"http://store.steampowered.com/app/7840/\"> </a> <a href=\"http://store.steampowered.com/app/92300/\"> </a> <a href=\"http://store.steampowered.com/app/221260/\"> </a> <a href=\"http://store.steampowered.com/app/98500/\"> </a> <a href=\"http://store.steampowered.com/app/214700/\"> </a> <a href=\"http://store.steampowered.com/app/204630/\"> </a> "
   },
   {
     "id": 218,
@@ -2097,7 +2133,8 @@
     "last_update_title": "iPad/Steam Cross Save Now Available!",
     "last_announcement": "2022-10-28 06:42:03",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4706851091176837042",
-    "last_announcement_title": "Feeling necromantic this Halloween? Return to Rivellon!"
+    "last_announcement_title": "Feeling necromantic this Halloween? Return to Rivellon!",
+    "last_announcement_content": "Feeling necromantic this Halloween? Return to Rivellon to commune with ghosts, consume the souls of the dead, and unleash your inner #CryptDaddy \ud83d\udc80 as Fane: Divinity: Original Sin 2's eternal skeleton. Use your bony, flesh-free finger as a makeshift pick to unlock any treasure chest in the game; beco..."
   },
   {
     "id": 210,
@@ -2154,7 +2191,8 @@
     "last_update_title": "Dominions 4.34",
     "last_announcement": "2021-02-22 07:46:53",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4059402835324659926",
-    "last_announcement_title": "Dominions 4.35"
+    "last_announcement_title": "Dominions 4.35",
+    "last_announcement_content": "This update mainly adds support for newer Macs, but there are also some general fixes that could benefit all users. General Recreate temp dir if it should be deleted while playing somehow The --noglfinish behavior is now default (Use --glfinish for old behavior) Reduced installation size Stability f..."
   },
   {
     "id": 211,
@@ -2211,7 +2249,8 @@
     "last_update_title": "Dominions 5.51b",
     "last_announcement": "2024-01-17 08:41:24",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213094785415",
-    "last_announcement_title": "Dominions 6 released"
+    "last_announcement_title": "Dominions 6 released",
+    "last_announcement_content": "Dominions 6 has now been released on steam! https://store.steampowered.com/app/2511500/Dominions_6__Rise_of_the_Pantokrator/"
   },
   {
     "id": 234,
@@ -2267,7 +2306,8 @@
     "last_update_title": null,
     "last_announcement": "2024-06-20 11:04:38",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039976933637",
-    "last_announcement_title": "Massive 90% Off Dragon Age Franchise Sale*!"
+    "last_announcement_title": "Massive 90% Off Dragon Age Franchise Sale*!",
+    "last_announcement_content": "Attention, gamers! Don't miss out on this incredible deal, available for a limited time only. Dragon Age: Inquisition Dragon Age: Origins - Ultimate Edition Dragon Age II: Ultimate Edition *OFFERS MAY VARY OR CHANGE. SEE RETAILER SITE FOR DETAILS. {STEAM_CLAN_IMAGE}/3952763/ef79ce6f3c00f4bbbcff2da7f..."
   },
   {
     "id": 271,
@@ -2324,7 +2364,8 @@
     "last_update_title": "Version 48 Beta: Now available for testing!",
     "last_announcement": "2024-07-15 23:34:33",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704282916184",
-    "last_announcement_title": "Dredgers on Sale!"
+    "last_announcement_title": "Dredgers on Sale!",
+    "last_announcement_content": "Since I've been able to update the game, decided to put up a new sale for those who missed out on the summer sale! So Dredgers is on sale this week for those who are on the fence about trying out the game! There's been a large update a few days ago with a lot of fun stuff to try out, so check it out..."
   },
   {
     "id": 295,
@@ -2382,7 +2423,8 @@
     "last_update_title": null,
     "last_announcement": null,
     "last_announcement_url": null,
-    "last_announcement_title": null
+    "last_announcement_title": null,
+    "last_announcement_content": null
   },
   {
     "id": 294,
@@ -2440,7 +2482,8 @@
     "last_update_title": null,
     "last_announcement": "2012-03-25 10:03:00",
     "last_announcement_url": "http://store.steampowered.com/news/7617/",
-    "last_announcement_title": "Square Enix Publisher Weekend - Final Day - Dungeon Siege, 75% off!"
+    "last_announcement_title": "Square Enix Publisher Weekend - Final Day - Dungeon Siege, 75% off!",
+    "last_announcement_content": "The Square Enix Publisher Weekend ends today with your last chance to save 50% off the <a href=\"http://store.steampowered.com/publisher/SQUARE%20ENIX,%20Eidos%20Interactive\">entire Square Enix Catalog</a>! Today only, take 75% off the <a href=\"http://store.steampowered.com/sale/squareenixweekend2012\">entire Dungeon Siege series</a>! You can also pick up the <a href=\"http://store.steampowered.com/sub/13870/\">Square Enix Hit Collection</a> to add all of your favorite titles to your Steam library for one low price!..."
   },
   {
     "id": 228,
@@ -2499,7 +2542,8 @@
     "last_update_title": "Dungeon Souls v1.1.1 - Modding Hotfix",
     "last_announcement": "2018-04-16 05:36:20",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2758894130301395255",
-    "last_announcement_title": "Dungeon Souls Development Update"
+    "last_announcement_title": "Dungeon Souls Development Update",
+    "last_announcement_content": "https://i.imgur.com/Gz54RWC.png Hey everyone! Some of you are probably wondering why hasn't there been any recent update to the game (having into account the update frequency). We, the Dungeon Souls team and Lamina Studios team, have something to tell you. We're currently undergoing some internal ch..."
   },
   {
     "id": 235,
@@ -2558,7 +2602,8 @@
     "last_update_title": "1.14.i Bug fixes/QoL",
     "last_announcement": "2025-10-07 20:18:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031161320",
-    "last_announcement_title": "1.14.i Bug fixes/QoL"
+    "last_announcement_title": "1.14.i Bug fixes/QoL",
+    "last_announcement_content": "Quick update!Auto explore should behave better with your pets and with enemies that are charmed to you. All you Lizardman Popes out there should see an improvement as well.Updates to auto explore in locations that aren't full of monsters.Tweaked input code. Some players were still getting weird beha..."
   },
   {
     "id": 221,
@@ -2605,7 +2650,8 @@
     "last_update_title": "Patch 1 is here!",
     "last_announcement": "2025-09-25 08:04:29",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772247220",
-    "last_announcement_title": "Patch 1 is here!"
+    "last_announcement_title": "Patch 1 is here!",
+    "last_announcement_content": "Patch 1 is now available on all platforms. As we continue making improvements to the game in the future, please report any issues to our support team at support.aspyr.com\u00a0Full ChangelistGameplay & General Fixes:Resolved an issue where the \"Perform Default Action on Target\" setting was not working as..."
   },
   {
     "id": 152,
@@ -2662,7 +2708,8 @@
     "last_update_title": "Dungeons 4 \u2013 Double Trouble is Out Now!",
     "last_announcement": "2025-12-09 06:01:09",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
-    "last_announcement_title": "Dungeons 4 \u2013 Double Trouble is Out Now!"
+    "last_announcement_title": "Dungeons 4 \u2013 Double Trouble is Out Now!",
+    "last_announcement_content": "Dungeons 4 \u2013 Double Trouble is Out Now!The Absolute Evil is delighted (in the most wicked way possible) to announce that their brand-new DLC for the critically acclaimed dungeon management and strategy game, Dungeons 4 \u2013 Double Trouble, is out now on PC, Xbox Series X|S, and PlayStation\u00ae5 for \u00a312.99..."
   },
   {
     "id": 245,
@@ -2719,7 +2766,8 @@
     "last_update_title": "Release Note for 2025/12/16",
     "last_announcement": "2025-12-19 02:23:35",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365094683",
-    "last_announcement_title": "ELDEN RING NIGHTREIGN The Forsaken Hollows - The Salvation's Standard-Bearers"
+    "last_announcement_title": "ELDEN RING NIGHTREIGN The Forsaken Hollows - The Salvation's Standard-Bearers",
+    "last_announcement_content": "Equilibrium, warped by the Night, descends into ruin. May your blade finally lay the maiden\u2019s burden to rest.The Salvation's Standard-Bearers, an enhanced version of the Balancers, has arrived in Limveld.ELDEN RING NIGHTREIGN The Forsaken Hollows is available now!"
   },
   {
     "id": 302,
@@ -2776,7 +2824,8 @@
     "last_update_title": "Update notes (March 22)",
     "last_announcement": "2020-12-25 05:51:29",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300076998022",
-    "last_announcement_title": "Happy New Year!"
+    "last_announcement_title": "Happy New Year!",
+    "last_announcement_content": "Hello! Our team at Snowbird would like to wish you Merry Christmas and Happy New Year! Although this year was a quite a challenge for everybody, and, unfortunately, we were not able to keep all our promises to you, we're looking into the future with careful optimism, and hope that we would release o..."
   },
   {
     "id": 237,
@@ -2837,7 +2886,8 @@
     "last_update_title": "Small achievement fix",
     "last_announcement": "2021-05-19 08:21:26",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544181424800511",
-    "last_announcement_title": "Small status update for Eador by UE4"
+    "last_announcement_title": "Small status update for Eador by UE4",
+    "last_announcement_content": "It's been almost half year since you heard from us. Mostly it was because of very busy schedule and general lack of any interesting news. Now it is time to tell you what we did all these months and why. But first of all we want to express our gratitude toward all our followers and readers and all th..."
   },
   {
     "id": 303,
@@ -2884,7 +2934,8 @@
     "last_update_title": "Fear & Hunger - Version 1.4.1 Update!",
     "last_announcement": "2021-01-11 04:45:13",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3942305442259331157",
-    "last_announcement_title": "Fear & Hunger - Version 1.4.1 Update!"
+    "last_announcement_title": "Fear & Hunger - Version 1.4.1 Update!",
+    "last_announcement_content": "List of general updates: - Bug fixes * Game freezes that occured while looting should be fixed now (Thanks to Zoni Ramboni and Tiz on the discord channel for pointing me the root of the problem) * Black screen while games goes on should be fixed now too * Marriage of flesh graphics missing should be..."
   },
   {
     "id": 273,
@@ -2941,7 +2992,8 @@
     "last_update_title": "A new Fort Triumph patch is here!",
     "last_announcement": "2022-12-22 10:15:51",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037443159442",
-    "last_announcement_title": "Get Fort Triumph 60% off."
+    "last_announcement_title": "Get Fort Triumph 60% off.",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/28487312/1ac37e6366c367321a967689dcd8600ba65ca51b.jpg Adventurers! Get Fort Triumph 60% off during the Steam Winter Sale and spend this holiday season on a magical quest. Sale ends on January 5. Stay up to date: {STEAM_CLAN_IMAGE}/28487312/8b34a4d98d4f2fd10dec7e85f406367b828a4ace...."
   },
   {
     "id": 190,
@@ -2988,7 +3040,8 @@
     "last_update_title": "Hotfix for 0.11.3.28821",
     "last_announcement": "2025-12-16 04:57:45",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592135708",
-    "last_announcement_title": "Hotfix for 0.11.3.28821"
+    "last_announcement_title": "Hotfix for 0.11.3.28821",
+    "last_announcement_content": "Fixes: Re-rolled the unintended Personal Quest for all characters that received it after the patch yesterday.Duplication of Personal Quests is no longer possible. Keep in mind that if your quest re-rolled into any other quest that is not the unintended one there are two options: Continue playing wit..."
   },
   {
     "id": 280,
@@ -3042,7 +3095,8 @@
     "last_update_title": "Godking Patch - Banshee Queen",
     "last_announcement": "2020-09-16 08:59:05",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206264265560",
-    "last_announcement_title": "Godking Released!"
+    "last_announcement_title": "Godking Released!",
+    "last_announcement_content": "It\u2019s been an intense five months of early access and at times we worried we would not get this far. The amazing support from the community has been a key element, and we want to thank everyone for helping us get here. This update adds many finishing touches to the game, and fixes a few long standing..."
   },
   {
     "id": 259,
@@ -3099,7 +3153,8 @@
     "last_update_title": "ELEX is now available on Steam!",
     "last_announcement": "2024-08-02 12:18:21",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728339711989",
-    "last_announcement_title": "Gothic 1 Remake - Gameplay Footage"
+    "last_announcement_title": "Gothic 1 Remake - Gameplay Footage",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/40085203/df531d18b2b2d8f61731d9543fca28b8ea33677b.png Welcome back to the new and visually stunning Colony: The Gothic 1 Remake unveils gameplay for the first time, taking players back to familiar places - but now in the astonishing splendor of Unreal Engine 5! Dive deeper into th..."
   },
   {
     "id": 267,
@@ -3158,7 +3213,8 @@
     "last_update_title": "Better Save Soul DLC is OUT NOW!",
     "last_announcement": "2023-08-15 07:44:44",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486229259980",
-    "last_announcement_title": "Celebrate the 5th Anniversary of the Graveyard Keeper"
+    "last_announcement_title": "Celebrate the 5th Anniversary of the Graveyard Keeper",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/27930497/739c35dcfc1e6856ae70d9fa37b9e2019b9baeff.png It\u2019s hard to believe it was 5 years ago today! We still remember the first time we opened the gates to the graveyard. That fresh smell of wet and rotting wood, howling wind and Gerry\u2019s mumbling. Ah\u2026 Good times! We\u2019ve seen it al..."
   },
   {
     "id": 141,
@@ -3217,7 +3273,8 @@
     "last_update_title": "Grim Dawn Version v1.2.1.6 is now available!",
     "last_announcement": "2025-11-24 09:59:20",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002020783",
-    "last_announcement_title": "Grim Misadventure #197 - Sounds of Asterkarn"
+    "last_announcement_title": "Grim Misadventure #197 - Sounds of Asterkarn",
+    "last_announcement_content": "Grim Dawn's upcoming expansion, Fangs of Asterkarn, will feature 26 tracks recorded with a live orchestra. Hear some of them today in our latest dev update."
   },
   {
     "id": 223,
@@ -3276,7 +3333,8 @@
     "last_update_title": "Shadow of the Mad King 2025 Is Now Live!",
     "last_announcement": "2025-12-19 09:01:36",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096274",
-    "last_announcement_title": "2025 Holiday Studio Update: A Message from the Guild Wars 2 Team"
+    "last_announcement_title": "2025 Holiday Studio Update: A Message from the Guild Wars 2 Team",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/38608049/001e56a5481e92603ccb6a29bd4230ebb37c3962.jpg With the holiday season upon us, the studio is preparing to take a short break to recharge, spend time with our loved ones, and of course, complete our annual Wintersday achievements. Before we log off for the season, we want t..."
   },
   {
     "id": 301,
@@ -3327,7 +3385,8 @@
     "last_update_title": "Patch Notes December 19, 2025",
     "last_announcement": "2025-12-19 13:41:39",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365097275",
-    "last_announcement_title": "Patch Notes December 19, 2025"
+    "last_announcement_title": "Patch Notes December 19, 2025",
+    "last_announcement_content": "Hotfix #1Fixed an issue where a player could move the camera in some character select scenes that would leave the camera in an awkward position when switching back to the Prophecies pregame sceneFixed a bug where players would sometimes get flagged with Dishonor when entering Ascalon AcademyFixed a ..."
   },
   {
     "id": 149,
@@ -3387,7 +3446,8 @@
     "last_update_title": "Hades II v1.0 Hotfix 3",
     "last_announcement": "2025-12-18 10:00:10",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090885",
-    "last_announcement_title": "Vote for Hades II in the Steam Awards!"
+    "last_announcement_title": "Vote for Hades II in the Steam Awards!",
+    "last_announcement_content": "Thank you everyone who helped nominate Hades II in the category of Best Game on Steam Deck in this year's Steam Awards! Voting has officially begun, thus we beseech you to cast your vote for Hades II! {STEAM_CLAN_IMAGE}/43315153/2116d9cbd2c9ef3164713373cc3d4162b57527eb.png We got Hades II running sm..."
   },
   {
     "id": 167,
@@ -3444,7 +3504,8 @@
     "last_update_title": "Minor Hotfix - March 18, 2024",
     "last_announcement": "2025-11-25 10:00:21",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002024384",
-    "last_announcement_title": "Have a Nice Death is 60% off now!"
+    "last_announcement_title": "Have a Nice Death is 60% off now!",
+    "last_announcement_content": "The darkly charming roguelike hit of 2023, Have a Nice Death, is on sale now for 60% off! Don\u2019t miss your chance to get this indie gem on sale at a massive discount. https://store.steampowered.com/app/1740720/Have_a_Nice_Death/ Want to play the Steam version of Have a Nice Death on the go with any d..."
   },
   {
     "id": 208,
@@ -3490,7 +3551,8 @@
     "last_update_title": "34.2.2 Patch Notes",
     "last_announcement": "2025-12-18 16:55:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24245108/prepare-for-hearthstone-esports-in-2026",
-    "last_announcement_title": "Prepare for Hearthstone Esports in 2026!"
+    "last_announcement_title": "Prepare for Hearthstone Esports in 2026!",
+    "last_announcement_content": "Check out this rundown of everything to expect from Hearthstone Esports next year. "
   },
   {
     "id": 160,
@@ -3539,7 +3601,8 @@
     "last_update_title": "Update 1.2.1 Hotfix 1",
     "last_announcement": "2025-12-04 08:53:32",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366173481",
-    "last_announcement_title": "New Bundle Alert - Hell Clock X Nightswarm"
+    "last_announcement_title": "New Bundle Alert - Hell Clock X Nightswarm",
+    "last_announcement_content": "Hello Clockmakers! Quick blog from the publishing team at Mad Mushroom to let you know about a new bundle: Hell Clock X Night Swarm. Night Swarm is a new survivorslike RPG that we've launched today. It has intense horde-survivor combat and some seriously extensive RPG systems. You play as a vampire ..."
   },
   {
     "id": 174,
@@ -3599,7 +3662,8 @@
     "last_update_title": "Xmas Update",
     "last_announcement": "2025-12-17 05:05:57",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086646",
-    "last_announcement_title": "Xmas Update"
+    "last_announcement_title": "Xmas Update",
+    "last_announcement_content": "Xmas Patch is here!Hey everyone, it's that time of the year again!Patch 6.8.7 brings the xmas event to Hero Siege with a questline to bring xmas to the town of Tarethiel!Also, Santa might need some help too... Thanks for another awesome year, now is the time to enjoy!With this, we want to wish you h..."
   },
   {
     "id": 265,
@@ -3656,7 +3720,8 @@
     "last_update_title": "The Building Planner and v2.8.1",
     "last_announcement": "2025-12-12 03:23:40",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592127226",
-    "last_announcement_title": "Hero's Hour 2 is coming!"
+    "last_announcement_title": "Hero's Hour 2 is coming!",
+    "last_announcement_content": "It's been a long road since the Hero's Hour v2.0 update brought us to steam, and it's been some wonderful years of post-launch support. But recently, I've been putting together a team and started work on the next evolution of Hero's Hour: With so many sweeping changes, it had to be a sequel.You can ..."
   },
   {
     "id": 209,
@@ -3709,7 +3774,8 @@
     "last_update_title": null,
     "last_announcement": "2022-12-05 10:00:29",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040032020156",
-    "last_announcement_title": "GSC Game World Birthday Sale"
+    "last_announcement_title": "GSC Game World Birthday Sale",
+    "last_announcement_content": "Digital battles between players in the \u00abCossacks\u00bb universe continue. The screech of metal and shots of bullets fly through the years and battlefields where new players are still arriving. The coast still remembers the boots of the teams of pioneers who went to explore the new lands in the \u00abAmerican ..."
   },
   {
     "id": 256,
@@ -3754,7 +3820,8 @@
     "last_update_title": "Heroes of the Storm Balance Patch Notes \u2014 December 12, 2025",
     "last_announcement": "2025-12-12 19:56:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24252009/heroes-of-the-storm-balance-patch-notes-december-12-2025",
-    "last_announcement_title": "Heroes of the Storm Balance Patch Notes \u2014 December 12, 2025"
+    "last_announcement_title": "Heroes of the Storm Balance Patch Notes \u2014 December 12, 2025",
+    "last_announcement_content": "We\u2019ve just released a patch to the live servers in order to apply some balance and map updates. "
   },
   {
     "id": 225,
@@ -3816,7 +3883,8 @@
     "last_update_title": "[PATCH] Update #4 now available",
     "last_announcement": "2025-10-10 10:00:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031246417",
-    "last_announcement_title": "Celebrating the Heroes of Might and Magic 30th Anniversary!"
+    "last_announcement_title": "Celebrating the Heroes of Might and Magic 30th Anniversary!",
+    "last_announcement_content": "For three decades, Heroes of Might and Magic has captured imaginations and built a legacy of strategy, storytelling, and community. To mark this incredible milestone, we streamed an Anniversary Showcase packed with surprises, cameos from community favorites, cool games and projects... and as always ..."
   },
   {
     "id": 292,
@@ -3875,7 +3943,8 @@
     "last_update_title": "2.6.6 Patch for Icewind Dale and Baldur's Gate I & II Enhanced Editions",
     "last_announcement": "2021-05-18 10:03:41",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588129358075",
-    "last_announcement_title": "2.6.6 Patch for Icewind Dale and Baldur's Gate I & II Enhanced Editions"
+    "last_announcement_title": "2.6.6 Patch for Icewind Dale and Baldur's Gate I & II Enhanced Editions",
+    "last_announcement_content": "Greetings everyone! The long-awaited 2.6 Patch for Baldur's Gate, Baldur's Gate II, and Icewind Dale Enhanced Editions launched to PC, Mac, and Linux in April. Today we're following that up with the 2.6.6 Patch to squash a few more bugs in these classic RPGs. Thanks again to our heroic community mem..."
   },
   {
     "id": 183,
@@ -3933,7 +4002,8 @@
     "last_update_title": "Immortal Realms: Vampire Wars Beta now available on Steam!",
     "last_announcement": "2023-01-23 10:00:16",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474426286839",
-    "last_announcement_title": "Get Immortal Realms: Vampire Wars for 50% off this week!"
+    "last_announcement_title": "Get Immortal Realms: Vampire Wars for 50% off this week!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/35196448/5750790a6e7ee12cda95b7d596d125a9504ccf99.png Immortal Realms: Vampire Wars is an engaging strategy game set in a dark vampire world in turmoil, that combines empire management and turn-based combat with unique card-game elements. Descend into a mythical world filled with ..."
   },
   {
     "id": 177,
@@ -3991,7 +4061,8 @@
     "last_update_title": "Untitled",
     "last_announcement": "2020-01-23 19:31:11",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245049270344",
-    "last_announcement_title": "Save your Hongbao for Steam Lunar New Year Sale!"
+    "last_announcement_title": "Save your Hongbao for Steam Lunar New Year Sale!",
+    "last_announcement_content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/5485678/fb0054b2f72416959024043dfe6b63787d97cc70.gif Gong Xi Gong Xi! Happy Lunar New Year! We wish you happiness, prosperity, wealth, and health this year. And be sure to hide your hongbao from your parents so you can treat yourself..."
   },
   {
     "id": 155,
@@ -4049,7 +4120,8 @@
     "last_update_title": "Happy Holidays Small Patch and News!",
     "last_announcement": "2025-11-05 18:04:16",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768246379",
-    "last_announcement_title": "Celebrate the Release of Bloodgrounds with us"
+    "last_announcement_title": "Celebrate the Release of Bloodgrounds with us",
+    "last_announcement_content": "Greetings fellow Necromancers, Today we released Bloodgrounds together with our friends from Exordium Games into Early Access: In this brand new turn-based Strategy RPG, you battle in challenging tactical arena-based fights and bring your troupe of fantasy gladiators to glory. If you are on the look..."
   },
   {
     "id": 185,
@@ -4107,7 +4179,8 @@
     "last_update_title": "Patch 1.01.70",
     "last_announcement": "2024-11-06 12:32:28",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801572967",
-    "last_announcement_title": "Patch 1.01.70"
+    "last_announcement_title": "Patch 1.01.70",
+    "last_announcement_content": "Patch notes for v1.01.70 Harvest and Halloween events have arrived in ILB! Halloween Event: - The Halloween event will run for several weeks. Collect pumpkins from monsters that are in your level range and trade the pumpkins in for all sorts of items (pets, hats and many other things) at the Hag of ..."
   },
   {
     "id": 257,
@@ -4165,7 +4238,8 @@
     "last_update_title": "Hotfix 1.1.1 - Patch notes",
     "last_announcement": "2025-12-11 06:35:01",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592123862",
-    "last_announcement_title": "Hotfix 1.1.1 - Patch notes"
+    "last_announcement_title": "Hotfix 1.1.1 - Patch notes",
+    "last_announcement_content": "Hey Jotunnslayers!We\u2019ve been listening carefully to your reports and suggestions following the latest content update - The Fall of Alfheim. Here\u2019s the list of fixes we\u2019ve managed to implement so far.Keep the reports coming! Quality of Life ImprovementsThe \"Purgatory\" achievement will only check heal..."
   },
   {
     "id": 307,
@@ -4215,7 +4289,8 @@
     "last_update_title": "Katanaut Patch 1.024",
     "last_announcement": "2025-12-05 15:26:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366178015",
-    "last_announcement_title": "Katanaut Patch 1.024"
+    "last_announcement_title": "Katanaut Patch 1.024",
+    "last_announcement_content": "Hey folks! I\u2019m back from a quick (and much-needed) vacation. It was super relaxing and I\u2019m glad I took some time off, but I genuinely missed working on Katanaut, so I\u2019m excited to be back at it. Today\u2019s patch is a small one that focuses on cleaning up bugs and addressing some of the feedback you sen..."
   },
   {
     "id": 229,
@@ -4273,7 +4348,8 @@
     "last_update_title": "1.2.6 hotfix patch",
     "last_announcement": "2025-10-26 01:02:30",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641531292",
-    "last_announcement_title": "KeeperRL 1.3 \"Child Catcher\" update is here!"
+    "last_announcement_title": "KeeperRL 1.3 \"Child Catcher\" update is here!",
+    "last_announcement_content": "In the spirit of the upcoming Halloween, KeeperRL is getting an update today featuring a playable witch character! Straight out of classic folk tales, she uses her witchcraft to terrorize the peace-loving inhabitants of the world.The witch is a solitary character, living in a hut deep in the woods. ..."
   },
   {
     "id": 172,
@@ -4329,7 +4405,8 @@
     "last_update_title": "Wukong\u2019s Journey DLC is Now Available!",
     "last_announcement": "2025-12-18 09:36:09",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090779",
-    "last_announcement_title": "The Winter Sale is Here!"
+    "last_announcement_title": "The Winter Sale is Here!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/34135725/85b4fbe9a131027b0eadbdde25e8d6d75268ee1a.png Stay warm and cozy with the Ironhide Game Studio Winter Sale! Whether you're a seasoned gaming enthusiast or just starting your journey into the gaming realm, this is the perfect opportunity to grow your collection and discover..."
   },
   {
     "id": 248,
@@ -4377,7 +4454,8 @@
     "last_update_title": "Game Update #2: Changes & Bug Fixes",
     "last_announcement": "2025-12-15 15:00:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592134084",
-    "last_announcement_title": "Mouse Targeting Available Now!"
+    "last_announcement_title": "Mouse Targeting Available Now!",
+    "last_announcement_content": "In the options menu there is now a setting to enable \"Mouse Targeting\" For melee & magic this allows you to select your desired target using the mouse cursor. For some magic spells, while holding the cast button, the targeting circle will follow the mouse cursor, and when you release the cast button..."
   },
   {
     "id": 142,
@@ -4436,7 +4514,8 @@
     "last_update_title": "Last Epoch Patch 1.3.6 Notes",
     "last_announcement": "2025-12-08 15:53:38",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366184046",
-    "last_announcement_title": "Looking Ahead in Last Epoch"
+    "last_announcement_title": "Looking Ahead in Last Epoch",
+    "last_announcement_content": "Good day, Travelers! Today we\u2019re sharing a deeper look at what\u2019s coming in Season 4, Season 5, and the Last Epoch: Orobyss expansion. Inside this update, you\u2019ll find our revised roadmap, a new teaser, the launch date for Season 4, and the first details about its upcoming content. We\u2019re also pulling ..."
   },
   {
     "id": 199,
@@ -4494,7 +4573,8 @@
     "last_update_title": "Loop Hero is now available on mobile!",
     "last_announcement": "2024-05-02 12:13:16",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999944520341",
-    "last_announcement_title": "Loop Hero is now available on mobile!"
+    "last_announcement_title": "Loop Hero is now available on mobile!",
+    "last_announcement_content": "Hey heroes! Loop Hero just landed on mobile, which means your world saving efforts no longer need to be limited to the time you spend on your PC. The mobile version comes to you via our friends and partners at Playdigious and Four Quarters. Try the first chapter for free on iOS and Android and conti..."
   },
   {
     "id": 274,
@@ -4552,7 +4632,8 @@
     "last_update_title": "Patch 1.03",
     "last_announcement": "2025-08-20 12:02:36",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382419250",
-    "last_announcement_title": "Moving on to a new project"
+    "last_announcement_title": "Moving on to a new project",
+    "last_announcement_content": "Thank you to everyone who bought and played Lords of Solgrund! There will no longer be any major patches or changes (bug fixing will still be done), as few months ago I have started working on a sequel. Originally I was going to work on extra dlcs for LoS, but the game did not fit my original vision..."
   },
   {
     "id": 150,
@@ -4612,7 +4693,8 @@
     "last_update_title": "Day of Prophecy Release Notes",
     "last_announcement": "2025-12-17 10:30:51",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365087670",
-    "last_announcement_title": "Kazeros The First After Race Update"
+    "last_announcement_title": "Kazeros The First After Race Update",
+    "last_announcement_content": "Heroes of Arkesia,There have been exciting moments on the battlefield in the race against Kazeros, along with dramatic moments off of the battlefield, but the time to open The First Mode to a wider group of players has arrived. We previously announced that after the top 10 teams in each region have ..."
   },
   {
     "id": 299,
@@ -4673,7 +4755,8 @@
     "last_update_title": "v0.92.01 Patch Notes - Adventure Events, Skill Usage, Companion Adjustments",
     "last_announcement": "2025-11-20 16:43:55",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002012561",
-    "last_announcement_title": "v0.92.01 Patch Notes - Adventure Events, Skill Usage, Companion Adjustments"
+    "last_announcement_title": "v0.92.01 Patch Notes - Adventure Events, Skill Usage, Companion Adjustments",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/27379329/5cc3264d738df39eebdc78ce8948dfd72b13167c.jpg Town Adventure Events: Added 16 town adventure events Each event features 1\u201315 resolution methods, including skill checks, ability checks, racial/class common sense, etc. {STEAM_CLAN_IMAGE}/27379329/fc4c42472c429126de5a4593c93b..."
   },
   {
     "id": 298,
@@ -4731,7 +4814,8 @@
     "last_update_title": "Master of Magic: Hotfix Version 1.09.17 is out now",
     "last_announcement": "2025-03-26 05:59:54",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637786367",
-    "last_announcement_title": "Stormbinders Showcase Event: Join us on April 10th"
+    "last_announcement_title": "Stormbinders Showcase Event: Join us on April 10th",
+    "last_announcement_content": "It\u2019s official! You can now explore the key features of Stormbinders on our store page, complete with new GIFs and updated details as the game continues to develop. But that\u2019s not all: mark your calendar for April 10th at 5:00 PM CEST, when we\u2019ll unveil an exclusive deep dive into gameplay during our..."
   },
   {
     "id": 260,
@@ -4794,7 +4878,8 @@
     "last_update_title": "Middle-earth: Shadow of War \u2013 Patch Notes v1.20 \u2013 August 15, 2018",
     "last_announcement": "2025-05-01 10:22:20",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487610221",
-    "last_announcement_title": "Spring In the Shire"
+    "last_announcement_title": "Spring In the Shire",
+    "last_announcement_content": "Save up to 90% off of your favorite Middle-earth games including Shadow of War, Shadow of Mordor LEGO Lord of the Rings and LEGO The Hobbit! The Middle-earth: Shadow Bundle allows you to fight to conquer all of Mordor in this complete experience. Includes Middle-earth: Shadow or War Definitive Editi..."
   },
   {
     "id": 192,
@@ -4850,7 +4935,8 @@
     "last_update_title": "Creative Mode Update - Fixes and Improvements",
     "last_announcement": "2025-09-19 09:52:00",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915431177",
-    "last_announcement_title": "Mind Over Magic plushies! Available now!"
+    "last_announcement_title": "Mind Over Magic plushies! Available now!",
+    "last_announcement_content": "Mind Over Magic Wolfkin Student plushes are available for order now! Order your plushie here! {STEAM_CLAN_IMAGE}/42474644/f7c231491974d250cc185648da384dd5e90664ce.png"
   },
   {
     "id": 168,
@@ -4907,7 +4993,8 @@
     "last_update_title": "Monster Train 2 now available on Mac",
     "last_announcement": "2025-12-18 10:39:51",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091921",
-    "last_announcement_title": "The Steam Winter Sale has begun: 20% Off Monster Train 2!"
+    "last_announcement_title": "The Steam Winter Sale has begun: 20% Off Monster Train 2!",
+    "last_announcement_content": "Season\u2019s Greetings, Monster Train 2 fans! The Steam Winter Sale is Here!Get ready to get out of the cold and cozy up by the fire with a 20% discount off MT2!\u00a0Don\u2019t miss your chance to grab your favorite roguelike deckbuilder! The sale runs from now through January 5. 2026 at 10:00 AM PT.\u00a0Need a last..."
   },
   {
     "id": 306,
@@ -4958,7 +5045,8 @@
     "last_update_title": "Patch 1.0.15.0",
     "last_announcement": "2025-12-19 07:32:22",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365095770",
-    "last_announcement_title": "The Holidays and Beyond"
+    "last_announcement_title": "The Holidays and Beyond",
+    "last_announcement_content": "Hello Heroes,\u00a0\u00a0\u00a0It\u2019s been an exciting and intense couple of weeks and as always, we want to thank you all for your kind words, feedback and overall patience since we saw Monsters launch in late November. \u00a0\u00a0As we start steadily approaching the Holiday Season and with partners closing up to spend time..."
   },
   {
     "id": 276,
@@ -5016,7 +5104,8 @@
     "last_update_title": "Thank You for A Great My Lovely Empress Release Day!",
     "last_announcement": "2025-10-27 10:15:37",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641576170",
-    "last_announcement_title": "Calling All Screamers: My Lovely Daughter Joins Steam Scream Fest!"
+    "last_announcement_title": "Calling All Screamers: My Lovely Daughter Joins Steam Scream Fest!",
+    "last_announcement_content": "The night descends, the nightmare unleashed! Come for the games, stay for the screams: Neon Doctrine joins Steam Scream Fest, with up to 90% OFF! {STEAM_CLAN_IMAGE}/31818974/50d952e28dcd49d3d2223f4f1ddffef39e27c2a2.jpg \ud83c\udf83Check out our games on sale here\ud83c\udf83 My Lovely Daughter is now 80% OFF! Grab it now..."
   },
   {
     "id": 277,
@@ -5074,7 +5163,8 @@
     "last_update_title": "Version 1.2.2 has arrived with The Codex Update!",
     "last_announcement": "2025-10-27 10:15:36",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641576165",
-    "last_announcement_title": "Calling All Screamers: My Lovely Empress Joins Steam Scream Fest!"
+    "last_announcement_title": "Calling All Screamers: My Lovely Empress Joins Steam Scream Fest!",
+    "last_announcement_content": "The night descends, the nightmare unleashed! Come for the games, stay for the screams: Neon Doctrine joins Steam Scream Fest, with up to 90% OFF! {STEAM_CLAN_IMAGE}/44615942/12cc3a8ae1b68b6a37ed7bd5800c8703abb8d563.jpg \ud83c\udf83Check out our games on sale here\ud83c\udf83 My Lovely Empress is now 65% OFF! Grab it now:..."
   },
   {
     "id": 278,
@@ -5134,7 +5224,8 @@
     "last_update_title": "Thank You for A Great My Lovely Empress Release Day!",
     "last_announcement": "2025-10-29 10:15:47",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814942955106979",
-    "last_announcement_title": "Calling All Screamers: My Lovely Wife Joins Steam Scream Fest!"
+    "last_announcement_title": "Calling All Screamers: My Lovely Wife Joins Steam Scream Fest!",
+    "last_announcement_content": "The night descends, the nightmare unleashed! Come for the games, stay for the screams: Neon Doctrine joins Steam Scream Fest, with up to 90% OFF! {STEAM_CLAN_IMAGE}/37481570/8ad17f890a91a06cd5de8ff79a3ec693a722e516.jpg \ud83c\udf83Check out our games on sale here\ud83c\udf83 My Lovely Wife is now 75% OFF! Grab it now: ht..."
   },
   {
     "id": 251,
@@ -5193,7 +5284,8 @@
     "last_update_title": "Necesse Version 1.1 is now live!",
     "last_announcement": "2025-12-18 10:00:46",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091220",
-    "last_announcement_title": "Necesse Version 1.1 is now live!"
+    "last_announcement_title": "Necesse Version 1.1 is now live!",
+    "last_announcement_content": "Necesse Version 1.1 is now live! To celebrate the update and Christmas, we're also taking part in the Steam Winter Sale with a 35% discount on Necesse on Steam! If you haven\u2019t gotten the update on Steam yet, then try to restart Steam or verify game files. Last week we put together a juicy teaser tra..."
   },
   {
     "id": 194,
@@ -5251,7 +5343,8 @@
     "last_update_title": "Necro story is now available",
     "last_announcement": "2024-12-23 15:44:38",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930765919",
-    "last_announcement_title": "New: Clear mention of the \"good ending\" lock"
+    "last_announcement_title": "New: Clear mention of the \"good ending\" lock",
+    "last_announcement_content": "Hi everyone, and Merry Christmas! As a small extra gift under the Christmas tree, we published an update for Necro Story today! We fixed a few small bugs and we added a feature that some of you might consider important. If you played the game already, you noticed that something weird happens the fir..."
   },
   {
     "id": 247,
@@ -5297,7 +5390,8 @@
     "last_update_title": "Fixed 'Splatter' Move Bug",
     "last_announcement": "2025-10-28 20:35:54",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814942955087787",
-    "last_announcement_title": "Nomnomicon Difficulty Update! Just in time for Halloween!"
+    "last_announcement_title": "Nomnomicon Difficulty Update! Just in time for Halloween!",
+    "last_announcement_content": "Fellow Necromancers, \u00a0We apologise for the delay! While the Citadel may be a big place, in truth QuietPenguinGaming is just one person (me), and life has been pretty full-on lately. \u00a0Before I fully wrap up development for Necromancer For A Week, there were two things I really wanted to do: \u00a0Add more..."
   },
   {
     "id": 195,
@@ -5357,7 +5451,8 @@
     "last_update_title": "07.04.24: Patch Update 10",
     "last_announcement": "2024-07-05 10:49:32",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267339412357",
-    "last_announcement_title": "07.04.24: Patch Update 10"
+    "last_announcement_title": "07.04.24: Patch Update 10",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/44983366/999bf444ba829f833783d7c1d92dd4f61ce4e4c7.png For Release Candidate 0.1.40 Happy July 4th to all our US Necromantics, and also belated happy July 1st Canada Day to all the Canadian Necromantics! We have a few quality of life, and some tuning items that we\u2019ve worked on duri..."
   },
   {
     "id": 173,
@@ -5416,7 +5511,8 @@
     "last_update_title": "1.2.7 Minor Hotfix",
     "last_announcement": "2024-03-14 12:00:27",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7309977427435734407",
-    "last_announcement_title": "\ud83c\udf37 75% OFF SPRING SALE \ud83c\udf37"
+    "last_announcement_title": "\ud83c\udf37 75% OFF SPRING SALE \ud83c\udf37",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/35678553/ab6a8a703a027879043aa1dcee3b213c7f34ef1f.png Haven't had a chance to try out the spookiest strategy game? Grab 75% off Necronator today! \ud83e\udddf\u200d\u2640\ufe0f Build a powerful deck of fearsome foot soldiers, attacks, and defensive cards \ud83e\udddf\u200d\u2640\ufe0f Wield the might of the infamous Commanders - 3 ..."
   },
   {
     "id": 197,
@@ -5475,7 +5571,8 @@
     "last_update_title": "Wall World 2 is out now!",
     "last_announcement": "2025-11-11 05:03:57",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424639",
-    "last_announcement_title": "Wall World 2 is out now!"
+    "last_announcement_title": "Wall World 2 is out now!",
+    "last_announcement_content": "The Wall opens its depths once again.\u00a0New mysteries, new dangers, new answers await those brave enough to dig deeper.\u00a0Every layer hides a story. Every spark of your drill brings you closer to the truth buried deep in the Wall\u2019s core.About the game:\u00a0Wall World 2 expands the beloved mining roguelite a..."
   },
   {
     "id": 196,
@@ -5534,7 +5631,8 @@
     "last_update_title": "Wall World 2 is out now!",
     "last_announcement": "2025-11-11 05:04:50",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424640",
-    "last_announcement_title": "Wall World 2 is out now!"
+    "last_announcement_title": "Wall World 2 is out now!",
+    "last_announcement_content": "The Wall opens its depths once again.\u00a0New mysteries, new dangers, new answers await those brave enough to dig deeper.\u00a0Every layer hides a story. Every spark of your drill brings you closer to the truth buried deep in the Wall\u2019s core.About the game:\u00a0Wall World 2 expands the beloved mining roguelite a..."
   },
   {
     "id": 219,
@@ -5594,7 +5692,8 @@
     "last_update_title": "Menzoberranzan is now live!",
     "last_announcement": "2025-11-25 09:05:18",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002024154",
-    "last_announcement_title": "Red Harvest Part II \u2013 The Soul Collector is Live!"
+    "last_announcement_title": "Red Harvest Part II \u2013 The Soul Collector is Live!",
+    "last_announcement_content": "Neverwinter\u2019s 32nd module, Red Harvest Part II \u2013 The Soul Collector, is now available! Delve deep into the Doomvault to stop Szass Tam\u2019s Ritual of Ascendency.\u00a0\u00a0In\u00a0Neverwinter: Red Harvest Part II \u2013 The Soul Collector, the Lich\u00a0has struck\u00a0back and lashed out at the fleeing members of the Resistance i..."
   },
   {
     "id": 220,
@@ -5650,7 +5749,8 @@
     "last_update_title": "Patch Release, 89.8193.37-17",
     "last_announcement": "2025-10-08 08:03:02",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031177586",
-    "last_announcement_title": "Patch Release, 89.8193.37-17"
+    "last_announcement_title": "Patch Release, 89.8193.37-17",
+    "last_announcement_content": "Greetings, Neverwinter Nights players!This release was developed for personal enjoyment and out of goodwill for our fellow players and creators by unpaid software engineers from the NWN community:clippy, Daz, Jasperre, niv, shadguy, Soren, tinygiant, virusmanYou are cordially invited to join the NWN..."
   },
   {
     "id": 146,
@@ -5698,7 +5798,8 @@
     "last_update_title": "Patch Notes \u2013 1.0.5.5 Update",
     "last_announcement": "2025-12-16 11:03:52",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
-    "last_announcement_title": "Patch Notes \u2013 1.0.5.5 Update"
+    "last_announcement_title": "Patch Notes \u2013 1.0.5.5 Update",
+    "last_announcement_content": "We've just deployed a significant update focusing on performance improvements and bug fixes. Thank you for all your valuable feedback!\u2728 Major HighlightsEndless Run Performance: Implemented major performance updates specifically for the Endless Run mode to ensure a smoother late-game experience.Steam..."
   },
   {
     "id": 153,
@@ -5757,7 +5858,8 @@
     "last_update_title": "Impossible Dungeon Update",
     "last_announcement": "2025-12-06 10:01:01",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366179439",
-    "last_announcement_title": "Deepest Discount for Nobody Saves the World"
+    "last_announcement_title": "Deepest Discount for Nobody Saves the World",
+    "last_announcement_content": "For the first time ever, Nobody Saves the World is 70% off on Steam! The Frozen Hearth DLC is also 50% off - in fact the complete bundle is 70% off too! So grab a friend (or don\u2019t) and start saving the world today! There\u2019s never been a better time.Nobody Saves the World was released just over 3 year..."
   },
   {
     "id": 305,
@@ -5805,7 +5907,8 @@
     "last_update_title": "N\u00b01 NEW AND TRENDING WORLD + First Minor-Post 1.0 Patch",
     "last_announcement": "2025-12-05 05:48:00",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366176412",
-    "last_announcement_title": "75 000 UNITS SOLD + BIG 1.2 UPDATE (1 week after 1.0 Release)"
+    "last_announcement_title": "75 000 UNITS SOLD + BIG 1.2 UPDATE (1 week after 1.0 Release)",
+    "last_announcement_content": "Hey everyone!A MASSIVE THANK YOU to everyone who has bought and played Noobs Are Coming! The game has blown up since the 1.0 launch, and it\u2019s all thanks to your support! \u2764\ufe0fWe\u2019ve just hit 75,000 copies sold, 1 week after 1.0 release. Absolutely wild for a game made by a tiny solodev, I\u2019m beyond grate..."
   },
   {
     "id": 281,
@@ -5863,7 +5966,8 @@
     "last_update_title": "More Hotfixes and Tuning",
     "last_announcement": "2025-12-18 10:11:13",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091621",
-    "last_announcement_title": "50% Winter Sale & Dec Dev Log"
+    "last_announcement_title": "50% Winter Sale & Dec Dev Log",
+    "last_announcement_content": "Hey friends!The steam winter sale is here and I wanted to post a sneak peak of what I've been working on for the last little bit. I'm excited about the new content and improvements going into the game, and I'm planning to have them out in beta in the next week.I'll detail everything fully in the off..."
   },
   {
     "id": 162,
@@ -5920,7 +6024,8 @@
     "last_update_title": "Now Available on Steam - Overlord: Fellowship of Evil",
     "last_announcement": "2015-10-30 07:34:54",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/378660375676127016",
-    "last_announcement_title": "Happy Halloween! Celebrate now with the Overlord Ultimate Evil Edition!"
+    "last_announcement_title": "Happy Halloween! Celebrate now with the Overlord Ultimate Evil Edition!",
+    "last_announcement_content": "Happy Halloween! Celebrate now with the Overlord Ultimate Evil Edition! Grab all the Overlord titles now, including the brand spanking new Overlord: Fellowship of evil Now 40% OFF the Overlord Ultimate Evil Edition - This Halloween weekend only!"
   },
   {
     "id": 144,
@@ -5981,7 +6086,8 @@
     "last_update_title": "New Foulborn Uniques in Patch 3.27.0c",
     "last_announcement": "2025-11-24 12:21:04",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002021664",
-    "last_announcement_title": "Concept Art - Keepers of the Flame League and Kirac\u2019s Vault Pass"
+    "last_announcement_title": "Concept Art - Keepers of the Flame League and Kirac\u2019s Vault Pass",
+    "last_announcement_content": "In this post, we\u2019re sharing some concept art from the Path of Exile: Keepers of the Flame League and Kirac\u2019s Vault Pass, which includes an exclusive Armour Set themed around the eldritch entity of the Atlas - the Maven. Check them out below! Ailith, the First of the Keepers {STEAM_CLAN_IMAGE}/519330..."
   },
   {
     "id": 189,
@@ -6041,7 +6147,8 @@
     "last_update_title": "Major Endgame Changes in Patch 0.3.1 for Path of Exile 2",
     "last_announcement": "2025-12-18 16:27:53",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365092986",
-    "last_announcement_title": "Path of Exile 2 New Microtransactions & Weekend Stash Sale"
+    "last_announcement_title": "Path of Exile 2 New Microtransactions & Weekend Stash Sale",
+    "last_announcement_content": "This week we\u2019ve released new microtransactions in Path of Exile 2, including Armour Sets, Skill Effects and Shapeshift Effects! Check out some of the videos below and get yours here or by pressing \u201cM\u201d while in-game to access the store. Crocolisk Armour Pack Tortoise Staff Skin Crocolisk Bear Shapesh..."
   },
   {
     "id": 230,
@@ -6098,7 +6205,8 @@
     "last_update_title": "Update 2.1.7b \u2013 May 27, 2021",
     "last_announcement": "2025-12-18 10:08:14",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091498",
-    "last_announcement_title": "Celebrate the Holidays with 85% Off Pathfinder: Kingmaker!"
+    "last_announcement_title": "Celebrate the Holidays with 85% Off Pathfinder: Kingmaker!",
+    "last_announcement_content": "Pathfinders and adventurers! We have great news for you: For those who want to explore the famous Pathfinder Fantasy Universe in a group-based game, there is now an incredible opportunity to do so at a 85% discount during the Winter Sale! Until January 5th, the Stolen Lands are waiting for you at th..."
   },
   {
     "id": 231,
@@ -6158,7 +6266,8 @@
     "last_update_title": "Update 2.7.0x",
     "last_announcement": "2025-11-27 09:19:30",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467037301",
-    "last_announcement_title": "The BIG Community Survey 2025 Results"
+    "last_announcement_title": "The BIG Community Survey 2025 Results",
+    "last_announcement_content": "Introduction Even before announcing The Expanse: Osiris Reborn, we launched the BIG Community Survey. Each year, we use it to understand what matters to our community: what they enjoy about games and what they do not. Our community knows how carefully we listen to feedback and use the data we receiv..."
   },
   {
     "id": 284,
@@ -6218,7 +6327,8 @@
     "last_update_title": "December Patch",
     "last_announcement": "2025-12-17 23:31:52",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365088837",
-    "last_announcement_title": "December Patch"
+    "last_announcement_title": "December Patch",
+    "last_announcement_content": "From the messy desk of Slugbait:Seasons greetings everyone. For this end of the year patch, I've focused almost entirely on additional quality of life features in the game client. There are also some map tweaks and a couple of minor changes.We hope everyone is having a happy holiday. Next year Pox N..."
   },
   {
     "id": 268,
@@ -6277,7 +6387,8 @@
     "last_update_title": "THE MAGISTER \u2013 NEW NERDOOK GAME IS OUT NOW!",
     "last_announcement": "2021-11-05 12:13:53",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652991114049467",
-    "last_announcement_title": "GET REVERSE CRAWL + 3 OTHER GAMES IN THE NERDOOK BUNDLE!"
+    "last_announcement_title": "GET REVERSE CRAWL + 3 OTHER GAMES IN THE NERDOOK BUNDLE!",
+    "last_announcement_content": "We've just launched the Nerdook Bundle \u2013 a collection that gives you four of developer Nerdook's games for a discounted price. In addition to Reverse Crawl, the bundle also includes The Magister (murder mystery card-battler), Monster Slayers (roguelike deckbuilder), and Vertical Drop Heroes (procedu..."
   },
   {
     "id": 272,
@@ -6334,7 +6445,8 @@
     "last_update_title": "Small Update notes",
     "last_announcement": "2024-08-27 05:26:56",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438706299195",
-    "last_announcement_title": "New Version 1.2.1 Update promoted into live/main build!"
+    "last_announcement_title": "New Version 1.2.1 Update promoted into live/main build!",
+    "last_announcement_content": "Hi Everyone, it is time to promote the beta build the live/main! Highlights of this update are: Uncovered abilities are now all properly showing in the abilities section of the main menu! Intelligence now affects mana in a similar way to how constitution affects hit points. Instead of affecting the ..."
   },
   {
     "id": 169,
@@ -6391,7 +6503,8 @@
     "last_update_title": "Rogue Lords 1.1.04.10 Patch Notes",
     "last_announcement": "2022-07-11 05:30:13",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
-    "last_announcement_title": "Rogue Lords 1.1.04.10 Patch Notes"
+    "last_announcement_title": "Rogue Lords 1.1.04.10 Patch Notes",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/38037196/776414dd44abcdc1be5c2289237a10f061013403.png Greetings Disciples, We only like it when the Devil is cheating, not the game, so we've pushed a small patch to Rogue Lords that should address a couple of nasty bugs that have been negatively impacting player experience. Let u..."
   },
   {
     "id": 263,
@@ -6449,7 +6562,8 @@
     "last_update_title": "Glyphica Early Access Now Available!",
     "last_announcement": "2025-12-15 07:20:43",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592133227",
-    "last_announcement_title": "Squeaky Wheel is Proud to Present Sports Card Shop Simulator!"
+    "last_announcement_title": "Squeaky Wheel is Proud to Present Sports Card Shop Simulator!",
+    "last_announcement_content": "https://www.youtube.com/watch?v=dW9Q1vnl-FQ Squeaky Wheel is excited to announce it's latest co-published game wityh OverPowered Team, Sports Card Shop Simulator, coming in 2026. Rip open packs and flip cards for profit while building the sports card shop of your dreams. Hunt for holos, parallels,au..."
   },
   {
     "id": 261,
@@ -6507,7 +6621,8 @@
     "last_update_title": null,
     "last_announcement": "2025-09-08 09:55:49",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180169360",
-    "last_announcement_title": "RuneScape's First ever Leagues: CATALYST Launches September 15"
+    "last_announcement_title": "RuneScape's First ever Leagues: CATALYST Launches September 15",
+    "last_announcement_content": "RuneScape Leagues : CATALYSTGet ready to rewrite the rules, and bend RuneScape to your will in our first-ever League\u2026 CATALYST! Releasing on September 15Leagues is a time-limited game mode that lets you start fresh on an alternate version of your character and relive your journey through Gielinor. T..."
   },
   {
     "id": 156,
@@ -6565,7 +6680,8 @@
     "last_update_title": "SWORN 1.0 Patch #4 is LIVE (v1.1.1.0.1140)",
     "last_announcement": "2025-12-18 07:01:55",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090086",
-    "last_announcement_title": "SWORN 1.0 Patch #4 is LIVE (v1.1.1.0.1140)"
+    "last_announcement_title": "SWORN 1.0 Patch #4 is LIVE (v1.1.1.0.1140)",
+    "last_announcement_content": "- Fixed issue where defeating Sir Gawain on the tutorial run would count as a Victory and unlock higher difficulty"
   },
   {
     "id": 239,
@@ -6619,7 +6735,8 @@
     "last_update_title": null,
     "last_announcement": "2014-03-03 10:22:00",
     "last_announcement_url": "http://store.steampowered.com/news/12551/",
-    "last_announcement_title": "New Weeklong Deals, Monday March 3rd"
+    "last_announcement_title": "New Weeklong Deals, Monday March 3rd",
+    "last_announcement_content": "Check back for new deals every Monday at 10AM Pacific. <a href=\"http://store.steampowered.com/app/249650/\"> </a> <a href=\"http://store.steampowered.com/app/23120/\"> </a> <a href=\"http://store.steampowered.com/app/256070/\"> </a> <a href=\"http://store.steampowered.com/app/9420/\"> </a> <a href=\"http://store.steampowered.com/app/260190/\"> </a> <a href=\"http://store.steampowered.com/app/47400/\"> </a> <a href=\"http://store.steampowered.com/app/255320/\"> </a> <a href=\"http://store.steampowered.com/app/46410/\"> </a> <a href=\"http://store.steampowered.com/app/46400/\"> </a> <a href=\"http://store.steampowered.com/app/218090/\"> </a> <a href=\"http://store.steampowered.com/app/46830/\"> </a> <a href=\"http://store.steampowered.com/app/6250/\"> </a> <a href=\"http://store.steampowered.com/app/236490/\"> </a> <a href=\"http://store.steampowered.com/app/10680/\"> </a> <a href=\"http://store.steampowered.com/app/4720/\"> </a> <a href=\"http://store.steampowered.com/app/251430/\"> </a> <a href=\"http://store.steampowered.com/app/227200/\"> </a> <a href=\"http://store.steampowered.com/app/263340/\"> </a> <a href=\"http://store.steampowered.com/app/1670/\"> </a> <a href=\"http://store.steampowered.com/app/6250/\"> </a> <a href=\"http://store.steampowered.com/app/11230/\"> </a> <a href=\"http://store.steampowered.com/app/12390/\"> </a> <a href=\"http://store.steampowered.com/app/17430/\"> </a> <a href=\"http://store.steampowered.com/app/22200/\"> </a> <a href=\"http://store.steampowered.com/app/38440/\"> </a> <a href=\"http://store.steampowered.com/app/33540/\"> </a> <a href=\"http://store.steampowered.com/app/33550/\"> </a> <a href=\"http://store.steampowered.com/app/27900/\"> </a> <a href=\"http://store.steampowered.com/app/24840/\"> </a> <a href=\"http://store.steampowered.com/app/24870/\"> </a> <a href=\"http://store.steampowered.com/app/46400/\"> </a> <a href=\"http://store.steampowered.com/app/10680/\"> </a> <a href=\"http://store.steampowered.com/app/24960/\"> </a> <a href=\"http://store.steampowered.com/app/46410/\"> </a> <a href=\"http://store.steampowered.com/app/27920/\"> </a> <a href=\"http://store.steampowered.com/app/40420/\"> </a> <a href=\"http://store.steampowered.com/app/42960/\"> </a> <a href=\"http://store.steampowered.com/app/61600/\"> </a> <a href=\"http://store.steampowered.com/app/47880/\"> </a> <a href=\"http://store.steampowered.com/app/47870/\"> </a> <a href=\"http://store.steampowered.com/app/47920/\"> </a> <a href=\"http://store.steampowered.com/app/92000/\"> </a> <a href=\"http://store.steampowered.com/app/19680/\"> </a> <a href=\"http://store.steampowered.com/app/22230/\"> </a> <a href=\"http://store.steampowered.com/app/47790/\"> </a> <a href=\"http://store.steampowered.com/app/47400/\"> </a> <a href=\"http://store.steampowered.com/app/218090/\"> </a> <a href=\"http://store.steampowered.com/app/209190/\"> </a> <a href=\"http://store.steampowered.com/app/227280/\"> </a> <a href=\"http://store.steampowered.com/app/204080/\"> </a> <a href=\"http://store.steampowered.com/app/233510/\"> </a> <a href=\"http://store.steampowered.com/app/233530/\"> </a> <a href=\"http://store.steampowered.com/app/234370/\"> </a> <a href=\"http://store.steampowered.com/app/215690/\"> </a> <a href=\"http://store.steampowered.com/app/238890/\"> </a> <a href=\"http://store.steampowered.com/app/248510/\"> </a> <a href=\"http://store.steampowered.com/app/249930/\"> </a> <a href=\"http://store.steampowered.com/app/234000/\"> </a> <a href=\"http://store.steampowered.com/app/257120/\"> </a> <a href=\"http://store.steampowered.com/app/257990/\"> </a> <a href=\"http://store.steampowered.com/app/259340/\"> </a> <a href=\"http://store.steampowered.com/app/259600/\"> </a> <a href=\"http://store.steampowered.com/app/259680/\"> </a> <a href=\"http://store.steampowered.com/app/260930/\"> </a> <a href=\"http://store.steampowered.com/app/257830/\"> </a> "
   },
   {
     "id": 282,
@@ -6678,7 +6795,8 @@
     "last_update_title": null,
     "last_announcement": "2023-10-29 07:20:06",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621587197994",
-    "last_announcement_title": "Steam Scream Sale"
+    "last_announcement_title": "Steam Scream Sale",
+    "last_announcement_content": "Happy Halloween everyone! "
   },
   {
     "id": 170,
@@ -6735,7 +6853,8 @@
     "last_update_title": "Keep Stealth Strategy Alive - Sumerian Six out now & bundle sale!",
     "last_announcement": "2025-06-29 10:07:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891612548",
-    "last_announcement_title": "Shadow Gambit: 75% Off in the Hooded Horse Summer Sale"
+    "last_announcement_title": "Shadow Gambit: 75% Off in the Hooded Horse Summer Sale",
+    "last_announcement_content": "Shadow Gambit: The Cursed Crew is part of the Steam Summer Sale at 75% off! Check it and other games out in the Hooded Horse Summer Sale. The base game and all DLC are discounted as part of the event. Hooded Horse Summer Publisher Sale 2025 {STEAM_CLAN_IMAGE}/38221882/5977e6ea905d267f42ec674bb386980..."
   },
   {
     "id": 188,
@@ -6794,7 +6913,8 @@
     "last_update_title": "Release 1.9.1 Patch Notes",
     "last_announcement": "2024-06-26 18:58:29",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267307838601",
-    "last_announcement_title": "Release 1.9.1 Patch Notes"
+    "last_announcement_title": "Release 1.9.1 Patch Notes",
+    "last_announcement_content": "Release 1.9.1 Patch Notes Hello little skeletons! In this patch, several items that were difficult to obtain have had their effects enhanced. The detailed changes are as follows: Changes Made Items Berserker's Gauntlet Changed the current HP ratio required for the attack speed increase effect to rea..."
   },
   {
     "id": 308,
@@ -6841,7 +6961,8 @@
     "last_update_title": "Change log",
     "last_announcement": "2025-11-19 04:04:52",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002007461",
-    "last_announcement_title": "Change log"
+    "last_announcement_title": "Change log",
+    "last_announcement_content": "New features:Add settings option for pausing on window focus lossShow player character on run end screenBalancing:Changed how Fear works (dodge and crit chance reduced, reduces good stacks)Sodden Gauze starts working at 20% (instead of 10%)Fixes:Fix trap door spawn rateAllow ducat/corpuscle collecti..."
   },
   {
     "id": 163,
@@ -6887,7 +7008,8 @@
     "last_update_title": "Patch Notice",
     "last_announcement": "2025-12-16 22:48:22",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365085764",
-    "last_announcement_title": "\ud83d\udce2New DLC Free Update"
+    "last_announcement_title": "\ud83d\udce2New DLC Free Update",
+    "last_announcement_content": "Greetings, Hunters! As the chilly winds begin to blow, can you already feel the excitement of the year-end season? \ud83c\udf84\u2728To celebrate the upcoming winter season, a free DLC will be released on 12/18 (Thu) at 01:00 (UTC+0). * A patch required to apply the DLC will be rolled out gradually starting on 12/1..."
   },
   {
     "id": 191,
@@ -6945,7 +7067,8 @@
     "last_update_title": "Hotfix 1.8.1",
     "last_announcement": "2025-12-19 06:05:43",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365095409",
-    "last_announcement_title": "Thank you for 2025"
+    "last_announcement_title": "Thank you for 2025",
+    "last_announcement_content": "Greetings WieldersIt is that time of year again. The time when game developers in our part of the world swap hoodies for knitted jumpers and coffee mugs for\u2026 slightly different coffee mugs. What we are trying to say is that Lavapotion will soon close the office for our winter holiday and return in e..."
   },
   {
     "id": 264,
@@ -7002,7 +7125,8 @@
     "last_update_title": "Hotfix 1.0.12.3",
     "last_announcement": "2024-05-13 10:05:44",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435410786070",
-    "last_announcement_title": "Soulash Series -40% off in Endlessly Replayable Fest"
+    "last_announcement_title": "Soulash Series -40% off in Endlessly Replayable Fest",
+    "last_announcement_content": "Greetings fellow gods, It's been a while! I keep getting occasional messages from those of you who remembered the good old days of being a wrathful god, and finally discovering a sequel in the works after over 2 years since Soulash was completed. Unfortunately, my Steam announcement went to \"cross-p..."
   },
   {
     "id": 184,
@@ -7060,7 +7184,8 @@
     "last_update_title": "Hotfix Update 1.3c1",
     "last_announcement": "2025-12-18 13:08:51",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365092504",
-    "last_announcement_title": "Announcing Veil of the Soulstones + Winter Update & Our Biggest Sale Ever!"
+    "last_announcement_title": "Announcing Veil of the Soulstones + Winter Update & Our Biggest Sale Ever!",
+    "last_announcement_content": "Greetings, Void Hunters!As we approach the end of 2025, we want to thank you all once again for your incredible support throughout the development of Soulstone Survivors. We recently made a big announcement about our future plans, and today we have a packed another one for you, ranging from festive ..."
   },
   {
     "id": 216,
@@ -7117,7 +7242,8 @@
     "last_update_title": "SpellForce 3: Fallen God and Free Multiplayer Version Versus now available!",
     "last_announcement": "2021-12-06 09:48:48",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936215398954268",
-    "last_announcement_title": "SpellForce 3 Reforced - Big Update & New Game Modes"
+    "last_announcement_title": "SpellForce 3 Reforced - Big Update & New Game Modes",
+    "last_announcement_content": "SpellForce 3: Reforced During the last year we have been hard at work to deliver you this update. We spent a lot of time gathering feedback, reworking map scripts, fixing bugs and improving the game in many aspects. But not only that, we have also included two completely new game modes: Journey (our..."
   },
   {
     "id": 217,
@@ -7174,7 +7300,8 @@
     "last_update_title": "We just launched a small patch!",
     "last_announcement": "2025-08-07 09:16:36",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909575337",
-    "last_announcement_title": "Free Update! A new Hero awaits. Play the epic tale of Goberalt!"
+    "last_announcement_title": "Free Update! A new Hero awaits. Play the epic tale of Goberalt!",
+    "last_announcement_content": "Today we want to thank all of our players who enjoyed the game, joined the conversation and also all of you who gave feedback in beta tests, discussions and who took the time to write us a review. We are very grateful for all the continued support and positivity that allowed us to work on the game w..."
   },
   {
     "id": 275,
@@ -7235,7 +7362,8 @@
     "last_update_title": "New ladder season starts now!",
     "last_announcement": "2025-08-19 08:36:33",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939505513",
-    "last_announcement_title": "New season begins September 12"
+    "last_announcement_title": "New season begins September 12",
+    "last_announcement_content": "New area: Steel FortressIt is an extra big area. Monsters there get extra life and damage. The boss is a raid boss.The boss always drops a unique token.Attraction Orb, Summoning Orb and Mirror Marble cannot be used in that area.Monsters in that area drop maximized items with 9 item properties. That ..."
   },
   {
     "id": 198,
@@ -7293,7 +7421,8 @@
     "last_update_title": "What is this? An update for ANTS?",
     "last_announcement": "2022-07-10 05:03:19",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035569866792",
-    "last_announcement_title": "What is this? An update for ANTS?"
+    "last_announcement_title": "What is this? An update for ANTS?",
+    "last_announcement_content": "Fixed a bug where lich summons would stop responding."
   },
   {
     "id": 266,
@@ -7352,7 +7481,8 @@
     "last_update_title": "Sword of the Necromancer UPDATE 1.1f",
     "last_announcement": "2025-01-23 04:09:32",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505304421",
-    "last_announcement_title": "Sword of the Necromancer: Resurrection available Now!"
+    "last_announcement_title": "Sword of the Necromancer: Resurrection available Now!",
+    "last_announcement_content": "Grimorio of Games is thrilled to announce that Sword of the Necromancer: Resurrection is now available! This 3D remake of the original ARPG brings fans a completely reimagined experience with modern graphics, dynamic combat, and innovative gameplay mechanics. Dive into a heartfelt adventure filled w..."
   },
   {
     "id": 182,
@@ -7410,7 +7540,8 @@
     "last_update_title": "Tainted Grail: The Fall of Avalon is Out Now!",
     "last_announcement": "2025-05-24 09:21:14",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
-    "last_announcement_title": "Tainted Grail: The Fall of Avalon is Out Now!"
+    "last_announcement_title": "Tainted Grail: The Fall of Avalon is Out Now!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/36377652/aae099950047c71d29416845c27b8a019e4ae0cd.png Hey everyone! Just yesterday, we at Questline released our second game \u2013 Tainted Grail: The Fall of Avalon! To celebrate this milestone, we\u2019re offering a special 80% discount here on Conquest! This might be a great way to enter..."
   },
   {
     "id": 246,
@@ -7469,7 +7600,8 @@
     "last_update_title": "New Hotfix Arrives!",
     "last_announcement": "2025-12-19 01:45:10",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365094581",
-    "last_announcement_title": "New Hotfix Arrives!"
+    "last_announcement_title": "New Hotfix Arrives!",
+    "last_announcement_content": "New Hotfix!\\ Thrygve should no longer lock out at the end of the fight.Bugged out Restoring Order and Forge Extinguished quests should complete retroactively.Fixed the disappearing of the Blood Abomination in the Archspire.Fixed statuses applied to the hero by gems breaking the game when you looked ..."
   },
   {
     "id": 233,
@@ -7527,7 +7659,8 @@
     "last_update_title": "Tales of Maj'Eyal 1.7.2 \"Evaporating Ghouls\" is out!",
     "last_announcement": "2023-06-30 08:34:16",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150134781568",
-    "last_announcement_title": "Tales of Maj'Eyal 1.7.6 \"Woops\" is released!"
+    "last_announcement_title": "Tales of Maj'Eyal 1.7.6 \"Woops\" is released!",
+    "last_announcement_content": "My minions, I am happy and proud to give you Tales of Maj'Eyal 1.7.6 ! See http://te4.org/ This is the update of shame! I managed to induce a nasty nasty bug that broke the item's vault in 1.7.5. This is the fix for it so I can now finally go back to publish Lost Land test. I am sorry for the delay ..."
   },
   {
     "id": 297,
@@ -7584,7 +7717,8 @@
     "last_update_title": "Our second game, Flowstone Saga, is now available!",
     "last_announcement": "2024-10-18 07:19:26",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583179691668",
-    "last_announcement_title": "Tangledeep 2 is in development + player survey!"
+    "last_announcement_title": "Tangledeep 2 is in development + player survey!",
+    "last_announcement_content": "Hello adventurers! Now that our second game Flowstone Saga has shipped, our team is starting to transition back to working on Tangledeep 2 and we can hardly wait to show everyone how it's going. To help shape the game and make it as good as it can be, we're inviting all Tangledeep players to fill ou..."
   },
   {
     "id": 287,
@@ -7643,7 +7777,8 @@
     "last_update_title": null,
     "last_announcement": null,
     "last_announcement_url": null,
-    "last_announcement_title": null
+    "last_announcement_title": null,
+    "last_announcement_content": null
   },
   {
     "id": 286,
@@ -7702,7 +7837,8 @@
     "last_update_title": null,
     "last_announcement": "2025-07-09 07:07:07",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891930139",
-    "last_announcement_title": "The Elder Scrolls IV: Oblivion Remastered - Update 1.2"
+    "last_announcement_title": "The Elder Scrolls IV: Oblivion Remastered - Update 1.2",
+    "last_announcement_content": "Oblivion Remastered Update 1.2In update 1.2 we\u2019ve focused on various fixes for quests, gameplay, and performance. In addition, we\u2019ve included several damage settings to allow you to fine tune your play experience. Update 1.2 will be rolling out today to all platforms.\u00a0See the full list of changes co..."
   },
   {
     "id": 285,
@@ -7762,7 +7898,8 @@
     "last_update_title": null,
     "last_announcement": "2025-10-31 07:38:02",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432906499",
-    "last_announcement_title": "Find your next Skyrim adventure in these mini DLC-sized Creations!"
+    "last_announcement_title": "Find your next Skyrim adventure in these mini DLC-sized Creations!",
+    "last_announcement_content": "Coven of Crones by HightaleCoven of Crones is an exciting new land and quest creation, which explores a secretive plot orchestrated by Anise and her coven of Hags, who have settled in a mysterious land once home to druids, but now a cesspool of lost souls doomed to be fodder to the Crones' wicked sc..."
   },
   {
     "id": 222,
@@ -7821,7 +7958,8 @@
     "last_update_title": "Seasons of the Worm Cult Part 2 & Update 48 Now Live on PC/Mac",
     "last_announcement": "2025-12-18 10:20:55",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091762",
-    "last_announcement_title": "ESO Leadership\u2019s 2025 End-of-Year Letters to the Community"
+    "last_announcement_title": "ESO Leadership\u2019s 2025 End-of-Year Letters to the Community",
+    "last_announcement_content": "https://esosslfiles-a.akamaihd.net/ape/uploads/2025/12/ca89334513a8c60803cd95a1480f934c.jpg Read three letters from ESO\u2019s leadership team where they discuss learnings from a busy year and set the tone and expectations for 2026. ZeniMax Online Studios Studio Head Jo Burba, ESO Game Director Nick Giac..."
   },
   {
     "id": 193,
@@ -7868,7 +8006,8 @@
     "last_update_title": "Patch Notes 1.223 - 1.225",
     "last_announcement": "2025-12-20 09:30:08",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365098471",
-    "last_announcement_title": "Patch Notes 1.223 - 1.225"
+    "last_announcement_title": "Patch Notes 1.223 - 1.225",
+    "last_announcement_content": "Patch Notes 1.223\u00a0\u00a0Improved some wording in the chapter 4 (SPOILER) lore bookReduced the damage slightly from the spells (SPOILER)Added some extra comments of concern in chapter 5 about Diedrik after (SPOILER)Changed the chapter 7 Tavernier (SPOILER) so it stays around until chapter 9 rather than 8...."
   },
   {
     "id": 171,
@@ -7927,7 +8066,8 @@
     "last_update_title": "The Unliving is Out now in Full Access!",
     "last_announcement": "2025-10-04 05:38:24",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772541695",
-    "last_announcement_title": "Update Required"
+    "last_announcement_title": "Update Required",
+    "last_announcement_content": "We want to let you know about an important update.\u00a0\u00a0A recently identified security vulnerability within Unity has been spotted, and while there is currently no evidence of impact on users, we\u2019re taking all relevant steps to ensure you\u2019re on the latest and safest version of the game.\u00a0\u00a0To keep you saf..."
   },
   {
     "id": 157,
@@ -7983,7 +8123,8 @@
     "last_update_title": "Patch 1.1: Post-Launch Quality of Life",
     "last_announcement": "2025-05-02 09:48:07",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487642163",
-    "last_announcement_title": "Patch 1.1: Post-Launch Quality of Life"
+    "last_announcement_title": "Patch 1.1: Post-Launch Quality of Life",
+    "last_announcement_content": "Hey folks, Wow! It has been really exciting to see the influx of new players in the past week! As a solo dev and first time indie, it's incredible to see how many people are interested in the game. Even with Early Access concluded, I'll still be updating Throne of Bone to ensure it's the best it can..."
   },
   {
     "id": 293,
@@ -8042,7 +8183,8 @@
     "last_update_title": "Titan Quest Gets Its 4th Expansion: Eternal Embers out now!",
     "last_announcement": "2025-08-01 12:00:53",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490723985",
-    "last_announcement_title": "Face Your Nemesis: Titan Quest II Early Access Starts Now!"
+    "last_announcement_title": "Face Your Nemesis: Titan Quest II Early Access Starts Now!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/7564110/ace6b9254414e6084e5bf13f675b3734dbede9a4.jpg Face Your Nemesis: Titan Quest II Early Access Starts Now! Munich, Germany / Vienna, Austria - August 1st, 2025: Sometimes, the threads spun by the Moirai are tangled beyond mortal comprehension. Fate rarely reveals its design i..."
   },
   {
     "id": 154,
@@ -8099,7 +8241,8 @@
     "last_update_title": "Total War: WARHAMMER I & II: Immortal Empires Unlock",
     "last_announcement": "2025-12-18 10:00:12",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090897",
-    "last_announcement_title": "Winter Sale NOW ON!"
+    "last_announcement_title": "Winter Sale NOW ON!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/39760201/b6a4bf31711b2ae8081e2155f7472fbd8a8ed3bc.jpg It is a snowstorm of discounts as the Winter Sale is now on! Grab up to 75% off Total War titles and DLCs, and treat yourself or your loved ones to the gift of strategy this holiday season! \ud83c\udf81 https://store.steampowered.com/app/..."
   },
   {
     "id": 161,
@@ -8160,7 +8303,8 @@
     "last_update_title": "Cavalry Beta Update",
     "last_announcement": "2025-12-18 10:00:26",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091088",
-    "last_announcement_title": "Winter Sale NOW ON!"
+    "last_announcement_title": "Winter Sale NOW ON!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/39760201/b6a4bf31711b2ae8081e2155f7472fbd8a8ed3bc.jpg It is a snowstorm of discounts as the Winter Sale is now on! Grab up to 75% off Total War titles and DLCs, and treat yourself or your loved ones to the gift of strategy this holiday season! \ud83c\udf81 https://store.steampowered.com/app/..."
   },
   {
     "id": 147,
@@ -8217,7 +8361,8 @@
     "last_update_title": "Total War: WARHAMMER III - Hotfix 7.0.3 BETA",
     "last_announcement": "2025-12-18 10:00:21",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090953",
-    "last_announcement_title": "Winter Sale NOW ON!"
+    "last_announcement_title": "Winter Sale NOW ON!",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/39760201/b6a4bf31711b2ae8081e2155f7472fbd8a8ed3bc.jpg It is a snowstorm of discounts as the Winter Sale is now on! Grab up to 75% off Total War titles and DLCs, and treat yourself or your loved ones to the gift of strategy this holiday season! \ud83c\udf81 https://store.steampowered.com/app/..."
   },
   {
     "id": 279,
@@ -8277,7 +8422,8 @@
     "last_update_title": "Scheduled Maintenance for December 08~09, 2025",
     "last_announcement": "2025-12-15 00:50:46",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592132407",
-    "last_announcement_title": "[10th Anniv.] New Special Class: Grimmark"
+    "last_announcement_title": "[10th Anniv.] New Special Class: Grimmark",
+    "last_announcement_content": "New Class: GrimmarkInescapable Mark of Death.A blood storm that drenches the battlefield.Become Grimmark! The relentless hunter who never lets a single prey to escape. Swordsman and Scout can now advance to the Grimmark class.Click here for the full patch noteRank 1Hunting MarkSudden PenetrationHams..."
   },
   {
     "id": 187,
@@ -8336,7 +8482,8 @@
     "last_update_title": "DYSMANTLE Pets & Dungeons DLC Now Available",
     "last_announcement": "2023-10-18 08:11:19",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608362",
-    "last_announcement_title": "DYSMANTLE Pets & Dungeons DLC Now Available"
+    "last_announcement_title": "DYSMANTLE Pets & Dungeons DLC Now Available",
+    "last_announcement_content": "https://clan.cloudflare.steamstatic.com/images/396411/11c8cfc8d1f29eaeb8de51878da828fd990b7c55.gif Get the new DYSMANTLE DLC today with a 10% launch discount! https://store.steampowered.com/app/2439690/DYSMANTLE_Pets__Dungeons/ "
   },
   {
     "id": 176,
@@ -8395,7 +8542,8 @@
     "last_update_title": "DYSMANTLE Pets & Dungeons DLC Now Available",
     "last_announcement": "2023-10-18 08:11:19",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608354",
-    "last_announcement_title": "DYSMANTLE Pets & Dungeons DLC Now Available"
+    "last_announcement_title": "DYSMANTLE Pets & Dungeons DLC Now Available",
+    "last_announcement_content": "https://clan.cloudflare.steamstatic.com/images/396411/11c8cfc8d1f29eaeb8de51878da828fd990b7c55.gif Get the new DYSMANTLE DLC today with a 10% launch discount! https://store.steampowered.com/app/2439690/DYSMANTLE_Pets__Dungeons/ "
   },
   {
     "id": 175,
@@ -8452,7 +8600,8 @@
     "last_update_title": "Update 1.181",
     "last_announcement": "2024-12-13 06:27:06",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543560464",
-    "last_announcement_title": "Update 1.19"
+    "last_announcement_title": "Update 1.19",
+    "last_announcement_content": "- Fixed a runic circle bug in a situation where a player died while casting a spell. - Fixed an error with the incorrect clock position when the game was first launched on some devices. - Fixed a visual error when the destroyed alchemical cauldron continued to emit particles. - Removed the ability t..."
   },
   {
     "id": 143,
@@ -8510,7 +8659,8 @@
     "last_update_title": "V Rising 1.1 Hot Fix 10",
     "last_announcement": "2025-12-17 02:11:49",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086118",
-    "last_announcement_title": "V Rising 1.1 Hot Fix 10"
+    "last_announcement_title": "V Rising 1.1 Hot Fix 10",
+    "last_announcement_content": "Hello Vampires!We\u2019re doing a handful of bug fixes for more concerning issues we\u2019ve found. These fixes are all server-based, so they\u2019ll come into effect whenever the server you\u2019re playing on updates. If you\u2019re hosting a server, please update as soon as possible!The following changes will be applied. ..."
   },
   {
     "id": 207,
@@ -8561,7 +8711,8 @@
     "last_update_title": "Warcraft III: Reforged Patch Notes: Patch 2.0.0",
     "last_announcement": "2025-11-19 18:13:51",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24243441/save-50-on-warcraft-rts-games",
-    "last_announcement_title": "Save 50% on Warcraft\u00ae RTS Games!"
+    "last_announcement_title": "Save 50% on Warcraft\u00ae RTS Games!",
+    "last_announcement_content": "Save big on three iconic Warcraft titles. Play Warcraft I: Remastered, Warcraft II: Remastered, and Warcraft III: Reforged to relive the epic adventure that laid the foundation for Azeroth\u2019s most epic stories! You can also purchase the Warcraft Battle Chest with all three of these legendary Warcraft titles. "
   },
   {
     "id": 206,
@@ -8607,7 +8758,8 @@
     "last_update_title": "Patch Notes: Honorable Horde Balance Changes and Bugfixes",
     "last_announcement": "2025-06-12 23:28:45",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
-    "last_announcement_title": "Patch Notes: Honorable Horde Balance Changes and Bugfixes"
+    "last_announcement_title": "Patch Notes: Honorable Horde Balance Changes and Bugfixes",
+    "last_announcement_content": "We've made some adjustments to Arthas as well as fixed bugs with Thrall, Gnomeregan, and the Honorable Horde event.\r\n"
   },
   {
     "id": 226,
@@ -8665,7 +8817,8 @@
     "last_update_title": "Starfinder x Warframe: Operation Orias Now Available",
     "last_announcement": "2025-12-18 11:14:55",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365092134",
-    "last_announcement_title": "Prime Resurgence EoY Event Rotation 1"
+    "last_announcement_title": "Prime Resurgence EoY Event Rotation 1",
+    "last_announcement_content": "{STEAM_CLAN_IMAGE}/4437469/91654601ea8928afea64de3c5a6a5d42596b9ee6.png Our first Prime Resurgence End of Year Event 2025 rotation is now live until January 15 at 2 p.m. ET! Like in previous years, this event will include two separate rotations \u2014 each containing four pairs of Prime Warframes (that\u2019s..."
   },
   {
     "id": 243,
@@ -8723,7 +8876,8 @@
     "last_update_title": "Hotfix 6.9.2 patch notes",
     "last_announcement": "2025-12-09 01:10:09",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366184749",
-    "last_announcement_title": "Gifts of the Wolf Father"
+    "last_announcement_title": "Gifts of the Wolf Father",
+    "last_announcement_content": "Heroes!A Merry Mondstille to all of you! It is that time of year where the Wolf Father goes around delivering gifts to our ardent rat slayers! Premium cosmetics, weapon illusions, red dust, shillings, and more!From December 9 to January 3, log in each day and check in Lohner\u2019s Emporium of Wonders to..."
   },
   {
     "id": 227,
@@ -8781,7 +8935,8 @@
     "last_update_title": "Warlock 2: The Exiled Now Available on Every Shard of Earth",
     "last_announcement": "2014-04-10 10:16:18",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/920166227241397473",
-    "last_announcement_title": "Warlock 2: The Exiled Now Available on Every Shard of Earth"
+    "last_announcement_title": "Warlock 2: The Exiled Now Available on Every Shard of Earth",
+    "last_announcement_content": "Paradox Interactive today announced that wrongly exiled magicians and sorcerers everywhere can begin their quests to retake Ardania in Warlock 2: The Exiled, the turn-based strategy-fantasy wargame from Ino-Co Plus. Available today via digital retailers worldwide, Warlock 2: The Exiled challenges pl..."
   },
   {
     "id": 300,
@@ -8839,7 +8994,8 @@
     "last_update_title": "Warlock 2: The Exiled Now Available on Every Shard of Earth",
     "last_announcement": "2016-06-08 10:00:00",
     "last_announcement_url": "http://store.steampowered.com/news/22264/",
-    "last_announcement_title": "Daily Deal - Warlock 2: The Exiled, 75% Off"
+    "last_announcement_title": "Daily Deal - Warlock 2: The Exiled, 75% Off",
+    "last_announcement_content": "Today's Deal: Save 75% on <a href='http://store.steampowered.com/app/205990/'>Warlock 2: The Exiled</a>!* Look for the deals each day on the front page of Steam. Or follow us on <a href='http://twitter.com/steam_games'>twitter</a> or <a href='http://www.facebook.com/Steam'>Facebook</a> for instant notifications wherever you are! *Offer ends Friday at 10AM Pacific Time <a href=\"http://store.steampowered.com/app/205990/\"> </a>"
   },
   {
     "id": 181,
@@ -8898,7 +9054,8 @@
     "last_update_title": "Patch 1.1.7.16",
     "last_announcement": "2024-09-17 06:10:59",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009531366323",
-    "last_announcement_title": "Server Shutdown and Online Character Conversion"
+    "last_announcement_title": "Server Shutdown and Online Character Conversion",
+    "last_announcement_content": "Greetings, Ascended, We will begin shutting down Wolcen: Lords of Mayhem's servers today after the delay communicated earlier this month. Your online characters will be available in the cloud and can be converted for offline play with the patch that is also rolling out today on all platforms using a..."
   },
   {
     "id": 205,
@@ -8943,7 +9100,8 @@
     "last_update_title": "WoW Weekly: Midnight Pre-Patch on the Horizon, the Feast of Winter Veil, and More!",
     "last_announcement": "2025-12-19 18:00:00",
     "last_announcement_url": "https://news.blizzard.com/en-us/article/24249606/wow-weekly-midnight-pre-patch-on-the-horizon-the-feast-of-winter-veil-and-more",
-    "last_announcement_title": "WoW Weekly: Midnight Pre-Patch on the Horizon, the Feast of Winter Veil, and More!"
+    "last_announcement_title": "WoW Weekly: Midnight Pre-Patch on the Horizon, the Feast of Winter Veil, and More!",
+    "last_announcement_content": "Prepare for the Midnight pre-patch, frolic and be merry with your gnomies during the Feast of Winter Veil, gear up for the holidays with big savings, and brave chilly adventures while staying toasty warm! Every week brings thrilling new adventures and loot, so rally your allies and forge your legend in Azeroth. "
   },
   {
     "id": 249,
@@ -9000,7 +9158,8 @@
     "last_update_title": "Update #16 - Graduation fix",
     "last_announcement": "2025-05-30 10:03:30",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756350095",
-    "last_announcement_title": "Farm Together 2 - Full release available now!"
+    "last_announcement_title": "Farm Together 2 - Full release available now!",
+    "last_announcement_content": "Today we're releasing Farm Together 2, the farming experience that anyone can play! https://clan.fastly.steamstatic.com/images/6860297/d1125bb8df0734a02d6bcd99c9466df705f8edae.jpg We've made a huge effort to create a fun and relaxed farming experience. We hope you have a good time playing it! https:..."
   },
   {
     "id": 283,
@@ -9061,7 +9220,8 @@
     "last_update_title": "V1.03.050 - Everyone is coming in on Saturday.",
     "last_announcement": "2020-10-05 17:23:30",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3807188575865083860",
-    "last_announcement_title": "State of the Zombidle"
+    "last_announcement_title": "State of the Zombidle",
+    "last_announcement_content": "Yooooo friendos, We\u2019ve talked about it on Stream, but we realized that there isn\u2019t a post on Steam that gives a definitive \u201cState of the Zombidle\u201d and wanted to fix that. We get a lot of questions about updates, platforms, etc. so here\u2019s an F.A.Q. that should clear it all up: TL;DR: We made Zombidle..."
   },
   {
     "id": 241,
@@ -9118,6 +9278,7 @@
     "last_update_title": "Update notes for release 61.16",
     "last_announcement": "2025-08-02 08:14:55",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490750934",
-    "last_announcement_title": "Update notes for release 61.16"
+    "last_announcement_title": "Update notes for release 61.16",
+    "last_announcement_content": "Fixed a bug where summoned creatures could spawn into locked prison cells. Tweaked initial positions of animated and summoned creatures. Added more pre-checks for AI to check that there is space to create the animated / summoned. More tweaks to charm / possession, so that friendly creatures won't ge..."
   }
 ]
