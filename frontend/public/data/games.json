@@ -28,7 +28,7 @@
     "developer": "Valorware",
     "publisher": "Valorware",
     "release_date": "Oct 5, 2020",
-    "price_usd": 15.99,
+    "price_usd": 9.59,
     "price_notes": null,
     "steam_tags": [
       "Hack and Slash",
@@ -51,7 +51,7 @@
     "aliases": [
       "9th Dawn 3"
     ],
-    "last_checked": "2025-12-19 10:13:23.765489",
+    "last_checked": "2025-12-20 10:32:19.337857",
     "update_count": 13,
     "last_update": "2025-10-03 08:42:34",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772512941",
@@ -76,7 +76,7 @@
     "name": "ADOM (Ancient Domains Of Mystery)",
     "app_type": "game",
     "short_description": "ADOM (Ancient Domains Of Mystery) is one of the most successful roguelike games ever created, boasting a brilliant mix of story, RPG, exploration, and intensely strategic &amp; flexible combat. The Steam version adds various features like achievements, difficulty level customization &amp; play modes.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/333300/header.jpg?t=1728905558",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/333300/header.jpg?t=1765877367",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -87,9 +87,9 @@
     "dimension_4_notes": "",
     "date_updated": "2025-12-07 00:12:42.038719",
     "developer": "Thomas Biskup, Jochen Terstiege, Zeno Rogue, Krzysztof Dycha, Lucas Dieguez",
-    "publisher": "Assemble Entertainment",
+    "publisher": "",
     "release_date": "Nov 16, 2015",
-    "price_usd": 14.99,
+    "price_usd": 12.74,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -110,7 +110,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:58.809102",
+    "last_checked": "2025-12-20 10:32:21.729428",
     "update_count": 47,
     "last_update": "2019-01-29 15:25:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583401802187",
@@ -148,7 +148,7 @@
     "developer": "Dotemu, Guard Crush Games, Supamonks",
     "publisher": "Dotemu, Gamirror Games",
     "release_date": "Oct 9, 2025",
-    "price_usd": 24.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -158,7 +158,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:00.140479",
+    "last_checked": "2025-12-20 10:32:22.278406",
     "update_count": 23,
     "last_update": "2025-10-23 06:00:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641440446",
@@ -218,7 +218,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:01.697257",
+    "last_checked": "2025-12-20 10:32:23.727934",
     "update_count": 50,
     "last_update": "2022-03-01 05:06:56",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832526320356",
@@ -256,7 +256,7 @@
     "developer": "Leslaw Sliwko",
     "publisher": "Age of Fear",
     "release_date": "Jun 26, 2015",
-    "price_usd": 24.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "Tactical RPG",
@@ -276,7 +276,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:03.153171",
+    "last_checked": "2025-12-20 10:32:25.219753",
     "update_count": 50,
     "last_update": "2022-07-15 16:21:04",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144690448979",
@@ -314,7 +314,7 @@
     "developer": "Triumph Studios",
     "publisher": "Paradox Interactive",
     "release_date": "May 2, 2023",
-    "price_usd": 49.99,
+    "price_usd": 24.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -333,7 +333,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:04.649829",
+    "last_checked": "2025-12-20 10:32:26.703746",
     "update_count": 47,
     "last_update": "2025-12-09 06:12:53",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185498",
@@ -371,7 +371,7 @@
     "developer": "Triumph Studios",
     "publisher": "Paradox Interactive",
     "release_date": "Mar 31, 2014",
-    "price_usd": 29.99,
+    "price_usd": 7.49,
     "price_notes": "Also requires Age of Wonders III - Eternal Lords Expansion ($26.99)",
     "steam_tags": [
       "Strategy",
@@ -392,7 +392,7 @@
     "aliases": [
       "Age of Wonders 3"
     ],
-    "last_checked": "2025-12-19 10:10:07.536843",
+    "last_checked": "2025-12-20 10:32:28.286379",
     "update_count": 48,
     "last_update": "2017-05-02 08:41:07",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1858142318046008250",
@@ -430,7 +430,7 @@
     "developer": "Arkane Studios",
     "publisher": "Arkane Studios",
     "release_date": "Apr 3, 2007",
-    "price_usd": 4.99,
+    "price_usd": 1.64,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -448,7 +448,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:07.824526",
+    "last_checked": "2025-12-20 10:32:30.757065",
     "update_count": 2,
     "last_update": "2020-05-28 14:00:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212089952946",
@@ -473,7 +473,7 @@
     "name": "BALL x PIT",
     "app_type": "game",
     "short_description": "BALL x PIT is a brick-breaking, ball-fusing, base-building survival roguelite. Batter hordes of enemies with ricocheting balls and gather the riches of the pit to expand your homestead, generate resources and recruit unique heroes.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062430/a157aa8de4bd9070194ddffb27c31636355dca05/header.jpg?t=1764122366",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062430/a157aa8de4bd9070194ddffb27c31636355dca05/header.jpg?t=1766177619",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -494,7 +494,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:09.461355",
+    "last_checked": "2025-12-20 10:32:31.235884",
     "update_count": 19,
     "last_update": "2025-11-05 08:51:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768233693",
@@ -532,7 +532,7 @@
     "developer": "Larian Studios",
     "publisher": "Larian Studios",
     "release_date": "Aug 3, 2023",
-    "price_usd": 59.99,
+    "price_usd": 44.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -552,7 +552,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:11.498515",
+    "last_checked": "2025-12-20 10:32:32.849597",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010720",
@@ -590,7 +590,7 @@
     "developer": "Beamdog",
     "publisher": "Beamdog",
     "release_date": "Nov 15, 2013",
-    "price_usd": 19.99,
+    "price_usd": 3.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -613,7 +613,7 @@
       "BG2",
       "BGII"
     ],
-    "last_checked": "2025-12-19 10:13:19.383323",
+    "last_checked": "2025-12-20 10:32:34.239736",
     "update_count": 23,
     "last_update": "2025-04-29 10:03:11",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624628365",
@@ -651,7 +651,7 @@
     "developer": "Beamdog",
     "publisher": "Beamdog",
     "release_date": "Jan 16, 2013",
-    "price_usd": 19.99,
+    "price_usd": 3.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -674,7 +674,7 @@
       "BG1",
       "BGI"
     ],
-    "last_checked": "2025-12-19 10:13:20.849989",
+    "last_checked": "2025-12-20 10:32:35.765408",
     "update_count": 31,
     "last_update": "2025-07-15 08:28:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414368790",
@@ -712,7 +712,7 @@
     "developer": "Turning Wheel LLC",
     "publisher": "Turning Wheel LLC",
     "release_date": "Jun 23, 2015",
-    "price_usd": 19.99,
+    "price_usd": 14.99,
     "price_notes": "Conjurer requires Myths & Outcasts DLC ($4.99)",
     "steam_tags": [
       "Dungeon Crawler",
@@ -733,14 +733,14 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:31.294076",
-    "update_count": 47,
+    "last_checked": "2025-12-20 10:32:37.373375",
+    "update_count": 48,
     "last_update": "2024-12-12 22:46:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543549539",
     "last_update_title": "The 4.3.1 Assist Shrine Update is now live!",
-    "last_announcement": "2025-12-05 14:02:59",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366177906",
-    "last_announcement_title": "DLC Sneak Peek: The Myconid Hermit"
+    "last_announcement": "2025-12-19 14:00:34",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096960",
+    "last_announcement_title": "DLC Sneak Peek: The Salamander Paladin"
   },
   {
     "id": 179,
@@ -771,7 +771,7 @@
     "developer": "Polished Games",
     "publisher": "Polished Games",
     "release_date": "Jun 18, 2024",
-    "price_usd": 4.99,
+    "price_usd": 4.49,
     "price_notes": null,
     "steam_tags": [
       "Action Roguelike",
@@ -792,7 +792,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:12.960398",
+    "last_checked": "2025-12-20 10:32:38.724016",
     "update_count": 57,
     "last_update": "2025-12-18 07:53:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090263",
@@ -830,7 +830,7 @@
     "developer": "Acute Owl Studio",
     "publisher": "Acute Owl Studio",
     "release_date": "Oct 29, 2022",
-    "price_usd": 14.99,
+    "price_usd": 7.49,
     "price_notes": null,
     "steam_tags": [
       "Cooking",
@@ -852,7 +852,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:13.906445",
+    "last_checked": "2025-12-20 10:32:40.294664",
     "update_count": 20,
     "last_update": "2023-05-20 08:59:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943312921828",
@@ -890,7 +890,7 @@
     "developer": "caiys",
     "publisher": "caiysware",
     "release_date": "Mar 9, 2023",
-    "price_usd": 4.99,
+    "price_usd": 3.24,
     "price_notes": null,
     "steam_tags": [
       "Action Roguelike",
@@ -911,7 +911,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:16.525460",
+    "last_checked": "2025-12-20 10:32:41.864115",
     "update_count": 50,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
@@ -936,7 +936,7 @@
     "name": "Bro, where's My head???",
     "app_type": "game",
     "short_description": "My name is Odin. I come from the land of darkness and I want to take over the world. 3 days ago I tried to resurrect the undeath. Unfortunately, something went wrong because the skeletons don't have heads, can you help Me find their heads? When I rule the world, I will leave You alone.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1564760/header.jpg?t=1763846353",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1564760/header.jpg?t=1766069849",
     "dimension_1": "d",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -949,7 +949,7 @@
     "developer": "Airem",
     "publisher": "Airem",
     "release_date": "Mar 25, 2021",
-    "price_usd": 1.99,
+    "price_usd": 0.59,
     "price_notes": null,
     "steam_tags": [
       "Collectathon",
@@ -971,14 +971,14 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:22.223812",
-    "update_count": 51,
-    "last_update": "2025-02-14 08:51:53",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426002428",
-    "last_update_title": "\ud83d\udda4 Valentine Die \ud83d\udda4 - HorrorCore: Maze and Pools of Horror is now live \ud83c\udf81",
-    "last_announcement": "2025-12-18 14:33:59",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365092707",
-    "last_announcement_title": "Steam Winter Sale 2025 \ud83c\udf81"
+    "last_checked": "2025-12-20 10:32:43.287546",
+    "update_count": 52,
+    "last_update": "2024-11-27 08:09:04",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506358982289",
+    "last_update_title": "The Liminal Dimension is now available on Steam \ud83c\udf81",
+    "last_announcement": "2025-12-19 14:08:27",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096971",
+    "last_announcement_title": "Steam Winter Sale 2025 \u2013 Little Part Two \ud83c\udf81"
   },
   {
     "id": 255,
@@ -1009,7 +1009,7 @@
     "developer": "The Behemoth",
     "publisher": "The Behemoth",
     "release_date": "Sep 26, 2012",
-    "price_usd": 14.99,
+    "price_usd": 1.49,
     "price_notes": null,
     "steam_tags": [
       "2D",
@@ -1031,7 +1031,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:17.244014",
+    "last_checked": "2025-12-20 10:32:44.739509",
     "update_count": 47,
     "last_update": "2025-08-18 12:16:38",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939477723",
@@ -1069,7 +1069,7 @@
     "developer": "Illwinter Game Design",
     "publisher": "Illwinter Game Design",
     "release_date": "Oct 24, 2012",
-    "price_usd": 9.99,
+    "price_usd": 2.49,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -1087,7 +1087,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:18.298415",
+    "last_checked": "2025-12-20 10:32:46.276337",
     "update_count": 18,
     "last_update": "2024-04-17 07:46:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032387456863",
@@ -1125,7 +1125,7 @@
     "developer": "Illwinter Game Design",
     "publisher": "Illwinter Game Design",
     "release_date": "Nov 16, 2015",
-    "price_usd": 24.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -1144,7 +1144,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:20.170942",
+    "last_checked": "2025-12-20 10:32:47.792916",
     "update_count": 50,
     "last_update": "2019-03-16 11:43:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3140604542249418681",
@@ -1182,7 +1182,7 @@
     "developer": "Melancholia Studio",
     "publisher": "Thermite Games",
     "release_date": "May 28, 2024",
-    "price_usd": 19.99,
+    "price_usd": 6.99,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -1204,7 +1204,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:51.968421",
+    "last_checked": "2025-12-20 10:32:49.584683",
     "update_count": 40,
     "last_update": "2025-05-30 03:10:33",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756340220",
@@ -1242,7 +1242,7 @@
     "developer": "Image Power S.A.",
     "publisher": "Image Power S.A., HeartBeat Games, PlayWay S.A.",
     "release_date": "Jun 14, 2023",
-    "price_usd": 19.99,
+    "price_usd": 3.79,
     "price_notes": null,
     "steam_tags": [
       "Horror",
@@ -1262,7 +1262,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:50.391393",
+    "last_checked": "2025-12-20 10:32:50.792120",
     "update_count": 50,
     "last_update": "2023-06-23 10:15:43",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515258998995",
@@ -1287,7 +1287,7 @@
     "name": "Cubic Cosmos",
     "app_type": "game",
     "short_description": "Cubic Cosmos is a thrilling fast-paced roguelike card game. You have been trapped in a deadly game. One wrong move could see you reduced to a plaything of the goddess. Can you free yourself from the endless cycle and escape your fate?",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3332600/da80a7f6636d905813b2c51a137749cce5de4dcd/header.jpg?t=1764063944",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3332600/6aa8bf9d58e2e0854b0246bb1228a5bf790fc151/header_alt_assets_1.jpg?t=1766112948",
     "dimension_1": "d",
     "dimension_2": "unit",
     "dimension_3": "explicit",
@@ -1300,7 +1300,7 @@
     "developer": "Inkstone Atelier",
     "publisher": "Lilith Games",
     "release_date": "Sep 16, 2025",
-    "price_usd": 12.99,
+    "price_usd": 9.74,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -1308,7 +1308,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:23.294063",
+    "last_checked": "2025-12-20 10:32:52.331215",
     "update_count": 48,
     "last_update": "2025-12-05 01:36:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366175646",
@@ -1367,7 +1367,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:23.559614",
+    "last_checked": "2025-12-20 10:32:53.799699",
     "update_count": 40,
     "last_update": "2025-02-07 09:28:23",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102659495",
@@ -1426,7 +1426,7 @@
       "Dark Souls 3",
       "Dark Souls III"
     ],
-    "last_checked": "2025-12-19 10:13:43.322028",
+    "last_checked": "2025-12-20 10:32:55.359201",
     "update_count": 7,
     "last_update": "2023-01-12 02:15:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840530596356",
@@ -1486,7 +1486,7 @@
     "aliases": [
       "Darksiders 2 Deathinitive Edition"
     ],
-    "last_checked": "2025-12-19 10:10:25.183595",
+    "last_checked": "2025-12-20 10:32:56.889090",
     "update_count": 11,
     "last_update": "2018-11-27 10:04:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774187448841",
@@ -1511,7 +1511,7 @@
     "name": "Dead by Daylight",
     "app_type": "game",
     "short_description": "Trapped forever in a realm of eldritch evil where even death is not an escape, four determined Survivors face a bloodthirsty Killer in a vicious game of nerve and wits. Pick a side and step into a world of tension and terror with horror gaming's best asymmetrical multiplayer.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1760636583",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1766160502",
     "dimension_1": "d",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -1524,7 +1524,7 @@
     "developer": "Behaviour Interactive Inc.",
     "publisher": "Behaviour Interactive Inc.",
     "release_date": "Jun 14, 2016",
-    "price_usd": 19.99,
+    "price_usd": 7.99,
     "price_notes": null,
     "steam_tags": [
       "Horror",
@@ -1542,7 +1542,7 @@
       "Action"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:26.578438",
+    "last_checked": "2025-12-20 10:32:58.311397",
     "update_count": 27,
     "last_update": "2025-12-09 07:30:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185704",
@@ -1580,7 +1580,7 @@
     "developer": "5WORD Team",
     "publisher": "5WORD Team",
     "release_date": "Aug 23, 2019",
-    "price_usd": 12.99,
+    "price_usd": 2.59,
     "price_notes": null,
     "steam_tags": [
       "Wargame",
@@ -1599,7 +1599,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:28.119096",
+    "last_checked": "2025-12-20 10:33:00.891610",
     "update_count": 40,
     "last_update": "2024-07-17 11:11:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959961902351",
@@ -1657,7 +1657,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:29.565848",
+    "last_checked": "2025-12-20 10:33:01.428079",
     "update_count": 54,
     "last_update": "2025-12-16 05:17:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592135789",
@@ -1695,7 +1695,7 @@
     "developer": "Thorian Games",
     "publisher": "Goblinz Publishing, Maple Whispering Limited",
     "release_date": "Oct 21, 2025",
-    "price_usd": 9.99,
+    "price_usd": 7.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -1704,7 +1704,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:31.097983",
+    "last_checked": "2025-12-20 10:33:02.844341",
     "update_count": 12,
     "last_update": "2025-11-28 03:22:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
@@ -1754,7 +1754,7 @@
       "Diablo II Resurrected",
       "Diablo 2: Resurrected"
     ],
-    "last_checked": "2025-12-19 10:09:54.355448",
+    "last_checked": "2025-12-20 10:32:15.134874",
     "update_count": 20,
     "last_update": "2022-06-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/23814050/diablo-ii-resurrected-patch-2-4-3-now-live",
@@ -1806,7 +1806,7 @@
       "Diablo 3: Rise of the Necromancer",
       "Diablo III: Rise of the Necromancer"
     ],
-    "last_checked": "2025-12-19 10:09:52.084349",
+    "last_checked": "2025-12-20 10:32:12.848219",
     "update_count": 20,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -1852,7 +1852,7 @@
       "Mobile"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:53.177546",
+    "last_checked": "2025-12-20 10:32:14.110781",
     "update_count": 24,
     "last_update": "2025-11-18 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24166781/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
@@ -1878,7 +1878,7 @@
     "name": "Diablo\u00ae IV",
     "app_type": "game",
     "short_description": "Join the fight for Sanctuary in Diablo\u00ae IV, the ultimate action RPG adventure. Experience the critically acclaimed campaign and new seasonal content.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2344520/80f21a42e378b93e8fbb68ee43103be8ab84891b/header.jpg?t=1765512014",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2344520/80f21a42e378b93e8fbb68ee43103be8ab84891b/header.jpg?t=1766192109",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -1891,7 +1891,7 @@
     "developer": "Blizzard Entertainment, Inc.",
     "publisher": "Blizzard Entertainment, Inc.",
     "release_date": "Oct 17, 2023",
-    "price_usd": 49.99,
+    "price_usd": 29.99,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -1913,7 +1913,7 @@
       "Diablo 4",
       "D4"
     ],
-    "last_checked": "2025-12-19 10:10:32.549196",
+    "last_checked": "2025-12-20 10:33:05.340045",
     "update_count": 5,
     "last_update": "2025-12-16 15:16:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365083889",
@@ -1951,7 +1951,7 @@
     "developer": "Soldak Entertainment",
     "publisher": "Soldak Entertainment",
     "release_date": "Aug 22, 2012",
-    "price_usd": 9.99,
+    "price_usd": 2.49,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -1971,7 +1971,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:34.092881",
+    "last_checked": "2025-12-20 10:33:05.863486",
     "update_count": 6,
     "last_update": "2012-08-22 12:28:00",
     "last_update_url": "http://store.steampowered.com/news/8703/",
@@ -2009,7 +2009,7 @@
     "developer": "Strategy First",
     "publisher": "Strategy First",
     "release_date": "Jul 6, 2006",
-    "price_usd": 1.19,
+    "price_usd": 1.49,
     "price_notes": null,
     "steam_tags": [
       "Turn-Based Strategy",
@@ -2032,7 +2032,7 @@
       "Disciples 2: Gallean's Return",
       "Disciples II: Gallean's Return"
     ],
-    "last_checked": "2025-12-19 10:10:35.563721",
+    "last_checked": "2025-12-20 10:33:07.396422",
     "update_count": 2,
     "last_update": null,
     "last_update_url": null,
@@ -2070,7 +2070,7 @@
     "developer": "Larian Studios",
     "publisher": "Larian Studios",
     "release_date": "Sep 14, 2017",
-    "price_usd": 44.99,
+    "price_usd": 11.24,
     "price_notes": null,
     "steam_tags": [
       "Tactical RPG",
@@ -2090,7 +2090,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:37.238811",
+    "last_checked": "2025-12-20 10:33:08.862529",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -2128,7 +2128,7 @@
     "developer": "Illwinter Game Design",
     "publisher": "Illwinter Game Design",
     "release_date": "Dec 5, 2013",
-    "price_usd": 34.99,
+    "price_usd": 8.74,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -2147,7 +2147,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:39.578719",
+    "last_checked": "2025-12-20 10:33:10.461525",
     "update_count": 48,
     "last_update": "2019-08-16 06:26:44",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3556075649722956345",
@@ -2185,7 +2185,7 @@
     "developer": "Illwinter Game Design",
     "publisher": "Illwinter Game Design",
     "release_date": "Nov 27, 2017",
-    "price_usd": 39.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -2204,7 +2204,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:40.165423",
+    "last_checked": "2025-12-20 10:33:11.932574",
     "update_count": 48,
     "last_update": "2020-12-13 09:12:06",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3879252510642674769",
@@ -2242,7 +2242,7 @@
     "developer": "BioWare",
     "publisher": "Electronic Arts",
     "release_date": "Oct 26, 2010",
-    "price_usd": 29.99,
+    "price_usd": 2.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -2260,7 +2260,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:41.756703",
+    "last_checked": "2025-12-20 10:33:13.375976",
     "update_count": 3,
     "last_update": null,
     "last_update_url": null,
@@ -2298,7 +2298,7 @@
     "developer": "Pirate-Rob",
     "publisher": "Pirate-Rob",
     "release_date": "Oct 23, 2019",
-    "price_usd": 11.99,
+    "price_usd": 10.79,
     "price_notes": null,
     "steam_tags": [
       "Action Roguelike",
@@ -2317,7 +2317,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:53.605404",
+    "last_checked": "2025-12-20 10:33:15.040076",
     "update_count": 19,
     "last_update": "2024-06-30 04:49:25",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267320272723",
@@ -2355,7 +2355,7 @@
     "developer": "Gas Powered Games",
     "publisher": "Square Enix",
     "release_date": "Apr 5, 2011",
-    "price_usd": 6.99,
+    "price_usd": 0.97,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -2375,7 +2375,7 @@
     "aliases": [
       "Dungeon Siege 1"
     ],
-    "last_checked": "2025-12-19 10:13:29.778387",
+    "last_checked": "2025-12-20 10:33:16.516537",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -2413,7 +2413,7 @@
     "developer": "Gas Powered Games",
     "publisher": "Square Enix",
     "release_date": "Aug 16, 2005",
-    "price_usd": 6.99,
+    "price_usd": 0.97,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -2433,7 +2433,7 @@
     "aliases": [
       "Dungeon Siege 2"
     ],
-    "last_checked": "2025-12-19 10:13:28.316474",
+    "last_checked": "2025-12-20 10:33:18.007873",
     "update_count": 2,
     "last_update": null,
     "last_update_url": null,
@@ -2492,7 +2492,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:43.055763",
+    "last_checked": "2025-12-20 10:33:19.546700",
     "update_count": 50,
     "last_update": "2018-02-26 14:35:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2361446846782055248",
@@ -2530,7 +2530,7 @@
     "developer": "Adventurepro Games LLC",
     "publisher": "Adventurepro Games LLC",
     "release_date": "Dec 9, 2014",
-    "price_usd": 14.99,
+    "price_usd": 4.94,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -2551,7 +2551,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:44.594331",
+    "last_checked": "2025-12-20 10:33:20.936115",
     "update_count": 50,
     "last_update": "2025-10-07 20:18:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031161320",
@@ -2589,7 +2589,7 @@
     "developer": "Aspyr Media",
     "publisher": "Aspyr Media",
     "release_date": "Jul 15, 2025",
-    "price_usd": 29.99,
+    "price_usd": 22.49,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -2598,7 +2598,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:46.129900",
+    "last_checked": "2025-12-20 10:33:22.469417",
     "update_count": 6,
     "last_update": "2025-09-25 08:04:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772247220",
@@ -2655,7 +2655,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:47.972187",
+    "last_checked": "2025-12-20 10:33:24.914837",
     "update_count": 53,
     "last_update": "2025-12-09 06:01:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
@@ -2693,7 +2693,7 @@
     "developer": "FromSoftware, Inc.",
     "publisher": "FromSoftware, Inc., Bandai Namco Entertainment",
     "release_date": "May 29, 2025",
-    "price_usd": 39.99,
+    "price_usd": 29.99,
     "price_notes": null,
     "steam_tags": [
       "Souls-like",
@@ -2712,7 +2712,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:49.112191",
+    "last_checked": "2025-12-20 10:33:25.373753",
     "update_count": 24,
     "last_update": "2025-12-15 23:10:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592134846",
@@ -2750,7 +2750,7 @@
     "developer": "Snowbird Games",
     "publisher": "Snowbird Games",
     "release_date": "Jan 27, 2017",
-    "price_usd": 19.99,
+    "price_usd": 5.59,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -2769,7 +2769,7 @@
     "aliases": [
       "Eador Imperium"
     ],
-    "last_checked": "2025-12-19 10:13:40.277169",
+    "last_checked": "2025-12-20 10:33:27.322255",
     "update_count": 50,
     "last_update": "2018-03-22 05:47:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684542827",
@@ -2807,7 +2807,7 @@
     "developer": "Snowbird Games",
     "publisher": "Snowbird Games",
     "release_date": "Apr 19, 2013",
-    "price_usd": 19.99,
+    "price_usd": 4.59,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -2830,7 +2830,7 @@
       "Eador Masters of the Broken World",
       "Eador: Masters of the Broken World"
     ],
-    "last_checked": "2025-12-19 10:10:50.704812",
+    "last_checked": "2025-12-20 10:33:28.658925",
     "update_count": 50,
     "last_update": "2018-01-31 01:27:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130250382",
@@ -2877,7 +2877,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:42.869607",
+    "last_checked": "2025-12-20 10:33:29.907682",
     "update_count": 10,
     "last_update": "2021-01-11 04:45:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3942305442259331157",
@@ -2915,7 +2915,7 @@
     "developer": "CookieByte Entertainment",
     "publisher": "CookieByte Entertainment",
     "release_date": "Apr 16, 2020",
-    "price_usd": 19.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "3D",
@@ -2934,7 +2934,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:56.502118",
+    "last_checked": "2025-12-20 10:33:31.467057",
     "update_count": 46,
     "last_update": "2021-11-24 10:00:24",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490632803876",
@@ -2972,7 +2972,7 @@
     "developer": "Snapshot Games Inc.",
     "publisher": "Arc Games",
     "release_date": "Jul 31, 2025",
-    "price_usd": 39.99,
+    "price_usd": 31.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -2981,7 +2981,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:53.005025",
+    "last_checked": "2025-12-20 10:33:32.915090",
     "update_count": 52,
     "last_update": "2025-12-16 04:57:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592135708",
@@ -3035,7 +3035,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:07.418628",
+    "last_checked": "2025-12-20 10:33:34.444001",
     "update_count": 15,
     "last_update": "2020-06-01 11:57:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212104099727",
@@ -3092,7 +3092,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:53.718684",
+    "last_checked": "2025-12-20 10:33:36.979012",
     "update_count": 20,
     "last_update": "2017-10-17 10:02:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2139632606736293733",
@@ -3130,7 +3130,7 @@
     "developer": "Lazy Bear Games",
     "publisher": "tinyBuild",
     "release_date": "Aug 15, 2018",
-    "price_usd": 19.99,
+    "price_usd": 3.99,
     "price_notes": null,
     "steam_tags": [
       "Pixel Graphics",
@@ -3151,7 +3151,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:47.463435",
+    "last_checked": "2025-12-20 10:33:37.580852",
     "update_count": 43,
     "last_update": "2021-10-27 10:02:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652357020988280",
@@ -3189,7 +3189,7 @@
     "developer": "Crate Entertainment",
     "publisher": "Crate Entertainment",
     "release_date": "Feb 25, 2016",
-    "price_usd": 24.99,
+    "price_usd": 3.74,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -3210,7 +3210,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:55.143874",
+    "last_checked": "2025-12-20 10:33:38.952884",
     "update_count": 42,
     "last_update": "2025-06-26 10:05:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891514590",
@@ -3235,7 +3235,7 @@
     "name": "Guild Wars 2",
     "app_type": "game",
     "short_description": "Guild Wars 2 is an award-winning online roleplaying game with fast-paced action combat, deep character customization, and no subscription fee required. Choose from an arsenal of professions and weapons, explore a vast open world, compete in PVP modes and more. Join over 16 million players now!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1284210/header.jpg?t=1765312386",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1284210/header.jpg?t=1766174882",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -3269,7 +3269,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:57.635874",
+    "last_checked": "2025-12-20 10:33:40.845588",
     "update_count": 50,
     "last_update": "2025-10-07 09:00:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772642186",
@@ -3320,14 +3320,14 @@
       "Guild Wars",
       "Guild Wars 1"
     ],
-    "last_checked": "2025-12-19 10:13:38.745182",
-    "update_count": 6,
-    "last_update": "2025-12-17 16:24:39",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365088232",
-    "last_update_title": "Patch Notes December 17, 2025",
-    "last_announcement": "2025-12-18 13:32:23",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365092563",
-    "last_announcement_title": "Content Update December 18, 2025"
+    "last_checked": "2025-12-20 10:33:42.075215",
+    "update_count": 7,
+    "last_update": "2025-12-19 13:41:39",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365097275",
+    "last_update_title": "Patch Notes December 19, 2025",
+    "last_announcement": "2025-12-19 13:41:39",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365097275",
+    "last_announcement_title": "Patch Notes December 19, 2025"
   },
   {
     "id": 149,
@@ -3345,7 +3345,7 @@
     "name": "Hades II",
     "app_type": "game",
     "short_description": "Battle beyond the Underworld using dark sorcery to take on the Titan of Time in this bewitching sequel to the award-winning rogue-like dungeon crawler.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1759973532",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/91ac334a2c137d08968ccc0bc474a02579602100/header.jpg?t=1765831644",
     "dimension_1": "d",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -3358,7 +3358,7 @@
     "developer": "Supergiant Games",
     "publisher": "Supergiant Games",
     "release_date": "Sep 25, 2025",
-    "price_usd": 29.99,
+    "price_usd": 22.49,
     "price_notes": null,
     "steam_tags": [
       "Action",
@@ -3380,7 +3380,7 @@
     "aliases": [
       "Hades 2"
     ],
-    "last_checked": "2025-12-19 10:10:58.155126",
+    "last_checked": "2025-12-20 10:33:44.395580",
     "update_count": 28,
     "last_update": "2025-11-12 11:40:07",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816215235360707",
@@ -3418,7 +3418,7 @@
     "developer": "Magic Design Studios",
     "publisher": "Arc Games",
     "release_date": "Mar 22, 2023",
-    "price_usd": 24.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Action Roguelike",
@@ -3437,7 +3437,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:10:59.663065",
+    "last_checked": "2025-12-20 10:33:45.045509",
     "update_count": 47,
     "last_update": "2024-03-20 10:56:20",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301715038955",
@@ -3483,7 +3483,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:58.405757",
+    "last_checked": "2025-12-20 10:32:18.926397",
     "update_count": 27,
     "last_update": "2025-12-12 16:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24250382/34-2-2-patch-notes",
@@ -3508,7 +3508,7 @@
     "name": "Hell Clock",
     "app_type": "game",
     "short_description": "Forge powerful builds with endless loot in this relentless combination of Roguelike and ARPG. Blast through dungeons and unleash inhuman powers in a dark fantasy twist on Brazil\u2019s War of Canudos.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1782460/header.jpg?t=1764867583",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1782460/header.jpg?t=1765988896",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -3521,7 +3521,7 @@
     "developer": "Rogue Snail",
     "publisher": "Mad Mushroom",
     "release_date": "Jul 22, 2025",
-    "price_usd": 19.99,
+    "price_usd": 13.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -3532,7 +3532,7 @@
     "aliases": [
       "Hellclock"
     ],
-    "last_checked": "2025-12-19 10:11:02.197140",
+    "last_checked": "2025-12-20 10:33:46.455063",
     "update_count": 49,
     "last_update": "2025-11-27 08:57:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467037237",
@@ -3570,7 +3570,7 @@
     "developer": "Panic Art Studios Ltd",
     "publisher": "Panic Art Studios Ltd",
     "release_date": "Jan 29, 2014",
-    "price_usd": 7.99,
+    "price_usd": 1.59,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -3592,7 +3592,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:03.621706",
+    "last_checked": "2025-12-20 10:33:49.238966",
     "update_count": 51,
     "last_update": "2025-12-17 05:05:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086646",
@@ -3630,7 +3630,7 @@
     "developer": "Benjamin \"ThingOnItsOwn\" Hauer",
     "publisher": "Goblinz Publishing, Maple Whispering Limited",
     "release_date": "Mar 1, 2022",
-    "price_usd": 17.99,
+    "price_usd": 7.19,
     "price_notes": null,
     "steam_tags": [
       "Turn-Based",
@@ -3649,7 +3649,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:44.391581",
+    "last_checked": "2025-12-20 10:33:49.833586",
     "update_count": 46,
     "last_update": "2025-03-31 06:13:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637948657",
@@ -3687,7 +3687,7 @@
     "developer": "GSC Game World",
     "publisher": "GSC Game World",
     "release_date": "Nov 22, 2006",
-    "price_usd": 7.99,
+    "price_usd": 1.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -3702,7 +3702,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:04.202978",
+    "last_checked": "2025-12-20 10:33:50.974949",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -3747,7 +3747,7 @@
       "MOBA"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:51.314902",
+    "last_checked": "2025-12-20 10:32:12.149862",
     "update_count": 6,
     "last_update": "2025-12-12 19:56:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24252009/heroes-of-the-storm-balance-patch-notes-december-12-2025",
@@ -3785,7 +3785,7 @@
     "developer": "Dotemu",
     "publisher": "Ubisoft Entertainment",
     "release_date": "Jan 28, 2015",
-    "price_usd": 14.99,
+    "price_usd": 3.74,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -3809,7 +3809,7 @@
       "Heroes of Might & Magic 3 HD Edition",
       "Heroes of Might & Magic III HD Edition"
     ],
-    "last_checked": "2025-12-19 10:11:05.650011",
+    "last_checked": "2025-12-20 10:33:52.753965",
     "update_count": 15,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -3847,7 +3847,7 @@
     "developer": "Beamdog",
     "publisher": "Beamdog",
     "release_date": "Oct 30, 2014",
-    "price_usd": 19.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -3868,7 +3868,7 @@
     "aliases": [
       "Icewind Dale"
     ],
-    "last_checked": "2025-12-19 10:13:25.331603",
+    "last_checked": "2025-12-20 10:33:54.008118",
     "update_count": 15,
     "last_update": "2021-05-18 10:03:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588129358075",
@@ -3906,7 +3906,7 @@
     "developer": "Palindrome Interactive",
     "publisher": "Kalypso Media",
     "release_date": "Aug 28, 2020",
-    "price_usd": 29.99,
+    "price_usd": 8.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -3926,7 +3926,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:07.202098",
+    "last_checked": "2025-12-20 10:33:55.693227",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -3964,7 +3964,7 @@
     "developer": "Toge Productions",
     "publisher": "Armor Games Studios",
     "release_date": "May 10, 2018",
-    "price_usd": 12.99,
+    "price_usd": 2.59,
     "price_notes": null,
     "steam_tags": [
       "Outbreak Sim",
@@ -3984,7 +3984,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:08.675006",
+    "last_checked": "2025-12-20 10:33:57.116376",
     "update_count": 32,
     "last_update": "2018-11-19 07:40:25",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687633667",
@@ -4042,7 +4042,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:10.314092",
+    "last_checked": "2025-12-20 10:33:58.514634",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -4080,7 +4080,7 @@
     "developer": "Graybeard Games",
     "publisher": "Skystone Games",
     "release_date": "May 29, 2019",
-    "price_usd": 19.99,
+    "price_usd": 3.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -4100,7 +4100,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:11.697418",
+    "last_checked": "2025-12-20 10:34:02.073957",
     "update_count": 47,
     "last_update": "2024-11-06 12:32:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801572967",
@@ -4125,7 +4125,7 @@
     "name": "Jotunnslayer: Hordes of Hel",
     "app_type": "game",
     "short_description": "Hordes of Hel is a gripping roguelike horde-survivor game set in the dark realms of Norse Mythology. Fight waves of enemies to earn divine blessings of ancient Viking Deities, explore hostile worlds and face powerful bosses. Become a god-like warrior in this ultimate showdown.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2820820/aec793cf08d32c4966bc21cc72bd3b36ff5b20a6/header_alt_assets_4.jpg?t=1765478003",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2820820/aec793cf08d32c4966bc21cc72bd3b36ff5b20a6/header_alt_assets_4.jpg?t=1765983939",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -4138,7 +4138,7 @@
     "developer": "Games Farm, ARTillery",
     "publisher": "Grindstone",
     "release_date": "Sep 3, 2025",
-    "price_usd": 14.99,
+    "price_usd": 11.24,
     "price_notes": null,
     "steam_tags": [
       "Indie",
@@ -4158,7 +4158,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:13.157341",
+    "last_checked": "2025-12-20 10:34:02.302113",
     "update_count": 48,
     "last_update": "2025-12-11 06:35:01",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592123862",
@@ -4196,7 +4196,7 @@
     "developer": "Electric Succubi",
     "publisher": "Electric Succubi",
     "release_date": "Feb 29, 2024",
-    "price_usd": 19.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Underground",
@@ -4216,7 +4216,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:14.666074",
+    "last_checked": "2025-12-20 10:34:03.826308",
     "update_count": 48,
     "last_update": "2025-08-28 03:25:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871582784",
@@ -4254,7 +4254,7 @@
     "developer": "Ironhide Game Studio",
     "publisher": "Ironhide Game Studio",
     "release_date": "Oct 15, 2020",
-    "price_usd": 19.99,
+    "price_usd": 12.99,
     "price_notes": null,
     "steam_tags": [
       "Tower Defense",
@@ -4272,7 +4272,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:16.190664",
+    "last_checked": "2025-12-20 10:34:05.410868",
     "update_count": 51,
     "last_update": "2025-09-25 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772249766",
@@ -4320,7 +4320,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:17.742182",
+    "last_checked": "2025-12-20 10:34:06.852748",
     "update_count": 16,
     "last_update": "2025-12-07 13:08:36",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366181188",
@@ -4358,7 +4358,7 @@
     "developer": "Eleventh Hour Games",
     "publisher": "Eleventh Hour Games",
     "release_date": "Feb 21, 2024",
-    "price_usd": 34.99,
+    "price_usd": 27.99,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -4379,7 +4379,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:19.208828",
+    "last_checked": "2025-12-20 10:34:08.322089",
     "update_count": 36,
     "last_update": "2025-10-16 09:02:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388942146",
@@ -4437,7 +4437,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:20.784517",
+    "last_checked": "2025-12-20 10:34:10.873157",
     "update_count": 14,
     "last_update": "2024-05-02 12:13:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999944520341",
@@ -4495,7 +4495,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:58.007909",
+    "last_checked": "2025-12-20 10:34:11.503693",
     "update_count": 50,
     "last_update": "2025-08-20 08:21:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382413664",
@@ -4555,7 +4555,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:22.365789",
+    "last_checked": "2025-12-20 10:34:13.099378",
     "update_count": 45,
     "last_update": "2025-11-18 09:37:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816307528974338",
@@ -4593,7 +4593,7 @@
     "developer": "Low Magic Studios",
     "publisher": "Low Magic Studios",
     "release_date": "Jan 10, 2017",
-    "price_usd": 14.99,
+    "price_usd": 5.99,
     "price_notes": null,
     "steam_tags": [
       "Early Access",
@@ -4616,7 +4616,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:35.804552",
+    "last_checked": "2025-12-20 10:34:14.430955",
     "update_count": 50,
     "last_update": "2025-11-20 16:43:55",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002012561",
@@ -4654,7 +4654,7 @@
     "developer": "MuHa Games, Eerie Forest Studio",
     "publisher": "Slitherine Ltd.",
     "release_date": "Dec 13, 2022",
-    "price_usd": 39.99,
+    "price_usd": 15.99,
     "price_notes": null,
     "steam_tags": [
       "Turn-Based Combat",
@@ -4674,7 +4674,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:34.360086",
+    "last_checked": "2025-12-20 10:34:16.074023",
     "update_count": 50,
     "last_update": "2024-03-21 04:15:39",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301717669759",
@@ -4712,7 +4712,7 @@
     "developer": "Monolith Productions",
     "publisher": "WB Games",
     "release_date": "Oct 9, 2017",
-    "price_usd": 49.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "Open World",
@@ -4737,7 +4737,7 @@
       "Middle Earth: Shadow of War",
       "Middle Earth Shadow of War"
     ],
-    "last_checked": "2025-12-19 10:11:23.709314",
+    "last_checked": "2025-12-20 10:34:17.418062",
     "update_count": 15,
     "last_update": "2018-08-15 11:39:20",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293759030044",
@@ -4775,7 +4775,7 @@
     "developer": "Sparkypants",
     "publisher": "Klei Publishing",
     "release_date": "Feb 12, 2025",
-    "price_usd": 24.99,
+    "price_usd": 17.49,
     "price_notes": null,
     "steam_tags": [
       "Survival",
@@ -4793,7 +4793,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:25.153336",
+    "last_checked": "2025-12-20 10:34:19.926183",
     "update_count": 49,
     "last_update": "2025-05-12 09:32:39",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287962931",
@@ -4818,7 +4818,7 @@
     "name": "Monster Train 2",
     "app_type": "game",
     "short_description": "Monster Train returns with all new clans, new enemy factions, new challenges, new modes and more! Defend your Pyre in the classic three-tiered, vertical gameplay that made the original roguelike deckbuilder a hit.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2742830/d6f369c0cdcb904f3135ae4cff1ee29bfbf38ae9/header_alt_assets_2.jpg?t=1765819392",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2742830/header.jpg?t=1765987142",
     "dimension_1": "d",
     "dimension_2": "unit",
     "dimension_3": "implied",
@@ -4831,7 +4831,7 @@
     "developer": "Shiny Shoe",
     "publisher": "Big Fan Games",
     "release_date": "May 21, 2025",
-    "price_usd": 24.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -4850,7 +4850,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:26.737169",
+    "last_checked": "2025-12-20 10:34:20.395713",
     "update_count": 44,
     "last_update": "2025-12-10 09:07:04",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592121363",
@@ -4858,6 +4858,53 @@
     "last_announcement": "2025-12-18 10:39:51",
     "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091921",
     "last_announcement_title": "The Steam Winter Sale has begun: 20% Off Monster Train 2!"
+  },
+  {
+    "id": 306,
+    "steam_id": 2934220,
+    "battlenet_id": null,
+    "battlenet_store_id": null,
+    "gog_id": null,
+    "epic_id": null,
+    "itchio_id": null,
+    "platforms": [
+      "steam"
+    ],
+    "primary_platform": "steam",
+    "external_url": null,
+    "name": "Monsters are Coming! Rock & Road",
+    "app_type": "game",
+    "short_description": "Beware, Monsters are Coming! In this Tower-Survivor rogue-lite, you protect an ever-moving city from unrelenting hordes. Gather resources, fortify defences, and survive for as long as you can. Will you reach the Ark?",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2934220/8ee84bf0efc9f7950ef6147a015babedecaf64eb/header.jpg?t=1766067136",
+    "dimension_1": "b",
+    "dimension_2": "unit",
+    "dimension_3": "implied",
+    "dimension_4": "gated",
+    "dimension_1_notes": "\"Necromancer\" synergy",
+    "dimension_2_notes": "",
+    "dimension_3_notes": "",
+    "dimension_4_notes": "",
+    "date_updated": "2025-12-20 10:32:07.872951",
+    "developer": "Ludogram",
+    "publisher": "Raw Fury",
+    "release_date": "Nov 20, 2025",
+    "price_usd": 8.99,
+    "price_notes": null,
+    "steam_tags": [],
+    "genres": [
+      "Action",
+      "Indie",
+      "Strategy"
+    ],
+    "aliases": [],
+    "last_checked": "2025-12-20 10:36:06.596352",
+    "update_count": 24,
+    "last_update": "2025-12-11 05:02:04",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592123566",
+    "last_update_title": "Patch 1.0.15.0",
+    "last_announcement": "2025-12-19 07:32:22",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365095770",
+    "last_announcement_title": "The Holidays and Beyond"
   },
   {
     "id": 276,
@@ -4888,7 +4935,7 @@
     "developer": "GameChanger Studio",
     "publisher": "Toge Productions, Neon Doctrine",
     "release_date": "Mar 8, 2018",
-    "price_usd": 14.99,
+    "price_usd": 2.99,
     "price_notes": null,
     "steam_tags": [
       "Interactive Fiction",
@@ -4908,7 +4955,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:02.002169",
+    "last_checked": "2025-12-20 10:34:22.009764",
     "update_count": 50,
     "last_update": "2024-08-22 19:43:51",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438690244276",
@@ -4946,7 +4993,7 @@
     "developer": "GameChanger Studio, Neon Doctrine",
     "publisher": "Neon Doctrine",
     "release_date": "Aug 20, 2024",
-    "price_usd": 19.99,
+    "price_usd": 5.99,
     "price_notes": null,
     "steam_tags": [
       "Simulation",
@@ -4966,7 +5013,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:02.463290",
+    "last_checked": "2025-12-20 10:34:25.391743",
     "update_count": 50,
     "last_update": "2025-03-02 22:03:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526128678",
@@ -5004,7 +5051,7 @@
     "developer": "GameChanger Studio, Toge Productions",
     "publisher": "Neon Doctrine",
     "release_date": "Jun 8, 2022",
-    "price_usd": 14.99,
+    "price_usd": 3.74,
     "price_notes": null,
     "steam_tags": [
       "Fantasy",
@@ -5026,7 +5073,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:03.954743",
+    "last_checked": "2025-12-20 10:34:25.832292",
     "update_count": 50,
     "last_update": "2024-08-22 19:43:47",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438690244118",
@@ -5051,7 +5098,7 @@
     "name": "Necesse",
     "app_type": "game",
     "short_description": "Build, quest, and conquer across an infinite procedurally generated world. Play alone or with friends as you establish a settlement and explore deep dungeons, fight monsters and bosses, mine rare ores, craft magical equipment, recruit specialists for your colony, and more!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1169040/608ea1279daba968a0cebcf41fd316092ca92f76/header_alt_assets_6.jpg?t=1765806473",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1169040/608ea1279daba968a0cebcf41fd316092ca92f76/header_alt_assets_6.jpg?t=1765898063",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -5064,7 +5111,7 @@
     "developer": "Fair Games ApS",
     "publisher": "Fair Games ApS",
     "release_date": "Oct 16, 2025",
-    "price_usd": 14.99,
+    "price_usd": 9.74,
     "price_notes": null,
     "steam_tags": [
       "Open World Survival Craft",
@@ -5085,7 +5132,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:28.232251",
+    "last_checked": "2025-12-20 10:34:27.272839",
     "update_count": 42,
     "last_update": "2025-12-18 10:00:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365091220",
@@ -5143,7 +5190,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:30.698237",
+    "last_checked": "2025-12-20 10:34:28.870248",
     "update_count": 8,
     "last_update": "2024-10-18 07:14:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583179679946",
@@ -5181,7 +5228,7 @@
     "developer": "QuietPenguinGaming",
     "publisher": "QuietPenguinGaming",
     "release_date": "Aug 14, 2025",
-    "price_usd": 7.99,
+    "price_usd": 5.59,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -5189,7 +5236,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:31.200914",
+    "last_checked": "2025-12-20 10:34:30.245194",
     "update_count": 30,
     "last_update": "2025-09-20 20:50:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915477520",
@@ -5249,7 +5296,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:32.813863",
+    "last_checked": "2025-12-20 10:34:31.671185",
     "update_count": 15,
     "last_update": "2024-07-05 10:49:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267339412357",
@@ -5287,7 +5334,7 @@
     "developer": "Toge Productions",
     "publisher": "Modern Wolf",
     "release_date": "Jul 30, 2020",
-    "price_usd": 12.99,
+    "price_usd": 2.59,
     "price_notes": null,
     "steam_tags": [
       "Real Time Tactics",
@@ -5308,7 +5355,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:34.555277",
+    "last_checked": "2025-12-20 10:34:33.183124",
     "update_count": 50,
     "last_update": "2021-03-05 02:41:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4057152305715870665",
@@ -5346,7 +5393,7 @@
     "developer": "Alawar",
     "publisher": "Alawar",
     "release_date": "Jul 13, 2022",
-    "price_usd": 2.99,
+    "price_usd": 1.49,
     "price_notes": null,
     "steam_tags": [
       "Zombies",
@@ -5367,7 +5414,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:35.747708",
+    "last_checked": "2025-12-20 10:34:34.674261",
     "update_count": 44,
     "last_update": "2025-11-11 05:03:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424639",
@@ -5405,7 +5452,7 @@
     "developer": "Alawar",
     "publisher": "Alawar",
     "release_date": "Mar 27, 2024",
-    "price_usd": 7.99,
+    "price_usd": 3.19,
     "price_notes": null,
     "steam_tags": [
       "Tower Defense",
@@ -5426,7 +5473,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:37.421613",
+    "last_checked": "2025-12-20 10:34:36.189205",
     "update_count": 26,
     "last_update": "2025-11-11 05:04:50",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768424640",
@@ -5486,7 +5533,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:38.787453",
+    "last_checked": "2025-12-20 10:34:37.711494",
     "update_count": 38,
     "last_update": "2023-03-28 10:48:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753747564637",
@@ -5524,7 +5571,7 @@
     "developer": "Beamdog",
     "publisher": "Beamdog",
     "release_date": "Mar 27, 2018",
-    "price_usd": 19.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -5542,7 +5589,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:40.394676",
+    "last_checked": "2025-12-20 10:34:39.187032",
     "update_count": 38,
     "last_update": "2025-10-08 08:03:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813041031177586",
@@ -5567,7 +5614,7 @@
     "name": "Night Swarm",
     "app_type": "game",
     "short_description": "Claim your throne as Vampire Lord in this survivors-like. Each run is another step on your journey with new followers, quests and skills to unlock. The night is yours to conquer.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1765465719",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1766056169",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -5580,7 +5627,7 @@
     "developer": "Fubu Games",
     "publisher": "Mad Mushroom, Gamersky Games",
     "release_date": "Dec 4, 2025",
-    "price_usd": 8.49,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -5590,7 +5637,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:42.772060",
+    "last_checked": "2025-12-20 10:34:40.697788",
     "update_count": 14,
     "last_update": "2025-12-16 11:03:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
@@ -5649,7 +5696,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:43.286233",
+    "last_checked": "2025-12-20 10:34:42.230482",
     "update_count": 32,
     "last_update": "2023-01-18 10:29:41",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474408136594",
@@ -5697,7 +5744,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:44.803928",
+    "last_checked": "2025-12-20 10:34:44.116111",
     "update_count": 23,
     "last_update": "2025-12-01 02:39:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467044853",
@@ -5735,7 +5782,7 @@
     "developer": "Unknown Origin Games Inc",
     "publisher": "Unknown Origin Games Inc",
     "release_date": "Aug 16, 2024",
-    "price_usd": 19.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Colony Sim",
@@ -5755,7 +5802,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:08.435550",
+    "last_checked": "2025-12-20 10:34:45.245762",
     "update_count": 50,
     "last_update": "2025-07-04 15:26:43",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891781965",
@@ -5793,7 +5840,7 @@
     "developer": "Codemasters",
     "publisher": "Codemasters, Electronic Arts",
     "release_date": "Oct 19, 2015",
-    "price_usd": 9.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "Action",
@@ -5812,7 +5859,7 @@
       "Adventure"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:44.790683",
+    "last_checked": "2025-12-20 10:34:46.727079",
     "update_count": 8,
     "last_update": "2015-10-19 16:03:00",
     "last_update_url": "http://store.steampowered.com/news/18907/",
@@ -5873,7 +5920,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:46.278792",
+    "last_checked": "2025-12-20 10:34:48.196031",
     "update_count": 35,
     "last_update": "2025-11-11 13:43:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768436752",
@@ -5933,7 +5980,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:47.768980",
+    "last_checked": "2025-12-20 10:34:49.862865",
     "update_count": 55,
     "last_update": "2025-09-25 13:21:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772254360",
@@ -5971,7 +6018,7 @@
     "developer": "Owlcat Games",
     "publisher": "Knights Peak",
     "release_date": "Sep 25, 2018",
-    "price_usd": 19.99,
+    "price_usd": 2.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -5990,7 +6037,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:49.215972",
+    "last_checked": "2025-12-20 10:34:51.248819",
     "update_count": 46,
     "last_update": "2021-05-27 07:53:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815356533175",
@@ -6028,7 +6075,7 @@
     "developer": "Owlcat Games",
     "publisher": "META Publishing, Owlcat Games",
     "release_date": "Sep 2, 2021",
-    "price_usd": 19.99,
+    "price_usd": 5.99,
     "price_notes": null,
     "steam_tags": [
       "Singleplayer",
@@ -6050,7 +6097,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:51.852807",
+    "last_checked": "2025-12-20 10:34:52.841183",
     "update_count": 48,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -6110,7 +6157,7 @@
     "aliases": [
       "PoxNora"
     ],
-    "last_checked": "2025-12-19 10:13:13.022233",
+    "last_checked": "2025-12-20 10:34:54.263236",
     "update_count": 51,
     "last_update": "2025-12-17 23:31:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365088837",
@@ -6148,7 +6195,7 @@
     "developer": "Nerdook Productions",
     "publisher": "Nerdook Productions",
     "release_date": "Sep 24, 2015",
-    "price_usd": 5.99,
+    "price_usd": 1.49,
     "price_notes": null,
     "steam_tags": [
       "Tactical RPG",
@@ -6169,7 +6216,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:48.820204",
+    "last_checked": "2025-12-20 10:34:55.809670",
     "update_count": 32,
     "last_update": "2021-09-02 09:16:33",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088698603",
@@ -6207,7 +6254,7 @@
     "developer": "Portal Entertainment",
     "publisher": "Portal Entertainment",
     "release_date": "Jan 25, 2019",
-    "price_usd": 14.99,
+    "price_usd": 3.44,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -6226,7 +6273,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:56.161348",
+    "last_checked": "2025-12-20 10:34:57.285961",
     "update_count": 49,
     "last_update": "2022-08-30 08:08:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500021184627",
@@ -6264,7 +6311,7 @@
     "developer": "Leikir Studio, Cyanide Studio",
     "publisher": "Nacon",
     "release_date": "Sep 30, 2021",
-    "price_usd": 3.74,
+    "price_usd": 2.49,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -6283,7 +6330,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:52.303748",
+    "last_checked": "2025-12-20 10:34:58.788516",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -6308,7 +6355,7 @@
     "name": "Ruinarch",
     "app_type": "game",
     "short_description": "Ruinarch is an evil god simulator and sandbox game where you mess with people\u2019s lives for hilarious results! Make them vampires, werewolves or bard haters and cackle as the drama unfolds. Once you\u2019re done, unleash a malicious buffet of spells and custom plagues to wipe them out and start anew!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/909320/header.jpg?t=1756893420",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/909320/header.jpg?t=1765900305",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -6341,7 +6388,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:53.762462",
+    "last_checked": "2025-12-20 10:35:00.260917",
     "update_count": 50,
     "last_update": "2024-10-09 07:16:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6360862737592300291",
@@ -6399,7 +6446,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:55.299653",
+    "last_checked": "2025-12-20 10:35:01.732091",
     "update_count": 14,
     "last_update": null,
     "last_update_url": null,
@@ -6457,7 +6504,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:56.879482",
+    "last_checked": "2025-12-20 10:35:03.239475",
     "update_count": 41,
     "last_update": "2025-12-18 07:01:55",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365090086",
@@ -6495,7 +6542,7 @@
     "developer": "Shiny Entertainment",
     "publisher": "Interplay Inc.",
     "release_date": "Aug 19, 2009",
-    "price_usd": 24.99,
+    "price_usd": 17.49,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -6511,7 +6558,7 @@
     ],
     "genres": [],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:58.250376",
+    "last_checked": "2025-12-20 10:35:04.949349",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -6549,7 +6596,7 @@
     "developer": "YCJY Games",
     "publisher": "YCJY Games",
     "release_date": "Oct 17, 2019",
-    "price_usd": 14.99,
+    "price_usd": 2.99,
     "price_notes": null,
     "steam_tags": [
       "Action",
@@ -6570,7 +6617,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:09.936951",
+    "last_checked": "2025-12-20 10:35:06.234338",
     "update_count": 4,
     "last_update": null,
     "last_update_url": null,
@@ -6595,7 +6642,7 @@
     "name": "Shadow Gambit: The Cursed Crew",
     "app_type": "game",
     "short_description": "Assemble your crew and set sail on an infamous ghost ship to sneak, stab, and spellcast your way through the Inquisition in this non-linear stealth strategy game. Chart a course, develop uncanny abilities, and use unconventional tactics to find a powerful pirate artifact!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1545560/bb7160b14abe27cca471ac6eca0f1bcead3cc0ba/header.jpg?t=1765536197",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1545560/bb7160b14abe27cca471ac6eca0f1bcead3cc0ba/header.jpg?t=1766078347",
     "dimension_1": "d",
     "dimension_2": "unit",
     "dimension_3": "implied",
@@ -6608,7 +6655,7 @@
     "developer": "Mimimi Games",
     "publisher": "Hooded Horse, Mimimi Games",
     "release_date": "Aug 17, 2023",
-    "price_usd": 39.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -6627,7 +6674,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:11:59.801809",
+    "last_checked": "2025-12-20 10:35:07.763357",
     "update_count": 39,
     "last_update": "2024-09-02 11:00:02",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642469644892",
@@ -6686,7 +6733,7 @@
     "aliases": [
       "Skul The Hero Slayer"
     ],
-    "last_checked": "2025-12-19 10:12:01.271340",
+    "last_checked": "2025-12-20 10:35:09.247690",
     "update_count": 45,
     "last_update": "2024-06-26 18:58:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267307838601",
@@ -6711,7 +6758,7 @@
     "name": "Solo Leveling: ARISE OVERDRIVE",
     "app_type": "game",
     "short_description": "Solo Leveling, the webtoon with 14.3 billion views worldwide, is now an action RPG game! Help our hero grow from his humble E-Rank beginnings.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2373990/018068a74847b3953278efacca07cfbe537a46c7/header.jpg?t=1765503397",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2373990/018068a74847b3953278efacca07cfbe537a46c7/header.jpg?t=1766020450",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -6732,7 +6779,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:02.788347",
+    "last_checked": "2025-12-20 10:35:10.956419",
     "update_count": 30,
     "last_update": "2025-12-10 00:26:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592120042",
@@ -6790,7 +6837,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:06.444037",
+    "last_checked": "2025-12-20 10:35:12.321834",
     "update_count": 52,
     "last_update": "2025-12-08 13:18:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366183803",
@@ -6828,7 +6875,7 @@
     "developer": "Artur Smiarowski",
     "publisher": "Artur Smiarowski",
     "release_date": "Mar 4, 2022",
-    "price_usd": 14.99,
+    "price_usd": 8.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -6847,7 +6894,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:42.917594",
+    "last_checked": "2025-12-20 10:35:13.762919",
     "update_count": 27,
     "last_update": "2022-09-08 23:56:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4606641560251108094",
@@ -6885,7 +6932,7 @@
     "developer": "Game Smithing Limited",
     "publisher": "Game Smithing Limited",
     "release_date": "Jun 17, 2025",
-    "price_usd": 14.99,
+    "price_usd": 7.49,
     "price_notes": null,
     "steam_tags": [
       "Action Roguelike",
@@ -6905,7 +6952,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:07.739562",
+    "last_checked": "2025-12-20 10:35:15.262778",
     "update_count": 50,
     "last_update": "2025-10-04 02:26:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772537196",
@@ -6962,7 +7009,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:08.214974",
+    "last_checked": "2025-12-20 10:35:17.776977",
     "update_count": 15,
     "last_update": "2020-11-03 10:22:36",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3884878205233340138",
@@ -7019,7 +7066,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:09.881620",
+    "last_checked": "2025-12-20 10:35:18.327364",
     "update_count": 36,
     "last_update": "2025-06-18 02:20:26",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906690978",
@@ -7080,7 +7127,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:59.538607",
+    "last_checked": "2025-12-20 10:35:19.851421",
     "update_count": 33,
     "last_update": "2024-06-14 08:48:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005352957093",
@@ -7138,7 +7185,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:11.417936",
+    "last_checked": "2025-12-20 10:35:21.261811",
     "update_count": 4,
     "last_update": "2022-07-10 05:03:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035569866792",
@@ -7197,7 +7244,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:45.826517",
+    "last_checked": "2025-12-20 10:35:22.886065",
     "update_count": 19,
     "last_update": "2021-02-03 07:49:43",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4051520269922502809",
@@ -7235,7 +7282,7 @@
     "developer": "Questline",
     "publisher": "Awaken Realms",
     "release_date": "May 27, 2021",
-    "price_usd": 3.99,
+    "price_usd": 5.99,
     "price_notes": null,
     "steam_tags": [
       "Deckbuilding",
@@ -7255,7 +7302,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:12.852759",
+    "last_checked": "2025-12-20 10:35:24.399942",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -7314,7 +7361,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:14.902685",
+    "last_checked": "2025-12-20 10:35:25.878798",
     "update_count": 48,
     "last_update": "2025-12-19 01:45:10",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365094581",
@@ -7352,7 +7399,7 @@
     "developer": "Netcore Games",
     "publisher": "Netcore Games",
     "release_date": "Dec 12, 2013",
-    "price_usd": 6.99,
+    "price_usd": 3.49,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -7372,7 +7419,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:16.027136",
+    "last_checked": "2025-12-20 10:35:27.368083",
     "update_count": 49,
     "last_update": "2020-11-06 16:56:21",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3887130640398210621",
@@ -7410,7 +7457,7 @@
     "developer": "Impact Gameworks",
     "publisher": "Impact Gameworks, Doyoyo Games",
     "release_date": "Feb 1, 2018",
-    "price_usd": 14.99,
+    "price_usd": 3.74,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -7429,7 +7476,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:13:33.754109",
+    "last_checked": "2025-12-20 10:35:28.822003",
     "update_count": 49,
     "last_update": "2024-09-26 06:24:28",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370182030979",
@@ -7467,7 +7514,7 @@
     "developer": "Bethesda Game Studios",
     "publisher": "Bethesda Softworks",
     "release_date": "Jun 16, 2009",
-    "price_usd": 14.99,
+    "price_usd": 5.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -7488,7 +7535,7 @@
       "Morrowind",
       "The Elder Scrolls III: Morrowind"
     ],
-    "last_checked": "2025-12-19 10:13:17.790634",
+    "last_checked": "2025-12-20 10:35:31.363549",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -7526,7 +7573,7 @@
     "developer": "Bethesda Game Studios, Virtuos",
     "publisher": "Bethesda Softworks",
     "release_date": "Apr 22, 2025",
-    "price_usd": 49.99,
+    "price_usd": 33.49,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -7547,7 +7594,7 @@
       "Oblivion",
       "The Elder Scrolls IV: Oblivion"
     ],
-    "last_checked": "2025-12-19 10:13:17.486379",
+    "last_checked": "2025-12-20 10:35:32.049786",
     "update_count": 2,
     "last_update": null,
     "last_update_url": null,
@@ -7585,7 +7632,7 @@
     "developer": "Bethesda Game Studios",
     "publisher": "Bethesda Softworks",
     "release_date": "Oct 27, 2016",
-    "price_usd": 39.99,
+    "price_usd": 9.99,
     "price_notes": null,
     "steam_tags": [
       "Open World",
@@ -7607,7 +7654,7 @@
       "Skyrim Special Edition",
       "The Elder Scrolls V: Skyrim"
     ],
-    "last_checked": "2025-12-19 10:13:14.561523",
+    "last_checked": "2025-12-20 10:35:33.333109",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -7645,7 +7692,7 @@
     "developer": "ZeniMax Online Studios",
     "publisher": "Bethesda Softworks",
     "release_date": "May 22, 2017",
-    "price_usd": 19.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -7666,7 +7713,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:17.251906",
+    "last_checked": "2025-12-20 10:35:34.861930",
     "update_count": 30,
     "last_update": "2025-10-28 06:49:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641608211",
@@ -7704,7 +7751,7 @@
     "developer": "Psychic Software",
     "publisher": "Psychic Software",
     "release_date": "Jul 17, 2025",
-    "price_usd": 24.99,
+    "price_usd": 21.24,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -7713,14 +7760,14 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:18.788937",
-    "update_count": 48,
-    "last_update": "2025-12-01 04:16:12",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467045187",
-    "last_update_title": "Patch Notes 1.220 - 1.222",
-    "last_announcement": "2025-12-10 10:52:13",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592121685",
-    "last_announcement_title": "Choose Wisely Festival 2025"
+    "last_checked": "2025-12-20 10:35:36.435933",
+    "update_count": 49,
+    "last_update": "2025-12-20 09:30:08",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365098471",
+    "last_update_title": "Patch Notes 1.223 - 1.225",
+    "last_announcement": "2025-12-20 09:30:08",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365098471",
+    "last_announcement_title": "Patch Notes 1.223 - 1.225"
   },
   {
     "id": 171,
@@ -7751,7 +7798,7 @@
     "developer": "RocketBrush Games",
     "publisher": "Team17 Digital",
     "release_date": "Oct 26, 2023",
-    "price_usd": 16.99,
+    "price_usd": 3.39,
     "price_notes": null,
     "steam_tags": [
       "RPG",
@@ -7772,7 +7819,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:20.427871",
+    "last_checked": "2025-12-20 10:35:37.838904",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -7828,7 +7875,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:21.812633",
+    "last_checked": "2025-12-20 10:35:39.336570",
     "update_count": 50,
     "last_update": "2025-05-02 09:48:07",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487642163",
@@ -7887,7 +7934,7 @@
     "aliases": [
       "Titan Quest"
     ],
-    "last_checked": "2025-12-19 10:13:26.765198",
+    "last_checked": "2025-12-20 10:35:40.979861",
     "update_count": 43,
     "last_update": "2021-12-03 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936215388060272",
@@ -7925,7 +7972,7 @@
     "developer": "CREATIVE ASSEMBLY, Feral Interactive (Linux), Feral Interactive (Mac)",
     "publisher": "SEGA, Feral Interactive (Linux), Feral Interactive (Mac)",
     "release_date": "May 24, 2016",
-    "price_usd": 59.99,
+    "price_usd": 14.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -7944,7 +7991,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:23.356404",
+    "last_checked": "2025-12-20 10:35:43.345894",
     "update_count": 21,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -7982,7 +8029,7 @@
     "developer": "CREATIVE ASSEMBLY, Feral Interactive (Mac), Feral Interactive (Linux)",
     "publisher": "SEGA, Feral Interactive (Mac), Feral Interactive (Linux)",
     "release_date": "Sep 28, 2017",
-    "price_usd": 59.99,
+    "price_usd": 14.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -8005,7 +8052,7 @@
       "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
-    "last_checked": "2025-12-19 10:12:24.905620",
+    "last_checked": "2025-12-20 10:35:44.269115",
     "update_count": 24,
     "last_update": "2021-09-22 07:02:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406866364677",
@@ -8043,7 +8090,7 @@
     "developer": "CREATIVE ASSEMBLY, Feral Interactive",
     "publisher": "SEGA, Feral Interactive",
     "release_date": "Feb 16, 2022",
-    "price_usd": 59.99,
+    "price_usd": 14.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -8062,7 +8109,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:26.368245",
+    "last_checked": "2025-12-20 10:35:45.622008",
     "update_count": 42,
     "last_update": "2025-12-17 07:02:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086949",
@@ -8122,7 +8169,7 @@
     "aliases": [
       "Tree of Savior"
     ],
-    "last_checked": "2025-12-19 10:13:05.454125",
+    "last_checked": "2025-12-20 10:35:46.899412",
     "update_count": 50,
     "last_update": "2025-12-08 22:25:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366184462",
@@ -8160,7 +8207,7 @@
     "developer": "10tons Ltd",
     "publisher": "10tons Ltd",
     "release_date": "May 15, 2019",
-    "price_usd": 16.99,
+    "price_usd": 5.94,
     "price_notes": null,
     "steam_tags": [
       "Villain Protagonist",
@@ -8181,7 +8228,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:28.764383",
+    "last_checked": "2025-12-20 10:35:48.353749",
     "update_count": 49,
     "last_update": "2023-10-18 08:11:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608362",
@@ -8219,7 +8266,7 @@
     "developer": "10tons Ltd",
     "publisher": "10tons Ltd",
     "release_date": "Mar 30, 2023",
-    "price_usd": 16.99,
+    "price_usd": 5.94,
     "price_notes": null,
     "steam_tags": [
       "Action",
@@ -8240,7 +8287,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:29.369286",
+    "last_checked": "2025-12-20 10:35:49.853470",
     "update_count": 34,
     "last_update": "2023-10-18 08:11:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989039608354",
@@ -8278,7 +8325,7 @@
     "developer": "Reb_Orn",
     "publisher": "Reb_Orn",
     "release_date": "May 31, 2020",
-    "price_usd": 5.99,
+    "price_usd": 2.99,
     "price_notes": null,
     "steam_tags": [
       "Simulation",
@@ -8297,7 +8344,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:30.872894",
+    "last_checked": "2025-12-20 10:35:51.505844",
     "update_count": 20,
     "last_update": "2022-10-08 14:34:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405948739381",
@@ -8322,7 +8369,7 @@
     "name": "V Rising",
     "app_type": "game",
     "short_description": "Awaken as a Vampire. Hunt for blood in nearby settlements to regain your strength and evade the scorching sun to survive. Raise your castle and thrive in an ever-changing, open world full of mystery. Gain allies online and conquer the land of the living.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/123091b358ac705c36642df5599d230825ad3cd6/header.jpg?t=1763392579",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/be49834ab147ad22ba17005fb847c93917d18b97/header.jpg?t=1765977712",
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -8335,7 +8382,7 @@
     "developer": "Stunlock Studios",
     "publisher": "Stunlock Studios",
     "release_date": "May 8, 2024",
-    "price_usd": 34.99,
+    "price_usd": 15.74,
     "price_notes": null,
     "steam_tags": [
       "Survival",
@@ -8355,7 +8402,7 @@
       "Massively Multiplayer"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:32.305681",
+    "last_checked": "2025-12-20 10:35:52.897260",
     "update_count": 35,
     "last_update": "2025-12-17 02:11:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086118",
@@ -8406,7 +8453,7 @@
       "Warcraft 3 Reforged",
       "Warcraft III Reforged"
     ],
-    "last_checked": "2025-12-19 10:09:57.272796",
+    "last_checked": "2025-12-20 10:32:18.114198",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -8452,7 +8499,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:56.148915",
+    "last_checked": "2025-12-20 10:32:16.863432",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -8510,7 +8557,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:34.812756",
+    "last_checked": "2025-12-20 10:35:55.499556",
     "update_count": 49,
     "last_update": "2025-10-30 09:34:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432875936",
@@ -8548,7 +8595,7 @@
     "developer": "Fatshark",
     "publisher": "Fatshark",
     "release_date": "Mar 8, 2018",
-    "price_usd": 29.99,
+    "price_usd": 2.99,
     "price_notes": "Also requires Warhammer: Vermintide 2 - Necromancer Career DLC ($4.99)",
     "steam_tags": [
       "Co-op",
@@ -8568,7 +8615,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:35.379926",
+    "last_checked": "2025-12-20 10:35:55.920772",
     "update_count": 34,
     "last_update": "2025-11-27 03:27:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467036317",
@@ -8606,7 +8653,7 @@
     "developer": "Ino-Co Plus",
     "publisher": "Paradox Interactive",
     "release_date": "May 8, 2012",
-    "price_usd": 24.99,
+    "price_usd": 6.24,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -8626,7 +8673,7 @@
     "aliases": [
       "Warlock Master of the Arcane"
     ],
-    "last_checked": "2025-12-19 10:12:37.834925",
+    "last_checked": "2025-12-20 10:35:58.485300",
     "update_count": 19,
     "last_update": "2014-04-10 10:16:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/920166227241397473",
@@ -8664,7 +8711,7 @@
     "developer": "Ino-Co Plus",
     "publisher": "Paradox Interactive",
     "release_date": "Apr 10, 2014",
-    "price_usd": 19.99,
+    "price_usd": 4.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -8684,7 +8731,7 @@
     "aliases": [
       "Warlock 2"
     ],
-    "last_checked": "2025-12-19 10:13:37.296218",
+    "last_checked": "2025-12-20 10:35:59.951038",
     "update_count": 14,
     "last_update": "2014-04-10 10:27:04",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/920166227241869384",
@@ -8722,7 +8769,7 @@
     "developer": "WOLCEN Studio",
     "publisher": "WOLCEN Studio",
     "release_date": "Feb 13, 2020",
-    "price_usd": 29.99,
+    "price_usd": 2.69,
     "price_notes": null,
     "steam_tags": [
       "Action RPG",
@@ -8743,7 +8790,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:38.309279",
+    "last_checked": "2025-12-20 10:36:00.661526",
     "update_count": 47,
     "last_update": "2023-07-20 06:19:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051969813693",
@@ -8788,7 +8835,7 @@
       "MMORPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:09:55.450715",
+    "last_checked": "2025-12-20 10:32:16.174858",
     "update_count": 32,
     "last_update": "2025-12-19 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24249606/wow-weekly-midnight-pre-patch-on-the-horizon-the-feast-of-winter-veil-and-more",
@@ -8826,7 +8873,7 @@
     "developer": "Milkstone Studios",
     "publisher": "Milkstone Studios",
     "release_date": "Oct 28, 2021",
-    "price_usd": 24.99,
+    "price_usd": 7.49,
     "price_notes": null,
     "steam_tags": [
       "FPS",
@@ -8845,7 +8892,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:39.849684",
+    "last_checked": "2025-12-20 10:36:01.902179",
     "update_count": 49,
     "last_update": "2025-03-24 07:29:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830911002252",
@@ -8906,7 +8953,7 @@
     "aliases": [
       "Zombidle"
     ],
-    "last_checked": "2025-12-19 10:13:11.501744",
+    "last_checked": "2025-12-20 10:36:03.591188",
     "update_count": 22,
     "last_update": "2017-12-01 15:32:53",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687404287",
@@ -8944,7 +8991,7 @@
     "developer": "Zorbus",
     "publisher": "Zorbus",
     "release_date": "Sep 14, 2022",
-    "price_usd": 4.99,
+    "price_usd": 2.49,
     "price_notes": null,
     "steam_tags": [
       "Traditional Roguelike",
@@ -8963,7 +9010,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2025-12-19 10:12:41.411299",
+    "last_checked": "2025-12-20 10:36:05.067197",
     "update_count": 50,
     "last_update": "2025-08-02 08:14:55",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490750934",
