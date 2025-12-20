@@ -335,15 +335,10 @@ class PostTemplate:
             'unknown': 'NEWS'
         }.get(self.update_type, 'NEWS')
 
-        # Truncate title if too long
-        title = self.update_title
-        if len(title) > 60:
-            title = title[:57] + '...'
-
         return [
             type_display,  # Small badge text
             self.game_name,  # Large game name
-            title,  # Medium update title
+            self.update_title,  # Medium update title (wraps in image compositor)
         ]
 
     def to_dict(self) -> Dict:

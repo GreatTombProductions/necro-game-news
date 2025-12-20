@@ -168,8 +168,8 @@ class ImageCompositor:
             font_small = ImageFont.load_default()
             font_badge = ImageFont.load_default()
 
-        # Calculate overlay area (bottom 25% of image)
-        overlay_height = int(size[1] * 0.35)
+        # Calculate overlay area (bottom portion of image - 45% for longer titles)
+        overlay_height = int(size[1] * 0.45)
         overlay_top = size[1] - overlay_height
 
         # Draw semi-transparent background for text area
@@ -246,14 +246,19 @@ class ImageCompositor:
                 size[0] - 2 * margin
             )
 
-            for line in wrapped_title[:2]:  # Max 2 lines
+            # Calculate how many lines can fit in remaining space
+            remaining_height = size[1] - current_y - margin
+            line_height = 55
+            max_lines = max(1, remaining_height // line_height)
+
+            for line in wrapped_title[:max_lines]:
                 draw.text(
                     (margin, current_y),
                     line,
                     fill=self.TEXT_COLOR_SECONDARY,
                     font=font_medium
                 )
-                current_y += 55
+                current_y += line_height
 
         return overlay
 
