@@ -23,7 +23,7 @@ games:
   priority: low
   date_updated: '2025-12-09'
   dimension_1_notes: Melinoe canonically has necromancy abilities as revealed in dialogue,
-    but they are not used in game, apart from the "Necromantic Influence" incantation
+    but they do not affect gameplay, apart from the "Necromantic Influence" incantation and Night Bloom hex ("The dead, be born again!")
 - name: Lost Ark
   steam_id: 1599340
   classification:
@@ -1848,4 +1848,56 @@ games:
   priority: low
   dimension_1_notes: Necromantic spells like Dead Again (corpse explosion) available
   date_updated: '2025-12-17'
+- name: "Noobs Are Coming"
+  steam_id: 2225960
+  platforms:
+  - steam
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: '"Necromancer" synergy'
+  date_updated: '2025-12-19'
+- name: "Monsters are Coming! Rock & Road"
+  steam_id: 2934220
+  aliases:
+  - "Monsters are Coming Rock & Road"
+  - "Monsters are Coming Rock and Road"
+  - "Monsters are Coming! Rock and Road"
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: unit
+    dimension_3: explicit
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: "Decaying minions: necromantic in nature, have supporting town hall (Royal Mausoleum), districts (e.g. Stone Crypt, Necromancer Tower), and weapons (e.g. Haunted Puppet)"
+  date_updated: '2025-12-20'
+- name: "Katanaut"
+  steam_id: 3032830
+  platforms:
+  - steam
+  classification:
+    dimension_1: c
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: gated
+  priority: low
+  dimension_1_notes: "Flesh Legion skill (chance to spawn minions from nearby corpses), some other vaguely necromantic skills like Corpse Detonation"
+  date_updated: '2025-12-20'
+- name: "Skull Horde"
+  steam_id: 3199360
+  platforms:
+  - steam
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  dimension_1_notes: "Play as a flying skull necromancer"
+  date_updated: '2025-12-20'
 # deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b

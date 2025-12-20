@@ -17,6 +17,7 @@ import FilterPanel, {
   initialFilterState,
   countActiveFilters,
 } from './FilterPanel';
+import NewsFeed from './NewsFeed';
 
 // Format date_updated string (e.g., "2025-12-05 11:17:24.515204") to just date
 function formatDateUpdated(dateStr: string | undefined): string | null {
@@ -399,6 +400,26 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     const hasEarlyAccess = game.genres.includes('Early Access') || game.steam_tags?.includes('Early Access');
     // Only exclude if the game actually has tags/genres and includes Early Access
     if (hasEarlyAccess && game.genres.length > 0) return false;
+  }
+
+  // Unreleased filter (exclude games with future release dates)
+  if (!filters.includeUnreleased && game.release_date) {
+    const releaseDate = game.release_date.toLowerCase();
+    // Check for common unreleased indicators
+    if (releaseDate.includes('coming soon') || releaseDate.includes('tba') || releaseDate.includes('tbd')) {
+      return false;
+    }
+    // Check if it's a year-only format (e.g., "2026")
+    const yearMatch = game.release_date.match(/^\d{4}$/);
+    if (yearMatch) {
+      const year = parseInt(yearMatch[0], 10);
+      if (year > new Date().getFullYear()) return false;
+    }
+    // Check if it's a parseable date in the future
+    const parsedDate = new Date(game.release_date);
+    if (!isNaN(parsedDate.getTime()) && parsedDate > new Date()) {
+      return false;
+    }
   }
 
   // Availability filter (only applies if not all 3 are selected)
@@ -1114,16 +1135,11 @@ export default function GamesTable({ games }: GamesTableProps) {
         cell: info => {
           const price = info.getValue() as number | null | undefined;
           const game = info.row.original;
-          const isSteamGame = game.primary_platform === 'steam';
           const priceNotes = game.price_notes;
 
-          // Only show "Free" for Steam games with price=0
-          // Non-Steam games without price data show "N/A"
+          // Games without price data show "Unknown" (free games explicitly have price_usd=0)
           if (price === null || price === undefined) {
-            if (isSteamGame) {
-              return <span className="text-xs text-green-400">Free</span>;
-            }
-            return <span className="text-xs text-gray-500">N/A</span>;
+            return <span className="text-xs text-gray-500">Unknown</span>;
           }
           if (price === 0) {
             // Games with $0 price that have price notes (e.g., free base game + subscription)
@@ -1369,12 +1385,18 @@ export default function GamesTable({ games }: GamesTableProps) {
       },
       sorting: [
         {
-          id: 'last_announcement',
-          desc: true,
+          id: 'name',
+          desc: false,
         },
       ],
     },
   });
+
+  // Get filtered games for the news feed
+  const filteredGames = useMemo(
+    () => table.getFilteredRowModel().rows.map(row => row.original),
+    [table.getFilteredRowModel().rows]
+  );
 
   return (
     <div>
@@ -1446,6 +1468,12 @@ export default function GamesTable({ games }: GamesTableProps) {
         isOpen={isSubmissionFormOpen}
         onClose={() => setIsSubmissionFormOpen(false)}
       />
+
+      {/* News Feed */}
+      <NewsFeed games={filteredGames} />
+
+      {/* Table Header */}
+      <h2 className="text-lg font-semibold text-purple-300 mb-2">Necromancy Game Registry</h2>
 
       {/* Sort Indicator */}
       {table.getState().sorting.length > 0 && (

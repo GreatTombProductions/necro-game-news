@@ -69,7 +69,8 @@ def export_games():
             (SELECT title FROM updates WHERE game_id = g.id AND update_type IN ('patch', 'release', 'dlc') ORDER BY date DESC LIMIT 1) as last_update_title,
             (SELECT date FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement,
             (SELECT url FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_url,
-            (SELECT title FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_title
+            (SELECT title FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_title,
+            (SELECT content FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_content
         FROM games g
         WHERE g.is_active = 1
         ORDER BY g.name

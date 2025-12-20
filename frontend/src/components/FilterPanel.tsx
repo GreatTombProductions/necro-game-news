@@ -21,6 +21,7 @@ export interface FilterState {
   priceMin: string;
   priceMax: string;
   includeEarlyAccess: boolean;
+  includeUnreleased: boolean;
   availability: Availability[];
   necromancyGrid: NecromancyFilter[];
 }
@@ -55,6 +56,7 @@ export const initialFilterState: FilterState = {
   priceMin: '',
   priceMax: '',
   includeEarlyAccess: true,
+  includeUnreleased: false,
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
 };
@@ -630,6 +632,7 @@ export default function FilterPanel({
     filters.priceMin ||
     filters.priceMax ||
     !filters.includeEarlyAccess ||
+    !filters.includeUnreleased ||
     filters.availability.length < 3 || // Less than all 3 = filter active
     filters.necromancyGrid.length < 16; // Less than all = filter active
 
@@ -699,26 +702,50 @@ export default function FilterPanel({
           />
         </div>
 
-        {/* Early Access Toggle */}
-        <div>
-          <label className="block text-sm text-gray-400 mb-1">Early Access</label>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => updateFilter('includeEarlyAccess', !filters.includeEarlyAccess)}
-              className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
-                filters.includeEarlyAccess ? 'bg-purple-600' : 'bg-gray-600'
-              }`}
-            >
-              <span
-                className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
-                  filters.includeEarlyAccess ? 'translate-x-7' : 'translate-x-1'
+        {/* Early Access & Unreleased Toggles */}
+        <div className="flex gap-6">
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">Early Access</label>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => updateFilter('includeEarlyAccess', !filters.includeEarlyAccess)}
+                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
+                  filters.includeEarlyAccess ? 'bg-purple-600' : 'bg-gray-600'
                 }`}
-              />
-            </button>
-            <span className="text-sm text-gray-400">
-              {filters.includeEarlyAccess ? 'Included' : 'Excluded'}
-            </span>
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
+                    filters.includeEarlyAccess ? 'translate-x-7' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className="text-sm text-gray-400">
+                {filters.includeEarlyAccess ? 'Included' : 'Excluded'}
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">Unreleased</label>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => updateFilter('includeUnreleased', !filters.includeUnreleased)}
+                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
+                  filters.includeUnreleased ? 'bg-purple-600' : 'bg-gray-600'
+                }`}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
+                    filters.includeUnreleased ? 'translate-x-7' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className="text-sm text-gray-400">
+                {filters.includeUnreleased ? 'Included' : 'Excluded'}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -766,6 +793,7 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.lastUpdatedFrom || filters.lastUpdatedTo) count++;
   if (filters.priceMin || filters.priceMax) count++;
   if (!filters.includeEarlyAccess) count++;
+  if (!filters.includeUnreleased) count++;
   if (filters.availability.length < 3) count++; // Only count if some are deselected
   if (filters.necromancyGrid.length < 16) count++; // Only count if some are deselected
   return count;

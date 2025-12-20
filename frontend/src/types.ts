@@ -40,6 +40,7 @@ export interface Game {
   last_announcement?: string;
   last_announcement_url?: string;
   last_announcement_title?: string;
+  last_announcement_content?: string;
 }
 
 // Platform display info
