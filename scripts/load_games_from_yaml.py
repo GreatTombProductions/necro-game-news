@@ -76,7 +76,7 @@ def find_existing_game(cursor, game: dict):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases, date_updated
                FROM games WHERE steam_id = ?""",
             (game['steam_id'],)
         )
@@ -95,7 +95,7 @@ def find_existing_game(cursor, game: dict):
             cursor.execute(
                 f"""SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                    dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-                   platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
+                   platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases, date_updated
                    FROM games WHERE {field} = ?""",
                 (game[platform_id],)
             )
@@ -108,7 +108,7 @@ def find_existing_game(cursor, game: dict):
         cursor.execute(
             """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
-               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases
+               platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases, date_updated
                FROM games WHERE name = ? AND primary_platform = 'manual'""",
             (game['name'],)
         )
@@ -326,6 +326,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         genres = game.get('genres', [])
         price_notes = game.get('price_notes')
         aliases = game.get('aliases', [])
+        date_updated = game.get('date_updated')  # Manual override for last update date
 
         # Validate primary_platform
         if primary_platform not in VALID_PLATFORMS:
@@ -348,6 +349,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 old_epic = existing[14]
                 old_itchio = existing[15]
                 old_aliases = existing[16]
+                old_date_updated = existing[17]
 
                 if update_existing:
                     # Check if classification or platform info changed
@@ -380,8 +382,13 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
 
                     aliases_changed = old_aliases != new_aliases_json
 
-                    if classification_changed or platform_changed or aliases_changed:
-                        # Update classification, platform info, and aliases
+                    # Normalize date_updated for comparison (handle both string and datetime)
+                    old_date_str = str(old_date_updated)[:10] if old_date_updated else None
+                    new_date_str = str(date_updated) if date_updated else None
+                    date_updated_changed = old_date_str != new_date_str
+
+                    if classification_changed or platform_changed or aliases_changed or date_updated_changed:
+                        # Update classification, platform info, aliases, and date_updated
                         cursor.execute("""
                             UPDATE games SET
                                 dimension_1 = ?,
@@ -400,14 +407,15 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 epic_id = ?,
                                 itchio_id = ?,
                                 external_url = ?,
-                                aliases = ?
+                                aliases = ?,
+                                date_updated = ?
                             WHERE id = ?
                         """, (
                             new_dim1, new_dim2, new_dim3, dimension_4,
                             dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                             new_platforms_json, primary_platform,
                             battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
-                            external_url, new_aliases_json, db_id
+                            external_url, new_aliases_json, date_updated, db_id
                         ))
 
                         # Show what changed
@@ -432,6 +440,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                             changes.append("platforms")
                         if aliases_changed:
                             changes.append("aliases")
+                        if date_updated_changed:
+                            changes.append(f"date_updated: {old_date_str}→{new_date_str}")
 
                         print(f"↻ Updated: {name} ({', '.join(changes)})")
                         updated += 1
@@ -473,7 +483,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 json.dumps(genres) if genres else None,
                 price_notes,
                 json.dumps(aliases) if aliases else None,
-                datetime.now()
+                date_updated  # Use YAML value if present, otherwise None
             ))
 
             # Get the newly inserted game's ID

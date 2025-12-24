@@ -99,7 +99,6 @@ function NewsItemRow({ item }: { item: NewsItem }) {
 
   const primaryPlatform = item.game.steam_id ? 'steam' : item.game.primary_platform;
   const storeUrl = getStoreUrl(item.game, primaryPlatform);
-  const platformInfo = PLATFORM_INFO[primaryPlatform];
 
   // Close tooltip on scroll or click outside
   useEffect(() => {
@@ -171,7 +170,7 @@ function NewsItemRow({ item }: { item: NewsItem }) {
   const tooltipContent = (showLinks: boolean) => (
     <>
       {/* Full title */}
-      <div className="text-sm font-medium text-gray-200 mb-1">{item.title}</div>
+      <div className="text-sm font-medium text-gray-200 mb-1 break-words">{item.title}</div>
 
       {/* Game info */}
       <div className="text-xs text-gray-500 mb-2">
@@ -180,42 +179,26 @@ function NewsItemRow({ item }: { item: NewsItem }) {
 
       {/* Content preview */}
       {item.content && (
-        <div className="text-xs text-gray-400 mb-2 leading-relaxed">
+        <div className="text-xs text-gray-400 mb-2 leading-relaxed break-words">
           {truncateText(item.content, 200)}
         </div>
       )}
 
-      {/* Links for mobile */}
-      {showLinks && (
-        <div className="flex flex-col gap-2 pt-2 border-t border-purple-700/30">
-          {item.url && (
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span>Read announcement</span>
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          )}
-          {storeUrl && (
-            <a
-              href={storeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span>View on {platformInfo.name}</span>
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          )}
+      {/* Link for mobile */}
+      {showLinks && item.url && (
+        <div className="pt-2 border-t border-purple-700/30">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span>Read announcement</span>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </div>
       )}
     </>
@@ -292,7 +275,7 @@ function NewsItemRow({ item }: { item: NewsItem }) {
       {/* Desktop hover tooltip - rendered via portal */}
       {isHovered && tooltipPos && createPortal(
         <div
-          className="hidden sm:block pointer-events-none fixed px-3 py-2 text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-80"
+          className="hidden sm:block pointer-events-none fixed px-3 py-2 text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-80 overflow-hidden"
           style={{
             top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
             bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
@@ -308,7 +291,7 @@ function NewsItemRow({ item }: { item: NewsItem }) {
       {isOpen && tooltipPos && createPortal(
         <div
           ref={tooltipRef}
-          className="fixed px-3 py-2 text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-80"
+          className="fixed px-3 py-2 text-gray-200 bg-gray-900 border border-purple-700/50 rounded-lg z-50 shadow-xl w-80 overflow-hidden"
           style={{
             top: tooltipPos.placeBelow ? tooltipPos.top : undefined,
             bottom: tooltipPos.placeBelow ? undefined : window.innerHeight - tooltipPos.top,
@@ -324,7 +307,10 @@ function NewsItemRow({ item }: { item: NewsItem }) {
 }
 
 export default function NewsFeed({ games }: NewsFeedProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  // Start collapsed on mobile (< 640px, Tailwind's sm breakpoint)
+  const [isCollapsed, setIsCollapsed] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth < 640
+  );
 
   // Get news items from filtered games, limited to last 30 days
   const newsItems = useMemo(() => {

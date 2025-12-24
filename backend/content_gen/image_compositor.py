@@ -208,16 +208,38 @@ class ImageCompositor:
 
         current_y += badge_height + 20
 
-        # Draw game name (large, bold)
+        # Draw game name (large, with dynamic sizing for long names)
         if len(text_lines) > 1:
             game_name = text_lines[1]
+            max_width = size[0] - 2 * margin
+
+            # Check if game name fits with large font
+            bbox = draw.textbbox((0, 0), game_name, font=font_large)
+            name_width = bbox[2] - bbox[0]
+
+            if name_width <= max_width:
+                # Fits with large font
+                game_font = font_large
+                line_height = 80
+            else:
+                # Try medium font
+                bbox = draw.textbbox((0, 0), game_name, font=font_medium)
+                name_width = bbox[2] - bbox[0]
+                if name_width <= max_width:
+                    game_font = font_medium
+                    line_height = 60
+                else:
+                    # Use small font as last resort
+                    game_font = font_small
+                    line_height = 50
+
             draw.text(
                 (margin, current_y),
                 game_name,
                 fill=self.TEXT_COLOR_PRIMARY,
-                font=font_large
+                font=game_font
             )
-            current_y += 80
+            current_y += line_height
 
         # Draw tags if provided (small, subtle)
         if tags:
