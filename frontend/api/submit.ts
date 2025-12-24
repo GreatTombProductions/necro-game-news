@@ -1,16 +1,24 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+type RegistryMode = 'necromancy' | 'blood';
+
 interface SubmissionData {
   gameName: string;
   steamId: string;
   submissionType: 'addition' | 'revision';
   submitterType: 'player' | 'developer';
   availability: string;
+  // Necromancy-specific
   centrality: string;
   pov: string;
   naming: string;
+  // Blood-specific
+  vampirism: string;
+  hemomancy: string;
+  // Shared
   notes: string;
   contact: string;
+  registry: RegistryMode;
 }
 
 const CENTRALITY_LABELS: Record<string, string> = {
@@ -33,6 +41,22 @@ const NAMING_LABELS: Record<string, string> = {
 const AVAILABILITY_LABELS: Record<string, string> = {
   instant: 'Instant',
   gated: 'Gated',
+};
+
+// Blood registry labels
+const VAMPIRISM_LABELS: Record<string, string> = {
+  outright: 'Outright',
+  implied: 'Implied',
+  channeled: 'Channeled',
+  absent: 'Absent',
+};
+
+const HEMOMANCY_LABELS: Record<string, string> = {
+  a: 'Core',
+  b: 'Dedicated Branch',
+  c: 'Isolated',
+  d: 'Minimal',
+  absent: 'Absent',
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -85,10 +109,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 function buildDiscordEmbed(data: SubmissionData) {
   const isAddition = data.submissionType === 'addition';
   const isDeveloper = data.submitterType === 'developer';
+  const isBlood = data.registry === 'blood';
 
-  // Title and color
-  const title = isAddition ? 'New Game Submission' : 'Correction Submission';
-  const color = isAddition ? 0x9333ea : 0xf59e0b; // Purple for new, amber for correction
+  // Title and color based on registry mode
+  const registryLabel = isBlood ? '🩸 Blood Registry' : '💀 Necromancy Registry';
+  const title = isAddition ? `New Game Submission (${registryLabel})` : `Correction Submission (${registryLabel})`;
+  // Purple for necromancy new, red for blood new, amber for corrections
+  const color = isAddition
+    ? (isBlood ? 0xdc2626 : 0x9333ea)
+    : 0xf59e0b;
 
   // Build fields
   const fields: Array<{ name: string; value: string; inline?: boolean }> = [];
@@ -118,11 +147,20 @@ function buildDiscordEmbed(data: SubmissionData) {
     });
   }
 
-  // Taxonomy (if provided)
+  // Taxonomy (if provided) - different based on registry mode
   const taxonomy: string[] = [];
-  if (data.centrality) taxonomy.push(`Centrality: **${CENTRALITY_LABELS[data.centrality] || data.centrality}**`);
-  if (data.pov) taxonomy.push(`POV: **${POV_LABELS[data.pov] || data.pov}**`);
-  if (data.naming) taxonomy.push(`Naming: **${NAMING_LABELS[data.naming] || data.naming}**`);
+
+  if (isBlood) {
+    // Blood registry taxonomy
+    if (data.vampirism) taxonomy.push(`Vampirism: **${VAMPIRISM_LABELS[data.vampirism] || data.vampirism}**`);
+    if (data.hemomancy) taxonomy.push(`Blood Magic: **${HEMOMANCY_LABELS[data.hemomancy] || data.hemomancy}**`);
+    if (data.pov) taxonomy.push(`POV: **${POV_LABELS[data.pov] || data.pov}**`);
+  } else {
+    // Necromancy registry taxonomy
+    if (data.centrality) taxonomy.push(`Centrality: **${CENTRALITY_LABELS[data.centrality] || data.centrality}**`);
+    if (data.pov) taxonomy.push(`POV: **${POV_LABELS[data.pov] || data.pov}**`);
+    if (data.naming) taxonomy.push(`Naming: **${NAMING_LABELS[data.naming] || data.naming}**`);
+  }
 
   if (taxonomy.length > 0) {
     fields.push({ name: 'Suggested Classification', value: taxonomy.join('\n') });
@@ -144,7 +182,7 @@ function buildDiscordEmbed(data: SubmissionData) {
     fields,
     timestamp: new Date().toISOString(),
     footer: {
-      text: 'Necro Game News Submission',
+      text: isBlood ? 'Vampiric Realms Submission' : 'Necrotic Realms Submission',
     },
   };
 }

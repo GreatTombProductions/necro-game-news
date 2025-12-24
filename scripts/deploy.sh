@@ -164,6 +164,7 @@ case $MODE in
     full)
         echo "🔍 Checking for updates..."
         $PYTHON scripts/load_games_from_yaml.py --update --sync
+        $PYTHON scripts/load_games_from_yaml.py --blood --update
         $PYTHON scripts/check_updates.py
 
         echo ""
@@ -190,6 +191,7 @@ case $MODE in
     updates)
         echo "🔍 Checking for updates..."
         $PYTHON scripts/load_games_from_yaml.py --update --sync
+        $PYTHON scripts/load_games_from_yaml.py --blood --update
         $PYTHON scripts/check_updates.py
 
         echo ""
@@ -213,6 +215,7 @@ case $MODE in
     new)
         echo "🆕 Loading new games from YAML..."
         $PYTHON scripts/load_games_from_yaml.py --update --sync
+        $PYTHON scripts/load_games_from_yaml.py --blood --update
         echo "   (Skipping update check for existing games)"
 
         echo ""

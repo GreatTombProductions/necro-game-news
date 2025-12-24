@@ -53,6 +53,13 @@ CREATE TABLE IF NOT EXISTS games (
     dimension_3_notes TEXT,  -- Editorial notes for dimension_3 (naming)
     dimension_4_notes TEXT,  -- Editorial notes for dimension_4 (availability)
 
+    -- Blood registry classification
+    registry TEXT DEFAULT 'necromancy' CHECK(registry IN ('necromancy', 'blood', 'both')),
+    vampirism TEXT CHECK(vampirism IN ('outright', 'implied', 'channeled', 'absent')),
+    vampirism_notes TEXT,
+    hemomancy TEXT CHECK(hemomancy IN ('a', 'b', 'c', 'd', 'absent')),
+    hemomancy_notes TEXT,
+
     -- Metadata (may come from various platforms)
     steam_tags TEXT,  -- JSON array as string
     genres TEXT,      -- JSON array as string

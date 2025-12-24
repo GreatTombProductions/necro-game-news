@@ -1,5 +1,16 @@
 export type Platform = 'steam' | 'battlenet' | 'gog' | 'epic' | 'itchio' | 'manual';
 
+// Registry types
+export type RegistryMode = 'necromancy' | 'blood';
+
+// Blood-specific taxonomy types
+export type Vampirism = 'outright' | 'implied' | 'channeled' | 'absent';
+export type HemomancyCentrality = 'a' | 'b' | 'c' | 'd' | 'absent';
+
+// Shared types
+export type POV = 'character' | 'unit';
+export type Availability = 'instant' | 'gated' | 'unknown';
+
 export interface Game {
   id: number;
   steam_id?: number;
@@ -23,6 +34,17 @@ export interface Game {
   dimension_2_notes?: string;
   dimension_3_notes?: string;
   dimension_4_notes?: string;
+  // Blood registry fields (present when registry is 'blood' or 'both')
+  registry?: 'necromancy' | 'blood' | 'both';
+  vampirism?: Vampirism;
+  vampirism_notes?: string;
+  hemomancy?: HemomancyCentrality;
+  hemomancy_notes?: string;
+  // Blood-friendly aliases for shared dimensions
+  pov?: POV;
+  availability?: Availability;
+  pov_notes?: string;
+  availability_notes?: string;
   date_updated?: string;
   developer?: string;
   publisher?: string;
@@ -83,5 +105,15 @@ export interface Stats {
   dimension_1: Record<string, number>;
   dimension_2: Record<string, number>;
   dimension_3: Record<string, number>;
+  last_updated: string;
+}
+
+export interface BloodStats {
+  total_games: number;
+  total_updates: number;
+  recent_updates_30d: number;
+  vampirism: Record<string, number>;
+  hemomancy: Record<string, number>;
+  pov: Record<string, number>;
   last_updated: string;
 }

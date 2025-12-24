@@ -1,0 +1,93 @@
+games:
+- name: V Rising
+  steam_id: 1604030
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: instant
+  vampirism_notes: Play as a newly awakened vampire building your dark empire
+  hemomancy_notes: Blood essence economy, vampire power progression, blood type bonuses
+  priority: high
+  date_updated: '2025-12-23'
+- name: 'Vampire: The Masquerade - Bloodlines'
+  steam_id: 2600
+  aliases:
+    - "Vampire The Masquerade Bloodlines"
+    - "Vampire The Masquerade - Bloodlines"
+    - "VTMB"
+    - "VTM Bloodlines"
+    - "VTM: Bloodlines"
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Classic vampire RPG, multiple vampire clans with unique disciplines
+  hemomancy_notes: Blood points fuel all abilities, Tremere clan has dedicated blood magic
+  priority: high
+  date_updated: '2025-12-23'
+- name: Vampire Survivors
+  steam_id: 1794680
+  classification:
+    vampirism: implied
+    hemomancy: c
+    pov: character
+    availability: instant
+  vampirism_notes: Some characters are vampires / dhampir (e.g. Arca Ladonna)
+  hemomancy_notes: Some blood-themed abilities (e.g. Sanguine Star)
+  priority: medium
+  date_updated: '2025-12-23'
+- name: Darkest Dungeon®
+  steam_id: 262060
+  classification:
+    vampirism: absent
+    hemomancy: a
+    pov: unit
+    availability: gated
+  vampirism_notes: No playable vampire character
+  hemomancy_notes: Flagellant class has blood-based abilities and self-harm mechanics
+  price_notes: Requires Crimson Court DLC (~12.99 USD)
+  priority: medium
+  date_updated: '2025-12-23'
+- name: Vampyr
+  steam_id: 427290
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Play as Dr. Jonathan Reid, newly turned vampire in 1918 London
+  hemomancy_notes: Blood is central to all abilities, mesmerize and feed on NPCs
+  priority: high
+  date_updated: '2025-12-23'
+- name: Path of Exile 2
+  steam_id: 2694490
+  classification:
+    vampirism: absent
+    hemomancy: a
+    pov: character
+    availability: gated
+  priority: high
+  date_updated: '2025-12-23'
+  hemomancy_notes: Blood Mage ascendancy for Witch
+- name: Diablo IV
+  steam_id: 2344520
+  battlenet_id: diablo-4
+  battlenet_store_id: diablo-iv
+  platforms:
+  - steam
+  - battlenet
+  primary_platform: steam
+  aliases:
+  - Diablo 4
+  - D4
+  classification:
+    vampirism: channeled
+    hemomancy: b
+    pov: character
+    availability: instant
+  priority: high
+  hemomancy_notes: Necromancer blood skills
+  vampirism_notes: Vampiric powers re-introduced from Season 11 onwards
+  date_updated: '2025-12-23'

@@ -9,7 +9,7 @@ import {
   flexRender,
 } from '@tanstack/react-table';
 import type { ColumnDef, FilterFn, SortingFn } from '@tanstack/react-table';
-import type { Game, Platform } from '../types';
+import type { Game, Platform, RegistryMode } from '../types';
 import { PLATFORM_INFO, getStoreUrl } from '../types';
 import SubmissionForm from './SubmissionForm';
 import FilterPanel, {
@@ -269,6 +269,7 @@ function PlatformIcons({ game }: { game: Game }) {
 
 interface GamesTableProps {
   games: Game[];
+  mode: RegistryMode;
 }
 
 // Tooltip descriptions for taxonomy columns
@@ -309,6 +310,54 @@ const TAXONOMY_INFO = {
     ],
   },
 };
+
+// Blood registry taxonomy info
+const BLOOD_TAXONOMY_INFO = {
+  vampirism: {
+    title: 'Vampirism',
+    description: 'Ontological relationship of the playable character/unit to vampirism',
+    values: [
+      { key: 'outright', label: 'Outright', color: 'text-red-400', description: 'Character is a vampire, dhampir, or otherwise vampirically transformed' },
+      { key: 'implied', label: 'Implied', color: 'text-rose-400', description: 'Vampire-like characteristics without explicit identification' },
+      { key: 'channeled', label: 'Channeled', color: 'text-orange-400', description: 'Wields vampiric powers (other than hemomancy) without being vampiric' },
+      { key: 'absent', label: 'Absent', color: 'text-gray-500', description: 'No vampiric connection' },
+    ],
+  },
+  hemomancy: {
+    title: 'Blood',
+    description: 'How central blood magic is to the gameplay experience',
+    values: [
+      { key: 'a', label: 'Core', color: 'text-red-400', description: 'Blood magic is central to the character/unit\'s gameplay and identity' },
+      { key: 'b', label: 'Dedicated Branch', color: 'text-rose-400', description: 'Cohesive blood magic skill tree or ability set available' },
+      { key: 'c', label: 'Isolated', color: 'text-orange-400', description: 'Blood magic abilities exist but are not grouped into a cohesive category' },
+      { key: 'd', label: 'Minimal', color: 'text-gray-400', description: 'Blood magic technically present with minimal gameplay impact' },
+      { key: 'absent', label: 'Absent', color: 'text-gray-500', description: 'No blood magic mechanics' },
+    ],
+  },
+  pov: {
+    title: 'POV',
+    description: 'The player\'s relationship to the vampire/blood mage',
+    values: [
+      { key: 'character', label: 'Character', color: 'text-rose-300', description: 'Play AS the vampire/blood mage' },
+      { key: 'unit', label: 'Unit/Faction', color: 'text-rose-300', description: 'Control vampire/blood mage units but don\'t play as them directly' },
+    ],
+  },
+  availability: {
+    title: 'Availability',
+    description: 'When the vampire/blood magic becomes available to the player',
+    values: [
+      { key: 'instant', label: 'Instant', color: 'text-red-400', description: 'Vampire/blood magic always available immediately from the start' },
+      { key: 'gated', label: 'Gated', color: 'text-orange-400', description: 'Vampire/blood magic takes time or progression to unlock' },
+      { key: 'unknown', label: 'Unknown', color: 'text-gray-500', description: 'Availability not yet determined' },
+    ],
+  },
+};
+
+// Hemomancy sort order (same pattern as centrality)
+const hemomancySortOrder: Record<string, number> = { a: 4, b: 3, c: 2, d: 1, absent: 0 };
+
+// Vampirism sort order
+const vampirismSortOrder: Record<string, number> = { outright: 3, implied: 2, channeled: 1, absent: 0 };
 
 // Centrality sort order: Higher = better (Core at top when sorting descending)
 // a (Core) = 3, b (Dedicated Branch) = 2, c (Isolated) = 1, d (Minimal) = 0
@@ -1065,12 +1114,15 @@ function HelpIcon({ info, alignRight = false }: { info: HelpIconInfo; alignRight
   );
 }
 
-export default function GamesTable({ games }: GamesTableProps) {
+export default function GamesTable({ games, mode }: GamesTableProps) {
   const [globalFilter, setGlobalFilter] = useState('');
   const [isSubmissionFormOpen, setIsSubmissionFormOpen] = useState(false);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
   const [filters, setFilters] = useState<FilterState>(initialFilterState);
   const filterButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Mode-specific settings
+  const isBlood = mode === 'blood';
   const filterPanelRef = useRef<HTMLDivElement>(null);
 
   // Close filter panel when clicking outside
@@ -1235,13 +1287,14 @@ export default function GamesTable({ games }: GamesTableProps) {
         header: () => (
           <span className="flex items-center">
             Availability
-            <HelpIcon info={TAXONOMY_INFO.availability} />
+            <HelpIcon info={isBlood ? BLOOD_TAXONOMY_INFO.availability : TAXONOMY_INFO.availability} />
           </span>
         ),
         cell: info => {
           const val = (info.getValue() as string) || 'unknown';
           const game = info.row.original;
-          const valueInfo = TAXONOMY_INFO.availability.values.find(v => v.key === val);
+          const taxonomyInfo = isBlood ? BLOOD_TAXONOMY_INFO.availability : TAXONOMY_INFO.availability;
+          const valueInfo = taxonomyInfo.values.find(v => v.key === val);
           if (!valueInfo) return null;
           return (
             <Tooltip
@@ -1261,13 +1314,121 @@ export default function GamesTable({ games }: GamesTableProps) {
           );
         },
       },
-      // Degree of Necromancy column group - moved to far right
+      // Degree of Necromancy/Blood column group - moved to far right
       {
-        id: 'degree_of_necromancy',
+        id: isBlood ? 'degree_of_blood' : 'degree_of_necromancy',
         header: () => (
-          <span className="text-purple-400 font-semibold">Degree of Necromancy</span>
+          <span className={isBlood ? 'text-red-400 font-semibold' : 'text-purple-400 font-semibold'}>
+            {isBlood ? 'Degree of Vampirism/Hemomancy' : 'Degree of Necromancy'}
+          </span>
         ),
-        columns: [
+        columns: isBlood ? [
+          // Blood mode columns
+          {
+            accessorKey: 'vampirism',
+            header: () => (
+              <span className="flex items-center">
+                Vampirism
+                <HelpIcon info={BLOOD_TAXONOMY_INFO.vampirism} />
+              </span>
+            ),
+            sortingFn: ((rowA, rowB, columnId) => {
+              const a = rowA.getValue(columnId) as string;
+              const b = rowB.getValue(columnId) as string;
+              return vampirismSortOrder[a] - vampirismSortOrder[b];
+            }) as SortingFn<Game>,
+            cell: info => {
+              const val = info.getValue() as string;
+              const game = info.row.original;
+              const valueInfo = BLOOD_TAXONOMY_INFO.vampirism.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.vampirism_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
+                  <span className={`font-mono ${valueInfo.color}`}>
+                    {valueInfo.label}
+                  </span>
+                </Tooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'hemomancy',
+            header: () => (
+              <span className="flex items-center">
+                Blood
+                <HelpIcon info={BLOOD_TAXONOMY_INFO.hemomancy} />
+              </span>
+            ),
+            sortingFn: ((rowA, rowB, columnId) => {
+              const a = rowA.getValue(columnId) as string;
+              const b = rowB.getValue(columnId) as string;
+              return hemomancySortOrder[a] - hemomancySortOrder[b];
+            }) as SortingFn<Game>,
+            cell: info => {
+              const val = info.getValue() as string;
+              const game = info.row.original;
+              const valueInfo = BLOOD_TAXONOMY_INFO.hemomancy.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.hemomancy_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
+                  <span className={`font-mono ${valueInfo.color}`}>
+                    {valueInfo.label}
+                  </span>
+                </Tooltip>
+              );
+            },
+          },
+          {
+            accessorKey: 'dimension_2',
+            header: () => (
+              <span className="flex items-center">
+                POV
+                <HelpIcon info={BLOOD_TAXONOMY_INFO.pov} alignRight />
+              </span>
+            ),
+            cell: info => {
+              const val = info.getValue() as string;
+              const game = info.row.original;
+              const valueInfo = BLOOD_TAXONOMY_INFO.pov.values.find(v => v.key === val);
+              if (!valueInfo) return null;
+              return (
+                <Tooltip
+                  text={
+                    <DimensionTooltipContent
+                      description={valueInfo.description}
+                      notes={game.dimension_2_notes || game.pov_notes}
+                      dateUpdated={game.date_updated}
+                    />
+                  }
+                  width="fixed"
+                >
+                  <span className={`text-sm ${valueInfo.color} capitalize`}>
+                    {valueInfo.label}
+                  </span>
+                </Tooltip>
+              );
+            },
+          },
+        ] : [
+          // Necromancy mode columns (original)
           {
             accessorKey: 'dimension_1',
             header: () => (
@@ -1365,7 +1526,7 @@ export default function GamesTable({ games }: GamesTableProps) {
         ],
       },
     ],
-    []
+    [isBlood]
   );
 
   const table = useReactTable({
@@ -1458,6 +1619,7 @@ export default function GamesTable({ games }: GamesTableProps) {
               onClear={clearFilters}
               matchingCount={table.getFilteredRowModel().rows.length}
               totalCount={games.length}
+              mode={mode}
             />
           </div>
         )}
@@ -1467,13 +1629,16 @@ export default function GamesTable({ games }: GamesTableProps) {
       <SubmissionForm
         isOpen={isSubmissionFormOpen}
         onClose={() => setIsSubmissionFormOpen(false)}
+        mode={mode}
       />
 
       {/* News Feed */}
       <NewsFeed games={filteredGames} />
 
       {/* Table Header */}
-      <h2 className="text-lg font-semibold text-purple-300 mb-2">Necromancy Game Registry</h2>
+      <h2 className={`text-lg font-semibold mb-2 ${isBlood ? 'text-red-300' : 'text-purple-300'}`}>
+        {isBlood ? 'The Sanguine Registry (under construction)' : 'The Necrotic Registry'}
+      </h2>
 
       {/* Sort Indicator */}
       {table.getState().sorting.length > 0 && (

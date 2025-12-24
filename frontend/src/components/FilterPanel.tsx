@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import type { Platform } from '../types';
+import type { Platform, RegistryMode, Vampirism, HemomancyCentrality, POV } from '../types';
 import { PLATFORM_INFO } from '../types';
 
 // Types
@@ -24,6 +24,10 @@ export interface FilterState {
   includeUnreleased: boolean;
   availability: Availability[];
   necromancyGrid: NecromancyFilter[];
+  // Blood registry filters
+  vampirism: Vampirism[];
+  hemomancy: HemomancyCentrality[];
+  bloodPov: POV[];
 }
 
 // Necromancy dimension keys
@@ -31,6 +35,11 @@ const CENTRALITY_KEYS = ['a', 'b', 'c', 'd'] as const;
 const POV_KEYS = ['character', 'unit'] as const;
 const NAMING_KEYS = ['explicit', 'implied'] as const;
 const AVAILABILITY_KEYS: Availability[] = ['instant', 'gated', 'unknown'];
+
+// Blood dimension keys
+const VAMPIRISM_KEYS: Vampirism[] = ['outright', 'implied', 'channeled', 'absent'];
+const HEMOMANCY_KEYS: HemomancyCentrality[] = ['a', 'b', 'c', 'd', 'absent'];
+const BLOOD_POV_KEYS: POV[] = ['character', 'unit'];
 
 // Generate all 16 necromancy combinations
 export function getAllNecromancyCombinations(): NecromancyFilter[] {
@@ -59,6 +68,10 @@ export const initialFilterState: FilterState = {
   includeUnreleased: false,
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
+  // Blood filters - all selected by default
+  vampirism: [...VAMPIRISM_KEYS],
+  hemomancy: [...HEMOMANCY_KEYS],
+  bloodPov: [...BLOOD_POV_KEYS],
 };
 
 interface FilterPanelProps {
@@ -69,6 +82,7 @@ interface FilterPanelProps {
   onClear: () => void;
   matchingCount: number;
   totalCount: number;
+  mode: RegistryMode;
 }
 
 // Necromancy dimension labels
@@ -84,6 +98,27 @@ const AVAILABILITY_LABELS: Record<Availability, string> = {
   instant: 'Instant',
   gated: 'Gated',
   unknown: 'Unknown',
+};
+
+// Blood dimension labels
+const VAMPIRISM_LABELS: Record<Vampirism, string> = {
+  outright: 'Outright',
+  implied: 'Implied',
+  channeled: 'Channeled',
+  absent: 'Absent',
+};
+
+const HEMOMANCY_LABELS: Record<HemomancyCentrality, string> = {
+  a: 'Core',
+  b: 'Dedicated Branch',
+  c: 'Isolated',
+  d: 'Minimal',
+  absent: 'Absent',
+};
+
+const BLOOD_POV_LABELS: Record<POV, string> = {
+  character: 'Character',
+  unit: 'Unit',
 };
 
 // Helper to check if a combination is selected
@@ -140,6 +175,153 @@ function AvailabilityCheckboxes({
         type="button"
         onClick={allSelected ? deselectAll : selectAll}
         className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+// Vampirism Checkboxes Component (Blood mode)
+function VampirismCheckboxes({
+  value,
+  onChange,
+}: {
+  value: Vampirism[];
+  onChange: (vampirism: Vampirism[]) => void;
+}) {
+  const toggleVampirism = (v: Vampirism) => {
+    if (value.includes(v)) {
+      onChange(value.filter((x) => x !== v));
+    } else {
+      onChange([...value, v]);
+    }
+  };
+
+  const selectAll = () => onChange([...VAMPIRISM_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === VAMPIRISM_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {VAMPIRISM_KEYS.map((v) => (
+          <label
+            key={v}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(v)}
+              onChange={() => toggleVampirism(v)}
+              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{VAMPIRISM_LABELS[v]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+// Hemomancy Checkboxes Component (Blood mode)
+function HemomancyCheckboxes({
+  value,
+  onChange,
+}: {
+  value: HemomancyCentrality[];
+  onChange: (hemomancy: HemomancyCentrality[]) => void;
+}) {
+  const toggleHemomancy = (h: HemomancyCentrality) => {
+    if (value.includes(h)) {
+      onChange(value.filter((x) => x !== h));
+    } else {
+      onChange([...value, h]);
+    }
+  };
+
+  const selectAll = () => onChange([...HEMOMANCY_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === HEMOMANCY_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex flex-wrap items-center gap-3">
+        {HEMOMANCY_KEYS.map((h) => (
+          <label
+            key={h}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(h)}
+              onChange={() => toggleHemomancy(h)}
+              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{HEMOMANCY_LABELS[h]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+// Blood POV Checkboxes Component (Blood mode)
+function BloodPovCheckboxes({
+  value,
+  onChange,
+}: {
+  value: POV[];
+  onChange: (pov: POV[]) => void;
+}) {
+  const togglePov = (p: POV) => {
+    if (value.includes(p)) {
+      onChange(value.filter((x) => x !== p));
+    } else {
+      onChange([...value, p]);
+    }
+  };
+
+  const selectAll = () => onChange([...BLOOD_POV_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === BLOOD_POV_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {BLOOD_POV_KEYS.map((p) => (
+          <label
+            key={p}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(p)}
+              onChange={() => togglePov(p)}
+              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{BLOOD_POV_LABELS[p]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
       >
         {allSelected ? 'Deselect all' : 'Select all'}
       </button>
@@ -617,10 +799,17 @@ export default function FilterPanel({
   onClear,
   matchingCount,
   totalCount,
+  mode,
 }: FilterPanelProps) {
+  const isBlood = mode === 'blood';
   const updateFilter = <K extends keyof FilterState>(key: K, value: FilterState[K]) => {
     onChange({ ...filters, [key]: value });
   };
+
+  // Check for active taxonomy filters based on mode
+  const hasTaxonomyFilters = isBlood
+    ? filters.vampirism.length < 4 || filters.hemomancy.length < 5 || filters.bloodPov.length < 2
+    : filters.necromancyGrid.length < 16;
 
   const hasActiveFilters =
     filters.genres.length > 0 ||
@@ -634,12 +823,16 @@ export default function FilterPanel({
     !filters.includeEarlyAccess ||
     !filters.includeUnreleased ||
     filters.availability.length < 3 || // Less than all 3 = filter active
-    filters.necromancyGrid.length < 16; // Less than all = filter active
+    hasTaxonomyFilters;
 
   return (
-    <div className="mt-4 p-4 bg-gray-800/70 border border-purple-700/30 rounded-lg">
+    <div className={`mt-4 p-4 bg-gray-800/70 border rounded-lg transition-colors duration-300 ${
+      isBlood ? 'border-red-700/30' : 'border-purple-700/30'
+    }`}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-semibold text-purple-300">Advanced Filters</h3>
+        <h3 className={`text-sm font-semibold transition-colors duration-300 ${
+          isBlood ? 'text-red-300' : 'text-purple-300'
+        }`}>Advanced Filters</h3>
         <div className="flex items-center gap-3">
           <span className="text-xs text-gray-400">
             {matchingCount} of {totalCount} games
@@ -648,7 +841,9 @@ export default function FilterPanel({
             <button
               type="button"
               onClick={onClear}
-              className="text-xs text-gray-400 hover:text-purple-300 transition-colors"
+              className={`text-xs text-gray-400 transition-colors ${
+                isBlood ? 'hover:text-red-300' : 'hover:text-purple-300'
+              }`}
             >
               Clear all
             </button>
@@ -750,8 +945,10 @@ export default function FilterPanel({
         </div>
       </div>
 
-      {/* Availability & Necromancy Grid Row */}
-      <div className="mt-4 pt-4 border-t border-purple-700/30 flex flex-col md:flex-row gap-6">
+      {/* Availability & Taxonomy Row */}
+      <div className={`mt-4 pt-4 border-t flex flex-col md:flex-row gap-6 transition-colors duration-300 ${
+        isBlood ? 'border-red-700/30' : 'border-purple-700/30'
+      }`}>
         {/* Availability */}
         <div className="flex-shrink-0">
           <label className="block text-sm text-gray-400 mb-2">Availability</label>
@@ -766,19 +963,64 @@ export default function FilterPanel({
           )}
         </div>
 
-        {/* Necromancy Grid */}
-        <div className="flex-grow">
-          <label className="block text-sm text-gray-400 mb-2">Degree of Necromancy</label>
-          <NecromancyGrid
-            value={filters.necromancyGrid}
-            onChange={(grid) => updateFilter('necromancyGrid', grid)}
-          />
-          {filters.necromancyGrid.length < 16 && (
-            <p className="text-xs text-gray-500 mt-2">
-              {filters.necromancyGrid.length} of 16 combinations selected
-            </p>
-          )}
-        </div>
+        {/* Mode-specific taxonomy filters */}
+        {isBlood ? (
+          // Blood mode: Vampirism, Hemomancy, POV checkboxes
+          <div className="flex-grow flex flex-col md:flex-row gap-6">
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Vampirism</label>
+              <VampirismCheckboxes
+                value={filters.vampirism}
+                onChange={(vampirism) => updateFilter('vampirism', vampirism)}
+              />
+              {filters.vampirism.length < 4 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {filters.vampirism.length} of 4 selected
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Blood</label>
+              <HemomancyCheckboxes
+                value={filters.hemomancy}
+                onChange={(hemomancy) => updateFilter('hemomancy', hemomancy)}
+              />
+              {filters.hemomancy.length < 5 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {filters.hemomancy.length} of 5 selected
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">POV</label>
+              <BloodPovCheckboxes
+                value={filters.bloodPov}
+                onChange={(pov) => updateFilter('bloodPov', pov)}
+              />
+              {filters.bloodPov.length < 2 && (
+                <p className="text-xs text-gray-500 mt-2">
+                  {filters.bloodPov.length} of 2 selected
+                </p>
+              )}
+            </div>
+          </div>
+        ) : (
+          // Necromancy mode: Original grid
+          <div className="flex-grow">
+            <label className="block text-sm text-gray-400 mb-2">Degree of Necromancy</label>
+            <NecromancyGrid
+              value={filters.necromancyGrid}
+              onChange={(grid) => updateFilter('necromancyGrid', grid)}
+            />
+            {filters.necromancyGrid.length < 16 && (
+              <p className="text-xs text-gray-500 mt-2">
+                {filters.necromancyGrid.length} of 16 combinations selected
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

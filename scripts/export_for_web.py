@@ -3,7 +3,13 @@
 Export database to JSON for frontend.
 
 Exports games and their metadata to JSON files that the frontend
-can load and display.
+can load and display. Supports both necromancy and blood registries.
+
+Output files:
+- games.json: Necromancy registry games
+- stats.json: Necromancy registry stats
+- blood_games.json: Blood registry games
+- blood_stats.json: Blood registry stats
 
 Usage:
     python scripts/export_for_web.py
@@ -20,16 +26,26 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from backend.database.schema import get_connection
 
 
-def export_games():
-    """Export all active games with their metadata"""
+def export_games(registry='necromancy'):
+    """Export active games for a specific registry with their metadata.
+
+    Args:
+        registry: 'necromancy' or 'blood' - determines which games to export
+    """
     conn = get_connection()
     conn.row_factory = lambda cursor, row: dict(zip([col[0] for col in cursor.description], row))
     cursor = conn.cursor()
-    
+
+    # Determine registry filter
+    if registry == 'necromancy':
+        registry_filter = "COALESCE(g.registry, 'necromancy') IN ('necromancy', 'both')"
+    else:
+        registry_filter = "g.registry IN ('blood', 'both')"
+
     # Get games with update counts and last update info
     # Update = actual game changes (patch, release, dlc)
     # Announcement = most recent entry regardless of type (may overlap with update)
-    cursor.execute("""
+    cursor.execute(f"""
         SELECT
             g.id,
             g.steam_id,
@@ -53,6 +69,11 @@ def export_games():
             g.dimension_2_notes,
             g.dimension_3_notes,
             g.dimension_4_notes,
+            g.registry,
+            g.vampirism,
+            g.vampirism_notes,
+            g.hemomancy,
+            g.hemomancy_notes,
             g.date_updated,
             g.developer,
             g.publisher,
@@ -72,14 +93,14 @@ def export_games():
             (SELECT title FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_title,
             (SELECT content FROM updates WHERE game_id = g.id ORDER BY date DESC LIMIT 1) as last_announcement_content
         FROM games g
-        WHERE g.is_active = 1
+        WHERE g.is_active = 1 AND {registry_filter}
         ORDER BY g.name
     """)
     
     games = cursor.fetchall()
     conn.close()
-    
-    # Parse JSON fields
+
+    # Parse JSON fields and add registry-specific mappings
     for game in games:
         if game['steam_tags']:
             try:
@@ -113,101 +134,183 @@ def export_games():
         else:
             game['aliases'] = []
 
+        # For blood registry, add friendly field aliases
+        if registry == 'blood':
+            # Map dimension fields to blood-specific names
+            game['pov'] = game['dimension_2']
+            game['availability'] = game['dimension_4']
+            game['pov_notes'] = game['dimension_2_notes']
+            game['availability_notes'] = game['dimension_4_notes']
+
     return games
 
 
-def export_stats():
-    """Export summary statistics"""
+def export_stats(registry='necromancy'):
+    """Export summary statistics for a specific registry.
+
+    Args:
+        registry: 'necromancy' or 'blood' - determines which games to count
+    """
     conn = get_connection()
     cursor = conn.cursor()
-    
-    # Total games
-    cursor.execute("SELECT COUNT(*) FROM games WHERE is_active = 1")
+
+    # Determine registry filter
+    if registry == 'necromancy':
+        registry_filter = "COALESCE(registry, 'necromancy') IN ('necromancy', 'both')"
+    else:
+        registry_filter = "registry IN ('blood', 'both')"
+
+    # Total games in this registry
+    cursor.execute(f"SELECT COUNT(*) FROM games WHERE is_active = 1 AND {registry_filter}")
     total_games = cursor.fetchone()[0]
-    
-    # Total updates
-    cursor.execute("SELECT COUNT(*) FROM updates")
+
+    # Total updates for games in this registry
+    cursor.execute(f"""
+        SELECT COUNT(*) FROM updates u
+        JOIN games g ON u.game_id = g.id
+        WHERE g.is_active = 1 AND {registry_filter}
+    """)
     total_updates = cursor.fetchone()[0]
-    
-    # By dimension 1
-    cursor.execute("""
-        SELECT dimension_1, COUNT(*) as count
-        FROM games
-        WHERE is_active = 1
-        GROUP BY dimension_1
-    """)
-    dim1_counts = {row[0]: row[1] for row in cursor.fetchall()}
-    
-    # By dimension 2
-    cursor.execute("""
-        SELECT dimension_2, COUNT(*) as count
-        FROM games
-        WHERE is_active = 1
-        GROUP BY dimension_2
-    """)
-    dim2_counts = {row[0]: row[1] for row in cursor.fetchall()}
-    
-    # By dimension 3
-    cursor.execute("""
-        SELECT dimension_3, COUNT(*) as count
-        FROM games
-        WHERE is_active = 1
-        GROUP BY dimension_3
-    """)
-    dim3_counts = {row[0]: row[1] for row in cursor.fetchall()}
-    
-    # Recent updates (last 30 days)
-    cursor.execute("""
-        SELECT COUNT(*) 
-        FROM updates 
-        WHERE date >= datetime('now', '-30 days')
+
+    # Recent updates (last 30 days) for this registry
+    cursor.execute(f"""
+        SELECT COUNT(*) FROM updates u
+        JOIN games g ON u.game_id = g.id
+        WHERE g.is_active = 1 AND {registry_filter}
+        AND u.date >= datetime('now', '-30 days')
     """)
     recent_updates = cursor.fetchone()[0]
-    
-    conn.close()
-    
-    return {
-        'total_games': total_games,
-        'total_updates': total_updates,
-        'recent_updates_30d': recent_updates,
-        'dimension_1': dim1_counts,
-        'dimension_2': dim2_counts,
-        'dimension_3': dim3_counts,
-        'last_updated': datetime.now().isoformat()
-    }
+
+    if registry == 'necromancy':
+        # By dimension 1 (centrality)
+        cursor.execute(f"""
+            SELECT dimension_1, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY dimension_1
+        """)
+        dim1_counts = {row[0]: row[1] for row in cursor.fetchall()}
+
+        # By dimension 2 (POV)
+        cursor.execute(f"""
+            SELECT dimension_2, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY dimension_2
+        """)
+        dim2_counts = {row[0]: row[1] for row in cursor.fetchall()}
+
+        # By dimension 3 (naming)
+        cursor.execute(f"""
+            SELECT dimension_3, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY dimension_3
+        """)
+        dim3_counts = {row[0]: row[1] for row in cursor.fetchall()}
+
+        conn.close()
+
+        return {
+            'total_games': total_games,
+            'total_updates': total_updates,
+            'recent_updates_30d': recent_updates,
+            'dimension_1': dim1_counts,
+            'dimension_2': dim2_counts,
+            'dimension_3': dim3_counts,
+            'last_updated': datetime.now().isoformat()
+        }
+    else:
+        # Blood registry stats
+        # By vampirism
+        cursor.execute(f"""
+            SELECT vampirism, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY vampirism
+        """)
+        vampirism_counts = {row[0]: row[1] for row in cursor.fetchall() if row[0]}
+
+        # By hemomancy
+        cursor.execute(f"""
+            SELECT hemomancy, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY hemomancy
+        """)
+        hemomancy_counts = {row[0]: row[1] for row in cursor.fetchall() if row[0]}
+
+        # By POV (dimension_2)
+        cursor.execute(f"""
+            SELECT dimension_2, COUNT(*) as count
+            FROM games
+            WHERE is_active = 1 AND {registry_filter}
+            GROUP BY dimension_2
+        """)
+        pov_counts = {row[0]: row[1] for row in cursor.fetchall() if row[0]}
+
+        conn.close()
+
+        return {
+            'total_games': total_games,
+            'total_updates': total_updates,
+            'recent_updates_30d': recent_updates,
+            'vampirism': vampirism_counts,
+            'hemomancy': hemomancy_counts,
+            'pov': pov_counts,
+            'last_updated': datetime.now().isoformat()
+        }
 
 
 def main():
-    """Export all data for frontend"""
+    """Export all data for frontend (both registries)"""
     print("=" * 60)
     print("Exporting data for frontend")
     print("=" * 60)
     print()
-    
+
     # Ensure output directory exists
     output_dir = Path('frontend/public/data')
     output_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Export games
-    print("Exporting games...")
-    games = export_games()
+
+    # Export necromancy registry
+    print("Exporting necromancy registry...")
+    necro_games = export_games('necromancy')
     games_file = output_dir / 'games.json'
-    
+
     with open(games_file, 'w') as f:
-        json.dump(games, f, indent=2)
-    
-    print(f"✓ Exported {len(games)} games to {games_file}")
-    
-    # Export stats
-    print("\nExporting statistics...")
-    stats = export_stats()
+        json.dump(necro_games, f, indent=2)
+
+    print(f"✓ Exported {len(necro_games)} necromancy games to {games_file}")
+
+    # Export necromancy stats
+    necro_stats = export_stats('necromancy')
     stats_file = output_dir / 'stats.json'
-    
+
     with open(stats_file, 'w') as f:
-        json.dump(stats, f, indent=2)
-    
-    print(f"✓ Exported stats to {stats_file}")
-    
+        json.dump(necro_stats, f, indent=2)
+
+    print(f"✓ Exported necromancy stats to {stats_file}")
+
+    # Export blood registry
+    print("\nExporting blood registry...")
+    blood_games = export_games('blood')
+    blood_games_file = output_dir / 'blood_games.json'
+
+    with open(blood_games_file, 'w') as f:
+        json.dump(blood_games, f, indent=2)
+
+    print(f"✓ Exported {len(blood_games)} blood games to {blood_games_file}")
+
+    # Export blood stats
+    blood_stats = export_stats('blood')
+    blood_stats_file = output_dir / 'blood_stats.json'
+
+    with open(blood_stats_file, 'w') as f:
+        json.dump(blood_stats, f, indent=2)
+
+    print(f"✓ Exported blood stats to {blood_stats_file}")
+
     # Summary
     print("\n" + "=" * 60)
     print("Export complete!")
@@ -215,13 +318,19 @@ def main():
     print(f"\nFiles created:")
     print(f"  • {games_file}")
     print(f"  • {stats_file}")
-    print(f"\nStats:")
-    print(f"  Games: {stats['total_games']}")
-    print(f"  Total updates: {stats['total_updates']}")
-    print(f"  Recent updates (30d): {stats['recent_updates_30d']}")
+    print(f"  • {blood_games_file}")
+    print(f"  • {blood_stats_file}")
+    print(f"\nNecromancy Registry:")
+    print(f"  Games: {necro_stats['total_games']}")
+    print(f"  Total updates: {necro_stats['total_updates']}")
+    print(f"  Recent updates (30d): {necro_stats['recent_updates_30d']}")
+    print(f"\nBlood Registry:")
+    print(f"  Games: {blood_stats['total_games']}")
+    print(f"  Total updates: {blood_stats['total_updates']}")
+    print(f"  Recent updates (30d): {blood_stats['recent_updates_30d']}")
     print("\nFrontend is ready to load this data!")
     print("=" * 60)
-    
+
     return 0
 
 
