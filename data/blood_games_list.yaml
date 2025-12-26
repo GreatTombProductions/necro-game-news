@@ -47,6 +47,7 @@ games:
     availability: gated
   vampirism_notes: No playable vampire character
   hemomancy_notes: Flagellant class has blood-based abilities and self-harm mechanics
+  pov_notes: Control a party of characters
   price_notes: Requires Crimson Court DLC (~12.99 USD)
   priority: medium
   date_updated: '2025-12-23'
@@ -89,5 +90,5 @@ games:
     availability: instant
   priority: high
   hemomancy_notes: Necromancer blood skills
-  vampirism_notes: Vampiric powers re-introduced from Season 11 onwards
+  vampirism_notes: Some vampiric powers from Season of Blood available as legendary aspectss
   date_updated: '2025-12-23'

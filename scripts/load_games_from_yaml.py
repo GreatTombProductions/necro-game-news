@@ -319,7 +319,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
             dimension_1 = None
             dimension_3 = None
             dimension_1_notes = ''
-            dimension_2_notes = ''
+            dimension_2_notes = game.get('pov_notes', '')
             dimension_3_notes = ''
             dimension_4_notes = game.get('availability_notes', '')
         else:

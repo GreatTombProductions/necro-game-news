@@ -1301,7 +1301,7 @@ export default function GamesTable({ games, mode }: GamesTableProps) {
               text={
                 <DimensionTooltipContent
                   description={valueInfo.description}
-                  notes={game.dimension_4_notes}
+                  notes={game.dimension_4_notes || game.availability_notes}
                   dateUpdated={game.date_updated}
                 />
               }
