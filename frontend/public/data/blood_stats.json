@@ -1,22 +1,22 @@
 {
-  "total_games": 38,
-  "total_updates": 1041,
-  "recent_updates_30d": 68,
+  "total_games": 39,
+  "total_updates": 1061,
+  "recent_updates_30d": 69,
   "vampirism": {
     "absent": 10,
-    "channeled": 3,
+    "channeled": 4,
     "implied": 2,
     "outright": 23
   },
   "hemomancy": {
-    "a": 10,
-    "b": 11,
-    "c": 5,
+    "a": 11,
+    "b": 10,
+    "c": 6,
     "d": 12
   },
   "pov": {
-    "character": 32,
+    "character": 33,
     "unit": 6
   },
-  "last_updated": "2026-01-03T19:31:11.860107"
+  "last_updated": "2026-01-03T19:41:39.671486"
 }
