@@ -376,12 +376,13 @@ const normalize = (str: string) => str.toLowerCase().replace(/[®©™]/g, '');
 interface CombinedFilterValue {
   search: string;
   filters: FilterState;
+  mode: RegistryMode;
 }
 
 // Filter function that handles both search and advanced filters
 const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedFilterValue) => {
   const game = row.original;
-  const { search, filters } = filterValue;
+  const { search, filters, mode } = filterValue;
 
   // Global search filter (from search bar)
   if (search) {
@@ -489,8 +490,8 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     if (!filters.availability.includes(game.dimension_4)) return false;
   }
 
-  // Necromancy grid filter (only applies if not all 16 are selected)
-  if (filters.necromancyGrid.length > 0 && filters.necromancyGrid.length < 16) {
+  // Necromancy grid filter (only applies in necromancy mode and if not all 16 are selected)
+  if (mode === 'necromancy' && filters.necromancyGrid.length > 0 && filters.necromancyGrid.length < 16) {
     const matchesNecromancy = filters.necromancyGrid.some(
       (f) =>
         game.dimension_1 === f.centrality &&
@@ -500,8 +501,8 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     if (!matchesNecromancy) return false;
   }
 
-  // Blood grid filter (only applies if not all 40 are selected)
-  if (filters.bloodGrid.length > 0 && filters.bloodGrid.length < 40) {
+  // Blood grid filter (only applies in blood mode and if not all 40 are selected)
+  if (mode === 'blood' && filters.bloodGrid.length > 0 && filters.bloodGrid.length < 40) {
     const matchesBlood = filters.bloodGrid.some(
       (f) =>
         game.vampirism === f.vampirism &&
@@ -1189,8 +1190,8 @@ export default function GamesTable({ games, mode }: GamesTableProps) {
 
   // Combined filter value that triggers re-filtering when either search or filters change
   const combinedFilterValue = useMemo(
-    () => ({ search: globalFilter, filters }),
-    [globalFilter, filters]
+    () => ({ search: globalFilter, filters, mode }),
+    [globalFilter, filters, mode]
   );
 
   const columns = useMemo<ColumnDef<Game>[]>(
