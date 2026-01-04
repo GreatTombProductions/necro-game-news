@@ -9,12 +9,12 @@
     "d": 18
   },
   "dimension_2": {
-    "character": 140,
-    "unit": 22
+    "character": 137,
+    "unit": 25
   },
   "dimension_3": {
     "explicit": 109,
     "implied": 53
   },
-  "last_updated": "2026-01-03T17:44:42.971457"
+  "last_updated": "2026-01-03T19:31:11.854457"
 }
