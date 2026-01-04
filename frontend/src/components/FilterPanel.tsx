@@ -9,6 +9,12 @@ export interface NecromancyFilter {
   naming: 'explicit' | 'implied';
 }
 
+export interface BloodFilter {
+  vampirism: Vampirism;
+  hemomancy: HemomancyCentrality;
+  pov: POV;
+}
+
 export type Availability = 'instant' | 'gated' | 'unknown';
 export type EarlyAccessFilter = 'early_access' | 'full_release';
 export type ReleaseStatusFilter = 'released' | 'unreleased';
@@ -27,9 +33,7 @@ export interface FilterState {
   availability: Availability[];
   necromancyGrid: NecromancyFilter[];
   // Blood registry filters
-  vampirism: Vampirism[];
-  hemomancy: HemomancyCentrality[];
-  bloodPov: POV[];
+  bloodGrid: BloodFilter[];
 }
 
 // Necromancy dimension keys
@@ -58,6 +62,19 @@ export function getAllNecromancyCombinations(): NecromancyFilter[] {
   return combinations;
 }
 
+// Generate all 40 blood combinations (4 vampirism × 5 hemomancy × 2 pov)
+export function getAllBloodCombinations(): BloodFilter[] {
+  const combinations: BloodFilter[] = [];
+  for (const vampirism of VAMPIRISM_KEYS) {
+    for (const hemomancy of HEMOMANCY_KEYS) {
+      for (const pov of BLOOD_POV_KEYS) {
+        combinations.push({ vampirism, hemomancy, pov });
+      }
+    }
+  }
+  return combinations;
+}
+
 // Initial state with all necromancy checkboxes checked
 export const initialFilterState: FilterState = {
   genres: [],
@@ -73,9 +90,7 @@ export const initialFilterState: FilterState = {
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
   // Blood filters - all selected by default
-  vampirism: [...VAMPIRISM_KEYS],
-  hemomancy: [...HEMOMANCY_KEYS],
-  bloodPov: [...BLOOD_POV_KEYS],
+  bloodGrid: getAllBloodCombinations(),
 };
 
 interface FilterPanelProps {
@@ -137,7 +152,7 @@ const BLOOD_POV_LABELS: Record<POV, string> = {
   unit: 'Unit',
 };
 
-// Helper to check if a combination is selected
+// Helper to check if a necromancy combination is selected
 function isSelected(
   grid: NecromancyFilter[],
   centrality: string,
@@ -146,6 +161,18 @@ function isSelected(
 ): boolean {
   return grid.some(
     (f) => f.centrality === centrality && f.pov === pov && f.naming === naming
+  );
+}
+
+// Helper to check if a blood combination is selected
+function isBloodSelected(
+  grid: BloodFilter[],
+  vampirism: Vampirism,
+  hemomancy: HemomancyCentrality,
+  pov: POV
+): boolean {
+  return grid.some(
+    (f) => f.vampirism === vampirism && f.hemomancy === hemomancy && f.pov === pov
   );
 }
 
@@ -289,153 +316,6 @@ function ReleaseStatusCheckboxes({
         type="button"
         onClick={allSelected ? deselectAll : selectAll}
         className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
-      >
-        {allSelected ? 'Deselect all' : 'Select all'}
-      </button>
-    </div>
-  );
-}
-
-// Vampirism Checkboxes Component (Blood mode)
-function VampirismCheckboxes({
-  value,
-  onChange,
-}: {
-  value: Vampirism[];
-  onChange: (vampirism: Vampirism[]) => void;
-}) {
-  const toggleVampirism = (v: Vampirism) => {
-    if (value.includes(v)) {
-      onChange(value.filter((x) => x !== v));
-    } else {
-      onChange([...value, v]);
-    }
-  };
-
-  const selectAll = () => onChange([...VAMPIRISM_KEYS]);
-  const deselectAll = () => onChange([]);
-  const allSelected = value.length === VAMPIRISM_KEYS.length;
-
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-3">
-        {VAMPIRISM_KEYS.map((v) => (
-          <label
-            key={v}
-            className="flex items-center gap-1.5 cursor-pointer text-sm"
-          >
-            <input
-              type="checkbox"
-              checked={value.includes(v)}
-              onChange={() => toggleVampirism(v)}
-              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
-            />
-            <span className="text-gray-300">{VAMPIRISM_LABELS[v]}</span>
-          </label>
-        ))}
-      </div>
-      <button
-        type="button"
-        onClick={allSelected ? deselectAll : selectAll}
-        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
-      >
-        {allSelected ? 'Deselect all' : 'Select all'}
-      </button>
-    </div>
-  );
-}
-
-// Hemomancy Checkboxes Component (Blood mode)
-function HemomancyCheckboxes({
-  value,
-  onChange,
-}: {
-  value: HemomancyCentrality[];
-  onChange: (hemomancy: HemomancyCentrality[]) => void;
-}) {
-  const toggleHemomancy = (h: HemomancyCentrality) => {
-    if (value.includes(h)) {
-      onChange(value.filter((x) => x !== h));
-    } else {
-      onChange([...value, h]);
-    }
-  };
-
-  const selectAll = () => onChange([...HEMOMANCY_KEYS]);
-  const deselectAll = () => onChange([]);
-  const allSelected = value.length === HEMOMANCY_KEYS.length;
-
-  return (
-    <div className="space-y-2">
-      <div className="flex flex-wrap items-center gap-3">
-        {HEMOMANCY_KEYS.map((h) => (
-          <label
-            key={h}
-            className="flex items-center gap-1.5 cursor-pointer text-sm"
-          >
-            <input
-              type="checkbox"
-              checked={value.includes(h)}
-              onChange={() => toggleHemomancy(h)}
-              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
-            />
-            <span className="text-gray-300">{HEMOMANCY_LABELS[h]}</span>
-          </label>
-        ))}
-      </div>
-      <button
-        type="button"
-        onClick={allSelected ? deselectAll : selectAll}
-        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
-      >
-        {allSelected ? 'Deselect all' : 'Select all'}
-      </button>
-    </div>
-  );
-}
-
-// Blood POV Checkboxes Component (Blood mode)
-function BloodPovCheckboxes({
-  value,
-  onChange,
-}: {
-  value: POV[];
-  onChange: (pov: POV[]) => void;
-}) {
-  const togglePov = (p: POV) => {
-    if (value.includes(p)) {
-      onChange(value.filter((x) => x !== p));
-    } else {
-      onChange([...value, p]);
-    }
-  };
-
-  const selectAll = () => onChange([...BLOOD_POV_KEYS]);
-  const deselectAll = () => onChange([]);
-  const allSelected = value.length === BLOOD_POV_KEYS.length;
-
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-3">
-        {BLOOD_POV_KEYS.map((p) => (
-          <label
-            key={p}
-            className="flex items-center gap-1.5 cursor-pointer text-sm"
-          >
-            <input
-              type="checkbox"
-              checked={value.includes(p)}
-              onChange={() => togglePov(p)}
-              className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
-            />
-            <span className="text-gray-300">{BLOOD_POV_LABELS[p]}</span>
-          </label>
-        ))}
-      </div>
-      <button
-        type="button"
-        onClick={allSelected ? deselectAll : selectAll}
-        className="text-xs text-gray-500 hover:text-red-300 transition-colors"
       >
         {allSelected ? 'Deselect all' : 'Select all'}
       </button>
@@ -640,6 +520,196 @@ function NecromancyGrid({
                       onChange={() => toggleGroup(getColumnCombinations(pov, naming))}
                       className={selectAllCheckboxClass}
                       title={`Select all ${pov} ${naming}`}
+                    />
+                  </td>
+                ))}
+              </Fragment>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+// Blood Grid Component (4 vampirism × 5 hemomancy × 2 pov)
+function BloodGrid({
+  value,
+  onChange,
+}: {
+  value: BloodFilter[];
+  onChange: (grid: BloodFilter[]) => void;
+}) {
+  const toggleCell = (vampirism: Vampirism, hemomancy: HemomancyCentrality, pov: POV) => {
+    const exists = isBloodSelected(value, vampirism, hemomancy, pov);
+    if (exists) {
+      onChange(
+        value.filter(
+          (f) =>
+            !(f.vampirism === vampirism && f.hemomancy === hemomancy && f.pov === pov)
+        )
+      );
+    } else {
+      onChange([...value, { vampirism, hemomancy, pov }]);
+    }
+  };
+
+  // Helper to get all combinations for a row (vampirism level)
+  const getRowCombinations = (vampirism: Vampirism): BloodFilter[] => {
+    const combinations: BloodFilter[] = [];
+    for (const hemomancy of HEMOMANCY_KEYS) {
+      for (const pov of BLOOD_POV_KEYS) {
+        combinations.push({ vampirism, hemomancy, pov });
+      }
+    }
+    return combinations;
+  };
+
+  // Helper to get all combinations for a column (hemomancy-pov pair across all vampirism)
+  const getColumnCombinations = (hemomancy: HemomancyCentrality, pov: POV): BloodFilter[] => {
+    return VAMPIRISM_KEYS.map((vampirism) => ({ vampirism, hemomancy, pov }));
+  };
+
+  // Helper to get all combinations for a hemomancy group (both POVs for one hemomancy)
+  const getHemomancyCombinations = (hemomancy: HemomancyCentrality): BloodFilter[] => {
+    const combinations: BloodFilter[] = [];
+    for (const vampirism of VAMPIRISM_KEYS) {
+      for (const pov of BLOOD_POV_KEYS) {
+        combinations.push({ vampirism, hemomancy, pov });
+      }
+    }
+    return combinations;
+  };
+
+  // Check if all combinations in a group are selected
+  const areAllSelected = (combinations: BloodFilter[]): boolean => {
+    return combinations.every((c) =>
+      value.some(
+        (v) => v.vampirism === c.vampirism && v.hemomancy === c.hemomancy && v.pov === c.pov
+      )
+    );
+  };
+
+  // Toggle all combinations in a group
+  const toggleGroup = (combinations: BloodFilter[]) => {
+    const allSelected = areAllSelected(combinations);
+    if (allSelected) {
+      onChange(
+        value.filter(
+          (v) =>
+            !combinations.some(
+              (c) => c.vampirism === v.vampirism && c.hemomancy === v.hemomancy && c.pov === v.pov
+            )
+        )
+      );
+    } else {
+      const missing = combinations.filter(
+        (c) =>
+          !value.some(
+            (v) => v.vampirism === c.vampirism && v.hemomancy === c.hemomancy && v.pov === c.pov
+          )
+      );
+      onChange([...value, ...missing]);
+    }
+  };
+
+  const selectAllCheckboxClass = "w-4 h-4 rounded border-red-500 bg-gray-600 text-red-400 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer";
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="text-xs">
+        <thead>
+          {/* Hemomancy dimension header */}
+          <tr>
+            <th className="px-2 py-1"></th>
+            <th className="px-2 py-1"></th>
+            <th colSpan={14} className="px-2 py-1 text-center text-red-400 font-semibold">
+              Hemomancy
+            </th>
+          </tr>
+          <tr>
+            <th className="px-2 py-1"></th>
+            <th className="px-2 py-1"></th>
+            {HEMOMANCY_KEYS.map((hemomancy, index) => (
+              <Fragment key={hemomancy}>
+                {index > 0 && <th className="px-1 text-gray-600">|</th>}
+                <th colSpan={2} className="px-2 py-1 text-center border-b border-red-700/30">
+                  <label className="flex items-center justify-center gap-1.5 cursor-pointer text-red-300">
+                    <input
+                      type="checkbox"
+                      checked={areAllSelected(getHemomancyCombinations(hemomancy))}
+                      onChange={() => toggleGroup(getHemomancyCombinations(hemomancy))}
+                      className={selectAllCheckboxClass}
+                    />
+                    {HEMOMANCY_LABELS[hemomancy]}
+                  </label>
+                </th>
+              </Fragment>
+            ))}
+          </tr>
+          <tr>
+            <th className="px-2 py-1 text-red-400 font-semibold text-left">Vampirism</th>
+            <th className="px-2 py-1"></th>
+            {HEMOMANCY_KEYS.map((hemomancy, index) => (
+              <Fragment key={hemomancy}>
+                {index > 0 && <th className="px-1 text-gray-600">|</th>}
+                {BLOOD_POV_KEYS.map((pov) => (
+                  <th key={`${hemomancy}-${pov}`} className="px-2 py-1 text-center text-gray-400 font-normal">
+                    {BLOOD_POV_LABELS[pov]}
+                  </th>
+                ))}
+              </Fragment>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {VAMPIRISM_KEYS.map((vampirism) => (
+            <tr key={vampirism}>
+              <td className="px-2 py-1 text-gray-300 font-medium whitespace-nowrap">
+                {VAMPIRISM_LABELS[vampirism]}
+              </td>
+              {/* Row select-all checkbox */}
+              <td className="px-2 py-1 text-center">
+                <input
+                  type="checkbox"
+                  checked={areAllSelected(getRowCombinations(vampirism))}
+                  onChange={() => toggleGroup(getRowCombinations(vampirism))}
+                  className={selectAllCheckboxClass}
+                  title={`Select all ${VAMPIRISM_LABELS[vampirism]}`}
+                />
+              </td>
+              {HEMOMANCY_KEYS.map((hemomancy, index) => (
+                <Fragment key={hemomancy}>
+                  {index > 0 && <td className="px-1 text-gray-600">|</td>}
+                  {BLOOD_POV_KEYS.map((pov) => (
+                    <td key={`${vampirism}-${hemomancy}-${pov}`} className="px-2 py-1 text-center">
+                      <input
+                        type="checkbox"
+                        checked={isBloodSelected(value, vampirism, hemomancy, pov)}
+                        onChange={() => toggleCell(vampirism, hemomancy, pov)}
+                        className="w-4 h-4 rounded border-red-600 bg-gray-700 text-red-500 focus:ring-red-500 focus:ring-offset-gray-800 cursor-pointer"
+                      />
+                    </td>
+                  ))}
+                </Fragment>
+              ))}
+            </tr>
+          ))}
+          {/* Column select-all row */}
+          <tr className="border-t border-red-700/30">
+            <td className="px-2 py-1"></td>
+            <td className="px-2 py-1"></td>
+            {HEMOMANCY_KEYS.map((hemomancy, index) => (
+              <Fragment key={hemomancy}>
+                {index > 0 && <td className="px-1 text-gray-600">|</td>}
+                {BLOOD_POV_KEYS.map((pov) => (
+                  <td key={`col-${hemomancy}-${pov}`} className="px-2 py-1 text-center">
+                    <input
+                      type="checkbox"
+                      checked={areAllSelected(getColumnCombinations(hemomancy, pov))}
+                      onChange={() => toggleGroup(getColumnCombinations(hemomancy, pov))}
+                      className={selectAllCheckboxClass}
+                      title={`Select all ${HEMOMANCY_LABELS[hemomancy]} ${pov}`}
                     />
                   </td>
                 ))}
@@ -922,7 +992,7 @@ export default function FilterPanel({
 
   // Check for active taxonomy filters based on mode
   const hasTaxonomyFilters = isBlood
-    ? filters.vampirism.length < 4 || filters.hemomancy.length < 5 || filters.bloodPov.length < 2
+    ? filters.bloodGrid.length < 40 // 4 vampirism × 5 hemomancy × 2 pov = 40
     : filters.necromancyGrid.length < 16;
 
   const hasActiveFilters =
@@ -1060,46 +1130,18 @@ export default function FilterPanel({
 
         {/* Mode-specific taxonomy filters */}
         {isBlood ? (
-          // Blood mode: Vampirism, Hemomancy, POV checkboxes
-          <div className="flex-grow flex flex-col md:flex-row gap-6">
-            <div>
-              <label className="block text-sm text-gray-400 mb-2">Vampirism</label>
-              <VampirismCheckboxes
-                value={filters.vampirism}
-                onChange={(vampirism) => updateFilter('vampirism', vampirism)}
-              />
-              {filters.vampirism.length < 4 && (
-                <p className="text-xs text-gray-500 mt-2">
-                  {filters.vampirism.length} of 4 selected
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm text-gray-400 mb-2">Blood</label>
-              <HemomancyCheckboxes
-                value={filters.hemomancy}
-                onChange={(hemomancy) => updateFilter('hemomancy', hemomancy)}
-              />
-              {filters.hemomancy.length < 5 && (
-                <p className="text-xs text-gray-500 mt-2">
-                  {filters.hemomancy.length} of 5 selected
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm text-gray-400 mb-2">POV</label>
-              <BloodPovCheckboxes
-                value={filters.bloodPov}
-                onChange={(pov) => updateFilter('bloodPov', pov)}
-              />
-              {filters.bloodPov.length < 2 && (
-                <p className="text-xs text-gray-500 mt-2">
-                  {filters.bloodPov.length} of 2 selected
-                </p>
-              )}
-            </div>
+          // Blood mode: Grid
+          <div className="flex-grow">
+            <label className="block text-sm text-gray-400 mb-2">Degree of Sanguinity</label>
+            <BloodGrid
+              value={filters.bloodGrid}
+              onChange={(grid) => updateFilter('bloodGrid', grid)}
+            />
+            {filters.bloodGrid.length < 40 && (
+              <p className="text-xs text-gray-500 mt-2">
+                {filters.bloodGrid.length} of 40 combinations selected
+              </p>
+            )}
           </div>
         ) : (
           // Necromancy mode: Original grid

@@ -500,6 +500,17 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     if (!matchesNecromancy) return false;
   }
 
+  // Blood grid filter (only applies if not all 40 are selected)
+  if (filters.bloodGrid.length > 0 && filters.bloodGrid.length < 40) {
+    const matchesBlood = filters.bloodGrid.some(
+      (f) =>
+        game.vampirism === f.vampirism &&
+        game.hemomancy === f.hemomancy &&
+        game.pov === f.pov
+    );
+    if (!matchesBlood) return false;
+  }
+
   return true;
 };
 
