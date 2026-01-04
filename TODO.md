@@ -1,4 +1,6 @@
 # Necro Game News
+- degree of vampirism grid
+- add vampire games
 - expand to more platforms
 - weekly roundup content
 - video content

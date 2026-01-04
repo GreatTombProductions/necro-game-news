@@ -3,11 +3,11 @@ games:
   steam_id: 1604030
   classification:
     vampirism: outright
-    hemomancy: b
+    hemomancy: a
     pov: character
     availability: instant
   vampirism_notes: Play as a newly awakened vampire building your dark empire
-  hemomancy_notes: Blood essence economy, vampire power progression, blood type bonuses
+  hemomancy_notes: Blood essence economy, Blood school of magic
   priority: high
   date_updated: '2025-12-23'
 - name: 'Vampire: The Masquerade - Bloodlines'
@@ -92,3 +92,499 @@ games:
   hemomancy_notes: Necromancer blood skills
   vampirism_notes: Some vampiric powers from Season of Blood available as legendary aspectss
   date_updated: '2025-12-23'
+- name: ELDEN RING
+  steam_id: 1245620
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: gated
+  priority: high
+  date_updated: '2025-12-26'
+  hemomancy_notes: "Blood Oath Incantations"
+- name: Ravenswatch
+  steam_id: 2071280
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: gated
+  priority: high
+  date_updated: '2026-01-03'
+  vampirism_notes: "Carmilla, with abilities like Dhampir and Bat Swarm"
+  hemomancy_notes: "Dhampir trait (fueling abilities with blood) core to Carmilla gameplay, Blood Orb ability in base kit, Blood Lash and Impalement (blood spikes) ultimate options."
+- name: Path of Exile
+  steam_id: 238960
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: instant
+  hemomancy_notes: Blood magic keystone, Exsanguinate and other blood skills enable dedicated blood mage builds
+  priority: high
+  date_updated: '2025-12-25'
+- name: Grim Dawn
+  steam_id: 219990
+  classification:
+    vampirism: absent
+    hemomancy: c
+    pov: character
+    availability: instant
+  hemomancy_notes: Blood Boil modifier to Siphon Souls (Necromancer), Bloody Pox skill (Occultist)
+  priority: high
+  date_updated: '2025-12-25'
+- name: Last Epoch
+  steam_id: 899770
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: instant
+  hemomancy_notes: Acolyte class has blood skills enabling dedicated blood mage builds
+  priority: high
+  date_updated: '2025-12-25'
+- name: 'Divinity: Original Sin 2 - Definitive Edition'
+  steam_id: 435150
+  classification:
+    vampirism: absent
+    hemomancy: c
+    pov: character
+    availability: gated
+  hemomancy_notes: Necromancer skills include Blood Sucker, Raining Blood, Blood Storm
+  priority: medium
+  date_updated: '2025-12-25'
+- name: Dead by Daylight
+  steam_id: 381210
+  classification:
+    vampirism: outright
+    hemomancy: d
+    pov: character
+    availability: gated
+  vampirism_notes: Dracula is a playable killer with Vampiric Shift ability
+  hemomancy_notes: Blood mechanics in lore but minimal in gameplay
+  priority: medium
+  date_updated: '2025-12-25'
+- name: The Elder Scrolls® Online
+  steam_id: 306130
+  aliases:
+    - ESO
+    - Elder Scrolls Online
+    - The Elder Scrolls Online
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: gated 
+  vampirism_notes: Can become a vampire with dedicated skill line and transformation
+  priority: medium
+  date_updated: '2025-12-25'
+- name: "The Elder Scrolls V: Skyrim Special Edition"
+  steam_id: 489830
+  aliases:
+  - Skyrim
+  - Skyrim Special Edition
+  - "The Elder Scrolls V: Skyrim"
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: gated 
+  vampirism_notes: Vampire Lord transformation via Dawnguard, full vampire faction questline
+  hemomancy_notes: Blood Magic perk tree (3 perks) in Vampire Lord form, Dawnguard DLC
+  priority: medium
+  date_updated: '2025-12-25'
+- name: 'Total War: WARHAMMER'
+  steam_id: 364360
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: instant
+  vampirism_notes: Vampire Counts faction - play as vampire legendary lords (Mannfred, Vlad, Isabella)
+  pov_notes: Assuming you play "as" the legendary lord
+  priority: medium
+  date_updated: '2025-12-25'
+
+- name: 'Total War: WARHAMMER II'
+  steam_id: 594570
+  aliases:
+  - Total War Warhammer II
+  - 'Total War: Warhammer 2'
+  - Total War Warhammer 2
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: instant
+  vampirism_notes: Vampire Counts, Vampire Coast factions with vampire lords
+  pov_notes: Assuming you play "as" the legendary lord
+  priority: medium
+  date_updated: '2025-12-25'
+
+- name: 'Total War: WARHAMMER III'
+  steam_id: 1142710
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: instant
+  vampirism_notes: Vampire Counts, Vampire Coast factions with vampire lords
+  pov_notes: Assuming you play "as" the legendary lord
+  priority: medium
+  date_updated: '2025-12-25'
+- name: 'Immortal Realms: Vampire Wars'
+  steam_id: 1024480
+  aliases:
+    - Immortal Realms Vampire Wars
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Entire game centered on vampire clans at war
+  hemomancy_notes: Many blood abilities available to Dracul lords
+  pov_notes: Assuming you play "as" vampire lords
+  priority: high
+  date_updated: '2025-12-25'
+
+- name: Baldur's Gate 3
+  steam_id: 1086940
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: instant  # Astarion is origin character
+  vampirism_notes: Astarion is a vampire spawn origin character
+  priority: medium
+  date_updated: '2025-12-25'
+- name: 'Warcraft III: Reforged'
+  aliases:
+  - 'Warcraft 3'
+  - 'Warcraft 3: Reforged'
+  - 'Warcraft 3 Reforged'
+  - 'Warcraft III Reforged'
+  battlenet_id: warcraft-3
+  battlenet_store_id: warcraft-3-reforged
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  classification:
+    vampirism: implied
+    hemomancy: e
+    pov: unit
+    availability: instant
+  vampirism_notes: Dreadlords have vampiric abilities, Vampiric Aura for Undead
+  priority: medium
+  date_updated: '2025-12-25'
+- name: Heroes® of Might & Magic® III - HD Edition
+  aliases:
+  - Heroes of Might and Magic 3 HD Edition
+  - Heroes of Might and Magic III HD Edition
+  - Heroes of Might & Magic 3 HD Edition
+  - Heroes of Might & Magic III HD Edition
+  steam_id: 297000
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: unit
+    availability: instant
+  vampirism_notes: Vampire and Vampire Lord units in Necropolis faction
+  hemomancy_notes: Vampires have life drain but no dedicated blood magic system
+  priority: medium
+  date_updated: '2025-12-25'
+- name: World of Warcraft
+  battlenet_id: world-of-warcraft-beta
+  battlenet_store_id: world-of-warcraft-midnight
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  classification:
+    vampirism: channeled
+    hemomancy: b
+    pov: character
+    availability: instant
+  vampirism_notes: San'layn vampire race in lore, vampiric powers through Death Knight abilities
+  hemomancy_notes: Blood Death Knight spec is dedicated blood/life manipulation tank spec
+  price_notes: Monthly subscription
+  priority: medium
+  date_updated: '2025-12-25'
+- name: Hearthstone
+  battlenet_id: hearthstone
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: gated
+  vampirism_notes: Death Knight hero uses vampiric themes, vampire minion cards
+  hemomancy_notes: Blood rune cards form dedicated archetype within Death Knight class
+  pov_notes: "Play as the death knight, summon vampire units"
+  priority: medium
+  date_updated: '2025-12-25'
+- name: Heroes of the Storm
+  battlenet_id: heroes-of-the-storm
+  battlenet_store_id: heroes-of-the-storm
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena) game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft, and Overwatch battle in 5v5 matches
+  genres:
+  - MOBA
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: gated
+  vampirism_notes: Heroes like Mal'Ganis, with abilities such as Vampiric Touch
+  priority: medium
+  date_updated: '2026-01-03'
+- name: Age of Wonders 4
+  steam_id: 1669000
+  aliases:
+  - "Age of Wonders IV"
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Elder Vampire ruler class
+  hemomancy_notes: Tome of Blood Rite, blood magic abilities central to Elder Vampire gameplay
+  price_notes: Requires Thrones of Blood DLC (~19.99 USD)
+  priority: medium
+  date_updated: '2026-01-03'
+- name: Night Swarm
+  steam_id: 3668370
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Play as a vampire
+  hemomancy_notes: Many blood themed abilities ("relics")
+  priority: medium
+  date_updated: '2026-01-03'
+- name: Dungeons 4
+  steam_id: 1643310
+  classification:
+    vampirism: outright
+    hemomancy: d
+    pov: unit
+    availability: gated
+  vampirism_notes: Vampire Queen unit
+  hemomancy_notes: Vampire Queen attacks with a blood magic animation
+  priority: high
+  date_updated: '2026-01-03'
+  dimension_2_notes: Assuming you play as the Absolute Evil (disembodied presence/hand)
+- name: BALL x PIT
+  steam_id: 2062430
+  classification:
+    vampirism: channeled
+    hemomancy: d
+    pov: character
+    availability: gated
+  vampirism_notes: Vampire Balls and their evolutions
+  hemomancy_notes: Bleed balls, Vampiric Sword, Everflowing Goblet minimally hemomancy themed
+  priority: low
+  date_updated: '2026-01-03'
+- name: Rogue Lords
+  steam_id: 1069690
+  classification:
+    vampirism: outright
+    hemomancy: c
+    pov: unit
+    availability: instant
+  vampirism_notes: Dracula as one of the starting disciples
+  hemomancy_notes: Some blood-themed abilities for Dracula
+  pov_notes: Play as the Devil, commanding Dracula
+  priority: low
+  date_updated: '2026-01-03'
+- name: Diablo III
+  aliases:
+  - 'Diablo 3'
+  - 'Diablo III: Reaper of Souls'
+  - 'Diablo 3: Reaper of Souls'
+  - 'Diablo 3: Rise of the Necromancer'
+  - 'Diablo III: Rise of the Necromancer'
+  battlenet_id: diablo-3
+  battlenet_store_id: diablo-iii
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Action RPG where players battle the forces of evil in Sanctuary.
+    Necromancer class available via Rise of the Necromancer DLC.
+  genres:
+  - Action RPG
+  - Hack and Slash
+  price_notes: Base game + DLC
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: gated
+  hemomancy_notes: Blood runes for Necromancer skills, Trag'Oul set
+  priority: high
+  date_updated: '2026-01-03'
+- name: Diablo Immortal
+  battlenet_id: diablo-immortal
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Free-to-play mobile and PC action RPG set between Diablo II and
+    III. Features the Necromancer class with corpse explosion and skeletal minions.
+  genres:
+  - Action RPG
+  - Mobile
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: instant
+  vampirism_notes: Blood Knight class
+  hemomancy_notes: Plenty of blood-themed abilities for Necromancer and Blood Knight
+  priority: high
+  date_updated: '2026-01-03'
+- name: 'Iratus: Lord of the Dead'
+  steam_id: 807120
+  classification:
+    vampirism: outright
+    hemomancy: c
+    pov: unit
+    availability: instant
+  vampirism_notes: Vampire and Dhampir minions
+  hemomancy_notes: Vampire and Dhampir have some blood-themed abilities
+  pov_notes: Play as Iratus, commanding vampiric minions
+  priority: medium
+  date_updated: '2026-01-03'
+- name: Decks of the Damned
+  steam_id: 2159900
+  classification:
+    vampirism: outright
+    hemomancy: d
+    pov: character
+    availability: instant
+  vampirism_notes: Play as a vampire
+  hemomancy_notes: Crafting systems appears to be powered by blood magic
+  priority: high
+  date_updated: '2026-01-03'
+- name: The Unliving
+  steam_id: 986040
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: gated
+  hemomancy_notes: Blood is one of the 4 main essences, with spells that manipulate it
+  priority: high
+  date_updated: '2026-01-03'
+- name: Kingdom Rush Vengeance - Tower Defense
+  steam_id: 1367550
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: gated
+  vampirism_notes: Margosa the Vampire Mistress hero
+  priority: high
+  date_updated: '2026-01-03'
+- name: 'Tainted Grail: Conquest'
+  steam_id: 1199030
+  classification:
+    vampirism: absent
+    hemomancy: a
+    pov: character
+    availability: gated
+  hemomancy_notes: Blood Mage class
+  priority: medium
+  date_updated: '2026-01-03'
+- name: Boneraiser Minions
+  steam_id: 1944570
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: character
+    availability: gated
+  vampirism_notes: Vampire Survivor class
+  priority: medium
+  date_updated: '2026-01-03'
+- name: 'Pathfinder: Wrath of the Righteous - Enhanced Edition'
+  steam_id: 1184370
+  aliases:
+  - Pathfinder Wrath of the Righteous Enhanced Edition
+  - "Pathfinder: Wrath of the Righteous Enhanced Edition"
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: character
+    availability: instant
+  vampirism_notes: Dhampir race
+  hemomancy_notes: Cruoromancer subclass - 'To those who know how to manipulate it, the blood of a dhampir can be a powerful component to magic'
+  priority: medium
+  date_updated: '2026-01-03'
+- name: 'Diablo II: Resurrected'
+  aliases:
+  - 'Diablo 2 Resurrected'
+  - 'Diablo II Resurrected'
+  - 'Diablo 2: Resurrected'
+  battlenet_id: diablo-2-resurrected
+  battlenet_store_id: diablo-ii-resurrected
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Remastered version of the classic action RPG. The Necromancer
+    class is one of the original iconic character choices.
+  genres:
+  - Action RPG
+  - Hack and Slash
+  classification:
+    vampirism: channeled
+    hemomancy: c
+    pov: character
+    availability: gated
+  vampirism_notes: Trang-Oul's Avatar set transforms Necromancer into Vampire
+  hemomancy_notes: Blood Golem and (arguably) Corpse Explosion Necromancer skills
+  priority: high
+  date_updated: '2026-01-03'
+- name: Warcraft Rumble
+  battlenet_id: warcraft-rumble
+  platforms:
+  - battlenet
+  primary_platform: battlenet
+  short_description: Mobile action strategy game featuring collectible Warcraft minis.
+    Undead faction with necromancer units.
+  genres:
+  - Mobile
+  - Strategy
+  classification:
+    vampirism: channeled
+    hemomancy: e
+    pov: unit
+    availability: gated
+  vampirism_notes: Vampirism talent for Undead faction's Cheat Death spell
+  priority: medium
+  date_updated: '2026-01-03'
+- name: "Necromancer Accountant"
+  steam_id: 696160
+  platforms:
+  - steam
+  classification:
+    vampirism: outright
+    hemomancy: e
+    pov: unit
+    availability: instant
+  vampirism_notes: "Vampire minions available"
+  priority: medium
+  date_updated: '2026-01-03'
+- name: "Worship"
+  steam_id: 1548180
+  platforms:
+  - steam
+  classification:
+    vampirism: absent
+    hemomancy: c
+    pov: character
+    availability: gated
+  vampirism_notes: "Blood Combustion ritual"
+  priority: medium
+  date_updated: '2026-01-03'
