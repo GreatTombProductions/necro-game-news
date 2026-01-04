@@ -172,7 +172,7 @@ games:
     - The Elder Scrolls Online
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: gated 
   vampirism_notes: Can become a vampire with dedicated skill line and transformation
@@ -197,7 +197,7 @@ games:
   steam_id: 364360
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: instant
   vampirism_notes: Vampire Counts faction - play as vampire legendary lords (Mannfred, Vlad, Isabella)
@@ -213,7 +213,7 @@ games:
   - Total War Warhammer 2
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: instant
   vampirism_notes: Vampire Counts, Vampire Coast factions with vampire lords
@@ -225,7 +225,7 @@ games:
   steam_id: 1142710
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: instant
   vampirism_notes: Vampire Counts, Vampire Coast factions with vampire lords
@@ -251,7 +251,7 @@ games:
   steam_id: 1086940
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: instant  # Astarion is origin character
   vampirism_notes: Astarion is a vampire spawn origin character
@@ -270,7 +270,7 @@ games:
   primary_platform: battlenet
   classification:
     vampirism: implied
-    hemomancy: e
+    hemomancy: absent
     pov: unit
     availability: instant
   vampirism_notes: Dreadlords have vampiric abilities, Vampiric Aura for Undead
@@ -285,7 +285,7 @@ games:
   steam_id: 297000
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: unit
     availability: instant
   vampirism_notes: Vampire and Vampire Lord units in Necropolis faction
@@ -334,7 +334,7 @@ games:
   - MOBA
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: gated
   vampirism_notes: Heroes like Mal'Ganis, with abilities such as Vampiric Touch
@@ -482,7 +482,7 @@ games:
   steam_id: 1367550
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: gated
   vampirism_notes: Margosa the Vampire Mistress hero
@@ -502,7 +502,7 @@ games:
   steam_id: 1944570
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: character
     availability: gated
   vampirism_notes: Vampire Survivor class
@@ -558,7 +558,7 @@ games:
   - Strategy
   classification:
     vampirism: channeled
-    hemomancy: e
+    hemomancy: absent
     pov: unit
     availability: gated
   vampirism_notes: Vampirism talent for Undead faction's Cheat Death spell
@@ -570,7 +570,7 @@ games:
   - steam
   classification:
     vampirism: outright
-    hemomancy: e
+    hemomancy: absent
     pov: unit
     availability: instant
   vampirism_notes: "Vampire minions available"

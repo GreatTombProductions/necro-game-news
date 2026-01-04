@@ -444,31 +444,44 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
     if (gamePrice > maxPrice) return false;
   }
 
-  // Early Access filter (exclude if not checked, unless game has no genres/tags)
-  if (!filters.includeEarlyAccess) {
+  // Early Access filter (only applies if not all are selected)
+  if (filters.earlyAccess.length > 0 && filters.earlyAccess.length < 2) {
     const hasEarlyAccess = game.genres.includes('Early Access') || game.steam_tags?.includes('Early Access');
-    // Only exclude if the game actually has tags/genres and includes Early Access
-    if (hasEarlyAccess && game.genres.length > 0) return false;
+    const isEarlyAccessGame = hasEarlyAccess && game.genres.length > 0;
+
+    if (filters.earlyAccess.includes('early_access') && !isEarlyAccessGame) return false;
+    if (filters.earlyAccess.includes('full_release') && isEarlyAccessGame) return false;
   }
 
-  // Unreleased filter (exclude games with future release dates)
-  if (!filters.includeUnreleased && game.release_date) {
-    const releaseDate = game.release_date.toLowerCase();
-    // Check for common unreleased indicators
-    if (releaseDate.includes('coming soon') || releaseDate.includes('tba') || releaseDate.includes('tbd')) {
-      return false;
+  // Release Status filter (only applies if not all are selected)
+  if (filters.releaseStatus.length > 0 && filters.releaseStatus.length < 2) {
+    // Determine if game is unreleased
+    // Games with no release date are considered unreleased
+    let isUnreleased = !game.release_date;
+
+    if (game.release_date) {
+      const releaseDate = game.release_date.toLowerCase();
+      // Check for common unreleased indicators
+      if (releaseDate.includes('coming soon') || releaseDate.includes('tba') || releaseDate.includes('tbd')) {
+        isUnreleased = true;
+      } else {
+        // Check if it's a year-only format (e.g., "2026")
+        const yearMatch = game.release_date.match(/^\d{4}$/);
+        if (yearMatch) {
+          const year = parseInt(yearMatch[0], 10);
+          if (year > new Date().getFullYear()) isUnreleased = true;
+        } else {
+          // Check if it's a parseable date in the future
+          const parsedDate = new Date(game.release_date);
+          if (!isNaN(parsedDate.getTime()) && parsedDate > new Date()) {
+            isUnreleased = true;
+          }
+        }
+      }
     }
-    // Check if it's a year-only format (e.g., "2026")
-    const yearMatch = game.release_date.match(/^\d{4}$/);
-    if (yearMatch) {
-      const year = parseInt(yearMatch[0], 10);
-      if (year > new Date().getFullYear()) return false;
-    }
-    // Check if it's a parseable date in the future
-    const parsedDate = new Date(game.release_date);
-    if (!isNaN(parsedDate.getTime()) && parsedDate > new Date()) {
-      return false;
-    }
+
+    if (filters.releaseStatus.includes('released') && isUnreleased) return false;
+    if (filters.releaseStatus.includes('unreleased') && !isUnreleased) return false;
   }
 
   // Availability filter (only applies if not all 3 are selected)

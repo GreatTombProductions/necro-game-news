@@ -10,6 +10,8 @@ export interface NecromancyFilter {
 }
 
 export type Availability = 'instant' | 'gated' | 'unknown';
+export type EarlyAccessFilter = 'early_access' | 'full_release';
+export type ReleaseStatusFilter = 'released' | 'unreleased';
 
 export interface FilterState {
   genres: string[];
@@ -20,8 +22,8 @@ export interface FilterState {
   lastUpdatedTo: string;
   priceMin: string;
   priceMax: string;
-  includeEarlyAccess: boolean;
-  includeUnreleased: boolean;
+  earlyAccess: EarlyAccessFilter[];
+  releaseStatus: ReleaseStatusFilter[];
   availability: Availability[];
   necromancyGrid: NecromancyFilter[];
   // Blood registry filters
@@ -35,6 +37,8 @@ const CENTRALITY_KEYS = ['a', 'b', 'c', 'd'] as const;
 const POV_KEYS = ['character', 'unit'] as const;
 const NAMING_KEYS = ['explicit', 'implied'] as const;
 const AVAILABILITY_KEYS: Availability[] = ['instant', 'gated', 'unknown'];
+const EARLY_ACCESS_KEYS: EarlyAccessFilter[] = ['early_access', 'full_release'];
+const RELEASE_STATUS_KEYS: ReleaseStatusFilter[] = ['released', 'unreleased'];
 
 // Blood dimension keys
 const VAMPIRISM_KEYS: Vampirism[] = ['outright', 'implied', 'channeled', 'absent'];
@@ -64,8 +68,8 @@ export const initialFilterState: FilterState = {
   lastUpdatedTo: '',
   priceMin: '',
   priceMax: '',
-  includeEarlyAccess: true,
-  includeUnreleased: false,
+  earlyAccess: [...EARLY_ACCESS_KEYS],
+  releaseStatus: ['released'], // Default to showing only released games
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
   // Blood filters - all selected by default
@@ -98,6 +102,18 @@ const AVAILABILITY_LABELS: Record<Availability, string> = {
   instant: 'Instant',
   gated: 'Gated',
   unknown: 'Unknown',
+};
+
+// Early Access labels
+const EARLY_ACCESS_LABELS: Record<EarlyAccessFilter, string> = {
+  early_access: 'Early Access',
+  full_release: 'Full Release',
+};
+
+// Release Status labels
+const RELEASE_STATUS_LABELS: Record<ReleaseStatusFilter, string> = {
+  released: 'Released',
+  unreleased: 'Unreleased',
 };
 
 // Blood dimension labels
@@ -168,6 +184,104 @@ function AvailabilityCheckboxes({
               className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
             />
             <span className="text-gray-300">{AVAILABILITY_LABELS[avail]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+// Early Access Checkboxes Component
+function EarlyAccessCheckboxes({
+  value,
+  onChange,
+}: {
+  value: EarlyAccessFilter[];
+  onChange: (earlyAccess: EarlyAccessFilter[]) => void;
+}) {
+  const toggleEarlyAccess = (ea: EarlyAccessFilter) => {
+    if (value.includes(ea)) {
+      onChange(value.filter((a) => a !== ea));
+    } else {
+      onChange([...value, ea]);
+    }
+  };
+
+  const selectAll = () => onChange([...EARLY_ACCESS_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === EARLY_ACCESS_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {EARLY_ACCESS_KEYS.map((ea) => (
+          <label
+            key={ea}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(ea)}
+              onChange={() => toggleEarlyAccess(ea)}
+              className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{EARLY_ACCESS_LABELS[ea]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+// Release Status Checkboxes Component
+function ReleaseStatusCheckboxes({
+  value,
+  onChange,
+}: {
+  value: ReleaseStatusFilter[];
+  onChange: (releaseStatus: ReleaseStatusFilter[]) => void;
+}) {
+  const toggleReleaseStatus = (rs: ReleaseStatusFilter) => {
+    if (value.includes(rs)) {
+      onChange(value.filter((a) => a !== rs));
+    } else {
+      onChange([...value, rs]);
+    }
+  };
+
+  const selectAll = () => onChange([...RELEASE_STATUS_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === RELEASE_STATUS_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {RELEASE_STATUS_KEYS.map((rs) => (
+          <label
+            key={rs}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(rs)}
+              onChange={() => toggleReleaseStatus(rs)}
+              className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{RELEASE_STATUS_LABELS[rs]}</span>
           </label>
         ))}
       </div>
@@ -820,8 +934,8 @@ export default function FilterPanel({
     filters.lastUpdatedTo ||
     filters.priceMin ||
     filters.priceMax ||
-    !filters.includeEarlyAccess ||
-    !filters.includeUnreleased ||
+    filters.earlyAccess.length < 2 || // Less than all 2 = filter active
+    filters.releaseStatus.length < 2 || // Less than all 2 = filter active
     filters.availability.length < 3 || // Less than all 3 = filter active
     hasTaxonomyFilters;
 
@@ -897,51 +1011,32 @@ export default function FilterPanel({
           />
         </div>
 
-        {/* Early Access & Unreleased Toggles */}
-        <div className="flex gap-6">
-          <div>
-            <label className="block text-sm text-gray-400 mb-1">Early Access</label>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => updateFilter('includeEarlyAccess', !filters.includeEarlyAccess)}
-                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
-                  filters.includeEarlyAccess ? 'bg-purple-600' : 'bg-gray-600'
-                }`}
-              >
-                <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
-                    filters.includeEarlyAccess ? 'translate-x-7' : 'translate-x-1'
-                  }`}
-                />
-              </button>
-              <span className="text-sm text-gray-400">
-                {filters.includeEarlyAccess ? 'Included' : 'Excluded'}
-              </span>
-            </div>
-          </div>
+        {/* Early Access */}
+        <div>
+          <label className="block text-sm text-gray-400 mb-1">Early Access</label>
+          <EarlyAccessCheckboxes
+            value={filters.earlyAccess}
+            onChange={(earlyAccess) => updateFilter('earlyAccess', earlyAccess)}
+          />
+          {filters.earlyAccess.length < 2 && (
+            <p className="text-xs text-gray-500 mt-2">
+              {filters.earlyAccess.length} of 2 selected
+            </p>
+          )}
+        </div>
 
-          <div>
-            <label className="block text-sm text-gray-400 mb-1">Unreleased</label>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => updateFilter('includeUnreleased', !filters.includeUnreleased)}
-                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/20 ${
-                  filters.includeUnreleased ? 'bg-purple-600' : 'bg-gray-600'
-                }`}
-              >
-                <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
-                    filters.includeUnreleased ? 'translate-x-7' : 'translate-x-1'
-                  }`}
-                />
-              </button>
-              <span className="text-sm text-gray-400">
-                {filters.includeUnreleased ? 'Included' : 'Excluded'}
-              </span>
-            </div>
-          </div>
+        {/* Release Status */}
+        <div>
+          <label className="block text-sm text-gray-400 mb-1">Release Status</label>
+          <ReleaseStatusCheckboxes
+            value={filters.releaseStatus}
+            onChange={(releaseStatus) => updateFilter('releaseStatus', releaseStatus)}
+          />
+          {filters.releaseStatus.length < 2 && (
+            <p className="text-xs text-gray-500 mt-2">
+              {filters.releaseStatus.length} of 2 selected
+            </p>
+          )}
         </div>
       </div>
 
@@ -1034,8 +1129,8 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.announcementDateFrom || filters.announcementDateTo) count++;
   if (filters.lastUpdatedFrom || filters.lastUpdatedTo) count++;
   if (filters.priceMin || filters.priceMax) count++;
-  if (!filters.includeEarlyAccess) count++;
-  if (!filters.includeUnreleased) count++;
+  if (filters.earlyAccess.length < 2) count++; // Only count if some are deselected
+  if (filters.releaseStatus.length < 2) count++; // Only count if some are deselected
   if (filters.availability.length < 3) count++; // Only count if some are deselected
   if (filters.necromancyGrid.length < 16) count++; // Only count if some are deselected
   return count;
