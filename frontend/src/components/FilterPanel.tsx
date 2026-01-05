@@ -49,7 +49,7 @@ const GAME_TYPE_KEYS: GameTypeFilter[] = ['game', 'mod'];
 
 const GAME_TYPE_LABELS: Record<GameTypeFilter, string> = {
   game: 'Games',
-  mod: 'Mods',
+  mod: 'Mods (full conversion / expansive)',
 };
 
 // Blood dimension keys

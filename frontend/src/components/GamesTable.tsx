@@ -348,7 +348,7 @@ const BLOOD_TAXONOMY_INFO = {
     description: 'When the vampire/blood magic becomes available to the player',
     values: [
       { key: 'instant', label: 'Instant', color: 'text-red-400', description: 'Vampire/blood magic always available immediately from the start' },
-      { key: 'gated', label: 'Gated', color: 'text-orange-400', description: 'Vampire/blood magic takes time or progression to unlock' },
+      { key: 'gated', label: 'Gated', color: 'text-orange-400', description: 'Vampire/blood magic takes time or progression to unlock, or is not deterministically available' },
       { key: 'unknown', label: 'Unknown', color: 'text-gray-500', description: 'Availability not yet determined' },
     ],
   },
