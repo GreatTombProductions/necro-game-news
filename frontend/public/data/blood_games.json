@@ -54,7 +54,7 @@
     "aliases": [
       "Age of Wonders IV"
     ],
-    "last_checked": "2026-01-04 09:49:50.327452",
+    "last_checked": "2026-01-05 12:21:49.179262",
     "update_count": 47,
     "last_update": "2025-12-09 06:12:53",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185498",
@@ -110,7 +110,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:54.839047",
+    "last_checked": "2026-01-05 12:21:53.653818",
     "update_count": 19,
     "last_update": "2025-11-05 08:51:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768233693",
@@ -178,7 +178,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:56.303223",
+    "last_checked": "2026-01-05 12:21:55.141249",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010720",
@@ -247,7 +247,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:06.923609",
+    "last_checked": "2026-01-05 12:22:05.640252",
     "update_count": 50,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
@@ -315,7 +315,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:21.942026",
+    "last_checked": "2026-01-05 12:22:20.969133",
     "update_count": 39,
     "last_update": "2025-07-29 13:32:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758782015",
@@ -381,7 +381,7 @@
       "Action"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:25.075168",
+    "last_checked": "2026-01-05 12:22:23.689146",
     "update_count": 27,
     "last_update": "2025-12-09 07:30:19",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185704",
@@ -438,15 +438,15 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:30.992873",
-    "update_count": 12,
-    "last_update": "2025-11-28 03:22:40",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
-    "last_update_title": "Patch Note - 1.1.1",
-    "last_announcement": "2025-11-28 03:22:40",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467039005",
-    "last_announcement_title": "Patch Note - 1.1.1",
-    "last_announcement_content": "Balancing Spawn chance improved for Ettin, Centaur, Genderuwo (from 18% to 23%) Ents spawn every 3-4 minutes instead of every 4-5 minutes Wild status effect chance for monsters lowered from 66% to 45% (When curse level 3 is active) Fixes Localization fix for quests ",
+    "last_checked": "2026-01-05 12:22:29.761285",
+    "update_count": 13,
+    "last_update": "2026-01-05 08:40:55",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365123838",
+    "last_update_title": "Patch Note - 1.1.2",
+    "last_announcement": "2026-01-05 08:40:55",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365123838",
+    "last_announcement_title": "Patch Note - 1.1.2",
+    "last_announcement_content": "Changes New feature: Recipes are now sold by the merchant. Bugfixes Fixed a bug : trapped enemies sometimes started moving while trapped, making them unstoppable and killing all vampires in their coffins. Fixed a bug : Migration issue where treasure chests (and possibly other cards) were not always ...",
     "pov": "character",
     "availability": "instant",
     "pov_notes": "",
@@ -498,7 +498,7 @@
       "Diablo II Resurrected",
       "Diablo 2: Resurrected"
     ],
-    "last_checked": "2026-01-04 09:49:38.519425",
+    "last_checked": "2026-01-05 12:21:37.543794",
     "update_count": 20,
     "last_update": "2022-06-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/23814050/diablo-ii-resurrected-patch-2-4-3-now-live",
@@ -560,7 +560,7 @@
       "Diablo 3: Rise of the Necromancer",
       "Diablo III: Rise of the Necromancer"
     ],
-    "last_checked": "2026-01-04 09:49:36.456227",
+    "last_checked": "2026-01-05 12:21:35.538041",
     "update_count": 21,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -616,15 +616,15 @@
       "Mobile"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:37.271062",
-    "update_count": 24,
+    "last_checked": "2026-01-05 12:21:36.400083",
+    "update_count": 25,
     "last_update": "2025-11-18 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24166781/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
     "last_update_title": "Diablo Immortal Bug Fixes and Patch Notes for All Platforms",
-    "last_announcement": "2025-12-15 14:00:00",
-    "last_announcement_url": "https://news.blizzard.com/en-us/article/24244451/deliver-sanctuary-from-madness",
-    "last_announcement_title": "Deliver Sanctuary from Madness",
-    "last_announcement_content": "Prepare for the end of The Epoch of Madness. Earn powerful Ancient Legendary Items, hunt down new Legendary Gems, and slay through new Difficulties. ",
+    "last_announcement": "2026-01-05 14:00:00",
+    "last_announcement_url": "https://news.blizzard.com/en-us/article/24247151/reunite-the-shattered-wilds",
+    "last_announcement_title": "Reunite the Shattered Wilds",
+    "last_announcement_content": "Slay through the Shattered Wilds Limited-time Event and the Boreal Nomads Battlepass.",
     "pov": "character",
     "availability": "instant",
     "pov_notes": "",
@@ -687,7 +687,7 @@
       "Diablo 4",
       "D4"
     ],
-    "last_checked": "2026-01-04 09:50:32.487667",
+    "last_checked": "2026-01-05 12:22:31.199852",
     "update_count": 5,
     "last_update": "2025-12-16 15:16:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365083889",
@@ -755,7 +755,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:37.041504",
+    "last_checked": "2026-01-05 12:22:35.682382",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -822,7 +822,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:53.655015",
+    "last_checked": "2026-01-05 12:22:52.230124",
     "update_count": 54,
     "last_update": "2025-12-09 06:01:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
@@ -889,7 +889,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:50:55.137671",
+    "last_checked": "2026-01-05 12:22:53.801335",
     "update_count": 8,
     "last_update": "2025-12-15 23:05:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592134836",
@@ -958,7 +958,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:51:13.275676",
+    "last_checked": "2026-01-05 12:23:12.888811",
     "update_count": 43,
     "last_update": "2025-06-26 10:05:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891514590",
@@ -1014,7 +1014,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:42.624339",
+    "last_checked": "2026-01-05 12:21:41.412523",
     "update_count": 27,
     "last_update": "2025-12-12 16:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24250382/34-2-2-patch-notes",
@@ -1069,7 +1069,7 @@
       "MOBA"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:35.563821",
+    "last_checked": "2026-01-05 12:21:34.864266",
     "update_count": 6,
     "last_update": "2025-12-12 19:56:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24252009/heroes-of-the-storm-balance-patch-notes-december-12-2025",
@@ -1141,7 +1141,7 @@
       "Heroes of Might & Magic 3 HD Edition",
       "Heroes of Might & Magic III HD Edition"
     ],
-    "last_checked": "2026-01-04 09:51:26.837668",
+    "last_checked": "2026-01-05 12:23:25.408506",
     "update_count": 15,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -1211,7 +1211,7 @@
     "aliases": [
       "Immortal Realms Vampire Wars"
     ],
-    "last_checked": "2026-01-04 09:51:30.808540",
+    "last_checked": "2026-01-05 12:23:28.391718",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -1279,7 +1279,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:51:32.878992",
+    "last_checked": "2026-01-05 12:23:31.487704",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -1345,7 +1345,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:51:40.364442",
+    "last_checked": "2026-01-05 12:23:38.958558",
     "update_count": 51,
     "last_update": "2025-09-25 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772249766",
@@ -1414,7 +1414,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:51:43.431552",
+    "last_checked": "2026-01-05 12:23:42.144436",
     "update_count": 36,
     "last_update": "2025-10-16 09:02:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388942146",
@@ -1479,7 +1479,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:09.007232",
+    "last_checked": "2026-01-05 12:24:07.444824",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1537,7 +1537,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:22.637512",
+    "last_checked": "2026-01-05 12:24:21.033489",
     "update_count": 14,
     "last_update": "2025-12-16 11:03:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
@@ -1608,7 +1608,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:31.619449",
+    "last_checked": "2026-01-05 12:24:30.025593",
     "update_count": 35,
     "last_update": "2025-11-11 13:43:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768436752",
@@ -1678,15 +1678,15 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:33.157097",
-    "update_count": 59,
+    "last_checked": "2026-01-05 12:24:31.584026",
+    "update_count": 60,
     "last_update": "2025-12-22 12:03:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365102713",
     "last_update_title": "New Path of Exile 2 Displates Are Now Available",
-    "last_announcement": "2026-01-01 13:00:57",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365117644",
-    "last_announcement_title": "The Last of the Druids Original Soundtrack",
-    "last_announcement_content": "Path of Exile 2: The Last of the Druids includes a number of new music tracks from composer Kamil Orman-Janowski. Featuring the bestial beats of the druid and the sacrificial symphony of the Vaal, check out the tracks on Kamil's YouTube channel herehere, or a few of the highlights below! ",
+    "last_announcement": "2026-01-04 12:10:50",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365122243",
+    "last_announcement_title": "The Last of the Druids Mystery Box Concept Art",
+    "last_announcement_content": "We recently released The Last of the Druids Mystery Box! With 63 microtransactions inside (including variations), our artists put a lot of effort into making each one look great. Check out some of the concept art for this box in today's news post. Stormborne Armour Pieces {STEAM_CLAN_IMAGE}/44770983...",
     "pov": "character",
     "availability": "gated",
     "pov_notes": "",
@@ -1751,7 +1751,7 @@
       "Pathfinder Wrath of the Righteous Enhanced Edition",
       "Pathfinder: Wrath of the Righteous Enhanced Edition"
     ],
-    "last_checked": "2026-01-04 09:52:36.184540",
+    "last_checked": "2026-01-05 12:24:34.630722",
     "update_count": 48,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -1818,7 +1818,7 @@
       "Adventure"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:39.176001",
+    "last_checked": "2026-01-05 12:24:37.671992",
     "update_count": 42,
     "last_update": "2025-09-17 01:00:21",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915351736",
@@ -1885,7 +1885,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:52:43.944341",
+    "last_checked": "2026-01-05 12:24:42.019248",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -1953,7 +1953,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:13.800860",
+    "last_checked": "2026-01-05 12:25:12.032614",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -2023,7 +2023,7 @@
       "Skyrim Special Edition",
       "The Elder Scrolls V: Skyrim"
     ],
-    "last_checked": "2026-01-04 09:53:25.901030",
+    "last_checked": "2026-01-05 12:25:24.070320",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -2096,7 +2096,7 @@
       "Elder Scrolls Online",
       "The Elder Scrolls Online"
     ],
-    "last_checked": "2026-01-04 09:53:27.535556",
+    "last_checked": "2026-01-05 12:25:25.609442",
     "update_count": 32,
     "last_update": "2025-10-28 06:49:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641608211",
@@ -2165,7 +2165,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:31.911707",
+    "last_checked": "2026-01-05 12:25:30.658806",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -2232,7 +2232,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:36.415374",
+    "last_checked": "2026-01-05 12:25:34.645824",
     "update_count": 21,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -2303,7 +2303,7 @@
       "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
-    "last_checked": "2026-01-04 09:53:37.938868",
+    "last_checked": "2026-01-05 12:25:36.152075",
     "update_count": 24,
     "last_update": "2021-09-22 07:02:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406866364677",
@@ -2370,7 +2370,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:39.420791",
+    "last_checked": "2026-01-05 12:25:37.611830",
     "update_count": 42,
     "last_update": "2025-12-17 07:02:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086949",
@@ -2438,7 +2438,7 @@
       "Massively Multiplayer"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:46.996610",
+    "last_checked": "2026-01-05 12:25:45.443147",
     "update_count": 35,
     "last_update": "2025-12-17 02:11:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086118",
@@ -2507,7 +2507,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:48.542601",
+    "last_checked": "2026-01-05 12:25:46.722250",
     "update_count": 15,
     "last_update": "2025-10-31 08:02:54",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432907004",
@@ -2579,7 +2579,7 @@
       "VTM Bloodlines",
       "VTM: Bloodlines"
     ],
-    "last_checked": "2026-01-04 09:53:50.051308",
+    "last_checked": "2026-01-05 12:25:48.371712",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -2646,7 +2646,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:53:51.592701",
+    "last_checked": "2026-01-05 12:25:49.728114",
     "update_count": 31,
     "last_update": "2018-06-01 02:55:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358622000374354",
@@ -2707,7 +2707,7 @@
       "Warcraft 3 Reforged",
       "Warcraft III Reforged"
     ],
-    "last_checked": "2026-01-04 09:49:41.701745",
+    "last_checked": "2026-01-05 12:21:40.574831",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -2763,7 +2763,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:40.341897",
+    "last_checked": "2026-01-05 12:21:39.367278",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -2818,7 +2818,7 @@
       "MMORPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:49:39.525490",
+    "last_checked": "2026-01-05 12:21:38.661481",
     "update_count": 34,
     "last_update": "2025-12-23 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244426/what-to-do-before-the-midnight-pre-expansion-content-update",
@@ -2877,7 +2877,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-01-04 09:54:00.536982",
+    "last_checked": "2026-01-05 12:25:58.805286",
     "update_count": 43,
     "last_update": "2025-11-05 13:40:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768240224",
