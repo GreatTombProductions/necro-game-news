@@ -14,6 +14,7 @@ import { PLATFORM_INFO, getStoreUrl } from '../types';
 import SubmissionForm from './SubmissionForm';
 import FilterPanel, {
   type FilterState,
+  type GameTypeFilter,
   initialFilterState,
   countActiveFilters,
 } from './FilterPanel';
@@ -483,6 +484,12 @@ const combinedFilterFn: FilterFn<Game> = (row, _columnId, filterValue: CombinedF
 
     if (filters.releaseStatus.includes('released') && isUnreleased) return false;
     if (filters.releaseStatus.includes('unreleased') && !isUnreleased) return false;
+  }
+
+  // Game Type filter (only applies if not all are selected)
+  if (filters.gameType.length > 0 && filters.gameType.length < 2) {
+    const gameType = game.app_type || 'game'; // Default to 'game' if not set
+    if (!filters.gameType.includes(gameType as GameTypeFilter)) return false;
   }
 
   // Availability filter (only applies if not all 3 are selected)

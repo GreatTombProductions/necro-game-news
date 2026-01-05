@@ -80,7 +80,7 @@ def find_existing_game(cursor, game: dict):
     select_fields = """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases, date_updated,
-               registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes
+               registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes, app_type
                FROM games"""
 
     # Try steam_id first (most common)
@@ -354,6 +354,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
         price_notes = game.get('price_notes')
         aliases = game.get('aliases', [])
         date_updated = game.get('date_updated')  # Manual override for last update date
+        app_type = game.get('app_type')  # Manual app_type (e.g., 'mod')
 
         # Validate primary_platform
         if primary_platform not in VALID_PLATFORMS:
@@ -382,6 +383,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 old_vampirism_notes = existing[20]
                 old_hemomancy = existing[21]
                 old_hemomancy_notes = existing[22]
+                old_app_type = existing[23]
 
                 # Check if this game exists in a different registry - upgrade to 'both'
                 if old_registry != registry and old_registry != 'both':
@@ -447,7 +449,9 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                     new_date_str = str(date_updated) if date_updated else None
                     date_updated_changed = old_date_str != new_date_str
 
-                    if classification_changed or platform_changed or aliases_changed or date_updated_changed or registry_upgrade:
+                    app_type_changed = old_app_type != app_type
+
+                    if classification_changed or platform_changed or aliases_changed or date_updated_changed or app_type_changed or registry_upgrade:
                         # Update classification, platform info, aliases, registry, and date_updated
                         cursor.execute("""
                             UPDATE games SET
@@ -473,7 +477,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 itchio_id = ?,
                                 external_url = ?,
                                 aliases = ?,
-                                date_updated = ?
+                                date_updated = ?,
+                                app_type = ?
                             WHERE id = ?
                         """, (
                             new_dim1, new_dim2, new_dim3, dimension_4,
@@ -486,7 +491,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                             new_hemomancy, new_hemomancy_notes,
                             new_platforms_json, primary_platform,
                             battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
-                            external_url, new_aliases_json, date_updated, db_id
+                            external_url, new_aliases_json, date_updated, app_type, db_id
                         ))
 
                         # Show what changed
@@ -528,8 +533,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                  name, dimension_1, dimension_2, dimension_3, dimension_4,
                  dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                  registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes,
-                 short_description, genres, price_notes, aliases, date_updated)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 short_description, genres, price_notes, aliases, date_updated, app_type)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -558,7 +563,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 json.dumps(genres) if genres else None,
                 price_notes,
                 json.dumps(aliases) if aliases else None,
-                date_updated  # Use YAML value if present, otherwise None
+                date_updated,  # Use YAML value if present, otherwise None
+                app_type  # Manual app_type (e.g., 'mod')
             ))
 
             # Get the newly inserted game's ID

@@ -2104,6 +2104,22 @@ games:
   price_notes: Includes The Bard's Tale 1, 2 & 3
   priority: medium
   date_updated: '2026-01-03'
+- name: "Enderal: Forgotten Stories"
+  steam_id: 933480
+  app_type: mod
+  aliases:
+  - Enderal Forgotten Stories
+  platforms:
+  - steam
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  dimension_1_notes: Enderal features necromantic magic disciplines such as Entropy (spells include Summon Ghostly Wolf) and Phasmalism, as well also Affinities such as Dark Keeper.
+  price_notes: "Requires TES V: Skyrim"
+  priority: medium
+  date_updated: '2026-01-05'
 
 
 

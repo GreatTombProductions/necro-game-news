@@ -18,6 +18,7 @@ export interface BloodFilter {
 export type Availability = 'instant' | 'gated' | 'unknown';
 export type EarlyAccessFilter = 'early_access' | 'full_release';
 export type ReleaseStatusFilter = 'released' | 'unreleased';
+export type GameTypeFilter = 'game' | 'mod';
 
 export interface FilterState {
   genres: string[];
@@ -30,6 +31,7 @@ export interface FilterState {
   priceMax: string;
   earlyAccess: EarlyAccessFilter[];
   releaseStatus: ReleaseStatusFilter[];
+  gameType: GameTypeFilter[];
   availability: Availability[];
   necromancyGrid: NecromancyFilter[];
   // Blood registry filters
@@ -43,6 +45,12 @@ const NAMING_KEYS = ['explicit', 'implied'] as const;
 const AVAILABILITY_KEYS: Availability[] = ['instant', 'gated', 'unknown'];
 const EARLY_ACCESS_KEYS: EarlyAccessFilter[] = ['early_access', 'full_release'];
 const RELEASE_STATUS_KEYS: ReleaseStatusFilter[] = ['released', 'unreleased'];
+const GAME_TYPE_KEYS: GameTypeFilter[] = ['game', 'mod'];
+
+const GAME_TYPE_LABELS: Record<GameTypeFilter, string> = {
+  game: 'Games',
+  mod: 'Mods',
+};
 
 // Blood dimension keys
 const VAMPIRISM_KEYS: Vampirism[] = ['outright', 'implied', 'channeled', 'absent'];
@@ -87,6 +95,7 @@ export const initialFilterState: FilterState = {
   priceMax: '',
   earlyAccess: [...EARLY_ACCESS_KEYS],
   releaseStatus: ['released'], // Default to showing only released games
+  gameType: [...GAME_TYPE_KEYS], // Both games and mods checked by default
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
   // Blood filters - all selected by default
@@ -309,6 +318,54 @@ function ReleaseStatusCheckboxes({
               className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
             />
             <span className="text-gray-300">{RELEASE_STATUS_LABELS[rs]}</span>
+          </label>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={allSelected ? deselectAll : selectAll}
+        className="text-xs text-gray-500 hover:text-purple-300 transition-colors"
+      >
+        {allSelected ? 'Deselect all' : 'Select all'}
+      </button>
+    </div>
+  );
+}
+
+function GameTypeCheckboxes({
+  value,
+  onChange,
+}: {
+  value: GameTypeFilter[];
+  onChange: (gameType: GameTypeFilter[]) => void;
+}) {
+  const toggleGameType = (gt: GameTypeFilter) => {
+    if (value.includes(gt)) {
+      onChange(value.filter((a) => a !== gt));
+    } else {
+      onChange([...value, gt]);
+    }
+  };
+
+  const selectAll = () => onChange([...GAME_TYPE_KEYS]);
+  const deselectAll = () => onChange([]);
+  const allSelected = value.length === GAME_TYPE_KEYS.length;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3">
+        {GAME_TYPE_KEYS.map((gt) => (
+          <label
+            key={gt}
+            className="flex items-center gap-1.5 cursor-pointer text-sm"
+          >
+            <input
+              type="checkbox"
+              checked={value.includes(gt)}
+              onChange={() => toggleGameType(gt)}
+              className="w-4 h-4 rounded border-purple-600 bg-gray-700 text-purple-500 focus:ring-purple-500 focus:ring-offset-gray-800 cursor-pointer"
+            />
+            <span className="text-gray-300">{GAME_TYPE_LABELS[gt]}</span>
           </label>
         ))}
       </div>
@@ -1006,6 +1063,7 @@ export default function FilterPanel({
     filters.priceMax ||
     filters.earlyAccess.length < 2 || // Less than all 2 = filter active
     filters.releaseStatus.length < 2 || // Less than all 2 = filter active
+    filters.gameType.length < 2 || // Less than all 2 = filter active
     filters.availability.length < 3 || // Less than all 3 = filter active
     hasTaxonomyFilters;
 
@@ -1108,6 +1166,20 @@ export default function FilterPanel({
             </p>
           )}
         </div>
+
+        {/* Game Type */}
+        <div>
+          <label className="block text-sm text-gray-400 mb-1">Game Type</label>
+          <GameTypeCheckboxes
+            value={filters.gameType}
+            onChange={(gameType) => updateFilter('gameType', gameType)}
+          />
+          {filters.gameType.length < 2 && (
+            <p className="text-xs text-gray-500 mt-2">
+              {filters.gameType.length} of 2 selected
+            </p>
+          )}
+        </div>
       </div>
 
       {/* Availability & Taxonomy Row */}
@@ -1173,6 +1245,7 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.priceMin || filters.priceMax) count++;
   if (filters.earlyAccess.length < 2) count++; // Only count if some are deselected
   if (filters.releaseStatus.length < 2) count++; // Only count if some are deselected
+  if (filters.gameType.length < 2) count++; // Only count if some are deselected
   if (filters.availability.length < 3) count++; // Only count if some are deselected
   if (filters.necromancyGrid.length < 16) count++; // Only count if some are deselected
   return count;
