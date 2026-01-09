@@ -54,7 +54,7 @@
     "aliases": [
       "Age of Wonders IV"
     ],
-    "last_checked": "2026-01-08 09:40:54.985497",
+    "last_checked": "2026-01-09 09:48:14.939802",
     "update_count": 47,
     "last_update": "2025-12-09 06:12:53",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185498",
@@ -110,7 +110,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:59.539962",
+    "last_checked": "2026-01-09 09:48:19.401219",
     "update_count": 19,
     "last_update": "2025-11-05 08:51:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768233693",
@@ -178,7 +178,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:01.224006",
+    "last_checked": "2026-01-09 09:48:21.914791",
     "update_count": 5,
     "last_update": "2025-11-20 05:24:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010720",
@@ -247,15 +247,15 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:11.529532",
-    "update_count": 50,
+    "last_checked": "2026-01-09 09:48:31.480563",
+    "update_count": 51,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
     "last_update_title": "Patch v37.9",
-    "last_announcement": "2025-11-07 05:00:00",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
-    "last_announcement_title": "Patch v37.9",
-    "last_announcement_content": "//bug fixes - Boneworld Challenges - Daily: On the Game Over screen pressing the Menu Back button would make the menu inactive. - Castle Conquest game mode - Choose Path screen: Having a Divine Coiler/Tangler minion would cause a crash. - Castle Conquest game mode - Choose Path screen: When using fu...",
+    "last_announcement": "2026-01-09 09:22:39",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646581518",
+    "last_announcement_title": "The Xenosensory Awaits...",
+    "last_announcement_content": "Greetings again filthy boneraisers. Hope you aren't too worn out after raising all those new years bones! Over the Winter I've been beavering away myself with another game that I just released last week. It's much smaller and laid back than Boneraiser but it's a strange incremental game so you might...",
     "pov": "character",
     "availability": "gated",
     "pov_notes": "",
@@ -315,7 +315,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:26.616582",
+    "last_checked": "2026-01-09 09:48:46.420210",
     "update_count": 39,
     "last_update": "2025-07-29 13:32:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758782015",
@@ -381,7 +381,7 @@
       "Action"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:29.641235",
+    "last_checked": "2026-01-09 09:48:49.371631",
     "update_count": 28,
     "last_update": "2026-01-06 07:30:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365125925",
@@ -438,7 +438,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:35.592758",
+    "last_checked": "2026-01-09 09:48:55.543368",
     "update_count": 13,
     "last_update": "2026-01-05 08:40:55",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365123838",
@@ -498,7 +498,7 @@
       "Diablo II Resurrected",
       "Diablo 2: Resurrected"
     ],
-    "last_checked": "2026-01-08 09:40:43.504835",
+    "last_checked": "2026-01-09 09:48:03.317553",
     "update_count": 20,
     "last_update": "2022-06-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/23814050/diablo-ii-resurrected-patch-2-4-3-now-live",
@@ -560,7 +560,7 @@
       "Diablo 3: Rise of the Necromancer",
       "Diablo III: Rise of the Necromancer"
     ],
-    "last_checked": "2026-01-08 09:40:41.465229",
+    "last_checked": "2026-01-09 09:48:01.285653",
     "update_count": 21,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -616,7 +616,7 @@
       "Mobile"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:42.380316",
+    "last_checked": "2026-01-09 09:48:02.090671",
     "update_count": 25,
     "last_update": "2025-11-18 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24166781/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
@@ -687,7 +687,7 @@
       "Diablo 4",
       "D4"
     ],
-    "last_checked": "2026-01-08 09:41:37.144498",
+    "last_checked": "2026-01-09 09:48:56.930428",
     "update_count": 5,
     "last_update": "2025-12-16 15:16:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365083889",
@@ -755,7 +755,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:41.578445",
+    "last_checked": "2026-01-09 09:49:01.474755",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -822,7 +822,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:58.467471",
+    "last_checked": "2026-01-09 09:49:17.934738",
     "update_count": 54,
     "last_update": "2025-12-09 06:01:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
@@ -889,7 +889,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:41:59.633803",
+    "last_checked": "2026-01-09 09:49:19.557525",
     "update_count": 8,
     "last_update": "2025-12-15 23:05:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592134836",
@@ -958,7 +958,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:42:19.181447",
+    "last_checked": "2026-01-09 09:49:39.136734",
     "update_count": 43,
     "last_update": "2025-06-26 10:05:40",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891514590",
@@ -1014,7 +1014,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:47.295314",
+    "last_checked": "2026-01-09 09:48:07.107784",
     "update_count": 28,
     "last_update": "2025-12-12 16:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24250382/34-2-2-patch-notes",
@@ -1069,7 +1069,7 @@
       "MOBA"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:40.534186",
+    "last_checked": "2026-01-09 09:48:00.438473",
     "update_count": 6,
     "last_update": "2025-12-12 19:56:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24252009/heroes-of-the-storm-balance-patch-notes-december-12-2025",
@@ -1141,7 +1141,7 @@
       "Heroes of Might & Magic 3 HD Edition",
       "Heroes of Might & Magic III HD Edition"
     ],
-    "last_checked": "2026-01-08 09:42:32.773620",
+    "last_checked": "2026-01-09 09:49:52.554092",
     "update_count": 15,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -1211,7 +1211,7 @@
     "aliases": [
       "Immortal Realms Vampire Wars"
     ],
-    "last_checked": "2026-01-08 09:42:35.736778",
+    "last_checked": "2026-01-09 09:49:55.526529",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -1279,7 +1279,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:42:38.842887",
+    "last_checked": "2026-01-09 09:49:58.583670",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -1345,7 +1345,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:42:46.289913",
+    "last_checked": "2026-01-09 09:50:06.119941",
     "update_count": 51,
     "last_update": "2025-09-25 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772249766",
@@ -1414,15 +1414,15 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:42:49.294176",
-    "update_count": 36,
+    "last_checked": "2026-01-09 09:50:09.081730",
+    "update_count": 37,
     "last_update": "2025-10-16 09:02:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1813674388942146",
     "last_update_title": "Last Epoch Patch 1.3.6 Notes",
-    "last_announcement": "2025-12-08 15:53:38",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366184046",
-    "last_announcement_title": "Looking Ahead in Last Epoch",
-    "last_announcement_content": "Good day, Travelers! Today we\u2019re sharing a deeper look at what\u2019s coming in Season 4, Season 5, and the Last Epoch: Orobyss expansion. Inside this update, you\u2019ll find our revised roadmap, a new teaser, the launch date for Season 4, and the first details about its upcoming content. We\u2019re also pulling ...",
+    "last_announcement": "2026-01-09 09:02:14",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646581464",
+    "last_announcement_title": "Eterra Monthly: Dec. Edition 2025",
+    "last_announcement_content": "Hello Travelers, Welcome back to Eterra in the year 2026! We hope your winter holidays gave you all a chance to relax and enjoy yourselves. The team is now back to work and eager to kick off the year in the best way possible. But we have to take a look at the month of December to close out 2025. Let...",
     "pov": "character",
     "availability": "instant",
     "pov_notes": "",
@@ -1479,7 +1479,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:15.982480",
+    "last_checked": "2026-01-09 09:50:34.971122",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1537,7 +1537,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:28.375408",
+    "last_checked": "2026-01-09 09:50:48.269876",
     "update_count": 14,
     "last_update": "2025-12-16 11:03:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
@@ -1608,15 +1608,15 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:37.465519",
-    "update_count": 35,
+    "last_checked": "2026-01-09 09:50:57.336718",
+    "update_count": 36,
     "last_update": "2025-11-11 13:43:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768436752",
     "last_update_title": "New Foulborn Uniques in Patch 3.27.0c",
-    "last_announcement": "2025-11-24 12:21:04",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002021664",
-    "last_announcement_title": "Concept Art - Keepers of the Flame League and Kirac\u2019s Vault Pass",
-    "last_announcement_content": "In this post, we\u2019re sharing some concept art from the Path of Exile: Keepers of the Flame League and Kirac\u2019s Vault Pass, which includes an exclusive Armour Set themed around the eldritch entity of the Atlas - the Maven. Check them out below! Ailith, the First of the Keepers {STEAM_CLAN_IMAGE}/519330...",
+    "last_announcement": "2026-01-08 16:02:49",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646579772",
+    "last_announcement_title": "Weekend Stash Tab Sale",
+    "last_announcement_content": "This weekend we\u2019re running a Stash Tab Sale! You can view the full selection of discounted tabs here. The Stash Tab sale ends at Jan 12, 2026 4:00 PM PST. The following tabs will work in both Path of Exile 1 and 2: Merchant\u2019s Tab Premium Stash Tab Extra Stash Tab Premium Quad Stash Tab Gem Stash Tab...",
     "pov": "character",
     "availability": "instant",
     "pov_notes": "",
@@ -1678,7 +1678,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:39.224663",
+    "last_checked": "2026-01-09 09:50:58.935344",
     "update_count": 61,
     "last_update": "2025-12-22 12:03:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365102713",
@@ -1751,7 +1751,7 @@
       "Pathfinder Wrath of the Righteous Enhanced Edition",
       "Pathfinder: Wrath of the Righteous Enhanced Edition"
     ],
-    "last_checked": "2026-01-08 09:43:41.919588",
+    "last_checked": "2026-01-09 09:51:01.737197",
     "update_count": 48,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -1818,7 +1818,7 @@
       "Adventure"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:45.018409",
+    "last_checked": "2026-01-09 09:51:04.680320",
     "update_count": 42,
     "last_update": "2025-09-17 01:00:21",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915351736",
@@ -1885,7 +1885,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:43:50.430044",
+    "last_checked": "2026-01-09 09:51:09.167239",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -1953,7 +1953,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:19.609815",
+    "last_checked": "2026-01-09 09:51:39.692802",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -2023,7 +2023,7 @@
       "Skyrim Special Edition",
       "The Elder Scrolls V: Skyrim"
     ],
-    "last_checked": "2026-01-08 09:44:32.620630",
+    "last_checked": "2026-01-09 09:51:51.297237",
     "update_count": 1,
     "last_update": null,
     "last_update_url": null,
@@ -2096,15 +2096,15 @@
       "Elder Scrolls Online",
       "The Elder Scrolls Online"
     ],
-    "last_checked": "2026-01-08 09:44:33.062818",
-    "update_count": 34,
+    "last_checked": "2026-01-09 09:51:52.809624",
+    "update_count": 37,
     "last_update": "2025-10-28 06:49:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814309641608211",
     "last_update_title": "Seasons of the Worm Cult Part 2 & Update 48 Now Live on PC/Mac",
-    "last_announcement": "2026-01-07 16:08:03",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646577767",
-    "last_announcement_title": "Introducing Seasons to The Elder Scrolls Online",
-    "last_announcement_content": "https://esosslfiles-a.akamaihd.net/ape/uploads/2025/12/71f6b97dfdc1a621dfd3cfaf66b0ba88.jpg Change is coming to Tamriel\u2019s Second Era in the form of Seasons, a new way to adventure and earn rewards in The Elder Scrolls Online. Seasons of Change It has been over a decade since The Elder Scrolls Online...",
+    "last_announcement": "2026-01-09 08:00:04",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646581293",
+    "last_announcement_title": "Leaping into the Dragonknight Class Refresh",
+    "last_announcement_content": "https://esosslfiles-a.akamaihd.net/ape/uploads/2026/01/710e34151ce2835017b29fed3b4968ca.jpg Delve into the (earthen) heart of the major changes and improvements coming to the Dragonknight Class. \u00a0ESO\u2019s Combat Team has returned to provide an update on the ongoing Class Refresh work. Specifically, the...",
     "pov": "character",
     "availability": "gated",
     "pov_notes": "",
@@ -2165,7 +2165,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:37.901414",
+    "last_checked": "2026-01-09 09:51:57.329841",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -2232,7 +2232,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:42.132960",
+    "last_checked": "2026-01-09 09:52:01.924096",
     "update_count": 21,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -2303,7 +2303,7 @@
       "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
-    "last_checked": "2026-01-08 09:44:43.702990",
+    "last_checked": "2026-01-09 09:52:03.335732",
     "update_count": 24,
     "last_update": "2021-09-22 07:02:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406866364677",
@@ -2370,7 +2370,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:45.134926",
+    "last_checked": "2026-01-09 09:52:04.904676",
     "update_count": 42,
     "last_update": "2025-12-17 07:02:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086949",
@@ -2438,7 +2438,7 @@
       "Massively Multiplayer"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:52.640749",
+    "last_checked": "2026-01-09 09:52:12.326369",
     "update_count": 35,
     "last_update": "2025-12-17 02:11:49",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365086118",
@@ -2497,7 +2497,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:54.121607",
+    "last_checked": "2026-01-09 09:52:14.095440",
     "update_count": 13,
     "last_update": "2025-12-14 05:45:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592131116",
@@ -2566,7 +2566,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:55.607863",
+    "last_checked": "2026-01-09 09:52:15.500689",
     "update_count": 15,
     "last_update": "2025-10-31 08:02:54",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815034432907004",
@@ -2638,7 +2638,7 @@
       "VTM Bloodlines",
       "VTM: Bloodlines"
     ],
-    "last_checked": "2026-01-08 09:44:57.153363",
+    "last_checked": "2026-01-09 09:52:16.887619",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -2705,7 +2705,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:44:58.635291",
+    "last_checked": "2026-01-09 09:52:18.385200",
     "update_count": 31,
     "last_update": "2018-06-01 02:55:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358622000374354",
@@ -2766,7 +2766,7 @@
       "Warcraft 3 Reforged",
       "Warcraft III Reforged"
     ],
-    "last_checked": "2026-01-08 09:40:46.475178",
+    "last_checked": "2026-01-09 09:48:06.183916",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -2822,7 +2822,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:45.654663",
+    "last_checked": "2026-01-09 09:48:05.366940",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -2877,7 +2877,7 @@
       "MMORPG"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:40:44.325508",
+    "last_checked": "2026-01-09 09:48:04.239304",
     "update_count": 34,
     "last_update": "2025-12-23 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244426/what-to-do-before-the-midnight-pre-expansion-content-update",
@@ -2936,7 +2936,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-01-08 09:45:07.806831",
+    "last_checked": "2026-01-09 09:52:27.455348",
     "update_count": 43,
     "last_update": "2025-11-05 13:40:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768240224",
