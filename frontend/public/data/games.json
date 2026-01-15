@@ -8881,10 +8881,10 @@
     "hemomancy": null,
     "hemomancy_notes": "",
     "date_updated": "2026-01-14",
-    "developer": null,
-    "publisher": null,
+    "developer": "Blizzard Entertainment",
+    "publisher": "Blizzard Entertainment",
     "release_date": null,
-    "price_usd": null,
+    "price_usd": 0.0,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -8895,15 +8895,15 @@
       "Starcraft 2",
       "SC2"
     ],
-    "last_checked": null,
-    "update_count": 0,
-    "last_update": null,
-    "last_update_url": null,
-    "last_update_title": null,
-    "last_announcement": null,
-    "last_announcement_url": null,
-    "last_announcement_title": null,
-    "last_announcement_content": null
+    "last_checked": "2026-01-14 19:44:33.739162",
+    "update_count": 9,
+    "last_update": "2025-10-08 18:27:00",
+    "last_update_url": "https://news.blizzard.com/en-us/article/24240447/starcraft-ii-5-0-15-hotfix-patch-notes",
+    "last_update_title": "StarCraft II 5.0.15 Hotfix Patch Notes",
+    "last_announcement": "2025-10-08 18:27:00",
+    "last_announcement_url": "https://news.blizzard.com/en-us/article/24240447/starcraft-ii-5-0-15-hotfix-patch-notes",
+    "last_announcement_title": "StarCraft II 5.0.15 Hotfix Patch Notes",
+    "last_announcement_content": "Patch 5.0.15 Hotfix has been released to address a few balance changes and bug fixes. "
   },
   {
     "id": 329,
