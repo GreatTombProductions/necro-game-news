@@ -588,3 +588,27 @@ games:
   vampirism_notes: "Blood Combustion ritual"
   priority: medium
   date_updated: '2026-01-03'
+- name: "Vampire Cat"
+  steam_id: 3505650
+  platforms:
+  - steam
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: unit
+    availability: instant
+  pov_notes: Control up to 3 vampire cats
+  priority: medium
+  date_updated: '2026-01-06'
+- name: "Cabernet"
+  steam_id: 2401410
+  platforms:
+  - steam
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  vampirism_notes: Play as Eliza, a young vampire in a 19th century Eastern Europe inspired world
+  priority: medium
+  date_updated: '2026-01-16'

@@ -71,7 +71,8 @@ CREATE TABLE IF NOT EXISTS games (
     aliases TEXT,    -- JSON array of alternative names for search (e.g., "Diablo 4" for "Diablo IV")
 
     -- Tracking metadata
-    date_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Date entry was last updated
+    date_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Date necromancy entry was last updated
+    blood_date_updated TIMESTAMP,  -- Date blood entry was last updated (independent from necromancy)
     last_checked TIMESTAMP,
     is_active BOOLEAN DEFAULT 1
 );

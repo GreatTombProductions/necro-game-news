@@ -75,6 +75,7 @@ def export_games(registry='necromancy'):
             g.hemomancy,
             g.hemomancy_notes,
             g.date_updated,
+            g.blood_date_updated,
             g.developer,
             g.publisher,
             g.release_date,
@@ -134,13 +135,19 @@ def export_games(registry='necromancy'):
         else:
             game['aliases'] = []
 
-        # For blood registry, add friendly field aliases
+        # For blood registry, add friendly field aliases and use blood_date_updated
         if registry == 'blood':
             # Map dimension fields to blood-specific names
             game['pov'] = game['dimension_2']
             game['availability'] = game['dimension_4']
             game['pov_notes'] = game['dimension_2_notes']
             game['availability_notes'] = game['dimension_4_notes']
+            # Use blood_date_updated as the date_updated for blood registry
+            if game.get('blood_date_updated'):
+                game['date_updated'] = game['blood_date_updated']
+
+        # Remove internal blood_date_updated field from output (frontend doesn't need it)
+        game.pop('blood_date_updated', None)
 
     return games
 

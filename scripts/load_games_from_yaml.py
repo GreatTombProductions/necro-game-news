@@ -80,7 +80,7 @@ def find_existing_game(cursor, game: dict):
     select_fields = """SELECT id, dimension_1, dimension_2, dimension_3, dimension_4,
                dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                platforms, primary_platform, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id, aliases, date_updated,
-               registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes, app_type
+               registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes, app_type, blood_date_updated
                FROM games"""
 
     # Try steam_id first (most common)
@@ -384,6 +384,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 old_hemomancy = existing[21]
                 old_hemomancy_notes = existing[22]
                 old_app_type = existing[23]
+                old_blood_date_updated = existing[24]
 
                 # Check if this game exists in a different registry - upgrade to 'both'
                 if old_registry != registry and old_registry != 'both':
@@ -400,14 +401,16 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         new_hemomancy = hemomancy
                         new_vampirism_notes = vampirism_notes
                         new_hemomancy_notes = hemomancy_notes
-                        # Keep existing necromancy dimensions
+                        # Keep existing necromancy dimensions (all independent)
                         new_dim1 = old_dim1
-                        new_dim2 = dimension_2  # POV is shared, update it
+                        new_dim2 = old_dim2
                         new_dim3 = old_dim3
+                        new_dim4 = old_dim4
                     else:
                         new_dim1 = dimension_1
                         new_dim2 = dimension_2
                         new_dim3 = dimension_3
+                        new_dim4 = dimension_4
                         # Keep existing blood dimensions
                         new_vampirism = old_vampirism
                         new_hemomancy = old_hemomancy
@@ -417,20 +420,25 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                     new_platforms_json = json.dumps(platforms)
                     new_aliases_json = json.dumps(aliases) if aliases else None
 
-                    classification_changed = (
-                        old_dim1 != new_dim1 or
-                        old_dim2 != new_dim2 or
-                        old_dim3 != new_dim3 or
-                        old_dim4 != dimension_4 or
-                        old_dim1_notes != dimension_1_notes or
-                        old_dim2_notes != dimension_2_notes or
-                        old_dim3_notes != dimension_3_notes or
-                        old_dim4_notes != dimension_4_notes or
-                        old_vampirism != new_vampirism or
-                        old_hemomancy != new_hemomancy or
-                        (old_vampirism_notes or '') != new_vampirism_notes or
-                        (old_hemomancy_notes or '') != new_hemomancy_notes
-                    )
+                    # Change detection - only compare fields being updated by this registry
+                    if is_blood:
+                        classification_changed = (
+                            old_vampirism != new_vampirism or
+                            old_hemomancy != new_hemomancy or
+                            (old_vampirism_notes or '') != new_vampirism_notes or
+                            (old_hemomancy_notes or '') != new_hemomancy_notes
+                        )
+                    else:
+                        classification_changed = (
+                            old_dim1 != new_dim1 or
+                            old_dim2 != new_dim2 or
+                            old_dim3 != new_dim3 or
+                            old_dim4 != new_dim4 or
+                            old_dim1_notes != dimension_1_notes or
+                            old_dim2_notes != dimension_2_notes or
+                            old_dim3_notes != dimension_3_notes or
+                            old_dim4_notes != dimension_4_notes
+                        )
 
                     platform_changed = (
                         old_platforms != new_platforms_json or
@@ -445,14 +453,26 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                     aliases_changed = old_aliases != new_aliases_json
 
                     # Normalize date_updated for comparison (handle both string and datetime)
-                    old_date_str = str(old_date_updated)[:10] if old_date_updated else None
+                    # Blood and necromancy registries have separate date_updated fields
                     new_date_str = str(date_updated) if date_updated else None
+                    if is_blood:
+                        old_date_str = str(old_blood_date_updated)[:10] if old_blood_date_updated else None
+                    else:
+                        old_date_str = str(old_date_updated)[:10] if old_date_updated else None
                     date_updated_changed = old_date_str != new_date_str
 
                     app_type_changed = old_app_type != app_type
 
                     if classification_changed or platform_changed or aliases_changed or date_updated_changed or app_type_changed or registry_upgrade:
                         # Update classification, platform info, aliases, registry, and date_updated
+                        # Blood and necromancy registries have separate date_updated fields
+                        if is_blood:
+                            new_date_updated = old_date_updated  # Preserve necromancy date
+                            new_blood_date_updated = date_updated  # Update blood date
+                        else:
+                            new_date_updated = date_updated  # Update necromancy date
+                            new_blood_date_updated = old_blood_date_updated  # Preserve blood date
+
                         cursor.execute("""
                             UPDATE games SET
                                 dimension_1 = ?,
@@ -478,20 +498,21 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                                 external_url = ?,
                                 aliases = ?,
                                 date_updated = ?,
+                                blood_date_updated = ?,
                                 app_type = ?
                             WHERE id = ?
                         """, (
-                            new_dim1, new_dim2, new_dim3, dimension_4,
+                            new_dim1, new_dim2, new_dim3, new_dim4,
                             dimension_1_notes if not is_blood else old_dim1_notes,
-                            dimension_2_notes,
+                            dimension_2_notes if not is_blood else old_dim2_notes,
                             dimension_3_notes if not is_blood else old_dim3_notes,
-                            dimension_4_notes,
+                            dimension_4_notes if not is_blood else old_dim4_notes,
                             new_registry,
                             new_vampirism, new_vampirism_notes,
                             new_hemomancy, new_hemomancy_notes,
                             new_platforms_json, primary_platform,
                             battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
-                            external_url, new_aliases_json, date_updated, app_type, db_id
+                            external_url, new_aliases_json, new_date_updated, new_blood_date_updated, app_type, db_id
                         ))
 
                         # Show what changed
@@ -504,8 +525,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                             changes.append(f"dim2: {old_dim2}→{new_dim2}")
                         if old_dim3 != new_dim3:
                             changes.append(f"dim3: {old_dim3}→{new_dim3}")
-                        if old_dim4 != dimension_4:
-                            changes.append(f"dim4: {old_dim4}→{dimension_4}")
+                        if old_dim4 != new_dim4:
+                            changes.append(f"dim4: {old_dim4}→{new_dim4}")
                         if old_vampirism != new_vampirism:
                             changes.append(f"vampirism: {old_vampirism}→{new_vampirism}")
                         if old_hemomancy != new_hemomancy:
@@ -526,6 +547,14 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 continue
 
             # Add new game with full platform support
+            # Blood and necromancy registries have separate date_updated fields
+            if is_blood:
+                insert_date_updated = None  # Leave necromancy date empty
+                insert_blood_date_updated = date_updated  # Set blood date
+            else:
+                insert_date_updated = date_updated  # Set necromancy date
+                insert_blood_date_updated = None  # Leave blood date empty
+
             cursor.execute("""
                 INSERT INTO games
                 (steam_id, battlenet_id, battlenet_store_id, gog_id, epic_id, itchio_id,
@@ -533,8 +562,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                  name, dimension_1, dimension_2, dimension_3, dimension_4,
                  dimension_1_notes, dimension_2_notes, dimension_3_notes, dimension_4_notes,
                  registry, vampirism, vampirism_notes, hemomancy, hemomancy_notes,
-                 short_description, genres, price_notes, aliases, date_updated, app_type)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 short_description, genres, price_notes, aliases, date_updated, blood_date_updated, app_type)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 steam_id,
                 battlenet_id,
@@ -563,7 +592,8 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                 json.dumps(genres) if genres else None,
                 price_notes,
                 json.dumps(aliases) if aliases else None,
-                date_updated,  # Use YAML value if present, otherwise None
+                insert_date_updated,
+                insert_blood_date_updated,
                 app_type  # Manual app_type (e.g., 'mod')
             ))
 
