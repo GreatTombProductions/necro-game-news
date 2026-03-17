@@ -1,7 +1,7 @@
 {
   "total_games": 46,
-  "total_updates": 1453,
-  "recent_updates_30d": 81,
+  "total_updates": 1457,
+  "recent_updates_30d": 84,
   "vampirism": {
     "absent": 11,
     "channeled": 5,
@@ -19,5 +19,5 @@
     "character": 40,
     "unit": 6
   },
-  "last_updated": "2026-03-16T12:40:15.997622"
+  "last_updated": "2026-03-17T12:40:04.873937"
 }
