@@ -1586,9 +1586,10 @@ export default function GamesTable({ games, mode }: GamesTableProps) {
   });
 
   // Get filtered games for the news feed
+  const filteredRows = table.getFilteredRowModel().rows;
   const filteredGames = useMemo(
-    () => table.getFilteredRowModel().rows.map(row => row.original),
-    [table.getFilteredRowModel().rows]
+    () => filteredRows.map(row => row.original),
+    [filteredRows]
   );
 
   return (
