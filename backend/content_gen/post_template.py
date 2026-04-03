@@ -372,7 +372,7 @@ class PatchTemplate(PostTemplate):
             # Match bullet points, dashes, or numbered lists
             if re.match(r'^[\*\-\•]\s+', clean_line) or re.match(r'^\d+[\.\)]\s+', clean_line):
                 changelog_lines.append(clean_line)
-                if sum(len(l) for l in changelog_lines) > max_length:
+                if sum(len(cl) for cl in changelog_lines) > max_length:
                     break
 
         if changelog_lines:
