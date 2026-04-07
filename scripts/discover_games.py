@@ -384,7 +384,7 @@ def main():
 
     # Display results
     print(f"\n{'='*80}")
-    print(f"TOP CANDIDATES (sorted by score)")
+    print("TOP CANDIDATES (sorted by score)")
     print(f"{'='*80}")
 
     for i, candidate in enumerate(candidates[:10], 1):
@@ -404,11 +404,11 @@ def main():
         try:
             added = save_candidates_to_db(candidates, conn)
             print(f"\n✓ Successfully added {added} candidates to database")
-            print(f"  Run 'python scripts/review_candidates.py' to review them")
+            print("  Run 'python scripts/review_candidates.py' to review them")
         finally:
             conn.close()
     else:
-        print(f"\n💡 Run with --save to add these candidates to the database")
+        print("\n💡 Run with --save to add these candidates to the database")
 
 
 if __name__ == "__main__":

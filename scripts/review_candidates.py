@@ -273,7 +273,7 @@ def review_candidate(candidate: dict, index: int, total: int, conn) -> str:
     print(f"  {Colors.RED}[n]{Colors.END} Reject")
     print(f"  {Colors.YELLOW}[s]{Colors.END} Skip for now")
     print(f"  {Colors.BLUE}[o]{Colors.END} Open in browser")
-    print(f"  [q] Quit")
+    print("  [q] Quit")
 
     while True:
         choice = input(f"\n{Colors.BOLD}Your choice:{Colors.END} ").strip().lower()
@@ -474,7 +474,7 @@ Examples:
 
         if stats['approved'] > 0:
             print(f"\n{Colors.GREEN}✓ {stats['approved']} game(s) added to games_list.yaml{Colors.END}")
-            print(f"\nNext steps:")
+            print("\nNext steps:")
             print(f"  1. Run: {Colors.CYAN}python scripts/load_games_from_yaml.py --update{Colors.END}")
             print(f"  2. Run: {Colors.CYAN}python scripts/check_updates.py{Colors.END}")
             print(f"  3. Run: {Colors.CYAN}python scripts/export_for_web.py{Colors.END}")

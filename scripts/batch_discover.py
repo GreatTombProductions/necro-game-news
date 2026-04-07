@@ -166,8 +166,8 @@ def download_steam_applist() -> list[dict]:
                 json.dump(apps, f)
 
             logger.info(f"✓ Downloaded {len(apps):,} Steam games from SteamSpy")
-            logger.warning(f"  WARNING: SteamSpy returns limited data (~1,000 apps)")
-            logger.warning(f"  For complete catalog, add STEAM_API_KEY to .env file")
+            logger.warning("  WARNING: SteamSpy returns limited data (~1,000 apps)")
+            logger.warning("  For complete catalog, add STEAM_API_KEY to .env file")
             logger.info(f"  Saved to: {APPLIST_FILE}")
 
             return apps
@@ -534,7 +534,7 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
         apps = download_steam_applist()
         if apps:
             print(f"\n✓ Successfully downloaded {len(apps):,} Steam apps")
-            print(f"  Run with --discover to begin evaluation")
+            print("  Run with --discover to begin evaluation")
         return
 
     # Show stats
@@ -577,7 +577,7 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
         est_hours = len(apps_to_process) / rate / 3600
 
         print(f"\n{'='*80}")
-        print(f"BATCH DISCOVERY")
+        print("BATCH DISCOVERY")
         print(f"{'='*80}")
         print(f"Apps to process: {len(apps_to_process):,}")
         print(f"Minimum score: {args.min_score}")
@@ -597,7 +597,7 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
 
         # Print summary
         print(f"\n{'='*80}")
-        print(f"DISCOVERY COMPLETE")
+        print("DISCOVERY COMPLETE")
         print(f"{'='*80}")
         print(f"Duration: {stats['duration']}")
         print(f"Apps processed: {stats['processed']:,}/{stats['total']:,}")
@@ -607,7 +607,7 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
         print(f"{'='*80}\n")
 
         if stats['candidates_saved'] > 0:
-            print(f"✓ Run 'python scripts/review_candidates.py' to review candidates")
+            print("✓ Run 'python scripts/review_candidates.py' to review candidates")
 
         return
 

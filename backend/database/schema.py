@@ -190,7 +190,7 @@ def create_database(db_path=None):
     conn.close()
     
     print(f"✓ Database created successfully at: {db_path}")
-    print(f"✓ Tables: games, updates, candidates, social_media_queue")
+    print("✓ Tables: games, updates, candidates, social_media_queue")
     return db_path
 
 
@@ -235,7 +235,7 @@ def verify_schema(db_path=None):
     
     conn.close()
     
-    print(f"\nTables in database:")
+    print("\nTables in database:")
     for table in tables:
         status = "✓" if table in expected else "?"
         print(f"  {status} {table}")
@@ -245,7 +245,7 @@ def verify_schema(db_path=None):
         print(f"\n⚠ Missing tables: {', '.join(missing)}")
         return False
     
-    print(f"\n✓ All expected tables present")
+    print("\n✓ All expected tables present")
     return True
 
 

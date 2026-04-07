@@ -247,4 +247,4 @@ case $MODE in
 esac
 
 echo ""
-echo "🌐 Website: https://necroticrealms.com/"
+echo "🌐 Website: https://necrotic-realms.vercel.app/"

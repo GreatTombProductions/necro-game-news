@@ -325,7 +325,7 @@ def check_all_games(limit: int = None, max_news: int = 5):
 
     # Summary
     print("=" * 60)
-    print(f"Summary:")
+    print("Summary:")
     print(f"  Games checked: {success_count}")
     if skipped_count > 0:
         print(f"  Games skipped (no API): {skipped_count}")

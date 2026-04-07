@@ -57,7 +57,7 @@ def test_database():
         
         conn.close()
         
-        print(f"✓ Database connection successful")
+        print("✓ Database connection successful")
         print(f"  Tables: {', '.join(tables)}")
         print(f"  Active games: {game_count}")
         print(f"  Updates: {update_count}")
@@ -87,7 +87,7 @@ def test_steam_api():
             return False
         
         parsed = api.parse_app_details(details)
-        print(f"✓ Successfully fetched app details")
+        print("✓ Successfully fetched app details")
         print(f"  Game: {parsed['name']}")
         print(f"  Type: {parsed['app_type']}")
         print(f"  Developer: {parsed['developer']}")
@@ -99,7 +99,7 @@ def test_steam_api():
             print(f"✗ Could not fetch news for {test_appid}")
             return False
         
-        print(f"✓ Successfully fetched news")
+        print("✓ Successfully fetched news")
         print(f"  News items: {len(news)}")
         
         # Test update classification
@@ -153,7 +153,7 @@ def test_game_in_database():
             print(f"✗ Could not fetch Steam data for {name}")
             return False
         
-        print(f"✓ Successfully fetched Steam data")
+        print("✓ Successfully fetched Steam data")
         
         # Fetch news
         news = api.get_app_news(steam_id, count=5)
@@ -180,7 +180,7 @@ def test_update_detection():
         news = api.get_app_news(test_appid, count=5)
         
         if not news:
-            print(f"⚠ No news items to test classification")
+            print("⚠ No news items to test classification")
             return None
         
         print(f"Testing classification on {len(news)} news items:")
@@ -193,11 +193,11 @@ def test_update_detection():
             
             print(f"  [{update_type.upper()}] {parsed['title'][:60]}...")
         
-        print(f"\nClassification distribution:")
+        print("\nClassification distribution:")
         for update_type, count in type_counts.items():
             print(f"  {update_type}: {count}")
         
-        print(f"✓ Classification working")
+        print("✓ Classification working")
         return True
         
     except Exception as e:

@@ -318,7 +318,7 @@ def browse_games(games: list, data: dict, save_on_edit: bool = True):
         print(f"  {Colors.CYAN}[p]{Colors.END} Previous")
         print(f"  {Colors.BLUE}[o]{Colors.END} Open in browser")
         print(f"  {Colors.BLUE}[g]{Colors.END} Go to game # / search")
-        print(f"  [q] Quit")
+        print("  [q] Quit")
 
         choice = input(f"\n{Colors.BOLD}Choice:{Colors.END} ").strip().lower()
 

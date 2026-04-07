@@ -149,7 +149,7 @@ def fetch_all_games():
             fail_count += 1
     
     print("\n" + "=" * 60)
-    print(f"Summary:")
+    print("Summary:")
     print(f"  ✓ Successfully updated: {success_count}")
     print(f"  ✗ Failed: {fail_count}")
     print("=" * 60)

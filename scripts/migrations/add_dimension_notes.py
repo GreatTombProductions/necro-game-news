@@ -75,7 +75,7 @@ def migrate():
     conn.close()
 
     if changes_made:
-        print(f"\n✓ Migration complete! Changes made:")
+        print("\n✓ Migration complete! Changes made:")
         for change in changes_made:
             print(f"  - {change}")
     else:

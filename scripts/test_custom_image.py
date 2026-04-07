@@ -69,9 +69,9 @@ def main():
     print()
     if updates:
         example_id = updates[0][0]
-        print(f"  python scripts/generate_social_content.py \\")
+        print("  python scripts/generate_social_content.py \\")
         print(f"    --update-id {example_id} \\")
-        print(f"    --image-path ~/Downloads/awesome_screenshot.jpg")
+        print("    --image-path ~/Downloads/awesome_screenshot.jpg")
     print()
     print("This will create:")
     print("  - 3 caption variants in content/captions/")

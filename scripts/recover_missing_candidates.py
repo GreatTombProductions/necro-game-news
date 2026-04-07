@@ -104,8 +104,8 @@ def scan_missing():
         print(f"  ... and {len(missing) - 50} more")
 
     print("-" * 80)
-    print(f"\nTo recover these candidates, run:")
-    print(f"  python scripts/recover_missing_candidates.py --recover")
+    print("\nTo recover these candidates, run:")
+    print("  python scripts/recover_missing_candidates.py --recover")
     print("="*80 + "\n")
 
     return missing
@@ -228,7 +228,7 @@ def recover_candidates(limit=None, min_score=5, rate_limit_delay=3.0):
     conn.close()
 
     print("-" * 80)
-    print(f"\nRECOVERY COMPLETE")
+    print("\nRECOVERY COMPLETE")
     print(f"  Evaluated: {stats['evaluated']}")
     print(f"  Qualified (score >= {min_score}): {stats['qualified']}")
     print(f"  Added to database: {stats['added']}")

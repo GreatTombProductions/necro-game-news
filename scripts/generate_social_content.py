@@ -387,9 +387,9 @@ def main():
 
     print()
     print("=" * 80)
-    print(f"✓ Content generated in:")
-    print(f"  Images:   content/posts/")
-    print(f"  Captions: content/captions/")
+    print("✓ Content generated in:")
+    print("  Images:   content/posts/")
+    print("  Captions: content/captions/")
     print()
     print("💡 To regenerate content for a specific update (optionally with custom image):")
     print("   python scripts/generate_social_content.py --update-id <ID> --reprocess --image-path ~/image.jpg")

@@ -197,7 +197,7 @@ def fetch_initial_updates(game_id: int, steam_id: int, name: str, steam_api: Ste
 
         news_items = steam_api.get_app_news(steam_id, count=INITIAL_NEWS_COUNT)
         if not news_items:
-            logger.info(f"    No news items found")
+            logger.info("    No news items found")
             return 0
 
         new_count = 0
@@ -721,7 +721,7 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
     # Summary
     print()
     print("=" * 60)
-    print(f"Summary:")
+    print("Summary:")
     print(f"  ✓ Added: {added}")
     if update_existing:
         print(f"  ↻ Updated: {updated}")
