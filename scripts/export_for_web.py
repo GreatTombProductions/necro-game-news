@@ -106,7 +106,7 @@ def export_games(registry='necromancy'):
         if game['steam_tags']:
             try:
                 game['steam_tags'] = json.loads(game['steam_tags'])
-            except:
+            except Exception:
                 game['steam_tags'] = []
         else:
             game['steam_tags'] = []
@@ -114,7 +114,7 @@ def export_games(registry='necromancy'):
         if game['genres']:
             try:
                 game['genres'] = json.loads(game['genres'])
-            except:
+            except Exception:
                 game['genres'] = []
         else:
             game['genres'] = []
@@ -122,7 +122,7 @@ def export_games(registry='necromancy'):
         if game['platforms']:
             try:
                 game['platforms'] = json.loads(game['platforms'])
-            except:
+            except Exception:
                 game['platforms'] = ['steam']
         else:
             game['platforms'] = ['steam']
@@ -130,7 +130,7 @@ def export_games(registry='necromancy'):
         if game['aliases']:
             try:
                 game['aliases'] = json.loads(game['aliases'])
-            except:
+            except Exception:
                 game['aliases'] = []
         else:
             game['aliases'] = []
