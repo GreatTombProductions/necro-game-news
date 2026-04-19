@@ -146,7 +146,6 @@ def recover_candidates(limit=None, min_score=5, rate_limit_delay=3.0):
 
     for i, game in enumerate(missing, 1):
         appid = game['appid']
-        name = game['name']
 
         if i % 10 == 0:
             print(f"Progress: {i}/{len(missing)} | Qualified: {stats['qualified']} | Rate limited: {stats['rate_limited']} | Errors: {stats['errors']}")

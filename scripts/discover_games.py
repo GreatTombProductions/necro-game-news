@@ -12,7 +12,6 @@ Usage:
 """
 
 import sys
-import os
 import logging
 import argparse
 import requests
@@ -91,7 +90,6 @@ def calculate_necromancy_score(game_data: dict) -> tuple[int, list[str]]:
     categories = [c.lower() for c in (game_data.get('categories') or [])]
 
     # Combine all text for searching
-    all_text = f"{name} {description}"
     all_genres = ' '.join(genres + categories)
 
     # Check primary keywords
