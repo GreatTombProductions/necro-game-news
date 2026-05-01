@@ -612,3 +612,21 @@ games:
   vampirism_notes: Play as Eliza, a young vampire in a 19th century Eastern Europe inspired world
   priority: medium
   date_updated: '2026-01-16'
+- name: 'Heroes of Might & Magic: Olden Era'
+  aliases:
+  - Heroes of Might and Magic Olden Era
+  - 'Heroes of Might & Magic Olden Era'
+  - 'HoMM: Olden Era'
+  - HoMM Olden Era
+  - 'HOMM: Olden Era'
+  - HOMM Olden Era
+  steam_id: 3105440
+  classification:
+    vampirism: outright
+    hemomancy: a
+    pov: unit
+    availability: instant
+  vampirism_notes: Vampire Scholar unit in Necropolis faction
+  hemomancy_notes: Vampire Scholar's main ability is Blood Transfusion
+  priority: high
+  date_updated: '2026-05-01'
