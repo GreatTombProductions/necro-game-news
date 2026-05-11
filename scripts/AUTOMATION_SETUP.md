@@ -31,13 +31,3 @@ cd /home/ray/greattomb/community-tools/necro-game-news
 - Verify .env file has required API keys
 - Verify venv exists: `ls venv/bin/python`
 
-## Superseded Files
-
-The following files are from a previous macOS launchd-based automation setup and are no longer active:
-
-- `crontab.txt` — macOS cron schedule template
-- `install_crontab.sh` — crontab installer
-- `cron_deploy.sh` — wrapper for the old deploy mechanism
-- `launchd/` — macOS launchd plist files
-
-These remain for reference but are not used since the Linux migration (April 2026).
