@@ -18,8 +18,6 @@ Controls:
     q - Quit
 """
 
-import sys
-import os
 import argparse
 import subprocess
 from datetime import datetime

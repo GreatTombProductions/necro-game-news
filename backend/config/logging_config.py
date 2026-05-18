@@ -7,7 +7,6 @@ Provides consistent logging setup across all modules.
 import os
 import logging
 from pathlib import Path
-from datetime import datetime
 
 # Get log level from environment
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')

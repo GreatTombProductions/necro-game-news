@@ -19,7 +19,6 @@ Controls:
 """
 
 import sys
-import os
 import logging
 import argparse
 import re
@@ -31,7 +30,6 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from backend.database.schema import get_connection
-from backend.scrapers.steam_api import SteamAPI
 
 # Set up logging
 logging.basicConfig(

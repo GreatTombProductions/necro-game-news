@@ -30,7 +30,7 @@ import json
 import argparse
 from pathlib import Path
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import List, Optional
 
 # Add backend to path
 sys.path.insert(0, str(Path(__file__).parent.parent))

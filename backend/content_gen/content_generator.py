@@ -4,10 +4,9 @@ Content generator for social media posts
 Pulls data from database and generates post content using templates.
 """
 
-import sqlite3
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional
 
 from .post_template import create_template, PostTemplate
 from ..database.schema import get_connection

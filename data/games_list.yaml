@@ -2308,6 +2308,16 @@ games:
   priority: high
   date_updated: '2026-05-01'
   dimension_1_notes: Necropolis faction
+- name: 'Prime Monster'
+  steam_id: 3214480
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  date_updated: '2026-05-07'
+  dimension_1_notes: "One of Rotilda De Cay's central mechanics is reanimating her Zombie Members of Parliament"
 
 
 # deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b

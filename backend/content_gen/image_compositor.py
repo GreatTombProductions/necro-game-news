@@ -14,7 +14,7 @@ from typing import Tuple, Optional, List
 from datetime import datetime
 
 try:
-    from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+    from PIL import Image, ImageDraw, ImageFont, ImageEnhance  # ImageFilter removed (unused)
 except ImportError:
     raise ImportError(
         "Pillow is required for image generation. "

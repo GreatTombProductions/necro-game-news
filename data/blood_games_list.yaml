@@ -630,3 +630,14 @@ games:
   hemomancy_notes: Vampire Scholar's main ability is Blood Transfusion
   priority: high
   date_updated: '2026-05-01'
+- name: 'Prime Monster'
+  steam_id: 3214480
+  classification:
+    vampirism: outright
+    hemomancy: c
+    pov: character
+    availability: gated
+  vampirism_notes: Viscount Sucksworth
+  hemomancy_notes: Some blood-themed tactics
+  priority: medium
+  date_updated: '2026-05-07'
