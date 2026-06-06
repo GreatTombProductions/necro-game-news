@@ -2318,6 +2318,16 @@ games:
   priority: medium
   date_updated: '2026-05-07'
   dimension_1_notes: "One of Rotilda De Cay's central mechanics is reanimating her Zombie Members of Parliament"
+- name: Few Nights More
+  steam_id: 1491200
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  dimension_1_notes: School of Nedhos, the Necromancy school
+  priority: medium
+  date_updated: '2026-06-04'
 
 
 # deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b

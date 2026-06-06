@@ -641,3 +641,13 @@ games:
   hemomancy_notes: Some blood-themed tactics
   priority: medium
   date_updated: '2026-05-07'
+- name: Few Nights More
+  steam_id: 1491200
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: instant
+  hemomancy_notes: School of Vyrnir, the Blood school
+  priority: medium
+  date_updated: '2026-06-04'
