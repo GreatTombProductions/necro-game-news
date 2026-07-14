@@ -28,18 +28,16 @@ Games are classified across 4 dimensions (highest satisfied per dimension):
 
 ## Intake Pipeline (Slimeko-Managed)
 
-Community submissions now route through **Slimeko** (community manager) instead of relying solely on Discord reactions. The intake pipeline:
+Community submissions route through **Slimeko** (community manager). The intake pipeline:
 
 ```
-Submission Form → Vercel API → Discord Webhook → Discord Bot
-                                                    ├──→ Writes local JSON (data/submissions/)
-                                                    └──→ (existing approval flow unchanged)
-                                          
-Local JSON → submission_pickup.py → Slimeko Inbox → Slimeko reviews
-                                                       ├──→ steam_lookup.py (find Steam ID)
-                                                       ├──→ review_game.py (research + classify)
-                                                       ├──→ Report to Ray for approval
-                                                       └──→ add_game_to_yaml.py (add + deploy)
+Submission Form → Vercel API → Firestore (ngn-submissions)
+                                   submission_pickup.py → Firestore query
+                                                           └→ Slimeko Inbox → Slimeko reviews
+                                                                                ├──→ steam_lookup.py
+                                                                                ├──→ review_game.py
+                                                                                ├──→ Report to Ray
+                                                                                └──→ add_game_to_yaml.py
 ```
 
 ### Intake Scripts
@@ -111,7 +109,7 @@ See `docs/YAML_SCHEMA.md` for the complete field reference and validation checkl
 - **Frontend:** React + Vite, TanStack Table, Tailwind CSS
 - **Hosting:** Vercel (auto-deploy on push)
 - **Social:** Instagram (manual posting)
-- **Intake:** Discord webhook → bot → local JSON → Slimeko inbox pipeline
+- **Intake:** Vercel API → Firestore → submission_pickup.py → Slimeko inbox pipeline
 
 ---
 
@@ -152,11 +150,8 @@ See `docs/YAML_SCHEMA.md` for the complete field reference and validation checkl
 - `scripts/review_game.py` — Research, classify, generate Ray review report
 - `scripts/add_game_to_yaml.py` — Validated addition to YAML + deploy
 
-### Discord Bot (legacy approval, still active)
-- `scripts/discord_bot.py` — Run bot to approve submissions
-  - Env vars: `DISCORD_BOT_TOKEN`, `DISCORD_CHANNEL_ID` (optional)
-  - Commands: `/add`, `/edit`, `/check` (see `--help`)
-  - Now also writes local JSON files for Slimeko intake (on_message webhook catch)
+### Discord Bot (archived)
+- `scripts/_archived_discord_bot.py` — Archived July 2026. Discord removed from NGN pipeline per Ray directive. See git history for original bot implementation.
 
 ---
 
@@ -165,7 +160,7 @@ See `docs/YAML_SCHEMA.md` for the complete field reference and validation checkl
 - `content/posts/` — Generated images (Instagram)
 - `content/captions/` — Generated captions (Instagram)
 - `frontend/public/data/` — JSON exports for website
-- `data/submissions/` — Pending community submissions (Slimeko intake)
+- Firestore `ngn-submissions` collection — Pending community submissions (Slimeko intake)
 
 ---
 

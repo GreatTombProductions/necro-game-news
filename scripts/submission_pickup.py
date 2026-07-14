@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
 """
-Submission Pickup — Bridge from necro-game-news submissions to Slimeko's inbox.
+Submission Pickup — Bridge from necro-game-news Firestore submissions to Slimeko's inbox.
 
-Reads submission JSON files from data/submissions/ and writes metabolization-framed
+Queries Firestore for submissions where status='pending', writes metabolization-framed
 inbox files to Slimeko's workspace. Follows the Habit Pact feedback-pickup pattern.
 
-Submissions arrive from multiple sources:
-  - Discord bot writes local JSONs when submissions arrive
-  - Manual file drops (Ray can paste a submission as JSON)
-  - Future: Vercel API writes directly to a cloud store that this script reads
-
-Idempotent: uses submission filename as key, skips if already processed or in .processed/.
+Idempotent: checks if inbox file exists before writing. Marks submissions as processed.
 
 Usage:
   python3 scripts/submission_pickup.py              # dry-run
   python3 scripts/submission_pickup.py --execute     # actually write inbox files
-  python3 scripts/submission_pickup.py --source discord  # only process discord-sourced
 """
 
 import os
@@ -25,84 +19,85 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timezone
 
+# Firebase
+import firebase_admin
+from firebase_admin import credentials, firestore
+
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-SUBMISSIONS_DIR = PROJECT_ROOT / "data" / "submissions"
-PROCESSED_DIR = SUBMISSIONS_DIR / ".processed"
 GREATTOMB_ROOT = PROJECT_ROOT.parents[1]  # community-tools -> greattomb root
 SLIMEKO_INBOX = GREATTOMB_ROOT / "agents" / "slimeko" / "workspace" / "inbox"
 
+# Initialize Firebase — use existing ecosystem credentials.
+# Same project as agent-registry: greattomb-agent-registry.
+cred_path = os.environ.get(
+    "GOOGLE_APPLICATION_CREDENTIALS",
+    str(GREATTOMB_ROOT / "10th-floor-throne-room/throne-of-kings/functions/service-account.json")
+)
+if Path(cred_path).exists():
+    cred = credentials.Certificate(cred_path)
+    try:
+        firebase_admin.initialize_app(cred)
+    except ValueError:
+        pass  # Already initialized
+else:
+    try:
+        firebase_admin.initialize_app()
+    except ValueError:
+        pass  # Already initialized
 
-def find_submissions(source_filter: str = None) -> list[Path]:
-    """Find unprocessed submission JSON files."""
-    if not SUBMISSIONS_DIR.exists():
-        return []
+db = firestore.client()
+
+
+def find_pending_submissions() -> list[dict]:
+    """Query Firestore for pending submissions."""
+    docs = db.collection('ngn-submissions') \
+        .where('status', '==', 'pending') \
+        .order_by('created_at') \
+        .stream()
 
     submissions = []
-    for f in sorted(SUBMISSIONS_DIR.glob("*.json")):
-        # Skip template and metadata files
-        if f.name.startswith("_"):
-            continue
-        # Skip already-processed files
-        processed_path = PROCESSED_DIR / f.name
-        if processed_path.exists():
-            continue
-
-        # Source filter
-        if source_filter:
-            try:
-                data = json.loads(f.read_text())
-                if data.get("source") != source_filter:
-                    continue
-            except Exception:
-                continue
-
-        submissions.append(f)
-
+    for doc in docs:
+        data = doc.to_dict()
+        data['_doc_id'] = doc.id
+        submissions.append(data)
     return submissions
 
 
-def parse_submission(filepath: Path) -> dict:
-    """Parse a submission JSON file into a structured dict."""
-    raw = json.loads(filepath.read_text())
-
-    # Normalize: submissions can come in different formats
-    # Format 1: Direct from the web form (mirrors api/submit.ts fields)
-    # Format 2: From Discord bot embed parse
-    # Format 3: Manual entry
-
-    registry = raw.get("registry", "necromancy")
+def parse_submission(data: dict) -> dict:
+    """Parse a Firestore submission document into a structured dict."""
+    registry = data.get("registry", "necromancy")
     is_blood = registry == "blood"
 
     submission = {
-        "source_file": filepath.name,
-        "source": raw.get("source", "unknown"),
-        "submitted_at": raw.get("submitted_at", raw.get("timestamp", "")),
+        "source_file": data.get("_doc_id", "unknown"),
+        "source": data.get("source", "unknown"),
+        "submitted_at": data.get("created_at", ""),
         "registry": registry,
-        "submission_type": raw.get("submissionType", raw.get("submission_type", "addition")),
-        "submitter_type": raw.get("submitterType", raw.get("submitter_type", "player")),
-        "contact": raw.get("contact", raw.get("submitter_contact", "")),
+        "submission_type": data.get("submissionType", data.get("submission_type", "addition")),
+        "submitter_type": data.get("submitterType", data.get("submitter_type", "player")),
+        "contact": data.get("contact", ""),
         # Game identification
-        "game_name": raw.get("gameName", raw.get("game_name", raw.get("name", ""))),
-        "steam_id": raw.get("steamId", raw.get("steam_id", "")),
+        "game_name": data.get("gameName", data.get("game_name", "")),
+        "steam_id": data.get("steamId", data.get("steam_id", "")),
         # Availability
-        "availability": raw.get("availability", raw.get("dimension_4", "")),
+        "availability": data.get("availability", ""),
     }
 
     if is_blood:
         submission["classification"] = {
-            "vampirism": raw.get("vampirism", ""),
-            "hemomancy": raw.get("hemomancy", ""),
-            "pov": raw.get("pov", ""),
+            "vampirism": data.get("vampirism", ""),
+            "hemomancy": data.get("hemomancy", ""),
+            "pov": data.get("pov", ""),
         }
     else:
         submission["classification"] = {
-            "centrality": raw.get("centrality", ""),
-            "pov": raw.get("pov", ""),
-            "naming": raw.get("naming", ""),
+            "centrality": data.get("centrality", ""),
+            "pov": data.get("pov", ""),
+            "naming": data.get("naming", ""),
         }
 
-    submission["notes"] = raw.get("notes", "")
+    submission["notes"] = data.get("notes", "")
 
     return submission
 
@@ -135,7 +130,13 @@ def build_inbox_content(sub: dict) -> str:
             class_lines.append(f"  - Naming: {sub['classification']['naming']}")
         classification_str = "\n".join(class_lines) if class_lines else "  (not specified)"
 
-    timestamp = sub.get("submitted_at", datetime.now(timezone.utc).isoformat())
+    submitted_at = sub.get("submitted_at", "")
+    if hasattr(submitted_at, 'isoformat'):
+        submitted_at = submitted_at.isoformat()
+    elif not submitted_at:
+        submitted_at = datetime.now(timezone.utc).isoformat()
+    elif not isinstance(submitted_at, str):
+        submitted_at = str(submitted_at)
 
     return f"""---
 from: necro-game-news-public
@@ -145,7 +146,7 @@ registry: {sub['registry']}
 contact: {sub['contact']}
 source: {sub['source']}
 priority: normal
-requested: {timestamp}
+requested: {submitted_at}
 submission_file: {sub['source_file']}
 ---
 
@@ -176,7 +177,7 @@ Your workflow:
 The submitter's classification is a SUGGESTION, not authoritative. You are the
 classifier. Override if the evidence doesn't support their suggestion.
 
-Submission file: {sub['source_file']}
+Submission doc: {sub['source_file']}
 """
 
 
@@ -185,35 +186,35 @@ def main():
         description="Pick up necro-game-news submissions and route to Slimeko's inbox"
     )
     parser.add_argument("--execute", action="store_true", help="Actually write inbox files")
-    parser.add_argument("--source", type=str, default=None, help="Filter by source (discord, manual, web)")
     args = parser.parse_args()
 
-    submissions = find_submissions(source_filter=args.source)
+    submissions = find_pending_submissions()
 
     if not submissions:
-        print("No unprocessed submissions found.")
+        print("No pending submissions found.")
         return 0
 
-    print(f"Found {len(submissions)} unprocessed submission(s):")
+    print(f"Found {len(submissions)} pending submission(s):")
 
     written = 0
     skipped = 0
     errors = 0
 
-    for filepath in submissions:
+    for sub_data in submissions:
         try:
-            sub = parse_submission(filepath)
+            sub = parse_submission(sub_data)
         except Exception as e:
-            print(f"  ERROR parsing {filepath.name}: {e}")
+            print(f"  ERROR parsing submission {sub_data.get('_doc_id', '?')}: {e}")
             errors += 1
             continue
 
-        # Build inbox filename: from-necro-sub-{source_file_stem}.md
-        inbox_filename = f"from-necro-sub-{filepath.stem}.md"
+        # Build inbox filename: from-necro-sub-{doc_id}.md
+        doc_id = sub_data["_doc_id"]
+        inbox_filename = f"from-necro-sub-{doc_id}.md"
         inbox_path = SLIMEKO_INBOX / inbox_filename
 
         if inbox_path.exists():
-            print(f"  SKIP {filepath.name} (inbox file already exists)")
+            print(f"  SKIP {doc_id} (inbox file already exists)")
             skipped += 1
             continue
 
@@ -222,13 +223,15 @@ def main():
         if args.execute:
             SLIMEKO_INBOX.mkdir(parents=True, exist_ok=True)
             inbox_path.write_text(content)
-            # Move source to processed
-            PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-            filepath.rename(PROCESSED_DIR / filepath.name)
-            print(f"  WROTE {inbox_filename} <- {filepath.name}")
+            # Mark as processed in Firestore
+            db.collection('ngn-submissions').doc(doc_id).update({
+                'status': 'processed',
+                'processed_at': firestore.SERVER_TIMESTAMP,
+            })
+            print(f"  WROTE {inbox_filename} <- {doc_id}")
             written += 1
         else:
-            print(f"  WOULD WRITE {inbox_filename} <- {filepath.name}")
+            print(f"  WOULD WRITE {inbox_filename} <- {doc_id}")
             print(f"    Game: {sub['game_name']}")
             print(f"    Registry: {sub['registry']}")
             written += 1
