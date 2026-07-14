@@ -108,3 +108,8 @@ frontend/.vite/
 
 content/*
 data/discovery_cache/*.txt
+
+# Submission intake (Slimeko pipeline)
+data/submissions/*.json
+!data/submissions/_TEMPLATE.json
+data/submissions/.processed/

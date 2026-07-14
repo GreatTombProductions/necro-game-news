@@ -13,11 +13,12 @@ Environment variables required:
     DISCORD_CHANNEL_ID - Channel ID for submissions (optional, defaults to any channel)
 """
 
+import json
 import os
 import re
 import subprocess
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -30,6 +31,7 @@ from dotenv import load_dotenv
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
 GAMES_YAML_PATH = PROJECT_ROOT / "data" / "games_list.yaml"
+SUBMISSIONS_DIR = PROJECT_ROOT / "data" / "submissions"
 DEPLOY_SCRIPT = PROJECT_ROOT / "scripts" / "deploy.sh"
 
 # Load environment variables
@@ -388,6 +390,66 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 pending_overwrites: dict[int, GameEntry] = {}
 
 
+def write_submission_local(entry: GameEntry, source: str = "discord") -> Optional[Path]:
+    """
+    Write a submission as a local JSON file for Slimeko's intake pipeline.
+
+    Creates a timestamped JSON file in data/submissions/ that
+    submission_pickup.py will route to Slimeko's inbox.
+
+    Args:
+        entry: Parsed GameEntry from submission
+        source: Source label (discord, web, manual)
+
+    Returns:
+        Path to written file, or None on error
+    """
+    SUBMISSIONS_DIR.mkdir(parents=True, exist_ok=True)
+
+    timestamp = datetime.now(timezone.utc).isoformat()
+    safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', entry.name or 'unknown')[:40]
+    filename = f"submission_{date.today().isoformat()}_{safe_name}_{int(datetime.now().timestamp())}.json"
+    filepath = SUBMISSIONS_DIR / filename
+
+    submission_data = {
+        "gameName": entry.name or "",
+        "steamId": str(entry.steam_id) if entry.steam_id else "",
+        "submissionType": "addition",
+        "submitterType": "player",
+        "registry": "necromancy",
+        "availability": entry.dimension_4 or "",
+        "centrality": entry.dimension_1 or "",
+        "pov": entry.dimension_2 or "",
+        "naming": entry.dimension_3 or "",
+        "notes": entry.dimension_1_notes or "",
+        "contact": "",
+        "source": source,
+        "submitted_at": timestamp,
+    }
+
+    try:
+        filepath.write_text(json.dumps(submission_data, indent=2))
+        print(f"  Wrote local submission: {filename}")
+        return filepath
+    except Exception as e:
+        print(f"  ERROR writing local submission: {e}", file=sys.stderr)
+        return None
+
+
+def write_embed_submission_local(embed: discord.Embed, source: str = "discord") -> Optional[Path]:
+    """
+    Write a submission from a Discord embed to the local submissions store.
+
+    Parses the embed and writes a JSON file. Called from on_message
+    when a new submission arrives, BEFORE approval — so Slimeko
+    can process it independently.
+    """
+    entry = parse_embed_submission(embed)
+    if not entry.name:
+        return None  # Can't write a submission without a game name
+    return write_submission_local(entry, source)
+
+
 def check_channel(interaction: discord.Interaction) -> bool:
     """Check if command is being run in the allowed channel."""
     if not DISCORD_CHANNEL_ID:
@@ -412,6 +474,29 @@ async def on_ready():
         print(f"Synced {len(synced)} command(s)")
     except Exception as e:
         print(f"Failed to sync commands: {e}")
+
+
+@bot.event
+async def on_message(message: discord.Message):
+    """Catch new submission messages and write local files for Slimeko intake."""
+    # Always process commands
+    await bot.process_commands(message)
+
+    # Check for webhook messages with submission embeds
+    if not message.webhook_id:
+        return  # Not from webhook (the submission form uses a webhook)
+
+    if not message.embeds:
+        return
+
+    embed = message.embeds[0]
+    if not embed.title or "submission" not in embed.title.lower():
+        return
+
+    # Write local submission file for Slimeko's intake pipeline
+    filepath = write_embed_submission_local(embed, source="discord")
+    if filepath:
+        print(f"Submission routed to local store: {filepath.name}")
 
 
 @bot.event

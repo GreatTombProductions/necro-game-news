@@ -1,0 +1,35 @@
+{
+  "_description": "Sample submission template. Copy this file and fill in the fields, then run submission_pickup.py to route to Slimeko.",
+  "_usage": "Place .json files in data/submissions/ with any filename. Run: python3 scripts/submission_pickup.py --execute",
+  "_fields": {
+    "gameName": "Required. Game name as entered by submitter.",
+    "steamId": "Optional. Steam App ID if provided.",
+    "submissionType": "addition or revision",
+    "submitterType": "player or developer",
+    "registry": "necromancy or blood",
+    "availability": "instant, gated, or empty",
+    "centrality": "a, b, c, d, or empty (necromancy only)",
+    "pov": "character, unit, or empty",
+    "naming": "explicit, implied, or empty (necromancy only)",
+    "vampirism": "outright, implied, channeled, absent, or empty (blood only)",
+    "hemomancy": "a, b, c, d, absent, or empty (blood only)",
+    "notes": "Submitter's justification or notes",
+    "contact": "Optional contact info",
+    "source": "discord, web, or manual",
+    "submitted_at": "ISO 8601 timestamp"
+  },
+
+  "gameName": "Example Game",
+  "steamId": "",
+  "submissionType": "addition",
+  "submitterType": "player",
+  "registry": "necromancy",
+  "availability": "",
+  "centrality": "",
+  "pov": "",
+  "naming": "",
+  "notes": "Example notes from submitter",
+  "contact": "",
+  "source": "manual",
+  "submitted_at": "2026-01-01T00:00:00"
+}
