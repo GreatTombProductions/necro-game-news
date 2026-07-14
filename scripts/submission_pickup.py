@@ -40,6 +40,9 @@ def find_submissions(source_filter: str = None) -> list[Path]:
 
     submissions = []
     for f in sorted(SUBMISSIONS_DIR.glob("*.json")):
+        # Skip template and metadata files
+        if f.name.startswith("_"):
+            continue
         # Skip already-processed files
         processed_path = PROCESSED_DIR / f.name
         if processed_path.exists():
