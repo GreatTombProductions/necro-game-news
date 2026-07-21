@@ -25,7 +25,8 @@ from firebase_admin import credentials, firestore
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-GREATTOMB_ROOT = PROJECT_ROOT.parents[1]  # community-tools -> greattomb root
+# NGN lives at 0th-floor-exterior/east-mausoleum/necro-game-news/ — 2 levels to greattomb root.
+GREATTOMB_ROOT = PROJECT_ROOT.parents[2]
 SLIMEKO_INBOX = GREATTOMB_ROOT / "agents" / "slimeko" / "workspace" / "inbox"
 
 # Initialize Firebase — use existing ecosystem credentials.
@@ -236,7 +237,7 @@ def main():
             SLIMEKO_INBOX.mkdir(parents=True, exist_ok=True)
             inbox_path.write_text(content)
             # Mark as processed in Firestore
-            db.collection('ngn-submissions').doc(doc_id).update({
+            db.collection('ngn-submissions').document(doc_id).update({
                 'status': 'processed',
                 'processed_at': firestore.SERVER_TIMESTAMP,
             })
