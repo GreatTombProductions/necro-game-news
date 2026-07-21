@@ -30,17 +30,23 @@ SLIMEKO_INBOX = GREATTOMB_ROOT / "agents" / "slimeko" / "workspace" / "inbox"
 
 # Initialize Firebase — use existing ecosystem credentials.
 # Same project as agent-registry: greattomb-agent-registry.
-cred_path = os.environ.get(
-    "GOOGLE_APPLICATION_CREDENTIALS",
-    str(GREATTOMB_ROOT / "10th-floor-throne-room/throne-of-kings/functions/service-account.json")
-)
-if Path(cred_path).exists():
-    cred = credentials.Certificate(cred_path)
-    try:
-        firebase_admin.initialize_app(cred)
-    except ValueError:
-        pass  # Already initialized
-else:
+# Credential paths in priority order (matches invoke-listener infra.py pattern).
+_cred_paths = [
+    os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"),
+    os.path.expanduser("~/.config/greattomb/firebase-service-account.json"),
+    str(GREATTOMB_ROOT / "10th-floor-throne-room/throne-of-kings/functions/service-account.json"),
+]
+_initialized = False
+for _cp in _cred_paths:
+    if _cp and Path(_cp).exists():
+        try:
+            firebase_admin.initialize_app(credentials.Certificate(_cp))
+            _initialized = True
+            break
+        except ValueError:
+            _initialized = True  # Already initialized from prior run
+            break
+if not _initialized:
     try:
         firebase_admin.initialize_app()
     except ValueError:
@@ -50,10 +56,13 @@ db = firestore.client()
 
 
 def find_pending_submissions() -> list[dict]:
-    """Query Firestore for pending submissions."""
+    """Query Firestore for pending submissions.
+    
+    Sorts in Python rather than Firestore to avoid requiring a composite index
+    on (status, created_at). The collection volume is low enough that this is fine.
+    """
     docs = db.collection('ngn-submissions') \
         .where('status', '==', 'pending') \
-        .order_by('created_at') \
         .stream()
 
     submissions = []
@@ -61,6 +70,9 @@ def find_pending_submissions() -> list[dict]:
         data = doc.to_dict()
         data['_doc_id'] = doc.id
         submissions.append(data)
+    
+    # Sort in Python — avoids composite index requirement
+    submissions.sort(key=lambda s: s.get('created_at') or datetime.min.replace(tzinfo=timezone.utc))
     return submissions
 
 
