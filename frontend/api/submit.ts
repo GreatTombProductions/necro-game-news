@@ -18,16 +18,17 @@ interface SubmissionData {
   registry: RegistryMode;
 }
 
-// Lazy-loaded Firebase singleton — avoids module-scope crash if env vars missing.
+// Lazy-loaded Firebase singleton — avoids module-scope crash.
 let _db: any = null;
 let _FieldValue: any = null;
 
 async function initFirebase() {
   if (_db && _FieldValue) return { db: _db, FieldValue: _FieldValue };
 
-  const admin = await import('firebase-admin');
+  const { initializeApp, getApps, cert } = await import('firebase-admin/app');
+  const { getFirestore, FieldValue, Timestamp } = await import('firebase-admin/firestore');
 
-  if (!admin.apps.length) {
+  if (getApps().length === 0) {
     const projectId = process.env.FIREBASE_PROJECT_ID;
     const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
     const privateKey = process.env.FIREBASE_PRIVATE_KEY;
@@ -38,8 +39,8 @@ async function initFirebase() {
       );
     }
 
-    admin.initializeApp({
-      credential: admin.credential.cert({
+    initializeApp({
+      credential: cert({
         projectId,
         clientEmail,
         privateKey: privateKey.replace(/\\n/g, '\n'),
@@ -47,8 +48,8 @@ async function initFirebase() {
     });
   }
 
-  _db = admin.firestore();
-  _FieldValue = admin.firestore.FieldValue;
+  _db = getFirestore();
+  _FieldValue = FieldValue;
   return { db: _db, FieldValue: _FieldValue };
 }
 
