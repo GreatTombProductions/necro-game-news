@@ -1,4 +1,17 @@
 games:
+- name: Hear My Cult
+  steam_id: 2509380
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-07-27'
+  dimension_1_notes: 'Submitter suggested A/explicit but Steam store page lacks necromancy-specific
+    terminology. Core mechanic involves summoning minions/creatures described as ''terrifying
+    creatures'' and ''forbidden rituals'' for Old Gods. Per Ray override: Steam images
+    clearly show spectral and undead minions, warranting A centrality classification.'
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   aliases:
@@ -23,7 +36,8 @@ games:
   priority: low
   date_updated: '2025-12-09'
   dimension_1_notes: Melinoe canonically has necromancy abilities as revealed in dialogue,
-    but they do not affect gameplay, apart from the "Necromantic Influence" incantation and Night Bloom hex ("The dead, be born again!")
+    but they do not affect gameplay, apart from the "Necromantic Influence" incantation
+    and Night Bloom hex ("The dead, be born again!")
 - name: Lost Ark
   steam_id: 1599340
   classification:
@@ -107,7 +121,7 @@ games:
   dimension_1_notes: Necromancer card exists, summons shadow bats when placed
 - name: Hell Clock
   steam_id: 1782460
-  aliases: 
+  aliases:
   - Hellclock
   classification:
     dimension_1: c
@@ -624,9 +638,9 @@ games:
 - name: The Elder Scrolls® Online
   steam_id: 306130
   aliases:
-    - ESO
-    - Elder Scrolls Online
-    - The Elder Scrolls Online
+  - ESO
+  - Elder Scrolls Online
+  - The Elder Scrolls Online
   classification:
     dimension_1: a
     dimension_2: character
@@ -648,7 +662,7 @@ games:
 - name: Age of Wonders 4
   steam_id: 1669000
   aliases:
-  - "Age of Wonders IV"
+  - Age of Wonders IV
   classification:
     dimension_1: a
     dimension_2: character
@@ -656,7 +670,9 @@ games:
     dimension_4: instant
   priority: medium
   date_updated: '2025-12-23'
-  dimension_1_notes: Comprehensive necromancy with full player choice for depth and flavor available across all game mechanics, including ruler class (e.g. Death Knight), faction race + culture, and magic tomes (e.g. Tome of Necromancy)
+  dimension_1_notes: Comprehensive necromancy with full player choice for depth and
+    flavor available across all game mechanics, including ruler class (e.g. Death
+    Knight), faction race + culture, and magic tomes (e.g. Tome of Necromancy)
 - name: Heroes® of Might & Magic® III - HD Edition
   aliases:
   - Heroes of Might and Magic 3 HD Edition
@@ -730,7 +746,7 @@ games:
   steam_id: 1184370
   aliases:
   - Pathfinder Wrath of the Righteous Enhanced Edition
-  - "Pathfinder: Wrath of the Righteous Enhanced Edition"
+  - 'Pathfinder: Wrath of the Righteous Enhanced Edition'
   classification:
     dimension_1: a
     dimension_2: character
@@ -779,11 +795,11 @@ games:
   priority: medium
   date_updated: '2025-12-09'
   dimension_1_notes: Necromancer class
-- name: "Eador. Masters of the Broken World"
+- name: Eador. Masters of the Broken World
   steam_id: 232050
   aliases:
   - Eador Masters of the Broken World
-  - "Eador: Masters of the Broken World"
+  - 'Eador: Masters of the Broken World'
   classification:
     dimension_1: b
     dimension_2: character
@@ -817,8 +833,8 @@ games:
   aliases:
   - Disciples 2 Gallean's Return
   - Disciples II Gallean's Return
-  - "Disciples 2: Gallean's Return"
-  - "Disciples II: Gallean's Return"
+  - 'Disciples 2: Gallean''s Return'
+  - 'Disciples II: Gallean''s Return'
   classification:
     dimension_1: a
     dimension_2: unit
@@ -840,7 +856,7 @@ games:
 - name: Age of Wonders III
   steam_id: 226840
   aliases:
-  - "Age of Wonders 3"
+  - Age of Wonders 3
   classification:
     dimension_1: a
     dimension_2: character
@@ -1038,7 +1054,7 @@ games:
   date_updated: '2025-12-09'
 - name: Diablo III
   aliases:
-  - 'Diablo 3'
+  - Diablo 3
   - 'Diablo III: Reaper of Souls'
   - 'Diablo 3: Reaper of Souls'
   - 'Diablo 3: Rise of the Necromancer'
@@ -1082,8 +1098,8 @@ games:
   date_updated: '2025-12-09'
 - name: 'Diablo II: Resurrected'
   aliases:
-  - 'Diablo 2 Resurrected'
-  - 'Diablo II Resurrected'
+  - Diablo 2 Resurrected
+  - Diablo II Resurrected
   - 'Diablo 2: Resurrected'
   battlenet_id: diablo-2-resurrected
   battlenet_store_id: diablo-ii-resurrected
@@ -1128,7 +1144,9 @@ games:
   platforms:
   - battlenet
   primary_platform: battlenet
-  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena) game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft, and Overwatch battle in 5v5 matches
+  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena)
+    game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft,
+    and Overwatch battle in 5v5 matches
   genres:
   - MOBA
   classification:
@@ -1137,7 +1155,8 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Heroes like Xul, the Cryptic Necromancer and Arthas, the Lich King
+  dimension_1_notes: Heroes like Xul, the Cryptic Necromancer and Arthas, the Lich
+    King
   date_updated: '2025-12-11'
 - name: Warcraft Rumble
   battlenet_id: warcraft-rumble
@@ -1159,10 +1178,10 @@ games:
   date_updated: '2025-12-09'
 - name: 'Warcraft III: Reforged'
   aliases:
-  - 'Warcraft 3'
+  - Warcraft 3
   - 'Warcraft 3: Reforged'
-  - 'Warcraft 3 Reforged'
-  - 'Warcraft III Reforged'
+  - Warcraft 3 Reforged
+  - Warcraft III Reforged
   battlenet_id: warcraft-3
   battlenet_store_id: warcraft-3-reforged
   platforms:
@@ -1231,7 +1250,7 @@ games:
   priority: high
   dimension_1_notes: Necromancer class
   date_updated: '2025-12-09'
-- name: "Jotunnslayer: Hordes of Hel"
+- name: 'Jotunnslayer: Hordes of Hel'
   steam_id: 2820820
   platforms:
   - steam
@@ -1241,9 +1260,10 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Some necromantic abilities for classes such as Seeress and Revenant, and from gods such as Nidhogg (e.g. Raise Dead)
+  dimension_1_notes: Some necromantic abilities for classes such as Seeress and Revenant,
+    and from gods such as Nidhogg (e.g. Raise Dead)
   date_updated: '2025-12-12'
-- name: "Arx Fatalis"
+- name: Arx Fatalis
   steam_id: 1700
   platforms:
   - steam
@@ -1255,7 +1275,7 @@ games:
   priority: medium
   dimension_1_notes: Spells such as Raise Dead (Level 6 spell) available
   date_updated: '2025-12-13'
-- name: "Gothic 1"
+- name: Gothic 1
   steam_id: 65540
   platforms:
   - steam
@@ -1265,15 +1285,16 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Necromancer guild, learn spells such as Summon Skeleton and Summon Army of Darkness
+  dimension_1_notes: Necromancer guild, learn spells such as Summon Skeleton and Summon
+    Army of Darkness
   date_updated: '2025-12-13'
-- name: "Middle-earth™: Shadow of War™"
+- name: 'Middle-earth™: Shadow of War™'
   steam_id: 356190
   aliases:
-  - "Middle-earth: Shadow of War"
-  - "Middle-earth Shadow of War"
-  - "Middle Earth: Shadow of War"
-  - "Middle Earth Shadow of War"
+  - 'Middle-earth: Shadow of War'
+  - Middle-earth Shadow of War
+  - 'Middle Earth: Shadow of War'
+  - Middle Earth Shadow of War
   platforms:
   - steam
   classification:
@@ -1282,9 +1303,11 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Necromancy skills present, which can be specialized into with the Ringwraith gear set. Can also make orcs under your command the Necromancer title
+  dimension_1_notes: Necromancy skills present, which can be specialized into with
+    the Ringwraith gear set. Can also make orcs under your command the Necromancer
+    title
   date_updated: '2025-12-13'
-- name: "RuneScape ®"
+- name: RuneScape ®
   steam_id: 1343400
   platforms:
   - steam
@@ -1297,7 +1320,7 @@ games:
   dimension_1_notes: Necromancy available as one of the 4 combat styles
   price_notes: Some content behind membership subscription
   date_updated: '2025-12-13'
-- name: "Bone's Cafe"
+- name: Bone's Cafe
   steam_id: 1739070
   platforms:
   - steam
@@ -1307,9 +1330,10 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: 'From Steam page: "Follow the journey of Bones the necromancer as you grow and expand your cafe."'
+  dimension_1_notes: 'From Steam page: "Follow the journey of Bones the necromancer
+    as you grow and expand your cafe."'
   date_updated: '2025-12-14'
-- name: "Ruinarch"
+- name: Ruinarch
   steam_id: 909320
   platforms:
   - steam
@@ -1319,7 +1343,8 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: medium
-  dimension_1_notes: 'The Lich archetype ("Use dark necromantic powers to terrify the world of the living")'
+  dimension_1_notes: The Lich archetype ("Use dark necromantic powers to terrify the
+    world of the living")
   date_updated: '2025-12-15'
 - name: Soulash
   steam_id: 1623210
@@ -1331,9 +1356,10 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: high
-  dimension_1_notes: Lich role can raise permanent undead army, decay aura destroys villages
+  dimension_1_notes: Lich role can raise permanent undead army, decay aura destroys
+    villages
   date_updated: '2025-12-15'
-- name: "Hero's Hour"
+- name: Hero's Hour
   steam_id: 1656780
   platforms:
   - steam
@@ -1343,7 +1369,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: high
-  dimension_1_notes: Decay faction (necropolis equivalent), Earthen faction also has necromancy focus. HOMM-style with real-time battle simulation.
+  dimension_1_notes: Decay faction (necropolis equivalent), Earthen faction also has
+    necromancy focus. HOMM-style with real-time battle simulation.
   date_updated: '2025-12-15'
 - name: Sword of the Necromancer
   steam_id: 1243890
@@ -1355,7 +1382,8 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: high
-  dimension_1_notes: Core mechanic is using the Necromancer's sword to raise defeated enemies as minions (4 slots)
+  dimension_1_notes: Core mechanic is using the Necromancer's sword to raise defeated
+    enemies as minions (4 slots)
   date_updated: '2025-12-15'
 - name: Graveyard Keeper
   steam_id: 599140
@@ -1379,7 +1407,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Play as the Revenant King resurrected by necromancer daughter, recruit undead minion groups
+  dimension_1_notes: Play as the Revenant King resurrected by necromancer daughter,
+    recruit undead minion groups
   date_updated: '2025-12-15'
 - name: Creature Lab
   steam_id: 1309990
@@ -1391,7 +1420,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Frankenstein-style reanimation - create monsters from corpses using mutagens
+  dimension_1_notes: Frankenstein-style reanimation - create monsters from corpses
+    using mutagens
   date_updated: '2025-12-15'
 - name: Corpse Keeper
   steam_id: 1601740
@@ -1403,7 +1433,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: high
-  dimension_1_notes: Control corpses of flesh and bones stuck together with black magic. Create new corpses from defeated enemies as warriors decay.
+  dimension_1_notes: Control corpses of flesh and bones stuck together with black
+    magic. Create new corpses from defeated enemies as warriors decay.
   date_updated: '2025-12-17'
 - name: Dredgers
   steam_id: 1112930
@@ -1415,9 +1446,10 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Necromancer class, can become lich with phylactery. Resurrect as zombie (once) or skeleton (unlimited).
+  dimension_1_notes: Necromancer class, can become lich with phylactery. Resurrect
+    as zombie (once) or skeleton (unlimited).
   date_updated: '2025-12-15'
-- name: "Rogue Empire: Dungeon Crawler RPG"
+- name: 'Rogue Empire: Dungeon Crawler RPG'
   steam_id: 650940
   platforms:
   - steam
@@ -1427,7 +1459,8 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Necromancer class with 4+ minion types, can become high level undead
+  dimension_1_notes: Necromancer class with 4+ minion types, can become high level
+    undead
   date_updated: '2025-12-15'
 - name: Fort Triumph
   steam_id: 612570
@@ -1439,7 +1472,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Grateful Dead faction playable in skirmish/multiplayer, features necromancer Re-Zaph
+  dimension_1_notes: Grateful Dead faction playable in skirmish/multiplayer, features
+    necromancer Re-Zaph
   date_updated: '2025-12-15'
 - name: Lords of Solgrund
   steam_id: 1550650
@@ -1451,7 +1485,8 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Necromancy is one of 4 magic schools - raise zombies, skeletons, disease clouds
+  dimension_1_notes: Necromancy is one of 4 magic schools - raise zombies, skeletons,
+    disease clouds
   date_updated: '2025-12-15'
 - name: Spellwake
   steam_id: 921070
@@ -1475,7 +1510,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Core loop is creating homunculi from elements, harvesting soul fragments to resurrect daughter
+  dimension_1_notes: Core loop is creating homunculi from elements, harvesting soul
+    fragments to resurrect daughter
   date_updated: '2025-12-15'
 - name: My Lovely Empress
   steam_id: 2052990
@@ -1487,7 +1523,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: low
-  dimension_1_notes: Soul manipulation in story, main gameplay is Yaoguai summoning. Can interact with Empress' ghost immediately.
+  dimension_1_notes: Soul manipulation in story, main gameplay is Yaoguai summoning.
+    Can interact with Empress' ghost immediately.
   date_updated: '2025-12-17'
 - name: My Lovely Wife
   steam_id: 1251930
@@ -1499,12 +1536,13 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: low
-  dimension_1_notes: Soul manipulation adjacent, goal is reviving wife. Less directly necromantic than My Lovely Daughter.
+  dimension_1_notes: Soul manipulation adjacent, goal is reviving wife. Less directly
+    necromantic than My Lovely Daughter.
   date_updated: '2025-12-17'
-- name: "Tree of Savior (English Ver.)"
+- name: Tree of Savior (English Ver.)
   steam_id: 372000
   aliases:
-  - "Tree of Savior"
+  - Tree of Savior
   platforms:
   - steam
   classification:
@@ -1513,9 +1551,10 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Necromancer class (5 skeletons + big undead), Bokor class (8 zombies), can combine classes
+  dimension_1_notes: Necromancer class (5 skeletons + big undead), Bokor class (8
+    zombies), can combine classes
   date_updated: '2025-12-15'
-- name: "Godking: Master of Rituals"
+- name: 'Godking: Master of Rituals'
   steam_id: 1229310
   platforms:
   - steam
@@ -1525,7 +1564,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: low
-  dimension_1_notes: 3 factions with undead (classic undead army, bone rats, barbarian spirits). 3D Dominions-like.
+  dimension_1_notes: 3 factions with undead (classic undead army, bone rats, barbarian
+    spirits). 3D Dominions-like.
   date_updated: '2025-12-15'
 - name: Odd Realm
   steam_id: 688060
@@ -1549,10 +1589,12 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: The Lich minion raises fallen enemies as Specters. "Necromancy" mentioned in Book of Dagon.
-  dimension_2_notes: Play as Dagon commanding apostles and minions rather than as the apostle directly
+  dimension_1_notes: The Lich minion raises fallen enemies as Specters. "Necromancy"
+    mentioned in Book of Dagon.
+  dimension_2_notes: Play as Dagon commanding apostles and minions rather than as
+    the apostle directly
   date_updated: '2025-12-15'
-- name: "Zombidle : REMONSTERED"
+- name: 'Zombidle : REMONSTERED'
   steam_id: 612020
   aliases:
   - Zombidle
@@ -1580,12 +1622,12 @@ games:
   priority: low
   dimension_1_notes: Forsaken Wastes faction
   date_updated: '2025-12-17'
-- name: "The Elder Scrolls V: Skyrim Special Edition"
+- name: 'The Elder Scrolls V: Skyrim Special Edition'
   steam_id: 489830
   aliases:
   - Skyrim
   - Skyrim Special Edition
-  - "The Elder Scrolls V: Skyrim"
+  - 'The Elder Scrolls V: Skyrim'
   platforms:
   - steam
   classification:
@@ -1594,13 +1636,14 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Conjuration skill (one of 6 Mage skills) contains substantial necromantic spells. Deep roleplaying/customization potential.
+  dimension_1_notes: Conjuration skill (one of 6 Mage skills) contains substantial
+    necromantic spells. Deep roleplaying/customization potential.
   date_updated: '2025-12-17'
-- name: "The Elder Scrolls IV: Oblivion Remastered"
+- name: 'The Elder Scrolls IV: Oblivion Remastered'
   steam_id: 2623190
   aliases:
   - Oblivion
-  - "The Elder Scrolls IV: Oblivion"
+  - 'The Elder Scrolls IV: Oblivion'
   platforms:
   - steam
   classification:
@@ -1609,13 +1652,14 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Conjuration governs summoning Daedric and undead servants. One of 21 skills, custom class creation available.
+  dimension_1_notes: Conjuration governs summoning Daedric and undead servants. One
+    of 21 skills, custom class creation available.
   date_updated: '2025-12-17'
-- name: "The Elder Scrolls III: Morrowind® Game of the Year Edition"
+- name: 'The Elder Scrolls III: Morrowind® Game of the Year Edition'
   steam_id: 22320
   aliases:
   - Morrowind
-  - "The Elder Scrolls III: Morrowind"
+  - 'The Elder Scrolls III: Morrowind'
   platforms:
   - steam
   classification:
@@ -1624,12 +1668,13 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Conjuration skill with necromantic spells. Can start with Summon Ancestral Ghost spell. Custom class creation available.
+  dimension_1_notes: Conjuration skill with necromantic spells. Can start with Summon
+    Ancestral Ghost spell. Custom class creation available.
   date_updated: '2025-12-17'
-- name: "Baldur's Gate II: Enhanced Edition"
+- name: 'Baldur''s Gate II: Enhanced Edition'
   steam_id: 257350
   aliases:
-  - "Baldur's Gate 2"
+  - Baldur's Gate 2
   - BG2
   - BGII
   platforms:
@@ -1640,12 +1685,13 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization doesn't fully define character
+  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization
+    doesn't fully define character
   date_updated: '2025-12-17'
-- name: "Baldur's Gate: Enhanced Edition"
+- name: 'Baldur''s Gate: Enhanced Edition'
   steam_id: 228280
   aliases:
-  - "Baldur's Gate 1"
+  - Baldur's Gate 1
   - BG1
   - BGI
   platforms:
@@ -1656,9 +1702,10 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization doesn't fully define character
+  dimension_1_notes: Specialist Mage can specialize in Necromancy school, but specialization
+    doesn't fully define character
   date_updated: '2025-12-17'
-- name: "Bro, where's My head???"
+- name: Bro, where's My head???
   steam_id: 1564760
   platforms:
   - steam
@@ -1668,12 +1715,13 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: low
-  dimension_1_notes: Character is necromancer Re-Zaph in lore but this does not meaningfully impact puzzle gameplay
+  dimension_1_notes: Character is necromancer Re-Zaph in lore but this does not meaningfully
+    impact puzzle gameplay
   date_updated: '2025-12-17'
 - name: 9th Dawn III
   steam_id: 1154850
   aliases:
-  - "9th Dawn 3"
+  - 9th Dawn 3
   platforms:
   - steam
   classification:
@@ -1682,12 +1730,13 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Summoner character with substantial undead summon options among the available pets
+  dimension_1_notes: Summoner character with substantial undead summon options among
+    the available pets
   date_updated: '2025-12-17'
-- name: "Icewind Dale: Enhanced Edition"
+- name: 'Icewind Dale: Enhanced Edition'
   steam_id: 321800
   aliases:
-  - "Icewind Dale"
+  - Icewind Dale
   platforms:
   - steam
   classification:
@@ -1696,12 +1745,13 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Necromancy is one of 8 Schools of Magic, Specialist Mage "Necromancer" available
+  dimension_1_notes: Necromancy is one of 8 Schools of Magic, Specialist Mage "Necromancer"
+    available
   date_updated: '2025-12-17'
 - name: Titan Quest Anniversary Edition
   steam_id: 475150
   aliases:
-  - "Titan Quest"
+  - Titan Quest
   platforms:
   - steam
   classification:
@@ -1710,12 +1760,13 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Spirit Mastery (Theurgist) features necromantic abilities including Summon Liche King
+  dimension_1_notes: Spirit Mastery (Theurgist) features necromantic abilities including
+    Summon Liche King
   date_updated: '2025-12-17'
 - name: Dungeon Siege II
   steam_id: 39200
   aliases:
-  - "Dungeon Siege 2"
+  - Dungeon Siege 2
   platforms:
   - steam
   classification:
@@ -1724,12 +1775,13 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: low
-  dimension_1_notes: Grim Necromancy combat magic skill grants increased death magic damage
+  dimension_1_notes: Grim Necromancy combat magic skill grants increased death magic
+    damage
   date_updated: '2025-12-17'
 - name: Dungeon Siege
   steam_id: 39190
   aliases:
-  - "Dungeon Siege 1"
+  - Dungeon Siege 1
   platforms:
   - steam
   classification:
@@ -1750,7 +1802,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Conjurer class (Myths & Outcasts DLC) has unique Conjure Skeleton spell with persistent companion that grows in power
+  dimension_1_notes: Conjurer class (Myths & Outcasts DLC) has unique Conjure Skeleton
+    spell with persistent companion that grows in power
   price_notes: Conjurer requires Myths & Outcasts DLC ($4.99)
   date_updated: '2025-12-17'
 - name: Tangledeep
@@ -1763,7 +1816,8 @@ games:
     dimension_3: implied
     dimension_4: instant
   priority: medium
-  dimension_1_notes: Soulkeeper starting job collects Echoes of fallen enemies, Reverberate Monster skill revives fallen monsters to fight for you (80 turns, retain abilities)
+  dimension_1_notes: Soulkeeper starting job collects Echoes of fallen enemies, Reverberate
+    Monster skill revives fallen monsters to fight for you (80 turns, retain abilities)
   date_updated: '2025-12-17'
 - name: Master of Magic
   steam_id: 1623070
@@ -1787,12 +1841,13 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: low
-  dimension_1_notes: Party-based play, Clerics and Wizards can summon undead from level 5 onward
+  dimension_1_notes: Party-based play, Clerics and Wizards can summon undead from
+    level 5 onward
   date_updated: '2025-12-17'
-- name: "Warlock 2: The Exiled"
+- name: 'Warlock 2: The Exiled'
   steam_id: 205990
   aliases:
-  - "Warlock 2"
+  - Warlock 2
   platforms:
   - steam
   classification:
@@ -1803,11 +1858,11 @@ games:
   priority: medium
   dimension_1_notes: Great Mage can cast spells such as Summon Skeletons
   date_updated: '2025-12-17'
-- name: "Guild Wars® Reforged"
+- name: Guild Wars® Reforged
   steam_id: 29720
   aliases:
-  - "Guild Wars"
-  - "Guild Wars 1"
+  - Guild Wars
+  - Guild Wars 1
   platforms:
   - steam
   classification:
@@ -1818,10 +1873,10 @@ games:
   priority: medium
   dimension_1_notes: Necromancer profession
   date_updated: '2025-12-17'
-- name: "Eador. Imperium"
+- name: Eador. Imperium
   steam_id: 477730
   aliases:
-  - "Eador Imperium"
+  - Eador Imperium
   platforms:
   - steam
   classification:
@@ -1830,9 +1885,10 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Play as Wizard, build necromantic structures after developing negative karma, spells like Raise Zombie available
+  dimension_1_notes: Play as Wizard, build necromantic structures after developing
+    negative karma, spells like Raise Zombie available
   date_updated: '2025-12-17'
-- name: "Fear & Hunger"
+- name: Fear & Hunger
   steam_id: 1002300
   platforms:
   - steam
@@ -1842,13 +1898,14 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: low
-  dimension_1_notes: Enki (playable character) has Necromancy skill from start - re-animates ghoul or skeleton as permanent party member
+  dimension_1_notes: Enki (playable character) has Necromancy skill from start - re-animates
+    ghoul or skeleton as permanent party member
   date_updated: '2025-12-17'
-- name: "DARK SOULS™ III"
+- name: DARK SOULS™ III
   steam_id: 374320
   aliases:
-  - "Dark Souls 3"
-  - "Dark Souls III"
+  - Dark Souls 3
+  - Dark Souls III
   platforms:
   - steam
   classification:
@@ -1859,7 +1916,7 @@ games:
   priority: low
   dimension_1_notes: Necromantic spells like Dead Again (corpse explosion) available
   date_updated: '2025-12-17'
-- name: "Noobs Are Coming"
+- name: Noobs Are Coming
   steam_id: 2225960
   platforms:
   - steam
@@ -1871,12 +1928,12 @@ games:
   priority: low
   dimension_1_notes: '"Necromancer" synergy'
   date_updated: '2025-12-19'
-- name: "Monsters are Coming! Rock & Road"
+- name: Monsters are Coming! Rock & Road
   steam_id: 2934220
   aliases:
-  - "Monsters are Coming Rock & Road"
-  - "Monsters are Coming Rock and Road"
-  - "Monsters are Coming! Rock and Road"
+  - Monsters are Coming Rock & Road
+  - Monsters are Coming Rock and Road
+  - Monsters are Coming! Rock and Road
   platforms:
   - steam
   classification:
@@ -1885,10 +1942,13 @@ games:
     dimension_3: explicit
     dimension_4: gated
   priority: low
-  dimension_1_notes: "Decaying minions: necromantic in nature, have supporting town hall (Royal Mausoleum), districts (e.g. Stone Crypt, Necromancer Tower), and weapons (e.g. Haunted Puppet, Ritual Daggers)"
-  dimension_2_notes: "The hero unit has access to weapons such as Ritual Daggers, which raise slain enemies as minions"
+  dimension_1_notes: 'Decaying minions: necromantic in nature, have supporting town
+    hall (Royal Mausoleum), districts (e.g. Stone Crypt, Necromancer Tower), and weapons
+    (e.g. Haunted Puppet, Ritual Daggers)'
+  dimension_2_notes: The hero unit has access to weapons such as Ritual Daggers, which
+    raise slain enemies as minions
   date_updated: '2025-12-20'
-- name: "Katanaut"
+- name: Katanaut
   steam_id: 3032830
   platforms:
   - steam
@@ -1898,9 +1958,10 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: low
-  dimension_1_notes: "Flesh Legion skill (chance to spawn minions from nearby corpses), some other vaguely necromantic skills like Corpse Detonation"
+  dimension_1_notes: Flesh Legion skill (chance to spawn minions from nearby corpses),
+    some other vaguely necromantic skills like Corpse Detonation
   date_updated: '2025-12-20'
-- name: "Skull Horde"
+- name: Skull Horde
   steam_id: 3199360
   platforms:
   - steam
@@ -1910,12 +1971,12 @@ games:
     dimension_3: explicit
     dimension_4: instant
   priority: medium
-  dimension_1_notes: "Play as a flying skull necromancer"
+  dimension_1_notes: Play as a flying skull necromancer
   date_updated: '2025-12-20'
-- name: "EVERSPACE™ 2"
+- name: EVERSPACE™ 2
   steam_id: 1128920
   aliases:
-  - "EVERSPACE 2"
+  - EVERSPACE 2
   platforms:
   - steam
   classification:
@@ -1924,10 +1985,12 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: medium
-  dimension_1_notes: "Vindicator ship class has Reanimator special ability, structurally necromantic - converts wrecks (a corpse-analogue) into drones (minions) - though not fitting the usual thematic/aesthetic cluster"
-  dimension_2_notes: "Assuming you play as whatever is piloting the ship"
+  dimension_1_notes: Vindicator ship class has Reanimator special ability, structurally
+    necromantic - converts wrecks (a corpse-analogue) into drones (minions) - though
+    not fitting the usual thematic/aesthetic cluster
+  dimension_2_notes: Assuming you play as whatever is piloting the ship
   date_updated: '2025-12-23'
-- name: "Death Must Die"
+- name: Death Must Die
   steam_id: 2334730
   platforms:
   - steam
@@ -1936,10 +1999,10 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: "Boons offered by Mort, Daughter of Death, including Necromancy"
+  dimension_1_notes: Boons offered by Mort, Daughter of Death, including Necromancy
   priority: medium
   date_updated: '2026-01-03'
-- name: "Never Mourn"
+- name: Never Mourn
   steam_id: 1839820
   platforms:
   - steam
@@ -1948,10 +2011,10 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: "Play as a necromancer"
+  dimension_1_notes: Play as a necromancer
   priority: medium
   date_updated: '2026-01-03'
-- name: "Monsters Domain"
+- name: Monsters Domain
   steam_id: 1442450
   platforms:
   - steam
@@ -1960,10 +2023,10 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: "Play as an overlord necromancer"
+  dimension_1_notes: Play as an overlord necromancer
   priority: medium
   date_updated: '2026-01-03'
-- name: "Skeleton Scramble Deluxe"
+- name: Skeleton Scramble Deluxe
   steam_id: 1807610
   platforms:
   - steam
@@ -1972,10 +2035,10 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: "Play as a necromancer"
+  dimension_1_notes: Play as a necromancer
   priority: medium
   date_updated: '2026-01-03'
-- name: "Necromancer Accountant"
+- name: Necromancer Accountant
   steam_id: 696160
   platforms:
   - steam
@@ -1984,10 +2047,10 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: "Play as a necromancer"
+  dimension_1_notes: Play as a necromancer
   priority: medium
   date_updated: '2026-01-03'
-- name: "Stubbs the Zombie in Rebel Without a Pulse"
+- name: Stubbs the Zombie in Rebel Without a Pulse
   steam_id: 7800
   platforms:
   - steam
@@ -1996,10 +2059,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: "'Convert your enemies into undead allies & lead a zombie assault on the living'"
+  dimension_1_notes: '''Convert your enemies into undead allies & lead a zombie assault
+    on the living'''
   priority: medium
   date_updated: '2026-01-03'
-- name: "Necroking"
+- name: Necroking
   steam_id: 2852980
   platforms:
   - steam
@@ -2011,7 +2075,7 @@ games:
   dimension_1_notes: Play as a Master of Necromancy
   priority: medium
   date_updated: '2026-01-03'
-- name: "Dungeon 100"
+- name: Dungeon 100
   steam_id: 1711610
   platforms:
   - steam
@@ -2020,13 +2084,14 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Warlock class has many necromantic abilities, including Summon Skeleton
+  dimension_1_notes: Warlock class has many necromantic abilities, including Summon
+    Skeleton
   priority: medium
   date_updated: '2026-01-03'
-- name: "Bloons TD 6"
+- name: Bloons TD 6
   steam_id: 960090
   aliases:
-  - "Bloons Tower Defense 6"
+  - Bloons Tower Defense 6
   platforms:
   - steam
   classification:
@@ -2034,10 +2099,11 @@ games:
     dimension_2: unit
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: Wizard Monkey Tower has Necromancer upgrade path that raises popped Bloons as undead minions
+  dimension_1_notes: Wizard Monkey Tower has Necromancer upgrade path that raises
+    popped Bloons as undead minions
   priority: medium
   date_updated: '2026-01-03'
-- name: "Nomad Survival"
+- name: Nomad Survival
   steam_id: 1929870
   platforms:
   - steam
@@ -2049,7 +2115,7 @@ games:
   dimension_1_notes: Necromancer class
   priority: medium
   date_updated: '2026-01-03'
-- name: "Gedonia"
+- name: Gedonia
   steam_id: 1114220
   platforms:
   - steam
@@ -2058,10 +2124,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Dark Magic skill focuses on weakening enemies and summoning undead minions
+  dimension_1_notes: Dark Magic skill focuses on weakening enemies and summoning undead
+    minions
   priority: medium
   date_updated: '2026-01-03'
-- name: "The Thaumaturge"
+- name: The Thaumaturge
   steam_id: 1684350
   platforms:
   - steam
@@ -2070,15 +2137,16 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Some thaumaturgy crosses over into necromancy, such as making a pact with Upyr - the ghost of a Slavic nobleman
+  dimension_1_notes: Some thaumaturgy crosses over into necromancy, such as making
+    a pact with Upyr - the ghost of a Slavic nobleman
   priority: medium
   date_updated: '2026-01-03'
-- name: "The Bard's Tale IV: Director's Cut"
+- name: 'The Bard''s Tale IV: Director''s Cut'
   steam_id: 1091980
   aliases:
-  - "The Bard's Tale 4: Director's Cut"
-  - "The Bards Tale IV Directors Cut"
-  - "The Bards Tale 4 Directors Cut"
+  - 'The Bard''s Tale 4: Director''s Cut'
+  - The Bards Tale IV Directors Cut
+  - The Bards Tale 4 Directors Cut
   platforms:
   - steam
   classification:
@@ -2086,13 +2154,14 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Prime Summoning ability summons 2 skeletons, Gate ability summons a wraith
+  dimension_1_notes: Prime Summoning ability summons 2 skeletons, Gate ability summons
+    a wraith
   priority: medium
   date_updated: '2026-01-03'
-- name: "The Bard's Tale ARPG: Remastered and Resnarkled"
+- name: 'The Bard''s Tale ARPG: Remastered and Resnarkled'
   steam_id: 41900
   aliases:
-  - "The Bard's Tale ARPG Remastered and Resnarkled"
+  - The Bard's Tale ARPG Remastered and Resnarkled
   platforms:
   - steam
   classification:
@@ -2104,7 +2173,7 @@ games:
   price_notes: Includes The Bard's Tale 1, 2 & 3
   priority: medium
   date_updated: '2026-01-03'
-- name: "Enderal: Forgotten Stories"
+- name: 'Enderal: Forgotten Stories'
   steam_id: 933480
   app_type: mod
   aliases:
@@ -2116,11 +2185,13 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Enderal features necromantic magic disciplines such as Entropy (spells include Summon Ghostly Wolf) and Phasmalism, as well also Affinities such as Dark Keeper.
-  price_notes: "Requires TES V: Skyrim"
+  dimension_1_notes: Enderal features necromantic magic disciplines such as Entropy
+    (spells include Summon Ghostly Wolf) and Phasmalism, as well also Affinities such
+    as Dark Keeper.
+  price_notes: 'Requires TES V: Skyrim'
   priority: medium
   date_updated: '2026-01-05'
-- name: "Vampire Cat"
+- name: Vampire Cat
   steam_id: 3505650
   platforms:
   - steam
@@ -2129,14 +2200,15 @@ games:
     dimension_2: unit
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: Necromeowcer summons three spinning skulls, Whisker summons two ghosts...
+  dimension_1_notes: Necromeowcer summons three spinning skulls, Whisker summons two
+    ghosts...
   dimension_2_notes: Control up to 3 vampire cats, 1 or more of which may be necromantic
   priority: medium
   date_updated: '2026-01-06'
-- name: "Lost Eidolons: Veil of the Witch"
+- name: 'Lost Eidolons: Veil of the Witch'
   steam_id: 2530490
   aliases:
-  - "Lost Eidolons Veil of the Witch"
+  - Lost Eidolons Veil of the Witch
   platforms:
   - steam
   classification:
@@ -2148,16 +2220,18 @@ games:
   dimension_2_notes: Build a party of 4 which may include Soraya
   priority: medium
   date_updated: '2026-01-12'
-- name: "StarCraft II"
+- name: StarCraft II
   battlenet_id: starcraft-2
   battlenet_store_id: starcraft-ii
   aliases:
-  - "Starcraft 2"
-  - "SC2"
+  - Starcraft 2
+  - SC2
   platforms:
   - battlenet
   primary_platform: battlenet
-  short_description: Iconic real-time strategy game. Zerg Infestors deploy Infested Terrans - Stukov confirms infestation is reanimation ("At least my army has prior experience with dying").
+  short_description: Iconic real-time strategy game. Zerg Infestors deploy Infested
+    Terrans - Stukov confirms infestation is reanimation ("At least my army has prior
+    experience with dying").
   genres:
   - RTS
   - Strategy
@@ -2166,11 +2240,13 @@ games:
     dimension_2: unit
     dimension_3: implied
     dimension_4: instant
-  dimension_1_notes: Infestors create Infested Terrans (reanimated corpses). Stukov dialogue confirms infestation is reanimation ("At least my army has prior experience with dying").
+  dimension_1_notes: Infestors create Infested Terrans (reanimated corpses). Stukov
+    dialogue confirms infestation is reanimation ("At least my army has prior experience
+    with dying").
   price_notes: Stukov coop commander typically costs around $4.99
   priority: low
   date_updated: '2026-01-14'
-- name: "Wizard of Legend"
+- name: Wizard of Legend
   steam_id: 445980
   platforms:
   - steam
@@ -2179,10 +2255,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Chaos arcana such as Phantom Brigade, Phantom Company, Phantom Squadron which summon allied units (the use of "phantom" makes it slightly necromancy-coded)
+  dimension_1_notes: Chaos arcana such as Phantom Brigade, Phantom Company, Phantom
+    Squadron which summon allied units (the use of "phantom" makes it slightly necromancy-coded)
   priority: medium
   date_updated: '2026-01-17'
-- name: "Wizard of Legend 2"
+- name: Wizard of Legend 2
   steam_id: 2193540
   platforms:
   - steam
@@ -2191,10 +2268,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Cursed Skull relic summons an "undead creature" to fight alongside the player, chaos arcana such as Phantom Brigade available
+  dimension_1_notes: Cursed Skull relic summons an "undead creature" to fight alongside
+    the player, chaos arcana such as Phantom Brigade available
   priority: medium
   date_updated: '2026-01-18'
-- name: "CARRION"
+- name: CARRION
   steam_id: 953490
   platforms:
   - steam
@@ -2203,10 +2281,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Parasitism skill allows controlling dead bodies, which puts it in the Franeknstein/science-type necromancy category
+  dimension_1_notes: Parasitism skill allows controlling dead bodies, which puts it
+    in the Franeknstein/science-type necromancy category
   priority: medium
   date_updated: '2026-01-22'
-- name: "Tactical Breach Wizards"
+- name: Tactical Breach Wizards
   steam_id: 1043810
   platforms:
   - steam
@@ -2215,11 +2294,12 @@ games:
     dimension_2: unit
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: Dessa Banks, the necromedic, has abilities themed around death and the ability to raise the dead
+  dimension_1_notes: Dessa Banks, the necromedic, has abilities themed around death
+    and the ability to raise the dead
   dimension_2_notes: Control a squad of wizards
   priority: medium
   date_updated: '2026-01-22'
-- name: "Noita"
+- name: Noita
   steam_id: 881100
   platforms:
   - steam
@@ -2228,10 +2308,11 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: Necromancy is a projectile modifier that raises corpses of slain enemies as undead minions
+  dimension_1_notes: Necromancy is a projectile modifier that raises corpses of slain
+    enemies as undead minions
   priority: medium
   date_updated: '2026-01-22'
-- name: "Countless Army"
+- name: Countless Army
   steam_id: 2413640
   platforms:
   - steam
@@ -2240,10 +2321,11 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Command waves of undead minions in this "reverse tower defense" game
+  dimension_1_notes: Command waves of undead minions in this "reverse tower defense"
+    game
   priority: medium
   date_updated: '2026-01-23'
-- name: "Mewgenics"
+- name: Mewgenics
   steam_id: 686060
   platforms:
   - steam
@@ -2255,7 +2337,7 @@ games:
   dimension_1_notes: Necromancer class
   priority: medium
   date_updated: '2026-03-28'
-- name: "Dragon Age: Inquisition"
+- name: 'Dragon Age: Inquisition'
   steam_id: 1222690
   platforms:
   - steam
@@ -2264,10 +2346,14 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: 'Developer notes: "If you play as a mage in Dragon Age Inquisition, you can specialize into a necromancy skill tree by speaking with an NPC who eventually shows up in your home base. There''s a little bit of dialogue with this NPC, and some short dialogues with a few of your companions who react to you training in necromancy. More details are on the fan wiki, which is fairly thorough: https://dragonage.fandom.com/wiki/Necromancer"'
+  dimension_1_notes: 'Developer notes: "If you play as a mage in Dragon Age Inquisition,
+    you can specialize into a necromancy skill tree by speaking with an NPC who eventually
+    shows up in your home base. There''s a little bit of dialogue with this NPC, and
+    some short dialogues with a few of your companions who react to you training in
+    necromancy. More details are on the fan wiki, which is fairly thorough: https://dragonage.fandom.com/wiki/Necromancer"'
   priority: medium
   date_updated: '2026-04-11'
-- name: "Dragon Age: The Veilguard"
+- name: 'Dragon Age: The Veilguard'
   steam_id: 1845910
   platforms:
   - steam
@@ -2276,7 +2362,14 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: 'Developer notes: "In Veilguard, the player starts off character creation by choosing from six factions, one of which is a group of necromancers. Picking this faction opens up additional dialogue throughout the game about being a necromancer, especially with another necromancer who joins your party later on. There''s also a dedicated necromancy specialization skill tree in the general mage skill tree, which any mage can actually take, regardless of their origin. (The fan wiki has a good interactive chart - necromancy is in the upper lefthand corner - https://dragonageveilguard.wiki.fextralife.com/Mage+Skills)"'
+  dimension_1_notes: 'Developer notes: "In Veilguard, the player starts off character
+    creation by choosing from six factions, one of which is a group of necromancers.
+    Picking this faction opens up additional dialogue throughout the game about being
+    a necromancer, especially with another necromancer who joins your party later
+    on. There''s also a dedicated necromancy specialization skill tree in the general
+    mage skill tree, which any mage can actually take, regardless of their origin.
+    (The fan wiki has a good interactive chart - necromancy is in the upper lefthand
+    corner - https://dragonageveilguard.wiki.fextralife.com/Mage+Skills)"'
   priority: medium
   date_updated: '2026-04-11'
 - name: Slay the Spire 2
@@ -2294,7 +2387,7 @@ games:
 - name: 'Heroes of Might & Magic: Olden Era'
   aliases:
   - Heroes of Might and Magic Olden Era
-  - 'Heroes of Might & Magic Olden Era'
+  - Heroes of Might & Magic Olden Era
   - 'HoMM: Olden Era'
   - HoMM Olden Era
   - 'HOMM: Olden Era'
@@ -2308,7 +2401,7 @@ games:
   priority: high
   date_updated: '2026-05-01'
   dimension_1_notes: Necropolis faction
-- name: 'Prime Monster'
+- name: Prime Monster
   steam_id: 3214480
   classification:
     dimension_1: b
@@ -2317,7 +2410,8 @@ games:
     dimension_4: gated
   priority: medium
   date_updated: '2026-05-07'
-  dimension_1_notes: "One of Rotilda De Cay's central mechanics is reanimating her Zombie Members of Parliament"
+  dimension_1_notes: One of Rotilda De Cay's central mechanics is reanimating her
+    Zombie Members of Parliament
 - name: Few Nights More
   steam_id: 1491200
   classification:
@@ -2328,6 +2422,3 @@ games:
   dimension_1_notes: School of Nedhos, the Necromancy school
   priority: medium
   date_updated: '2026-06-04'
-
-
-# deciding between a and b: if it is possible to specialize into a necromancer but this choice doesn't define the character or come with some degree of lock-in, it's b
