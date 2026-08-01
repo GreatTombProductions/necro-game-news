@@ -94,7 +94,7 @@ export const initialFilterState: FilterState = {
   priceMin: '',
   priceMax: '',
   earlyAccess: [...EARLY_ACCESS_KEYS],
-  releaseStatus: ['released'], // Default to showing only released games
+  releaseStatus: [...RELEASE_STATUS_KEYS], // Show released + unreleased by default (registry includes upcoming games)
   gameType: [...GAME_TYPE_KEYS], // Both games and mods checked by default
   availability: [...AVAILABILITY_KEYS],
   necromancyGrid: getAllNecromancyCombinations(),
