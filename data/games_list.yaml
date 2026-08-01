@@ -8,10 +8,7 @@ games:
     dimension_4: instant
   priority: medium
   date_updated: '2026-07-27'
-  dimension_1_notes: 'Submitter suggested A/explicit but Steam store page lacks necromancy-specific
-    terminology. Core mechanic involves summoning minions/creatures described as ''terrifying
-    creatures'' and ''forbidden rituals'' for Old Gods. Per Ray override: Steam images
-    clearly show spectral and undead minions, warranting A centrality classification.'
+  dimension_1_notes: Steam page shows spectral and undead looking minions.
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   aliases:
