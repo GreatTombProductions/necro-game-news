@@ -9,6 +9,20 @@ games:
   priority: medium
   date_updated: '2026-07-27'
   dimension_1_notes: Steam page shows spectral and undead looking minions.
+- name: Rotwood
+  steam_id: 2015270
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  date_updated: '2026-08-02'
+  dimension_1_notes: 'Enchantée (charm_on_kill) Fabled Power: ''when you Kill an Enemy
+    it will return to life as a Charmed Ally'' — functional death-raising, isolated
+    single power in a 138-power pool. Tier C per taxonomy gameplay-impact test (submitter
+    suggested d). Lich King/Grave Robber powers lich-themed but generic ally-revive
+    rewards, not death-raising.'
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   aliases:
