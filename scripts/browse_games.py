@@ -386,7 +386,8 @@ def run_deploy():
     # Run with --new-only flag
     result = subprocess.run(
         ['bash', str(deploy_script), '--new-only'],
-        cwd=str(script_dir)
+        cwd=str(script_dir),
+        timeout=600,
     )
 
     return result.returncode == 0
