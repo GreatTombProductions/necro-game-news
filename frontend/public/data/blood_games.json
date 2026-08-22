@@ -33,7 +33,7 @@
     "developer": "Triumph Studios",
     "publisher": "Paradox Interactive",
     "release_date": "May 2, 2023",
-    "price_usd": 24.99,
+    "price_usd": 49.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -54,7 +54,7 @@
     "aliases": [
       "Age of Wonders IV"
     ],
-    "last_checked": "2026-08-21 21:30:40.283945",
+    "last_checked": "2026-08-22 03:11:01.574014",
     "update_count": 85,
     "last_update": "2026-07-16 15:08:34",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329256636",
@@ -102,7 +102,7 @@
     "developer": "Kenny Sun and Friends",
     "publisher": "Devolver Digital",
     "release_date": "Oct 15, 2025",
-    "price_usd": 9.89,
+    "price_usd": 14.99,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -110,7 +110,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:44.651367",
+    "last_checked": "2026-08-22 03:11:06.020260",
     "update_count": 26,
     "last_update": "2026-03-19 06:35:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1827626365753368",
@@ -178,7 +178,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:46.187140",
+    "last_checked": "2026-08-22 03:11:07.527023",
     "update_count": 6,
     "last_update": "2026-03-26 07:40:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1827626365770693",
@@ -247,7 +247,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:56.626623",
+    "last_checked": "2026-08-22 03:11:18.023674",
     "update_count": 51,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
@@ -316,7 +316,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:01.129136",
+    "last_checked": "2026-08-22 03:11:22.529529",
     "update_count": 56,
     "last_update": "2025-06-03 10:17:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756479433",
@@ -346,7 +346,7 @@
     "name": "Darkest Dungeon\u00ae",
     "app_type": null,
     "short_description": "Darkest Dungeon is a challenging gothic roguelike turn-based RPG about the psychological stresses of adventuring. Recruit, train, and lead a team of flawed heroes against unimaginable horrors, stress, disease, and the ever-encroaching dark. Can you keep your heroes together when all hope is lost?",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/262060/header.jpg?t=1769780578",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/262060/header.jpg?t=1787073267",
     "dimension_1": null,
     "dimension_2": "unit",
     "dimension_3": null,
@@ -364,7 +364,7 @@
     "developer": "Red Hook Studios",
     "publisher": "Red Hook Studios",
     "release_date": "Jan 19, 2016",
-    "price_usd": 24.99,
+    "price_usd": 3.74,
     "price_notes": "Requires Crimson Court DLC (~12.99 USD)",
     "steam_tags": [
       "Turn-Based Combat",
@@ -384,15 +384,15 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:16.189619",
-    "update_count": 58,
-    "last_update": "2025-07-29 13:32:45",
-    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758782015",
-    "last_update_title": "Darkest Dungeon Update - Build 26186",
-    "last_announcement": "2026-08-18 18:55:30",
-    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183789364",
-    "last_announcement_title": "Darkest Dungeon - The Fire\u2019s Edge - DLC Release",
-    "last_announcement_content": "The Fire\u2019s Edge, the first new Darkest Dungeon DLC since 2020, is now live! This DLC includes two heroes, The Runaway and The Duelist, who made their debut in Darkest Dungeon II, a new combat mechanic, unique trinkets, plus 3 more Districts.The team has always been interested in backporting The The ...",
+    "last_checked": "2026-08-22 03:11:37.571720",
+    "update_count": 59,
+    "last_update": "2026-08-21 22:45:51",
+    "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228670044",
+    "last_update_title": "Darkest Dungeon - The Fire\u2019s Edge - 27850 HOTFIX",
+    "last_announcement": "2026-08-21 22:45:51",
+    "last_announcement_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228670044",
+    "last_announcement_title": "Darkest Dungeon - The Fire\u2019s Edge - 27850 HOTFIX",
+    "last_announcement_content": "NOTES \ud83d\udd38Fixed a Drowned Crew softlock with Flickering Lamplight trinket \ud83d\udd38Fixed Duelist missing trinket strings without Color of Madness DLC \ud83d\udd38Fixed Butcher's Circus prize box crash \ud83d\udd38Restored auto-center map & controller enable options \ud83d\udd38Fixed a handful of common Mod crash logs we received. KNOWN ISSUES...",
     "pov": "unit",
     "availability": "gated",
     "pov_notes": "Control a party of characters",
@@ -450,7 +450,7 @@
       "Action"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:19.148152",
+    "last_checked": "2026-08-22 03:11:40.537560",
     "update_count": 86,
     "last_update": "2026-08-04 16:30:45",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839676055897511",
@@ -507,7 +507,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:25.173426",
+    "last_checked": "2026-08-22 03:11:46.536581",
     "update_count": 15,
     "last_update": "2026-05-05 11:56:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155579605",
@@ -567,7 +567,7 @@
       "Diablo II Resurrected",
       "Diablo 2: Resurrected"
     ],
-    "last_checked": "2026-08-21 21:30:27.507089",
+    "last_checked": "2026-08-22 03:10:49.150618",
     "update_count": 29,
     "last_update": "2026-04-01 18:50:33",
     "last_update_url": "https://news.blizzard.com/en-us/article/24271875/reign-of-the-warlock-3-1-2-patch-notes",
@@ -629,7 +629,7 @@
       "Diablo 3: Rise of the Necromancer",
       "Diablo III: Rise of the Necromancer"
     ],
-    "last_checked": "2026-08-21 21:30:25.334017",
+    "last_checked": "2026-08-22 03:10:46.959447",
     "update_count": 23,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -685,7 +685,7 @@
       "Mobile"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:26.179633",
+    "last_checked": "2026-08-22 03:10:47.875876",
     "update_count": 51,
     "last_update": "2026-01-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244401/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
@@ -759,7 +759,7 @@
       "Diablo 4",
       "D4"
     ],
-    "last_checked": "2026-08-21 21:31:26.652920",
+    "last_checked": "2026-08-22 03:11:48.050748",
     "update_count": 15,
     "last_update": "2026-02-12 13:36:23",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1824459501608136",
@@ -827,7 +827,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:31.120783",
+    "last_checked": "2026-08-22 03:11:52.511845",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -857,7 +857,7 @@
     "name": "Dungeons 4",
     "app_type": null,
     "short_description": "The Absolute Evil and its trusted *cough* servant, the Dark Elf Thalya, return in Dungeons 4 after the events of its fabulous predecessor to bring about their triumph over the forces of good once more.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1643310/header.jpg?t=1765285180",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1643310/header.jpg?t=1786957609",
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -875,7 +875,7 @@
     "developer": "Realmforge Studios",
     "publisher": "Kalypso Media",
     "release_date": "Nov 9, 2023",
-    "price_usd": 32.99,
+    "price_usd": 49.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -894,7 +894,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:50.584827",
+    "last_checked": "2026-08-22 03:12:12.058083",
     "update_count": 56,
     "last_update": "2025-12-09 06:01:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
@@ -961,7 +961,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:31:52.142888",
+    "last_checked": "2026-08-22 03:12:13.597499",
     "update_count": 11,
     "last_update": "2025-12-15 23:05:57",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592134836",
@@ -991,7 +991,7 @@
     "name": "Few Nights More",
     "app_type": null,
     "short_description": "Few Nights More is a roguelike turn-based RPG based in a world where Vampire Lords seek to conquer lost territories and their place in the world. Design and defend your stronghold, slay your enemies with traps, fulfill your Lord\u2019s true potential, slowly conquering what is rightfully yours.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1491200/header.jpg?t=1786725125",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1491200/header.jpg?t=1787310303",
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -1028,7 +1028,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:32:02.688777",
+    "last_checked": "2026-08-22 03:12:24.027042",
     "update_count": 49,
     "last_update": "2024-10-18 20:16:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583180293240",
@@ -1097,7 +1097,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:32:13.389971",
+    "last_checked": "2026-08-22 03:12:34.536446",
     "update_count": 58,
     "last_update": "2026-08-03 20:32:21",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839676055895573",
@@ -1153,7 +1153,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:31.168651",
+    "last_checked": "2026-08-22 03:10:53.132176",
     "update_count": 70,
     "last_update": "2026-08-18 15:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24293284/36-2-2-patch-notes",
@@ -1217,7 +1217,7 @@
       "HOMM: Olden Era",
       "HOMM Olden Era"
     ],
-    "last_checked": "2026-08-21 21:32:28.234903",
+    "last_checked": "2026-08-22 03:12:49.532286",
     "update_count": 70,
     "last_update": "2026-08-13 14:45:11",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183776641",
@@ -1272,7 +1272,7 @@
       "MOBA"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:24.259562",
+    "last_checked": "2026-08-22 03:10:46.209852",
     "update_count": 14,
     "last_update": "2026-07-20 17:35:15",
     "last_update_url": "https://news.blizzard.com/en-us/article/24291432/heroes-of-the-storm-live-patch-notes-july-20-2026",
@@ -1302,7 +1302,7 @@
     "name": "Heroes\u00ae of Might & Magic\u00ae III - HD Edition",
     "app_type": null,
     "short_description": "The most popular Heroes\u00ae title of all time is back in HD! Fifteen years later, rediscover the epic tale of Queen Catherine Ironfist, as she re-embarks on her critically acclaimed quest to unite her ravaged homeland and re-conquer the kingdom of Erathia.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297000/header.jpg?t=1785889826",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297000/header.jpg?t=1787305766",
     "dimension_1": "a",
     "dimension_2": "unit",
     "dimension_3": "explicit",
@@ -1344,7 +1344,7 @@
       "Heroes of Might & Magic 3 HD Edition",
       "Heroes of Might & Magic III HD Edition"
     ],
-    "last_checked": "2026-08-21 21:32:29.637920",
+    "last_checked": "2026-08-22 03:12:51.031560",
     "update_count": 16,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -1414,7 +1414,7 @@
     "aliases": [
       "Immortal Realms Vampire Wars"
     ],
-    "last_checked": "2026-08-21 21:32:32.706063",
+    "last_checked": "2026-08-22 03:12:54.035667",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -1482,7 +1482,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:32:35.632461",
+    "last_checked": "2026-08-22 03:12:57.026539",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -1512,7 +1512,7 @@
     "name": "Kingdom Rush Vengeance - Tower Defense",
     "app_type": null,
     "short_description": "It's payback time! Lead your mighty dark army and make the Kingdom tremble with every step. Build powerful towers, choose your arsenal for destruction, and find the deadliest combination - train legendary heroes and lead them to victory!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1367550/header.jpg?t=1786554494",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1367550/header.jpg?t=1787155471",
     "dimension_1": "b",
     "dimension_2": "unit",
     "dimension_3": "explicit",
@@ -1530,7 +1530,7 @@
     "developer": "Ironhide Game Studio",
     "publisher": "Ironhide Game Studio",
     "release_date": "Oct 15, 2020",
-    "price_usd": 10.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [
       "Tower Defense",
@@ -1548,7 +1548,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:32:43.106424",
+    "last_checked": "2026-08-22 03:13:04.567578",
     "update_count": 68,
     "last_update": "2025-09-25 10:00:12",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772249766",
@@ -1617,7 +1617,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:32:46.157808",
+    "last_checked": "2026-08-22 03:13:07.531840",
     "update_count": 63,
     "last_update": "2026-05-13 18:00:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832700592786833",
@@ -1682,7 +1682,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:14.661338",
+    "last_checked": "2026-08-22 03:13:36.073012",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1712,7 +1712,7 @@
     "name": "Night Swarm",
     "app_type": null,
     "short_description": "Claim your throne as Vampire Lord in this survivors-like. Each run is another step on your journey with new followers, quests and skills to unlock. The night is yours to conquer.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1783621298",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3668370/ca814294321af4a7eb478d93ed035179190dbb96/header.jpg?t=1787062441",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -1740,7 +1740,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:28.140053",
+    "last_checked": "2026-08-22 03:13:49.807670",
     "update_count": 17,
     "last_update": "2025-12-16 11:03:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
@@ -1811,7 +1811,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:38.721066",
+    "last_checked": "2026-08-22 03:14:00.165562",
     "update_count": 111,
     "last_update": "2026-08-17 00:07:26",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183784694",
@@ -1881,7 +1881,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:40.128387",
+    "last_checked": "2026-08-22 03:14:01.655922",
     "update_count": 137,
     "last_update": "2026-08-17 00:08:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183784697",
@@ -1929,7 +1929,7 @@
     "developer": "Owlcat Games",
     "publisher": "META Publishing, Owlcat Games",
     "release_date": "Sep 2, 2021",
-    "price_usd": 4.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [
       "Singleplayer",
@@ -1954,7 +1954,7 @@
       "Pathfinder Wrath of the Righteous Enhanced Edition",
       "Pathfinder: Wrath of the Righteous Enhanced Edition"
     ],
-    "last_checked": "2026-08-21 21:33:43.184220",
+    "last_checked": "2026-08-22 03:14:04.684713",
     "update_count": 52,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -2011,7 +2011,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:46.093562",
+    "last_checked": "2026-08-22 03:14:07.775779",
     "update_count": 6,
     "last_update": "2026-07-02 16:22:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165568171",
@@ -2078,7 +2078,7 @@
       "Adventure"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:47.588163",
+    "last_checked": "2026-08-22 03:14:09.287329",
     "update_count": 55,
     "last_update": "2026-07-09 16:14:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165583493",
@@ -2145,7 +2145,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:33:52.141214",
+    "last_checked": "2026-08-22 03:14:13.756962",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -2213,7 +2213,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:34:26.824596",
+    "last_checked": "2026-08-22 03:14:48.045714",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -2283,7 +2283,7 @@
       "Skyrim Special Edition",
       "The Elder Scrolls V: Skyrim"
     ],
-    "last_checked": "2026-08-21 21:34:38.610800",
+    "last_checked": "2026-08-22 03:15:00.044142",
     "update_count": 4,
     "last_update": "2026-08-20 16:55:37",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228665884",
@@ -2356,7 +2356,7 @@
       "Elder Scrolls Online",
       "The Elder Scrolls Online"
     ],
-    "last_checked": "2026-08-21 21:34:40.111623",
+    "last_checked": "2026-08-22 03:15:01.560194",
     "update_count": 85,
     "last_update": "2026-07-10 17:33:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1837955055357216",
@@ -2425,7 +2425,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:34:44.624692",
+    "last_checked": "2026-08-22 03:15:06.085004",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -2492,7 +2492,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:34:49.164634",
+    "last_checked": "2026-08-22 03:15:10.565718",
     "update_count": 24,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -2563,7 +2563,7 @@
       "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
-    "last_checked": "2026-08-21 21:34:50.633036",
+    "last_checked": "2026-08-22 03:15:12.049273",
     "update_count": 28,
     "last_update": "2026-07-28 16:00:17",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357038390",
@@ -2630,7 +2630,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:34:52.126025",
+    "last_checked": "2026-08-22 03:15:13.567208",
     "update_count": 73,
     "last_update": "2026-07-16 11:59:42",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329256191",
@@ -2660,7 +2660,7 @@
     "name": "V Rising",
     "app_type": null,
     "short_description": "Awaken as a Vampire. Hunt for blood in nearby settlements to regain your strength and evade the scorching sun to survive. Raise your castle and thrive in an ever-changing, open world full of mystery. Gain allies online and conquer the land of the living.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/be49834ab147ad22ba17005fb847c93917d18b97/header.jpg?t=1785921000",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/be49834ab147ad22ba17005fb847c93917d18b97/header.jpg?t=1787038382",
     "dimension_1": "b",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -2698,7 +2698,7 @@
       "Massively Multiplayer"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:34:59.658285",
+    "last_checked": "2026-08-22 03:15:21.093040",
     "update_count": 40,
     "last_update": "2026-06-02 16:39:53",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1833968530900688",
@@ -2757,7 +2757,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:35:01.216924",
+    "last_checked": "2026-08-22 03:15:22.554910",
     "update_count": 14,
     "last_update": "2025-12-14 05:45:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592131116",
@@ -2826,7 +2826,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:35:02.632515",
+    "last_checked": "2026-08-22 03:15:24.070007",
     "update_count": 21,
     "last_update": "2026-06-06 21:56:33",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1834602721194650",
@@ -2898,7 +2898,7 @@
       "VTM Bloodlines",
       "VTM: Bloodlines"
     ],
-    "last_checked": "2026-08-21 21:35:04.120547",
+    "last_checked": "2026-08-22 03:15:25.581921",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -2965,7 +2965,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:35:05.640828",
+    "last_checked": "2026-08-22 03:15:27.057373",
     "update_count": 31,
     "last_update": "2018-06-01 02:55:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358622000374354",
@@ -3026,7 +3026,7 @@
       "Warcraft 3 Reforged",
       "Warcraft III Reforged"
     ],
-    "last_checked": "2026-08-21 21:30:30.330413",
+    "last_checked": "2026-08-22 03:10:51.909193",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -3082,7 +3082,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:29.342771",
+    "last_checked": "2026-08-22 03:10:50.776697",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -3137,7 +3137,7 @@
       "MMORPG"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:30:28.463939",
+    "last_checked": "2026-08-22 03:10:49.863556",
     "update_count": 34,
     "last_update": "2025-12-23 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244426/what-to-do-before-the-midnight-pre-expansion-content-update",
@@ -3196,7 +3196,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-08-21 21:35:17.793619",
+    "last_checked": "2026-08-22 03:15:39.059581",
     "update_count": 46,
     "last_update": "2026-04-01 16:00:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1828894815556062",
