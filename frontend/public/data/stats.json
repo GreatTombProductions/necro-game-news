@@ -4,8 +4,8 @@
   "recent_updates_30d": 159,
   "dimension_1": {
     "a": 100,
-    "b": 41,
-    "c": 34,
+    "b": 42,
+    "c": 33,
     "d": 20
   },
   "dimension_2": {
@@ -16,5 +16,5 @@
     "explicit": 126,
     "implied": 69
   },
-  "last_updated": "2026-08-27T21:35:17.708451"
+  "last_updated": "2026-08-27T22:50:15.636402"
 }
