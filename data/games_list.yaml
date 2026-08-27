@@ -170,14 +170,16 @@ games:
 - name: 'Solo Leveling: ARISE OVERDRIVE'
   steam_id: 2373990
   classification:
-    dimension_1: c
+    dimension_1: b
     dimension_2: character
     dimension_3: explicit
-    dimension_4: instant
+    dimension_4: gated
   priority: medium
-  date_updated: '2025-12-09'
-  dimension_1_notes: Some skills utilizing shadow soldiers, character canonically
-    has necromancer class
+  date_updated: '2026-08-27'
+  dimension_1_notes: 'Army of Shadows system: extract shadows from defeated enemies,
+    promote ranks, summon in combat. Unlocked at Normal Chapter 9 (story-gated).
+    Available across all classes (Jinwoo''s Shadow Monarch power), not Ruler-specific.
+    Revision approved 2026-08-27 (Ray).'
 - name: Decks of the Damned
   steam_id: 2159900
   classification:

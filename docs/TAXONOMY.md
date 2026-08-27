@@ -57,6 +57,7 @@ Necromancy is a cohesive, named specialization within a broader game. It's not t
 - Wolcen: Lords of Mayhem — Undead summon skills + Plaguebringer passive branch
 - Kingdom Rush Vengeance — Necromancer tower type available
 - Nobody Saves the World — Necromancer form with multiple skills
+- Solo Leveling: ARISE OVERDRIVE — Army of Shadows system: shadow extraction, rank promotion, in-combat summoning (story-gated at Normal Chapter 9)
 
 **Decision boundary vs. Tier C:** If there are multiple necromantic abilities that form a coherent set (a "build" or "path"), it's tier B. If there are scattered necromantic elements that don't cohere into a recognized specialization, it's tier C.
 
