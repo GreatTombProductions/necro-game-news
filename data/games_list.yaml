@@ -1,4 +1,29 @@
 games:
+- name: 9 Kings
+  steam_id: 2784470
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  date_updated: '2026-09-04'
+  dimension_1_notes: 'SUBMITTER SUGGESTED a/character/implied/instant (their claims
+    partially incorrect: Cemetery summons imps not skeletons; Mangler creates no meat
+    trolls; no ghost-summoning main attack found). RESEARCH: King of Blood is 1 of
+    9 playable kings (roguelike kingdom builder, Sad Socket/Hooded Horse, EA since
+    2025-05-23). No king is explicitly necromantic; no undead units exist in the game
+    (units are imps, demons, bombers). King of Blood kit: Cemetery tower (adjacent
+    unit dies in battle -> summons unit in its place; DBLTAP: ''resurrects adjacent
+    dead units as Imps''), Demon''s Altar (summons demons, +0.5% all stats permanently
+    per dead ally), Sacrifice tome, Carnage (units explode on death), Mangler (area
+    damage turret, sacrifices adjacent unit annually for +2 dmg). dim1=b: coherent
+    death/sacrifice specialization within broader game, not core identity (demon king
+    theme, no undead units). dim2=character: play AS the king; kit belongs to your
+    king. dim3=implied: no necromancer/necromancy/necromantic terms in kit or store
+    page; quest named ''Necropolis'' in KoB campaign is death-themed but not necromancy
+    labeling (flagged for Ray''s judgment). dim4=gated: King of Blood unlocks after
+    killing 9,999 enemy units - significant progression; submitter claimed instant.'
 - name: Hear My Cult
   steam_id: 2509380
   classification:
@@ -177,9 +202,9 @@ games:
   priority: medium
   date_updated: '2026-08-27'
   dimension_1_notes: 'Army of Shadows system: extract shadows from defeated enemies,
-    promote ranks, summon in combat. Unlocked at Normal Chapter 9 (story-gated).
-    Available across all classes (Jinwoo''s Shadow Monarch power), not Ruler-specific.
-    Revision approved 2026-08-27 (Ray).'
+    promote ranks, summon in combat. Unlocked at Normal Chapter 9 (story-gated). Available
+    across all classes (Jinwoo''s Shadow Monarch power), not Ruler-specific. Revision
+    approved 2026-08-27 (Ray).'
 - name: Decks of the Damned
   steam_id: 2159900
   classification:
