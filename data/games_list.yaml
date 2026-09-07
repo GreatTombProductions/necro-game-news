@@ -105,6 +105,36 @@ games:
   date_updated: '2025-12-09'
   dimension_1_notes: Necromancer form available as a shapeshift, comes with some skills
     that are equippable on other forms
+- name: 'Slime 3K: Rise Against Despot'
+  steam_id: 2348610
+  classification:
+    dimension_1: c
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: gated
+  priority: medium
+  date_updated: '2026-09-07'
+  dimension_1_notes: 'SUBMITTER SUGGESTED c/character/implied/gated. RESEARCH: Bullet-heaven
+    roguelite deckbuilder (Konfa Games/tinyBuild, released Oct 31 2024, $4.99) in
+    the Despot''s Game universe. You ARE a self-aware slime blob (the artificial goo
+    used to grow humans) on a warpath devouring pink humans; absurdist weapon roster
+    - store page lists ''summon zombies'' alongside electrocution, acid, AK-47s, explosive
+    watermelons. Necromantic content: ''Obedient Zombie'' weapon card summons friendly
+    zombie minions that fight for you (community tier-list: early-game performer,
+    ''enough to kill the early stuff''); achievement ''Obedient Zombie'' = ''Get a
+    level 3 copy of Obedient Zombie'' (63.32% unlock - common draft per xboxachievements/truesteamachievements).
+    dim1=c: single summon-undead weapon in a large zany pool; no necromancy specialization
+    or coherent build path found; functional minion summon = real gameplay impact
+    so not d - same shape as Rotwood Enchantee / Lost Ark engraving / Hell Clock tier-C
+    examples. dim2=character: play AS the slime; zombies are your summoned tools (minions
+    under your control, not independent necromancer units commanded from above). dim3=implied:
+    no necro-terminology anywhere (store text, achievement names, title); ''zombie''
+    naming without the necromancy label. dim4=gated: weapon appears via in-run draft
+    RNG - not deterministically available (roguelite random pool). Priority medium:
+    prominent title in its niche (tinyBuild-published, Despot''s Game universe, 5K+
+    tracked players), single isolated necromantic feature. RAY VERIFIED (approved
+    2026-09-06): in-game testing confirmed at least 2 undead summoning skills including
+    the zombie.'
 - name: 'Total War: WARHAMMER'
   steam_id: 364360
   classification:
