@@ -1,7 +1,7 @@
 {
   "total_games": 198,
-  "total_updates": 7912,
-  "recent_updates_30d": 185,
+  "total_updates": 7915,
+  "recent_updates_30d": 179,
   "dimension_1": {
     "a": 100,
     "b": 43,
@@ -16,5 +16,5 @@
     "explicit": 126,
     "implied": 72
   },
-  "last_updated": "2026-09-16T21:35:54.065655"
+  "last_updated": "2026-09-17T21:35:14.099100"
 }
