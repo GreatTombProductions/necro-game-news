@@ -16,7 +16,7 @@ Weekly (Friday 18:00): also refreshes all game metadata from Steam API.
 ## Manual Runs
 
 ```bash
-cd /home/ray/greattomb/community-tools/necro-game-news
+cd /home/ray/greattomb/0th-floor-exterior/east-mausoleum/necro-game-news
 ./scripts/heartbeat-deploy.sh
 ```
 
