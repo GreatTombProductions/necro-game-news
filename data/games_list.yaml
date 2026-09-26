@@ -44,11 +44,9 @@ games:
     dimension_4: gated
   priority: medium
   date_updated: '2026-08-02'
-  dimension_1_notes: 'Enchantée (charm_on_kill) Fabled Power: ''when you Kill an Enemy
-    it will return to life as a Charmed Ally'' — functional death-raising, isolated
-    single power in a 138-power pool. Tier C per taxonomy gameplay-impact test (submitter
-    suggested d). Lich King/Grave Robber powers lich-themed but generic ally-revive
-    rewards, not death-raising.'
+  dimension_1_notes: Enchantée's Fabled Power returns a killed enemy to life as a
+    Charmed Ally — a single functional death-raising power in a 138-power pool;
+    other lich-themed powers are generic ally revives.
 - name: 'Skul: The Hero Slayer'
   steam_id: 1147560
   aliases:
@@ -72,9 +70,9 @@ games:
     dimension_4: instant
   priority: low
   date_updated: '2025-12-09'
-  dimension_1_notes: Melinoe canonically has necromancy abilities as revealed in dialogue,
-    but they do not affect gameplay, apart from the "Necromantic Influence" incantation
-    and Night Bloom hex ("The dead, be born again!")
+  dimension_1_notes: Melinoe has necromancy abilities in dialogue with minor gameplay
+    impact — the "Necromantic Influence" incantation and Night Bloom hex ("The dead,
+    be born again!")
 - name: Lost Ark
   steam_id: 1599340
   classification:
@@ -2035,9 +2033,8 @@ games:
     dimension_3: implied
     dimension_4: gated
   priority: medium
-  dimension_1_notes: Vindicator ship class has Reanimator special ability, structurally
-    necromantic - converts wrecks (a corpse-analogue) into drones (minions) - though
-    not fitting the usual thematic/aesthetic cluster
+  dimension_1_notes: Vindicator ship class has the Reanimator special ability —
+    converts wreckage into drone minions; mechanical rather than undead.
   dimension_2_notes: Assuming you play as whatever is piloting the ship
   date_updated: '2025-12-23'
 - name: Death Must Die
@@ -2331,8 +2328,8 @@ games:
     dimension_2: character
     dimension_3: implied
     dimension_4: gated
-  dimension_1_notes: Parasitism skill allows controlling dead bodies, which puts it
-    in the Franeknstein/science-type necromancy category
+  dimension_1_notes: Parasitism skill allows controlling dead bodies — science-type
+    necromancy.
   priority: medium
   date_updated: '2026-01-22'
 - name: Tactical Breach Wizards
@@ -2396,11 +2393,8 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: gated
-  dimension_1_notes: 'Developer notes: "If you play as a mage in Dragon Age Inquisition,
-    you can specialize into a necromancy skill tree by speaking with an NPC who eventually
-    shows up in your home base. There''s a little bit of dialogue with this NPC, and
-    some short dialogues with a few of your companions who react to you training in
-    necromancy. More details are on the fan wiki, which is fairly thorough: https://dragonage.fandom.com/wiki/Necromancer"'
+  dimension_1_notes: Mages can specialize into a Necromancer skill tree via a trainer
+    NPC who appears at the home base, with companion dialogue reacting to the specialization.
   priority: medium
   date_updated: '2026-04-11'
 - name: 'Dragon Age: The Veilguard'
@@ -2412,14 +2406,9 @@ games:
     dimension_2: character
     dimension_3: explicit
     dimension_4: instant
-  dimension_1_notes: 'Developer notes: "In Veilguard, the player starts off character
-    creation by choosing from six factions, one of which is a group of necromancers.
-    Picking this faction opens up additional dialogue throughout the game about being
-    a necromancer, especially with another necromancer who joins your party later
-    on. There''s also a dedicated necromancy specialization skill tree in the general
-    mage skill tree, which any mage can actually take, regardless of their origin.
-    (The fan wiki has a good interactive chart - necromancy is in the upper lefthand
-    corner - https://dragonageveilguard.wiki.fextralife.com/Mage+Skills)"'
+  dimension_1_notes: Character creation offers a necromancer faction with additional
+    dialogue throughout the game, and any mage can specialize into a dedicated Necromancy
+    skill tree.
   priority: medium
   date_updated: '2026-04-11'
 - name: Slay the Spire 2

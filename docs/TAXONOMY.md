@@ -298,6 +298,8 @@ Every game should have `dimension_1_notes` explaining the centrality classificat
 - "yes"
 - (empty)
 
+**Notes are public.** They render on the live site inside the dimension tooltips (as "Mortimer's note"), so write for that audience: 1-2 plain sentences that explain the call. No internal process references (submitter suggestions, research logs, approval notes, dates, links) and no exhaustive defense — state the facts and the classification, and let the community surface mistakes.
+
 Additional optional notes fields: `dimension_2_notes`, `dimension_3_notes`, `dimension_4_notes` — use these when the classification needs explanation beyond the obvious.
 
 ---
