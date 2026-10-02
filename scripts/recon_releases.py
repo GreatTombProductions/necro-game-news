@@ -17,6 +17,8 @@ Usage:
     ./venv/bin/python scripts/recon_releases.py --verify 12     # + details for top 12 unknowns
     ./venv/bin/python scripts/recon_releases.py --mode comingsoon
     ./venv/bin/python scripts/recon_releases.py --json /tmp/recon.json
+    ./venv/bin/python scripts/recon_releases.py --ids 1898610,633580   # appdetails for an explicit id list (research pass)
+    ./venv/bin/python scripts/recon_releases.py --ids 1898610 --deep   # richer pull for classification (full desc + genres)
 
 Notes:
   - Steam appdetails may REDIRECT an appid (store moves); the response key wins.
@@ -26,6 +28,7 @@ Notes:
 """
 
 import argparse
+import html
 import json
 import re
 import sqlite3
@@ -156,6 +159,36 @@ def verify(appid: int, delay: float) -> dict:
     return {"status": "empty"}
 
 
+def verify_deep(appid: int, delay: float) -> dict:
+    """Richer appdetails pull for the classification pass: full description + genres."""
+    url = ("https://store.steampowered.com/api/appdetails?"
+           + urllib.parse.urlencode({"appids": appid, "cc": "us", "l": "en"}))
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.load(r)
+    time.sleep(delay)
+    for key, val in data.items():
+        if not val.get("success"):
+            return {"status": "appdetails-fail"}
+        d = val["data"]
+        desc = d.get("detailed_description") or d.get("short_description") or ""
+        desc = re.sub(r"<br\s*/?>", " ", desc)
+        desc = re.sub(r"<[^>]+>", " ", desc)
+        desc = html.unescape(desc)
+        desc = re.sub(r"\s+", " ", desc).strip()
+        return {
+            "status": "ok",
+            "canonical_id": int(key),
+            "redirected": int(key) != int(appid),
+            "type": d.get("type"),
+            "name": d.get("name"),
+            "released": d.get("release_date", {}).get("date", "?"),
+            "genres": [g.get("description") for g in (d.get("genres") or [])],
+            "desc": desc[:550],
+        }
+    return {"status": "empty"}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="NGN release recon sweep")
     ap.add_argument("--mode", choices=["released", "comingsoon"], default="released")
@@ -163,9 +196,32 @@ def main() -> int:
     ap.add_argument("--terms", help="comma-separated override of search terms")
     ap.add_argument("--verify", type=int, default=0, metavar="N",
                     help="fetch appdetails for top N new candidates")
+    ap.add_argument("--ids", help="comma-separated appids: appdetails-verify each (research pass)")
+    ap.add_argument("--deep", action="store_true",
+                    help="with --ids: richer pull for classification (full desc + genres)")
     ap.add_argument("--json", help="write full results to this path")
     ap.add_argument("--delay", type=float, default=1.0)
     args = ap.parse_args()
+
+    if args.ids:
+        ids = [int(x) for x in args.ids.split(",") if x.strip()]
+        out = []
+        fetcher = verify_deep if args.deep else verify
+        print(f"== appdetails verify: {len(ids)} ids{' (deep)' if args.deep else ''} ==")
+        for appid in ids:
+            v = fetcher(appid, args.delay)
+            out.append({"requested_id": appid, **v})
+            if v.get("status") == "ok":
+                flag = f" -> {v['canonical_id']} REDIRECT" if v.get("redirected") else ""
+                extra = f" | {', '.join(v['genres'])}" if v.get("genres") else ""
+                print(f"  {appid}{flag} | {v['type']} | {v['name']} | {v['released']}{extra}")
+                print(f"      {v['desc']}")
+            else:
+                print(f"  {appid} | {v.get('status')}")
+        if args.json:
+            Path(args.json).write_text(json.dumps(out, indent=1))
+            print(f"\nwrote {args.json}")
+        return 0
 
     terms = args.terms.split(",") if args.terms else SEARCH_TERMS
     print(f"== recon sweep | mode={args.mode} | terms={len(terms)} | pages={args.pages} ==")
