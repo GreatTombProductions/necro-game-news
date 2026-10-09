@@ -46,10 +46,19 @@ INBOX_DIR = Path("/home/ray/greattomb/agents/slimeko/workspace/inbox")
 
 
 def gh_api(*args: str) -> dict:
-    """Run `gh api` with args, return parsed JSON."""
+    """Run `gh api` with args, return parsed JSON.
+
+    CalledProcessError's default text omits stderr, which made the
+    2026-10-08 one-poll failure undiagnosable (hashes still matched).
+    """
     result = subprocess.run(
-        ["gh", "api", *args], capture_output=True, text=True, check=True
+        ["gh", "api", *args], capture_output=True, text=True
     )
+    if result.returncode != 0:
+        err = (result.stderr or result.stdout or "").strip().replace("\n", " ")[:500]
+        raise RuntimeError(
+            f"gh api {' '.join(args)} exited {result.returncode}: {err or '(no stderr)'}"
+        )
     return json.loads(result.stdout)
 
 
@@ -150,7 +159,7 @@ def main() -> int:
                 problems.append(
                     f"Latest deployment {dep_id} state={meta['state']} (expected success)"
                 )
-        except (subprocess.CalledProcessError, json.JSONDecodeError, KeyError, ValueError) as exc:
+        except (subprocess.CalledProcessError, RuntimeError, json.JSONDecodeError, KeyError, ValueError) as exc:
             problems.append(f"GitHub API check failed: {exc}")
 
         # Check 2: live games.json == committed games.json
