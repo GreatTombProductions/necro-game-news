@@ -34,6 +34,7 @@ import re
 import sqlite3
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -82,6 +83,18 @@ def sweep(terms: list, pages: int, mode: str, delay: float) -> dict:
         for pg in range(pages):
             try:
                 rows = fetch_search(term, pg * 100, mode)
+            except urllib.error.HTTPError as exc:
+                if exc.code != 429:
+                    print(f"  ! {term} p{pg}: {exc}", file=sys.stderr)
+                    continue
+                wait = max(delay * 5, 12)
+                print(f"  ! {term} p{pg}: 429, retrying in {wait:.0f}s", file=sys.stderr)
+                time.sleep(wait)
+                try:
+                    rows = fetch_search(term, pg * 100, mode)
+                except Exception as exc2:  # noqa: BLE001 - recon should be resilient
+                    print(f"  ! {term} p{pg}: {exc2}", file=sys.stderr)
+                    continue
             except Exception as exc:  # noqa: BLE001 - recon should be resilient
                 print(f"  ! {term} p{pg}: {exc}", file=sys.stderr)
                 continue
