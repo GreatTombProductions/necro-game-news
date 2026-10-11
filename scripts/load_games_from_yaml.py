@@ -4,8 +4,12 @@ Load games from games_list.yaml into the database.
 
 This script reads the curated games list and adds any new games
 to the database. With --update flag, it also updates classification
-for existing games. With --sync flag, it deletes games from the
-database that are no longer in the YAML file.
+for existing games. It does not write `name` on that path: the
+display title is Steam's exact name, written by fetch_steam_details()
+and by scripts/fetch_game_details.py. See the name-policy comment
+on the existing-game UPDATE, and docs/YAML_SCHEMA.md.
+With --sync flag, it deletes games from the database that are no
+longer in the YAML file.
 
 Supports multi-platform games with:
 - steam_id, battlenet_id, gog_id, epic_id, itchio_id
@@ -464,7 +468,23 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                     app_type_changed = old_app_type != app_type
 
                     if classification_changed or platform_changed or aliases_changed or date_updated_changed or app_type_changed or registry_upgrade:
-                        # Update classification, platform info, aliases, registry, and date_updated
+                        # Update classification, platform info, aliases, registry, and date_updated.
+                        # Name policy (quest bc732883): do not set `name` here.
+                        # The display title is Steam-exact. Writers are fetch_steam_details()
+                        # (add/refresh) and scripts/fetch_game_details.py (weekly metadata
+                        # refresh). YAML `name` is the lookup key and must match that Steam
+                        # title (docs/YAML_SCHEMA.md). A YAML name edit does not reach the
+                        # DB or the site. Do not store a cleaner display string in YAML.
+                        #
+                        # Drift, YAML name vs current appdetails name:
+                        # - Trademark/punctuation only (™, ®, "&" vs "and"): YAML is behind
+                        #   Steam. Copy the Steam title into YAML; keep the unmarked form
+                        #   as an alias.
+                        # - Different words (rename, dropped subtitle): YAML is stale.
+                        #   Verify appdetails (response key vs payload steam_appid; a DLC
+                        #   can answer under the base id). Set YAML name to the Steam
+                        #   title; keep the old title as an alias. Do not push the stale
+                        #   string onto the site.
                         # Blood and necromancy registries have separate date_updated fields
                         if is_blood:
                             new_date_updated = old_date_updated  # Preserve necromancy date

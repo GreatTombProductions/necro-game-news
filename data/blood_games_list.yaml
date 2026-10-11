@@ -72,7 +72,7 @@ games:
   priority: high
   date_updated: '2025-12-23'
   hemomancy_notes: Blood Mage ascendancy for Witch
-- name: Diablo IV
+- name: Diablo® IV
   steam_id: 2344520
   battlenet_id: diablo-4
   battlenet_store_id: diablo-iv
@@ -83,6 +83,7 @@ games:
   aliases:
   - Diablo 4
   - D4
+  - Diablo IV
   classification:
     vampirism: channeled
     hemomancy: b
@@ -612,7 +613,7 @@ games:
   vampirism_notes: Play as Eliza, a young vampire in a 19th century Eastern Europe inspired world
   priority: medium
   date_updated: '2026-01-16'
-- name: 'Heroes of Might & Magic: Olden Era'
+- name: 'Heroes of Might and Magic: Olden Era'
   aliases:
   - Heroes of Might and Magic Olden Era
   - 'Heroes of Might & Magic Olden Era'
@@ -620,6 +621,7 @@ games:
   - HoMM Olden Era
   - 'HOMM: Olden Era'
   - HOMM Olden Era
+  - 'Heroes of Might & Magic: Olden Era'
   steam_id: 3105440
   classification:
     vampirism: outright

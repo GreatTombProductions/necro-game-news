@@ -223,6 +223,17 @@ The YAML files are the **canonical source of truth**. The SQLite database (`data
 YAML → load_games_from_yaml.py → SQLite DB → export_for_web.py → frontend JSON
 ```
 
+### Display name vs YAML `name`
+
+`name` must be Steam's exact current title, trademark symbols included. That string is the registry lookup key. It is not a cleaner display form, and it is not a second title the site will prefer.
+
+The public site shows `games.name` from the database. Steam fetches write that column: `fetch_steam_details` when a game is added, and `scripts/fetch_game_details.py` on the weekly metadata refresh. `load_games_from_yaml.py --update` deliberately does **not** write `name`. Editing `name` in YAML does not change the site.
+
+When YAML `name` and the current Steam appdetails name differ, classify the drift before editing:
+
+- **Trademark or punctuation only** (`™`, `®`, `&` vs `and`, a colon sitting next to a trademark). YAML is behind Steam. Copy Steam's exact title into `name`. Keep the unmarked form as an alias.
+- **Different words** (a rename, or a dropped subtitle). YAML is stale. Confirm the live appdetails name, and confirm the payload `steam_appid` is the base game rather than a DLC answering under the base id. Set `name` to that Steam title and keep the old title as an alias. Do not push the stale YAML string onto the site.
+
 When adding a game:
 
 ```bash
