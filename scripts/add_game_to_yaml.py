@@ -226,7 +226,8 @@ def deploy():
     try:
         subprocess.run(
             ["git", "add", "data/games_list.yaml", "data/blood_games_list.yaml",
-             "frontend/public/data/games.json", "frontend/public/data/blood_games.json"],
+             "frontend/public/data/games.json", "frontend/public/data/blood_games.json",
+             "frontend/public/data/stats.json", "frontend/public/data/blood_stats.json"],
             cwd=str(PROJECT_ROOT), check=True
         )
         subprocess.run(
