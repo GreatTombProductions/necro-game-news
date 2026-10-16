@@ -93,6 +93,7 @@ Necromancy is present by technicality — lore references, character backstory, 
 - Necromancy referenced in lore, dialogue, or character design
 - No meaningful necromantic gameplay mechanics
 - Or: a single minor necromantic element with negligible impact
+- Or: the player is called a necromancer, or the setting is explicitly necromantic, but raising or commanding the dead is not a mechanic (include at D; do not exclude). Bone-weapon attacks without raising the dead stay here.
 
 **Examples:**
 - Hades II — Melinoe has necromancy abilities in lore but they don't affect gameplay (apart from rare incantations)
@@ -158,6 +159,8 @@ You command necromancer units or a necromantic faction, but you are not personal
 - Darkest Dungeon (control a party; Flagellant has necromantic abilities)
 
 **Decision boundary:** If the game has both a character you play and units you control, classify by the PRIMARY relationship. In a game where you ARE a necromancer who also summons minions, it's `character` (you are the necromancer, the minions are your tools). In a game where you command multiple independent necromancer units from above, it's `unit`.
+
+**Not a dimension — the body being undead.** Whether the player character or the controlled unit is itself undead (skeleton, lich, risen corpse) does not change centrality and is not recorded. Centrality is how deeply raising, commanding, or practicing necromancy sits in the game. An undead protagonist who does not raise or command the dead is not a higher tier for the body, and a living necromancer is not a lower tier for being alive. Reference case: Skulltide — you play a skeleton and the necromancers are other people; the body is not the classification.
 
 ---
 
