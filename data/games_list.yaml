@@ -12,6 +12,18 @@ games:
     as Imps; with Demon's Altar, Sacrifice tome, and Carnage it forms a coherent death/sacrifice
     specialization — but no undead units or necromancy terminology exist elsewhere
     in the game. King of Blood unlocks after killing 9,999 enemy units.
+- name: 'Black Heaven: A Necromantic Dating Sim'
+  steam_id: 2584680
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-10-16'
+  dimension_1_notes: A necromancer pulls you back from a plague and sends you through
+    a ruined academy to collect the ghosts of your classmates. The play is a dating
+    sim; the necromancy is the premise, not a system you cast.
 - name: Crypt Keeper
   steam_id: 3514820
   classification:
@@ -23,6 +35,17 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: Roguelite tower defense where you awaken your necromancy, raise
     a skeleton legion, and defend your shrine from heroic attackers.
+- name: Dungeon Dash - Tales of the Necromancer
+  steam_id: 2300330
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-10-16'
+  dimension_1_notes: You dash through arcade dungeons as a young necromancer. The
+    necromancer is who you are; the levels do not have you raise or command the dead.
 - name: Empire of Zombies
   steam_id: 4452230
   classification:
@@ -88,6 +111,41 @@ games:
   priority: medium
   date_updated: '2026-07-27'
   dimension_1_notes: Steam page shows spectral and undead looking minions.
+- name: Les Bones
+  steam_id: 5011110
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-10-16'
+  dimension_1_notes: You play a necromancer in a bullet-heaven, and the weapons are
+    bones that fire on their own. The run never raises or commands the dead.
+- name: Lich of Might
+  steam_id: 4485760
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-10-16'
+  dimension_1_notes: You are the lich at the end of the dungeon, casting necromantic
+    spells at the heroes who invade, including a summon that brings an undead throng
+    down on them.
+- name: Life as a Lich
+  steam_id: 2845790
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-10-16'
+  dimension_1_notes: You wake already a lich, and the work of the game is raising
+    undead armies and assigning those minions across your domains. Spell research
+    sits on that same loop rather than beside it.
 - name: Lost Castle 2
   steam_id: 2445690
   classification:
@@ -101,6 +159,17 @@ games:
     and some weapon skills summon zombie-like mutated villagers - isolated summon-undead
     features in a broad weapon roster with no necromancy specialization. Phantom Lantern
     must be unlocked before it can be chosen as a starting weapon.
+- name: Necromance
+  steam_id: 3627580
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-10-16'
+  dimension_1_notes: You learn necromancy from a bound lich as the way through the
+    story, and interrogating the graveyard's ghosts is part of that work.
 - name: 'Necromancer : Winter'
   steam_id: 1560860
   classification:
@@ -112,6 +181,18 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: 'Free short adventure: revive fallen enemies to build an undead
     army against the king''s forces; Summon Dragon unlocks in Chapter 2.'
+- name: Necromancer Delivery Service
+  steam_id: 4557560
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-10-16'
+  dimension_1_notes: You play a necromancer making deliveries through a city, and
+    souls collected as tips upgrade the spells you cast on the way. Raising the dead
+    is not the job.
 - name: Necromancer Park
   steam_id: 4905690
   classification:
@@ -236,6 +317,18 @@ games:
   date_updated: '2025-12-09'
   dimension_1_notes: Necromancer form available as a shapeshift, comes with some skills
     that are equippable on other forms
+- name: Skulltide
+  steam_id: 2814060
+  classification:
+    dimension_1: d
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: gated
+  priority: low
+  date_updated: '2026-10-16'
+  dimension_1_notes: You play a skeleton on a co-op adventure, hunting the necromancers
+    who raised you. Raising the dead is one bone-tied trick you can pick up and lose,
+    not what the adventure is about.
 - name: 'Slime 3K: Rise Against Despot'
   steam_id: 2348610
   classification:
@@ -2170,7 +2263,7 @@ games:
   priority: low
   dimension_1_notes: '"Necromancer" synergy'
   date_updated: '2025-12-19'
-- name: 'Monsters are Coming!'
+- name: Monsters are Coming!
   steam_id: 2934220
   aliases:
   - Monsters are Coming Rock & Road
