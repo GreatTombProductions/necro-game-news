@@ -225,14 +225,12 @@ def deploy():
     print("Committing and pushing...")
     try:
         subprocess.run(
-            ["git", "add", "data/games_list.yaml", "data/blood_games_list.yaml",
-             "frontend/public/data/games.json", "frontend/public/data/blood_games.json",
-             "frontend/public/data/stats.json", "frontend/public/data/blood_stats.json"],
+            ["greattomb", "git-commit-isolated",
+             "./data/games_list.yaml", "./data/blood_games_list.yaml",
+             "./frontend/public/data/games.json", "./frontend/public/data/blood_games.json",
+             "./frontend/public/data/stats.json", "./frontend/public/data/blood_stats.json",
+             "-m", f"Add {date.today().isoformat()} game registry update"],
             cwd=str(PROJECT_ROOT), check=True
-        )
-        subprocess.run(
-            ["git", "commit", "-m", f"Add {date.today().isoformat()} game registry update"],
-            cwd=str(PROJECT_ROOT), check=False  # May fail if nothing to commit
         )
         subprocess.run(["git", "push", "origin", "main"], cwd=str(PROJECT_ROOT), check=True)
     except Exception as e:

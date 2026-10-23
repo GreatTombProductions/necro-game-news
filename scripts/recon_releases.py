@@ -167,6 +167,8 @@ def verify(appid: int, delay: float) -> dict:
             "type": d.get("type"),
             "name": d.get("name"),
             "released": d.get("release_date", {}).get("date", "?"),
+            "coming_soon": d.get("release_date", {}).get("coming_soon"),
+            "fullgame": d.get("fullgame"),
             "desc": (d.get("short_description") or "")[:220].replace("\n", " "),
         }
     return {"status": "empty"}
@@ -196,8 +198,10 @@ def verify_deep(appid: int, delay: float) -> dict:
             "type": d.get("type"),
             "name": d.get("name"),
             "released": d.get("release_date", {}).get("date", "?"),
+            "coming_soon": d.get("release_date", {}).get("coming_soon"),
+            "fullgame": d.get("fullgame"),
             "genres": [g.get("description") for g in (d.get("genres") or [])],
-            "desc": desc[:550],
+            "desc": desc,
         }
     return {"status": "empty"}
 
@@ -228,7 +232,7 @@ def main() -> int:
                 flag = f" -> {v['canonical_id']} REDIRECT" if v.get("redirected") else ""
                 extra = f" | {', '.join(v['genres'])}" if v.get("genres") else ""
                 print(f"  {appid}{flag} | {v['type']} | {v['name']} | {v['released']}{extra}")
-                print(f"      {v['desc']}")
+                print(f"      {v['desc'][:550]}")
             else:
                 print(f"  {appid} | {v.get('status')}")
         if args.json:
