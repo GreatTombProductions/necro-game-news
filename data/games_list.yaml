@@ -227,6 +227,17 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: Survival roguelite; play a betrayed necromancer converting fallen
     monsters into minions and summoning the Dark Lord.
+- name: 'Necromancer: Ash & Bone'
+  steam_id: 4883600
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-11-01'
+  dimension_1_notes: 'You play the necromancer. One of the three skill trees is summons:
+    the pitch says to raise the dead and that they await your command.'
 - name: Necromancers' Arena
   steam_id: 2401100
   classification:
