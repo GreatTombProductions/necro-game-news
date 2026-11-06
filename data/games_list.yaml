@@ -36,6 +36,19 @@ games:
   dimension_1_notes: You dig up bones and hire skeletons into a workforce that keeps
     the graveyards running, including when a guardian turns the island into a fight
     your army charges. Hiring the dead is the loop.
+- name: Cozy Necromancy
+  steam_id: 5349910
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-11-07'
+  dimension_1_notes: A gentle mystery where you play a journeyman necromancer posted
+    to a village whose dead have been stuck behind a sealed well for thirty-five years.
+    There is no combat and nothing is raised or commanded — each spirit is resolved
+    by placing three meaningful objects in a ritual circle.
 - name: Crypt Keeper
   steam_id: 3514820
   classification:
@@ -171,6 +184,18 @@ games:
     and some weapon skills summon zombie-like mutated villagers - isolated summon-undead
     features in a broad weapon roster with no necromancy specialization. Phantom Lantern
     must be unlocked before it can be chosen as a starting weapon.
+- name: Necro Rumble
+  steam_id: 2735950
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-11-07'
+  dimension_1_notes: Every enemy you kill leaves a corpse you can raise, and the necromancer
+    never fights directly — you spend the dead as your army, sacrificing and upgrading
+    them between waves.
 - name: Necromance
   steam_id: 3627580
   classification:
@@ -1196,6 +1221,21 @@ games:
   priority: medium
   date_updated: '2025-12-09'
   dimension_1_notes: Undead Hordes race (includes necromancer)
+- name: Zombie Night Terror
+  steam_id: 416680
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-11-07'
+  dimension_1_notes: You are the intelligence behind a zombie outbreak, directing
+    a horde that converts the living into more of itself across 50 levels. No character
+    is called a necromancer and the word never appears, but commanding an undead army
+    is the entire game.
+  dimension_2_notes: The overhead view is the mastermind's own — you are the brains
+    behind the outbreak, not an observer directing someone else's necromancer.
 - name: Zorbus
   steam_id: 2125420
   classification:
