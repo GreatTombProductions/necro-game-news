@@ -39,6 +39,8 @@ Necromancy is central to the character, unit, or faction's identity AND gameplay
 
 **Edge case — "not optional" vs "one of many":** If necromancy is a class among many but the class is fully realized (full skill tree, identity, gameplay fantasy), it's still tier A. The test is: when you play the necromantic option, is necromancy your identity? If yes, tier A.
 
+**Edge case — no reanimation bias:** necromancy need not raise or command the dead. A game whose entire practice is communion with the dead — divination through them, laying spirits to rest, arguing what binds them — is still necromancy, and holds tier A when that practice is the game's identity rather than its backdrop. Reference case: Cozy Necromancy — you play a journeyman necromancer whose whole loop is resolving bound spirits through ritual; nothing is raised or commanded, and it is tier A.
+
 ### Tier B: Specialization / Dedicated Branch
 
 **Code:** `b`
@@ -159,6 +161,8 @@ You command necromancer units or a necromantic faction, but you are not personal
 - Darkest Dungeon (control a party; Flagellant has necromantic abilities)
 
 **Decision boundary:** If the game has both a character you play and units you control, classify by the PRIMARY relationship. In a game where you ARE a necromancer who also summons minions, it's `character` (you are the necromancer, the minions are your tools). In a game where you command multiple independent necromancer units from above, it's `unit`.
+
+**Overhead command can be `character`.** When the commanding intelligence is itself the necromancer — no separate necromancer exists on the field, and the camera's eye is the mastermind's — the player IS the necromancer despite the overhead view. Reference case: Zombie Night Terror — you are the brains behind the outbreak, directing the horde across 50 levels; the zombie mastermind is the necromancer, so this is `character`, not `unit`.
 
 **Not a dimension — the body being undead.** Whether the player character or the controlled unit is itself undead (skeleton, lich, risen corpse) does not change centrality and is not recorded. Centrality is how deeply raising, commanding, or practicing necromancy sits in the game. An undead protagonist who does not raise or command the dead is not a higher tier for the body, and a living necromancer is not a lower tier for being alive. Reference case: Skulltide — you play a skeleton and the necromancers are other people; the body is not the classification.
 
@@ -322,7 +326,7 @@ Additional optional notes fields: `dimension_2_notes`, `dimension_3_notes`, `dim
 - Spirit/soul manipulation that doesn't involve the dead (classify as necromancy only if there's corpse-raising or explicit "necromancy" naming)
 - Zombie games where you fight zombies but don't raise them (NOT necromancy — fighting undead ≠ being a necromancer)
 - Games with a "death knight" class (check if they raise dead — if yes, it's necromancy; if it's just death-themed melee, classify as `c` or `d`)
-- Science-themed undead (Infectonator 3: classified as tier A "if you consider science undead-raising necromancy" — the notes make it work)
+- Science-themed undead (Infectonator 3: classified as tier A "if you consider science undead-raising necromancy" — the notes make it work; Zombie Night Terror: overhead outbreak command with no necromancy terminology, approved at a/character/implied)
 
 ---
 
