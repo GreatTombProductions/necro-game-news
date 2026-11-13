@@ -7,9 +7,9 @@ inbox files to Slimeko's workspace. Follows the Habit Pact feedback-pickup patte
 
 Idempotent: checks if inbox file exists before writing. Marks submissions as processed.
 
-Usage:
-  python3 scripts/submission_pickup.py              # dry-run
-  python3 scripts/submission_pickup.py --execute     # actually write inbox files
+Usage (project venv — deps are declared in requirements.txt):
+  ./venv/bin/python scripts/submission_pickup.py              # dry-run
+  ./venv/bin/python scripts/submission_pickup.py --execute     # actually write inbox files
 """
 
 import os
@@ -19,9 +19,19 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timezone
 
-# Firebase
-import firebase_admin
-from firebase_admin import credentials, firestore
+# Firebase. Guard the import so a wrong interpreter fails with an actionable
+# message instead of a bare traceback (the bridge must run from the project
+# venv; system python3 is not guaranteed to carry these packages).
+try:
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+    from google.cloud.firestore_v1.base_query import FieldFilter
+except ModuleNotFoundError as exc:
+    sys.exit(
+        f"submission_pickup: missing dependency {exc.name!r}. "
+        "Run with the project venv: ./venv/bin/python scripts/submission_pickup.py "
+        "(dependencies are declared in requirements.txt)."
+    )
 
 # Paths
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -63,7 +73,7 @@ def find_pending_submissions() -> list[dict]:
     on (status, created_at). The collection volume is low enough that this is fine.
     """
     docs = db.collection('ngn-submissions') \
-        .where('status', '==', 'pending') \
+        .where(filter=FieldFilter('status', '==', 'pending')) \
         .stream()
 
     submissions = []

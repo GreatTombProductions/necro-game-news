@@ -56,10 +56,10 @@ Submission Form → Vercel API → Firestore (ngn-submissions)
 **Submission Pickup:**
 ```bash
 # Dry run: see what submissions are pending
-python3 scripts/submission_pickup.py
+./venv/bin/python scripts/submission_pickup.py
 
 # Write inbox files for Slimeko
-python3 scripts/submission_pickup.py --execute
+./venv/bin/python scripts/submission_pickup.py --execute
 ```
 
 **Review Game (main workflow):**
@@ -168,7 +168,7 @@ See `docs/YAML_SCHEMA.md` for the complete field reference and validation checkl
 
 **Adding a game from a community submission:**
 
-1. Check for pending submissions: `python3 scripts/submission_pickup.py`
+1. Check for pending submissions: `./venv/bin/python scripts/submission_pickup.py`
 2. If submissions found, run with `--execute` to create inbox files
 3. For each game in your inbox:
    a. Search Steam: `./venv/bin/python scripts/steam_lookup.py search "Game Name"`
