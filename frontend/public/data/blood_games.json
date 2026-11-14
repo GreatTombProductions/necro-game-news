@@ -15,7 +15,7 @@
     "name": "Age of Wonders 4",
     "app_type": null,
     "short_description": "Rule a fantasy realm of your own design! Explore new magical realms in Age of Wonders\u2019 signature blend of 4X strategy and turn-based tactical combat. Control a faction that grows and changes as you expand your empire with each turn!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1669000/68c09090edc5317dfbdcbb5bb2b693a4301e727e/header_alt_assets_15.jpg?t=1793955877",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1669000/d484eb89eb2bc85871a31f24e9f1c64b85416b48/header_alt_assets_14.jpg?t=1794211708",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -38,14 +38,14 @@
     "steam_tags": [
       "Strategy",
       "4X",
-      "Character Customization",
-      "Fantasy",
-      "RPG",
-      "Strategy RPG",
       "Turn-Based Strategy",
-      "Choices Matter",
-      "Moddable",
-      "Dwarf"
+      "Fantasy",
+      "Character Customization",
+      "RPG",
+      "Grand Strategy",
+      "Turn-Based Combat",
+      "Dark Fantasy",
+      "War"
     ],
     "genres": [
       "RPG",
@@ -54,7 +54,7 @@
     "aliases": [
       "Age of Wonders IV"
     ],
-    "last_checked": "2026-11-13 21:30:23.949842",
+    "last_checked": "2026-11-14 03:11:57.386424",
     "update_count": 103,
     "last_update": "2026-11-06 15:05:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643345653",
@@ -84,7 +84,7 @@
     "name": "BALL x PIT",
     "app_type": null,
     "short_description": "BALL x PIT is a brick-breaking, ball-fusing, base-building survival roguelite. Batter hordes of enemies with ricocheting balls and gather the riches of the pit to expand your homestead, generate resources and recruit unique heroes.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062430/a157aa8de4bd9070194ddffb27c31636355dca05/header.jpg?t=1790869056",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062430/a157aa8de4bd9070194ddffb27c31636355dca05/header.jpg?t=1794503272",
     "dimension_1": "c",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -102,7 +102,7 @@
     "developer": "Kenny Sun and Friends",
     "publisher": "Devolver Digital",
     "release_date": "Oct 15, 2025",
-    "price_usd": 14.99,
+    "price_usd": 7.49,
     "price_notes": null,
     "steam_tags": [],
     "genres": [
@@ -110,7 +110,7 @@
       "Indie"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:28.379758",
+    "last_checked": "2026-11-14 03:12:01.887953",
     "update_count": 29,
     "last_update": "2026-11-12 17:52:51",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849192144183737",
@@ -164,13 +164,13 @@
       "RPG",
       "Character Customization",
       "Choices Matter",
-      "Story Rich",
       "Turn-Based Combat",
-      "Dungeons & Dragons",
+      "Story Rich",
+      "Sexual Content",
       "CRPG",
       "Fantasy",
       "Adventure",
-      "Sexual Content"
+      "Romance"
     ],
     "genres": [
       "Adventure",
@@ -178,7 +178,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:29.910030",
+    "last_checked": "2026-11-14 03:12:03.398805",
     "update_count": 6,
     "last_update": "2026-03-26 07:40:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1827626365770693",
@@ -247,7 +247,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:43.315499",
+    "last_checked": "2026-11-14 03:12:16.962925",
     "update_count": 51,
     "last_update": "2025-11-07 05:00:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1815580768294531",
@@ -295,7 +295,7 @@
     "developer": "Party for Introverts",
     "publisher": "Akupara Games",
     "release_date": "Feb 20, 2025",
-    "price_usd": 13.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [
       "Singleplayer",
@@ -316,7 +316,7 @@
       "Simulation"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:47.837988",
+    "last_checked": "2026-11-14 03:12:21.401526",
     "update_count": 57,
     "last_update": "2025-06-03 10:17:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756479433",
@@ -368,8 +368,8 @@
     "price_notes": "Requires Crimson Court DLC (~12.99 USD)",
     "steam_tags": [
       "Turn-Based Combat",
-      "Dark Fantasy",
       "Dungeon Crawler",
+      "Dark Fantasy",
       "Rogue-like",
       "RPG",
       "Lovecraftian",
@@ -384,7 +384,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:05.836052",
+    "last_checked": "2026-11-14 03:12:39.442118",
     "update_count": 77,
     "last_update": "2026-11-04 19:22:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848557880480357",
@@ -438,19 +438,19 @@
       "Horror",
       "Multiplayer",
       "Survival Horror",
+      "Gore",
       "Online Co-Op",
       "Co-op",
       "Survival",
-      "Gore",
       "Team-Based",
-      "Blood",
-      "Stealth"
+      "Violent",
+      "Third Person"
     ],
     "genres": [
       "Action"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:09.009349",
+    "last_checked": "2026-11-14 03:12:42.361805",
     "update_count": 106,
     "last_update": "2026-11-09 20:08:56",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643356687",
@@ -507,7 +507,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:14.847926",
+    "last_checked": "2026-11-14 03:12:48.381330",
     "update_count": 15,
     "last_update": "2026-05-05 11:56:31",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1831432155579605",
@@ -567,7 +567,7 @@
       "Diablo II Resurrected",
       "Diablo 2: Resurrected"
     ],
-    "last_checked": "2026-11-13 21:30:09.666416",
+    "last_checked": "2026-11-14 03:11:43.143375",
     "update_count": 31,
     "last_update": "2026-04-01 18:50:33",
     "last_update_url": "https://news.blizzard.com/en-us/article/24271875/reign-of-the-warlock-3-1-2-patch-notes",
@@ -629,7 +629,7 @@
       "Diablo 3: Rise of the Necromancer",
       "Diablo III: Rise of the Necromancer"
     ],
-    "last_checked": "2026-11-13 21:30:07.592635",
+    "last_checked": "2026-11-14 03:11:40.807192",
     "update_count": 24,
     "last_update": "2024-09-13 17:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24135096/diablo-iii-ptr-2-7-8-has-concluded",
@@ -685,7 +685,7 @@
       "Mobile"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:08.684036",
+    "last_checked": "2026-11-14 03:11:41.783407",
     "update_count": 60,
     "last_update": "2026-01-27 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244401/diablo-immortal-bug-fixes-and-patch-notes-for-all-platforms",
@@ -743,10 +743,10 @@
       "Isometric",
       "RPG",
       "Online Co-Op",
-      "Singleplayer",
-      "Co-op",
       "Dungeon Crawler",
-      "Multiplayer"
+      "Multiplayer",
+      "Co-op",
+      "Singleplayer"
     ],
     "genres": [
       "Action",
@@ -760,7 +760,7 @@
       "D4",
       "Diablo IV"
     ],
-    "last_checked": "2026-11-13 21:31:16.320149",
+    "last_checked": "2026-11-14 03:12:49.859675",
     "update_count": 16,
     "last_update": "2026-02-12 13:36:23",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1824459501608136",
@@ -811,8 +811,8 @@
     "price_usd": 44.99,
     "price_notes": null,
     "steam_tags": [
-      "Tactical RPG",
       "RPG",
+      "Tactical RPG",
       "Turn-Based Strategy",
       "Story Rich",
       "Fantasy",
@@ -828,7 +828,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:20.829099",
+    "last_checked": "2026-11-14 03:12:54.358159",
     "update_count": 8,
     "last_update": "2021-09-02 09:08:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099088678021",
@@ -876,7 +876,7 @@
     "developer": "Realmforge Studios",
     "publisher": "Kalypso Media",
     "release_date": "Nov 9, 2023",
-    "price_usd": 24.99,
+    "price_usd": 49.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -895,7 +895,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:41.835964",
+    "last_checked": "2026-11-14 03:13:15.386082",
     "update_count": 59,
     "last_update": "2025-12-09 06:01:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366185468",
@@ -952,8 +952,8 @@
       "RPG",
       "Difficult",
       "Action RPG",
-      "Third Person",
       "Multiplayer",
+      "Third Person",
       "Fantasy",
       "Singleplayer"
     ],
@@ -962,7 +962,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:43.320219",
+    "last_checked": "2026-11-14 03:13:16.932554",
     "update_count": 17,
     "last_update": "2026-08-27 16:00:22",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951300120",
@@ -1029,7 +1029,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:31:55.355623",
+    "last_checked": "2026-11-14 03:13:28.879610",
     "update_count": 49,
     "last_update": "2024-10-18 20:16:48",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583180293240",
@@ -1098,7 +1098,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:32:08.860778",
+    "last_checked": "2026-11-14 03:13:42.388640",
     "update_count": 62,
     "last_update": "2026-10-08 22:34:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067931370",
@@ -1154,7 +1154,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:13.734195",
+    "last_checked": "2026-11-14 03:11:47.145434",
     "update_count": 85,
     "last_update": "2026-11-03 15:55:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24307311/37-0-2-patch-notes",
@@ -1219,7 +1219,7 @@
       "HOMM Olden Era",
       "Heroes of Might & Magic: Olden Era"
     ],
-    "last_checked": "2026-11-13 21:32:26.807045",
+    "last_checked": "2026-11-14 03:14:00.378951",
     "update_count": 85,
     "last_update": "2026-11-13 15:09:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849192144187398",
@@ -1274,7 +1274,7 @@
       "MOBA"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:06.713156",
+    "last_checked": "2026-11-14 03:11:40.194442",
     "update_count": 18,
     "last_update": "2026-11-09 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24317084/heroes-of-the-storm-ptr-patch-notes-november-9-2026",
@@ -1346,7 +1346,7 @@
       "Heroes of Might & Magic 3 HD Edition",
       "Heroes of Might & Magic III HD Edition"
     ],
-    "last_checked": "2026-11-13 21:32:28.308939",
+    "last_checked": "2026-11-14 03:14:01.880698",
     "update_count": 17,
     "last_update": "2015-04-09 10:13:18",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517127039058299657",
@@ -1394,7 +1394,7 @@
     "developer": "Palindrome Interactive",
     "publisher": "Kalypso Media",
     "release_date": "Aug 28, 2020",
-    "price_usd": 7.49,
+    "price_usd": 29.99,
     "price_notes": null,
     "steam_tags": [
       "Strategy",
@@ -1416,7 +1416,7 @@
     "aliases": [
       "Immortal Realms Vampire Wars"
     ],
-    "last_checked": "2026-11-13 21:32:31.368032",
+    "last_checked": "2026-11-14 03:14:04.867844",
     "update_count": 20,
     "last_update": "2019-10-24 10:00:30",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307404127320",
@@ -1484,7 +1484,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:32:34.384060",
+    "last_checked": "2026-11-14 03:14:08.181006",
     "update_count": 46,
     "last_update": "2020-12-22 10:05:15",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300066725100",
@@ -1550,7 +1550,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:32:41.911050",
+    "last_checked": "2026-11-14 03:14:15.796943",
     "update_count": 73,
     "last_update": "2026-09-24 15:00:44",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498221419",
@@ -1607,10 +1607,10 @@
       "RPG",
       "Isometric",
       "Multiplayer",
+      "Top-Down",
       "Action",
       "Co-op",
-      "Adventure",
-      "Top-Down"
+      "Dungeon Crawler"
     ],
     "genres": [
       "Action",
@@ -1619,7 +1619,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:32:44.866235",
+    "last_checked": "2026-11-14 03:14:18.384135",
     "update_count": 85,
     "last_update": "2026-11-05 18:01:17",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1848664643342253",
@@ -1684,7 +1684,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:33:23.828548",
+    "last_checked": "2026-11-14 03:14:57.380191",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -1742,7 +1742,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:33:46.425688",
+    "last_checked": "2026-11-14 03:15:19.908855",
     "update_count": 17,
     "last_update": "2025-12-16 11:03:52",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592136914",
@@ -1772,7 +1772,7 @@
     "name": "Path of Exile",
     "app_type": null,
     "short_description": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you. Path of Exile is an online Action RPG set in a dark fantasy world. The game is completely free and will never be pay-to-win.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/19a8acaddb5659ef3c1c91e5d6beb89abf10718d/header.jpg?t=1794003950",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/238960/19a8acaddb5659ef3c1c91e5d6beb89abf10718d/header.jpg?t=1794430224",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "explicit",
@@ -1794,15 +1794,15 @@
     "price_notes": null,
     "steam_tags": [
       "Free to Play",
-      "Dark Fantasy",
       "Action RPG",
+      "Dark Fantasy",
       "Hack and Slash",
       "Loot",
       "MMORPG",
       "Multiplayer",
       "Dungeon Crawler",
       "Isometric",
-      "Character Customization"
+      "RPG"
     ],
     "genres": [
       "Action",
@@ -1813,7 +1813,7 @@
       "Free To Play"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:33:56.843738",
+    "last_checked": "2026-11-14 03:15:30.430866",
     "update_count": 130,
     "last_update": "2026-08-17 00:07:26",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183784694",
@@ -1843,7 +1843,7 @@
     "name": "Path of Exile 2",
     "app_type": null,
     "short_description": "Path of Exile 2 is a next generation Action RPG from Grinding Gear Games, featuring co-op for up to six players. Set years after the original Path of Exile, you will return to the dark world of Wraeclast and seek to end the corruption that is spreading.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/4de5b38ea6defe96eb537cc99c001075aefd94a3/header.jpg?t=1794003937",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694490/4de5b38ea6defe96eb537cc99c001075aefd94a3/header.jpg?t=1794430489",
     "dimension_1": "a",
     "dimension_2": "character",
     "dimension_3": "implied",
@@ -1883,7 +1883,7 @@
       "Early Access"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:33:58.359673",
+    "last_checked": "2026-11-14 03:15:31.888334",
     "update_count": 168,
     "last_update": "2026-09-03 00:54:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842846814441691",
@@ -1931,19 +1931,19 @@
     "developer": "Owlcat Games",
     "publisher": "META Publishing, Owlcat Games",
     "release_date": "Sep 2, 2021",
-    "price_usd": 3.99,
+    "price_usd": 19.99,
     "price_notes": null,
     "steam_tags": [
-      "Singleplayer",
-      "Action RPG",
-      "3D",
-      "Third Person",
-      "Lore-Rich",
-      "Adventure",
-      "Turn-Based Combat",
-      "Rogue-lite",
       "RPG",
-      "Action"
+      "Choices Matter",
+      "CRPG",
+      "Singleplayer",
+      "Romance",
+      "Turn-Based Combat",
+      "Character Customization",
+      "Story Rich",
+      "Fantasy",
+      "Strategy"
     ],
     "genres": [
       "Action",
@@ -1956,7 +1956,7 @@
       "Pathfinder Wrath of the Righteous Enhanced Edition",
       "Pathfinder: Wrath of the Righteous Enhanced Edition"
     ],
-    "last_checked": "2026-11-13 21:34:12.292851",
+    "last_checked": "2026-11-14 03:15:34.906388",
     "update_count": 54,
     "last_update": "2025-05-15 04:59:29",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379466905",
@@ -2013,7 +2013,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:34:16.715224",
+    "last_checked": "2026-11-14 03:15:39.410490",
     "update_count": 8,
     "last_update": "2026-11-03 13:02:59",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302251668",
@@ -2043,7 +2043,7 @@
     "name": "Ravenswatch",
     "app_type": null,
     "short_description": "Fallen heroes of old folk tales and legends: you are on the verge of a crucial battle against the Nightmare invading and corrupting your world. A roguelike action game from the creators of Curse of the Dead Gods\u00a9, playable solo or in online co-op.",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/a685fb6373db43ecc4d6309d1ca41dd89694f430/header_alt_assets_11.jpg?t=1792157123",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/header.jpg?t=1792157123",
     "dimension_1": null,
     "dimension_2": "character",
     "dimension_3": null,
@@ -2067,20 +2067,20 @@
       "Rogue-like",
       "Co-op",
       "Action Roguelike",
+      "Online Co-Op",
       "Action",
       "Multiplayer",
-      "Online Co-Op",
       "Rogue-lite",
-      "Singleplayer",
       "Difficult",
-      "Indie"
+      "Indie",
+      "Singleplayer"
     ],
     "genres": [
       "Action",
       "Adventure"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:34:18.173613",
+    "last_checked": "2026-11-14 03:15:40.905981",
     "update_count": 63,
     "last_update": "2026-10-12 10:05:05",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067940272",
@@ -2147,7 +2147,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:34:22.753915",
+    "last_checked": "2026-11-14 03:15:45.465565",
     "update_count": 27,
     "last_update": "2022-07-11 05:30:13",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573577046",
@@ -2215,7 +2215,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:01.805105",
+    "last_checked": "2026-11-14 03:16:24.425088",
     "update_count": 48,
     "last_update": "2025-05-24 09:21:14",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164476696",
@@ -2263,14 +2263,14 @@
     "developer": "Bethesda Game Studios",
     "publisher": "Bethesda Softworks",
     "release_date": "Oct 27, 2016",
-    "price_usd": 39.99,
+    "price_usd": 7.99,
     "price_notes": null,
     "steam_tags": [
       "Open World",
       "RPG",
+      "Fantasy",
       "Adventure",
       "Singleplayer",
-      "Fantasy",
       "Character Customization",
       "Moddable",
       "Dragons",
@@ -2285,7 +2285,7 @@
       "Skyrim Special Edition",
       "The Elder Scrolls V: Skyrim"
     ],
-    "last_checked": "2026-11-13 21:35:13.670144",
+    "last_checked": "2026-11-14 03:16:36.394561",
     "update_count": 6,
     "last_update": "2026-08-20 16:55:37",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228665884",
@@ -2358,7 +2358,7 @@
       "Elder Scrolls Online",
       "The Elder Scrolls Online"
     ],
-    "last_checked": "2026-11-13 21:35:15.170405",
+    "last_checked": "2026-11-14 03:16:37.881604",
     "update_count": 102,
     "last_update": "2026-10-22 17:03:03",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847286114033073",
@@ -2427,7 +2427,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:22.689337",
+    "last_checked": "2026-11-14 03:16:45.381448",
     "update_count": 50,
     "last_update": "2023-10-26 10:00:09",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576669351",
@@ -2478,23 +2478,23 @@
     "price_usd": 59.99,
     "price_notes": null,
     "steam_tags": [
+      "RPG",
       "Strategy",
-      "Fantasy",
-      "RTS",
-      "War",
-      "Turn-Based Strategy",
-      "Games Workshop",
+      "Simulation",
+      "4X",
       "Grand Strategy",
-      "Multiplayer",
-      "Tactical",
-      "Dark Fantasy"
+      "Strategy RPG",
+      "RTS",
+      "Turn-Based Strategy",
+      "Real Time Tactics",
+      "Tactical RPG"
     ],
     "genres": [
       "Action",
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:27.199283",
+    "last_checked": "2026-11-14 03:16:49.888698",
     "update_count": 25,
     "last_update": "2025-11-20 04:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1816849002010503",
@@ -2552,9 +2552,9 @@
       "Grand Strategy",
       "War",
       "Multiplayer",
-      "Games Workshop",
+      "Singleplayer",
       "Action",
-      "Turn-Based"
+      "Dark Fantasy"
     ],
     "genres": [
       "Action",
@@ -2565,7 +2565,7 @@
       "Total War: Warhammer 2",
       "Total War Warhammer 2"
     ],
-    "last_checked": "2026-11-13 21:35:28.683858",
+    "last_checked": "2026-11-14 03:16:51.383911",
     "update_count": 29,
     "last_update": "2026-07-28 16:00:17",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357038390",
@@ -2624,15 +2624,15 @@
       "Real Time Tactics",
       "War",
       "Dark Fantasy",
-      "Action",
-      "Dwarf"
+      "Dwarves",
+      "Action"
     ],
     "genres": [
       "Action",
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:30.230156",
+    "last_checked": "2026-11-14 03:16:52.892261",
     "update_count": 95,
     "last_update": "2026-11-03 11:58:35",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847920302251502",
@@ -2686,13 +2686,13 @@
       "Survival",
       "Open World",
       "Base-Building",
-      "Vampire",
+      "Vampires",
       "Multiplayer",
       "Crafting",
       "Online Co-Op",
-      "PvP",
       "PvE",
-      "Building"
+      "Building",
+      "Character Customization"
     ],
     "genres": [
       "Action",
@@ -2700,7 +2700,7 @@
       "Massively Multiplayer"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:39.215744",
+    "last_checked": "2026-11-14 03:17:01.920592",
     "update_count": 43,
     "last_update": "2026-09-11 12:04:16",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262694634",
@@ -2759,7 +2759,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:40.658145",
+    "last_checked": "2026-11-14 03:17:03.449286",
     "update_count": 14,
     "last_update": "2025-12-14 05:45:00",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592131116",
@@ -2789,7 +2789,7 @@
     "name": "Vampire Survivors",
     "app_type": null,
     "short_description": "Mow down thousands of night creatures and survive until dawn! Vampire Survivors is a gothic horror casual game with rogue-lite elements, where your choices can allow you to quickly snowball against the hundreds of monsters that get thrown at you. Be the bullet hell!",
-    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1794680/2ca07b690dde645771125ed9d9206c4c5fde4dd4/header.jpg?t=1787911678",
+    "header_image_url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1794680/2ca07b690dde645771125ed9d9206c4c5fde4dd4/header.jpg?t=1794307910",
     "dimension_1": null,
     "dimension_2": "character",
     "dimension_3": null,
@@ -2812,14 +2812,14 @@
     "steam_tags": [
       "Action Roguelike",
       "Bullet Hell",
-      "Pixel Graphics",
       "Rogue-lite",
-      "Vampire",
+      "Pixel Graphics",
+      "Vampires",
       "2D",
       "Indie",
       "Singleplayer",
-      "Casual",
-      "Arcade"
+      "Rogue-like",
+      "Casual"
     ],
     "genres": [
       "Action",
@@ -2828,7 +2828,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:42.212691",
+    "last_checked": "2026-11-14 03:17:04.914768",
     "update_count": 24,
     "last_update": "2026-08-30 11:42:32",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951307238",
@@ -2880,15 +2880,15 @@
     "price_notes": null,
     "steam_tags": [
       "RPG",
-      "Vampire",
-      "Cult Classic",
+      "Vampires",
       "Singleplayer",
       "Supernatural",
       "Horror",
-      "Action",
       "Dark",
       "Atmospheric",
-      "Story Rich"
+      "Action",
+      "Story Rich",
+      "Classic"
     ],
     "genres": [
       "Action"
@@ -2900,7 +2900,7 @@
       "VTM Bloodlines",
       "VTM: Bloodlines"
     ],
-    "last_checked": "2026-11-13 21:35:43.684380",
+    "last_checked": "2026-11-14 03:17:06.388686",
     "update_count": 0,
     "last_update": null,
     "last_update_url": null,
@@ -2948,16 +2948,16 @@
     "developer": "DONTNOD Entertainment",
     "publisher": "Focus Entertainment",
     "release_date": "Jun 4, 2018",
-    "price_usd": 3.99,
+    "price_usd": 39.99,
     "price_notes": null,
     "steam_tags": [
-      "Vampire",
+      "Vampires",
       "RPG",
       "Choices Matter",
       "Story Rich",
       "Open World",
-      "Action",
       "Singleplayer",
+      "Action",
       "Atmospheric",
       "Third Person",
       "Horror"
@@ -2967,7 +2967,7 @@
       "RPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:45.156169",
+    "last_checked": "2026-11-14 03:17:07.922011",
     "update_count": 31,
     "last_update": "2018-06-01 02:55:46",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358622000374354",
@@ -3028,7 +3028,7 @@
       "Warcraft 3 Reforged",
       "Warcraft III Reforged"
     ],
-    "last_checked": "2026-11-13 21:30:12.587144",
+    "last_checked": "2026-11-14 03:11:45.962817",
     "update_count": 21,
     "last_update": "2024-11-13 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24167122/warcraft-iii-reforged-patch-notes-patch-2-0-0",
@@ -3084,7 +3084,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:11.586510",
+    "last_checked": "2026-11-14 03:11:44.960526",
     "update_count": 22,
     "last_update": "2025-06-12 23:28:45",
     "last_update_url": "https://news.blizzard.com/en-us/article/24213949/patch-notes-honorable-horde-balance-changes-and-bugfixes",
@@ -3139,7 +3139,7 @@
       "MMORPG"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:30:11.061350",
+    "last_checked": "2026-11-14 03:11:44.405634",
     "update_count": 34,
     "last_update": "2025-12-23 18:00:00",
     "last_update_url": "https://news.blizzard.com/en-us/article/24244426/what-to-do-before-the-midnight-pre-expansion-content-update",
@@ -3187,9 +3187,20 @@
     "developer": "Chasing Rats Games",
     "publisher": "Chasing Rats Games",
     "release_date": "Nov 4, 2026",
-    "price_usd": 14.99,
+    "price_usd": 19.99,
     "price_notes": null,
-    "steam_tags": [],
+    "steam_tags": [
+      "Exploration",
+      "Rogue-lite",
+      "Dark Fantasy",
+      "Dark Humor",
+      "Cute",
+      "Lore-Rich",
+      "2.5D",
+      "Cult",
+      "Magic",
+      "Funny"
+    ],
     "genres": [
       "Action",
       "Adventure",
@@ -3197,7 +3208,7 @@
       "Strategy"
     ],
     "aliases": [],
-    "last_checked": "2026-11-13 21:35:58.673186",
+    "last_checked": "2026-11-14 03:17:21.405008",
     "update_count": 52,
     "last_update": "2026-11-12 17:06:27",
     "last_update_url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849192144183557",
