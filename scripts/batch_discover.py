@@ -526,6 +526,9 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
                        help="Limit number of apps to process (for testing)")
     parser.add_argument('--yes', '-y', action='store_true',
                        help="Skip confirmation prompt (for background runs)")
+    parser.add_argument('--newest-first', action='store_true',
+                       help="Evaluate highest app IDs first (recent Steam releases) "
+                            "so a partial run covers new apps before the old backlog")
 
     args = parser.parse_args()
 
@@ -561,6 +564,8 @@ Processed app IDs are tracked in data/discovery_cache/processed_appids.txt
 
         # Filter apps
         apps_to_process = filter_applist(apps, exclude_ids)
+        if args.newest_first:
+            apps_to_process.sort(key=lambda a: a.get('appid') or 0, reverse=True)
 
         if args.limit:
             apps_to_process = apps_to_process[:args.limit]
