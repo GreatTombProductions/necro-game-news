@@ -187,22 +187,28 @@ def validate_blood(args) -> list[str]:
 
 
 def sync_to_database():
-    """Sync YAML changes to the SQLite database."""
+    """Sync YAML changes to the SQLite database (both registries).
+
+    The necro and blood syncs are separate loader runs; a blood add that only
+    runs the necro sync leaves the YAML ahead of the DB/export (the blood JSON
+    silently omits the new game). Both runs are idempotent update-syncs.
+    """
     import subprocess
     venv_python = str(PROJECT_ROOT / "venv" / "bin" / "python")
     load_script = str(PROJECT_ROOT / "scripts" / "load_games_from_yaml.py")
 
     try:
-        result = subprocess.run(
-            [venv_python, load_script, "--update", "--sync"],
-            cwd=str(PROJECT_ROOT),
-            capture_output=True,
-            text=True,
-            timeout=60,
-        )
-        if result.returncode != 0:
-            print(f"WARNING: Database sync had errors:\n{result.stderr}", file=sys.stderr)
-            return False
+        for extra in ([], ["--blood"]):
+            result = subprocess.run(
+                [venv_python, load_script, "--update", "--sync", *extra],
+                cwd=str(PROJECT_ROOT),
+                capture_output=True,
+                text=True,
+                timeout=60,
+            )
+            if result.returncode != 0:
+                print(f"WARNING: Database sync had errors ({extra or 'necromancy'}):\n{result.stderr}", file=sys.stderr)
+                return False
         return True
     except Exception as e:
         print(f"WARNING: Database sync failed: {e}", file=sys.stderr)

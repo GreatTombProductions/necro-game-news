@@ -465,7 +465,11 @@ def load_games_from_yaml(yaml_path='data/games_list.yaml', update_existing=False
                         old_date_str = str(old_date_updated)[:10] if old_date_updated else None
                     date_updated_changed = old_date_str != new_date_str
 
-                    app_type_changed = old_app_type != app_type
+                    # Absent YAML app_type means "unspecified", not "clear":
+                    # fetch_steam_details owns the Steam-derived value ('game').
+                    app_type_changed = app_type is not None and old_app_type != app_type
+                    if app_type is None:
+                        app_type = old_app_type
 
                     if classification_changed or platform_changed or aliases_changed or date_updated_changed or app_type_changed or registry_upgrade:
                         # Update classification, platform info, aliases, registry, and date_updated.
