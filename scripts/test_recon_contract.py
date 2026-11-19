@@ -46,6 +46,28 @@ class EvidenceTests(unittest.TestCase):
             self.assertIsNone(result["coming_soon"])
 
 
+class BloodTermsTests(unittest.TestCase):
+    # S65: --blood sweeps the sanguine registry with its own term set. The
+    # necro default must not change shape when the blood set is added.
+    def test_blood_relevance_uses_blood_terms(self):
+        self.assertEqual(recon.relevance({"name": "Vampire Survivors Clone"}, "blood"), "strong")
+        self.assertEqual(recon.relevance({"name": "Hemomancy Academy"}, "blood"), "strong")
+        self.assertEqual(recon.relevance({"name": "Blood Barons"}, "blood"), "weak")
+        self.assertEqual(recon.relevance({"name": "Unrelated Farming Sim"}, "blood"), "search-only")
+
+    def test_necro_default_unchanged(self):
+        self.assertEqual(recon.relevance({"name": "Vampire Survivors Clone"}), "search-only")
+        self.assertEqual(recon.relevance({"name": "Necromancer Park"}), "strong")
+        self.assertEqual(recon.relevance({"name": "Blood Barons"}), "search-only")
+
+    def test_blood_search_terms_cover_name_matches(self):
+        # Every primary term is searched, so a name match can only be missed
+        # when the game is already tracked (S58 mechanism), not by term gap.
+        for term in recon.BLOOD_PRIMARY_TERMS:
+            self.assertIn(term, recon.BLOOD_SEARCH_TERMS)
+        self.assertTrue(recon.BLOOD_SECONDARY_TERMS)
+
+
 class PublishTests(unittest.TestCase):
     # Invariant: shared-index sibling work cannot enter an approved registry
     # update, and a failed commit cannot be followed by a push/success claim.

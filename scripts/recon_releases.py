@@ -2,12 +2,13 @@
 """
 Necro Game News — release recon sweep.
 
-Finds necromancy-relevant Steam releases missing from the registry (and the
+Finds registry-relevant Steam releases missing from the registries (and the
 pending-candidate backlog edges). Read-only: never writes to the registry,
-candidates DB, or YAML.
+candidates DB, or YAML. Covers the necromancy registry by default and the
+blood (vampire) registry with --blood (S65).
 
 Method (proven 2026-09-26, S49):
-  1. Steam store search, sorted by release date, across the necromancy term set.
+  1. Steam store search, sorted by release date, across the registry's term set.
   2. Dedupe; drop noise (demos, soundtracks, DLC-name patterns).
   3. Diff against registry (both YAMLs) + candidates DB -> unknowns.
   4. Optionally verify unknowns via the appdetails API (type / redirect / blurb).
@@ -16,6 +17,7 @@ Usage:
     ./venv/bin/python scripts/recon_releases.py                 # released sweep, table
     ./venv/bin/python scripts/recon_releases.py --verify 12     # + details for top 12 unknowns
     ./venv/bin/python scripts/recon_releases.py --mode comingsoon
+    ./venv/bin/python scripts/recon_releases.py --blood         # blood-registry sweep
     ./venv/bin/python scripts/recon_releases.py --json /tmp/recon.json
     ./venv/bin/python scripts/recon_releases.py --ids 1898610,633580   # appdetails for an explicit id list (research pass)
     ./venv/bin/python scripts/recon_releases.py --ids 1898610 --deep   # richer pull for classification (full desc + genres)
@@ -23,8 +25,10 @@ Usage:
 Notes:
   - Steam appdetails may REDIRECT an appid (store moves); the response key wins.
     re-check_registry is reported when the canonical id differs from the requested one.
-  - Registry scope: the player raises/commands the dead. "Fight the undead" titles
-    are triage noise; verify with the description before proposing a game.
+  - Necromancy scope: the player raises/commands the dead. "Fight the undead"
+    titles are triage noise; verify with the description before proposing a game.
+  - Blood scope: the player IS/controls a vampire or wields blood magic.
+    Vampires-as-enemies-only is triage noise, the mirror of fight-the-undead.
 """
 
 import argparse
@@ -47,6 +51,14 @@ PRIMARY_TERMS = ["necromancer", "necromancy", "necromantic", "raise dead",
 SECONDARY_TERMS = ["undead", "zombie", "skeleton", "lich", "bone", "corpse",
                    "graveyard", "crypt", "tomb", "summon", "reanimat", "resurrect"]
 SEARCH_TERMS = PRIMARY_TERMS + ["lich", "dark magic"]
+
+# Blood registry (S65): same strong/weak shape. "blood" as a search term is
+# broad (Blood Bowl, BloodRayne, ...) but bounded by --pages; triage drops
+# blood-as-flavor titles the way fight-the-undead drops from necro sweeps.
+BLOOD_PRIMARY_TERMS = ["vampire", "vampiric", "blood magic", "blood mage",
+                       "hemomancy", "dhampir"]
+BLOOD_SECONDARY_TERMS = ["blood", "sanguine", "vampyre", "hemomancer"]
+BLOOD_SEARCH_TERMS = BLOOD_PRIMARY_TERMS + ["blood", "sanguine"]
 
 NOISE_PATTERNS = ["demo", "soundtrack", " ost", "artbook", "art book", " dlc",
                   "season pass", "upgrade pack", "content pack", "expansion",
@@ -140,11 +152,13 @@ def year_of(released: str):
     return int(m.group(0)) if m else None
 
 
-def relevance(row: dict) -> str:
+def relevance(row: dict, registry: str = "necromancy") -> str:
     n = row["name"].lower()
-    if any(t in n for t in PRIMARY_TERMS):
+    primary = BLOOD_PRIMARY_TERMS if registry == "blood" else PRIMARY_TERMS
+    secondary = BLOOD_SECONDARY_TERMS if registry == "blood" else SECONDARY_TERMS
+    if any(t in n for t in primary):
         return "strong"
-    if any(t in n for t in SECONDARY_TERMS):
+    if any(t in n for t in secondary):
         return "weak"
     return "search-only"
 
@@ -211,6 +225,8 @@ def main() -> int:
     ap.add_argument("--mode", choices=["released", "comingsoon"], default="released")
     ap.add_argument("--pages", type=int, default=2, help="search pages per term (100/page)")
     ap.add_argument("--terms", help="comma-separated override of search terms")
+    ap.add_argument("--blood", action="store_true",
+                    help="blood-registry sweep (vampire/blood term set)")
     ap.add_argument("--verify", type=int, default=0, metavar="N",
                     help="fetch appdetails for top N new candidates")
     ap.add_argument("--ids", help="comma-separated appids: appdetails-verify each (research pass)")
@@ -240,8 +256,10 @@ def main() -> int:
             print(f"\nwrote {args.json}")
         return 0
 
-    terms = args.terms.split(",") if args.terms else SEARCH_TERMS
-    print(f"== recon sweep | mode={args.mode} | terms={len(terms)} | pages={args.pages} ==")
+    registry = "blood" if args.blood else "necromancy"
+    default_terms = BLOOD_SEARCH_TERMS if args.blood else SEARCH_TERMS
+    terms = args.terms.split(",") if args.terms else default_terms
+    print(f"== recon sweep | registry={registry} | mode={args.mode} | terms={len(terms)} | pages={args.pages} ==")
 
     found = sweep(terms, args.pages, args.mode, args.delay)
     reg_ids, cand_ids = load_tracked()
@@ -253,7 +271,7 @@ def main() -> int:
     clean = [r for r in unknown if not is_noise(r["name"])]
     noisy = len(unknown) - len(clean)
     for r in clean:
-        r["relevance"] = relevance(r)
+        r["relevance"] = relevance(r, registry)
     strong = [r for r in clean if r["relevance"] == "strong"]
     weak = [r for r in clean if r["relevance"] == "weak" and
             (args.mode == "comingsoon" or (year_of(r["released"]) or 0) >= 2025)]
@@ -270,7 +288,10 @@ def main() -> int:
             print(f"  {r['appid']:>9} | {r['released'][:16]:<16} | {r['name'][:64]:<64} | {terms_s}")
         return rows
 
-    strong_s = show(strong, "STRONG — primary necromancy term in name (verify each)")
+    strong_label = ("STRONG — primary vampire/blood term in name (verify each)"
+                    if registry == "blood" else
+                    "STRONG — primary necromancy term in name (verify each)")
+    strong_s = show(strong, strong_label)
     weak_s = show(weak, "WEAK — secondary term in name, recent (triage)")
 
     verified = []
@@ -294,14 +315,20 @@ def main() -> int:
             verified.append(r)
 
     if args.json:
-        out = {"mode": args.mode, "terms": terms, "strong": strong_s, "weak": weak_s,
+        out = {"registry": registry, "mode": args.mode, "terms": terms,
+               "strong": strong_s, "weak": weak_s,
                "unknown_total": len(unknown), "verified": verified}
         # sets are not JSON-serializable
         Path(args.json).write_text(json.dumps(out, indent=1, default=list))
         print(f"\nwrote {args.json}")
 
-    print("\nTriage reminder: keep only games where the player RAISES/COMMANDS the dead; "
-          "check type=dlc (skip), and the description (store text is the primary source).")
+    if registry == "blood":
+        print("\nTriage reminder: keep only games where the player IS/CONTROLS a vampire "
+              "or WIELDS blood magic (vampires-as-enemies-only is noise); "
+              "check type=dlc (skip), and the description (store text is the primary source).")
+    else:
+        print("\nTriage reminder: keep only games where the player RAISES/COMMANDS the dead; "
+              "check type=dlc (skip), and the description (store text is the primary source).")
     return 0
 
 
