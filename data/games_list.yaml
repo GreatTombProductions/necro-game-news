@@ -60,6 +60,18 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: Roguelite tower defense where you awaken your necromancy, raise
     a skeleton legion, and defend your shrine from heroic attackers.
+- name: Cursed Cove
+  steam_id: 3067400
+  classification:
+    dimension_1: a
+    dimension_2: character
+    dimension_3: explicit
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-11-20'
+  dimension_1_notes: Summon a skeleton army and position it to break enemy defenses
+    and capture towers; your necromancer skills are the progression path across every
+    level.
 - name: Dungeon Dash - Tales of the Necromancer
   steam_id: 2300330
   classification:
@@ -82,6 +94,16 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: 'Idle empire-builder: raise corpses into an undead army, build
     the necropolis, and conquer the living.'
+- name: 'Forsaken Realms: Vahrin''s Call'
+  steam_id: 951770
+  classification:
+    dimension_1: b
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: unknown
+  priority: medium
+  date_updated: '2026-11-20'
+  dimension_1_notes: A soul-magic character among the controllable units.
 - name: 'GONE: Game of Necromancy Education'
   steam_id: 2855190
   classification:
@@ -104,6 +126,17 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: Cozy semi-idle sim; play a young necromancer raising undead plants
     in a balcony garden.
+- name: Grooveyard
+  steam_id: 3107360
+  classification:
+    dimension_1: b
+    dimension_2: character
+    dimension_3: implied
+    dimension_4: instant
+  priority: medium
+  date_updated: '2026-11-20'
+  dimension_1_notes: A bodiless spirit with magical powers guides skeletal minions
+    through more than sixty puzzle rooms to free them and learn what it once was.
 - name: Hands of Necromancy
   steam_id: 1898610
   classification:
@@ -623,6 +656,19 @@ games:
   priority: medium
   date_updated: '2025-12-09'
   dimension_1_notes: Necromancer class
+- name: UNDEAD FACTORY:Zombie Pandemic
+  steam_id: 793050
+  classification:
+    dimension_1: b
+    dimension_2: unit
+    dimension_3: implied
+    dimension_4: instant
+  priority: low
+  date_updated: '2026-11-20'
+  dimension_1_notes: Build a colony and develop fourteen types of undead, then send
+    zombie hordes and infection against enemy players in a free-to-play strategy game.
+  aliases:
+  - 'UNDEAD FACTORY: Zombie Pandemic'
 - name: 'Undead Horde: Dark Conqueror'
   steam_id: 3633180
   classification:

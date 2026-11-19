@@ -1,4 +1,14 @@
 games:
+- name: 'Forsaken Realms: Vahrin''s Call'
+  steam_id: 951770
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: unit
+    availability: unknown
+  priority: medium
+  date_updated: '2026-11-20'
+  vampirism_notes: One of the controllable characters is a vampire.
 - name: V Rising
   steam_id: 1604030
   classification:
@@ -13,18 +23,19 @@ games:
 - name: 'Vampire: The Masquerade - Bloodlines'
   steam_id: 2600
   aliases:
-    - "Vampire The Masquerade Bloodlines"
-    - "Vampire The Masquerade - Bloodlines"
-    - "VTMB"
-    - "VTM Bloodlines"
-    - "VTM: Bloodlines"
+  - Vampire The Masquerade Bloodlines
+  - Vampire The Masquerade - Bloodlines
+  - VTMB
+  - VTM Bloodlines
+  - 'VTM: Bloodlines'
   classification:
     vampirism: outright
     hemomancy: a
     pov: character
     availability: instant
   vampirism_notes: Classic vampire RPG, multiple vampire clans with unique disciplines
-  hemomancy_notes: Blood points fuel all abilities, Tremere clan has dedicated blood magic
+  hemomancy_notes: Blood points fuel all abilities, Tremere clan has dedicated blood
+    magic
   priority: high
   date_updated: '2025-12-23'
 - name: Vampire Survivors
@@ -91,7 +102,8 @@ games:
     availability: instant
   priority: high
   hemomancy_notes: Necromancer blood skills
-  vampirism_notes: Some vampiric powers from Season of Blood available as legendary aspects
+  vampirism_notes: Some vampiric powers from Season of Blood available as legendary
+    aspects
   date_updated: '2025-12-23'
 - name: ELDEN RING
   steam_id: 1245620
@@ -102,7 +114,7 @@ games:
     availability: gated
   priority: high
   date_updated: '2025-12-26'
-  hemomancy_notes: "Blood Oath Incantations"
+  hemomancy_notes: Blood Oath Incantations
 - name: Ravenswatch
   steam_id: 2071280
   classification:
@@ -112,8 +124,10 @@ games:
     availability: gated
   priority: high
   date_updated: '2026-01-03'
-  vampirism_notes: "Carmilla, with abilities like Dhampir and Bat Swarm"
-  hemomancy_notes: "Dhampir trait (fueling abilities with blood) core to Carmilla gameplay, Blood Orb ability in base kit, Blood Lash and Impalement (blood spikes) ultimate options."
+  vampirism_notes: Carmilla, with abilities like Dhampir and Bat Swarm
+  hemomancy_notes: Dhampir trait (fueling abilities with blood) core to Carmilla gameplay,
+    Blood Orb ability in base kit, Blood Lash and Impalement (blood spikes) ultimate
+    options.
 - name: Path of Exile
   steam_id: 238960
   classification:
@@ -121,7 +135,8 @@ games:
     hemomancy: b
     pov: character
     availability: instant
-  hemomancy_notes: Blood magic keystone, Exsanguinate and other blood skills enable dedicated blood mage builds
+  hemomancy_notes: Blood magic keystone, Exsanguinate and other blood skills enable
+    dedicated blood mage builds
   priority: high
   date_updated: '2025-12-25'
 - name: Grim Dawn
@@ -131,7 +146,8 @@ games:
     hemomancy: c
     pov: character
     availability: instant
-  hemomancy_notes: Blood Boil modifier to Siphon Souls (Necromancer), Bloody Pox skill (Occultist)
+  hemomancy_notes: Blood Boil modifier to Siphon Souls (Necromancer), Bloody Pox skill
+    (Occultist)
   priority: high
   date_updated: '2025-12-25'
 - name: Last Epoch
@@ -168,30 +184,32 @@ games:
 - name: The Elder Scrolls® Online
   steam_id: 306130
   aliases:
-    - ESO
-    - Elder Scrolls Online
-    - The Elder Scrolls Online
+  - ESO
+  - Elder Scrolls Online
+  - The Elder Scrolls Online
   classification:
     vampirism: outright
     hemomancy: absent
     pov: character
-    availability: gated 
+    availability: gated
   vampirism_notes: Can become a vampire with dedicated skill line and transformation
   priority: medium
   date_updated: '2025-12-25'
-- name: "The Elder Scrolls V: Skyrim Special Edition"
+- name: 'The Elder Scrolls V: Skyrim Special Edition'
   steam_id: 489830
   aliases:
   - Skyrim
   - Skyrim Special Edition
-  - "The Elder Scrolls V: Skyrim"
+  - 'The Elder Scrolls V: Skyrim'
   classification:
     vampirism: outright
     hemomancy: b
     pov: character
-    availability: gated 
-  vampirism_notes: Vampire Lord transformation via Dawnguard, full vampire faction questline
-  hemomancy_notes: Blood Magic perk tree (3 perks) in Vampire Lord form, Dawnguard DLC
+    availability: gated
+  vampirism_notes: Vampire Lord transformation via Dawnguard, full vampire faction
+    questline
+  hemomancy_notes: Blood Magic perk tree (3 perks) in Vampire Lord form, Dawnguard
+    DLC
   priority: medium
   date_updated: '2025-12-25'
 - name: 'Total War: WARHAMMER'
@@ -201,11 +219,11 @@ games:
     hemomancy: absent
     pov: character
     availability: instant
-  vampirism_notes: Vampire Counts faction - play as vampire legendary lords (Mannfred, Vlad, Isabella)
+  vampirism_notes: Vampire Counts faction - play as vampire legendary lords (Mannfred,
+    Vlad, Isabella)
   pov_notes: Assuming you play "as" the legendary lord
   priority: medium
   date_updated: '2025-12-25'
-
 - name: 'Total War: WARHAMMER II'
   steam_id: 594570
   aliases:
@@ -221,7 +239,6 @@ games:
   pov_notes: Assuming you play "as" the legendary lord
   priority: medium
   date_updated: '2025-12-25'
-
 - name: 'Total War: WARHAMMER III'
   steam_id: 1142710
   classification:
@@ -236,7 +253,7 @@ games:
 - name: 'Immortal Realms: Vampire Wars'
   steam_id: 1024480
   aliases:
-    - Immortal Realms Vampire Wars
+  - Immortal Realms Vampire Wars
   classification:
     vampirism: outright
     hemomancy: a
@@ -247,23 +264,22 @@ games:
   pov_notes: Assuming you play "as" vampire lords
   priority: high
   date_updated: '2025-12-25'
-
 - name: Baldur's Gate 3
   steam_id: 1086940
   classification:
     vampirism: outright
     hemomancy: absent
     pov: character
-    availability: instant  # Astarion is origin character
+    availability: instant
   vampirism_notes: Astarion is a vampire spawn origin character
   priority: medium
   date_updated: '2025-12-25'
 - name: 'Warcraft III: Reforged'
   aliases:
-  - 'Warcraft 3'
+  - Warcraft 3
   - 'Warcraft 3: Reforged'
-  - 'Warcraft 3 Reforged'
-  - 'Warcraft III Reforged'
+  - Warcraft 3 Reforged
+  - Warcraft III Reforged
   battlenet_id: warcraft-3
   battlenet_store_id: warcraft-3-reforged
   platforms:
@@ -304,8 +320,10 @@ games:
     hemomancy: b
     pov: character
     availability: instant
-  vampirism_notes: San'layn vampire race in lore, vampiric powers through Death Knight abilities
-  hemomancy_notes: Blood Death Knight spec is dedicated blood/life manipulation tank spec
+  vampirism_notes: San'layn vampire race in lore, vampiric powers through Death Knight
+    abilities
+  hemomancy_notes: Blood Death Knight spec is dedicated blood/life manipulation tank
+    spec
   price_notes: Monthly subscription
   priority: medium
   date_updated: '2025-12-25'
@@ -321,7 +339,7 @@ games:
     availability: gated
   vampirism_notes: Death Knight hero uses vampiric themes, vampire minion cards
   hemomancy_notes: Blood rune cards form dedicated archetype within Death Knight class
-  pov_notes: "Play as the death knight, summon vampire units"
+  pov_notes: Play as the death knight, summon vampire units
   priority: medium
   date_updated: '2025-12-25'
 - name: Heroes of the Storm
@@ -330,7 +348,9 @@ games:
   platforms:
   - battlenet
   primary_platform: battlenet
-  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena) game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft, and Overwatch battle in 5v5 matches
+  short_description: Free-to-play, team-based MOBA (Multiplayer Online Battle Arena)
+    game by Blizzard Entertainment where iconic heroes from Warcraft, Diablo, StarCraft,
+    and Overwatch battle in 5v5 matches
   genres:
   - MOBA
   classification:
@@ -344,14 +364,15 @@ games:
 - name: Age of Wonders 4
   steam_id: 1669000
   aliases:
-  - "Age of Wonders IV"
+  - Age of Wonders IV
   classification:
     vampirism: outright
     hemomancy: a
     pov: character
     availability: instant
   vampirism_notes: Elder Vampire ruler class
-  hemomancy_notes: Tome of Blood Rite, blood magic abilities central to Elder Vampire gameplay
+  hemomancy_notes: Tome of Blood Rite, blood magic abilities central to Elder Vampire
+    gameplay
   price_notes: Requires Thrones of Blood DLC (~19.99 USD)
   priority: medium
   date_updated: '2026-01-03'
@@ -386,7 +407,8 @@ games:
     pov: character
     availability: gated
   vampirism_notes: Vampire Balls and their evolutions
-  hemomancy_notes: Bleed balls, Vampiric Sword, Everflowing Goblet minimally hemomancy themed
+  hemomancy_notes: Bleed balls, Vampiric Sword, Everflowing Goblet minimally hemomancy
+    themed
   priority: low
   date_updated: '2026-01-03'
 - name: Rogue Lords
@@ -403,7 +425,7 @@ games:
   date_updated: '2026-01-03'
 - name: Diablo III
   aliases:
-  - 'Diablo 3'
+  - Diablo 3
   - 'Diablo III: Reaper of Souls'
   - 'Diablo 3: Reaper of Souls'
   - 'Diablo 3: Rise of the Necromancer'
@@ -476,7 +498,8 @@ games:
     hemomancy: b
     pov: character
     availability: gated
-  hemomancy_notes: Blood is one of the 4 main essences, with spells that manipulate it
+  hemomancy_notes: Blood is one of the 4 main essences, with spells that manipulate
+    it
   priority: high
   date_updated: '2026-01-03'
 - name: Kingdom Rush Vengeance - Tower Defense
@@ -513,20 +536,21 @@ games:
   steam_id: 1184370
   aliases:
   - Pathfinder Wrath of the Righteous Enhanced Edition
-  - "Pathfinder: Wrath of the Righteous Enhanced Edition"
+  - 'Pathfinder: Wrath of the Righteous Enhanced Edition'
   classification:
     vampirism: outright
     hemomancy: a
     pov: character
     availability: instant
   vampirism_notes: Dhampir race
-  hemomancy_notes: Cruoromancer subclass - 'To those who know how to manipulate it, the blood of a dhampir can be a powerful component to magic'
+  hemomancy_notes: Cruoromancer subclass - 'To those who know how to manipulate it,
+    the blood of a dhampir can be a powerful component to magic'
   priority: medium
   date_updated: '2026-01-03'
 - name: 'Diablo II: Resurrected'
   aliases:
-  - 'Diablo 2 Resurrected'
-  - 'Diablo II Resurrected'
+  - Diablo 2 Resurrected
+  - Diablo II Resurrected
   - 'Diablo 2: Resurrected'
   battlenet_id: diablo-2-resurrected
   battlenet_store_id: diablo-ii-resurrected
@@ -565,7 +589,7 @@ games:
   vampirism_notes: Vampirism talent for Undead faction's Cheat Death spell
   priority: medium
   date_updated: '2026-01-03'
-- name: "Necromancer Accountant"
+- name: Necromancer Accountant
   steam_id: 696160
   platforms:
   - steam
@@ -574,10 +598,10 @@ games:
     hemomancy: absent
     pov: unit
     availability: instant
-  vampirism_notes: "Vampire minions available"
+  vampirism_notes: Vampire minions available
   priority: medium
   date_updated: '2026-01-03'
-- name: "Worship"
+- name: Worship
   steam_id: 1548180
   platforms:
   - steam
@@ -586,10 +610,10 @@ games:
     hemomancy: c
     pov: character
     availability: gated
-  vampirism_notes: "Blood Combustion ritual"
+  vampirism_notes: Blood Combustion ritual
   priority: medium
   date_updated: '2026-01-03'
-- name: "Vampire Cat"
+- name: Vampire Cat
   steam_id: 3505650
   platforms:
   - steam
@@ -601,7 +625,7 @@ games:
   pov_notes: Control up to 3 vampire cats
   priority: medium
   date_updated: '2026-01-06'
-- name: "Cabernet"
+- name: Cabernet
   steam_id: 2401410
   platforms:
   - steam
@@ -610,13 +634,14 @@ games:
     hemomancy: absent
     pov: character
     availability: instant
-  vampirism_notes: Play as Eliza, a young vampire in a 19th century Eastern Europe inspired world
+  vampirism_notes: Play as Eliza, a young vampire in a 19th century Eastern Europe
+    inspired world
   priority: medium
   date_updated: '2026-01-16'
 - name: 'Heroes of Might and Magic: Olden Era'
   aliases:
   - Heroes of Might and Magic Olden Era
-  - 'Heroes of Might & Magic Olden Era'
+  - Heroes of Might & Magic Olden Era
   - 'HoMM: Olden Era'
   - HoMM Olden Era
   - 'HOMM: Olden Era'
@@ -632,7 +657,7 @@ games:
   hemomancy_notes: Vampire Scholar's main ability is Blood Transfusion
   priority: high
   date_updated: '2026-05-01'
-- name: 'Prime Monster'
+- name: Prime Monster
   steam_id: 3214480
   classification:
     vampirism: outright
