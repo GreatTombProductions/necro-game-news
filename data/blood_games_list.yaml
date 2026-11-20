@@ -1,11 +1,11 @@
 games:
-- name: 'Forsaken Realms: Vahrin''s Call'
-  steam_id: 951770
+- name: Forsaken Lands
+  steam_id: 2464640
   classification:
     vampirism: outright
     hemomancy: absent
     pov: unit
-    availability: unknown
+    availability: instant
   priority: medium
   date_updated: '2026-11-20'
   vampirism_notes: One of the controllable characters is a vampire.

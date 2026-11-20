@@ -94,16 +94,17 @@ games:
   date_updated: '2026-10-09'
   dimension_1_notes: 'Idle empire-builder: raise corpses into an undead army, build
     the necropolis, and conquer the living.'
-- name: 'Forsaken Realms: Vahrin''s Call'
-  steam_id: 951770
+- name: Forsaken Lands
+  steam_id: 2464640
   classification:
     dimension_1: b
     dimension_2: unit
     dimension_3: implied
-    dimension_4: unknown
+    dimension_4: instant
   priority: medium
   date_updated: '2026-11-20'
-  dimension_1_notes: A soul-magic character among the controllable units.
+  dimension_1_notes: Viola, a Disciple of Death, fights with scythe, bone and ghost
+    cards in your three-hero squad.
 - name: 'GONE: Game of Necromancy Education'
   steam_id: 2855190
   classification:
