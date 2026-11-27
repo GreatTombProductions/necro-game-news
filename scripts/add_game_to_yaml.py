@@ -204,7 +204,10 @@ def sync_to_database():
                 cwd=str(PROJECT_ROOT),
                 capture_output=True,
                 text=True,
-                timeout=60,
+                # A batch landing (e.g. a multi-game approved recon report) fetches Steam
+                # details for every new row; 60s was exceeded by a 15-row blood batch in
+                # S70, and the timeout read as a sync failure.
+                timeout=600,
             )
             if result.returncode != 0:
                 print(f"WARNING: Database sync had errors ({extra or 'necromancy'}):\n{result.stderr}", file=sys.stderr)
@@ -351,8 +354,12 @@ Examples:
     # --- DB Sync ---
     if args.deploy:
         print()
-        if sync_to_database():
-            print("✓ Database synced")
+        # A failed sync leaves the DB/export behind the YAML; deploying that state ships
+        # a registry that silently omits the new rows (S70: blood JSON stayed at 50 of 65).
+        if not sync_to_database():
+            print("✗ Deploy skipped: database sync failed — fix the loader error, then re-run with --deploy", file=sys.stderr)
+            return 1
+        print("✓ Database synced")
         if deploy():
             print("✓ Deployed — https://necrotic-realms.vercel.app/")
 
