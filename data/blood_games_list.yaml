@@ -1,4 +1,96 @@
 games:
+- name: A Tithe in Blood
+  steam_id: 2989270
+  classification:
+    vampirism: absent
+    hemomancy: d
+    pov: character
+    availability: instant
+  hemomancy_notes: A visual novel whose story turns on a student's first steps into
+    long-lost blood magic.
+  priority: low
+  date_updated: '2026-11-27'
+- name: Blood Bounty
+  steam_id: 4362610
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: low
+  date_updated: '2026-11-27'
+  vampirism_notes: A lone vampire against endless hunter waves in fast top-down action
+    runs.
+- name: Blood Reaver
+  steam_id: 2906070
+  classification:
+    vampirism: absent
+    hemomancy: b
+    pov: character
+    availability: instant
+  hemomancy_notes: Blood Magic school alongside Ethereal and Forbidden arts; harvest
+    demon blood to fuel abilities and Blood Infusion upgrades.
+  priority: medium
+  date_updated: '2026-11-27'
+- name: Bloodthief
+  steam_id: 2533600
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: medium
+  date_updated: '2026-11-27'
+  vampirism_notes: A vampire dungeon-runner where the blood of undead foes fuels abilities
+    and momentum.
+- name: 'Bloodthrone: Eternal Reign'
+  steam_id: 5002330
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: medium
+  date_updated: '2026-11-27'
+  vampirism_notes: 'Rule the night as a vampire sovereign: stalk a living village,
+    kill or turn each victim, and manage your castle bloodline against hunter waves.'
+- name: Crowns & Colossi
+  steam_id: 5451060
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: unit
+    availability: gated
+  vampirism_notes: Choose the Vampire Dominion among the base kingdoms and unite the
+    myth-shrouded world under its banner.
+  price_notes: Vampire Dominion may require meta-currency unlocking
+  priority: medium
+  date_updated: '2026-11-27'
+- name: Dracula - Blood Moon
+  steam_id: 4420380
+  classification:
+    vampirism: outright
+    hemomancy: b
+    pov: character
+    availability: instant
+  vampirism_notes: 'Awaken as Dracula beneath your ruined empire: feed to survive,
+    reclaim your castle, and shape what kind of monster you become.'
+  hemomancy_notes: Ancient blood rites upgrade abilities, and Blood Moon transformations
+    unlock devastating powers.
+  priority: medium
+  date_updated: '2026-11-27'
+- name: 'Embersong: History Is Yours'
+  steam_id: 5208510
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: unit
+    availability: gated
+  vampirism_notes: The New Blood, Old Empires expansion adds playable Transylvania
+    — raise vampires and build crypts that return the fallen — to this 4X campaign.
+  price_notes: Requires New Blood, Old Empires DLC
+  priority: low
+  date_updated: '2026-11-27'
 - name: Forsaken Lands
   steam_id: 2464640
   classification:
@@ -9,6 +101,61 @@ games:
   priority: medium
   date_updated: '2026-11-20'
   vampirism_notes: One of the controllable characters is a vampire.
+- name: Incremental Vampire
+  steam_id: 4910220
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: medium
+  date_updated: '2026-11-27'
+  vampirism_notes: 'Survive day-night runs as a vampire: daylight drains your sun
+    resistance while Blood Moons empower you and the horde.'
+- name: Sanguine Masquerade
+  steam_id: 5171230
+  classification:
+    vampirism: implied
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: low
+  date_updated: '2026-11-27'
+  vampirism_notes: Host decadent parties as Lord Sanguine to unmask the hidden vampire
+    hunter among your monstrous guests.
+- name: The Blood Mage 2 by Daniel da Silva
+  steam_id: 4644100
+  classification:
+    vampirism: absent
+    hemomancy: a
+    pov: character
+    availability: instant
+  hemomancy_notes: Every spell drains your life essence — health is the mana pool
+    — in a deterministic puzzle-dungeon where route order is the solution.
+  priority: medium
+  date_updated: '2026-11-27'
+- name: The Blood Mage by Daniel da Silva
+  steam_id: 2403900
+  classification:
+    vampirism: absent
+    hemomancy: a
+    pov: character
+    availability: instant
+  hemomancy_notes: Every spell drains your life essence — health is the mana pool
+    — in a deterministic puzzle-dungeon where path order is the solution.
+  priority: medium
+  date_updated: '2026-11-27'
+- name: The Blood of Dawnwalker
+  steam_id: 3751260
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: high
+  date_updated: '2026-11-27'
+  vampirism_notes: Play Coen, a young man turned Dawnwalker between day and night,
+    fighting for humanity or embracing cursed vampiric powers to save his family.
 - name: V Rising
   steam_id: 1604030
   classification:
@@ -62,6 +209,31 @@ games:
   price_notes: Requires Crimson Court DLC (~12.99 USD)
   priority: medium
   date_updated: '2025-12-23'
+- name: 'Vampire: The Masquerade - Oaths & Ashes'
+  steam_id: 4191110
+  classification:
+    vampirism: outright
+    hemomancy: absent
+    pov: character
+    availability: instant
+  priority: high
+  date_updated: '2026-11-27'
+  vampirism_notes: Play two Berlin Kindred — Ventrue operative Alice and Thinblood
+    Lenz — managing Hunger and wielding Disciplines and alchemy across five warring
+    factions.
+- name: Vampirem
+  steam_id: 1302570
+  classification:
+    vampirism: outright
+    hemomancy: c
+    pov: character
+    availability: instant
+  vampirism_notes: Play Raven, a royal undead mage of vampiric bloodline, extracting
+    power from the fragmented hearts of fallen kindred.
+  hemomancy_notes: Bloodstrike ultimate and heart-crafted weapon empowerment; blood
+    abilities without a named blood-magic system.
+  priority: medium
+  date_updated: '2026-11-27'
 - name: Vampyr
   steam_id: 427290
   classification:
